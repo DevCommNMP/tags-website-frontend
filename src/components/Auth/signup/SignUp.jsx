@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
 
@@ -6,10 +6,21 @@ import logoFacebook from '../../../assets/imgs/theme/icons/logo-facebook.svg';
 import logoGoogle from '../../../assets/imgs/theme/icons/logo-google.svg';
 import logoApple from '../../../assets/imgs/theme/icons/logo-apple.svg';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { registerUserAction } from '../../../redux/actions/auth/authActions';
 
 const SignUp = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     // State variables for form data and errors
+    const storeData = useSelector((store) => store.auth);
+    const { registered,loading,appErr,serverErr } = storeData;
+
+    useEffect(() => {
+      
+    }, [appErr,serverErr])
+    
+  
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -32,29 +43,28 @@ const SignUp = () => {
     };
 
     // Function to handle form submission
-    const userRegisterHandler = (e) => {
+    const userRegisterHandler =async (e) => {
         e.preventDefault();
-        validateForm();
-        if (Object.keys(errors).length === 0) {
-            // Implement your registration logic here
-            // Example: Call API to register user
-            // Clear form data after successful registration
-            console.log(formData);
-            setFormData({
-                username: '',
-                email: '',
-                password: '',
-                confirmPassword: '',
-                userType: 'customer', // Reset to default
-                agreeTerms: false,
-            });
+       
+        const validationResult = validateForm(formData);
+        console.log(validationResult);
+        if (Object.keys(validationResult).length === 0) {
+    const res=await dispatch(registerUserAction(formData))
+    if(!res.error){
+        // console.log(res.error.message)
+        navigate("/login")
+    }
+    else{
+        console.log(res.error.message);
+    }
+
         } else {
-            console.log("Errors found in the form");
+            console.log('Error in form validation');
         }
     };
 
     // Function to validate form fields
-    const validateForm = () => {
+    const validateForm = (formData) => {
         const newErrors = {};
         if (!formData.username.trim()) {
             newErrors.username = 'Username is required';
@@ -72,10 +82,9 @@ const SignUp = () => {
         if (formData.password !== formData.confirmPassword) {
             newErrors.confirmPassword = 'Passwords do not match';
         }
-        if (formData.agreeTerms==false) {
-            newErrors.agreeTerms = 'You must agree to terms & policies';
-        }
+       
         setErrors(newErrors);
+        return newErrors;
     };
 
     return (
@@ -94,6 +103,7 @@ const SignUp = () => {
                                                 <p className="mb-30">Already have an account? <a href='#' onClick={() => navigate("/login")}>Login</a></p>
                                             </div>
                                             <form onSubmit={userRegisterHandler}>
+                                                {(appErr||serverErr)&& <p style={{color:"red",fontWeight:900}}>{appErr ||serverErr}</p>}
                                                 <div className="form-group">
                                                     <input type="text" required name="username" value={formData.username} onChange={handleInputChange} placeholder="Username" />
                                                     {errors.username && <div className="text-danger">{errors.username}</div>}
@@ -110,10 +120,18 @@ const SignUp = () => {
                                                     <input required type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleInputChange} placeholder="Confirm password" />
                                                     {errors.confirmPassword && <div className="text-danger">{errors.confirmPassword}</div>}
                                                 </div>
-                                                <div className="payment_option mb-50">
-                                                    {/* Removed radio button options */}
-                                                </div>
-                                                
+                                                {/* <div className="payment_option mb-50"> Removed radio button options */}    
+                                                {/* </div> */}
+                                                {/* <div className="login_footer form-group mb-50">
+                                                    <div className="chek-form">
+                                                        <div className="custome-checkbox">
+                                                            <input className="form-check-input" type="checkbox" name="agreeTerms" id="exampleCheckbox12" checked={formData.agreeTerms} onChange={(e) => setFormData({ ...formData, agreeTerms: e.target.checked })} />
+                                                            <label className="form-check-label" htmlFor="exampleCheckbox12"><span>I agree to terms & Policy.</span></label>
+                                                            {errors.agreeTerms && <div className="text-danger">{errors.agreeTerms}</div>}
+                                                        </div>
+                                                    </div>
+                                                    <a href='page-privacy-policy.html'><i className="fi-rs-book-alt mr-5 text-muted"></i>Lean more</a>
+                                                </div> */}
                                                 <div className="form-group mb-30">
                                                     <button type="submit" className="btn btn-fill-out btn-block hover-up font-weight-bold" name="login">Submit & Register</button>
                                                 </div>

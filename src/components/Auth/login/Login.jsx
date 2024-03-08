@@ -1,16 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import LoginImage from '../../../assets/imgs/page/login-1.png';
 import Header from '../../Header/Header';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
-  const navigate = useNavigate();
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUserAction } from '../../../redux/actions/auth/authActions';
 
+const Login = () => {
+ 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  // State variables for form data and errors
+  const storeData = useSelector((store) => store.auth);
+  const { user,loading,appErr,serverErr } = storeData;
+
+  
+  useEffect(() => {
+    
+  }, [appErr,serverErr])
+  
   // State variables for form data and errors
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-    securityCode: '',
+    userName:''
   });
 
   const [errors, setErrors] = useState({});
@@ -25,28 +38,37 @@ const Login = () => {
   };
 
   // Function to handle form submission
-  const loginHandler = (e) => {
+  const loginHandler =async (e) => {
     e.preventDefault();
-    const validationErrors = validateForm(formData);
-    if (Object.keys(validationErrors).length === 0) {
-      // Submit the form
-      console.log('Form submitted:', formData);
+   
+    const validationResult = validateForm(formData);
+    console.log(validationResult);
+    if (Object.keys(validationResult).length === 0) {
+const res=await dispatch(loginUserAction(formData))
+if(!res.error){
+    // console.log(res.error.message)
+    navigate("/")
+}
+else{
+    console.log(res.error.message);
+}
+
     } else {
-      setErrors(validationErrors);
+        console.log('Error in form validation');
     }
-  };
+};
+
 
   // Function to validate form fields
   const validateForm = (data) => {
-    const errors = {};
+    const newErrors = {};
     if (!data.email.trim()) {
-      errors.email = 'Username or Email is required';
-    }
-    if (!data.password.trim()) {
-      errors.password = 'Password is required';
+      newErrors.email = 'Email is required';
+    } else if (!/^\S+@\S+\.\S+$/.test(data.email)) {
+      newErrors.email = 'Invalid email address';
     }
     
-    return errors;
+    return newErrors;
   };
 
   return (
@@ -71,15 +93,16 @@ const Login = () => {
                         </p>
                       </div>
                       <form onSubmit={loginHandler}>
+                      {(appErr||serverErr)&& <p style={{color:"red",fontWeight:900}}>{appErr ||serverErr}</p>}
+
                         <div className="form-group">
-                          <input type="email" required name="email" value={formData.email} onChange={handleInputChange} placeholder="Username or Email *" />
+                          <input type="email" required name="email" value={formData.email} onChange={handleInputChange} placeholder="Email *" />
                           {errors.email && <div className="text-danger">{errors.email}</div>}
                         </div>
                         <div className="form-group">
-                          <input required type="password" name="password" value={formData.password} onChange={handleInputChange} placeholder="Your password *" />
+                          <input required type="password" name="password" value={formData.password} onChange={handleInputChange} placeholder="Password *" />
                           {errors.password && <div className="text-danger">{errors.password}</div>}
                         </div>
-                        
                         <div className="login_footer form-group mb-50">
                           <div className="chek-form">
                             <div className="custome-checkbox">
