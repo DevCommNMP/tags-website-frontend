@@ -5378,6 +5378,7 @@ h6.post-title {
   display: inline-block;
   vertical-align: middle;
   -webkit-appearance: none;
+  appearance: none;
   text-transform: capitalize;
   transition: all 0.3s linear;
   z-index: 1;
@@ -6361,6 +6362,7 @@ h6.post-title {
   background-color: #fff;
   transition: all 0.3s ease 0s;
   -moz-appearance: none;
+  appearance: none;
   -webkit-appearance: none;
   position: relative;
 }
@@ -10847,3 +10849,18 @@ footer .hotline img {
     font-size: 35px;
   }
 } /*# sourceMappingURL=main.css.map */
+
+.product-rating.custom {
+  width: 90%;
+}
+.product-rating.custom .star-rating {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.more_slide_open.custom {
+  display: none;
+}

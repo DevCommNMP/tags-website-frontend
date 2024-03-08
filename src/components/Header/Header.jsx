@@ -10,7 +10,6 @@ const Header = () => {
     <header className='header-area header-style-1 header-height-2'>
   
       <HeaderTop/>
-  
       <MobilePromotion />
       <HeaderMiddle />
       <HeaderBottom />

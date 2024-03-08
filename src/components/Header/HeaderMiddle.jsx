@@ -3,20 +3,7 @@ import compareIcon from "../../assets/imgs/theme/icons/icon-compare.svg";
 import wishList from "../../assets/imgs/theme/icons/icon-heart.svg";
 import account from "../../assets/imgs/theme/icons/icon-user.svg" 
 import cart from "../../assets/imgs/theme/icons/icon-cart.svg"
-import { useDispatch, useSelector } from 'react-redux';
-import { loginUserAction } from "../../redux/actions/auth/authActions";
 const HeaderMiddle = () => {
-const dispatch=useDispatch();
-const loginhandler=async(e)=>{
-e.preventDefault();
-const userdata={
-  "email":"test1@gmail.com",
-  "password":"test"
-}
-dispatch(loginUserAction(userdata))
-
-}
- 
   return (
     <div>
       <div className="header-middle header-middle-ptb-1 d-none d-lg-block">
@@ -24,7 +11,7 @@ dispatch(loginUserAction(userdata))
           <div className="header-wrap">
             <div className="logo logo-width-1">
               <a href="index.html">
-                <img src={logo} alt="logo"  onClick={loginhandler}/>
+                <img src={logo} alt="logo" />
               </a>
             </div>
             <div className="header-right">

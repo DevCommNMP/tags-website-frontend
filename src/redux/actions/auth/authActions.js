@@ -13,13 +13,6 @@ export const registerUserAction = createAsyncThunk(
           "Content-Type": "application/json",
         },
       };
-      // const userdata={
-      //   "email": "test1@gmail.com",
-      //   "firstName": "kamal",
-      //   "lastName": "Malik",
-      //   "phoneNo": "9467665000",
-      //   "password": "test"
-      // }
 
       const res = await axios.post(`${baseUrl}/api/auth/register`, user, config);
       return res.data;
@@ -42,13 +35,11 @@ export const loginUserAction = createAsyncThunk(
         "Content-Type": "application/json",
       },
     };
-   console.log(userData)
 
     try {
       const res = await axios.post(`${baseUrl}/api/auth/login`, userData, config);
       // Save response to local storage
       localStorage.setItem('userData', JSON.stringify(res.data));
-      console.log(res)
       return res.data;
     } catch (error) {
      
