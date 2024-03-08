@@ -12,7 +12,7 @@ function App() {
     <>
       <Provider store={Store}>
       <BrowserRouter>
-        <div className="d-flex flex-column" style={{ overflow: "hidden" }}>
+       
 
           <Routes>
           <Route exact path="/" element={<Homepage />} />
@@ -20,7 +20,7 @@ function App() {
            <Route exact path="/signup" element={<SignUp/>} />
            
           </Routes>
-        </div>
+
       </BrowserRouter>
       </Provider>
      </>
