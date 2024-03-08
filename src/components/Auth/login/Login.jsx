@@ -1,8 +1,9 @@
 import LoginImage from '../../../assets/imgs/page/login-1.png'
-
+import Header from '../../Header/Header'
 const Login = () => {
   return (
     <>
+    <Header />
       <div className="page-content pt-150 pb-150">
         <div className="container">
           <div className="row">
