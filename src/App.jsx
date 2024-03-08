@@ -14,7 +14,6 @@ function App() {
     <>
       <Provider store={Store}>
         <BrowserRouter>
-          <div className="d-flex flex-column" style={{ overflow: 'hidden' }}>
             <Routes>
               <Route exact path="/" element={<Homepage />} />
               <Route exact path="/login" element={<Login />} />
@@ -22,7 +21,6 @@ function App() {
               <Route exact path="/reset_password" element={<ResetPassword/>} />
               <Route exact path="/forgot_password" element={<ForgotPassword/>} />
             </Routes>
-          </div>
         </BrowserRouter>
       </Provider>
     </>
