@@ -111,9 +111,18 @@ const SignUp = () => {
                                                     {errors.confirmPassword && <div className="text-danger">{errors.confirmPassword}</div>}
                                                 </div>
                                                 <div className="payment_option mb-50">
-                                                    {/* Removed radio button options */}
+                                                    {/* Removed radio button options */}    
                                                 </div>
-                                                
+                                                <div className="login_footer form-group mb-50">
+                                                    <div className="chek-form">
+                                                        <div className="custome-checkbox">
+                                                            <input className="form-check-input" type="checkbox" name="agreeTerms" id="exampleCheckbox12" checked={formData.agreeTerms} onChange={(e) => setFormData({ ...formData, agreeTerms: e.target.checked })} />
+                                                            <label className="form-check-label" htmlFor="exampleCheckbox12"><span>I agree to terms & Policy.</span></label>
+                                                            {errors.agreeTerms && <div className="text-danger">{errors.agreeTerms}</div>}
+                                                        </div>
+                                                    </div>
+                                                    <a href='page-privacy-policy.html'><i className="fi-rs-book-alt mr-5 text-muted"></i>Lean more</a>
+                                                </div>
                                                 <div className="form-group mb-30">
                                                     <button type="submit" className="btn btn-fill-out btn-block hover-up font-weight-bold" name="login">Submit & Register</button>
                                                 </div>
