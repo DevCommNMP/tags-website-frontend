@@ -3,7 +3,12 @@ import compareIcon from "../../assets/imgs/theme/icons/icon-compare.svg";
 import wishList from "../../assets/imgs/theme/icons/icon-heart.svg";
 import account from "../../assets/imgs/theme/icons/icon-user.svg" 
 import cart from "../../assets/imgs/theme/icons/icon-cart.svg"
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 const HeaderMiddle = () => {
+  const [User, setUser] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className="header-middle header-middle-ptb-1 d-none d-lg-block">
@@ -139,11 +144,11 @@ const HeaderMiddle = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="header-action-icon-2">
+                  {User?<div className="header-action-icon-2">
                     <a href="page-account.html">
                       <img className="svgInject" alt="Nest" src={account}/>
                     </a>
-                    <a href="page-account.html">
+                    <a href="#">
                       <span className="lable ml-0">Account</span>
                     </a>
                     <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
@@ -180,7 +185,13 @@ const HeaderMiddle = () => {
                         </li>
                       </ul>
                     </div>
-                  </div>
+                  </div>:<div className="header-action-icon-2">
+                    <a href="#">
+                      <img className="svgInject" alt="Nest" src={account}/>
+                    </a>
+                    <a href="#">
+                      <span className="lable ml-0" onClick={()=> navigate("/login")}>Login</span>
+                    </a></div>}
                 </div>
               </div>
             </div>
