@@ -5,10 +5,10 @@ import Hero from '../components/Hero/Hero'
 const Homepage = () => {
   return (
     <>
-    <Header />
+    {/* <Header /> */}
     <Hero />
 
-    <Footer />
+    {/* <Footer /> */}
     </>
   )
 }

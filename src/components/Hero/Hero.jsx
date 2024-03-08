@@ -7,7 +7,8 @@ const Hero = () => {
             <div className="col-xl-8 col-lg-12">
               <div className="home-slide-cover">
                 <div className="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
-                  <div className="single-hero-slider single-animation-wrap" style="background-image: url(assets/imgs/slider/slider-3.png)">
+                  {/* <div className="single-hero-slider single-animation-wrap" style="background-image: url(assets/imgs/slider/slider-3.png)"> */}
+                  <div className="single-hero-slider single-animation-wrap">
                     <div className="slider-content">
                       <h1 className="display-2 mb-40">
                         Pure Coffe
@@ -23,7 +24,8 @@ const Hero = () => {
                       </form>
                     </div>
                   </div>
-                  <div className="single-hero-slider single-animation-wrap" style="background-image: url(assets/imgs/slider/slider-4.png)">
+                  {/* <div className="single-hero-slider single-animation-wrap" style="background-image: url(assets/imgs/slider/slider-4.png)"> */}
+                  <div className="single-hero-slider single-animation-wrap">
                     <div className="slider-content">
                       <h1 className="display-2 mb-40">
                         Snacks box
