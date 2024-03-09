@@ -15,7 +15,7 @@ const HeaderMiddle = () => {
         <div className="container">
           <div className="header-wrap">
             <div className="logo logo-width-1">
-              <a href="index.html">
+              <a onClick={()=> navigate("/")}>
                 <img src={logo} alt="logo" />
               </a>
             </div>
