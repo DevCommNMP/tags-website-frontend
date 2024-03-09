@@ -1,13 +1,13 @@
-import logo from "../../assets/imgs/theme/logo.png"
-import compareIcon from "../../assets/imgs/theme/icons/icon-compare.svg";
-import wishList from "../../assets/imgs/theme/icons/icon-heart.svg";
-import account from "../../assets/imgs/theme/icons/icon-user.svg" 
-import cart from "../../assets/imgs/theme/icons/icon-cart.svg"
-import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import logo from '../../assets/imgs/theme/logo.png'
+import compareIcon from '../../assets/imgs/theme/icons/icon-compare.svg'
+import wishList from '../../assets/imgs/theme/icons/icon-heart.svg'
+import account from '../../assets/imgs/theme/icons/icon-user.svg'
+import cart from '../../assets/imgs/theme/icons/icon-cart.svg'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 const HeaderMiddle = () => {
-  const [User, setUser] = useState(false);
-  const navigate = useNavigate();
+  const [User, setUser] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <div>
@@ -15,7 +15,7 @@ const HeaderMiddle = () => {
         <div className="container">
           <div className="header-wrap">
             <div className="logo logo-width-1">
-              <a onClick={()=> navigate("/")}>
+              <a onClick={() => navigate('/')}>
                 <img src={logo} alt="logo" />
               </a>
             </div>
@@ -61,42 +61,42 @@ const HeaderMiddle = () => {
                     </form>
                   </div>
                   <div className="header-action-icon-2">
-                    <a href="shop-compare.html">
+                    <a href="#">
                       <img className="svgInject" alt="Nest" src={compareIcon} />
                       <span className="pro-count blue">3</span>
                     </a>
-                    <a href="shop-compare.html">
+                    <a href="#">
                       <span className="lable ml-0">Compare</span>
                     </a>
                   </div>
                   <div className="header-action-icon-2">
-                    <a href="shop-wishlist.html">
-                      <img className="svgInject" alt="Nest" src={wishList}/>
+                    <a href="#">
+                      <img className="svgInject" alt="Nest" src={wishList} />
                       <span className="pro-count blue">6</span>
                     </a>
-                    <a href="shop-wishlist.html">
+                    <a href="#">
                       <span className="lable">Wishlist</span>
                     </a>
                   </div>
                   <div className="header-action-icon-2">
-                    <a className="mini-cart-icon" href="shop-cart.html">
+                    <a className="mini-cart-icon" href="#">
                       <img alt="Nest" src={cart} />
                       <span className="pro-count blue">2</span>
                     </a>
-                    <a href="shop-cart.html">
+                    <a href="#">
                       <span className="lable">Cart</span>
                     </a>
                     <div className="cart-dropdown-wrap cart-dropdown-hm2">
                       <ul>
                         <li>
                           <div className="shopping-cart-img">
-                            <a href="shop-product-right.html">
+                            <a href="#">
                               <img alt="Nest" src="assets/imgs/shop/thumbnail-3.jpg" />
                             </a>
                           </div>
                           <div className="shopping-cart-title">
                             <h4>
-                              <a href="shop-product-right.html">Daisy Casual Bag</a>
+                              <a href="#">Daisy Casual Bag</a>
                             </h4>
                             <h4>
                               <span>1 × </span>$800.00
@@ -110,13 +110,13 @@ const HeaderMiddle = () => {
                         </li>
                         <li>
                           <div className="shopping-cart-img">
-                            <a href="shop-product-right.html">
+                            <a href="#">
                               <img alt="Nest" src="assets/imgs/shop/thumbnail-2.jpg" />
                             </a>
                           </div>
                           <div className="shopping-cart-title">
                             <h4>
-                              <a href="shop-product-right.html">Corduroy Shirts</a>
+                              <a href="#">Corduroy Shirts</a>
                             </h4>
                             <h4>
                               <span>1 × </span>$3200.00
@@ -136,62 +136,69 @@ const HeaderMiddle = () => {
                           </h4>
                         </div>
                         <div className="shopping-cart-button">
-                          <a className="outline" href="shop-cart.html">
+                          <a className="outline" href="#">
                             View cart
                           </a>
-                          <a href="shop-checkout.html">Checkout</a>
+                          <a href="#">Checkout</a>
                         </div>
                       </div>
                     </div>
                   </div>
-                  {User?<div className="header-action-icon-2">
-                    <a href="page-account.html">
-                      <img className="svgInject" alt="Nest" src={account}/>
-                    </a>
-                    <a href="#">
-                      <span className="lable ml-0">Account</span>
-                    </a>
-                    <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
-                      <ul>
-                        <li>
-                          <a href="page-account.html">
-                            <i className="fi fi-rs-user mr-10"></i>My Account
-                          </a>
-                        </li>
-                        <li>
-                          <a href="page-account.html">
-                            <i className="fi fi-rs-location-alt mr-10"></i>Order Tracking
-                          </a>
-                        </li>
-                        <li>
-                          <a href="page-account.html">
-                            <i className="fi fi-rs-label mr-10"></i>My Voucher
-                          </a>
-                        </li>
-                        <li>
-                          <a href="shop-wishlist.html">
-                            <i className="fi fi-rs-heart mr-10"></i>My Wishlist
-                          </a>
-                        </li>
-                        <li>
-                          <a href="page-account.html">
-                            <i className="fi fi-rs-settings-sliders mr-10"></i>Setting
-                          </a>
-                        </li>
-                        <li>
-                          <a href="page-login.html">
-                            <i className="fi fi-rs-sign-out mr-10"></i>Sign out
-                          </a>
-                        </li>
-                      </ul>
+                  {User ? (
+                    <div className="header-action-icon-2">
+                      <a href="#">
+                        <img className="svgInject" alt="Nest" src={account} />
+                      </a>
+                      <a href="#">
+                        <span className="lable ml-0">Account</span>
+                      </a>
+                      <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
+                        <ul>
+                          <li>
+                            <a href="#">
+                              <i className="fi fi-rs-user mr-10"></i>My Account
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i className="fi fi-rs-location-alt mr-10"></i>Order Tracking
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i className="fi fi-rs-label mr-10"></i>My Voucher
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i className="fi fi-rs-heart mr-10"></i>My Wishlist
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i className="fi fi-rs-settings-sliders mr-10"></i>Setting
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i className="fi fi-rs-sign-out mr-10"></i>Sign out
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                  </div>:<div className="header-action-icon-2">
-                    <a href="#">
-                      <img className="svgInject" alt="Nest" src={account}/>
-                    </a>
-                    <a href="#">
-                      <span className="lable ml-0" onClick={()=> navigate("/login")}>Login</span>
-                    </a></div>}
+                  ) : (
+                    <div className="header-action-icon-2">
+                      <a href="#">
+                        <img className="svgInject" alt="Nest" src={account} />
+                      </a>
+                      <a href="#">
+                        <span className="lable ml-0" onClick={() => navigate('/login')}>
+                          Login
+                        </span>
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
