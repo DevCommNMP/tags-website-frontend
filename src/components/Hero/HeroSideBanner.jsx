@@ -1,4 +1,4 @@
-import sideBannerImg from '../../assets/imgs/banner/banner-11.png';
+import sideBannerImg from '../../assets/imgs/banner/banner-11.webp';
 
 const HeroSideBanner = () => {
   return (

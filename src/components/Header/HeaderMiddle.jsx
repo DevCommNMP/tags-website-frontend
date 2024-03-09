@@ -1,4 +1,4 @@
-import logo from "../../assets/imgs/theme/logo.svg"
+import logo from "../../assets/imgs/theme/logo.png"
 import compareIcon from "../../assets/imgs/theme/icons/icon-compare.svg";
 import wishList from "../../assets/imgs/theme/icons/icon-heart.svg";
 import account from "../../assets/imgs/theme/icons/icon-user.svg" 
