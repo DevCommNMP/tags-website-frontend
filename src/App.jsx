@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from './pages/Homepage.jsx'
 import Login from './components/Auth/login/Login.jsx'
 import SignUp from './components/Auth/signup/SignUp.jsx'
+import Account from './components/Account/Account.jsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
 
           <Routes>
           <Route exact path="/" element={<Homepage />} />
+          <Route exact path="/" element={<Account/>}/>
           <Route exact path="/login" element={<Login />} />
            <Route exact path="/signup" element={<SignUp/>} />
            

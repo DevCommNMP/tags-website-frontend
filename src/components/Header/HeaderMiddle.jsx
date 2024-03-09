@@ -3,11 +3,21 @@ import compareIcon from "../../assets/imgs/theme/icons/icon-compare.svg";
 import wishList from "../../assets/imgs/theme/icons/icon-heart.svg";
 import account from "../../assets/imgs/theme/icons/icon-user.svg" 
 import cart from "../../assets/imgs/theme/icons/icon-cart.svg"
-import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useState ,useEffect} from "react";
+import { Link, useNavigate } from 'react-router-dom';
+
+import { useDispatch, useSelector } from 'react-redux';
 const HeaderMiddle = () => {
-  const [User, setUser] = useState(false);
+  // const [User, setUser] = useState(true);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const storeData = useSelector((store) => store.auth);
+  const { user,loading,appErr,serverErr } = storeData;
+  useEffect(() => {
+  
+  }, [user.id])
+  
 
   return (
     <div>
@@ -15,9 +25,9 @@ const HeaderMiddle = () => {
         <div className="container">
           <div className="header-wrap">
             <div className="logo logo-width-1">
-              <a href="index.html">
+              <Link to="/" onClick={()=>navigate("/")}>
                 <img src={logo} alt="logo" />
-              </a>
+              </Link>
             </div>
             <div className="header-right">
               <div className="search-style-2">
@@ -41,7 +51,7 @@ const HeaderMiddle = () => {
               <div className="header-action-right">
                 <div className="header-action-2">
                   <div className="search-location">
-                    <form action="#">
+                    {/* <form action="#">
                       <select className="select-active">
                         <option>Your Location</option>
                         <option>Alabama</option>
@@ -58,34 +68,34 @@ const HeaderMiddle = () => {
                         <option>New Mexico</option>
                         <option>New York</option>
                       </select>
-                    </form>
+                    </form> */}
                   </div>
                   <div className="header-action-icon-2">
                     <a href="shop-compare.html">
                       <img className="svgInject" alt="Nest" src={compareIcon} />
                       <span className="pro-count blue">3</span>
                     </a>
-                    <a href="shop-compare.html">
+                    <Link to="/compare">
                       <span className="lable ml-0">Compare</span>
-                    </a>
+                    </Link>
                   </div>
                   <div className="header-action-icon-2">
                     <a href="shop-wishlist.html">
                       <img className="svgInject" alt="Nest" src={wishList}/>
                       <span className="pro-count blue">6</span>
                     </a>
-                    <a href="shop-wishlist.html">
+                    <Link to="/wishlist">
                       <span className="lable">Wishlist</span>
-                    </a>
+                    </Link>
                   </div>
                   <div className="header-action-icon-2">
                     <a className="mini-cart-icon" href="shop-cart.html">
                       <img alt="Nest" src={cart} />
                       <span className="pro-count blue">2</span>
                     </a>
-                    <a href="shop-cart.html">
+                    <Link to="/cart">
                       <span className="lable">Cart</span>
-                    </a>
+                    </Link>
                     <div className="cart-dropdown-wrap cart-dropdown-hm2">
                       <ul>
                         <li>
@@ -136,27 +146,28 @@ const HeaderMiddle = () => {
                           </h4>
                         </div>
                         <div className="shopping-cart-button">
-                          <a className="outline" href="shop-cart.html">
+                          <Link to="/cart" className="outline" href="shop-cart.html">
                             View cart
-                          </a>
-                          <a href="shop-checkout.html">Checkout</a>
+                          </Link>
+                          <Link to="/cart">Checkout</Link >
                         </div>
                       </div>
                     </div>
                   </div>
-                  {User?<div className="header-action-icon-2">
+                  {user?<div className="header-action-icon-2">
                     <a href="page-account.html">
-                      <img className="svgInject" alt="Nest" src={account}/>
+                    <div className="svgInject" alt="Nest" style={{ backgroundImage: `url(${user.profileImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+
                     </a>
-                    <a href="#">
+                    <a>
                       <span className="lable ml-0">Account</span>
                     </a>
                     <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                       <ul>
                         <li>
-                          <a href="page-account.html">
+                          <Link to="/profile">
                             <i className="fi fi-rs-user mr-10"></i>My Account
-                          </a>
+                          </Link>
                         </li>
                         <li>
                           <a href="page-account.html">
@@ -186,12 +197,12 @@ const HeaderMiddle = () => {
                       </ul>
                     </div>
                   </div>:<div className="header-action-icon-2">
-                    <a href="#">
+                    <Link to="/login">
                       <img className="svgInject" alt="Nest" src={account}/>
-                    </a>
-                    <a href="#">
+                    </Link>
+                    <Link to="/login">
                       <span className="lable ml-0" onClick={()=> navigate("/login")}>Login</span>
-                    </a></div>}
+                    </Link></div>}
                 </div>
               </div>
             </div>
