@@ -10864,3 +10864,12 @@ footer .hotline img {
 .more_slide_open.custom {
   display: none;
 }
+
+
+.sliderImg1 {
+  background-image: url(./assets/imgs/slider/slider-1.png);
+}
+
+.sliderImg2 {
+  background-image: url(./assets/imgs/slider/slider-2.png);
+}
