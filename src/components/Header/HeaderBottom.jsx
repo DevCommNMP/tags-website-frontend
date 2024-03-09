@@ -12,7 +12,7 @@ import icon1 from '../../assets/imgs/theme/icons/icon-1.svg';
 import icon2 from '../../assets/imgs/theme/icons/icon-2.svg';
 import icon3 from '../../assets/imgs/theme/icons/icon-3.svg';
 import icon4 from '../../assets/imgs/theme/icons/icon-4.svg';
-import logo  from '../../assets/imgs/theme/logo.svg';
+import logo  from '../../assets/imgs/theme/logo.png';
 import iconHot from '../../assets/imgs/theme/icons/icon-hot.svg';
 import iconHeadphone from '../../assets/imgs/theme/icons/icon-headphone.svg'
 
