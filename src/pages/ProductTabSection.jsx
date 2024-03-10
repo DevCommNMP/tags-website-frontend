@@ -1,3 +1,32 @@
+
+const dummydata=[
+  {
+    "id": 1,
+    "name": "Item 1",
+    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img1.jpg'
+  },
+  {
+    "id": 2,
+    "name": "Item 2",
+    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img2.jpg'
+  },
+  {
+    "id": 3,
+    "name": "Item 3",
+    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img3.jpg'
+  },
+  {
+    "id": 4,
+    "name": "Item 4",
+    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img4.jpg'
+  },
+  {
+    "id": 5,
+    "name": "Item 5",
+    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img5.jpg'
+  },
+ 
+]
 const ProductTabSection = () => {
   return (
     <>
@@ -5,118 +34,20 @@ const ProductTabSection = () => {
         <div className="container">
           <div className="section-title style-2">
             <h3>Popular Products</h3>
-            <ul className="nav nav-tabs links" id="myTab" role="tablist">
-              <li className="nav-item" role="presentation">
-                <button
-                  className="nav-link active"
-                  id="nav-tab-one"
-                  data-bs-toggle="tab"
-                  data-bs-target="#tab-one"
-                  type="button"
-                  role="tab"
-                  aria-controls="tab-one"
-                  aria-selected="true"
-                >
-                  All
-                </button>
-              </li>
-              <li className="nav-item" role="presentation">
-                <button
-                  className="nav-link"
-                  id="nav-tab-two"
-                  data-bs-toggle="tab"
-                  data-bs-target="#tab-two"
-                  type="button"
-                  role="tab"
-                  aria-controls="tab-two"
-                  aria-selected="false"
-                >
-                  Milks & Dairies
-                </button>
-              </li>
-              <li className="nav-item" role="presentation">
-                <button
-                  className="nav-link"
-                  id="nav-tab-three"
-                  data-bs-toggle="tab"
-                  data-bs-target="#tab-three"
-                  type="button"
-                  role="tab"
-                  aria-controls="tab-three"
-                  aria-selected="false"
-                >
-                  Coffes & Teas
-                </button>
-              </li>
-              <li className="nav-item" role="presentation">
-                <button
-                  className="nav-link"
-                  id="nav-tab-four"
-                  data-bs-toggle="tab"
-                  data-bs-target="#tab-four"
-                  type="button"
-                  role="tab"
-                  aria-controls="tab-four"
-                  aria-selected="false"
-                >
-                  Pet Foods
-                </button>
-              </li>
-              <li className="nav-item" role="presentation">
-                <button
-                  className="nav-link"
-                  id="nav-tab-five"
-                  data-bs-toggle="tab"
-                  data-bs-target="#tab-five"
-                  type="button"
-                  role="tab"
-                  aria-controls="tab-five"
-                  aria-selected="false"
-                >
-                  Meats
-                </button>
-              </li>
-              <li className="nav-item" role="presentation">
-                <button
-                  className="nav-link"
-                  id="nav-tab-six"
-                  data-bs-toggle="tab"
-                  data-bs-target="#tab-six"
-                  type="button"
-                  role="tab"
-                  aria-controls="tab-six"
-                  aria-selected="false"
-                >
-                  Vegetables
-                </button>
-              </li>
-              <li className="nav-item" role="presentation">
-                <button
-                  className="nav-link"
-                  id="nav-tab-seven"
-                  data-bs-toggle="tab"
-                  data-bs-target="#tab-seven"
-                  type="button"
-                  role="tab"
-                  aria-controls="tab-seven"
-                  aria-selected="false"
-                >
-                  Fruits
-                </button>
-              </li>
-            </ul>
+        
           </div>
 
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
-                <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                {dummydata.map(item=>(
+                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="shop-product-right.html">
-                          <img className="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="" />
-                          <img className="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="" />
+                          <img className="default-img" src={item.image} alt="" />
+                          <img className="hover-img" src="" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
@@ -131,7 +62,7 @@ const ProductTabSection = () => {
                         </a>
                       </div>
                       <div className="product-badges product-badges-position product-badges-mrg">
-                        <span className="hot">Hot</span>
+                        <span className="hot" style={{backgroundColor:"red"}}>Hot</span>
                       </div>
                     </div>
                     <div className="product-content-wrap">
@@ -166,7 +97,9 @@ const ProductTabSection = () => {
                     </div>
                   </div>
                 </div>
-
+                ))}
+                
+{/* 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
@@ -667,6 +600,7 @@ const ProductTabSection = () => {
                     </div>
                   </div>
                 </div>
+              </div> */}
               </div>
             </div>
 

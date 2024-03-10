@@ -4,6 +4,8 @@ import Hero from '../components/Hero/Hero'
 import Banner1 from '../components/OfferBanner/Banner1'
 
 import ProductTabSection from './ProductTabSection'
+import LeatherSection from '../components/leateherSection/leatherSection.jsx'
+import NewArrival from '../components/newArrival/NewArrival.jsx'
 
 const Homepage = () => {
   return (
@@ -24,6 +26,9 @@ const Homepage = () => {
         </div>
       </div>
       <ProductTabSection />
+      <LeatherSection/>
+      <NewArrival/>
+
 
       <Footer />
     </>
