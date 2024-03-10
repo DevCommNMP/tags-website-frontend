@@ -5,7 +5,9 @@ import Header from "../../Header/Header";
 import logoFacebook from '../../../assets/imgs/theme/icons/logo-facebook.svg';
 import logoGoogle from '../../../assets/imgs/theme/icons/logo-google.svg';
 import logoApple from '../../../assets/imgs/theme/icons/logo-apple.svg';
-import { useNavigate } from 'react-router-dom';
+
+import { Link, useNavigate } from 'react-router-dom';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUserAction } from '../../../redux/actions/auth/authActions';
 
@@ -100,7 +102,7 @@ const SignUp = () => {
                                         <div className="padding_eight_all bg-white">
                                             <div className="heading_s1">
                                                 <h1 className="mb-5">Create an Account</h1>
-                                                <p className="mb-30">Already have an account? <a href='#' onClick={() => navigate("/login")}>Login</a></p>
+                                                <p className="mb-30">Already have an account? <Link to="/login" onClick={() => navigate("/login")}>Login</Link></p>
                                             </div>
                                             <form onSubmit={userRegisterHandler}>
                                                 {(appErr||serverErr)&& <p style={{color:"red",fontWeight:900}}>{appErr ||serverErr}</p>}

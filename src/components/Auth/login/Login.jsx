@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import LoginImage from '../../../assets/imgs/page/login-1.png';
 import Header from '../../Header/Header';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUserAction } from '../../../redux/actions/auth/authActions';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUserAction } from '../../../redux/actions/auth/authActions';
@@ -89,7 +92,7 @@ else{
                         <h1 className="mb-5">Login</h1>
                         <p className="mb-30">
                           Don&apos;t have an account?{' '}
-                          <a href='#' onClick={() => navigate("/signup")}>Create here</a>
+                          <Link to="/signup" onClick={() => navigate("/signup")}>Create here</Link>
                         </p>
                       </div>
                       <form onSubmit={loginHandler}>
@@ -118,7 +121,7 @@ else{
                         </div>
                         <div className="form-group">
                           <button type="submit" className="btn btn-heading btn-block hover-up" name="login">
-                            Log in
+                        {loading? "Loading":"Log in"}
                           </button>
                         </div>
                       </form>
