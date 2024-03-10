@@ -5,7 +5,9 @@ import Header from "../../Header/Header";
 import logoFacebook from '../../../assets/imgs/theme/icons/logo-facebook.svg';
 import logoGoogle from '../../../assets/imgs/theme/icons/logo-google.svg';
 import logoApple from '../../../assets/imgs/theme/icons/logo-apple.svg';
+
 import { Link, useNavigate } from 'react-router-dom';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUserAction } from '../../../redux/actions/auth/authActions';
 

@@ -1,11 +1,11 @@
-import banner9 from '../../assets/imgs/banner/banner-9.png';
+import banner9 from '../../assets/imgs/banner/banner-9.jpg';
 import icon1 from '../../assets/imgs/theme/icons/icon-1.svg';
 import icon2 from '../../assets/imgs/theme/icons/icon-2.svg';
 import icon3 from '../../assets/imgs/theme/icons/icon-3.svg';
 import icon4 from '../../assets/imgs/theme/icons/icon-4.svg';
 import icon5 from '../../assets/imgs/theme/icons/icon-5.svg';
 import icon6 from '../../assets/imgs/theme/icons/icon-6.svg';
-import logo from '../../assets/imgs/theme/logo.svg';
+import logo from '../../assets/imgs/theme/logo.png';
 import iconLocation from '../../assets/imgs/theme/icons/icon-location.svg';
 import iconContact from '../../assets/imgs/theme/icons/icon-contact.svg';
 import iconEmail2 from '../../assets/imgs/theme/icons/icon-email-2.svg';
@@ -33,8 +33,8 @@ const Footer = () => {
                                     Stay home & get your daily <br />
                                     needs from our shop
                                 </h2>
-                                <p className="mb-45">Start Your Daily Shopping with <span className="text-brand">Nest
-                                        Mart</span></p>
+                                <p className="mb-45">Start Your Daily Shopping with <span className="text-brand">Tags
+                                        Footwear</span></p>
                                 <form className="form-subcriber d-flex">
                                     <input type="email" placeholder="Your emaill address" />
                                     <button className="btn" type="submit">Subscribe</button>
@@ -126,7 +126,7 @@ const Footer = () => {
                             <div className="logo mb-30">
                                 <a className='mb-15' href='index.html'><img src={logo}
                                         alt="logo" /></a>
-                                <p className="font-lg text-heading">Awesome grocery store website template</p>
+                                <p className="font-lg text-heading">Awesome Modern Footwear Website </p>
                             </div>
                             <ul className="contact-infor">
                                 <li><img src={iconLocation} alt="" /><strong>Address:
@@ -135,7 +135,7 @@ const Footer = () => {
                                 <li><img src={iconContact} alt="" /><strong>Call
                                         Us:</strong><span>(+91) - 540-025-124553</span></li>
                                 <li><img src={iconEmail2}
-                                        alt="" /><strong>Email:</strong><span>sale@Nest.com</span></li>
+                                        alt="" /><strong>Email:</strong><span>sale@example.com</span></li>
                                 <li><img src={iconClock}
                                         alt="" /><strong>Hours:</strong><span>10:00 - 18:00, Mon - Sat</span></li>
                             </ul>
@@ -180,7 +180,7 @@ const Footer = () => {
                     <div className="footer-link-widget col">
                         <h4 className="widget-title">Popular</h4>
                         <ul className="footer-list mb-sm-5 mb-md-0">
-                            <li><a href="#">Milk & Flavoured Milk</a></li>
+                            <li><a href="#">Flavoured </a></li>
                             <li><a href="#">Butter and Margarine</a></li>
                             <li><a href="#">Eggs Substitutes</a></li>
                             <li><a href="#">Marmalades</a></li>
@@ -210,8 +210,8 @@ const Footer = () => {
                     <div className="footer-bottom"></div>
                 </div>
                 <div className="col-xl-4 col-lg-6 col-md-6">
-                    <p className="font-sm mb-0">&copy; 2024, <strong className="text-brand">Nest</strong> - HTML Ecommerce
-                        Template <br />All rights reserved</p>
+                    <p className="font-sm mb-0">&copy; 2024, <strong className="text-brand">Tags Footwear</strong> - React Ecommerce
+                         <br />All rights reserved</p>
                 </div>
                 <div className="col-xl-4 col-lg-6 text-center d-none d-xl-block">
                     <div className="hotline d-lg-inline-flex mr-30">
