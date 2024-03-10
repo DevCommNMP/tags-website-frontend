@@ -6,8 +6,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUserAction } from '../../../redux/actions/auth/authActions';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { loginUserAction } from '../../../redux/actions/auth/authActions';
 
 const Login = () => {
  
