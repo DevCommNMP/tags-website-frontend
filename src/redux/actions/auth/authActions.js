@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { baseUrl } from "../../../utils/baseUrl";
+import Cookies from 'js-cookie';
 // Register action
 export const registerUserAction = createAsyncThunk(
   "user/register",
@@ -40,7 +41,10 @@ export const loginUserAction = createAsyncThunk(
       const res = await axios.post(`${baseUrl}/api/auth/login`, userData, config);
       // Save response to local storage
       localStorage.setItem('userData', JSON.stringify(res.data));
-      return res.data;
+      const authToken = Cookies.get('authToken');
+      // console.log(authToken)
+      console.log(res)
+      return res.data;  
     } catch (error) {
      
       console.error(error);
