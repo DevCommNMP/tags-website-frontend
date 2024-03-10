@@ -4,6 +4,7 @@ import Hero from '../components/Hero/Hero'
 import Banner1 from '../components/OfferBanner/Banner1'
 
 import ProductTabSection from './ProductTabSection'
+import DailyBestSells from './DailyBestSells'
 
 const Homepage = () => {
   return (
@@ -24,7 +25,7 @@ const Homepage = () => {
         </div>
       </div>
       <ProductTabSection />
-
+      <DailyBestSells />
       <Footer />
     </>
   )

@@ -1,5 +1,4 @@
 import logo from '../../assets/imgs/theme/logo.png'
-import compareIcon from '../../assets/imgs/theme/icons/icon-compare.svg'
 import wishList from '../../assets/imgs/theme/icons/icon-heart.svg'
 import account from '../../assets/imgs/theme/icons/icon-user.svg'
 import cart from '../../assets/imgs/theme/icons/icon-cart.svg'
@@ -60,15 +59,7 @@ const HeaderMiddle = () => {
                       </select>
                     </form>
                   </div>
-                  <div className="header-action-icon-2">
-                    <a href="#">
-                      <img className="svgInject" alt="Nest" src={compareIcon} />
-                      <span className="pro-count blue">3</span>
-                    </a>
-                    <a href="#">
-                      <span className="lable ml-0">Compare</span>
-                    </a>
-                  </div>
+
                   <div className="header-action-icon-2">
                     <a href="#">
                       <img className="svgInject" alt="Nest" src={wishList} />
