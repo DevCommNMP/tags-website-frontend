@@ -1,8 +1,31 @@
-import React from "react";
+import product161 from '../assets/imgs/shop/product-16-1.jpg';
+// import product162 from '../assets/imgs/shop/product-16-2.jpg';
+// import product163 from '../assets/imgs/shop/product-16-3.jpg';
+// import product164 from '../assets/imgs/shop/product-16-4.jpg';
+// import product165 from '../assets/imgs/shop/product-16-5.jpg';
+// import product166 from '../assets/imgs/shop/product-16-6.jpg';
+// import product167 from '../assets/imgs/shop/product-16-7.jpg';
+// import thumbnail3 from '../assets/imgs/shop/thumbnail-3.jpg';
+// import thumbnail4 from '../assets/imgs/shop/thumbnail-4.jpg';
+// import thumbnail5 from '../assets/imgs/shop/thumbnail-5.jpg';
+// import thumbnail6 from '../assets/imgs/shop/thumbnail-6.jpg';
+// import thumbnail7 from '../assets/imgs/shop/thumbnail-7.jpg';
+// import thumbnail8 from '../assets/imgs/shop/thumbnail-8.jpg';
+// import thumbnail9 from '../assets/imgs/shop/thumbnail-9.jpg';
+import product21 from '../assets/imgs/shop/product-2-1.jpg';
+import product22 from '../assets/imgs/shop/product-2-2.jpg';
+import product31 from '../assets/imgs/shop/product-3-1.jpg';
+import product41 from '../assets/imgs/shop/product-4-1.jpg';
+import product42 from '../assets/imgs/shop/product-4-2.jpg';
+import product51 from '../assets/imgs/shop/product-5-1.jpg';
+import product32 from '../assets/imgs/shop/product-3-2.jpg';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 
 const Product = () => {
   return (
     <>
+    <Header />
       <main className="main">
         <div className="page-header breadcrumb-wrap">
           <div className="container">
@@ -28,131 +51,77 @@ const Product = () => {
                       </span>
                       <div className="product-image-slider">
                         <figure className="border-radius-10">
-                          <img
-                            src="assets/imgs/shop/product-16-2.jpg"
-                            alt="product image"
-                          />
+                          <img src={product161} alt="product image" />
+                        </figure>
+                        {/* <figure className="border-radius-10">
+                          <img src={product162} alt="product image" />
                         </figure>
                         <figure className="border-radius-10">
-                          <img
-                            src="assets/imgs/shop/product-16-1.jpg"
-                            alt="product image"
-                          />
+                          <img src={product163} alt="product image" />
                         </figure>
                         <figure className="border-radius-10">
-                          <img
-                            src="assets/imgs/shop/product-16-3.jpg"
-                            alt="product image"
-                          />
+                          <img src={product164} alt="product image" />
                         </figure>
                         <figure className="border-radius-10">
-                          <img
-                            src="assets/imgs/shop/product-16-4.jpg"
-                            alt="product image"
-                          />
+                          <img src={product165} alt="product image" />
                         </figure>
                         <figure className="border-radius-10">
-                          <img
-                            src="assets/imgs/shop/product-16-5.jpg"
-                            alt="product image"
-                          />
+                          <img src={product166} alt="product image" />
                         </figure>
                         <figure className="border-radius-10">
-                          <img
-                            src="assets/imgs/shop/product-16-6.jpg"
-                            alt="product image"
-                          />
-                        </figure>
-                        <figure className="border-radius-10">
-                          <img
-                            src="assets/imgs/shop/product-16-7.jpg"
-                            alt="product image"
-                          />
-                        </figure>
+                          <img src={product167} alt="product image" />
+                        </figure> */}
                       </div>
                       <div className="slider-nav-thumbnails">
-                        <div>
-                          <img
-                            src="assets/imgs/shop/thumbnail-3.jpg"
-                            alt="product image"
-                          />
+                        {/* <div>
+                          <img src={thumbnail3}alt="product image" />
                         </div>
                         <div>
-                          <img
-                            src="assets/imgs/shop/thumbnail-4.jpg"
-                            alt="product image"
-                          />
+                          <img src={thumbnail4} alt="product image" />
                         </div>
                         <div>
-                          <img
-                            src="assets/imgs/shop/thumbnail-5.jpg"
-                            alt="product image"
-                          />
+                          <img src={thumbnail5} alt="product image" />
                         </div>
                         <div>
-                          <img
-                            src="assets/imgs/shop/thumbnail-6.jpg"
-                            alt="product image"
-                          />
+                          <img src={thumbnail6} alt="product image" />
                         </div>
                         <div>
-                          <img
-                            src="assets/imgs/shop/thumbnail-7.jpg"
-                            alt="product image"
-                          />
+                          <img src={thumbnail7} alt="product image" />
                         </div>
                         <div>
-                          <img
-                            src="assets/imgs/shop/thumbnail-8.jpg"
-                            alt="product image"
-                          />
+                          <img src={thumbnail8} alt="product image" />
                         </div>
                         <div>
-                          <img
-                            src="assets/imgs/shop/thumbnail-9.jpg"
-                            alt="product image"
-                          />
-                        </div>
+                          <img src={thumbnail9} alt="product image" />
+                        </div> */}
                       </div>
                     </div>
                   </div>
                   <div className="col-md-6 col-sm-12 col-xs-12">
                     <div className="detail-info pr-30 pl-30">
                       <span className="stock-status out-stock"> Sale Off </span>
-                      <h2 className="title-detail">
-                        Seeds of Change Organic Quinoa, Brown
-                      </h2>
+                      <h2 className="title-detail">Seeds of Change Organic Quinoa, Brown</h2>
                       <div className="product-detail-rating">
                         <div className="product-rate-cover text-end">
                           <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style="width: 90%"
-                            ></div>
+                            <div className="product-rating" style={{ width: '90%' }}></div>
                           </div>
-                          <span className="font-small ml-5 text-muted">
-                            
-                            (32 reviews)
-                          </span>
+                          <span className="font-small ml-5 text-muted">(32 reviews)</span>
                         </div>
                       </div>
                       <div className="clearfix product-price-cover">
                         <div className="product-price primary-color float-left">
                           <span className="current-price text-brand">$38</span>
                           <span>
-                            <span className="save-price font-md color3 ml-15">
-                              26% Off
-                            </span>
+                            <span className="save-price font-md color3 ml-15">26% Off</span>
                             <span className="old-price font-md ml-15">$52</span>
                           </span>
                         </div>
                       </div>
                       <div className="short-desc mb-30">
                         <p className="font-lg">
-                          Lorem ipsum dolor, sit amet consectetur adipisicing
-                          elit. Aliquam rem officia, corrupti reiciendis minima
-                          nisi modi, quasi, odio minus dolore impedit fuga eum
-                          eligendi.
+                          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi
+                          modi, quasi, odio minus dolore impedit fuga eum eligendi.
                         </p>
                       </div>
                       <div className="attr-detail attr-size mb-30">
@@ -180,36 +149,19 @@ const Product = () => {
                           <a href="#" className="qty-down">
                             <i className="fi-rs-angle-small-down"></i>
                           </a>
-                          <input
-                            type="text"
-                            name="quantity"
-                            className="qty-val"
-                            defaultValue="1"
-                            min="1"
-                          />
+                          <input type="text" name="quantity" className="qty-val" defaultValue="1" min="1" />
                           <a href="#" className="qty-up">
                             <i className="fi-rs-angle-small-up"></i>
                           </a>
                         </div>
                         <div className="product-extra-link2">
-                          <button
-                            type="submit"
-                            className="button button-add-to-cart"
-                          >
+                          <button type="submit" className="button button-add-to-cart">
                             <i className="fi-rs-shopping-cart"></i>Add to cart
                           </button>
-                          <a
-                            aria-label="Add To Wishlist"
-                            class="action-btn hover-up"
-                            href="shop-wishlist.html"
-                          >
+                          <a aria-label="Add To Wishlist" className="action-btn hover-up" href="shop-wishlist.html">
                             <i className="fi-rs-heart"></i>
                           </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn hover-up"
-                            href="shop-compare.html"
-                          >
+                          <a aria-label="Compare" className="action-btn hover-up" href="shop-compare.html">
                             <i className="fi-rs-shuffle"></i>
                           </a>
                         </div>
@@ -246,9 +198,7 @@ const Product = () => {
                           </li>
                           <li>
                             Stock:
-                            <span className="in-stock text-brand ml-5">
-                              8 Items In Stock
-                            </span>
+                            <span className="in-stock text-brand ml-5">8 Items In Stock</span>
                           </li>
                         </ul>
                       </div>
@@ -259,76 +209,46 @@ const Product = () => {
                   <div className="tab-style3">
                     <ul className="nav nav-tabs text-uppercase">
                       <li className="nav-item">
-                        <a
-                          className="nav-link active"
-                          id="Description-tab"
-                          data-bs-toggle="tab"
-                          href="#Description"
-                        >
+                        <a className="nav-link active" id="Description-tab" data-bs-toggle="tab" href="#Description">
                           Description
                         </a>
                       </li>
                       <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          id="Additional-info-tab"
-                          data-bs-toggle="tab"
-                          href="#Additional-info"
-                        >
+                        <a className="nav-link" id="Additional-info-tab" data-bs-toggle="tab" href="#Additional-info">
                           Additional info
                         </a>
                       </li>
                       <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          id="Vendor-info-tab"
-                          data-bs-toggle="tab"
-                          href="#Vendor-info"
-                        >
+                        <a className="nav-link" id="Vendor-info-tab" data-bs-toggle="tab" href="#Vendor-info">
                           Vendor
                         </a>
                       </li>
                       <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          id="Reviews-tab"
-                          data-bs-toggle="tab"
-                          href="#Reviews"
-                        >
+                        <a className="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews">
                           Reviews (3)
                         </a>
                       </li>
                     </ul>
                     <div className="tab-content shop_info_tab entry-main-content">
-                      <div
-                        className="tab-pane fade show active"
-                        id="Description"
-                      >
+                      <div className="tab-pane fade show active" id="Description">
                         <div className="">
                           <p>
-                            Uninhibited carnally hired played in whimpered dear
-                            gorilla koala depending and much yikes off far
-                            quetzal goodness and from for grimaced goodness
-                            unaccountably and meadowlark near unblushingly
-                            crucial scallop tightly neurotic hungrily some and
-                            dear furiously this apart.
+                            Uninhibited carnally hired played in whimpered dear gorilla koala depending and much yikes off far quetzal
+                            goodness and from for grimaced goodness unaccountably and meadowlark near unblushingly crucial scallop tightly
+                            neurotic hungrily some and dear furiously this apart.
                           </p>
                           <p>
-                            Spluttered narrowly yikes left moth in yikes bowed
-                            this that grizzly much hello on spoon-fed that alas
-                            rethought much decently richly and wow against the
-                            frequent fluidly at formidable acceptably flapped
-                            besides and much circa far over the bucolically hey
-                            precarious goldfinch mastodon goodness gnashed a
-                            jellyfish and one however because.
+                            Spluttered narrowly yikes left moth in yikes bowed this that grizzly much hello on spoon-fed that alas rethought
+                            much decently richly and wow against the frequent fluidly at formidable acceptably flapped besides and much
+                            circa far over the bucolically hey precarious goldfinch mastodon goodness gnashed a jellyfish and one however
+                            because.
                           </p>
                           <ul className="product-more-infor mt-30">
                             <li>
                               <span>Type Of Packing</span> Bottle
                             </li>
                             <li>
-                              <span>Color</span> Green, Pink, Powder Blue,
-                              Purple
+                              <span>Color</span> Green, Pink, Powder Blue, Purple
                             </li>
                             <li>
                               <span>Quantity Per Case</span> 100ml
@@ -342,38 +262,24 @@ const Product = () => {
                           </ul>
                           <hr className="wp-block-separator is-style-dots" />
                           <p>
-                            Laconic overheard dear woodchuck wow this
-                            outrageously taut beaver hey hello far meadowlark
-                            imitatively egregiously hugged that yikes minimally
-                            unanimous pouted flirtatiously as beaver beheld
-                            above forward energetic across this jeepers
-                            beneficently cockily less a the raucously that magic
-                            upheld far so the this where crud then below after
-                            jeez enchanting drunkenly more much wow callously
-                            irrespective limpet.
+                            Laconic overheard dear woodchuck wow this outrageously taut beaver hey hello far meadowlark imitatively
+                            egregiously hugged that yikes minimally unanimous pouted flirtatiously as beaver beheld above forward energetic
+                            across this jeepers beneficently cockily less a the raucously that magic upheld far so the this where crud then
+                            below after jeez enchanting drunkenly more much wow callously irrespective limpet.
                           </p>
                           <h4 className="mt-30">Packaging & Delivery</h4>
                           <hr className="wp-block-separator is-style-wide" />
                           <p>
-                            Less lion goodness that euphemistically robin
-                            expeditiously bluebird smugly scratched far while
-                            thus cackled sheepishly rigid after due one
-                            assenting regarding censorious while occasional or
-                            this more crane went more as this less much amid
-                            overhung anathematic because much held one
-                            exuberantly sheep goodness so where rat wry well
+                            Less lion goodness that euphemistically robin expeditiously bluebird smugly scratched far while thus cackled
+                            sheepishly rigid after due one assenting regarding censorious while occasional or this more crane went more as
+                            this less much amid overhung anathematic because much held one exuberantly sheep goodness so where rat wry well
                             concomitantly.
                           </p>
                           <p>
-                            Scallop or far crud plain remarkably far by thus far
-                            iguana lewd precociously and and less rattlesnake
-                            contrary caustic wow this near alas and next and
-                            pled the yikes articulate about as less cackled
-                            dalmatian in much less well jeering for the thanks
-                            blindly sentimental whimpered less across
-                            objectively fanciful grimaced wildly some wow and
-                            rose jeepers outgrew lugubrious luridly irrationally
-                            attractively dachshund.
+                            Scallop or far crud plain remarkably far by thus far iguana lewd precociously and and less rattlesnake contrary
+                            caustic wow this near alas and next and pled the yikes articulate about as less cackled dalmatian in much less
+                            well jeering for the thanks blindly sentimental whimpered less across objectively fanciful grimaced wildly some
+                            wow and rose jeepers outgrew lugubrious luridly irrationally attractively dachshund.
                           </p>
                           <h4 className="mt-30">Suggested Use</h4>
                           <ul className="product-more-infor mt-30">
@@ -383,21 +289,12 @@ const Product = () => {
                           <h4 className="mt-30">Other Ingredients</h4>
                           <ul className="product-more-infor mt-30">
                             <li>Organic raw pecans, organic raw cashews.</li>
-                            <li>
-                              This butter was produced using a LTG (Low
-                              Temperature Grinding) process
-                            </li>
-                            <li>
-                              Made in machinery that processes tree nuts but
-                              does not process peanuts, gluten, dairy or soy
-                            </li>
+                            <li>This butter was produced using a LTG (Low Temperature Grinding) process</li>
+                            <li>Made in machinery that processes tree nuts but does not process peanuts, gluten, dairy or soy</li>
                           </ul>
                           <h4 className="mt-30">Warnings</h4>
                           <ul className="product-more-infor mt-30">
-                            <li>
-                              Oil separation occurs naturally. May contain
-                              pieces of shell.
-                            </li>
+                            <li>Oil separation occurs naturally. May contain pieces of shell.</li>
                           </ul>
                         </div>
                       </div>
@@ -407,9 +304,7 @@ const Product = () => {
                             <tr className="stand-up">
                               <th>Stand Up</th>
                               <td>
-                                <p>
-                                  35″L x 24″W x 37-45″H(front to back wheel)
-                                </p>
+                                <p>35″L x 24″W x 37-45″H(front to back wheel)</p>
                               </td>
                             </tr>
                             <tr className="folded-wo-wheels">
@@ -502,35 +397,20 @@ const Product = () => {
                             </h6>
                             <div className="product-rate-cover text-end">
                               <div className="product-rate d-inline-block">
-                                <div
-                                  className="product-rating"
-                                  style="width: 90%"
-                                ></div>
+                                <div className="product-rating" style={{ width: '90%' }}></div>
                               </div>
-                              <span className="font-small ml-5 text-muted">
-                                
-                                (32 reviews)
-                              </span>
+                              <span className="font-small ml-5 text-muted">(32 reviews)</span>
                             </div>
                           </div>
                         </div>
                         <ul className="contact-infor mb-50">
                           <li>
-                            <img
-                              src="assets/imgs/theme/icons/icon-location.svg"
-                              alt=""
-                            />
+                            <img src="assets/imgs/theme/icons/icon-location.svg" alt="" />
                             <strong>Address: </strong>
-                            <span>
-                              5171 W Campbell Ave undefined Kent, Utah 53127
-                              United States
-                            </span>
+                            <span>5171 W Campbell Ave undefined Kent, Utah 53127 United States</span>
                           </li>
                           <li>
-                            <img
-                              src="assets/imgs/theme/icons/icon-contact.svg"
-                              alt=""
-                            />
+                            <img src="assets/imgs/theme/icons/icon-contact.svg" alt="" />
                             <strong>Contact Seller:</strong>
                             <span>(+91) - 540-025-553</span>
                           </li>
@@ -550,61 +430,39 @@ const Product = () => {
                           </div>
                         </div>
                         <p>
-                          Noodles & Company is an American fast-casual
-                          restaurant that offers international and American
-                          noodle dishes and pasta in addition to soups and
-                          salads. Noodles & Company was founded in 1995 by Aaron
-                          Kennedy and is headquartered in Broomfield, Colorado.
-                          The company went public in 2013 and recorded a $457
-                          million revenue in 2017.In late 2018, there were 460
-                          Noodles & Company locations across 29 states and
-                          Washington, D.C.
+                          Noodles & Company is an American fast-casual restaurant that offers international and American noodle dishes and
+                          pasta in addition to soups and salads. Noodles & Company was founded in 1995 by Aaron Kennedy and is headquartered
+                          in Broomfield, Colorado. The company went public in 2013 and recorded a $457 million revenue in 2017.In late 2018,
+                          there were 460 Noodles & Company locations across 29 states and Washington, D.C.
                         </p>
                       </div>
                       <div className="tab-pane fade" id="Reviews">
                         <div className="comments-area">
                           <div className="row">
                             <div className="col-lg-8">
-                              <h4 className="mb-30">
-                                Customer questions & answers
-                              </h4>
+                              <h4 className="mb-30">Customer questions & answers</h4>
                               <div className="comment-list">
                                 <div className="single-comment justify-content-between d-flex mb-30">
                                   <div className="user justify-content-between d-flex">
                                     <div className="thumb text-center">
-                                      <img
-                                        src="assets/imgs/blog/author-2.png"
-                                        alt=""
-                                      />
-                                      <a
-                                        href="#"
-                                        className="font-heading text-brand"
-                                      >
+                                      <img src="assets/imgs/blog/author-2.png" alt="" />
+                                      <a href="#" className="font-heading text-brand">
                                         Sienna
                                       </a>
                                     </div>
                                     <div className="desc">
                                       <div className="d-flex justify-content-between mb-10">
                                         <div className="d-flex align-items-center">
-                                          <span className="font-xs text-muted">
-                                            December 4, 2024 at 3:12 pm
-                                          </span>
+                                          <span className="font-xs text-muted">December 4, 2024 at 3:12 pm</span>
                                         </div>
                                         <div className="product-rate d-inline-block">
-                                          <div
-                                            className="product-rating"
-                                            style="width: 100%"
-                                          ></div>
+                                          <div className="product-rating" style={{ width: '100%' }}></div>
                                         </div>
                                       </div>
                                       <p className="mb-10">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. Delectus, suscipit
-                                        exercitationem accusantium obcaecati
-                                        quos voluptate nesciunt facilis itaque
-                                        modi commodi dignissimos sequi
-                                        repudiandae minus ab deleniti totam
-                                        officia id incidunt?
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit exercitationem
+                                        accusantium obcaecati quos voluptate nesciunt facilis itaque modi commodi dignissimos sequi
+                                        repudiandae minus ab deleniti totam officia id incidunt?
                                         <a href="#" className="reply">
                                           Reply
                                         </a>
@@ -615,39 +473,24 @@ const Product = () => {
                                 <div className="single-comment justify-content-between d-flex mb-30 ml-30">
                                   <div className="user justify-content-between d-flex">
                                     <div className="thumb text-center">
-                                      <img
-                                        src="assets/imgs/blog/author-3.png"
-                                        alt=""
-                                      />
-                                      <a
-                                        href="#"
-                                        className="font-heading text-brand"
-                                      >
+                                      <img src="assets/imgs/blog/author-3.png" alt="" />
+                                      <a href="#" className="font-heading text-brand">
                                         Brenna
                                       </a>
                                     </div>
                                     <div className="desc">
                                       <div className="d-flex justify-content-between mb-10">
                                         <div className="d-flex align-items-center">
-                                          <span className="font-xs text-muted">
-                                            December 4, 2024 at 3:12 pm
-                                          </span>
+                                          <span className="font-xs text-muted">December 4, 2024 at 3:12 pm</span>
                                         </div>
                                         <div className="product-rate d-inline-block">
-                                          <div
-                                            className="product-rating"
-                                            style="width: 80%"
-                                          ></div>
+                                          <div className="product-rating" style={{ width: '80%' }}></div>
                                         </div>
                                       </div>
                                       <p className="mb-10">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. Delectus, suscipit
-                                        exercitationem accusantium obcaecati
-                                        quos voluptate nesciunt facilis itaque
-                                        modi commodi dignissimos sequi
-                                        repudiandae minus ab deleniti totam
-                                        officia id incidunt?
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit exercitationem
+                                        accusantium obcaecati quos voluptate nesciunt facilis itaque modi commodi dignissimos sequi
+                                        repudiandae minus ab deleniti totam officia id incidunt?
                                         <a href="#" className="reply">
                                           Reply
                                         </a>
@@ -658,39 +501,24 @@ const Product = () => {
                                 <div className="single-comment justify-content-between d-flex">
                                   <div className="user justify-content-between d-flex">
                                     <div className="thumb text-center">
-                                      <img
-                                        src="assets/imgs/blog/author-4.png"
-                                        alt=""
-                                      />
-                                      <a
-                                        href="#"
-                                        className="font-heading text-brand"
-                                      >
+                                      <img src="assets/imgs/blog/author-4.png" alt="" />
+                                      <a href="#" className="font-heading text-brand">
                                         Gemma
                                       </a>
                                     </div>
                                     <div className="desc">
                                       <div className="d-flex justify-content-between mb-10">
                                         <div className="d-flex align-items-center">
-                                          <span className="font-xs text-muted">
-                                            December 4, 2024 at 3:12 pm
-                                          </span>
+                                          <span className="font-xs text-muted">December 4, 2024 at 3:12 pm</span>
                                         </div>
                                         <div className="product-rate d-inline-block">
-                                          <div
-                                            className="product-rating"
-                                            style="width: 80%"
-                                          ></div>
+                                          <div className="product-rating" style={{ width: '80%' }}></div>
                                         </div>
                                       </div>
                                       <p className="mb-10">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. Delectus, suscipit
-                                        exercitationem accusantium obcaecati
-                                        quos voluptate nesciunt facilis itaque
-                                        modi commodi dignissimos sequi
-                                        repudiandae minus ab deleniti totam
-                                        officia id incidunt?
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit exercitationem
+                                        accusantium obcaecati quos voluptate nesciunt facilis itaque modi commodi dignissimos sequi
+                                        repudiandae minus ab deleniti totam officia id incidunt?
                                         <a href="#" className="reply">
                                           Reply
                                         </a>
@@ -704,10 +532,7 @@ const Product = () => {
                               <h4 className="mb-30">Customer reviews</h4>
                               <div className="d-flex mb-30">
                                 <div className="product-rate d-inline-block mr-15">
-                                  <div
-                                    className="product-rating"
-                                    style="width: 90%"
-                                  ></div>
+                                  <div className="product-rating" style={{ width: '90%' }}></div>
                                 </div>
                                 <h6>4.8 out of 5</h6>
                               </div>
@@ -716,7 +541,7 @@ const Product = () => {
                                 <div
                                   className="progress-bar"
                                   role="progressbar"
-                                  style="width: 50%"
+                                  style={{ width: '50%' }}
                                   aria-valuenow="50"
                                   aria-valuemin="0"
                                   aria-valuemax="100"
@@ -729,7 +554,7 @@ const Product = () => {
                                 <div
                                   className="progress-bar"
                                   role="progressbar"
-                                  style="width: 25%"
+                                  style={{ width: '25%' }}
                                   aria-valuenow="25"
                                   aria-valuemin="0"
                                   aria-valuemax="100"
@@ -742,7 +567,7 @@ const Product = () => {
                                 <div
                                   className="progress-bar"
                                   role="progressbar"
-                                  style="width: 45%"
+                                  style={{ width: '45%' }}
                                   aria-valuenow="45"
                                   aria-valuemin="0"
                                   aria-valuemax="100"
@@ -755,7 +580,7 @@ const Product = () => {
                                 <div
                                   className="progress-bar"
                                   role="progressbar"
-                                  style="width: 65%"
+                                  style={{ width: '65%' }}
                                   aria-valuenow="65"
                                   aria-valuemin="0"
                                   aria-valuemax="100"
@@ -768,7 +593,7 @@ const Product = () => {
                                 <div
                                   className="progress-bar"
                                   role="progressbar"
-                                  style="width: 85%"
+                                  style={{ width: '85%' }}
                                   aria-valuenow="85"
                                   aria-valuemin="0"
                                   aria-valuemax="100"
@@ -787,11 +612,7 @@ const Product = () => {
                           <div className="product-rate d-inline-block mb-30"></div>
                           <div className="row">
                             <div className="col-lg-8 col-md-12">
-                              <form
-                                className="form-contact comment_form"
-                                action="#"
-                                id="commentForm"
-                              >
+                              <form className="form-contact comment_form" action="#" id="commentForm">
                                 <div className="row">
                                   <div className="col-12">
                                     <div className="form-group">
@@ -807,43 +628,22 @@ const Product = () => {
                                   </div>
                                   <div className="col-sm-6">
                                     <div className="form-group">
-                                      <input
-                                        className="form-control"
-                                        name="name"
-                                        id="name"
-                                        type="text"
-                                        placeholder="Name"
-                                      />
+                                      <input className="form-control" name="name" id="name" type="text" placeholder="Name" />
                                     </div>
                                   </div>
                                   <div className="col-sm-6">
                                     <div className="form-group">
-                                      <input
-                                        className="form-control"
-                                        name="email"
-                                        id="email"
-                                        type="email"
-                                        placeholder="Email"
-                                      />
+                                      <input className="form-control" name="email" id="email" type="email" placeholder="Email" />
                                     </div>
                                   </div>
                                   <div className="col-12">
                                     <div className="form-group">
-                                      <input
-                                        className="form-control"
-                                        name="website"
-                                        id="website"
-                                        type="text"
-                                        placeholder="Website"
-                                      />
+                                      <input className="form-control" name="website" id="website" type="text" placeholder="Website" />
                                     </div>
                                   </div>
                                 </div>
                                 <div className="form-group">
-                                  <button
-                                    type="submit"
-                                    className="button button-contactForm"
-                                  >
+                                  <button type="submit" className="button button-contactForm">
                                     Submit Review
                                   </button>
                                 </div>
@@ -857,9 +657,7 @@ const Product = () => {
                 </div>
                 <div className="row mt-60">
                   <div className="col-12">
-                    <h2 className="section-title style-1 mb-30">
-                      Related products
-                    </h2>
+                    <h2 className="section-title style-1 mb-30">Related products</h2>
                   </div>
                   <div className="col-12">
                     <div className="row related-products">
@@ -868,16 +666,8 @@ const Product = () => {
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
                               <a href="shop-product-right.html" tabIndex="0">
-                                <img
-                                  className="default-img"
-                                  src="assets/imgs/shop/product-2-1.jpg"
-                                  alt=""
-                                />
-                                <img
-                                  className="hover-img"
-                                  src="assets/imgs/shop/product-2-2.jpg"
-                                  alt=""
-                                />
+                                <img className="default-img" src={product21} alt="" />
+                                <img className="hover-img" src={product22} alt="" />
                               </a>
                             </div>
                             <div className="product-action-1">
@@ -889,20 +679,10 @@ const Product = () => {
                               >
                                 <i className="fi-rs-search"></i>
                               </a>
-                              <a
-                                aria-label="Add To Wishlist"
-                                class="action-btn small hover-up"
-                                href="shop-wishlist.html"
-                                tabIndex="0"
-                              >
+                              <a aria-label="Add To Wishlist" className="action-btn small hover-up" href="shop-wishlist.html" tabIndex="0">
                                 <i className="fi-rs-heart"></i>
                               </a>
-                              <a
-                                aria-label="Compare"
-                                class="action-btn small hover-up"
-                                href="shop-compare.html"
-                                tabIndex="0"
-                              >
+                              <a aria-label="Compare" className="action-btn small hover-up" href="shop-compare.html" tabIndex="0">
                                 <i className="fi-rs-shuffle"></i>
                               </a>
                             </div>
@@ -931,16 +711,8 @@ const Product = () => {
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
                               <a href="shop-product-right.html" tabIndex="0">
-                                <img
-                                  className="default-img"
-                                  src="assets/imgs/shop/product-3-1.jpg"
-                                  alt=""
-                                />
-                                <img
-                                  className="hover-img"
-                                  src="assets/imgs/shop/product-4-2.jpg"
-                                  alt=""
-                                />
+                                <img className="default-img" src={product31}alt="" />
+                                <img className="hover-img" src={product32}alt="" />
                               </a>
                             </div>
                             <div className="product-action-1">
@@ -952,20 +724,10 @@ const Product = () => {
                               >
                                 <i className="fi-rs-search"></i>
                               </a>
-                              <a
-                                aria-label="Add To Wishlist"
-                                class="action-btn small hover-up"
-                                href="shop-wishlist.html"
-                                tabIndex="0"
-                              >
+                              <a aria-label="Add To Wishlist" className="action-btn small hover-up" href="shop-wishlist.html" tabIndex="0">
                                 <i className="fi-rs-heart"></i>
                               </a>
-                              <a
-                                aria-label="Compare"
-                                class="action-btn small hover-up"
-                                href="shop-compare.html"
-                                tabIndex="0"
-                              >
+                              <a aria-label="Compare" className="action-btn small hover-up" href="shop-compare.html" tabIndex="0">
                                 <i className="fi-rs-shuffle"></i>
                               </a>
                             </div>
@@ -994,16 +756,8 @@ const Product = () => {
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
                               <a href="shop-product-right.html" tabIndex="0">
-                                <img
-                                  className="default-img"
-                                  src="assets/imgs/shop/product-4-1.jpg"
-                                  alt=""
-                                />
-                                <img
-                                  className="hover-img"
-                                  src="assets/imgs/shop/product-4-2.jpg"
-                                  alt=""
-                                />
+                                <img className="default-img" src={product41} alt="" />
+                                <img className="hover-img" src={product42} alt="" />
                               </a>
                             </div>
                             <div className="product-action-1">
@@ -1015,20 +769,10 @@ const Product = () => {
                               >
                                 <i className="fi-rs-search"></i>
                               </a>
-                              <a
-                                aria-label="Add To Wishlist"
-                                class="action-btn small hover-up"
-                                href="shop-wishlist.html"
-                                tabIndex="0"
-                              >
+                              <a aria-label="Add To Wishlist" className="action-btn small hover-up" href="shop-wishlist.html" tabIndex="0">
                                 <i className="fi-rs-heart"></i>
                               </a>
-                              <a
-                                aria-label="Compare"
-                                class="action-btn small hover-up"
-                                href="shop-compare.html"
-                                tabIndex="0"
-                              >
+                              <a aria-label="Compare" className="action-btn small hover-up" href="shop-compare.html" tabIndex="0">
                                 <i className="fi-rs-shuffle"></i>
                               </a>
                             </div>
@@ -1057,16 +801,8 @@ const Product = () => {
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
                               <a href="shop-product-right.html" tabIndex="0">
-                                <img
-                                  className="default-img"
-                                  src="assets/imgs/shop/product-5-1.jpg"
-                                  alt=""
-                                />
-                                <img
-                                  className="hover-img"
-                                  src="assets/imgs/shop/product-3-2.jpg"
-                                  alt=""
-                                />
+                                <img className="default-img" src={product51} alt="" />
+                                <img className="hover-img" src={product32} alt="" />
                               </a>
                             </div>
                             <div className="product-action-1">
@@ -1078,20 +814,10 @@ const Product = () => {
                               >
                                 <i className="fi-rs-search"></i>
                               </a>
-                              <a
-                                aria-label="Add To Wishlist"
-                                class="action-btn small hover-up"
-                                href="shop-wishlist.html"
-                                tabIndex="0"
-                              >
+                              <a aria-label="Add To Wishlist" className="action-btn small hover-up" href="shop-wishlist.html" tabIndex="0">
                                 <i className="fi-rs-heart"></i>
                               </a>
-                              <a
-                                aria-label="Compare"
-                                class="action-btn small hover-up"
-                                href="shop-compare.html"
-                                tabIndex="0"
-                              >
+                              <a aria-label="Compare" className="action-btn small hover-up" href="shop-compare.html" tabIndex="0">
                                 <i className="fi-rs-shuffle"></i>
                               </a>
                             </div>
@@ -1123,8 +849,9 @@ const Product = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Product;
+export default Product
