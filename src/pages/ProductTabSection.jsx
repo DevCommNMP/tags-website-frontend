@@ -3,27 +3,27 @@ const dummydata=[
   {
     "id": 1,
     "name": "Item 1",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img1.jpg'
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img1.jpg'
   },
   {
     "id": 2,
     "name": "Item 2",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img2.jpg'
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img2.jpg'
   },
   {
     "id": 3,
     "name": "Item 3",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img3.jpg'
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img3.jpg'
   },
   {
     "id": 4,
     "name": "Item 4",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img4.jpg'
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img4.jpg'
   },
   {
     "id": 5,
     "name": "Item 5",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img5.jpg'
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img5.jpg'
   },
  
 ]
