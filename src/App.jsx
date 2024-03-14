@@ -10,6 +10,11 @@ import ForgotPassword from './components/Auth/ForgotPassword/ForgotPassword.jsx'
 import Account from './components/Account/Account.jsx';
 import VerifyMail from './components/Auth/verifyMail/verifyMail.jsx'
 import Product from './pages/product.jsx'
+import SingleProductImages from './components/SingleProductImages.jsx'
+
+import Checkout from './components/Checkout.jsx'
+
+
 
 
 function App() {
@@ -29,6 +34,10 @@ function App() {
               <Route exact path="/reset_password" element={<ResetPassword/>} />
               <Route exact path="/forgot_password" element={<ForgotPassword/>} />
               <Route exact path="/account" element={<Account/>} />
+
+              <Route exact path="/productImages" element={<SingleProductImages/>} />
+              <Route exact path="/checkout" element={<Checkout />} />
+
             </Routes>
         </BrowserRouter>
       </Provider>
