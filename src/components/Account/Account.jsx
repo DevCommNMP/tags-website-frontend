@@ -17,7 +17,7 @@ const Account = () => {
                           href="#dashboard"
                           role="tab"
                           aria-controls="dashboard"
-                          aria-selected="false"
+                          aria-selected="true"
                         >
                           <i className="fi-rs-settings-sliders mr-10"></i>Dashboard
                         </a>
@@ -56,7 +56,7 @@ const Account = () => {
                           href="#address"
                           role="tab"
                           aria-controls="address"
-                          aria-selected="true"
+                          aria-selected="false"
                         >
                           <i className="fi-rs-marker mr-10"></i>My Address
                         </a>
@@ -69,7 +69,7 @@ const Account = () => {
                           href="#account-detail"
                           role="tab"
                           aria-controls="account-detail"
-                          aria-selected="true"
+                          aria-selected="false"
                         >
                           <i className="fi-rs-user mr-10"></i>Account details
                         </a>
@@ -91,9 +91,9 @@ const Account = () => {
                         </div>
                         <div className="card-body">
                           <p>
-                            From your account dashboard. you can easily check &amp; view your <a href="#">recent orders</a>,<br />
-                            manage your <a href="#">shipping and billing addresses</a> and{' '}
-                            <a href="#">edit your password and account details.</a>
+                            From your account dashboard. you can easily check &amp; view your <a href="#orders">recent orders</a>,<br />
+                            manage your <a href="#address">shipping and billing addresses</a> and{' '}
+                            <a href="#account-detail">edit your password and account details.</a>
                           </p>
                         </div>
                       </div>
@@ -103,7 +103,7 @@ const Account = () => {
                         <div className="card-header">
                           <h3 className="mb-0">Your Orders</h3>
                         </div>
-                        <div className="card-body">
+                        <div className="card-body"> 
                           <div className="table-responsive">
                             <table className="table">
                               <thead>
@@ -162,7 +162,7 @@ const Account = () => {
                         </div>
                         <div className="card-body contact-from-area">
                           <p>
-                            To track your order please enter your OrderID in the box below and press &#34Track&#34 button. This was given to you
+                            To track your order please enter your OrderID in the box below and press &#34;Track&#34; button. This was given to you
                             on your receipt and in the confirmation email you should have received.
                           </p>
                           <div className="row">
@@ -304,4 +304,4 @@ const Account = () => {
   )
 }
 
-export default Account
+export default Account;

@@ -11,6 +11,7 @@ import ForgotPassword from './components/Auth/ForgotPassword/ForgotPassword.jsx'
 import Account from './components/Account/Account.jsx';
 import VerifyMail from './components/Auth/verifyMail/verifyMail.jsx'
 import Product from './pages/product.jsx'
+import AccountPage from './pages/AccountPage.jsx'
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Homepage />} />
               <Route exact path="/product" element={<Product />} />
-             
+              <Route exact path="/account" element={<AccountPage />} />       
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/verify-email" element={<VerifyMail/>} />
           <Route exact path="/forgot-password" element={<ForgotPassword/>} />
