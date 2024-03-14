@@ -12,7 +12,7 @@ import VerifyMail from './components/Auth/verifyMail/verifyMail.jsx'
 import Product from './pages/product.jsx'
 import SingleProductImages from './components/SingleProductImages.jsx'
 
-import Checkout from './components/Checkout.jsx'
+import CheckoutPage from './pages/CheckoutPage.jsx'
 
 
 
@@ -36,8 +36,7 @@ function App() {
               <Route exact path="/account" element={<Account/>} />
 
               <Route exact path="/productImages" element={<SingleProductImages/>} />
-              <Route exact path="/checkout" element={<Checkout />} />
-
+              <Route exact path="/checkout" element={<CheckoutPage />} />
             </Routes>
         </BrowserRouter>
       </Provider>
