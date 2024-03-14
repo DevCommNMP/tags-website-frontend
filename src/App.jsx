@@ -29,6 +29,8 @@ function App() {
               <Route exact path="/signup" element={<SignUp />} />
               <Route exact path="/reset_password" element={<ResetPassword/>} />
               <Route exact path="/forgot_password" element={<ForgotPassword/>} />
+              <Route exact path="/account" element={<Account/>} />
+              {/* <Route exact path="/product-details" element={<Product />} /> */}
             </Routes>
         </BrowserRouter>
       </Provider>
