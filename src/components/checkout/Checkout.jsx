@@ -1,10 +1,11 @@
-import product11 from '../assets/imgs/shop/product-2-1.jpg'
-import product21 from '../assets/imgs/shop/product-2-1.jpg'
-import product31 from '../assets/imgs/shop/product-3-1.jpg'
-import paymentPaypal from '../assets/imgs/theme/icons/payment-paypal.svg'
-import paymentVisa from '../assets/imgs/theme/icons/payment-visa.svg'
-import paymentMaster from '../assets/imgs/theme/icons/payment-master.svg'
-import paymentZapper from '../assets/imgs/theme/icons/payment-zapper.svg'
+import product11 from '../../assets/imgs/shop/product-2-1.jpg'
+import product21 from '../../assets/imgs/shop/product-2-1.jpg'
+import product31 from '../../assets/imgs/shop/product-3-1.jpg'
+import paymentPaypal from '../../assets/imgs/theme/icons/payment-paypal.svg'
+import paymentVisa from '../../assets/imgs/theme/icons/payment-visa.svg'
+import paymentMaster from '../../assets/imgs/theme/icons/payment-master.svg'
+import paymentZapper from '../../assets/imgs/theme/icons/payment-zapper.svg'
+
 
 
 import React from 'react'

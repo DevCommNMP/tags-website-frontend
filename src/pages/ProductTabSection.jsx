@@ -9,7 +9,7 @@ const dummydata=[
   {
     "id": 2,
     "name": "Item 2",
-    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img2.jpg'
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img3.jpg'
   },
   {
     "id": 3,
