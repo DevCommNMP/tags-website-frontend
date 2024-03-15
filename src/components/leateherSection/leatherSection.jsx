@@ -1,4 +1,4 @@
-
+import { Link, useNavigate } from "react-router-dom"
 const dummydata=[
     {
       "id": 1,
@@ -28,6 +28,11 @@ const dummydata=[
     
   ]
   const LeatherSection = () => {
+    const navigate=useNavigate()
+    const onClickProductHandler=(productid)=>{
+      navigate(`/products/${productid}`)
+    }
+
     return (
       <>
         <section className="product-tabs section-padding position-relative">
@@ -70,7 +75,7 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                         </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
@@ -635,7 +640,7 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                         </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
@@ -1197,7 +1202,7 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                         </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
@@ -1759,7 +1764,7 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                         </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
@@ -2321,7 +2326,7 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                         </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
@@ -2883,7 +2888,7 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                         </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
@@ -3445,7 +3450,7 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                         </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">

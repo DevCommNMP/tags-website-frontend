@@ -1,3 +1,4 @@
+import { Link, useNavigate } from "react-router-dom"
 
 const dummydata=[
   {
@@ -8,7 +9,7 @@ const dummydata=[
   {
     "id": 2,
     "name": "Item 2",
-    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img2.jpg'
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img3.jpg'
   },
   {
     "id": 3,
@@ -28,6 +29,10 @@ const dummydata=[
  
 ]
 const ProductTabSection = () => {
+  const navigate=useNavigate()
+  const onClickProductHandler=(productid)=>{
+    navigate(`/products/${productid}`)
+  }
   return (
     <>
       <section className="product-tabs section-padding position-relative">
@@ -43,18 +48,18 @@ const ProductTabSection = () => {
                 {dummydata.map(item=>(
                   <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div  className="product-img-action-wrap" >
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src={item.image} alt="" />
                           <img className="hover-img" src="" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -67,10 +72,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -98,509 +103,7 @@ const ProductTabSection = () => {
                   </div>
                 </div>
                 ))}
-                
-{/* 
-                <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                  <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
-                      <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
-                          <img className="default-img" src="assets/imgs/shop/product-2-1.jpg" alt="" />
-                          <img className="hover-img" src="assets/imgs/shop/product-2-2.jpg" alt="" />
-                        </a>
-                      </div>
-                      <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
-                          <i className="fi-rs-heart"></i>
-                        </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
-                          <i className="fi-rs-shuffle"></i>
-                        </a>
-                        <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                          <i className="fi-rs-eye"></i>
-                        </a>
-                      </div>
-                      <div className="product-badges product-badges-position product-badges-mrg">
-                        <span className="sale">Sale</span>
-                      </div>
-                    </div>
-                    <div className="product-content-wrap">
-                      <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
-                      </div>
-                      <h2>
-                        <a href="shop-product-right.html">All Natural Italian-Style Chicken Meatballs</a>
-                      </h2>
-                      <div className="product-rate-cover">
-                        <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '80%' }}></div>
-                        </div>
-                        <span className="font-small ml-5 text-muted"> (3.5)</span>
-                      </div>
-                      <div>
-                        <span className="font-small text-muted">
-                          By <a href="vendor-details-1.html">Stouffer</a>
-                        </span>
-                      </div>
-                      <div className="product-card-bottom">
-                        <div className="product-price">
-                          <span>$52.85</span>
-                          <span className="old-price">$55.8</span>
-                        </div>
-                        <div className="add-cart">
-                          <a className="add" href="shop-cart.html">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                  <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
-                      <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
-                          <img className="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="" />
-                          <img className="hover-img" src="assets/imgs/shop/product-3-2.jpg" alt="" />
-                        </a>
-                      </div>
-                      <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
-                          <i className="fi-rs-heart"></i>
-                        </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
-                          <i className="fi-rs-shuffle"></i>
-                        </a>
-                        <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                          <i className="fi-rs-eye"></i>
-                        </a>
-                      </div>
-                      <div className="product-badges product-badges-position product-badges-mrg">
-                        <span className="new">New</span>
-                      </div>
-                    </div>
-                    <div className="product-content-wrap">
-                      <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
-                      </div>
-                      <h2>
-                        <a href="shop-product-right.html">Angie’s Boomchickapop Sweet & Salty Kettle Corn</a>
-                      </h2>
-                      <div className="product-rate-cover">
-                        <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '85%' }}></div>
-                        </div>
-                        <span className="font-small ml-5 text-muted"> (4.0)</span>
-                      </div>
-                      <div>
-                        <span className="font-small text-muted">
-                          By <a href="vendor-details-1.html">StarKist</a>
-                        </span>
-                      </div>
-                      <div className="product-card-bottom">
-                        <div className="product-price">
-                          <span>$48.85</span>
-                          <span className="old-price">$52.8</span>
-                        </div>
-                        <div className="add-cart">
-                          <a className="add" href="shop-cart.html">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                  <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
-                      <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
-                          <img className="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="" />
-                          <img className="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="" />
-                        </a>
-                      </div>
-                      <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
-                          <i className="fi-rs-heart"></i>
-                        </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
-                          <i className="fi-rs-shuffle"></i>
-                        </a>
-                        <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                          <i className="fi-rs-eye"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div className="product-content-wrap">
-                      <div className="product-category">
-                        <a href="shop-grid-right.html">Vegetables</a>
-                      </div>
-                      <h2>
-                        <a href="shop-product-right.html">Foster Farms Takeout Crispy Classic Buffalo Wings</a>
-                      </h2>
-                      <div className="product-rate-cover">
-                        <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
-                        </div>
-                        <span className="font-small ml-5 text-muted"> (4.0)</span>
-                      </div>
-                      <div>
-                        <span className="font-small text-muted">
-                          By <a href="vendor-details-1.html">NestFood</a>
-                        </span>
-                      </div>
-                      <div className="product-card-bottom">
-                        <div className="product-price">
-                          <span>$17.85</span>
-                          <span className="old-price">$19.8</span>
-                        </div>
-                        <div className="add-cart">
-                          <a className="add" href="shop-cart.html">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                  <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
-                      <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
-                          <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
-                          <img className="hover-img" src="assets/imgs/shop/product-5-2.jpg" alt="" />
-                        </a>
-                      </div>
-                      <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
-                          <i className="fi-rs-heart"></i>
-                        </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
-                          <i className="fi-rs-shuffle"></i>
-                        </a>
-                        <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                          <i className="fi-rs-eye"></i>
-                        </a>
-                      </div>
-                      <div className="product-badges product-badges-position product-badges-mrg">
-                        <span className="best">-14%</span>
-                      </div>
-                    </div>
-                    <div className="product-content-wrap">
-                      <div className="product-category">
-                        <a href="shop-grid-right.html">Pet Foods</a>
-                      </div>
-                      <h2>
-                        <a href="shop-product-right.html">Blue Diamond Almonds Lightly Salted Vegetables</a>
-                      </h2>
-                      <div className="product-rate-cover">
-                        <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
-                        </div>
-                        <span className="font-small ml-5 text-muted"> (4.0)</span>
-                      </div>
-                      <div>
-                        <span className="font-small text-muted">
-                          By <a href="vendor-details-1.html">NestFood</a>
-                        </span>
-                      </div>
-                      <div className="product-card-bottom">
-                        <div className="product-price">
-                          <span>$23.85</span>
-                          <span className="old-price">$25.8</span>
-                        </div>
-                        <div className="add-cart">
-                          <a className="add" href="shop-cart.html">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                  <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
-                      <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
-                          <img className="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="" />
-                          <img className="hover-img" src="assets/imgs/shop/product-6-2.jpg" alt="" />
-                        </a>
-                      </div>
-                      <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
-                          <i className="fi-rs-heart"></i>
-                        </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
-                          <i className="fi-rs-shuffle"></i>
-                        </a>
-                        <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                          <i className="fi-rs-eye"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div className="product-content-wrap">
-                      <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
-                      </div>
-                      <h2>
-                        <a href="shop-product-right.html">Chobani Complete Vanilla Greek Yogurt</a>
-                      </h2>
-                      <div className="product-rate-cover">
-                        <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
-                        </div>
-                        <span className="font-small ml-5 text-muted"> (4.0)</span>
-                      </div>
-                      <div>
-                        <span className="font-small text-muted">
-                          By <a href="vendor-details-1.html">NestFood</a>
-                        </span>
-                      </div>
-                      <div className="product-card-bottom">
-                        <div className="product-price">
-                          <span>$54.85</span>
-                          <span className="old-price">$55.8</span>
-                        </div>
-                        <div className="add-cart">
-                          <a className="add" href="shop-cart.html">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                  <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
-                      <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
-                          <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
-                          <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
-                        </a>
-                      </div>
-                      <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
-                          <i className="fi-rs-heart"></i>
-                        </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
-                          <i className="fi-rs-shuffle"></i>
-                        </a>
-                        <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                          <i className="fi-rs-eye"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div className="product-content-wrap">
-                      <div className="product-category">
-                        <a href="shop-grid-right.html">Meats</a>
-                      </div>
-                      <h2>
-                        <a href="shop-product-right.html">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
-                      </h2>
-                      <div className="product-rate-cover">
-                        <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
-                        </div>
-                        <span className="font-small ml-5 text-muted"> (4.0)</span>
-                      </div>
-                      <div>
-                        <span className="font-small text-muted">
-                          By <a href="vendor-details-1.html">NestFood</a>
-                        </span>
-                      </div>
-                      <div className="product-card-bottom">
-                        <div className="product-price">
-                          <span>$32.85</span>
-                          <span className="old-price">$33.8</span>
-                        </div>
-                        <div className="add-cart">
-                          <a className="add" href="shop-cart.html">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                  <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
-                      <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
-                          <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
-                          <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
-                        </a>
-                      </div>
-                      <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
-                          <i className="fi-rs-heart"></i>
-                        </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
-                          <i className="fi-rs-shuffle"></i>
-                        </a>
-                        <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                          <i className="fi-rs-eye"></i>
-                        </a>
-                      </div>
-                      <div className="product-badges product-badges-position product-badges-mrg">
-                        <span className="sale">Sale</span>
-                      </div>
-                    </div>
-                    <div className="product-content-wrap">
-                      <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
-                      </div>
-                      <h2>
-                        <a href="shop-product-right.html">Encore Seafoods Stuffed Alaskan Salmon</a>
-                      </h2>
-                      <div className="product-rate-cover">
-                        <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
-                        </div>
-                        <span className="font-small ml-5 text-muted"> (4.0)</span>
-                      </div>
-                      <div>
-                        <span className="font-small text-muted">
-                          By <a href="vendor-details-1.html">NestFood</a>
-                        </span>
-                      </div>
-                      <div className="product-card-bottom">
-                        <div className="product-price">
-                          <span>$35.85</span>
-                          <span className="old-price">$37.8</span>
-                        </div>
-                        <div className="add-cart">
-                          <a className="add" href="shop-cart.html">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                  <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
-                      <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
-                          <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
-                          <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
-                        </a>
-                      </div>
-                      <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
-                          <i className="fi-rs-heart"></i>
-                        </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
-                          <i className="fi-rs-shuffle"></i>
-                        </a>
-                        <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                          <i className="fi-rs-eye"></i>
-                        </a>
-                      </div>
-                      <div className="product-badges product-badges-position product-badges-mrg">
-                        <span className="hot">Hot</span>
-                      </div>
-                    </div>
-                    <div className="product-content-wrap">
-                      <div className="product-category">
-                        <a href="shop-grid-right.html">Coffes</a>
-                      </div>
-                      <h2>
-                        <a href="shop-product-right.html">Gorton’s Beer Battered Fish Fillets with soft paper</a>
-                      </h2>
-                      <div className="product-rate-cover">
-                        <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
-                        </div>
-                        <span className="font-small ml-5 text-muted"> (4.0)</span>
-                      </div>
-                      <div>
-                        <span className="font-small text-muted">
-                          By <a href="vendor-details-1.html">Old El Paso</a>
-                        </span>
-                      </div>
-                      <div className="product-card-bottom">
-                        <div className="product-price">
-                          <span>$23.85</span>
-                          <span className="old-price">$25.8</span>
-                        </div>
-                        <div className="add-cart">
-                          <a className="add" href="shop-cart.html">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
-                  <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
-                      <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
-                          <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
-                          <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
-                        </a>
-                      </div>
-                      <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
-                          <i className="fi-rs-heart"></i>
-                        </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
-                          <i className="fi-rs-shuffle"></i>
-                        </a>
-                        <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                          <i className="fi-rs-eye"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div className="product-content-wrap">
-                      <div className="product-category">
-                        <a href="shop-grid-right.html">Cream</a>
-                      </div>
-                      <h2>
-                        <a href="shop-product-right.html">Haagen-Dazs Caramel Cone Ice Cream Ketchup</a>
-                      </h2>
-                      <div className="product-rate-cover">
-                        <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '50%' }}></div>
-                        </div>
-                        <span className="font-small ml-5 text-muted"> (2.0)</span>
-                      </div>
-                      <div>
-                        <span className="font-small text-muted">
-                          By <a href="vendor-details-1.html">Tyson</a>
-                        </span>
-                      </div>
-                      <div className="product-card-bottom">
-                        <div className="product-price">
-                          <span>$22.85</span>
-                          <span className="old-price">$24.8</span>
-                        </div>
-                        <div className="add-cart">
-                          <a className="add" href="shop-cart.html">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
               </div>
             </div>
 
@@ -608,18 +111,18 @@ const ProductTabSection = () => {
               <div className="row product-grid-4">
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -632,10 +135,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+<div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -665,18 +169,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-12-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-12-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -689,10 +193,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
+                        <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">All Natural Italian-Style Chicken Meatballs</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -722,18 +227,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-13-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-13-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -746,10 +251,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Angie’s Boomchickapop Sweet & Salty Kettle Corn</a>
+                                             <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -779,18 +285,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-14-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-14-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -800,10 +306,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Vegetables</a>
+                        <a href="#">Vegetables</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Foster Farms Takeout Crispy Classic Buffalo Wings</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -833,18 +340,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-15-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-15-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -857,10 +364,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Pet Foods</a>
+                        <a href="#">Pet Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Blue Diamond Almonds Lightly Salted Vegetables</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -890,18 +397,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-16-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-16-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -911,10 +418,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
+                        <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Chobani Complete Vanilla Greek Yogurt</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -944,18 +451,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -965,10 +472,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Meats</a>
+                        <a href="#">Meats</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
+                        <a href="#">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -998,18 +505,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1022,10 +529,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Encore Seafoods Stuffed Alaskan Salmon</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1055,18 +563,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1079,10 +587,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Coffes</a>
+                        <a href="#">Coffes</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Gorton’s Beer Battered Fish Fillets with soft paper</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1112,18 +621,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1133,10 +642,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Cream</a>
+                        <a href="#">Cream</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Haagen-Dazs Caramel Cone Ice Cream Ketchup</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1170,18 +680,18 @@ const ProductTabSection = () => {
               <div className="row product-grid-4">
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1194,10 +704,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+<div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1227,18 +738,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1251,10 +762,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
+                        <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">All Natural Italian-Style Chicken Meatballs</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1284,18 +796,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1308,10 +820,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Angie’s Boomchickapop Sweet & Salty Kettle Corn</a>
+                                             <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1341,18 +854,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-6-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1362,10 +875,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Vegetables</a>
+                        <a href="#">Vegetables</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Foster Farms Takeout Crispy Classic Buffalo Wings</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1395,18 +909,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-5-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1419,10 +933,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Pet Foods</a>
+                        <a href="#">Pet Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Blue Diamond Almonds Lightly Salted Vegetables</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1452,18 +966,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1473,10 +987,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
+                        <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Chobani Complete Vanilla Greek Yogurt</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1506,18 +1020,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-3-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1527,10 +1041,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Meats</a>
+                        <a href="#">Meats</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
+                        <a href="#">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1560,18 +1074,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-2-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-2-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1584,10 +1098,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Encore Seafoods Stuffed Alaskan Salmon</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1617,18 +1132,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1641,10 +1156,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Coffes</a>
+                        <a href="#">Coffes</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Gorton’s Beer Battered Fish Fillets with soft paper</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1674,18 +1190,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1695,10 +1211,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Cream</a>
+                        <a href="#">Cream</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Haagen-Dazs Caramel Cone Ice Cream Ketchup</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1732,18 +1249,18 @@ const ProductTabSection = () => {
               <div className="row product-grid-4">
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-6-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1756,10 +1273,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+<div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1789,18 +1307,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1813,10 +1331,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
+                        <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">All Natural Italian-Style Chicken Meatballs</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1846,18 +1365,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1870,10 +1389,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Angie’s Boomchickapop Sweet & Salty Kettle Corn</a>
+                                             <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1903,18 +1423,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1924,10 +1444,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Vegetables</a>
+                        <a href="#">Vegetables</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Foster Farms Takeout Crispy Classic Buffalo Wings</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1957,18 +1478,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1981,10 +1502,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Pet Foods</a>
+                        <a href="#">Pet Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Blue Diamond Almonds Lightly Salted Vegetables</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2014,18 +1535,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-3-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2035,10 +1556,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
+                        <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Chobani Complete Vanilla Greek Yogurt</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2068,18 +1589,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-2-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-2-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2089,10 +1610,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Meats</a>
+                        <a href="#">Meats</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
+                        <a href="#">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2122,18 +1643,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2146,10 +1667,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Encore Seafoods Stuffed Alaskan Salmon</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2179,18 +1701,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-11-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-11-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2203,10 +1725,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Coffes</a>
+                        <a href="#">Coffes</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Gorton’s Beer Battered Fish Fillets with soft paper</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2236,18 +1759,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-12-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-12-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2257,10 +1780,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Cream</a>
+                        <a href="#">Cream</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Haagen-Dazs Caramel Cone Ice Cream Ketchup</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2294,18 +1818,18 @@ const ProductTabSection = () => {
               <div className="row product-grid-4">
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-12-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-12-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2318,10 +1842,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+<div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2351,18 +1876,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-13-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-13-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2375,10 +1900,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
+                        <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">All Natural Italian-Style Chicken Meatballs</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2408,18 +1934,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-14-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-14-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2432,10 +1958,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Angie’s Boomchickapop Sweet & Salty Kettle Corn</a>
+                                             <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2465,18 +1992,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-15-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-15-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2486,10 +2013,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Vegetables</a>
+                        <a href="#">Vegetables</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Foster Farms Takeout Crispy Classic Buffalo Wings</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2519,18 +2047,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-16-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-16-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2543,10 +2071,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Pet Foods</a>
+                        <a href="#">Pet Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Blue Diamond Almonds Lightly Salted Vegetables</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2576,18 +2104,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-5-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2597,10 +2125,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
+                        <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Chobani Complete Vanilla Greek Yogurt</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2630,18 +2158,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2651,10 +2179,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Meats</a>
+                        <a href="#">Meats</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
+                        <a href="#">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2684,18 +2212,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2708,10 +2236,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Encore Seafoods Stuffed Alaskan Salmon</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2741,18 +2270,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2765,10 +2294,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Coffes</a>
+                        <a href="#">Coffes</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Gorton’s Beer Battered Fish Fillets with soft paper</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2798,18 +2328,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2819,10 +2349,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Cream</a>
+                        <a href="#">Cream</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Haagen-Dazs Caramel Cone Ice Cream Ketchup</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2856,18 +2387,18 @@ const ProductTabSection = () => {
               <div className="row product-grid-4">
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2880,10 +2411,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+<div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2913,18 +2445,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-6-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2937,10 +2469,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
+                        <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">All Natural Italian-Style Chicken Meatballs</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2970,18 +2503,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2994,10 +2527,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Angie’s Boomchickapop Sweet & Salty Kettle Corn</a>
+                                             <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3027,18 +2561,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3048,10 +2582,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Vegetables</a>
+                        <a href="#">Vegetables</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Foster Farms Takeout Crispy Classic Buffalo Wings</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3081,18 +2616,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-5-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3105,10 +2640,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Pet Foods</a>
+                        <a href="#">Pet Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Blue Diamond Almonds Lightly Salted Vegetables</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3138,18 +2673,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-6-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3159,10 +2694,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
+                        <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Chobani Complete Vanilla Greek Yogurt</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3192,18 +2727,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3213,10 +2748,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Meats</a>
+                        <a href="#">Meats</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
+                        <a href="#">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3246,18 +2781,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3270,10 +2805,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Encore Seafoods Stuffed Alaskan Salmon</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3303,18 +2839,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3327,10 +2863,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Coffes</a>
+                        <a href="#">Coffes</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Gorton’s Beer Battered Fish Fillets with soft paper</a>
+                      <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3360,18 +2897,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3381,10 +2918,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Cream</a>
+                        <a href="#">Cream</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Haagen-Dazs Caramel Cone Ice Cream Ketchup</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3418,18 +2956,18 @@ const ProductTabSection = () => {
               <div className="row product-grid-4">
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-5-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3442,10 +2980,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+<div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3475,18 +3014,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-3-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3499,10 +3038,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
+                        <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">All Natural Italian-Style Chicken Meatballs</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3532,18 +3072,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3556,10 +3096,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Angie’s Boomchickapop Sweet & Salty Kettle Corn</a>
+                                             <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3589,18 +3130,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3610,10 +3151,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Vegetables</a>
+                        <a href="#">Vegetables</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Foster Farms Takeout Crispy Classic Buffalo Wings</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3643,18 +3185,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3667,10 +3209,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Pet Foods</a>
+                        <a href="#">Pet Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Blue Diamond Almonds Lightly Salted Vegetables</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3700,18 +3242,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-16-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-16-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3721,10 +3263,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Hodo Foods</a>
+                        <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Chobani Complete Vanilla Greek Yogurt</a>
+                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3754,18 +3296,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3775,10 +3317,10 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Meats</a>
+                        <a href="#">Meats</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
+                        <a href="#">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3808,18 +3350,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3832,10 +3374,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Snack</a>
+                        <a href="#">Snack</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Encore Seafoods Stuffed Alaskan Salmon</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3865,18 +3408,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3889,10 +3432,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Coffes</a>
+                        <a href="#">Coffes</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Gorton’s Beer Battered Fish Fillets with soft paper</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3922,18 +3466,18 @@ const ProductTabSection = () => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap">
+                    <div className="product-img-action-wrap" onClick={()=>onClickProductHandler.bind(item.id)}>
                       <div className="product-img product-img-zoom">
-                        <a href="shop-product-right.html">
+                        <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                        <a aria-label="Compare" className="action-btn" href="#">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3943,10 +3487,11 @@ const ProductTabSection = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="shop-grid-right.html">Cream</a>
+                        <a href="#">Cream</a>
                       </div>
                       <h2>
-                        <a href="shop-product-right.html">Haagen-Dazs Caramel Cone Ice Cream Ketchup</a>
+                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">

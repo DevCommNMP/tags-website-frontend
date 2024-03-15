@@ -25,7 +25,7 @@ function App() {
         <BrowserRouter>
             <Routes>
               <Route exact path="/" element={<Homepage />} />
-              <Route exact path="/product/:id" element={<Product />} />
+              <Route exact path="/products/:id" element={<Product />} />
              
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/verify-email" element={<VerifyMail/>} />
