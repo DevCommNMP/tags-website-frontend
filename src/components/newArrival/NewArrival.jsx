@@ -1,4 +1,4 @@
-
+import { Link, useNavigate } from "react-router-dom"
 const dummydata=[
     {
       "id": 1,
@@ -28,6 +28,12 @@ const dummydata=[
     
   ]
   const NewArrival = () => {
+    const navigate=useNavigate()
+    const onClickProductHandler=(productid)=>{
+      navigate(`/products/${productid}`)
+    }
+    
+
     return (
       <>
         <section className="product-tabs section-padding position-relative">
@@ -70,8 +76,8 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
-                        </h2>
+    <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+``                        </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
                             <div className="product-rating" style={{ width: '90%' }}></div>
@@ -217,8 +223,8 @@ const dummydata=[
                   <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                     <div className="product-cart-wrap mb-30">
                       <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
+                        <div className="produc`t-img product-img-zoom">
+                          <a href="shop-product`-right.html">
                             <img className="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="" />
                             <img className="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="" />
                           </a>
@@ -635,8 +641,8 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
-                        </h2>
+    <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+``                        </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
                             <div className="product-rating" style={{ width: '90%' }}></div>
@@ -1197,8 +1203,8 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
-                        </h2>
+    <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+``                        </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
                             <div className="product-rating" style={{ width: '90%' }}></div>
@@ -1759,8 +1765,8 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
-                        </h2>
+    <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+``                        </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
                             <div className="product-rating" style={{ width: '90%' }}></div>
@@ -2321,8 +2327,8 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
-                        </h2>
+    <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+``                        </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
                             <div className="product-rating" style={{ width: '90%' }}></div>
@@ -2883,8 +2889,8 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
-                        </h2>
+    <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+``                        </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
                             <div className="product-rating" style={{ width: '90%' }}></div>
@@ -3445,8 +3451,8 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
-                        </h2>
+    <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+``                        </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
                             <div className="product-rating" style={{ width: '90%' }}></div>
