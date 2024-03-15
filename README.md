@@ -1,8 +1,34 @@
-# React + Vite
+# Tags Website | FrontEnd
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- repo is private -->
 
-Currently, two official plugins are available:
+This project is a front-end for an e-commerce website, created using Vite and React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
+
+This project is a robust and user-friendly e-commerce website front-end. It's built with Vite and React, offering a modern and efficient approach to web development.
+
+## Installation
+
+To get started with this project, follow these steps:
+
+1. Clone the repository: `git clone <repository-url>`
+2. Navigate into the project directory: `cd <project-directory>`
+3. Install the dependencies: `npm install`
+4. Start the development server: `npm run dev`
+
+## Usage
+
+After installation, you can open the project in your browser to view the e-commerce website. You can browse products, add them to your cart, and proceed to checkout.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Contact
+
+If you have any questions or want to contribute, feel free to contact me at `<your-email>`.
