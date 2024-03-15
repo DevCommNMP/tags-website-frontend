@@ -140,7 +140,7 @@ const HeaderBottom = () => {
                                     <li>
                                         <a href='page-about-2.html'>About</a>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <a href='shop-grid-right.html'>Shop <i className="fi-rs-angle-down"></i></a>
                                         <ul className="sub-menu">
                                             <li><a href='shop-grid-right.html'>Shop Grid – Right Sidebar</a></li>
@@ -151,7 +151,7 @@ const HeaderBottom = () => {
                                             <li>
                                                 <a href="#">Single Product <i className="fi-rs-angle-right"></i></a>
                                                 <ul className="level-menu">
-                                                    <li><a href='shop-product-right.html'>Product – Right Sidebar</a>
+                                                    <li><a href='#'>Product – Right Sidebar</a>
                                                     </li>
                                                     <li><a href='shop-product-left.html'>Product – Left Sidebar</a></li>
                                                     <li><a href='shop-product-full.html'>Product – No sidebar</a></li>
@@ -176,8 +176,8 @@ const HeaderBottom = () => {
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </li>
-                                    <li>
+                                    </li> */}
+                                    {/* <li>
                                         <a href="#">Vendors <i className="fi-rs-angle-down"></i></a>
                                         <ul className="sub-menu">
                                             <li><a href='vendors-grid.html'>Vendors Grid</a></li>
@@ -187,68 +187,84 @@ const HeaderBottom = () => {
                                             <li><a href='vendor-dashboard.html'>Vendor Dashboard</a></li>
                                             <li><a href='vendor-guide.html'>Vendor Guide</a></li>
                                         </ul>
-                                    </li>
+                                    </li> */}
                                     <li className="position-static">
-                                        <a href="#">Mega menu <i className="fi-rs-angle-down"></i></a>
+                                        <a href="#">Women <i className="fi-rs-angle-down"></i></a>
                                         <ul className="mega-menu">
                                             <li className="sub-mega-menu sub-mega-menu-width-22">
-                                                <a className="menu-title" href="#">Fruit & Vegetables</a>
+                                                <a className="menu-title" href="#">Occasion</a>
                                                 <ul>
-                                                    <li><a href='shop-product-right.html'>Meat & Poultry</a></li>
-                                                    <li><a href='shop-product-right.html'>Fresh Vegetables</a></li>
-                                                    <li><a href='shop-product-right.html'>Herbs & Seasonings</a></li>
-                                                    <li><a href='shop-product-right.html'>Cuts & Sprouts</a></li>
-                                                    <li><a href='shop-product-right.html'>Exotic Fruits & Veggies</a>
+                                                    <li><a href='#'>Casual Shoes
+
+
+
+</a></li>
+                                                    <li><a href='#'>Ethnic Shoes</a></li>
+                                                    <li><a href='#'>Formal Shoes</a></li>
+                                                    <li><a href='#'>Party Shoes</a></li>
+                                                    <li><a href='#'>Sports Shoes</a>
                                                     </li>
-                                                    <li><a href='shop-product-right.html'>Packaged Produce</a></li>
+                                                    {/* <li><a href='#'>Packaged Produce</a></li> */}
                                                 </ul>
                                             </li>
                                             <li className="sub-mega-menu sub-mega-menu-width-22">
-                                                <a className="menu-title" href="#">Breakfast & Dairy</a>
+                                                <a className="menu-title" href="#">Shoe Type</a>
                                                 <ul>
-                                                    <li><a href='shop-product-right.html'>Milk & Flavoured Milk</a></li>
-                                                    <li><a href='shop-product-right.html'>Butter and Margarine</a></li>
-                                                    <li><a href='shop-product-right.html'>Eggs Substitutes</a></li>
-                                                    <li><a href='shop-product-right.html'>Marmalades</a></li>
-                                                    <li><a href='shop-product-right.html'>Sour Cream</a></li>
-                                                    <li><a href='shop-product-right.html'>Cheese</a></li>
+                                                    <li><a href='#'>
+Ballerinas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Walking Shoes</a></li>
+                                                    <li><a href='#'>Boots</a></li>
+                                                    <li><a href='#'>Comfort</a></li>
+                                                    <li><a href='#'>Flip Flops</a></li>
+                                                    <li><a href='#'>Kolhapuris</a></li>
+                                                    <li><a href='#'>Mojaris</a></li>
+                                                    <li><a href='#'>Mules</a></li>
+                                                    <li><a href='#'>Pumps</a></li>
+                                                    <li><a href='#'>Sandals</a></li>
+                                                    <li><a href='#'>Slides</a></li>
+                                                    <li><a href='#'>Slippers</a></li>
+                                                    <li><a href='#'>Slip Ons</a></li>
+                                                    <li><a href='#'>Sneakers</a></li>
+                                                    <li><a href='#'>Walking Shoes</a></li>
                                                 </ul>
                                             </li>
                                             <li className="sub-mega-menu sub-mega-menu-width-22">
-                                                <a className="menu-title" href="#">Meat & Seafood</a>
+                                                <a className="menu-title" href="#">Colors</a>
                                                 <ul>
-                                                    <li><a href='shop-product-right.html'>Breakfast Sausage</a></li>
-                                                    <li><a href='shop-product-right.html'>Dinner Sausage</a></li>
-                                                    <li><a href='shop-product-right.html'>Chicken</a></li>
-                                                    <li><a href='shop-product-right.html'>Sliced Deli Meat</a></li>
-                                                    <li><a href='shop-product-right.html'>Wild Caught Fillets</a></li>
-                                                    <li><a href='shop-product-right.html'>Crab and Shellfish</a></li>
+                                                    <li><a href='#'>Black</a></li>
+                                                    <li><a href='#'>White</a></li>
+                                                    <li><a href='#'>Red</a></li>
+                                                    <li><a href='#'>Blue</a></li>
+                                                    <li><a href='#'>maroon</a></li>
+                                                    <li><a href='#'>Purple</a></li>
                                                 </ul>
                                             </li>
-                                            <li className="sub-mega-menu sub-mega-menu-width-34">
-                                                <div className="menu-banner-wrap">
-                                                    <a href='shop-product-right.html'><img
-                                                            src="assets/imgs/banner/banner-menu.png" alt="Nest" /></a>
-                                                    <div className="menu-banner-content">
-                                                        <h4>Hot deals</h4>
-                                                        <h3>
-                                                            Don&apos;t miss<br />
-                                                            Trending
-                                                        </h3>
-                                                        <div className="menu-banner-price">
-                                                            <span className="new-price text-success">Save to 50%</span>
-                                                        </div>
-                                                        <div className="menu-banner-btn">
-                                                            <a href='shop-product-right.html'>Shop now</a>
-                                                        </div>
-                                                    </div>
-                                                    <div className="menu-banner-discount">
-                                                        <h3>
-                                                            <span>25%</span>
-                                                            off
-                                                        </h3>
-                                                    </div>
-                                                </div>
+                                            <li className="sub-mega-menu sub-mega-menu-width-22">
+                                                <a className="menu-title" href="#">Brands</a>
+                                                <ul>
+                                                    <li><a href='#'>Fila
+</a></li>
+                                                    <li><a href='#'>Cheemo</a></li>
+                                                    <li><a href='#'>DoubleU</a></li>
+                                                    <li><a href='#'>Fitflop</a></li>
+                                                    <li><a href='#'>Haute Diva</a></li>
+                                                    <li><a href='#'>Mochi</a></li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </li>
@@ -286,7 +302,7 @@ const HeaderBottom = () => {
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href='page-contact.html'>Contact</a>
+                                        <a href='page-contact.html' style={{color:"#d02327"}}>Premium Leather</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -320,11 +336,11 @@ const HeaderBottom = () => {
                                     <ul>
                                         <li>
                                             <div className="shopping-cart-img">
-                                                <a href='shop-product-right.html'><img alt="Nest"
+                                                <a href='#'><img alt="Nest"
                                                         src="assets/imgs/shop/thumbnail-3.jpg" /></a>
                                             </div>
                                             <div className="shopping-cart-title">
-                                                <h4><a href='shop-product-right.html'>Plain Striola Shirts</a></h4>
+                                                <h4><a href='#'>Plain Striola Shirts</a></h4>
                                                 <h3><span>1 × </span>$800.00</h3>
                                             </div>
                                             <div className="shopping-cart-delete">
@@ -333,11 +349,11 @@ const HeaderBottom = () => {
                                         </li>
                                         <li>
                                             <div className="shopping-cart-img">
-                                                <a href='shop-product-right.html'><img alt="Nest"
+                                                <a href='#'><img alt="Nest"
                                                         src="assets/imgs/shop/thumbnail-4.jpg" /></a>
                                             </div>
                                             <div className="shopping-cart-title">
-                                                <h4><a href='shop-product-right.html'>Macbook Pro 2024</a></h4>
+                                                <h4><a href='#'>Macbook Pro 2024</a></h4>
                                                 <h3><span>1 × </span>$3500.00</h3>
                                             </div>
                                             <div className="shopping-cart-delete">
