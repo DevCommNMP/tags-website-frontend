@@ -36,6 +36,13 @@ const SingleProductImages = () => {
     slidesToScroll: 1
   };
 
+  const settingsThumb = {
+    dots: false,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 5,
+    slidesToScroll: 1
+  };
   return (
     <div className="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
       <div className="detail-gallery">
@@ -52,6 +59,7 @@ const SingleProductImages = () => {
           </Slider>
         </div>
         <div className="slider-nav-thumbnails">
+          <Slider {...settingsThumb}>
           {productImages.map((image, index) => (
             <div
               key={index}
@@ -61,6 +69,7 @@ const SingleProductImages = () => {
               <img src={image} alt={`thumbnail ${index}`} />
             </div>
           ))}
+          </Slider>
         </div>
       </div>
     </div>
