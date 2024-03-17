@@ -11,35 +11,36 @@ import { useDispatch, useSelector } from "react-redux";
 const HeaderMiddle = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const storeData = useSelector((store) => store.auth);
-  const { user, loading, appErr, serverErr } = storeData;
-
-
-  const localData = localStorage.getItem("userData");
-  let token;
-  if (localData) {
-    const parsedData = JSON.parse(localData);
-    token = parsedData.token;
-  
-  }
+  const[user,setUser]=useState("");
+  const [token, setToken] = useState("");
 
   useEffect(() => {
-    const removeLocalData = setTimeout(() => {
-      if (token) {
-        console.log("removing localData");
-        localStorage.removeItem("userData");
-        token="";
-      }
-    }, 3600000);
+    const localData = localStorage.getItem("userData");
+    if (localData) {
+      const parsedData = JSON.parse(localData);
+      setToken(parsedData.token);
+      setUser(parsedData);
+    }
+    console.log(localData)
+  }, [token]); // Run once on component mount to fetch token from local storage
 
-    return () => clearTimeout(removeLocalData);
-  }, [token]);
+  // useEffect(() => {
+  //   const removeLocalData = setTimeout(() => {
+  //     if (token) {
+  //       console.log("removing localData");
+  //       localStorage.removeItem("userData");
+  //       setToken("");
+  //     }
+  //   }, 3600000);
 
-  const singnOutHandler=async()=>{
-    localStorage.removeItem("userData")
-    navigate("/login")
-  }
+  //   return () => clearTimeout(removeLocalData);
+  // }, []);
+
+  const signOutHandler = async() => {
+    await localStorage.removeItem("userData");
+    setToken("");
+    navigate("/login");
+  };
 
   return (
     <div>
@@ -173,8 +174,8 @@ const HeaderMiddle = () => {
                   {token ? (
                     <div className="header-action-icon-2">
                      <div className="header-action-icon-2">
-                    < div  style={{width:30,height:30, border:"1px solid red",borderRadius:"50%"}}>
-                      <img className="svgInject" alt="Nest" src={user.profileImage}  style={{}}/>
+                    < div href="shop-wishlist.html" style={{width:30,height:30, border:"1px solid red",}}>
+                      <img className="svgInject" alt="Nest" src={user.profileImage}  style={{border:"50%"}}/>
                     
                     </div>
                     <a>
@@ -212,7 +213,7 @@ const HeaderMiddle = () => {
                             </a>
                           </li>
                           <li>
-                            <a onClick={singnOutHandler} >
+                            <a onClick={signOutHandler} >
                               <i className="fi fi-rs-sign-out mr-10"></i>
                               Sign out
                             </a>
