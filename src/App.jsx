@@ -13,6 +13,7 @@ import Product from './pages/product.jsx'
 import SingleProductImages from './components/SingleProductImages.jsx'
 
 import CheckoutPage from './pages/CheckoutPage.jsx'
+import ProductsGridPage from './pages/ProductsGridPage.jsx'
 import { useEffect } from 'react'
 
 
@@ -39,6 +40,7 @@ function App() {
 
               <Route exact path="/productImages" element={<SingleProductImages/>} />
               <Route exact path="/checkout" element={<CheckoutPage />} />
+              <Route exact path="/product-grid" element={<ProductsGridPage />} />
             </Routes>
         </BrowserRouter>
       </Provider>
