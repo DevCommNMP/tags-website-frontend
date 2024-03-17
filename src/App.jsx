@@ -13,11 +13,13 @@ import Product from './pages/product.jsx'
 import SingleProductImages from './components/SingleProductImages.jsx'
 
 import CheckoutPage from './pages/CheckoutPage.jsx'
-
-
+import { useEffect } from 'react'
 
 
 function App() {
+
+  
+
   return (
     <>
       <Provider store={Store}>

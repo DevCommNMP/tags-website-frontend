@@ -33,7 +33,7 @@ const SignUp = () => {
     });
 
     const [errors, setErrors] = useState({});
-    const [user, setUser] = useState(true); // Initialize user state as true
+   // Initialize user state as true
 
     // Function to handle form input change
     const handleInputChange = (e) => {

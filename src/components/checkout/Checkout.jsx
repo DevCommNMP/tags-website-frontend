@@ -9,7 +9,28 @@ import paymentZapper from '../../assets/imgs/theme/icons/payment-zapper.svg'
 
 
 import React from 'react'
-
+const dummyData=[
+    {
+      "id": 1,
+      "price":35,
+      "name": "Item 1",
+      "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img1.jpg'
+    },
+    {
+      "id": 2,
+      "price":40,
+      "name": "Item 2",
+      "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img7.jpg'
+    },
+    {
+      "id": 3,
+      "price":35,
+      "name": "Item 3",
+      "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img3.jpg'
+    },
+    
+    
+  ]
 const Checkout = () => {
     return (
         <>
@@ -211,75 +232,35 @@ const Checkout = () => {
                                 </div>
                                 <div className="divider-2 mb-30"></div>
                                 <div className="table-responsive order_table checkout">
-                                    <table className="table no-border">
-                                        <tbody>
-                                            <tr>
-                                                <td className="image product-thumbnail"><img src={product11} alt="#" /></td>
-                                                <td>
-                                                    <h6 className="w-160 mb-5">
-                                                        <a className='text-heading' href='shop-product-full.html'>Yidarton Women Summer Blue
-                                                        </a>
-                                                    </h6>
+                                <div className="table-responsive order_table checkout">
+  <table className="table no-border">
+    <tbody>
+      {dummyData.map((item, index) => (
+        <tr key={index}>
+          <td className="image product-thumbnail"><img src={item.image} alt="#" /></td>
+          <td>
+            <h6 className="w-160 mb-5">
+              <a className='text-heading' href='#'>{item.name}</a>
+            </h6>
+            <div className="product-rate-cover">
+              <div className="product-rate d-inline-block">
+                <div className="product-rating" style={{ width: '90%' }}></div>
+              </div>
+              <span className="font-small ml-5 text-muted"> (4.0)</span>
+            </div>
+          </td>
+          <td>
+            <h6 className="text-muted pl-20 pr-20">x 1</h6>
+          </td>
+          <td>
+            <h4 className="text-brand">&#x20B9;{item.price}</h4>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
 
-                                                    <div className="product-rate-cover">
-                                                        <div className="product-rate d-inline-block">
-                                                            <div className="product-rating" style={{ width: '90%' }}>
-                                                            </div>
-                                                        </div>
-                                                        <span className="font-small ml-5 text-muted"> (4.0)</span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <h6 className="text-muted pl-20 pr-20">x 1</h6>
-                                                </td>
-                                                <td>
-                                                    <h4 className="text-brand">&#x20B9;13.3</h4>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="image product-thumbnail">
-                                                    <img src={product21} alt="#" />
-                                                </td>
-                                                <td>
-                                                    <h6 className="w-160 mb-5"><a className='text-heading' href='shop-product-full.html'>Seeds of Change Organic Quinoa</a></h6>
-                                                    <div className="product-rate-cover">
-                                                        <div className="product-rate d-inline-block">
-                                                            <div className="product-rating" style={{ width: '90%' }}>
-                                                            </div>
-                                                        </div>
-                                                        <span className="font-small ml-5 text-muted"> (4.0)</span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <h6 className="text-muted pl-20 pr-20">x 1</h6>
-                                                </td>
-                                                <td>
-                                                    <h4 className="text-brand">&#x20B9;15.0</h4>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="image product-thumbnail"><img src={product31} alt="#" /></td>
-                                                <td>
-                                                    <h6 className="w-160 mb-5">
-                                                        <a className='text-heading' href='shop-product-full.html'>Angie’s Boomchickapop Sweet </a>
-                                                    </h6>
-                                                    <div className="product-rate-cover">
-                                                        <div className="product-rate d-inline-block">
-                                                            <div className="product-rating" style={{ width: '90%' }}>
-                                                            </div>
-                                                        </div>
-                                                        <span className="font-small ml-5 text-muted"> (4.0)</span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <h6 className="text-muted pl-20 pr-20">x 1</h6>
-                                                </td>
-                                                <td>
-                                                    <h4 className="text-brand">&#x20B9;17.2</h4>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                             <div className="payment ml-30">

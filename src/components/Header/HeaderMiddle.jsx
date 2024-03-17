@@ -1,23 +1,45 @@
-import logo from "../../assets/imgs/theme/logo.png"
+import logo from "../../assets/imgs/theme/logo.png";
 import compareIcon from "../../assets/imgs/theme/icons/icon-compare.svg";
 import wishList from "../../assets/imgs/theme/icons/icon-heart.svg";
-import account from "../../assets/imgs/theme/icons/icon-user.svg" 
-import cart from "../../assets/imgs/theme/icons/icon-cart.svg"
-import { useState ,useEffect} from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import account from "../../assets/imgs/theme/icons/icon-user.svg";
+import cart from "../../assets/imgs/theme/icons/icon-cart.svg";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
+
 const HeaderMiddle = () => {
-  // const [User, setUser] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const storeData = useSelector((store) => store.auth);
-  const { user,loading,appErr,serverErr } = storeData;
+  const { user, loading, appErr, serverErr } = storeData;
+
+
+  const localData = localStorage.getItem("userData");
+  let token;
+  if (localData) {
+    const parsedData = JSON.parse(localData);
+    token = parsedData.token;
+  
+  }
+
   useEffect(() => {
-  
-  }, [user.id])
-  
+    const removeLocalData = setTimeout(() => {
+      if (token) {
+        console.log("removing localData");
+        localStorage.removeItem("userData");
+        token="";
+      }
+    }, 3600000);
+
+    return () => clearTimeout(removeLocalData);
+  }, [token]);
+
+  const singnOutHandler=async()=>{
+    localStorage.removeItem("userData")
+    navigate("/login")
+  }
 
   return (
     <div>
@@ -25,7 +47,7 @@ const HeaderMiddle = () => {
         <div className="container">
           <div className="header-wrap">
             <div className="logo logo-width-1">
-              <Link to="/" onClick={()=>navigate("/")}>
+              <Link to="/" onClick={() => navigate("/")}>
                 <img src={logo} alt="logo" />
               </Link>
             </div>
@@ -50,29 +72,13 @@ const HeaderMiddle = () => {
               </div>
               <div className="header-action-right">
                 <div className="header-action-2">
-                  <div className="search-location">
-                    {/* <form action="#">
-                      <select className="select-active">
-                        <option>Your Location</option>
-                        <option>Alabama</option>
-                        <option>Alaska</option>
-                        <option>Arizona</option>
-                        <option>Delaware</option>
-                        <option>Florida</option>
-                        <option>Georgia</option>
-                        <option>Hawaii</option>
-                        <option>Indiana</option>
-                        <option>Maryland</option>
-                        <option>Nevada</option>
-                        <option>New Jersey</option>
-                        <option>New Mexico</option>
-                        <option>New York</option>
-                      </select>
-                    </form> */}
-                  </div>
                   <div className="header-action-icon-2">
                     <a href="shop-compare.html">
-                      <img className="svgInject" alt="Nest" src={compareIcon} />
+                      <img
+                        className="svgInject"
+                        alt="Nest"
+                        src={compareIcon}
+                      />
                       <span className="pro-count blue">3</span>
                     </a>
                     <Link to="/compare">
@@ -81,7 +87,7 @@ const HeaderMiddle = () => {
                   </div>
                   <div className="header-action-icon-2">
                     <a href="shop-wishlist.html">
-                      <img className="svgInject" alt="Nest" src={wishList}/>
+                      <img className="svgInject" alt="Nest" src={wishList} />
                       <span className="pro-count blue">6</span>
                     </a>
                     <Link to="/wishlist">
@@ -93,7 +99,7 @@ const HeaderMiddle = () => {
                       <img alt="Nest" src={cart} />
                       <span className="pro-count blue">2</span>
                     </a>
-                    <Link to="/cart">
+                    <Link to="/checkout">
                       <span className="lable">Cart</span>
                     </Link>
                     <div className="cart-dropdown-wrap cart-dropdown-hm2">
@@ -101,12 +107,17 @@ const HeaderMiddle = () => {
                         <li>
                           <div className="shopping-cart-img">
                             <a href="shop-product-right.html">
-                              <img alt="Nest" src="assets/imgs/shop/thumbnail-3.jpg" />
+                              <img
+                                alt="Nest"
+                                src="assets/imgs/shop/thumbnail-3.jpg"
+                              />
                             </a>
                           </div>
                           <div className="shopping-cart-title">
                             <h4>
-                              <a href="shop-product-right.html">Daisy Casual Bag</a>
+                              <a href="shop-product-right.html">
+                                Daisy Casual Bag
+                              </a>
                             </h4>
                             <h4>
                               <span>1 × </span>$800.00
@@ -121,12 +132,17 @@ const HeaderMiddle = () => {
                         <li>
                           <div className="shopping-cart-img">
                             <a href="shop-product-right.html">
-                              <img alt="Nest" src="assets/imgs/shop/thumbnail-2.jpg" />
+                              <img
+                                alt="Nest"
+                                src="assets/imgs/shop/thumbnail-2.jpg"
+                              />
                             </a>
                           </div>
                           <div className="shopping-cart-title">
                             <h4>
-                              <a href="shop-product-right.html">Corduroy Shirts</a>
+                              <a href="shop-product-right.html">
+                                Corduroy Shirts
+                              </a>
                             </h4>
                             <h4>
                               <span>1 × </span>$3200.00
@@ -146,63 +162,79 @@ const HeaderMiddle = () => {
                           </h4>
                         </div>
                         <div className="shopping-cart-button">
-                          <Link to="/cart" className="outline" href="shop-cart.html">
+                          <Link to="/checkout" className="outline">
                             View cart
                           </Link>
-                          <Link to="/cart">Checkout</Link >
+                          <Link to="/checkout">Checkout</Link>
                         </div>
                       </div>
                     </div>
                   </div>
-                  {user?<div className="header-action-icon-2">
-                    <a href="page-account.html">
-                    <div className="svgInject" alt="Nest" style={{ backgroundImage: `url(${user.profileImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-
-                    </a>
-                    <a>
-                      <span className="lable ml-0">Account</span>
-                    </a>
-                    <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
-                      <ul>
-                        <li>
-                          <Link to="/profile">
-                            <i className="fi fi-rs-user mr-10"></i>My Account
-                          </Link>
-                        </li>
-                        <li>
-                          <a href="page-account.html">
-                            <i className="fi fi-rs-location-alt mr-10"></i>Order Tracking
-                          </a>
-                        </li>
-                        <li>
-                          <a href="page-account.html">
-                            <i className="fi fi-rs-label mr-10"></i>My Voucher
-                          </a>
-                        </li>
-                        <li>
-                          <a href="shop-wishlist.html">
-                            <i className="fi fi-rs-heart mr-10"></i>My Wishlist
-                          </a>
-                        </li>
-                        <li>
-                          <a href="page-account.html">
-                            <i className="fi fi-rs-settings-sliders mr-10"></i>Setting
-                          </a>
-                        </li>
-                        <li>
-                          <a href="page-login.html">
-                            <i className="fi fi-rs-sign-out mr-10"></i>Sign out
-                          </a>
-                        </li>
-                      </ul>
+                  {token ? (
+                    <div className="header-action-icon-2">
+                     <div className="header-action-icon-2">
+                    < div  style={{width:30,height:30, border:"1px solid red",borderRadius:"50%"}}>
+                      <img className="svgInject" alt="Nest" src={user.profileImage}  style={{}}/>
+                    
                     </div>
-                  </div>:<div className="header-action-icon-2">
-                    <Link to="/login">
-                      <img className="svgInject" alt="Nest" src={account}/>
-                    </Link>
-                    <Link to="/login">
-                      <span className="lable ml-0" onClick={()=> navigate("/login")}>Login</span>
-                    </Link></div>}
+                    <a>
+                      <span className="lable ml-1" >hello, {user.userName}</span>
+                      </a>
+                  </div>
+                     
+                      <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
+                        <ul>
+                          <li>
+                            <Link to="/profile">
+                              <i className="fi fi-rs-user mr-10"></i>My Account
+                            </Link>
+                          </li>
+                          <li>
+                            <a href="page-account.html">
+                              <i className="fi fi-rs-location-alt mr-10"></i>
+                              Order Tracking
+                            </a>
+                          </li>
+                          <li>
+                            <a href="page-account.html">
+                              <i className="fi fi-rs-label mr-10"></i>My Voucher
+                            </a>
+                          </li>
+                          <li>
+                            <a href="shop-wishlist.html">
+                              <i className="fi fi-rs-heart mr-10"></i>My Wishlist
+                            </a>
+                          </li>
+                          <li>
+                            <a href="page-account.html">
+                              <i className="fi fi-rs-settings-sliders mr-10"></i>
+                              Setting
+                            </a>
+                          </li>
+                          <li>
+                            <a onClick={singnOutHandler} >
+                              <i className="fi fi-rs-sign-out mr-10"></i>
+                              Sign out
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="header-action-icon-2">
+                      <Link to="/login">
+                        <img className="svgInject" alt="Nest" src={account} />
+                      </Link>
+                      <Link to="/login">
+                        <span
+                          className="lable ml-0"
+                          onClick={() => navigate("/login")}
+                        >
+                          Login
+                        </span>
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -210,7 +242,7 @@ const HeaderMiddle = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HeaderMiddle
+export default HeaderMiddle;

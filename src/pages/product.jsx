@@ -23,6 +23,9 @@ import product51 from '../assets/imgs/shop/product-5-1.jpg';
 import product32 from '../assets/imgs/shop/product-3-2.jpg';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
+import image from "../assets/drive-download-20240310T091457Z-001/ST 353 - White/img3.jpg"
+import image1 from "../assets/drive-download-20240310T091457Z-001/ST 353 - White/img2.jpg"
+
 
 const Product = () => {
   return (
@@ -53,7 +56,7 @@ const Product = () => {
                       </span>
                       <div className="product-image-slider">
                         <figure className="border-radius-10">
-                          <img src={product161} alt="product image" />
+                          <img src={image1} alt="product image" />
                         </figure>
                         {/* <figure className="border-radius-10">
                           <img src={product162} alt="product image" />
@@ -102,7 +105,7 @@ const Product = () => {
                   <div className="col-md-6 col-sm-12 col-xs-12">
                     <div className="detail-info pr-30 pl-30">
                       <span className="stock-status out-stock"> Sale Off </span>
-                      <h2 className="title-detail">Seeds of Change Organic Quinoa, Brown</h2>
+                      <h2 className="title-detail">Sandles</h2>
                       <div className="product-detail-rating">
                         <div className="product-rate-cover text-end">
                           <div className="product-rate d-inline-block">
@@ -130,19 +133,19 @@ const Product = () => {
                         <strong className="mr-10">Size / Weight: </strong>
                         <ul className="list-filter size-filter font-small">
                           <li>
-                            <a href="#">50g</a>
+                            <a href="#">5</a>
                           </li>
                           <li className="active">
-                            <a href="#">60g</a>
+                            <a href="#">6</a>
                           </li>
                           <li>
-                            <a href="#">80g</a>
+                            <a href="#">7</a>
                           </li>
                           <li>
-                            <a href="#">100g</a>
+                            <a href="#">8</a>
                           </li>
                           <li>
-                            <a href="#">150g</a>
+                            <a href="#">9</a>
                           </li>
                         </ul>
                       </div>
@@ -217,7 +220,7 @@ const Product = () => {
                       </li>
                       <li className="nav-item">
                         <a className="nav-link" id="Additional-info-tab" data-bs-toggle="tab" href="#Additional-info">
-                          Additional info
+                          Additional info    
                         </a>
                       </li>
                       <li className="nav-item">
@@ -668,8 +671,8 @@ const Product = () => {
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
                               <a href="shop-product-right.html" tabIndex="0">
-                                <img className="default-img" src={product21} alt="" />
-                                <img className="hover-img" src={product22} alt="" />
+                                <img className="default-img" src={image1} alt="" />
+                                <img className="hover-img" src={image} alt="" />
                               </a>
                             </div>
                             <div className="product-action-1">
@@ -713,8 +716,8 @@ const Product = () => {
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
                               <a href="shop-product-right.html" tabIndex="0">
-                                <img className="default-img" src={product31}alt="" />
-                                <img className="hover-img" src={product32}alt="" />
+                              <img className="default-img" src={image1} alt="" />
+                                <img className="hover-img" src={image} alt="" />
                               </a>
                             </div>
                             <div className="product-action-1">
@@ -758,8 +761,8 @@ const Product = () => {
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
                               <a href="shop-product-right.html" tabIndex="0">
-                                <img className="default-img" src={product41} alt="" />
-                                <img className="hover-img" src={product42} alt="" />
+                                <img className="default-img" src={image1} alt="" />
+                                <img className="hover-img" src={image} alt="" />
                               </a>
                             </div>
                             <div className="product-action-1">
@@ -803,8 +806,8 @@ const Product = () => {
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
                               <a href="shop-product-right.html" tabIndex="0">
-                                <img className="default-img" src={product51} alt="" />
-                                <img className="hover-img" src={product32} alt="" />
+                              <img className="default-img" src={image1} alt="" />
+                                <img className="hover-img" src={image} alt="" />
                               </a>
                             </div>
                             <div className="product-action-1">
