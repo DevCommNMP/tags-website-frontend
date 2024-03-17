@@ -1,33 +1,7 @@
-import Slider from 'react-slick';
-
-import product161 from '../assets/imgs/shop/product-16-1.jpg';
-import product162 from '../assets/imgs/shop/product-16-2.jpg';
-import product163 from '../assets/imgs/shop/product-16-3.jpg';
-import product164 from '../assets/imgs/shop/product-16-4.jpg';
-import product165 from '../assets/imgs/shop/product-16-5.jpg';
-import product166 from '../assets/imgs/shop/product-16-6.jpg';
-import product167 from '../assets/imgs/shop/product-16-7.jpg';
-import thumbnail3 from '../assets/imgs/shop/thumbnail-3.jpg';
-import thumbnail4 from '../assets/imgs/shop/thumbnail-4.jpg';
-import thumbnail5 from '../assets/imgs/shop/thumbnail-5.jpg';
-import thumbnail6 from '../assets/imgs/shop/thumbnail-6.jpg';
-import thumbnail7 from '../assets/imgs/shop/thumbnail-7.jpg';
-import thumbnail8 from '../assets/imgs/shop/thumbnail-8.jpg';
-import thumbnail9 from '../assets/imgs/shop/thumbnail-9.jpg';
-
-
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
-import image from "../assets/drive-download-20240310T091457Z-001/ST 353 - White/img3.jpg"
-import image1 from "../assets/drive-download-20240310T091457Z-001/ST 353 - White/img2.jpg"
-
-import product21 from "../assets/imgs/shop/product-2-1.jpg";
-import product22 from "../assets/imgs/shop/product-2-2.jpg";
-import product31 from "../assets/imgs/shop/product-3-1.jpg";
-import product41 from "../assets/imgs/shop/product-4-1.jpg";
-import product42 from "../assets/imgs/shop/product-4-2.jpg";
-import product51 from "../assets/imgs/shop/product-5-1.jpg";
-import product32 from "../assets/imgs/shop/product-3-2.jpg";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import image from "../assets/drive-download-20240310T091457Z-001/ST 353 - White/img3.jpg";
+import image1 from "../assets/drive-download-20240310T091457Z-001/ST 353 - White/img2.jpg";
 
 import SingleProductImages from "../components/SingleProductImages";
 
@@ -53,59 +27,7 @@ const Product = () => {
             <div className="col-xl-10 col-lg-12 m-auto">
               <div className="product-detail accordion-detail">
                 <div className="row mb-50 mt-30">
-                  <div className="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
-                    <div className="detail-gallery">
-                      <span className="zoom-icon">
-                        <i className="fi-rs-search"></i>
-                      </span>
-                      <div className="product-image-slider">
-                        <figure className="border-radius-10">
-                          <img src={image1} alt="product image" />
-                        </figure>
-                        {/* <figure className="border-radius-10">
-                          <img src={product162} alt="product image" />
-                        </figure>
-                        <figure className="border-radius-10">
-                          <img src={product163} alt="product image" />
-                        </figure>
-                        <figure className="border-radius-10">
-                          <img src={product164} alt="product image" />
-                        </figure>
-                        <figure className="border-radius-10">
-                          <img src={product165} alt="product image" />
-                        </figure>
-                        <figure className="border-radius-10">
-                          <img src={product166} alt="product image" />
-                        </figure>
-                        <figure className="border-radius-10">
-                          <img src={product167} alt="product image" />
-                        </figure> */}
-                      </div>
-                      <div className="slider-nav-thumbnails">
-                        {/* <div>
-                          <img src={thumbnail3}alt="product image" />
-                        </div>
-                        <div>
-                          <img src={thumbnail4} alt="product image" />
-                        </div>
-                        <div>
-                          <img src={thumbnail5} alt="product image" />
-                        </div>
-                        <div>
-                          <img src={thumbnail6} alt="product image" />
-                        </div>
-                        <div>
-                          <img src={thumbnail7} alt="product image" />
-                        </div>
-                        <div>
-                          <img src={thumbnail8} alt="product image" />
-                        </div>
-                        <div>
-                          <img src={thumbnail9} alt="product image" />
-                        </div> */}
-                      </div>
-                    </div>
-                  </div>
+                <SingleProductImages />
                   <div className="col-md-6 col-sm-12 col-xs-12">
                     <div className="detail-info pr-30 pl-30">
                       <span className="stock-status out-stock"> Sale Off </span>
@@ -256,8 +178,13 @@ const Product = () => {
                         </a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link" id="Additional-info-tab" data-bs-toggle="tab" href="#Additional-info">
-                          Additional info    
+                        <a
+                          className="nav-link"
+                          id="Additional-info-tab"
+                          data-bs-toggle="tab"
+                          href="#Additional-info"
+                        >
+                          Additional info
                         </a>
                       </li>
                       <li className="nav-item">
@@ -849,7 +776,11 @@ const Product = () => {
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
                               <a href="shop-product-right.html" tabIndex="0">
-                                <img className="default-img" src={image1} alt="" />
+                                <img
+                                  className="default-img"
+                                  src={image1}
+                                  alt=""
+                                />
                                 <img className="hover-img" src={image} alt="" />
                               </a>
                             </div>
@@ -904,7 +835,11 @@ const Product = () => {
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
                               <a href="shop-product-right.html" tabIndex="0">
-                              <img className="default-img" src={image1} alt="" />
+                                <img
+                                  className="default-img"
+                                  src={image1}
+                                  alt=""
+                                />
                                 <img className="hover-img" src={image} alt="" />
                               </a>
                             </div>
@@ -959,7 +894,11 @@ const Product = () => {
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
                               <a href="shop-product-right.html" tabIndex="0">
-                                <img className="default-img" src={image1} alt="" />
+                                <img
+                                  className="default-img"
+                                  src={image1}
+                                  alt=""
+                                />
                                 <img className="hover-img" src={image} alt="" />
                               </a>
                             </div>
@@ -1014,7 +953,11 @@ const Product = () => {
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
                               <a href="shop-product-right.html" tabIndex="0">
-                              <img className="default-img" src={image1} alt="" />
+                                <img
+                                  className="default-img"
+                                  src={image1}
+                                  alt=""
+                                />
                                 <img className="hover-img" src={image} alt="" />
                               </a>
                             </div>
