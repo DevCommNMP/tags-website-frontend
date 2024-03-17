@@ -12,9 +12,10 @@ import icon1 from '../../assets/imgs/theme/icons/icon-1.svg';
 import icon2 from '../../assets/imgs/theme/icons/icon-2.svg';
 import icon3 from '../../assets/imgs/theme/icons/icon-3.svg';
 import icon4 from '../../assets/imgs/theme/icons/icon-4.svg';
-import logo  from '../../assets/imgs/theme/logo.svg';
+import logo  from '../../assets/imgs/theme/logo.png';
 import iconHot from '../../assets/imgs/theme/icons/icon-hot.svg';
 import iconHeadphone from '../../assets/imgs/theme/icons/icon-headphone.svg'
+import { Link } from 'react-router-dom';
 
 
 
@@ -366,8 +367,8 @@ Walking Shoes</a></li>
                                             <h4>Total <span>$383.00</span></h4>
                                         </div>
                                         <div className="shopping-cart-button">
-                                            <a href='shop-cart.html'>View cart</a>
-                                            <a href='shop-checkout.html'>Checkout</a>
+                                        <Link to="/checkouts">View cart</Link>
+                                            <Link to="/checkouts">Checkout</Link>
                                         </div>
                                     </div>
                                 </div>

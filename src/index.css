@@ -4172,9 +4172,9 @@ table .product-thumbnail img {
   top: -6px;
   width: 0;
 }
-.slider-nav-thumbnails .slick-slide.slick-current img {
+/* .slider-nav-thumbnails .slick-slide.slick-current img {
   border: 2px solid #a2d2c9;
-}
+} */
 .slider-nav-thumbnails div.slick-slide {
   margin: 0 10px;
 }
