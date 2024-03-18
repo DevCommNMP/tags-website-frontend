@@ -7,7 +7,8 @@ import ProductTabSection from './ProductTabSection'
 import LeatherSection from '../components/leateherSection/leatherSection.jsx'
 import NewArrival from '../components/newArrival/NewArrival.jsx'
 
-const Homepage = () => {
+const Homepage = ({data}) => {
+ 
   return (
     <>
       <Header />
@@ -25,9 +26,9 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <ProductTabSection />
-      <LeatherSection/>
-      <NewArrival/>
+      <ProductTabSection  data={data}/>
+      <LeatherSection  data={data}/>
+      <NewArrival  data={data} />
 
 
       <Footer />

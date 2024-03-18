@@ -39,7 +39,7 @@ const dummydata=[
         <section className="product-tabs section-padding position-relative">
           <div className="container">
             <div className="section-title style-2">
-              <h3>New Arrival</h3>
+            <Link  to="new-arrivals" style={{cursor:"pointer"}}><h3>New Arrivals</h3></Link>
           
             </div>
   

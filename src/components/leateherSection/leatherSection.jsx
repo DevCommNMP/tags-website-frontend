@@ -38,7 +38,7 @@ const dummydata=[
         <section className="product-tabs section-padding position-relative">
           <div className="container">
             <div className="section-title style-2">
-              <h3>Premium Leather</h3>
+            <Link  to="premium-leather" style={{cursor:"pointer"}}><h3>Premium Leather</h3></Link>
           
             </div>
   

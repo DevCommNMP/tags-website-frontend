@@ -30,8 +30,7 @@ const dummydata=[
   },
  
 ]
-const ProductTabSection = ({data}) => {
- 
+const PremiumLeather = ({data}) => {
   const navigate=useNavigate()
   const onClickProductHandler=(productid)=>{
     navigate(`/products/${productid}`)
@@ -70,24 +69,25 @@ const ProductTabSection = ({data}) => {
     }
   };
   
-  const hotProducts = data.filter(item => item.tag.includes('hot'));
+  const products= data.filter(item => item.tag.includes('trending'));
  
+  
   return (
     <>
-   
+    <Header />
     
-
+    
       <section className="product-tabs section-padding position-relative">
         <div className="container">
           <div className="section-title style-2">
-            <Link  to="popular-products" style={{cursor:"pointer"}}><h3>Popular Products</h3></Link>
+            <h3> All Premium Leather Products</h3>
         
           </div>
 
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
-                {hotProducts.map(item=>(
+                {products.map(item=>(
                   <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
                     <div  className="product-img-action-wrap" >
@@ -3569,4 +3569,4 @@ const ProductTabSection = ({data}) => {
   )
 }
 
-export default ProductTabSection
+export default PremiumLeather

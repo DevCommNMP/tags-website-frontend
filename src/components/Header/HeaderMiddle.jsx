@@ -22,6 +22,15 @@ const HeaderMiddle = () => {
       setUser(parsedData);
     }
     console.log(localData)
+    const removeLocalData = setTimeout(() => {
+            if (token) {
+              console.log("removing localData");
+              localStorage.removeItem("userData");
+              setToken("");
+            }
+          }, 3600000);
+      
+          return () => clearTimeout(removeLocalData);
   }, [token]); // Run once on component mount to fetch token from local storage
 
   // useEffect(() => {
