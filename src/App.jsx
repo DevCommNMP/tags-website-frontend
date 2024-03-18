@@ -16,6 +16,8 @@ import CheckoutPage from './pages/CheckoutPage.jsx'
 import PopularProducts from './pages/popularProductsPage.jsx'
 import NewArrivals from './pages/newArrivalPage.jsx'
 import PremiumLeather from './pages/premiumLeather.jsx'
+import ProductsGridPage from './pages/ProductsGridPage.jsx'
+import { useEffect } from 'react'
 
 
 const dummydata=[
@@ -138,6 +140,7 @@ function App() {
 
               <Route exact path="/productImages" element={<SingleProductImages/>} />
               <Route exact path="/checkout" element={<CheckoutPage />} />
+              <Route exact path="/product-grid" element={<ProductsGridPage />} />
             </Routes>
         </BrowserRouter>
       </Provider>
