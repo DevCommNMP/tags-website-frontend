@@ -1,10 +1,11 @@
 import Header from "../components/Header/Header";
 import { Link, useParams } from 'react-router-dom';
-const ProductsGridPage = () => {
-  const {title}=useParams()
+const ProductsGridPage = ({ data }) => {
+  const { title } = useParams()
   console.log(
     title
   )
+  console.log(data)
   return (
     <div>
       <div>
@@ -199,7 +200,7 @@ const ProductsGridPage = () => {
               <strong>3 days</strong> left
             </span>
           </div>
-          <Header/>
+          <Header />
           {/* <div className="header-top header-top-ptb-1 d-none d-lg-block">
             <div className="container">
               <div className="row align-items-center">
@@ -1668,7 +1669,7 @@ const ProductsGridPage = () => {
                 <div className="shop-product-fillter">
                   <div className="totall-product">
                     <p>
-                      We found <strong className="text-brand">29</strong> items
+                      We found <strong className="text-brand">{data.length}</strong> items
                       for you!
                     </p>
                   </div>
@@ -1748,14 +1749,16 @@ const ProductsGridPage = () => {
                   </div>
                 </div>
                 <div className="row product-grid">
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
+                {data.map(product=>{
+  return(
+    <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+    <div className="product-cart-wrap mb-30">
                       <div className="product-img-action-wrap">
                         <div className="product-img product-img-zoom">
                           <a href="shop-product-right.html">
                             <img
                               className="default-img"
-                              src="assets/imgs/shop/product-1-1.jpg"
+                              src={product.image}
                               alt=""
                             />
                             <img
@@ -1799,14 +1802,15 @@ const ProductsGridPage = () => {
                         </div>
                         <h2>
                           <a href="shop-product-right.html">
-                            Seeds of Change Organic Quinoe
+                            
+                            {product.name}
                           </a>
                         </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
                             <div
                               className="product-rating"
-                              style={{width: '90%'}}
+                              style={{ width: '90%' }}
                             ></div>
                           </div>
                           <span className="font-small ml-5 text-muted">
@@ -1816,7 +1820,7 @@ const ProductsGridPage = () => {
                         </div>
                         <div>
                           <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">NestFood</a>
+                            {/* By <a href="vendor-details-1.html">NestFood</a> */}
                           </span>
                         </div>
                         <div className="product-card-bottom">
@@ -1832,1598 +1836,9 @@ const ProductsGridPage = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-2-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-2-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                        <div className="product-badges product-badges-position product-badges-mrg">
-                          <span className="sale">Sale</span>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Hodo Foods</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            All Natural Italian-Style Chicken Meatballs
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{ width : '80%' }}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (3.5)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">Stouffer</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$52.85</span>
-                            <span className="old-price">$55.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
                     </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-3-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-3-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                        <div className="product-badges product-badges-position product-badges-mrg">
-                          <span className="new">New</span>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Snack</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Angie’s Boomchickapop Sweet & Salty
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{ width : '85%' }}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">StarKist</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$48.85</span>
-                            <span className="old-price">$52.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-4-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-4-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Vegetables</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Foster Farms Takeout Crispy classNameic
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{width: '90%'}}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">NestFood</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$17.85</span>
-                            <span className="old-price">$19.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-5-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-5-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                        <div className="product-badges product-badges-position product-badges-mrg">
-                          <span className="best">-14%</span>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Pet Foods</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Blue Diamond Almonds Lightly
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{width: '90%'}}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">NestFood</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$23.85</span>
-                            <span className="old-price">$25.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-6-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-6-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Hodo Foods</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Chobani Complete Vanilla Greek
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{width: '90%'}}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">NestFood</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$54.85</span>
-                            <span className="old-price">$55.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-7-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-7-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Meats</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Canada Dry Ginger Ale – 2 L Bottle
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{width: '90%'}}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">NestFood</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$32.85</span>
-                            <span className="old-price">$33.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-8-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-8-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                        <div className="product-badges product-badges-position product-badges-mrg">
-                          <span className="sale">Sale</span>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Snack</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Encore Seafoods Stuffed Alaskan
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{width: '90%'}}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">NestFood</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$35.85</span>
-                            <span className="old-price">$37.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-9-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-9-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                        <div className="product-badges product-badges-position product-badges-mrg">
-                          <span className="hot">Hot</span>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Coffes</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Gorton’s Beer Battered Fish Fillets
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{width: '90%'}}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">Old El Paso</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$23.85</span>
-                            <span className="old-price">$25.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-10-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-10-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Cream</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Haagen-Dazs Caramel Cone Ice Cream
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{ width : '50%' }}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (2.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">Tyson</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$22.85</span>
-                            <span className="old-price">$24.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-1-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-1-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                        <div className="product-badges product-badges-position product-badges-mrg">
-                          <span className="hot">Hot</span>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Snack</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Seeds of Change Organic Quinoe
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{width: '90%'}}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">NestFood</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$28.85</span>
-                            <span className="old-price">$32.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-2-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-2-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                        <div className="product-badges product-badges-position product-badges-mrg">
-                          <span className="sale">Sale</span>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Hodo Foods</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            All Natural Italian-Style Chicken Meatballs
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{ width : '80%' }}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (3.5)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">Stouffer</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$52.85</span>
-                            <span className="old-price">$55.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-3-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-3-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                        <div className="product-badges product-badges-position product-badges-mrg">
-                          <span className="new">New</span>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Snack</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Angie’s Boomchickapop Sweet & Salty
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{ width : '85%' }}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">StarKist</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$48.85</span>
-                            <span className="old-price">$52.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-4-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-4-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Vegetables</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Foster Farms Takeout Crispy classNameic
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{width: '90%'}}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">NestFood</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$17.85</span>
-                            <span className="old-price">$19.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-5-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-5-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                        <div className="product-badges product-badges-position product-badges-mrg">
-                          <span className="best">-14%</span>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Pet Foods</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Blue Diamond Almonds Lightly
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{width: '90%'}}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">NestFood</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$23.85</span>
-                            <span className="old-price">$25.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-6-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-6-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Hodo Foods</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Chobani Complete Vanilla Greek
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{width: '90%'}}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">NestFood</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$54.85</span>
-                            <span className="old-price">$55.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-7-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-7-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Meats</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Canada Dry Ginger Ale – 2 L Bottle
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{width: '90%'}}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">NestFood</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$32.85</span>
-                            <span className="old-price">$33.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-8-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-8-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                        <div className="product-badges product-badges-position product-badges-mrg">
-                          <span className="sale">Sale</span>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Snack</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Encore Seafoods Stuffed Alaskan
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{width: '90%'}}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">NestFood</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$35.85</span>
-                            <span className="old-price">$37.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-9-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-9-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                        <div className="product-badges product-badges-position product-badges-mrg">
-                          <span className="hot">Hot</span>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Coffes</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Gorton’s Beer Battered Fish Fillets
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{width: '90%'}}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">Old El Paso</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$23.85</span>
-                            <span className="old-price">$25.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
-                    <div className="product-cart-wrap">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src="assets/imgs/shop/product-10-1.jpg"
-                              alt=""
-                            />
-                            <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-10-2.jpg"
-                              alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Cream</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            Haagen-Dazs Caramel Cone Ice Cream
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{ width : '50%' }}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (2.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">Tyson</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$22.85</span>
-                            <span className="old-price">$24.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+  )
+  })}
                 </div>
                 <div className="pagination-area mt-20 mb-20">
                   <nav aria-label="Page navigation example">
@@ -3504,7 +1919,7 @@ const ProductsGridPage = () => {
                               <div className="product-rate d-inline-block">
                                 <div
                                   className="product-rating"
-                                  style={{width: '90%'}}
+                                  style={{ width: '90%' }}
                                 ></div>
                               </div>
                               <span className="font-small ml-5 text-muted">
@@ -3562,7 +1977,7 @@ const ProductsGridPage = () => {
                               <div className="product-rate d-inline-block">
                                 <div
                                   className="product-rating"
-                                  style={{width: '90%'}}
+                                  style={{ width: '90%' }}
                                 ></div>
                               </div>
                               <span className="font-small ml-5 text-muted">
@@ -3621,7 +2036,7 @@ const ProductsGridPage = () => {
                               <div className="product-rate d-inline-block">
                                 <div
                                   className="product-rating"
-                                  style={{ width : '80%' }}
+                                  style={{ width: '80%' }}
                                 ></div>
                               </div>
                               <span className="font-small ml-5 text-muted">
@@ -3679,7 +2094,7 @@ const ProductsGridPage = () => {
                               <div className="product-rate d-inline-block">
                                 <div
                                   className="product-rating"
-                                  style={{ width : '80%' }}
+                                  style={{ width: '80%' }}
                                 ></div>
                               </div>
                               <span className="font-small ml-5 text-muted">
@@ -3715,71 +2130,71 @@ const ProductsGridPage = () => {
                 <div className="sidebar-widget widget-category-2 mb-30">
                   <h5 className="section-title style-1 mb-30">Category</h5>
                   <ul>
-                   <Link to="/categories/casual Shoes">
-                   <li>
-                      <a href="shop-grid-right.html">
-                        {" "}
-                        <img
-                          src="assets/imgs/theme/icons/category-1.svg"
-                          alt=""
-                        />
-                       Casual Shoes
-                      </a>
-                      {/* <span className="count">30</span> */}
-                    </li>
-                   </Link>
-                   <Link to="/categories/Ethnic Shoes">
-                   <li>
-                      <a href="shop-grid-right.html">
-                        {" "}
-                        <img
-                          src="assets/imgs/theme/icons/category-1.svg"
-                          alt=""
-                        />
-                      Ethnic Shoes
-                      </a>
-                      {/* <span className="count">30</span> */}
-                    </li>
-                   </Link>
-                   <Link to="/categories/Formal Shoes">
-                   <li>
-                      <a href="shop-grid-right.html">
-                        {" "}
-                        <img
-                          src="assets/imgs/theme/icons/category-1.svg"
-                          alt=""
-                        />
-                      Formal Shoes
-                      </a>
-                      {/* <span className="count">30</span> */}
-                    </li>
-                   </Link>
-                   <Link to="/categories/Party Shoes">
-                   <li>
-                      <a href="shop-grid-right.html">
-                        {" "}
-                        <img
-                          src="assets/imgs/theme/icons/category-1.svg"
-                          alt=""
-                        />
-                       Party Shoes
-                      </a>
-                      {/* <span className="count">30</span> */}
-                    </li>
-                   </Link>
-                   <Link to="/categories/Sports Shoes">
-                   <li>
-                      <a href="shop-grid-right.html">
-                        {" "}
-                        <img
-                          src="assets/imgs/theme/icons/category-1.svg"
-                          alt=""
-                        />
-                       Sports Shoes
-                      </a>
-                      {/* <span className="count">30</span> */}
-                    </li>
-                   </Link>
+                    <Link to="/categories/casual Shoes">
+                      <li>
+                        <a href="shop-grid-right.html">
+                          {" "}
+                          <img
+                            src="assets/imgs/theme/icons/category-1.svg"
+                            alt=""
+                          />
+                          Casual Shoes
+                        </a>
+                        {/* <span className="count">30</span> */}
+                      </li>
+                    </Link>
+                    <Link to="/categories/Ethnic Shoes">
+                      <li>
+                        <a href="shop-grid-right.html">
+                          {" "}
+                          <img
+                            src="assets/imgs/theme/icons/category-1.svg"
+                            alt=""
+                          />
+                          Ethnic Shoes
+                        </a>
+                        {/* <span className="count">30</span> */}
+                      </li>
+                    </Link>
+                    <Link to="/categories/Formal Shoes">
+                      <li>
+                        <a href="shop-grid-right.html">
+                          {" "}
+                          <img
+                            src="assets/imgs/theme/icons/category-1.svg"
+                            alt=""
+                          />
+                          Formal Shoes
+                        </a>
+                        {/* <span className="count">30</span> */}
+                      </li>
+                    </Link>
+                    <Link to="/categories/Party Shoes">
+                      <li>
+                        <a href="shop-grid-right.html">
+                          {" "}
+                          <img
+                            src="assets/imgs/theme/icons/category-1.svg"
+                            alt=""
+                          />
+                          Party Shoes
+                        </a>
+                        {/* <span className="count">30</span> */}
+                      </li>
+                    </Link>
+                    <Link to="/categories/Sports Shoes">
+                      <li>
+                        <a href="shop-grid-right.html">
+                          {" "}
+                          <img
+                            src="assets/imgs/theme/icons/category-1.svg"
+                            alt=""
+                          />
+                          Sports Shoes
+                        </a>
+                        {/* <span className="count">30</span> */}
+                      </li>
+                    </Link>
                   </ul>
                 </div>
                 <div className="sidebar-widget price_range range mb-30">
@@ -3918,7 +2333,7 @@ const ProductsGridPage = () => {
                       <div className="product-rate">
                         <div
                           className="product-rating"
-                          style={{width: '90%'}}
+                          style={{ width: '90%' }}
                         ></div>
                       </div>
                     </div>
@@ -3935,7 +2350,7 @@ const ProductsGridPage = () => {
                       <div className="product-rate">
                         <div
                           className="product-rating"
-                          style={{ width : '80%' }}
+                          style={{ width: '80%' }}
                         ></div>
                       </div>
                     </div>
@@ -3952,7 +2367,7 @@ const ProductsGridPage = () => {
                       <div className="product-rate">
                         <div
                           className="product-rating"
-                          style={{ width : '60%' }}
+                          style={{ width: '60%' }}
                         ></div>
                       </div>
                     </div>

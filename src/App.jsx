@@ -54,62 +54,66 @@ const dummydata=[
   {
     "id": 6,
     "name": "Item 1",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img1.jpg',
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img1.jpg',
     "tag":"trending"
   },
   {
     "id": 7,
     "name": "Item 2",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img7.jpg',
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img5.jpg',
+
     "tag":"trending"
   },
   {
     "id": 8,
     "name": "Item 3",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img3.jpg',
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img3.jpg',
+
     "tag":"trending"
 
   },
   {
     "id": 9,
     "name": "Item 4",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img4.jpg',
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img4.jpg',
+
     "tag":"trending"
   },
   {
     "id": 10,
     "name": "Item 5",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img5.jpg',
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img5.jpg',
+
     "tag":"trending"
   },
   {
     "id": 11,
     "name": "Item 1",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img1.jpg',
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img1.jpg',
     "tag":"new"
   },
   {
     "id": 12,
     "name": "Item 2",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img7.jpg',
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img2.jpg',
     "tag":"new"
   },
   {
     "id": 13,
     "name": "Item 3",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img3.jpg',
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img3.jpg',
     "tag":"new"
   },
   {
     "id": 14,
-    "name": "Item 4",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img4.jpg',
+    "name": "Item1 4",
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img4.jpg',
     "tag":"new"
   },
   {
     "id": 15,
-    "name": "Item 5",
-    "image":'src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img5.jpg',
+    "name": "Item 15",
+    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img5.jpg',
     "tag":"new"
   },
  
@@ -140,7 +144,7 @@ function App() {
 
               <Route exact path="/productImages" element={<SingleProductImages/>} />
               <Route exact path="/checkout" element={<CheckoutPage />} />
-              <Route exact path="/categories/:title" element={<ProductsGridPage />} />
+              <Route exact path="/categories/:title" element={<ProductsGridPage  data={dummydata} />} />
             </Routes>
         </BrowserRouter>
       </Provider>
