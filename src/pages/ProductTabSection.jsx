@@ -70,7 +70,10 @@ const ProductTabSection = ({data}) => {
     }
   };
   
-  const hotProducts = data.filter(item => item.tag.includes('hot'));
+  // const hotProducts = data.filter(item => item.tag.includes('hot'));
+   const productHandler=(event)=>{
+event
+   }
  
   return (
     <>
@@ -80,7 +83,7 @@ const ProductTabSection = ({data}) => {
       <section className="product-tabs section-padding position-relative">
         <div className="container">
           <div className="section-title style-2">
-            <Link  to="popular-products" style={{cursor:"pointer"}}><h3>Popular Products</h3></Link>
+            <a   style={{cursor:"pointer"}} ><h3 onClick={productHandler}>Popular Products</h3></a>
         
           </div>
 

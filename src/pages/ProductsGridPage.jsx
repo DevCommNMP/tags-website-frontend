@@ -1,3 +1,5 @@
+import Header from "../components/Header/Header";
+
 const ProductsGridPage = () => {
   return (
     <div>
@@ -9,7 +11,7 @@ const ProductsGridPage = () => {
           aria-labelledby="quickViewModalLabel"
           aria-hidden="true"
         >
-          <div className="modal-dialog">
+          {/* <div className="modal-dialog">
             <div className="modal-content">
               <button
                 type="button"
@@ -184,7 +186,7 @@ const ProductsGridPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <header className="header-area header-style-1 header-height-2">
           <div className="mobile-promotion">
@@ -193,7 +195,8 @@ const ProductsGridPage = () => {
               <strong>3 days</strong> left
             </span>
           </div>
-          <div className="header-top header-top-ptb-1 d-none d-lg-block">
+          <Header/>
+          {/* <div className="header-top header-top-ptb-1 d-none d-lg-block">
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-xl-3 col-lg-4">
@@ -284,13 +287,13 @@ const ProductsGridPage = () => {
                           </li>
                         </ul>
                       </li>
-                    </ul>
+                    </ul> 
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="header-middle header-middle-ptb-1 d-none d-lg-block">
+          </div> */}
+          {/* <div className="header-middle header-middle-ptb-1 d-none d-lg-block">
             <div className="container">
               <div className="header-wrap">
                 <div className="logo logo-width-1">
@@ -501,10 +504,10 @@ const ProductsGridPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="header-bottom header-bottom-bg-color sticky-bar">
             <div className="container">
-              <div className="header-wrap header-space-between position-relative">
+              {/* <div className="header-wrap header-space-between position-relative">
                 <div className="logo logo-width-1 d-block d-lg-none">
                   <a href="index.html">
                     <img src="assets/imgs/theme/logo.svg" alt="logo" />
@@ -1212,7 +1215,7 @@ const ProductsGridPage = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </header>

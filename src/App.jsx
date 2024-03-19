@@ -140,7 +140,7 @@ function App() {
 
               <Route exact path="/productImages" element={<SingleProductImages/>} />
               <Route exact path="/checkout" element={<CheckoutPage />} />
-              <Route exact path="/product-grid" element={<ProductsGridPage />} />
+              <Route exact path="/categories/:title" element={<ProductsGridPage />} />
             </Routes>
         </BrowserRouter>
       </Provider>
