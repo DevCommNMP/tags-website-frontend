@@ -37,37 +37,7 @@ const ProductTabSection = ({data}) => {
     navigate(`/products/${productid}`)
   }
   const cartHandler = async (id) => {
-    console.log(id);
-    let cart = localStorage.getItem("cart");
-  
-    if (cart) {
-      // Parse the existing cart items from localStorage
-      let existingCart;
-      try {
-        existingCart = JSON.parse(cart);
-      } catch (error) {
-        console.error("Error parsing existing cart:", error);
-        existingCart = [];
-      }
-  
-      // Ensure existingCart is an array
-      if (!Array.isArray(existingCart)) {
-        console.error("Existing cart is not an array:", existingCart);
-        existingCart = [];
-      }
-  
-      // Check if the item already exists in the cart
-      const isItemInCart = existingCart.includes(id);
-      
-      if (!isItemInCart) {
-        // If the item is not already in the cart, add it
-        const updatedCart = [...existingCart, id];
-        localStorage.setItem("cart", JSON.stringify(updatedCart));
-      }
-    } else {
-      // If there is no cart in localStorage, create a new one with the current item
-      localStorage.setItem("cart", JSON.stringify([id]));
-    }
+    
   };
   
   // const hotProducts = data.filter(item => item.tag.includes('hot'));
@@ -90,7 +60,7 @@ event
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
-                {hotProducts.map(item=>(
+                {data.map(item=>(
                   <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
                     <div  className="product-img-action-wrap" >

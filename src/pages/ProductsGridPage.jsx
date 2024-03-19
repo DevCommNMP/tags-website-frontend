@@ -1,6 +1,10 @@
 import Header from "../components/Header/Header";
-
+import { Link, useParams } from 'react-router-dom';
 const ProductsGridPage = () => {
+  const {title}=useParams()
+  console.log(
+    title
+  )
   return (
     <div>
       <div>
@@ -1219,7 +1223,7 @@ const ProductsGridPage = () => {
             </div>
           </div>
         </header>
-        <div className="mobile-header-active mobile-header-wrapper-style">
+        {/* <div className="mobile-header-active mobile-header-wrapper-style">
           <div className="mobile-header-wrapper-inner">
             <div className="mobile-header-top">
               <div className="mobile-header-logo">
@@ -1610,22 +1614,22 @@ const ProductsGridPage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <main className="main">
           <div className="page-header mt-30 mb-50">
             <div className="container">
               <div className="archive-header">
                 <div className="row align-items-center">
                   <div className="col-xl-3">
-                    <h1 className="mb-15">Snack</h1>
+                    <h1 className="mb-15">{title}</h1>
                     <div className="breadcrumb">
                       <a href="index.html" rel="nofollow">
                         <i className="fi-rs-home mr-5"></i>Home
                       </a>
-                      <span></span> Shop <span></span> Snack
+                      <span></span> Shop <span></span> {title}
                     </div>
                   </div>
-                  <div className="col-xl-9 text-end d-none d-xl-block">
+                  {/* <div className="col-xl-9 text-end d-none d-xl-block">
                     <ul className="tags-list">
                       <li className="hover-up">
                         <a href="blog-category-grid.html">
@@ -1653,7 +1657,7 @@ const ProductsGridPage = () => {
                         </a>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -3711,61 +3715,71 @@ const ProductsGridPage = () => {
                 <div className="sidebar-widget widget-category-2 mb-30">
                   <h5 className="section-title style-1 mb-30">Category</h5>
                   <ul>
-                    <li>
+                   <Link to="/categories/casual Shoes">
+                   <li>
                       <a href="shop-grid-right.html">
                         {" "}
                         <img
                           src="assets/imgs/theme/icons/category-1.svg"
                           alt=""
                         />
-                        Milks & Dairies
+                       Casual Shoes
                       </a>
-                      <span className="count">30</span>
+                      {/* <span className="count">30</span> */}
                     </li>
-                    <li>
+                   </Link>
+                   <Link to="/categories/Ethnic Shoes">
+                   <li>
                       <a href="shop-grid-right.html">
                         {" "}
                         <img
-                          src="assets/imgs/theme/icons/category-2.svg"
+                          src="assets/imgs/theme/icons/category-1.svg"
                           alt=""
                         />
-                        Clothing
+                      Ethnic Shoes
                       </a>
-                      <span className="count">35</span>
+                      {/* <span className="count">30</span> */}
                     </li>
-                    <li>
+                   </Link>
+                   <Link to="/categories/Formal Shoes">
+                   <li>
                       <a href="shop-grid-right.html">
                         {" "}
                         <img
-                          src="assets/imgs/theme/icons/category-3.svg"
+                          src="assets/imgs/theme/icons/category-1.svg"
                           alt=""
                         />
-                        Pet Foods{" "}
+                      Formal Shoes
                       </a>
-                      <span className="count">42</span>
+                      {/* <span className="count">30</span> */}
                     </li>
-                    <li>
+                   </Link>
+                   <Link to="/categories/Party Shoes">
+                   <li>
                       <a href="shop-grid-right.html">
                         {" "}
                         <img
-                          src="assets/imgs/theme/icons/category-4.svg"
+                          src="assets/imgs/theme/icons/category-1.svg"
                           alt=""
                         />
-                        Baking material
+                       Party Shoes
                       </a>
-                      <span className="count">68</span>
+                      {/* <span className="count">30</span> */}
                     </li>
-                    <li>
+                   </Link>
+                   <Link to="/categories/Sports Shoes">
+                   <li>
                       <a href="shop-grid-right.html">
                         {" "}
                         <img
-                          src="assets/imgs/theme/icons/category-5.svg"
+                          src="assets/imgs/theme/icons/category-1.svg"
                           alt=""
                         />
-                        Fresh Fruit
+                       Sports Shoes
                       </a>
-                      <span className="count">87</span>
+                      {/* <span className="count">30</span> */}
                     </li>
+                   </Link>
                   </ul>
                 </div>
                 <div className="sidebar-widget price_range range mb-30">

@@ -63,10 +63,10 @@ const HeaderMiddle = () => {
             </div>
             <div className="header-right">
               <div className="search-style-2">
-                <form action="#">
+                <form >
                   <select className="select-active">
-                    <option>All Categories</option>
-                    <option>Milks and Dairies</option>
+                    <option>Search</option>
+                    {/* <option>Milks and Dairies</option>
                     <option>Wines & Alcohol</option>
                     <option>Clothing & Beauty</option>
                     <option>Pet Foods & Toy</option>
@@ -75,7 +75,7 @@ const HeaderMiddle = () => {
                     <option>Vegetables</option>
                     <option>Fresh Seafood</option>
                     <option>Noodles & Rice</option>
-                    <option>Ice cream</option>
+                    <option>Ice cream</option> */}
                   </select>
                   <input type="text" placeholder="Search for items..." />
                 </form>

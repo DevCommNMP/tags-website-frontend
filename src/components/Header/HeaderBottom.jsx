@@ -31,10 +31,10 @@ const HeaderBottom = () => {
                     </div>
                     <div className="header-nav d-none d-lg-flex">
                         <div className="main-categori-wrap d-none d-lg-block">
-                            <a className="categories-button-active" href="#">
+                            <Link className="categories-button-active" to="/categories/Products">
                                 <span className="fi-rs-apps"></span> <span className="et">Browse</span> All Categories
-                                <i className="fi-rs-angle-down"></i>
-                            </a>
+                                {/* <i className="fi-rs-angle-down"></i> */}
+                            </Link>
                             <div className="categories-dropdown-wrap categories-dropdown-active-large font-heading">
                                 <div className="d-flex categori-dropdown-inner">
                                     <ul>
