@@ -1,6 +1,9 @@
 import { Link, useNavigate } from "react-router-dom"
 import Header from "../components/Header/Header"
 import Hero from "../components/Hero/Hero"
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 
 const dummydata=[
   {
@@ -31,25 +34,36 @@ const dummydata=[
  
 ]
 const ProductTabSection = ({data}) => {
- 
+  const[successToast,setSuccessToast]=useState("");
+const[errorToast,setErrorToast]=useState("");
+
   const navigate=useNavigate()
   const onClickProductHandler=(productid)=>{
     navigate(`/products/${productid}`)
   }
   const cartHandler = async (id) => {
-    
+    setSuccessToast(true);
+    toast.success("Success Notification !", {
+      position: "top-right"
+    });
+
   };
   
   // const hotProducts = data.filter(item => item.tag.includes('hot'));
    const productHandler=(event)=>{
-event
+
    }
+   
+   
  
   return (
     <>
    
     
-
+   <div>
+        {(successToast||errorToast)&&
+        <ToastContainer  />}
+      </div>
       <section className="product-tabs section-padding position-relative">
         <div className="container">
           <div className="section-title style-2">

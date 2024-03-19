@@ -126,7 +126,7 @@ const HeaderBottom = () => {
                                 <nav>
                                     <ul>
                                         <li className="hot-deals"><img src={iconHot}
-                                            alt="hot deals" /><a href='shop-grid-right.html'>Deals</a></li>
+                                            alt="hot deals" /><a href='shop-grid-right.html'><Link to="/categories/Deals">Deals</Link></a></li>
 
 
                                         {/* <li>
@@ -242,16 +242,16 @@ const HeaderBottom = () => {
                                             </ul>
                                         </li>
                                         <li>
-                                            <a className='active' href='index.html'>Occation <i className="fi-rs-angle-down"></i></a>
+                                            <Link className='active' to="/categories/Occation">Occation <i className="fi-rs-angle-down"></i></Link>
                                             <ul className="sub-menu">
-                                            <li><a href='#'>Casual Shoes
+                                                <li><Link to="/categories/Casual Shoes">Casual Shoes
 
-</a></li>
-<li><a href='#'>Ethnic Shoes</a></li>
-<li><a href='#'>Formal Shoes</a></li>
-<li><a href='#'>Party Shoes</a></li>
-<li><a href='#'>Sports Shoes</a>
-</li>
+                                                </Link></li>
+                                                <li><Link to="/categories/Ethnic Shoes">Ethnic Shoes</Link></li>
+                                                <li><Link to="/categories/Formal Shoes">Formal Shoes</Link></li>
+                                                <li><Link to="/categories/Party Shoes">Party Shoes</Link></li>
+                                                <li><Link to="/categories/Sports Shoes">Sports Shoes</Link>
+                                                </li>
                                             </ul>
                                         </li>
                                         {/* <li>
@@ -274,29 +274,29 @@ const HeaderBottom = () => {
                                         <li>
                                             <a href="#">Shoe Type <i className="fi-rs-angle-down"></i></a>
                                             <ul className="sub-menu">
-                                            <li><a href='#'>
-                                                            Ballerinas
-                                                            Walking Shoes</a></li>
-                                                        <li><a href='#'>Boots</a></li>
-                                                        <li><a href='#'>Comfort</a></li>
-                                                        <li><a href='#'>Flip Flops</a></li>
-                                                        <li><a href='#'>Kolhapuris</a></li>
-                                                        <li><a href='#'>Mojaris</a></li>
-                                                        <li><a href='#'>Mules</a></li>
-                                                        <li><a href='#'>Pumps</a></li>
-                                                        <li><a href='#'>Sandals</a></li>
-                                                        <li><a href='#'>Slides</a></li>
-                                                        <li><a href='#'>Slippers</a></li>
-                                                        <li><a href='#'>Slip Ons</a></li>
-                                                        <li><a href='#'>Sneakers</a></li>
-                                                        <li><a href='#'>Walking Shoes</a></li>
+                                                <li><a href='#'>
+                                                    Ballerinas
+                                                    Walking Shoes</a></li>
+                                                <li><Link to="/categories/Boots" href='#'>Boots</Link></li>
+                                                <li><Link to="/categories/Comfort" href='#'>Comfort</Link></li>
+                                                <li><Link to="/categories/Flip Flop" href='#'>Flip Flops</Link></li>
+                                                <li><Link to="/categories/kolhapuries" href='#'>Kolhapuris</Link></li>
+                                                <li><Link to="/categories/Mojaris" href='#'>Mojaris</Link></li>
+                                                <li><Link to="/categories/Mules" href='#'>Mules</Link></li>
+                                                <li><Link to="/categories/Pumps" href='#'>Pumps</Link></li>
+                                                <li><Link to="/categories/Sandles" href='#'>Sandals</Link></li>
+                                                <li><Link to="/categories/Slides" href='#'>Slides</Link></li>
+                                                <li><Link to="/categories/Slippers" href='#'>Slippers</Link></li>
+                                                <li><Link to="/categories/Slip Ons" href='#'>Slip Ons</Link></li>
+                                                <li><Link to="/categories/Sneakers" href='#'>Sneakers</Link></li>
+                                                <li><Link to="/categories/Walking Shoes" href='#'>Walking Shoes</Link></li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href='page-about-2.html'>About</a>
+                                            <Link to="/categories/Premium Leather">About</Link>
                                         </li>
                                         <li>
-                                            <a href='page-contact.html' style={{ color: "#d02327" }}>Premium Leather</a>
+                                            <Link to="/categories/Premium Leather" style={{ color: "#d02327" }}>Premium Leather</Link>
                                         </li>
                                     </ul>
                                 </nav>

@@ -7,8 +7,13 @@ import { baseUrl } from "../../../utils/baseUrl";
 export const addToCartHandler = createAsyncThunk(
   "products/addtocart",
 
+  
   async (productId, { rejectWithValue }) => {
 
+    const localdata=localStorage.getItem("userData");
+    const parsedData=JSON.getItem(localdata);
+    const token=parsedData.token
+    console.log(token);
     try {
       const config = {
         headers: {
@@ -17,6 +22,7 @@ export const addToCartHandler = createAsyncThunk(
       };
 
       const res = await axios.post(`${baseUrl}/api/cart`, productId, config);
+     
       return res.data;
     } catch (error) {
       

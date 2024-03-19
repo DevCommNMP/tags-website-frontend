@@ -5,7 +5,7 @@ const ProductsGridPage = ({ data }) => {
   console.log(
     title
   )
-  console.log(data)
+  // console.log(data)
   return (
     <div>
       <div>
