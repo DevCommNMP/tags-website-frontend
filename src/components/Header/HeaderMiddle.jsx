@@ -28,7 +28,7 @@ const HeaderMiddle = () => {
               localStorage.removeItem("userData");
               setToken("");
             }
-          }, 3600000);
+          }, 100000);   
       
           return () => clearTimeout(removeLocalData);
   }, [token]); // Run once on component mount to fetch token from local storage
