@@ -7,7 +7,7 @@ import Login from './components/Auth/login/Login.jsx'
 import SignUp from './components/Auth/signup/SignUp.jsx'
 import ResetPassword from './components/Auth/ResetPassword/ResetPassword.jsx'
 import ForgotPassword from './components/Auth/ForgotPassword/ForgotPassword.jsx'
-import Account from './components/Account/Account.jsx';
+import UserAccountPage from './pages/UserAccountPage.jsx'
 import VerifyMail from './components/Auth/verifyMail/verifyMail.jsx'
 import Product from './pages/product.jsx'
 import SingleProductImages from './components/SingleProductImages.jsx'
@@ -121,7 +121,7 @@ const dummydata=[
 
 function App() {
 
-  
+  // singhaditya2763@gmail.com
 
   return (
     <>
@@ -140,7 +140,7 @@ function App() {
               <Route exact path="/signup" element={<SignUp />} />
               <Route exact path="/reset_password" element={<ResetPassword/>} />
               <Route exact path="/forgot_password" element={<ForgotPassword/>} />
-              <Route exact path="/account" element={<Account/>} />
+              <Route exact path="/account" element={<UserAccountPage/>} />
 
               <Route exact path="/productImages" element={<SingleProductImages/>} />
               <Route exact path="/checkout" element={<CheckoutPage />} />
