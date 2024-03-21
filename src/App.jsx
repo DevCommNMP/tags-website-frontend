@@ -17,7 +17,7 @@ import PopularProducts from "./pages/popularProductsPage.jsx";
 import NewArrivals from "./pages/newArrivalPage.jsx";
 import PremiumLeather from "./pages/premiumLeather.jsx";
 import ProductsGridPage from "./pages/ProductsGridPage.jsx";
-import { useEffect } from "react";
+import Invoice from "./components/Invoice.jsx";
 import ToggleBtn from "./playground/ToggleBtn.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
 
@@ -143,6 +143,7 @@ function App() {
             <Route exact path="/checkout" element={<CheckoutPage />} />
             <Route exact path="/categories/:title" element={<ProductsGridPage data={dummydata} />} />
             <Route exact path="/wishlist" element={<Wishlist />} />
+            <Route exact path="/invoice" element={<Invoice />} />
 
 
             {/* TEST ROUTES
