@@ -32,3 +32,23 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact
 
 If you have any questions or want to contribute, feel free to contact me at `<your-email>`.
+
+<!--  -->
+
+## Navbar 
+remove `compare`
+remove dropdown in `search`
+remove `samdals` from `footer`
+update mobile number 
+tagsFootwear change `logo`
+update links 
+remove `topbar`
+login with google `button` , `sign up with google`
++ about page 
+`colors` , `brand` 
+
+`/category/name` -> `show 50` / not updaing / comment out 
+single produvt page, `buttons` updating 
+add colors option also 
+ 
+
