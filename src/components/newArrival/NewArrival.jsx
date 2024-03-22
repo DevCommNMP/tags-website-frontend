@@ -46,13 +46,15 @@ const dummydata=[
             <div className="tab-content" id="myTabContent">
               <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
                 <div className="row product-grid-4">
-                {data.filter(item => item.category && item.category.name === "premium Leather").map((item) => (
+                {/* {data.filter(item => item.category && item.category.name === "premium Leather").map((item) => ( */}
+                {data.map((item) => (
+
                     <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                     <div className="product-cart-wrap mb-30">
                       <div className="product-img-action-wrap">
                         <div className="product-img product-img-zoom">
                           <a href="shop-product-right.html">
-                            <img className="default-img" src={item.image} alt="" />
+                            <img className="default-img" src={item.productImage} alt="" />
                             <img className="hover-img" src="" alt="" />
                           </a>
                         </div>
@@ -68,7 +70,7 @@ const dummydata=[
                           </a>
                         </div>
                         <div className="product-badges product-badges-position product-badges-mrg" >
-                          <span className="hot" style={{backgroundColor:"green"}}>trending</span>
+                          <span className="hot" style={{backgroundColor:"green"}}>New</span>
                         </div>
                       </div>
                       <div className="product-content-wrap">

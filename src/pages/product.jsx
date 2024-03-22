@@ -2,10 +2,24 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import image from "../assets/drive-download-20240310T091457Z-001/ST 353 - White/img3.jpg";
 import image1 from "../assets/drive-download-20240310T091457Z-001/ST 353 - White/img2.jpg";
-
+import { useDispatch, useSelector } from "react-redux";
 import SingleProductImages from "../components/SingleProductImages";
+import { fetchParticularProduct } from "../redux/actions/product/productActions";
+import { useParams } from "react-router";
+import { useEffect } from "react";
 
 const Product = () => {
+const dispatch=useDispatch();
+const { id } = useParams();
+  const storeData = useSelector((store) => store.products);
+  const { particularproduct,productsLoading,appErr,serverErr,products } = storeData;
+console.log(particularproduct,productsLoading,appErr,serverErr,)
+
+useEffect(() => {
+  const res= dispatch(fetchParticularProduct(id))
+  console.log(res)
+}, [dispatch])
+
   return (
     <>
       <Header />
@@ -17,8 +31,8 @@ const Product = () => {
                 <i className="fi-rs-home mr-5"></i>Home
               </a>
               <span></span>
-              <a href="shop-grid-right.html">Vegetables & tubers</a>
-              <span></span> Seeds of Change Organic
+              <a href="shop-grid-right.html">Products</a>
+              <span></span> {particularproduct.title}
             </div>
           </div>
         </div>
@@ -27,11 +41,11 @@ const Product = () => {
             <div className="col-xl-10 col-lg-12 m-auto">
               <div className="product-detail accordion-detail">
                 <div className="row mb-50 mt-30">
-                <SingleProductImages />
+                <SingleProductImages  product={particularproduct} />
                   <div className="col-md-6 col-sm-12 col-xs-12">
                     <div className="detail-info pr-30 pl-30">
                       <span className="stock-status out-stock"> Sale Off </span>
-                      <h2 className="title-detail">Sandles</h2>
+                      <h2 className="title-detail">{particularproduct.title}</h2>
                       <div className="product-detail-rating">
                         <div className="product-rate-cover text-end">
                           <div className="product-rate d-inline-block">
@@ -47,41 +61,40 @@ const Product = () => {
                       </div>
                       <div className="clearfix product-price-cover">
                         <div className="product-price primary-color float-left">
-                          <span className="current-price text-brand">$38</span>
+                          <span className="current-price text-brand">&#8377; {particularproduct.SellingPrice}</span>
                           <span>
                             <span className="save-price font-md color3 ml-15">
                               26% Off
                             </span>
-                            <span className="old-price font-md ml-15">$52</span>
+                            <span className="old-price font-md ml-15">5000</span>
                           </span>
                         </div>
                       </div>
                       <div className="short-desc mb-30">
                         <p className="font-lg">
-                          Lorem ipsum dolor, sit amet consectetur adipisicing
-                          elit. Aliquam rem officia, corrupti reiciendis minima
-                          nisi modi, quasi, odio minus dolore impedit fuga eum
-                          eligendi.
+                         {particularproduct.description}
                         </p>
                       </div>
-                      <div className="attr-detail attr-size mb-30">
-                        <strong className="mr-10">Size / Weight: </strong>
+                      <div className="attr-detail attr-size mb-3">
+                        <strong className="mr-10">Size</strong>
                         <ul className="list-filter size-filter font-small">
-                          <li>
-                            <a href="#">5</a>
-                          </li>
-                          <li className="active">
-                            <a href="#">6</a>
-                          </li>
-                          <li>
-                            <a href="#">7</a>
-                          </li>
-                          <li>
-                            <a href="#">8</a>
-                          </li>
-                          <li>
-                            <a href="#">9</a>
-                          </li>
+                          
+                        {particularproduct && particularproduct.sizesAvailable && particularproduct.sizesAvailable.map((item, index) => (
+                            <li key={index}>
+                              <a href="#">{item.size}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="attr-detail attr-size mb-30">
+                        <strong className="mr-10">Stock</strong>
+                        <ul className="list-filter size-filter font-small">
+                          
+                        {particularproduct && particularproduct.sizesAvailable && particularproduct.sizesAvailable.map((item, index) => (
+                            <li key={index}>
+                              <a href="#">{item.quantity}</a> 
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="detail-extralink mb-50">
@@ -126,32 +139,25 @@ const Product = () => {
                       <div className="font-xs">
                         <ul className="mr-50 float-start">
                           <li className="mb-5">
-                            Type: <span className="text-brand">Organic</span>
+                            Type: <span className="text-brand">{particularproduct.occasion}</span>
                           </li>
                           <li className="mb-5">
                             MFG:<span className="text-brand"> Jun 4.2024</span>
                           </li>
                           <li>
-                            LIFE: <span className="text-brand">70 days</span>
+                            LIFE: <span className="text-brand">2 year </span>
                           </li>
                         </ul>
                         <ul className="float-start">
                           <li className="mb-5">
-                            SKU: <a href="#">FWM15VKT</a>
+                            Product-Id: <a href="#">{particularproduct.productName}</a>
                           </li>
                           <li className="mb-5">
                             Tags:
                             <a href="#" rel="tag">
-                              Snack
+                            {particularproduct.tag}
                             </a>
-                            ,
-                            <a href="#" rel="tag">
-                              Organic
-                            </a>
-                            ,
-                            <a href="#" rel="tag">
-                              Brown
-                            </a>
+                           
                           </li>
                           <li>
                             Stock:

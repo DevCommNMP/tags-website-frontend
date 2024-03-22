@@ -4,6 +4,8 @@ import Hero from "../components/Hero/Hero"
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCartHandler } from "../redux/actions/cart/cartActions";
 
 const dummydata=[
   {
@@ -36,12 +38,15 @@ const dummydata=[
 const ProductTabSection = ({data}) => {
   const[successToast,setSuccessToast]=useState("");
 const[errorToast,setErrorToast]=useState("");
-
+const dispatch=useDispatch();
   const navigate=useNavigate()
   const onClickProductHandler=(productid)=>{
     navigate(`/products/${productid}`)
   }
-  const cartHandler = async (id) => {
+  const cartHandler = async (item) => {
+
+    const res=await dispatch(addToCartHandler(item))
+    console.log(res)
     setSuccessToast(true);
     toast.success("Success Notification !", {
       position: "top-right"
@@ -101,10 +106,10 @@ const[errorToast,setErrorToast]=useState("");
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a href="#">Snack</a>
+                        {/* <a href="#">Snack</a> */}
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item._id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={()=>onClickProductHandler(item._id)} style={{cursor:"pointer"}}>{item.title}</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -114,15 +119,15 @@ const[errorToast,setErrorToast]=useState("");
                       </div>
                       <div>
                         <span className="font-small text-muted">
-                          By <a href="vendor-details-1.html">NestFood</a>
+                          By <a href="vendor-details-1.html">Tags</a>
                         </span>
                       </div>
                       <div className="product-card-bottom">
                         <div className="product-price">
-                          <span>$28.85</span>
-                          <span className="old-price">$32.8</span>
+                          <span> &#8377; {item.SellingPrice ||3399}</span>
+                          <span className="old-price">5000</span>
                         </div>
-                        <div className="add-cart" onClick={() => cartHandler(item.id)} >
+                        <div className="add-cart" onClick={() => cartHandler(item)} >
                           <a className="add">
                             <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
                           </a>
@@ -302,7 +307,7 @@ const[errorToast,setErrorToast]=useState("");
                           <span>$48.85</span>
                           <span className="old-price">$52.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart" onClick={()=>{cartHandler}} >
                           <a className="add">
                             <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
                           </a>

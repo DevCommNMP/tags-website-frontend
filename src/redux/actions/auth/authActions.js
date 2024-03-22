@@ -9,6 +9,7 @@ export const registerUserAction = createAsyncThunk(
 
   async (user, { rejectWithValue }) => {
 
+    // if()
     try {
       const config = {
         headers: {
