@@ -9,7 +9,7 @@ addedtocart:false,
   appErr: null,
   serverErr: null,
 };
-const authSlice = createSlice({
+const cartSlice = createSlice({
   name: "cart",
   initialState,
  
@@ -42,5 +42,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { clearErrors } = authSlice.actions;
-export default authSlice.reducer;
+export const { clearErrors } = cartSlice.actions;
+export default cartSlice.reducer;

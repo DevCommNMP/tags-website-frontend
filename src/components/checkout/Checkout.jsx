@@ -1,6 +1,4 @@
-import product11 from '../../assets/imgs/shop/product-2-1.jpg'
-import product21 from '../../assets/imgs/shop/product-2-1.jpg'
-import product31 from '../../assets/imgs/shop/product-3-1.jpg'
+
 import paymentPaypal from '../../assets/imgs/theme/icons/payment-paypal.svg'
 import paymentVisa from '../../assets/imgs/theme/icons/payment-visa.svg'
 import paymentMaster from '../../assets/imgs/theme/icons/payment-master.svg'
@@ -9,6 +7,7 @@ import paymentZapper from '../../assets/imgs/theme/icons/payment-zapper.svg'
 
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 const dummyData=[
     {
       "id": 1,
@@ -58,7 +57,7 @@ const Checkout = () => {
                             <div className="row mb-50">
                                 <div className="col-lg-6 mb-sm-15 mb-lg-0 mb-md-3">
                                     <div className="toggle_info">
-                                        <span><i className="fi-rs-user mr-10"></i><span className="text-muted font-lg">Already have an account?</span> <a href="#loginform" data-bs-toggle="collapse" className="collapsed font-lg" aria-expanded="false">Click here to login</a></span>
+                                        <span><i className="fi-rs-user mr-10"></i><span className="text-muted font-lg">Already have an account?</span> <a  data-bs-toggle="collapse" className="collapsed font-lg" aria-expanded="false"><Link to="/login">Click here to login</Link></a></span>
                                     </div>
                                     <div className="panel-collapse collapse login_form" id="loginform">
                                         <div className="panel-body">

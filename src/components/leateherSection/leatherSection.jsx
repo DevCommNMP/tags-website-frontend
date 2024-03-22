@@ -27,7 +27,7 @@ const dummydata=[
     },
     
   ]
-  const LeatherSection = () => {
+  const LeatherSection = ({data}) => {
     const navigate=useNavigate()
     const onClickProductHandler=(productid)=>{
       navigate(`/products/${productid}`)
@@ -45,13 +45,13 @@ const dummydata=[
             <div className="tab-content" id="myTabContent">
               <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
                 <div className="row product-grid-4">
-                  {dummydata.map(item=>(
+                {data.filter(item => item.category && item.category.name === "premium Leather").map((item) => (
                     <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                     <div className="product-cart-wrap mb-30">
                       <div className="product-img-action-wrap">
                         <div className="product-img product-img-zoom">
                           <a href="shop-product-right.html">
-                            <img className="default-img" src={item.image} alt="" />
+                            <img className="default-img" src={item.productImage} alt="" />
                             <img className="hover-img" src="" alt="" />
                           </a>
                         </div>
@@ -75,7 +75,7 @@ const dummydata=[
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={()=>onClickProductHandler(item._id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                         </h2>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">

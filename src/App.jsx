@@ -17,8 +17,8 @@ import PopularProducts from "./pages/popularProductsPage.jsx";
 import NewArrivals from "./pages/newArrivalPage.jsx";
 import PremiumLeather from "./pages/premiumLeather.jsx";
 import ProductsGridPage from "./pages/ProductsGridPage.jsx";
-import { useEffect } from "react";
-import ToggleBtn from "./playground/ToggleBtn.jsx";
+
+// import ToggleBtn from "./playground/ToggleBtn.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
 
 const dummydata = [
@@ -148,7 +148,7 @@ function App() {
             {/* TEST ROUTES
               following routes can safely be removed */}
 
-            <Route exact path="/test" element={<ToggleBtn />} />
+            {/* <Route exact path="/test" element={<ToggleBtn />} /> */}
           </Routes>
         </BrowserRouter>
       </Provider>

@@ -6,12 +6,26 @@ import Banner1 from '../components/OfferBanner/Banner1'
 import ProductTabSection from './ProductTabSection'
 import LeatherSection from '../components/leateherSection/leatherSection.jsx'
 import NewArrival from '../components/newArrival/NewArrival.jsx'
-
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { fetchAllProductsAction } from '../redux/actions/product/productActions.js'
+import {  useSelector } from 'react-redux';
 const Homepage = ({data}) => {
- 
+const dispatch=useDispatch()
+  useEffect(() => {
+ const res=dispatch(fetchAllProductsAction());
+  console.log(res);
+  }, [dispatch])
+  
+  const storeData = useSelector((store) => store.products);
+  const { products,productsLoading,appErr,serverErr } = storeData;
+  // console.log(products,productsLoading,appErr,serverErr)
+
   return (
     <>
       <Header />
+     
+      {(productsLoading)?"loading":<div>
       <Hero />
       <div className="container">
         <div className="row">
@@ -26,11 +40,11 @@ const Homepage = ({data}) => {
           </div>
         </div>
       </div>
-      <ProductTabSection  data={data}/>
-      <LeatherSection  data={data}/>
-      <NewArrival  data={data} />
+      <ProductTabSection  data={products}/>
+      <LeatherSection  data={products}/>
+      <NewArrival  data={products} />
 
-
+</div>}
       <Footer />
     </>
   )

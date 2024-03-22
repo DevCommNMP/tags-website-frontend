@@ -27,7 +27,7 @@ const dummydata=[
     },
     
   ]
-  const NewArrival = () => {
+  const NewArrival = ({data}) => {
     const navigate=useNavigate()
     const onClickProductHandler=(productid)=>{
       navigate(`/products/${productid}`)
@@ -46,7 +46,7 @@ const dummydata=[
             <div className="tab-content" id="myTabContent">
               <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
                 <div className="row product-grid-4">
-                  {dummydata.map(item=>(
+                {data.filter(item => item.category && item.category.name === "premium Leather").map((item) => (
                     <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                     <div className="product-cart-wrap mb-30">
                       <div className="product-img-action-wrap">
