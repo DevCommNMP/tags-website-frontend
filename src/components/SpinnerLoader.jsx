@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import Loader from 'react-loader-spinner';
-import fetchDataFromAPI from './api'; // Your API fetching function
+// import fetchDataFromAPI from './api'; // Your API fetching function
 
-const LoaderSpinner = () => {
+const SpinnerLoader = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
 
@@ -34,4 +34,4 @@ const LoaderSpinner = () => {
   );
 }
 
-export default LoaderSpinner;
+export default SpinnerLoader;

@@ -22,6 +22,7 @@ import ProductsGridPage from "./pages/ProductsGridPage.jsx";
 import Invoice from "./components/Invoice.jsx";
 // import ToggleBtn from "./playground/ToggleBtn.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
+// import SpinnerLoader from "./components/SpinnerLoader.jsx";
 
 const dummydata = [
   {
@@ -125,6 +126,7 @@ function App() {
 
   return (
     <>
+    {/* <SpinnerLoader /> */}
       <Provider store={Store}>
         <BrowserRouter>
           <Routes>

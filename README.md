@@ -52,3 +52,42 @@ single produvt page, `buttons` updating
 add colors option also 
  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->
+POPULAR PRODUCTS 
+..>> Sliders >> 
+
+PREMIUM LEATHER 
+..>> change background color to light  ndfycd 
+-->> 
+
+
+Banner -> container-fluid 
+1. top-header background red 
+2. blog link in topbar
+3. remove my account from tpheader ,
+4. change mumber // remove dropdown for INR // 
+5. 
+
+deals | About | Occasion | Shoes type | Color | [Premium Leather]
+remove compare // 
+
+
+
+
+
+
+
