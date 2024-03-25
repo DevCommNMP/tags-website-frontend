@@ -304,7 +304,7 @@ const HeaderBottom = () => {
                         </div>
                         <div className="hotline d-none d-lg-flex">
                             <img src={iconHeadphone} alt="hotline" />
-                            <p>1900 - 888<span>24/7 Support Center</span></p>
+                            <p>1900 - 888<span>7 Days Support Center</span></p>
                         </div>
                         <div className="header-action-icon-2 d-block d-lg-none">
                             <div className="burger-icon burger-icon-white">

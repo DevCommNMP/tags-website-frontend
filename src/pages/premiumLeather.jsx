@@ -109,7 +109,7 @@ const PremiumLeather = ({data}) => {
                         </a>
                       </div>
                       <div className="product-badges product-badges-position product-badges-mrg">
-                        <span className="hot" style={{backgroundColor:"red"}}>{item.tag}</span>
+                        <span className="hot">{item.tag}</span>
                       </div>
                     </div>
                     <div className="product-content-wrap">

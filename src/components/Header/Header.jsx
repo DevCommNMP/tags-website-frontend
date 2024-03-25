@@ -48,7 +48,7 @@ const Header = () => {
 
   return (
     <>
-      {/* <HeaderTop /> */}
+      <HeaderTop />
       <HeaderMiddle />
       <div className={`mobile-header-active mobile-header-wrapper-style ${isSidebarVisible ? "sidebar-visible" : ""}`}>
         <div className="mobile-header-wrapper-inner">
@@ -519,7 +519,7 @@ const Header = () => {
             <div className="hotline d-none d-lg-flex">
               <img src={iconHeadphone} alt="hotline" />
               <p>
-                1900 - 888<span>24/7 Support Center</span>
+                1900 - 888<span>7 Days Support Center</span>
               </p>
             </div>
             <div onClick={openMenu} className="header-action-icon-2 d-block d-lg-none">

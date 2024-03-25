@@ -3659,7 +3659,7 @@ table .product-thumbnail img {
   display: inline-block;
   padding: 6px 20px 6px 20px;
   border-radius: 4px;
-  background-color: #def9ec;
+  background-color: #f9dede;
   font-size: 14px;
   font-weight: 700;
 }
@@ -4365,7 +4365,7 @@ table .product-thumbnail img {
   color: #d02327;
 }
 .stock-status.out-stock {
-  color: #f74b81;
+  color: #d02327;
   background: #fde0e9;
 }
 
@@ -5963,7 +5963,7 @@ h6.post-title {
   display: block;
 }
 .logo.logo-width-1 {
-  margin-right: 70px;
+  margin-right: 10px;
 }
 .logo.logo-width-1 a img {
   width: 180px;
@@ -6392,7 +6392,7 @@ h6.post-title {
 }
 .search-style-2 form input:focus {
   border-color: #414648;
-  border-width: 0 0 3px 0;
+  border-width: 1px 1px 1px 1px;
   border-style: solid;
 }
 .search-style-2 form button {

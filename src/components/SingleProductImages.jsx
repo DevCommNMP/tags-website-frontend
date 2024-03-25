@@ -31,7 +31,9 @@ const SingleProductImages = ({ product,data }) => {
     infinite: true,
     speed: 800,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoPlay: true,
+    // pauseOnHover: true,
   };
 
   const settingsThumb = {
