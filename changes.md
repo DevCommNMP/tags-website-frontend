@@ -1,3 +1,10 @@
+# MOBILE VIEW 
+- [ ] SEARCH , NAV  
+- [ ] 
+
+#  NEW CHANGES 
+- [ ] only active links / nav links should be highlighted  
+
 # Frontend Website 
 ## Header 
 - [x] logo change 
@@ -7,9 +14,10 @@
 - [x] remove order tracking, wishlist, a [ my account , blog , about  ====] [neep help, call , phone number change, remove langugae, keep INR only in currecny]
 
 ### Browser all categoeis 
-- [ ]  remove women , add colors just before About , phone number change 
-- [x]  Slider - make width fluid 
-- [ ] **3 banners | chnage photo and content** 
+- [x] remove women , add colors just before About , 
+- [ ] phone number change 
+- [x] Slider - make width fluid 
+- [x] **3 banners | chnage photo and content** 
 - [ ] Popular Products // Change heading style 
 - [ ] add carousel 
 - [ ] Product sections : and Premium Leather -> Add SLider  , side - banner, 10 photos, accroding to screen size.. 
