@@ -211,48 +211,48 @@ const Header = () => {
                   </Link>
                 </div>
                 <div className="header-action-icon-2">
-                  <a className="mini-cart-icon" href="shop-cart.html">
+                  <Link className="mini-cart-icon" to="/cart">
                     <img alt="Nest" src="assets/imgs/theme/icons/icon-cart.svg" />
                     <span className="pro-count white">2</span>
-                  </a>
+                  </Link>
                   <div className="cart-dropdown-wrap cart-dropdown-hm2">
                     <ul>
                       <li>
                         <div className="shopping-cart-img">
-                          <a href="#">
+                          <a>
                             <img alt="Nest" src="assets/imgs/shop/thumbnail-3.jpg" />
                           </a>
                         </div>
                         <div className="shopping-cart-title">
                           <h4>
-                            <a href="#">Plain Striola Shirts</a>
+                            <a>Plain Striola Shirts</a>
                           </h4>
                           <h3>
                             <span>1 × </span>$800.00
                           </h3>
                         </div>
                         <div className="shopping-cart-delete">
-                          <a href="#">
+                          <a>
                             <i className="fi-rs-cross-small"></i>
                           </a>
                         </div>
                       </li>
                       <li>
                         <div className="shopping-cart-img">
-                          <a href="#">
+                          <a>
                             <img alt="Nest" src="assets/imgs/shop/thumbnail-4.jpg" />
                           </a>
                         </div>
                         <div className="shopping-cart-title">
                           <h4>
-                            <a href="#">Macbook Pro 2024</a>
+                            <a>Macbook Pro 2024</a>
                           </h4>
                           <h3>
                             <span>1 × </span>$3500.00
                           </h3>
                         </div>
                         <div className="shopping-cart-delete">
-                          <a href="#">
+                          <a>
                             <i className="fi-rs-cross-small"></i>
                           </a>
                         </div>

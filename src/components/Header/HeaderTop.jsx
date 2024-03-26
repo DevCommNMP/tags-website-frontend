@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 const HeaderTop = () => {
   return (
     <>
@@ -8,13 +9,13 @@ const HeaderTop = () => {
               <div className="header-info">
                 <ul>
                   <li>
-                    <a href="page-account.html">My Account</a>
+                    <Link to="/account">My Account</Link>
                   </li>
                   <li>
-                    <a href="shop-wishlist.html">Blog</a>
+                    <Link to="/blog">Blog</Link>
                   </li>
                   <li>
-                    <a href="page-about.html">About Us</a>
+                    <Link to="/about">About Us</Link>
                   </li>
                 </ul>
               </div>
@@ -37,7 +38,7 @@ const HeaderTop = () => {
                     Need help? Call Us: <strong className="text-brand"> + 1800 900</strong>
                   </li>
                   <li>
-                    <a className="language-dropdown-active" href="#">
+                    <a className="language-dropdown-active">
                       INR
                     </a>
                   </li>

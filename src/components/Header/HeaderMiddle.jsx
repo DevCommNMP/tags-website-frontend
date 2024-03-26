@@ -5,7 +5,7 @@ import account from "../../assets/imgs/theme/icons/icon-user.svg";
 import cart from "../../assets/imgs/theme/icons/icon-cart.svg";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Search from '../Search'
+import Search from "../Search";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -63,7 +63,7 @@ const HeaderMiddle = () => {
               </Link>
             </div>
             <div className="header-right">
-                <Search />
+              <Search />
               <div className="header-action-right">
                 <div className="header-action-2">
                   <div className="header-action-icon-2">
@@ -76,10 +76,10 @@ const HeaderMiddle = () => {
                     </Link>
                   </div>
                   <div className="header-action-icon-2">
-                    <a className="mini-cart-icon" href="shop-cart.html">
+                    <Link className="mini-cart-icon" to="/cart">
                       <img alt="Nest" src={cart} />
                       <span className="pro-count blue">2</span>
-                    </a>
+                    </Link>
                     <Link to="/cart">
                       <span className="lable">Cart</span>
                     </Link>
@@ -87,13 +87,13 @@ const HeaderMiddle = () => {
                       <ul>
                         <li>
                           <div className="shopping-cart-img">
-                            <a href="shop-product-right.html">
+                            <a>
                               <img alt="Nest" src="assets/imgs/shop/thumbnail-3.jpg" />
                             </a>
                           </div>
                           <div className="shopping-cart-title">
                             <h4>
-                              <a href="shop-product-right.html">Daisy Casual Bag</a>
+                              <a>Daisy Casual Bag</a>
                             </h4>
                             <h4>
                               <span>1 × </span>$800.00
@@ -107,13 +107,13 @@ const HeaderMiddle = () => {
                         </li>
                         <li>
                           <div className="shopping-cart-img">
-                            <a href="shop-product-right.html">
+                            <a>
                               <img alt="Nest" src="assets/imgs/shop/thumbnail-2.jpg" />
                             </a>
                           </div>
                           <div className="shopping-cart-title">
                             <h4>
-                              <a href="shop-product-right.html">Corduroy Shirts</a>
+                              <a>Corduroy Shirts</a>
                             </h4>
                             <h4>
                               <span>1 × </span>$3200.00
