@@ -5,9 +5,9 @@ const SingleProductImages = ({ product }) => {
   const { productImage, productSubImages } = product;
 
   // Ensure productImage and productSubImages are arrays
-  const productImagesArr = Array.isArray(productImage) ? [] : productSubImages;
+  const productImagesArr = Array.isArray(productImage) ? productImage : [];
   const productSubImagesArr = Array.isArray(productSubImages) ? productSubImages : [];
-console.log(productImagesArr,productSubImagesArr)
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const sliderRef = useRef();
 

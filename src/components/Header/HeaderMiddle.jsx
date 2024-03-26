@@ -18,7 +18,7 @@ const[cart,setcart]=useState(JSON.parse(localStorage.getItem('cartItems')))
 
   useEffect(() => {
     const localData = localStorage.getItem("userData");
-    const cart=JSON.parse(localStorage.getItem("cartItems"))
+    // const cart=JSON.parse(localStorage.getItem("cartItems"))
   
     if (localData) {
       const parsedData = JSON.parse(localData);
@@ -81,7 +81,7 @@ const[cart,setcart]=useState(JSON.parse(localStorage.getItem('cartItems')))
                   <div className="header-action-icon-2">
                     <a className="mini-cart-icon" >
                       <img alt="Nest" src={cartImg} />
-                      <span className="pro-count blue">{cart.length}</span>
+                      <span className="pro-count blue">3</span>
                     </a>
                     <Link to="/cart">
                       <span className="lable">Cart</span>
