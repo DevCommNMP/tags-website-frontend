@@ -31,94 +31,120 @@ const dummydata = [
     name: "Item 1",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img1.jpg",
     tag: "hot",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 2,
     name: "Item 2",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img3.jpg",
     tag: "hot",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 3,
     name: "Item 3",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img3.jpg",
     tag: "hot",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 4,
     name: "Item 4",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img4.jpg",
     tag: "hot",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 5,
     name: "Item 5",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img5.jpg",
     tag: "hot",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 6,
-    name: "Item 1",
+    name: "Item 6",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img1.jpg",
     tag: "trending",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 7,
-    name: "Item 2",
+    name: "Item 7",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img5.jpg",
-
     tag: "trending",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 8,
-    name: "Item 3",
+    name: "Item 8",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img3.jpg",
-
     tag: "trending",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 9,
-    name: "Item 4",
+    name: "Item 9",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img4.jpg",
-
     tag: "trending",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 10,
-    name: "Item 5",
+    name: "Item 10",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img5.jpg",
-
     tag: "trending",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 11,
-    name: "Item 1",
+    name: "Item 11",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img1.jpg",
     tag: "new",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 12,
-    name: "Item 2",
+    name: "Item 12",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img2.jpg",
     tag: "new",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 13,
-    name: "Item 3",
+    name: "Item 13",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img3.jpg",
     tag: "new",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 14,
-    name: "Item1 4",
+    name: "Item1 14",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img4.jpg",
     tag: "new",
+    oldPrice: 1200,
+    price: 1000,
   },
   {
     id: 15,
     name: "Item 15",
     image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img5.jpg",
     tag: "new",
+    oldPrice: 1200,
+    price: 1000,
   },
 ];
 
@@ -127,7 +153,7 @@ function App() {
 
   return (
     <>
-    {/* <SpinnerLoader /> */}
+      {/* <SpinnerLoader /> */}
       <Provider store={Store}>
         <BrowserRouter>
           <Routes>
@@ -143,11 +169,11 @@ function App() {
             <Route exact path="/reset_password" element={<ResetPassword />} />
             <Route exact path="/forgot_password" element={<ForgotPassword />} />
             <Route exact path="/account" element={<UserAccountPage />} />
-            <Route exact path="/cart" element={<Cart/>} />
+            <Route exact path="/cart" element={<Cart />} />
             <Route exact path="/productImages" element={<SingleProductImages />} />
             <Route exact path="/checkout" element={<CheckoutPage />} />
             <Route exact path="/categories/:title" element={<ProductsGridPage data={dummydata} />} />
-            <Route exact path="/all-categories" element={<AllCategoriesPage  />} />
+            <Route exact path="/all-categories" element={<AllCategoriesPage />} />
             <Route exact path="/wishlist" element={<Wishlist />} />
             <Route exact path="/invoice" element={<Invoice />} />
 

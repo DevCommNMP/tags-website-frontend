@@ -33,7 +33,7 @@ const ProductsGridPage = ({ data }) => {
     const trackRect = e.target.getBoundingClientRect();
     const clickedPosition = e.clientX - trackRect.left;
     const sliderWidth = trackRect.width;
-    
+
     // Calculate the corresponding value based on the clicked position
     const valueClicked = (clickedPosition / sliderWidth) * 100;
 
@@ -41,7 +41,6 @@ const ProductsGridPage = ({ data }) => {
     const newValue = [Math.round(valueClicked), sliderValues[1]];
     setSliderValues(newValue);
   };
-
 
   return (
     <div>
@@ -52,19 +51,16 @@ const ProductsGridPage = ({ data }) => {
           tabIndex="-1"
           aria-labelledby="quickViewModalLabel"
           aria-hidden="true"
-        >
-        </div>
+        ></div>
         <header className="header-area header-style-1 header-height-2">
           <div className="mobile-promotion">
             <span>
-              Grand opening, <strong>up to 15%</strong> off all items. Only{" "}
-              <strong>3 days</strong> left
+              Grand opening, <strong>up to 15%</strong> off all items. Only <strong>3 days</strong> left
             </span>
           </div>
           <Header />
           <div className="header-bottom header-bottom-bg-color sticky-bar">
-            <div className="container">
-            </div>
+            <div className="container"></div>
           </div>
         </header>
         <main className="main">
@@ -91,8 +87,7 @@ const ProductsGridPage = ({ data }) => {
                 <div className="shop-product-fillter">
                   <div className="totall-product">
                     <p>
-                      We found <strong className="text-brand">{data.length}</strong> items
-                      for you!
+                      We found <strong className="text-brand">{data.length}</strong> items for you!
                     </p>
                   </div>
                   <div className="sort-by-product-area">
@@ -171,96 +166,66 @@ const ProductsGridPage = ({ data }) => {
                   </div>
                 </div>
                 <div className="row product-grid">
-                {data.map(product=>{
-  return(
-    <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
-                            <img
-                              className="default-img"
-                              src={product.image}
-                              alt=""
-                            />
-                            <img
+                  {data.map((product) => {
+                    return (
+                      <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                        <div className="product-cart-wrap mb-30">
+                          <div className="product-img-action-wrap">
+                            <div className="product-img product-img-zoom">
+                              <a href="shop-product-right.html">
+                                <img className="default-img" src={product.image} alt="" />
+                                {/* <img
                               className="hover-img"
                               src="assets/imgs/shop/product-1-2.jpg"
                               alt=""
-                            />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a
-                            aria-label="Add To Wishlist"
-                            className="action-btn"
-                            href="shop-wishlist.html"
-                          >
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a
-                            aria-label="Compare"
-                            className="action-btn"
-                            href="shop-compare.html"
-                          >
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a
-                            aria-label="Quick view"
-                            className="action-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#quickViewModal"
-                          >
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                        <div className="product-badges product-badges-position product-badges-mrg">
-                          <span className="hot">Hot</span>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">
-                          <a href="shop-grid-right.html">Snack</a>
-                        </div>
-                        <h2>
-                          <a href="shop-product-right.html">
-                            
-                            {product.name}
-                          </a>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{ width: '90%' }}
-                            ></div>
+                            /> */}
+                              </a>
+                            </div>
+                            <div className="product-action-1">
+                              <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                                <i className="fi-rs-heart"></i>
+                              </a>
+                              <a aria-label="Compare" className="action-btn" href="shop-compare.html">
+                                <i className="fi-rs-shuffle"></i>
+                              </a>
+                              <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
+                                <i className="fi-rs-eye"></i>
+                              </a>
+                            </div>
+                            <div className="product-badges product-badges-position product-badges-mrg">
+                              <span className={product.tag}>{product.tag}</span>
+                            </div>
                           </div>
-                          <span className="font-small ml-5 text-muted">
-                            {" "}
-                            (4.0)
-                          </span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            {/* By <a href="vendor-details-1.html">NestFood</a> */}
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span>$28.85</span>
-                            <span className="old-price">$32.8</span>
-                          </div>
-                          <div className="add-cart">
-                            <a className="add" href="shop-cart.html">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                            </a>
+                          <div className="product-content-wrap">
+                            <div className="product-category">{/* <a href="shop-grid-right.html">Snack</a> */}</div>
+                            <h2>
+                              <a href="shop-product-right.html">{product.name}</a>
+                            </h2>
+                            <div className="product-rate-cover">
+                              <div className="product-rate d-inline-block">
+                                <div className="product-rating" style={{ width: "90%" }}></div>
+                              </div>
+                              <span className="font-small ml-5 text-muted"> (4.0)</span>
+                            </div>
+                            <div>
+                              <span className="font-small text-muted">{/* By <a href="vendor-details-1.html">NestFood</a> */}</span>
+                            </div>
+                            <div className="product-card-bottom">
+                              <div className="product-price">
+                                <span>&#8377;{product.price}</span>
+                                <span className="old-price">&#8377;{product.oldPrice}</span>
+                              </div>
+                              <div className="add-cart">
+                                <a className="add" href="shop-cart.html">
+                                  <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
+                                </a>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    </div>
-  )
-  })}
+                    );
+                  })}
                 </div>
                 <div className="pagination-area mt-20 mb-20">
                   <nav aria-label="Page navigation example">
@@ -317,37 +282,23 @@ const ProductsGridPage = ({ data }) => {
                         <div className="product-img-action-wrap">
                           <div className="product-img">
                             <a href="shop-product-right.html">
-                              <img
-                                src="assets/imgs/banner/banner-5.png"
-                                alt=""
-                              />
+                              <img src="assets/imgs/banner/banner-5.png" alt="" />
                             </a>
                           </div>
                         </div>
                         <div className="product-content-wrap">
                           <div className="deals-countdown-wrap">
-                            <div
-                              className="deals-countdown"
-                              data-countdown="2025/03/25 00:00:00"
-                            ></div>
+                            <div className="deals-countdown" data-countdown="2025/03/25 00:00:00"></div>
                           </div>
                           <div className="deals-content">
                             <h2>
-                              <a href="shop-product-right.html">
-                                Seeds of Change Organic Quinoa, Brown
-                              </a>
+                              <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown</a>
                             </h2>
                             <div className="product-rate-cover">
                               <div className="product-rate d-inline-block">
-                                <div
-                                  className="product-rating"
-                                  style={{ width: '90%' }}
-                                ></div>
+                                <div className="product-rating" style={{ width: "90%" }}></div>
                               </div>
-                              <span className="font-small ml-5 text-muted">
-                                {" "}
-                                (4.0)
-                              </span>
+                              <span className="font-small ml-5 text-muted"> (4.0)</span>
                             </div>
                             <div>
                               <span className="font-small text-muted">
@@ -375,42 +326,27 @@ const ProductsGridPage = ({ data }) => {
                         <div className="product-img-action-wrap">
                           <div className="product-img">
                             <a href="shop-product-right.html">
-                              <img
-                                src="assets/imgs/banner/banner-6.png"
-                                alt=""
-                              />
+                              <img src="assets/imgs/banner/banner-6.png" alt="" />
                             </a>
                           </div>
                         </div>
                         <div className="product-content-wrap">
                           <div className="deals-countdown-wrap">
-                            <div
-                              className="deals-countdown"
-                              data-countdown="2026/04/25 00:00:00"
-                            ></div>
+                            <div className="deals-countdown" data-countdown="2026/04/25 00:00:00"></div>
                           </div>
                           <div className="deals-content">
                             <h2>
-                              <a href="shop-product-right.html">
-                                Perdue Simply Smart Organics Gluten
-                              </a>
+                              <a href="shop-product-right.html">Perdue Simply Smart Organics Gluten</a>
                             </h2>
                             <div className="product-rate-cover">
                               <div className="product-rate d-inline-block">
-                                <div
-                                  className="product-rating"
-                                  style={{ width: '90%' }}
-                                ></div>
+                                <div className="product-rating" style={{ width: "90%" }}></div>
                               </div>
-                              <span className="font-small ml-5 text-muted">
-                                {" "}
-                                (4.0)
-                              </span>
+                              <span className="font-small ml-5 text-muted"> (4.0)</span>
                             </div>
                             <div>
                               <span className="font-small text-muted">
-                                By{" "}
-                                <a href="vendor-details-1.html">Old El Paso</a>
+                                By <a href="vendor-details-1.html">Old El Paso</a>
                               </span>
                             </div>
                             <div className="product-card-bottom">
@@ -434,37 +370,23 @@ const ProductsGridPage = ({ data }) => {
                         <div className="product-img-action-wrap">
                           <div className="product-img">
                             <a href="shop-product-right.html">
-                              <img
-                                src="assets/imgs/banner/banner-7.png"
-                                alt=""
-                              />
+                              <img src="assets/imgs/banner/banner-7.png" alt="" />
                             </a>
                           </div>
                         </div>
                         <div className="product-content-wrap">
                           <div className="deals-countdown-wrap">
-                            <div
-                              className="deals-countdown"
-                              data-countdown="2027/03/25 00:00:00"
-                            ></div>
+                            <div className="deals-countdown" data-countdown="2027/03/25 00:00:00"></div>
                           </div>
                           <div className="deals-content">
                             <h2>
-                              <a href="shop-product-right.html">
-                                Signature Wood-Fired Mushroom
-                              </a>
+                              <a href="shop-product-right.html">Signature Wood-Fired Mushroom</a>
                             </h2>
                             <div className="product-rate-cover">
                               <div className="product-rate d-inline-block">
-                                <div
-                                  className="product-rating"
-                                  style={{ width: '80%' }}
-                                ></div>
+                                <div className="product-rating" style={{ width: "80%" }}></div>
                               </div>
-                              <span className="font-small ml-5 text-muted">
-                                {" "}
-                                (3.0)
-                              </span>
+                              <span className="font-small ml-5 text-muted"> (3.0)</span>
                             </div>
                             <div>
                               <span className="font-small text-muted">
@@ -492,37 +414,23 @@ const ProductsGridPage = ({ data }) => {
                         <div className="product-img-action-wrap">
                           <div className="product-img">
                             <a href="shop-product-right.html">
-                              <img
-                                src="assets/imgs/banner/banner-8.png"
-                                alt=""
-                              />
+                              <img src="assets/imgs/banner/banner-8.png" alt="" />
                             </a>
                           </div>
                         </div>
                         <div className="product-content-wrap">
                           <div className="deals-countdown-wrap">
-                            <div
-                              className="deals-countdown"
-                              data-countdown="2025/02/25 00:00:00"
-                            ></div>
+                            <div className="deals-countdown" data-countdown="2025/02/25 00:00:00"></div>
                           </div>
                           <div className="deals-content">
                             <h2>
-                              <a href="shop-product-right.html">
-                                Simply Lemonade with Raspberry Juice
-                              </a>
+                              <a href="shop-product-right.html">Simply Lemonade with Raspberry Juice</a>
                             </h2>
                             <div className="product-rate-cover">
                               <div className="product-rate d-inline-block">
-                                <div
-                                  className="product-rating"
-                                  style={{ width: '80%' }}
-                                ></div>
+                                <div className="product-rating" style={{ width: "80%" }}></div>
                               </div>
-                              <span className="font-small ml-5 text-muted">
-                                {" "}
-                                (3.0)
-                              </span>
+                              <span className="font-small ml-5 text-muted"> (3.0)</span>
                             </div>
                             <div>
                               <span className="font-small text-muted">
@@ -556,10 +464,7 @@ const ProductsGridPage = ({ data }) => {
                       <li>
                         <a href="shop-grid-right.html">
                           {" "}
-                          <img
-                            src="assets/imgs/theme/icons/category-1.svg"
-                            alt=""
-                          />
+                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
                           Casual Shoes
                         </a>
                         {/* <span className="count">30</span> */}
@@ -569,10 +474,7 @@ const ProductsGridPage = ({ data }) => {
                       <li>
                         <a href="shop-grid-right.html">
                           {" "}
-                          <img
-                            src="assets/imgs/theme/icons/category-1.svg"
-                            alt=""
-                          />
+                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
                           Ethnic Shoes
                         </a>
                         {/* <span className="count">30</span> */}
@@ -582,10 +484,7 @@ const ProductsGridPage = ({ data }) => {
                       <li>
                         <a href="shop-grid-right.html">
                           {" "}
-                          <img
-                            src="assets/imgs/theme/icons/category-1.svg"
-                            alt=""
-                          />
+                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
                           Formal Shoes
                         </a>
                         {/* <span className="count">30</span> */}
@@ -595,10 +494,7 @@ const ProductsGridPage = ({ data }) => {
                       <li>
                         <a href="shop-grid-right.html">
                           {" "}
-                          <img
-                            src="assets/imgs/theme/icons/category-1.svg"
-                            alt=""
-                          />
+                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
                           Party Shoes
                         </a>
                         {/* <span className="count">30</span> */}
@@ -608,10 +504,7 @@ const ProductsGridPage = ({ data }) => {
                       <li>
                         <a href="shop-grid-right.html">
                           {" "}
-                          <img
-                            src="assets/imgs/theme/icons/category-1.svg"
-                            alt=""
-                          />
+                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
                           Sports Shoes
                         </a>
                         {/* <span className="count">30</span> */}
@@ -623,22 +516,7 @@ const ProductsGridPage = ({ data }) => {
                   <h5 className="section-title style-1 mb-30">Fill by price</h5>
                   <div className="price-filter">
                     <div className="price-filter-inner">
-                      <Slider
-                        min={0}
-                        max={100}
-                        value={sliderValues}
-                        onChange={handleSliderChange}
-                        onClick={handleSliderClick}
-                        range
-                      />
-                      <div className="d-flex justify-content-between">
-                        <div className="caption">
-                          From: <strong className="text-brand">{sliderValues[0]}</strong>
-                        </div>
-                        <div className="caption">
-                          To: <strong className="text-brand">{sliderValues[1]}</strong>
-                        </div>
-                      </div>
+                      <Slider min={0} max={100} value={sliderValues} onChange={handleSliderChange} onClick={handleSliderClick} range />
                     </div>
                   </div>
 
@@ -667,98 +545,41 @@ const ProductsGridPage = ({ data }) => {
                     <div className="list-group-item mb-10 mt-10">
                       <label className="fw-900">Color</label>
                       <div className="custome-checkbox">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="checkbox"
-                          id="exampleCheckbox1"
-                          value=""
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="exampleCheckbox1"
-                        >
+                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="" />
+                        <label className="form-check-label" htmlFor="exampleCheckbox1">
                           <span>Red (56)</span>
                         </label>
                         <br />
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="checkbox"
-                          id="exampleCheckbox2"
-                          value=""
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="exampleCheckbox2"
-                        >
+                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox2" value="" />
+                        <label className="form-check-label" htmlFor="exampleCheckbox2">
                           <span>Green (78)</span>
                         </label>
                         <br />
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="checkbox"
-                          id="exampleCheckbox3"
-                          value=""
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="exampleCheckbox3"
-                        >
+                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox3" value="" />
+                        <label className="form-check-label" htmlFor="exampleCheckbox3">
                           <span>Blue (54)</span>
                         </label>
                       </div>
                       <label className="fw-900 mt-15">Item Condition</label>
                       <div className="custome-checkbox">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="checkbox"
-                          id="exampleCheckbox11"
-                          value=""
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="exampleCheckbox11"
-                        >
+                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox11" value="" />
+                        <label className="form-check-label" htmlFor="exampleCheckbox11">
                           <span>New (1506)</span>
                         </label>
                         <br />
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="checkbox"
-                          id="exampleCheckbox21"
-                          value=""
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="exampleCheckbox21"
-                        >
+                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox21" value="" />
+                        <label className="form-check-label" htmlFor="exampleCheckbox21">
                           <span>Refurbished (27)</span>
                         </label>
                         <br />
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="checkbox"
-                          id="exampleCheckbox31"
-                          value=""
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="exampleCheckbox31"
-                        >
+                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox31" value="" />
+                        <label className="form-check-label" htmlFor="exampleCheckbox31">
                           <span>Used (45)</span>
                         </label>
                       </div>
                     </div>
                   </div>
-                  <a
-                    className="btn btn-sm btn-default"
-                    href="shop-grid-right.html"
-                  >
+                  <a className="btn btn-sm btn-default" href="shop-grid-right.html">
                     <i className="fi-rs-filter mr-5"></i> Fillter
                   </a>
                 </div>
@@ -774,10 +595,7 @@ const ProductsGridPage = ({ data }) => {
                       </h5>
                       <p className="price mb-0 mt-5">$99.50</p>
                       <div className="product-rate">
-                        <div
-                          className="product-rating"
-                          style={{ width: '90%' }}
-                        ></div>
+                        <div className="product-rating" style={{ width: "90%" }}></div>
                       </div>
                     </div>
                   </div>
@@ -791,10 +609,7 @@ const ProductsGridPage = ({ data }) => {
                       </h6>
                       <p className="price mb-0 mt-5">$89.50</p>
                       <div className="product-rate">
-                        <div
-                          className="product-rating"
-                          style={{ width: '80%' }}
-                        ></div>
+                        <div className="product-rating" style={{ width: "80%" }}></div>
                       </div>
                     </div>
                   </div>
@@ -808,10 +623,7 @@ const ProductsGridPage = ({ data }) => {
                       </h6>
                       <p className="price mb-0 mt-5">$25</p>
                       <div className="product-rate">
-                        <div
-                          className="product-rating"
-                          style={{ width: '60%' }}
-                        ></div>
+                        <div className="product-rating" style={{ width: "60%" }}></div>
                       </div>
                     </div>
                   </div>
