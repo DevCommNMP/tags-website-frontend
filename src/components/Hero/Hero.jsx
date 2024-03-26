@@ -8,9 +8,14 @@ import HeroSideBanner from "../../components/Hero/HeroSideBanner";
 var settings = {
   dots: true,
   infinite: true,
-  speed: 500,
+  speed: 1000,
   slidesToShow: 1,
   slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2500,
+  // cssEase: "linear",
+  pauseOnHover: false,
+  arrows: false,
 };
 
 const Hero = () => {
