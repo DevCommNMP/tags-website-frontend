@@ -48,7 +48,7 @@ const Header = () => {
 
   return (
     <>
-      {/* <HeaderTop /> */}
+      <HeaderTop />
       <HeaderMiddle />
       <div className={`mobile-header-active mobile-header-wrapper-style ${isSidebarVisible ? "sidebar-visible" : ""}`}>
         <div className="mobile-header-wrapper-inner">
