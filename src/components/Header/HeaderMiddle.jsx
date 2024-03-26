@@ -14,7 +14,7 @@ const HeaderMiddle = () => {
   const dispatch = useDispatch();
   const [user, setUser] = useState("");
   const [token, setToken] = useState("");
-  const cartItem=JSON.parse(localStorage.getItem("cartItems"))
+
   useEffect(() => {
     const localData = localStorage.getItem("userData");
     if (localData) {

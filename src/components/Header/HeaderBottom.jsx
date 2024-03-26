@@ -254,7 +254,7 @@ const HeaderBottom = () => {
                           <Link to="/categories/Walking Shoes" href="#">
                             Walking Shoes
                           </Link>
-                        </li>
+                        </li>x
                       </ul>
                     </li>
                     
