@@ -1,13 +1,14 @@
 import logo from "../assets/imgs/theme/logo.png";
+import { Link } from "react-router-dom";
 const Invoice = () => {
 
   return (
     <div>
       <div className="invoice invoice-content invoice-5">
         <div className="back-top-home hover-up mt-30 ml-30">
-          <a className="hover-up" href="index.html">
+          <Link className="hover-up" to="/">
             <i className="fi-rs-home mr-5"></i> Homepage
-          </a>
+          </Link>
         </div>
         <div className="container">
           <div className="row">
@@ -18,9 +19,9 @@ const Invoice = () => {
                     <div className="row">
                       <div className="col-md-6">
                         <div className="logo d-flex align-items-center">
-                          <a className="mr-20" href="index.html">
+                          <Link className="mr-20" to="/">
                             <img src={logo} alt="logo" width={"250px"} />
-                          </a>
+                          </Link>
                           <div className="text">
                             <strong className="text-brand">NestMart Inc</strong> <br />
                             205 North, Suite 810, Chicago, USA
@@ -136,10 +137,6 @@ const Invoice = () => {
                     {" "}
                     <img src="assets/imgs/theme/icons/icon-print.svg" alt="" /> Print{" "}
                   </a>
-                  {/* <a id="invoice_download_btn" className="btn btn-lg btn-custom btn-download hover-up">
-                    {" "}
-                    <img src="assets/imgs/theme/icons/icon-download.svg" alt="" /> Download{" "}
-                  </a> */}
                 </div>
               </div>
             </div>

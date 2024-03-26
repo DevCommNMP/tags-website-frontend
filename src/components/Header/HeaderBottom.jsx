@@ -10,9 +10,9 @@ const HeaderBottom = () => {
         <div className="container">
           <div className="header-wrap header-space-between position-relative">
             <div className="logo logo-width-1 d-block d-lg-none">
-              <a href="index.html">
+              <Link to="/">
                 <img src={logo} alt="logo" />
-              </a>
+              </Link>
             </div>
             <div className="header-nav d-none d-lg-flex">
               <div className="main-categori-wrap d-none d-lg-block">
@@ -26,135 +26,135 @@ const HeaderBottom = () => {
                   <ul>
                     <li className="hot-deals">
                       <img src={iconHot} alt="hot deals" />
-                      <a href="shop-grid-right.html">
+                      <a>
                         <Link to="/categories/Deals">Deals</Link>
                       </a>
                     </li>
 
                     <li className="position-static">
-                      <a href="#">
+                      <a>
                         Women <i className="fi-rs-angle-down"></i>
                       </a>
                       <ul className="mega-menu">
                         <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <a className="menu-title" href="#">
+                          <a className="menu-title">
                             Occasion
                           </a>
                           <ul>
                             <li>
-                              <a href="#">Casual Shoes</a>
+                              <a>Casual Shoes</a>
                             </li>
                             <li>
-                              <a href="#">Ethnic Shoes</a>
+                              <a>Ethnic Shoes</a>
                             </li>
                             <li>
-                              <a href="#">Formal Shoes</a>
+                              <a>Formal Shoes</a>
                             </li>
                             <li>
-                              <a href="#">Party Shoes</a>
+                              <a>Party Shoes</a>
                             </li>
                             <li>
-                              <a href="#">Sports Shoes</a>
+                              <a>Sports Shoes</a>
                             </li>
                             {/* <li><a href='#'>Packaged Produce</a></li> */}
                           </ul>
                         </li>
                         <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <a className="menu-title" href="#">
+                          <a className="menu-title">
                             Shoe Type
                           </a>
                           <ul>
                             <li>
-                              <a href="#">Ballerinas Walking Shoes</a>
+                              <a>Ballerinas Walking Shoes</a>
                             </li>
                             <li>
-                              <a href="#">Boots</a>
+                              <a>Boots</a>
                             </li>
                             <li>
-                              <a href="#">Comfort</a>
+                              <a>Comfort</a>
                             </li>
                             <li>
-                              <a href="#">Flip Flops</a>
+                              <a>Flip Flops</a>
                             </li>
                             <li>
-                              <a href="#">Kolhapuris</a>
+                              <a>Kolhapuris</a>
                             </li>
                             <li>
-                              <a href="#">Mojaris</a>
+                              <a>Mojaris</a>
                             </li>
                             <li>
-                              <a href="#">Mules</a>
+                              <a>Mules</a>
                             </li>
                             <li>
-                              <a href="#">Pumps</a>
+                              <a>Pumps</a>
                             </li>
                             <li>
-                              <a href="#">Sandals</a>
+                              <a>Sandals</a>
                             </li>
                             <li>
-                              <a href="#">Slides</a>
+                              <a>Slides</a>
                             </li>
                             <li>
-                              <a href="#">Slippers</a>
+                              <a>Slippers</a>
                             </li>
                             <li>
-                              <a href="#">Slip Ons</a>
+                              <a>Slip Ons</a>
                             </li>
                             <li>
-                              <a href="#">Sneakers</a>
+                              <a>Sneakers</a>
                             </li>
                             <li>
-                              <a href="#">Walking Shoes</a>
+                              <a>Walking Shoes</a>
                             </li>
                           </ul>
                         </li>
                         <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <a className="menu-title" href="#">
+                          <a className="menu-title">
                             Colors
                           </a>
                           <ul>
                             <li>
-                              <a href="#">Black</a>
+                              <a>Black</a>
                             </li>
                             <li>
-                              <a href="#">White</a>
+                              <a>White</a>
                             </li>
                             <li>
-                              <a href="#">Red</a>
+                              <a>Red</a>
                             </li>
                             <li>
-                              <a href="#">Blue</a>
+                              <a>Blue</a>
                             </li>
                             <li>
-                              <a href="#">maroon</a>
+                              <a>maroon</a>
                             </li>
                             <li>
-                              <a href="#">Purple</a>
+                              <a>Purple</a>
                             </li>
                           </ul>
                         </li>
                         <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <a className="menu-title" href="#">
+                          <a className="menu-title">
                             Brands
                           </a>
                           <ul>
                             <li>
-                              <a href="#">Fila</a>
+                              <a>Fila</a>
                             </li>
                             <li>
-                              <a href="#">Cheemo</a>
+                              <a>Cheemo</a>
                             </li>
                             <li>
-                              <a href="#">DoubleU</a>
+                              <a>DoubleU</a>
                             </li>
                             <li>
-                              <a href="#">Fitflop</a>
+                              <a>Fitflop</a>
                             </li>
                             <li>
-                              <a href="#">Haute Diva</a>
+                              <a>Haute Diva</a>
                             </li>
                             <li>
-                              <a href="#">Mochi</a>
+                              <a>Mochi</a>
                             </li>
                           </ul>
                         </li>
@@ -183,75 +183,75 @@ const HeaderBottom = () => {
                       </ul>
                     </li>
                     <li>
-                      <a href="#">
+                      <a>
                         Shoe Type <i className="fi-rs-angle-down"></i>
                       </a>
                       <ul className="sub-menu">
                         <li>
-                          <a href="#">Ballerinas Walking Shoes</a>
+                          <a>Ballerinas Walking Shoes</a>
                         </li>
                         <li>
-                          <Link to="/categories/Boots" href="#">
+                          <Link to="/categories/Boots">
                             Boots
                           </Link>
                         </li>
                         <li>
-                          <Link to="/categories/Comfort" href="#">
+                          <Link to="/categories/Comfort">
                             Comfort
                           </Link>
                         </li>
                         <li>
-                          <Link to="/categories/Flip Flop" href="#">
+                          <Link to="/categories/Flip Flop">
                             Flip Flops
                           </Link>
                         </li>
                         <li>
-                          <Link to="/categories/kolhapuries" href="#">
+                          <Link to="/categories/kolhapuries">
                             Kolhapuris
                           </Link>
                         </li>
                         <li>
-                          <Link to="/categories/Mojaris" href="#">
+                          <Link to="/categories/Mojaris">
                             Mojaris
                           </Link>
                         </li>
                         <li>
-                          <Link to="/categories/Mules" href="#">
+                          <Link to="/categories/Mules">
                             Mules
                           </Link>
                         </li>
                         <li>
-                          <Link to="/categories/Pumps" href="#">
+                          <Link to="/categories/Pumps">
                             Pumps
                           </Link>
                         </li>
                         <li>
-                          <Link to="/categories/Sandles" href="#">
+                          <Link to="/categories/Sandles">
                             Sandals
                           </Link>
                         </li>
                         <li>
-                          <Link to="/categories/Slides" href="#">
+                          <Link to="/categories/Slides">
                             Slides
                           </Link>
                         </li>
                         <li>
-                          <Link to="/categories/Slippers" href="#">
+                          <Link to="/categories/Slippers">
                             Slippers
                           </Link>
                         </li>
                         <li>
-                          <Link to="/categories/Slip Ons" href="#">
+                          <Link to="/categories/Slip Ons">
                             Slip Ons
                           </Link>
                         </li>
                         <li>
-                          <Link to="/categories/Sneakers" href="#">
+                          <Link to="/categories/Sneakers">
                             Sneakers
                           </Link>
                         </li>
                         <li>
-                          <Link to="/categories/Walking Shoes" href="#">
+                          <Link to="/categories/Walking Shoes">
                             Walking Shoes
                           </Link>
                         </li>x
@@ -286,54 +286,54 @@ const HeaderBottom = () => {
             <div className="header-action-right d-block d-lg-none">
               <div className="header-action-2">
                 <div className="header-action-icon-2">
-                  <a href="shop-wishlist.html">
+                  <Link href="/wishlist">
                     <img alt="Nest" src="assets/imgs/theme/icons/icon-heart.svg" />
                     <span className="pro-count white">4</span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="header-action-icon-2">
-                  <a className="mini-cart-icon" href="shop-cart.html">
+                  <Link className="mini-cart-icon" href="/cart">
                     <img alt="Nest" src="assets/imgs/theme/icons/icon-cart.svg" />
                     <span className="pro-count white">2</span>
-                  </a>
+                  </Link>
                   <div className="cart-dropdown-wrap cart-dropdown-hm2">
                     <ul>
                       <li>
                         <div className="shopping-cart-img">
-                          <a href="#">
+                          <a>
                             <img alt="Nest" src="assets/imgs/shop/thumbnail-3.jpg" />
                           </a>
                         </div>
                         <div className="shopping-cart-title">
                           <h4>
-                            <a href="#">Plain Striola Shirts</a>
+                            <a>Plain Striola Shirts</a>
                           </h4>
                           <h3>
                             <span>1 × </span>$800.00
                           </h3>
                         </div>
                         <div className="shopping-cart-delete">
-                          <a href="#">
+                          <a>
                             <i className="fi-rs-cross-small"></i>
                           </a>
                         </div>
                       </li>
                       <li>
                         <div className="shopping-cart-img">
-                          <a href="#">
+                          <a>
                             <img alt="Nest" src="assets/imgs/shop/thumbnail-4.jpg" />
                           </a>
                         </div>
                         <div className="shopping-cart-title">
                           <h4>
-                            <a href="#">Macbook Pro 2024</a>
+                            <a>Macbook Pro 2024</a>
                           </h4>
                           <h3>
                             <span>1 × </span>$3500.00
                           </h3>
                         </div>
                         <div className="shopping-cart-delete">
-                          <a href="#">
+                          <a>
                             <i className="fi-rs-cross-small"></i>
                           </a>
                         </div>

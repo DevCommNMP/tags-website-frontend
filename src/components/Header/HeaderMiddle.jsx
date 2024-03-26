@@ -5,7 +5,7 @@ import account from "../../assets/imgs/theme/icons/icon-user.svg";
 import cartImg from "../../assets/imgs/theme/icons/icon-cart.svg";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Search from '../Search'
+import Search from "../Search";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -66,7 +66,7 @@ const[cart,setcart]=useState(JSON.parse(localStorage.getItem('cartItems')))
               </Link>
             </div>
             <div className="header-right">
-                <Search />
+              <Search />
               <div className="header-action-right">
                 <div className="header-action-2">
                   <div className="header-action-icon-2">
@@ -90,13 +90,13 @@ const[cart,setcart]=useState(JSON.parse(localStorage.getItem('cartItems')))
                       <ul>
                         <li>
                           <div className="shopping-cart-img">
-                            <a href="shop-product-right.html">
+                            <a>
                               <img alt="Nest" src="assets/imgs/shop/thumbnail-3.jpg" />
                             </a>
                           </div>
                           <div className="shopping-cart-title">
                             <h4>
-                              <a href="shop-product-right.html">Daisy Casual Bag</a>
+                              <a>Daisy Casual Bag</a>
                             </h4>
                             <h4>
                               <span>1 × </span>$800.00
@@ -110,13 +110,13 @@ const[cart,setcart]=useState(JSON.parse(localStorage.getItem('cartItems')))
                         </li>
                         <li>
                           <div className="shopping-cart-img">
-                            <a href="shop-product-right.html">
+                            <a>
                               <img alt="Nest" src="assets/imgs/shop/thumbnail-2.jpg" />
                             </a>
                           </div>
                           <div className="shopping-cart-title">
                             <h4>
-                              <a href="shop-product-right.html">Corduroy Shirts</a>
+                              <a>Corduroy Shirts</a>
                             </h4>
                             <h4>
                               <span>1 × </span>$3200.00
