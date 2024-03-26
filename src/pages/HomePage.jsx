@@ -26,7 +26,7 @@ const Homepage = ({ data }) => {
       <Header />
 
       {productsLoading ? (
-        "loading"
+        <h1 style={{textAlign:"center"}}>Loading.....</h1>
       ) : (
         <div>
           <Hero />

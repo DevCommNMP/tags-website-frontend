@@ -88,7 +88,7 @@ const ProductTabSection = ({ data }) => {
     const res = await dispatch(addToCartHandler(item));
     console.log(res);
     setSuccessToast(true);
-    toast.success("Success Notification !", {
+    toast.success("Product added to cart", {
       position: "top-right",
     });
   };
@@ -101,7 +101,7 @@ useEffect(() => {
 
   return (
     <>
-      <div>{(successToast || errorToast) && <ToastContainer />}</div>
+   <ToastContainer />
       <section className="product-tabs section-padding position-relative">
         <div className="container">
           <div className="section-title style-2">

@@ -30,6 +30,8 @@ const Header = () => {
     } else {
       document.body.classList.remove("sidebar-visible");
     }
+
+    
   }, [isSidebarVisible]);
 
   return (
@@ -66,7 +68,7 @@ const Header = () => {
             </div>
             <div className="header-nav d-none d-lg-flex">
               <div className="main-categori-wrap d-none d-lg-block">
-                <Link className="categories-button-active" to="/categories/Products">
+                <Link className="categories-button-active" to="/all-categories">
                   <span className="fi-rs-apps"></span> <span className="et">Browse</span> All Categories
                 </Link>
                 <div className="categories-dropdown-wrap categories-dropdown-active-large font-heading">

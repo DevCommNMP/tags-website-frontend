@@ -2,7 +2,7 @@ import logo from "../../assets/imgs/theme/logo.png";
 // import compareIcon from "../../assets/imgs/theme/icons/icon-compare.svg";
 import wishList from "../../assets/imgs/theme/icons/icon-heart.svg";
 import account from "../../assets/imgs/theme/icons/icon-user.svg";
-import cart from "../../assets/imgs/theme/icons/icon-cart.svg";
+import cartImg from "../../assets/imgs/theme/icons/icon-cart.svg";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Search from '../Search'
@@ -14,25 +14,28 @@ const HeaderMiddle = () => {
   const dispatch = useDispatch();
   const [user, setUser] = useState("");
   const [token, setToken] = useState("");
+const[cart,setcart]=useState(JSON.parse(localStorage.getItem('cartItems')))
 
   useEffect(() => {
     const localData = localStorage.getItem("userData");
+    const cart=JSON.parse(localStorage.getItem("cartItems"))
+  
     if (localData) {
       const parsedData = JSON.parse(localData);
       setToken(parsedData.token);
       setUser(parsedData);
     }
-    console.log(localData);
+   
     const removeLocalData = setTimeout(() => {
       if (token) {
         console.log("removing localData");
         localStorage.removeItem("userData");
         setToken("");
       }
-    }, 100000);
+    }, 3600000);
 
     return () => clearTimeout(removeLocalData);
-  }, [token]); // Run once on component mount to fetch token from local storage
+  }, [token,cart]); // Run once on component mount to fetch token from local storage
 
   // useEffect(() => {
   //   const removeLocalData = setTimeout(() => {
@@ -76,14 +79,14 @@ const HeaderMiddle = () => {
                     </Link>
                   </div>
                   <div className="header-action-icon-2">
-                    <a className="mini-cart-icon" href="shop-cart.html">
-                      <img alt="Nest" src={cart} />
-                      <span className="pro-count blue">2</span>
+                    <a className="mini-cart-icon" >
+                      <img alt="Nest" src={cartImg} />
+                      <span className="pro-count blue">{cart.length}</span>
                     </a>
                     <Link to="/cart">
                       <span className="lable">Cart</span>
                     </Link>
-                    <div className="cart-dropdown-wrap cart-dropdown-hm2">
+                    {/* <div className="cart-dropdown-wrap cart-dropdown-hm2">
                       <ul>
                         <li>
                           <div className="shopping-cart-img">
@@ -139,7 +142,7 @@ const HeaderMiddle = () => {
                           <Link to="/checkout">Checkout</Link>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   {token ? (
                     <div className="header-action-icon-2">
