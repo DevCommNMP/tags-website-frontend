@@ -3,7 +3,7 @@ import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
 import { Slide, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addToCartHandler } from "../redux/actions/cart/cartActions";
 
@@ -84,6 +84,7 @@ const ProductTabSection = ({ data }) => {
     navigate(`/products/${productid}`);
   };
   const cartHandler = async (item) => {
+    // console.log(item)
     const res = await dispatch(addToCartHandler(item));
     console.log(res);
     setSuccessToast(true);
@@ -94,6 +95,9 @@ const ProductTabSection = ({ data }) => {
 
   // const hotProducts = data.filter(item => item.tag.includes('hot'));
   const productHandler = (event) => {};
+useEffect(() => {
+
+}, [toast])
 
   return (
     <>

@@ -4,7 +4,7 @@ import { addToCartHandler } from "../../actions/cart/cartActions";
 
 
 const initialState={
-addedtocart:false,
+cart:[],
   cartLoading: false,
   appErr: null,
   serverErr: null,
@@ -30,7 +30,7 @@ const cartSlice = createSlice({
     builder.addCase(addToCartHandler.fulfilled, (state, action) => {
       state.cartLoading = false;
       state.addedtocart=false,
-      state.registered = action?.payload;
+      state.cart = action?.payload;
     });
     builder.addCase(addToCartHandler.rejected, (state, action) => {
       state.cartLoading = false;

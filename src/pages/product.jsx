@@ -13,11 +13,11 @@ const dispatch=useDispatch();
 const { id } = useParams();
   const storeData = useSelector((store) => store.products);
   const { particularproduct,productsLoading,appErr,serverErr,products } = storeData;
-console.log(particularproduct,productsLoading,appErr,serverErr,)
+// console.log(particularproduct,productsLoading,appErr,serverErr,)
 
 useEffect(() => {
   const res= dispatch(fetchParticularProduct(id))
-  console.log(res)
+  // console.log(res)
 }, [dispatch])
 
   return (

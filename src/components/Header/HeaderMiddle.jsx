@@ -80,7 +80,7 @@ const HeaderMiddle = () => {
                       <img alt="Nest" src={cart} />
                       <span className="pro-count blue">2</span>
                     </a>
-                    <Link to="/checkout">
+                    <Link to="/cart">
                       <span className="lable">Cart</span>
                     </Link>
                     <div className="cart-dropdown-wrap cart-dropdown-hm2">
