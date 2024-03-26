@@ -1,6 +1,6 @@
 import logo from "../assets/imgs/theme/logo.png";
-const Invoice = () => {
 import { Link } from "react-router-dom";
+const Invoice = () => {
 
   return (
     <div>
