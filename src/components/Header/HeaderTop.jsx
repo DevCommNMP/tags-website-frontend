@@ -8,16 +8,13 @@ const HeaderTop = () => {
               <div className="header-info">
                 <ul>
                   <li>
-                    <a href="page-about.html">About Us</a>
-                  </li>
-                  <li>
                     <a href="page-account.html">My Account</a>
                   </li>
                   <li>
-                    <a href="shop-wishlist.html">Wishlist</a>
+                    <a href="shop-wishlist.html">Blog</a>
                   </li>
                   <li>
-                    <a href="shop-order.html">Order Tracking</a>
+                    <a href="page-about.html">About Us</a>
                   </li>
                 </ul>
               </div>
@@ -41,53 +38,8 @@ const HeaderTop = () => {
                   </li>
                   <li>
                     <a className="language-dropdown-active" href="#">
-                      English <i className="fi-rs-angle-small-down"></i>
+                      INR
                     </a>
-                    <ul className="language-dropdown">
-                      <li>
-                        <a href="#">
-                          <img src="assets/imgs/theme/flag-fr.png" alt="" />
-                          Français
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/imgs/theme/flag-dt.png" alt="" />
-                          Deutsch
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/imgs/theme/flag-ru.png" alt="" />
-                          Pусский
-                        </a>
-                      </li>
-                    </ul>gitz
-                  </li>
-                  <li>
-                    <a className="language-dropdown-active" href="#">
-                      INR <i className="fi-rs-angle-small-down"></i>
-                    </a>
-                    <ul className="language-dropdown">
-                      <li>
-                        <a href="#">
-                          <img src="assets/imgs/theme/flag-fr.png" alt="" />
-                          USD
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/imgs/theme/flag-dt.png" alt="" />
-                          MBP
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/imgs/theme/flag-ru.png" alt="" />
-                          EU
-                        </a>
-                      </li>
-                    </ul>
                   </li>
                 </ul>
               </div>

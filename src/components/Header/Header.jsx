@@ -1,13 +1,3 @@
-import category1 from "../../assets/imgs/theme/icons/category-1.svg";
-import category2 from "../../assets/imgs/theme/icons/category-2.svg";
-import category3 from "../../assets/imgs/theme/icons/category-3.svg";
-import category4 from "../../assets/imgs/theme/icons/category-4.svg";
-import category5 from "../../assets/imgs/theme/icons/category-5.svg";
-import category6 from "../../assets/imgs/theme/icons/category-6.svg";
-import category7 from "../../assets/imgs/theme/icons/category-7.svg";
-import category8 from "../../assets/imgs/theme/icons/category-8.svg";
-import category9 from "../../assets/imgs/theme/icons/category-9.svg";
-import category10 from "../../assets/imgs/theme/icons/category-10.svg";
 import icon1 from "../../assets/imgs/theme/icons/icon-1.svg";
 import icon2 from "../../assets/imgs/theme/icons/icon-2.svg";
 import icon3 from "../../assets/imgs/theme/icons/icon-3.svg";
@@ -85,118 +75,7 @@ const Header = () => {
                   {/* <i className="fi-rs-angle-down"></i> */}
                 </Link>
                 <div className="categories-dropdown-wrap categories-dropdown-active-large font-heading">
-                  <div className="d-flex categori-dropdown-inner">
-                    <ul>
-                      <li>
-                        <a href="shop-grid-right.html">
-                          {" "}
-                          <img src={category1} alt="" />
-                          Milks and Dairies
-                        </a>
-                      </li>
-                      <li>
-                        <a href="shop-grid-right.html">
-                          {" "}
-                          <img src={category2} alt="" />
-                          Clothing & beauty
-                        </a>
-                      </li>
-                      <li>
-                        <a href="shop-grid-right.html">
-                          {" "}
-                          <img src={category3} alt="" />
-                          Pet Foods & Toy
-                        </a>
-                      </li>
-                      <li>
-                        <a href="shop-grid-right.html">
-                          {" "}
-                          <img src={category4} alt="" />
-                          Baking material
-                        </a>
-                      </li>
-                      <li>
-                        <a href="shop-grid-right.html">
-                          {" "}
-                          <img src={category5} alt="" />
-                          Fresh Fruit
-                        </a>
-                      </li>
-                    </ul>
-                    <ul className="end">
-                      <li>
-                        <a href="shop-grid-right.html">
-                          {" "}
-                          <img src={category6} alt="" />
-                          Wines & Drinks
-                        </a>
-                      </li>
-                      <li>
-                        <a href="shop-grid-right.html">
-                          {" "}
-                          <img src={category7} alt="" />
-                          Fresh Seafood
-                        </a>
-                      </li>
-                      <li>
-                        <a href="shop-grid-right.html">
-                          {" "}
-                          <img src={category8} alt="" />
-                          Fast food
-                        </a>
-                      </li>
-                      <li>
-                        <a href="shop-grid-right.html">
-                          {" "}
-                          <img src={category9} alt="" />
-                          Vegetables
-                        </a>
-                      </li>
-                      <li>
-                        <a href="shop-grid-right.html">
-                          {" "}
-                          <img src={category10} alt="" />
-                          Bread and Juice
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="more_slide_open custom">
-                    <div className="d-flex categori-dropdown-inner">
-                      <ul>
-                        <li>
-                          <a href="shop-grid-right.html">
-                            {" "}
-                            <img src={icon1} alt="" />
-                            Milks and Dairies
-                          </a>
-                        </li>
-                        <li>
-                          <a href="shop-grid-right.html">
-                            {" "}
-                            <img src={icon2} alt="" />
-                            Clothing & beauty
-                          </a>
-                        </li>
-                      </ul>
-                      <ul className="end">
-                        <li>
-                          <a href="shop-grid-right.html">
-                            {" "}
-                            <img src={icon3} alt="" />
-                            Wines & Drinks
-                          </a>
-                        </li>
-                        <li>
-                          <a href="shop-grid-right.html">
-                            {" "}
-                            <img src={icon4} alt="" />
-                            Fresh Seafood
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                  <div className="d-flex categori-dropdown-inner"></div>
                   <div className="more_categories">
                     <span className="icon"></span> <span className="heading-sm-1">Show more...</span>
                   </div>
@@ -212,56 +91,7 @@ const Header = () => {
                       </a>
                     </li>
 
-                    {/* <li>
-                                        <a href='shop-grid-right.html'>Shop <i className="fi-rs-angle-down"></i></a>
-                                        <ul className="sub-menu">
-                                            <li><a href='shop-grid-right.html'>Shop Grid – Right Sidebar</a></li>
-                                            <li><a href='shop-grid-left.html'>Shop Grid – Left Sidebar</a></li>
-                                            <li><a href='shop-list-right.html'>Shop List – Right Sidebar</a></li>
-                                            <li><a href='shop-list-left.html'>Shop List – Left Sidebar</a></li>
-                                            <li><a href='shop-fullwidth.html'>Shop - Wide</a></li>
-                                            <li>
-                                                <a href="#">Single Product <i className="fi-rs-angle-right"></i></a>
-                                                <ul className="level-menu">
-                                                    <li><a href='#'>Product – Right Sidebar</a>
-                                                    </li>
-                                                    <li><a href='shop-product-left.html'>Product – Left Sidebar</a></li>
-                                                    <li><a href='shop-product-full.html'>Product – No sidebar</a></li>
-                                                    <li><a href='shop-product-vendor.html'>Product – Vendor Infor</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href='shop-filter.html'>Shop – Filter</a></li>
-                                            <li><a href='shop-wishlist.html'>Shop – Wishlist</a></li>
-                                            <li><a href='shop-cart.html'>Shop – Cart</a></li>
-                                            <li><a href='shop-checkout.html'>Shop – Checkout</a></li>
-                                            <li><a href='shop-compare.html'>Shop – Compare</a></li>
-                                            <li>
-                                                <a href="#">Shop Invoice<i className="fi-rs-angle-right"></i></a>
-                                                <ul className="level-menu">
-                                                    <li><a href='shop-invoice-1.html'>Shop Invoice 1</a></li>
-                                                    <li><a href='shop-invoice-2.html'>Shop Invoice 2</a></li>
-                                                    <li><a href='shop-invoice-3.html'>Shop Invoice 3</a></li>
-                                                    <li><a href='shop-invoice-4.html'>Shop Invoice 4</a></li>
-                                                    <li><a href='shop-invoice-5.html'>Shop Invoice 5</a></li>
-                                                    <li><a href='shop-invoice-6.html'>Shop Invoice 6</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li> */}
-                    {/* <li>
-                                        <a href="#">Vendors <i className="fi-rs-angle-down"></i></a>
-                                        <ul className="sub-menu">
-                                            <li><a href='vendors-grid.html'>Vendors Grid</a></li>
-                                            <li><a href='vendors-list.html'>Vendors List</a></li>
-                                            <li><a href='vendor-details-1.html'>Vendor Details 01</a></li>
-                                            <li><a href='vendor-details-2.html'>Vendor Details 02</a></li>
-                                            <li><a href='vendor-dashboard.html'>Vendor Dashboard</a></li>
-                                            <li><a href='vendor-guide.html'>Vendor Guide</a></li>
-                                        </ul>
-                                    </li> */}
-
-                    <li className="position-static">
+                    {/* <li className="position-static">
                       <a href="#">
                         Women <i className="fi-rs-angle-down"></i>
                       </a>
@@ -286,7 +116,6 @@ const Header = () => {
                             <li>
                               <a href="#">Sports Shoes</a>
                             </li>
-                            {/* <li><a href='#'>Packaged Produce</a></li> */}
                           </ul>
                         </li>
                         <li className="sub-mega-menu sub-mega-menu-width-22">
@@ -389,7 +218,7 @@ const Header = () => {
                           </ul>
                         </li>
                       </ul>
-                    </li>
+                    </li> */}
                     <li>
                       <Link className="active" to="/categories/Occation">
                         Occation <i className="fi-rs-angle-down"></i>
@@ -412,23 +241,6 @@ const Header = () => {
                         </li>
                       </ul>
                     </li>
-                    {/* <li>
-                                        <a href='blog-category-grid.html'>Blog <i className="fi-rs-angle-down"></i></a>
-                                        <ul className="sub-menu">
-                                            <li><a href='blog-category-grid.html'>Blog Category Grid</a></li>
-                                            <li><a href='blog-category-list.html'>Blog Category List</a></li>
-                                            <li><a href='blog-category-big.html'>Blog Category Big</a></li>
-                                            <li><a href='blog-category-fullwidth.html'>Blog Category Wide</a></li>
-                                            <li>
-                                                <a href="#">Single Post <i className="fi-rs-angle-right"></i></a>
-                                                <ul className="level-menu level-menu-modify">
-                                                    <li><a href='blog-post-left.html'>Left Sidebar</a></li>
-                                                    <li><a href='blog-post-right.html'>Right Sidebar</a></li>
-                                                    <li><a href='blog-post-fullwidth.html'>No Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li> */}
                     <li>
                       <a href="#">
                         Shoe Type <i className="fi-rs-angle-down"></i>
@@ -505,6 +317,34 @@ const Header = () => {
                       </ul>
                     </li>
                     <li>
+                      <a href="#">
+                        Colours <i className="fi-rs-angle-down"></i>
+                      </a>
+                      <ul className="sub-menu">
+                        <li style={{ display: "flex" }}>
+                          <span style={{ backgroundColor: "red", width: "15px", height: "15px" }}></span>
+                          <Link to="/categories/Slip Ons" href="#">
+                            Red
+                          </Link>
+                        </li>
+                        <li style={{ display: "flex" }}>
+                          <span style={{ backgroundColor: "Green", width: "15px", height: "15px" }}></span>
+
+                          <Link to="/categories/Sneakers" href="#">
+                            Green
+                          </Link>
+                        </li>
+                        <li style={{ display: "flex" }}>
+                          <span style={{ backgroundColor: "BLUE", width: "15px", height: "15px" }}></span>
+
+                          <Link to="/categories/Walking Shoes" href="#">
+                            Blue
+                          </Link>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
                       <Link to="/categories/Premium Leather">About</Link>
                     </li>
                     <li>
@@ -519,7 +359,7 @@ const Header = () => {
             <div className="hotline d-none d-lg-flex">
               <img src={iconHeadphone} alt="hotline" />
               <p>
-                1900 - 888<span>24/7 Support Center</span>
+                1900 - 888<span>7 Days Support Center</span>
               </p>
             </div>
             <div onClick={openMenu} className="header-action-icon-2 d-block d-lg-none">

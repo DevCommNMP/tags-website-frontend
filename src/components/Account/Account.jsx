@@ -1,5 +1,6 @@
 import { useState } from "react";
 import UserImg from "../../assets/imgs/theme/user-profile-img.jpg";
+import { Link } from "react-router-dom";
 
 const Account = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -64,9 +65,9 @@ const Account = () => {
                         </a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link" href="page-login.html">
+                        <Link className="nav-link" to="/login">
                           Logout
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -85,8 +86,8 @@ const Account = () => {
                             </div>
                             <div className="col-md-8">
                               <p className="lead">
-                                From your account dashboard, you can easily check & view your <a href="#">recent orders</a>, manage your{" "}
-                                <a href="#">shipping and billing addresses</a>, and <a href="#">edit your password and account details.</a>
+                                From your account dashboard, you can easily check & view your recent orders, manage your{" "}
+                                shipping and billing addresses, and edit your password and account details.
                               </p>
                             </div>
                           </div>
@@ -118,9 +119,9 @@ const Account = () => {
                                   <td>Processing</td>
                                   <td>$125.00 for 2 item</td>
                                   <td>
-                                    <a href="#" className="btn-small d-block">
+                                    <Link to="/invoice" className="btn-small d-block">
                                       View
-                                    </a>
+                                    </Link>
                                   </td>
                                 </tr>
                                 <tr>
@@ -129,9 +130,9 @@ const Account = () => {
                                   <td>Completed</td>
                                   <td>$364.00 for 5 item</td>
                                   <td>
-                                    <a href="#" className="btn-small d-block">
+                                    <Link to="/invoice" className="btn-small d-block">
                                       View
-                                    </a>
+                                    </Link>
                                   </td>
                                 </tr>
                                 <tr>
@@ -140,9 +141,9 @@ const Account = () => {
                                   <td>Completed</td>
                                   <td>$280.00 for 3 item</td>
                                   <td>
-                                    <a href="#" className="btn-small d-block">
+                                    <Link to="/invoice" className="btn-small d-block">
                                       View
-                                    </a>
+                                    </Link>
                                   </td>
                                 </tr>
                               </tbody>
@@ -233,7 +234,7 @@ const Account = () => {
                         </div>
                         <div className="card-body">
                           <p>
-                            Already have an account? <a href="page-login.html">Log in instead!</a>
+                            Already have an account? <Link to="/login">Log in instead!</Link>
                           </p>
                           <form method="post" name="enq">
                             <div className="row">

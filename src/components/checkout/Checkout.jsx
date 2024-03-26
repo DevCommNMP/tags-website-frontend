@@ -5,7 +5,8 @@ import paymentMaster from '../../assets/imgs/theme/icons/payment-master.svg'
 import paymentZapper from '../../assets/imgs/theme/icons/payment-zapper.svg'
 
 
-import React, { useEffect } from 'react'
+
+import React from 'react'
 import { Link } from 'react-router-dom'
 const dummyData=[
     {
@@ -30,14 +31,6 @@ const dummyData=[
     
   ]
 const Checkout = () => {
-    const cartdata=JSON.parse(localStorage.getItem("cartItems"))
-    useEffect(() => {
-    
-    
-    
-    }, [cartdata])
-    
-
     return (
         <>
             <main className="main">
@@ -240,13 +233,13 @@ const Checkout = () => {
                                 <div className="table-responsive order_table checkout">
                                 <div className="table-responsive order_table checkout">
   <table className="table no-border">
-    <tbody> 
-      {cartdata.map((item, index) => (
+    <tbody>
+      {dummyData.map((item, index) => (
         <tr key={index}>
-          <td className="image product-thumbnail"><img src={item.productImage} alt="#" /></td>
+          <td className="image product-thumbnail"><img src={item.image} alt="#" /></td>
           <td>
             <h6 className="w-160 mb-5">
-              <a className='text-heading' href='#'>{item.title}</a>
+              <a className='text-heading' href='#'>{item.name}</a>
             </h6>
             <div className="product-rate-cover">
               <div className="product-rate d-inline-block">
@@ -259,7 +252,7 @@ const Checkout = () => {
             <h6 className="text-muted pl-20 pr-20">x 1</h6>
           </td>
           <td>
-            <h4 className="text-brand">&#x20B9;{item.SellingPrice}</h4>
+            <h4 className="text-brand">&#x20B9;{item.price}</h4>
           </td>
         </tr>
       ))}
@@ -301,4 +294,4 @@ const Checkout = () => {
     )
 }
 
-export default Checkout
+export default Checkout;

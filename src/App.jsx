@@ -18,10 +18,11 @@ import NewArrivals from "./pages/newArrivalPage.jsx";
 import PremiumLeather from "./pages/premiumLeather.jsx";
 import ProductsGridPage from "./pages/ProductsGridPage.jsx";
 
-// import ToggleBtn from "./playground/ToggleBtn.jsx";
 import Invoice from "./components/Invoice.jsx";
 // import ToggleBtn from "./playground/ToggleBtn.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
+import AllCategoriesPage from "./pages/AllCategoriesPage.jsx";
+// import SpinnerLoader from "./components/SpinnerLoader.jsx";
 
 const dummydata = [
   {
@@ -125,6 +126,7 @@ function App() {
 
   return (
     <>
+    {/* <SpinnerLoader /> */}
       <Provider store={Store}>
         <BrowserRouter>
           <Routes>
@@ -144,14 +146,15 @@ function App() {
             <Route exact path="/productImages" element={<SingleProductImages />} />
             <Route exact path="/checkout" element={<CheckoutPage />} />
             <Route exact path="/categories/:title" element={<ProductsGridPage data={dummydata} />} />
+            <Route exact path="/all-categories" element={<AllCategoriesPage  />} />
             <Route exact path="/wishlist" element={<Wishlist />} />
             <Route exact path="/invoice" element={<Invoice />} />
+
 
 
             {/* TEST ROUTES
               following routes can safely be removed */}
 
-            {/* <Route exact path="/test" element={<ToggleBtn />} /> */}
           </Routes>
         </BrowserRouter>
       </Provider>
