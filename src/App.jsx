@@ -150,11 +150,8 @@ function App() {
             <Route exact path="/wishlist" element={<Wishlist />} />
             <Route exact path="/invoice" element={<Invoice />} />
 
-
-
             {/* TEST ROUTES
               following routes can safely be removed */}
-
           </Routes>
         </BrowserRouter>
       </Provider>
