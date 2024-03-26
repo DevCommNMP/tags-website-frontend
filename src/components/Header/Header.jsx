@@ -1,7 +1,3 @@
-import icon1 from "../../assets/imgs/theme/icons/icon-1.svg";
-import icon2 from "../../assets/imgs/theme/icons/icon-2.svg";
-import icon3 from "../../assets/imgs/theme/icons/icon-3.svg";
-import icon4 from "../../assets/imgs/theme/icons/icon-4.svg";
 import logo from "../../assets/imgs/theme/logo.png";
 import iconHot from "../../assets/imgs/theme/icons/icon-hot.svg";
 import iconHeadphone from "../../assets/imgs/theme/icons/icon-headphone.svg";
@@ -44,9 +40,9 @@ const Header = () => {
         <div className="mobile-header-wrapper-inner">
           <div className="mobile-header-top">
             <div className="mobile-header-logo">
-              <a href="index.html">
+              <Link to="index.html">
                 <img src="assets/imgs/theme/logo.png" alt="logo" />
-              </a>
+              </Link>
             </div>
             <div onClick={closeMenu} className="mobile-menu-close close-style-wrap close-style-position-inherit">
               <button className="close-style  search-close">
@@ -64,15 +60,14 @@ const Header = () => {
         <div className="container">
           <div className="header-wrap header-space-between position-relative">
             <div className="logo logo-width-1 d-block d-lg-none">
-              <a href="index.html">
+              <Link to="index.html">
                 <img src={logo} alt="logo" />
-              </a>
+              </Link>
             </div>
             <div className="header-nav d-none d-lg-flex">
               <div className="main-categori-wrap d-none d-lg-block">
                 <Link className="categories-button-active" to="/categories/Products">
                   <span className="fi-rs-apps"></span> <span className="et">Browse</span> All Categories
-                  {/* <i className="fi-rs-angle-down"></i> */}
                 </Link>
                 <div className="categories-dropdown-wrap categories-dropdown-active-large font-heading">
                   <div className="d-flex categori-dropdown-inner"></div>
@@ -86,139 +81,9 @@ const Header = () => {
                   <ul>
                     <li className="hot-deals">
                       <img src={iconHot} alt="hot deals" />
-                      <a href="shop-grid-right.html">
-                        <Link to="/categories/Deals">Deals</Link>
-                      </a>
+                      <Link to="/categories/Deals">Deals</Link>
                     </li>
 
-                    {/* <li className="position-static">
-                      <a href="#">
-                        Women <i className="fi-rs-angle-down"></i>
-                      </a>
-                      <ul className="mega-menu">
-                        <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <a className="menu-title" href="#">
-                            Occasion
-                          </a>
-                          <ul>
-                            <li>
-                              <a href="#">Casual Shoes</a>
-                            </li>
-                            <li>
-                              <a href="#">Ethnic Shoes</a>
-                            </li>
-                            <li>
-                              <a href="#">Formal Shoes</a>
-                            </li>
-                            <li>
-                              <a href="#">Party Shoes</a>
-                            </li>
-                            <li>
-                              <a href="#">Sports Shoes</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <a className="menu-title" href="#">
-                            Shoe Type
-                          </a>
-                          <ul>
-                            <li>
-                              <a href="#">Ballerinas Walking Shoes</a>
-                            </li>
-                            <li>
-                              <a href="#">Boots</a>
-                            </li>
-                            <li>
-                              <a href="#">Comfort</a>
-                            </li>
-                            <li>
-                              <a href="#">Flip Flops</a>
-                            </li>
-                            <li>
-                              <a href="#">Kolhapuris</a>
-                            </li>
-                            <li>
-                              <a href="#">Mojaris</a>
-                            </li>
-                            <li>
-                              <a href="#">Mules</a>
-                            </li>
-                            <li>
-                              <a href="#">Pumps</a>
-                            </li>
-                            <li>
-                              <a href="#">Sandals</a>
-                            </li>
-                            <li>
-                              <a href="#">Slides</a>
-                            </li>
-                            <li>
-                              <a href="#">Slippers</a>
-                            </li>
-                            <li>
-                              <a href="#">Slip Ons</a>
-                            </li>
-                            <li>
-                              <a href="#">Sneakers</a>
-                            </li>
-                            <li>
-                              <a href="#">Walking Shoes</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <a className="menu-title" href="#">
-                            Colors
-                          </a>
-                          <ul>
-                            <li>
-                              <a href="#">Black</a>
-                            </li>
-                            <li>
-                              <a href="#">White</a>
-                            </li>
-                            <li>
-                              <a href="#">Red</a>
-                            </li>
-                            <li>
-                              <a href="#">Blue</a>
-                            </li>
-                            <li>
-                              <a href="#">maroon</a>
-                            </li>
-                            <li>
-                              <a href="#">Purple</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <a className="menu-title" href="#">
-                            Brands
-                          </a>
-                          <ul>
-                            <li>
-                              <a href="#">Fila</a>
-                            </li>
-                            <li>
-                              <a href="#">Cheemo</a>
-                            </li>
-                            <li>
-                              <a href="#">DoubleU</a>
-                            </li>
-                            <li>
-                              <a href="#">Fitflop</a>
-                            </li>
-                            <li>
-                              <a href="#">Haute Diva</a>
-                            </li>
-                            <li>
-                              <a href="#">Mochi</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li> */}
                     <li>
                       <Link className="active" to="/categories/Occation">
                         Occation <i className="fi-rs-angle-down"></i>
@@ -242,104 +107,72 @@ const Header = () => {
                       </ul>
                     </li>
                     <li>
-                      <a href="#">
+                      <a style={{ cursor: "pointer" }}>
                         Shoe Type <i className="fi-rs-angle-down"></i>
                       </a>
                       <ul className="sub-menu">
                         <li>
-                          <a href="#">Ballerinas Walking Shoes</a>
+                          <Link to="/categories/Ballerinas Walking Shoes">Ballerinas Walking Shoes</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Boots" href="#">
-                            Boots
-                          </Link>
+                          <Link to="/categories/Boots">Boots</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Comfort" href="#">
-                            Comfort
-                          </Link>
+                          <Link to="/categories/Comfort">Comfort</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Flip Flop" href="#">
-                            Flip Flops
-                          </Link>
+                          <Link to="/categories/Flip Flop">Flip Flops</Link>
                         </li>
                         <li>
-                          <Link to="/categories/kolhapuries" href="#">
-                            Kolhapuris
-                          </Link>
+                          <Link to="/categories/kolhapuries">Kolhapuris</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Mojaris" href="#">
-                            Mojaris
-                          </Link>
+                          <Link to="/categories/Mojaris">Mojaris</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Mules" href="#">
-                            Mules
-                          </Link>
+                          <Link to="/categories/Mules">Mules</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Pumps" href="#">
-                            Pumps
-                          </Link>
+                          <Link to="/categories/Pumps">Pumps</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Sandles" href="#">
-                            Sandals
-                          </Link>
+                          <Link to="/categories/Sandles">Sandals</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Slides" href="#">
-                            Slides
-                          </Link>
+                          <Link to="/categories/Slides">Slides</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Slippers" href="#">
-                            Slippers
-                          </Link>
+                          <Link to="/categories/Slippers">Slippers</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Slip Ons" href="#">
-                            Slip Ons
-                          </Link>
+                          <Link to="/categories/Slip Ons">Slip Ons</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Sneakers" href="#">
-                            Sneakers
-                          </Link>
+                          <Link to="/categories/Sneakers">Sneakers</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Walking Shoes" href="#">
-                            Walking Shoes
-                          </Link>
+                          <Link to="/categories/Walking Shoes">Walking Shoes</Link>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a href="#">
+                      <a>
                         Colours <i className="fi-rs-angle-down"></i>
                       </a>
                       <ul className="sub-menu">
                         <li style={{ display: "flex" }}>
                           <span style={{ backgroundColor: "red", width: "15px", height: "15px" }}></span>
-                          <Link to="/categories/Slip Ons" href="#">
-                            Red
-                          </Link>
+                          <Link to="/products/:red">Red</Link>
                         </li>
                         <li style={{ display: "flex" }}>
                           <span style={{ backgroundColor: "Green", width: "15px", height: "15px" }}></span>
 
-                          <Link to="/categories/Sneakers" href="#">
-                            Green
-                          </Link>
+                          <Link to="/products/:color">Green</Link>
                         </li>
                         <li style={{ display: "flex" }}>
                           <span style={{ backgroundColor: "BLUE", width: "15px", height: "15px" }}></span>
 
-                          <Link to="/categories/Walking Shoes" href="#">
-                            Blue
-                          </Link>
+                          <Link to="/products/:color">Blue</Link>
                         </li>
                       </ul>
                     </li>
@@ -372,10 +205,10 @@ const Header = () => {
             <div className="header-action-right d-block d-lg-none">
               <div className="header-action-2">
                 <div className="header-action-icon-2">
-                  <a href="shop-wishlist.html">
+                  <Link to="/wishlist">
                     <img alt="Nest" src="assets/imgs/theme/icons/icon-heart.svg" />
                     <span className="pro-count white">4</span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="header-action-icon-2">
                   <a className="mini-cart-icon" href="shop-cart.html">

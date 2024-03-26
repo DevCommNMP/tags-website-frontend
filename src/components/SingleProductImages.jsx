@@ -1,7 +1,16 @@
-import { useState, useRef } from "react";
-import Slider from "react-slick";
+import { useState, useRef } from 'react';
+import Slider from 'react-slick';
 
-const SingleProductImages = ({ product, data }) => {
+// Import product images here
+import product161 from '../assets/imgs/shop/product-16-1.jpg';
+import product162 from '../assets/imgs/shop/product-16-2.jpg';
+import product163 from '../assets/imgs/shop/product-16-3.jpg';
+import product164 from '../assets/imgs/shop/product-16-4.jpg';
+import product165 from '../assets/imgs/shop/product-16-5.jpg';
+import product166 from '../assets/imgs/shop/product-16-6.jpg';
+import product167 from '../assets/imgs/shop/product-16-7.jpg';
+
+const SingleProductImages = ({ product,data }) => {
   // Destructure product properties if necessary
   const { productImage, productSubImages } = product;
 
@@ -22,9 +31,7 @@ const SingleProductImages = ({ product, data }) => {
     infinite: true,
     speed: 800,
     slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    // pauseOnHover: true,
+    slidesToScroll: 1
   };
 
   const settingsThumb = {
@@ -32,7 +39,7 @@ const SingleProductImages = ({ product, data }) => {
     infinite: true,
     speed: 800,
     slidesToShow: 5,
-    slidesToScroll: 1,
+    slidesToScroll: 1
   };
 
   return (
@@ -55,7 +62,7 @@ const SingleProductImages = ({ product, data }) => {
             {productSubImagesArr.map((image, index) => (
               <div
                 key={index}
-                className={`thumbnail ${index === currentImageIndex ? "active" : ""}`}
+                className={`thumbnail ${index === currentImageIndex ? 'active' : ''}`}
                 onClick={() => handleThumbnailClick(index)}
               >
                 <img src={image} alt={`thumbnail ${index}`} />

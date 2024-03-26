@@ -19,8 +19,8 @@
 - [x] Slider - make width fluid 
 - [x] **3 banners | chnage photo and content** 
 - [x] Popular Products // Change heading style 
-- [ ] add carousel 
-- [ ] Product sections : and Premium Leather -> Add SLider  , side - banner, 10 photos, accroding to screen size.. 
+- [x] Product sections : add carousel 
+- [ ] Premium Leather -> side - banner, 10 photos, accroding to screen size.. 
 - [ ] in footer keep her own product instead of from google 
 - [x] remove 5 dibbe hain unko htata Hai 
 - [x] Footer logo 
@@ -34,15 +34,9 @@
 |Privacy Policy|||Login|
 |Contact Us|||Delivery Information|
 
-- [ ] | Company | Popular | SHop by Category |Account |||
-- [ ] |Anout Us |all Shoe types\\ get from occaisan tab from nav \\Casual ||    
-- [ ] Delivery Information
-- [ ] Privacy Policy 
-- [ ] Contact Us       
-
 ### footer .bottm 
 - [ ]  phone  number // 7 days instead of 24x7  in all places 
-## All Products Page
+# All Products Page
 - [ ]  category banner | add banner 
 - [ ]  // keep show | remove sort by featureew | make drop down working \\ 25 x 50 x 75 100
 - [ ]  get stars  
