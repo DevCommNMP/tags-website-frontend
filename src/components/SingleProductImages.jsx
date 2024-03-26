@@ -5,7 +5,7 @@ const SingleProductImages = ({ product }) => {
   const { productImage, productSubImages } = product;
 
   // Ensure productImage and productSubImages are arrays
-  const productImagesArr = Array.isArray(productImage) ? productImage : [];
+  const productImagesArr = Array.isArray(productSubImages) ? productSubImages : [];
   const productSubImagesArr = Array.isArray(productSubImages) ? productSubImages : [];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

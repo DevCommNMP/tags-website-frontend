@@ -1,20 +1,25 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import Header from "../components/Header/Header";
 import { Link, useParams } from 'react-router-dom';
 import Footer from '../components/Footer/Footer';
+import { useDispatch } from "react-redux";
+import { fetchAllProductsAction } from "../redux/actions/product/productActions.js";
+import { useSelector } from "react-redux";
 const ProductsGridPage = ({ data }) => {
   
   
   const { title } = useParams()
-  console.log(
-    title
-  )
-  // console.log(data)  
-  
+  const storeData = useSelector((store) => store.products);
+  const { products, productsLoading, appErr, serverErr } = storeData; 
+  console.log(products, productsLoading, appErr, serverErr)
   const [sliderValues, setSliderValues] = useState([0, 100]);
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const res = dispatch(fetchAllProductsAction());
+    console.log(res);
+  }, [dispatch]);
   // Function to handle slider change
   const handleSliderChange = (values) => {
     setSliderValues(values);

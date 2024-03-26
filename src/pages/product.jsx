@@ -87,12 +87,12 @@ useEffect(() => {
                         </ul>
                       </div>
                       <div className="attr-detail attr-size mb-30">
-                        <strong className="mr-10">Stock</strong>
+                        <strong className="mr-10">Colors</strong>
                         <ul className="list-filter size-filter font-small">
                           
-                        {particularproduct && particularproduct.sizesAvailable && particularproduct.sizesAvailable.map((item, index) => (
+                        {particularproduct && particularproduct.colorsAvailable && particularproduct.colorsAvailable.map((item, index) => (
                             <li key={index}>
-                              <a href="#">{item.quantity}</a> 
+                              <a href="#">{item}</a> 
                             </li>
                           ))}
                         </ul>
@@ -117,8 +117,9 @@ useEffect(() => {
                           <button
                             type="submit"
                             className="button button-add-to-cart"
-                          >
-                            <i className="fi-rs-shopping-cart"></i>Add to cart
+
+                     >
+                            <i className="fi-rs-shopping-cart"></i>Checkout
                           </button>
                           <a
                             aria-label="Add To Wishlist"
