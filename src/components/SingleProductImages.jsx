@@ -3,11 +3,13 @@ import Slider from "react-slick";
 
 const SingleProductImages = ({ product, data }) => {
   // Destructure product properties if necessary
-  const { productImage, productSubImages } = product;
 
+  const { productImage, productSubImages } = product;
+  // console.log(product)
   // Ensure productImage and productSubImages are arrays
-  const productImages = Array.isArray(productSubImages) ? productSubImages : [];
+  const productImagesArr = Array.isArray(productImage) ? productSubImages : [];
   const productSubImagesArr = Array.isArray(productSubImages) ? productSubImages : [];
+  // console.log(productSubImagesArr)
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const sliderRef = useRef();
@@ -43,7 +45,7 @@ const SingleProductImages = ({ product, data }) => {
         </span>
         <div className="product-image-slider">
           <Slider ref={sliderRef} {...settings}>
-            {productImages.map((image, index) => (
+            {productImagesArr.map((image, index) => (
               <div key={index}>
                 <img src={image} alt={`product image ${index}`} />
               </div>

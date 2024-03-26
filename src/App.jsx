@@ -22,6 +22,7 @@ import Invoice from "./components/Invoice.jsx";
 // import ToggleBtn from "./playground/ToggleBtn.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
 import AllCategoriesPage from "./pages/AllCategoriesPage.jsx";
+import Cart from "./pages/cart.jsx";
 // import SpinnerLoader from "./components/SpinnerLoader.jsx";
 
 const dummydata = [
@@ -142,7 +143,7 @@ function App() {
             <Route exact path="/reset_password" element={<ResetPassword />} />
             <Route exact path="/forgot_password" element={<ForgotPassword />} />
             <Route exact path="/account" element={<UserAccountPage />} />
-
+            <Route exact path="/cart" element={<Cart/>} />
             <Route exact path="/productImages" element={<SingleProductImages />} />
             <Route exact path="/checkout" element={<CheckoutPage />} />
             <Route exact path="/categories/:title" element={<ProductsGridPage data={dummydata} />} />

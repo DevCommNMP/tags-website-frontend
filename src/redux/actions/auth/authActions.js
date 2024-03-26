@@ -10,7 +10,7 @@ export const registerUserAction = createAsyncThunk(
   async (user, { rejectWithValue }) => {
 
     // if()
-    try {
+    try { 
       const config = {
         headers: {
           "Content-Type": "application/json",
