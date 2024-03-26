@@ -5,8 +5,7 @@ const AllCategories = () => {
         <div className="row mb-50">
           <div className="col-12 col-lg-8 mx-auto">
             <div className="shop-product-fillter">
-              <div className="sort-by-product-area">
-              </div>
+              <div className="sort-by-product-area"></div>
             </div>
           </div>
         </div>
