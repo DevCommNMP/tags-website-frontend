@@ -18,7 +18,7 @@
 - [ ] phone number change 
 - [x] Slider - make width fluid 
 - [x] **3 banners | chnage photo and content** 
-- [ ] Popular Products // Change heading style 
+- [x] Popular Products // Change heading style 
 - [ ] add carousel 
 - [ ] Product sections : and Premium Leather -> Add SLider  , side - banner, 10 photos, accroding to screen size.. 
 - [ ] in footer keep her own product instead of from google 

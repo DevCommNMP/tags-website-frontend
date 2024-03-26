@@ -1,11 +1,52 @@
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
-import { toast, ToastContainer } from "react-toastify";
+import { Slide, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCartHandler } from "../redux/actions/cart/cartActions";
+
+import Slider from "react-slick";
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 800,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  margin: 50,
+  pauseOnHover: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+
+};
+
 
 const dummydata = [
   {
@@ -68,6 +109,7 @@ const ProductTabSection = ({ data }) => {
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
+                <Slider {...settings}>
                 {data.map((item) => (
                   <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                     <div className="product-cart-wrap mb-30">
@@ -128,6 +170,7 @@ const ProductTabSection = ({ data }) => {
                     </div>
                   </div>
                 ))}
+                </Slider>
               </div>
             </div>
           </div>

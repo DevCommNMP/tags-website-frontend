@@ -1,44 +1,43 @@
-import { Link, useNavigate } from "react-router-dom"
-import Header from "../components/Header/Header"
-import Hero from "../components/Hero/Hero"
+import { Link, useNavigate } from "react-router-dom";
+import Header from "../components/Header/Header";
+import Hero from "../components/Hero/Hero";
 
-const dummydata=[
+const dummydata = [
   {
-    "id": 1,
-    "name": "Item 1",
-    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img1.jpg'
+    id: 1,
+    name: "Item 1",
+    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img1.jpg",
   },
   {
-    "id": 2,
-    "name": "Item 2",
-    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img3.jpg'
+    id: 2,
+    name: "Item 2",
+    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img3.jpg",
   },
   {
-    "id": 3,
-    "name": "Item 3",
-    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img3.jpg'
+    id: 3,
+    name: "Item 3",
+    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img3.jpg",
   },
   {
-    "id": 4,
-    "name": "Item 4",
-    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img4.jpg'
+    id: 4,
+    name: "Item 4",
+    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img4.jpg",
   },
   {
-    "id": 5,
-    "name": "Item 5",
-    "image":'/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img5.jpg'
+    id: 5,
+    name: "Item 5",
+    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img5.jpg",
   },
- 
-]
-const NewArrivals = ({data}) => {
-  const navigate=useNavigate()
-  const onClickProductHandler=(productid)=>{
-    navigate(`/products/${productid}`)
-  }
+];
+const NewArrivals = ({ data }) => {
+  const navigate = useNavigate();
+  const onClickProductHandler = (productid) => {
+    navigate(`/products/${productid}`);
+  };
   const cartHandler = async (id) => {
     console.log(id);
     let cart = localStorage.getItem("cart");
-  
+
     if (cart) {
       // Parse the existing cart items from localStorage
       let existingCart;
@@ -48,16 +47,16 @@ const NewArrivals = ({data}) => {
         console.error("Error parsing existing cart:", error);
         existingCart = [];
       }
-  
+
       // Ensure existingCart is an array
       if (!Array.isArray(existingCart)) {
         console.error("Existing cart is not an array:", existingCart);
         existingCart = [];
       }
-  
+
       // Check if the item already exists in the cart
       const isItemInCart = existingCart.includes(id);
-      
+
       if (!isItemInCart) {
         // If the item is not already in the cart, add it
         const updatedCart = [...existingCart, id];
@@ -68,84 +67,84 @@ const NewArrivals = ({data}) => {
       localStorage.setItem("cart", JSON.stringify([id]));
     }
   };
-  
-  const newArrivals= data.filter(item => item.tag.includes('new'));
 
-  
+  const newArrivals = data.filter((item) => item.tag.includes("new"));
+
   return (
     <>
-    <Header />
-    
-    
+      <Header />
+
       <section className="product-tabs section-padding position-relative">
         <div className="container">
           <div className="section-title style-2">
             <h3> All New Arrivals</h3>
-        
           </div>
 
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
-                {newArrivals.map(item=>(
+                {newArrivals.map((item) => (
                   <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                  <div className="product-cart-wrap mb-30">
-                    <div  className="product-img-action-wrap" >
-                      <div className="product-img product-img-zoom">
-                        <a href="#">
-                          <img className="default-img" src={item.image} alt="" />
-                          <img className="hover-img" src="" alt="" />
-                        </a>
-                      </div>
-                      <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" href="#">
-                          <i className="fi-rs-heart"></i>
-                        </a>
-                        <a aria-label="Compare" className="action-btn" href="#">
-                          <i className="fi-rs-shuffle"></i>
-                        </a>
-                        <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                          <i className="fi-rs-eye"></i>
-                        </a>
-                      </div>
-                      <div className="product-badges product-badges-position product-badges-mrg">
-                        <span className="hot" style={{backgroundColor:"red"}}>{item.tag}</span>
-                      </div>
-                    </div>
-                    <div className="product-content-wrap">
-                      <div className="product-category">
-                        <a href="#">Snack</a>
-                      </div>
-                      <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-                      </h2>
-                      <div className="product-rate-cover">
-                        <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
-                        </div>
-                        <span className="font-small ml-5 text-muted"> (4.0)</span>
-                      </div>
-                      <div>
-                        <span className="font-small text-muted">
-                          By <a href="vendor-details-1.html">NestFood</a>
-                        </span>
-                      </div>
-                      <div className="product-card-bottom">
-                        <div className="product-price">
-                          <span>$28.85</span>
-                          <span className="old-price">$32.8</span>
-                        </div>
-                        <div className="add-cart" onClick={() => cartHandler(item.id)} >
-                          <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                    <div className="product-cart-wrap mb-30">
+                      <div className="product-img-action-wrap">
+                        <div className="product-img product-img-zoom">
+                          <a href="#">
+                            <img className="default-img" src={item.image} alt="" />
+                            <img className="hover-img" src="" alt="" />
                           </a>
+                        </div>
+                        <div className="product-action-1">
+                          <a aria-label="Add To Wishlist" className="action-btn" href="#">
+                            <i className="fi-rs-heart"></i>
+                          </a>
+                          <a aria-label="Compare" className="action-btn" href="#">
+                            <i className="fi-rs-shuffle"></i>
+                          </a>
+                          <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
+                            <i className="fi-rs-eye"></i>
+                          </a>
+                        </div>
+                        <div className="product-badges product-badges-position product-badges-mrg">
+                          <span className="hot" style={{ backgroundColor: "red" }}>
+                            {item.tag}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="product-content-wrap">
+                        <div className="product-category">
+                          <a href="#">Snack</a>
+                        </div>
+                        <h2>
+                          <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                            Seeds of Change Organic Quinoa, Brown, & Red Rice
+                          </div>
+                        </h2>
+                        <div className="product-rate-cover">
+                          <div className="product-rate d-inline-block">
+                            <div className="product-rating" style={{ width: "90%" }}></div>
+                          </div>
+                          <span className="font-small ml-5 text-muted"> (4.0)</span>
+                        </div>
+                        <div>
+                          <span className="font-small text-muted">
+                            By <a href="vendor-details-1.html">NestFood</a>
+                          </span>
+                        </div>
+                        <div className="product-card-bottom">
+                          <div className="product-price">
+                            <span>$28.85</span>
+                            <span className="old-price">$32.8</span>
+                          </div>
+                          <div className="add-cart" onClick={() => cartHandler(item.id)}>
+                            <a className="add">
+                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
                 ))}
-
               </div>
             </div>
 
@@ -153,7 +152,7 @@ const NewArrivals = ({data}) => {
               <div className="row product-grid-4">
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
@@ -180,12 +179,11 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-<div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -199,9 +197,9 @@ const NewArrivals = ({data}) => {
                           <span>$28.85</span>
                           <span className="old-price">$32.8</span>
                         </div>
-                        <div className="add-cart"   >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -211,7 +209,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-12-1.jpg" alt="" />
@@ -238,12 +236,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '80%' }}></div>
+                          <div className="product-rating" style={{ width: "80%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (3.5)</span>
                       </div>
@@ -257,9 +256,9 @@ const NewArrivals = ({data}) => {
                           <span>$52.85</span>
                           <span className="old-price">$55.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -269,7 +268,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-13-1.jpg" alt="" />
@@ -296,12 +295,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-                                             <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '85%' }}></div>
+                          <div className="product-rating" style={{ width: "85%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -315,9 +315,9 @@ const NewArrivals = ({data}) => {
                           <span>$48.85</span>
                           <span className="old-price">$52.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -327,7 +327,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-14-1.jpg" alt="" />
@@ -351,12 +351,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Vegetables</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -370,9 +371,9 @@ const NewArrivals = ({data}) => {
                           <span>$17.85</span>
                           <span className="old-price">$19.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -382,7 +383,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-15-1.jpg" alt="" />
@@ -409,11 +410,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Pet Foods</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -427,9 +430,9 @@ const NewArrivals = ({data}) => {
                           <span>$23.85</span>
                           <span className="old-price">$25.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -439,7 +442,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-16-1.jpg" alt="" />
@@ -463,11 +466,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -481,9 +486,9 @@ const NewArrivals = ({data}) => {
                           <span>$54.85</span>
                           <span className="old-price">$55.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -493,7 +498,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
@@ -521,7 +526,7 @@ const NewArrivals = ({data}) => {
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -535,9 +540,9 @@ const NewArrivals = ({data}) => {
                           <span>$32.85</span>
                           <span className="old-price">$33.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -547,7 +552,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
@@ -574,12 +579,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -593,9 +599,9 @@ const NewArrivals = ({data}) => {
                           <span>$35.85</span>
                           <span className="old-price">$37.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -605,7 +611,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
@@ -632,12 +638,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Coffes</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -651,9 +658,9 @@ const NewArrivals = ({data}) => {
                           <span>$23.85</span>
                           <span className="old-price">$25.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -663,7 +670,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
@@ -687,12 +694,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Cream</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '50%' }}></div>
+                          <div className="product-rating" style={{ width: "50%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (2.0)</span>
                       </div>
@@ -706,9 +714,9 @@ const NewArrivals = ({data}) => {
                           <span>$22.85</span>
                           <span className="old-price">$24.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -722,7 +730,7 @@ const NewArrivals = ({data}) => {
               <div className="row product-grid-4">
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
@@ -749,12 +757,11 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-<div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -768,9 +775,9 @@ const NewArrivals = ({data}) => {
                           <span>$28.85</span>
                           <span className="old-price">$32.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -780,7 +787,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
@@ -807,12 +814,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '80%' }}></div>
+                          <div className="product-rating" style={{ width: "80%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (3.5)</span>
                       </div>
@@ -826,9 +834,9 @@ const NewArrivals = ({data}) => {
                           <span>$52.85</span>
                           <span className="old-price">$55.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -838,7 +846,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
@@ -865,12 +873,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-                                             <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '85%' }}></div>
+                          <div className="product-rating" style={{ width: "85%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -884,9 +893,9 @@ const NewArrivals = ({data}) => {
                           <span>$48.85</span>
                           <span className="old-price">$52.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -896,7 +905,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="" />
@@ -920,12 +929,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Vegetables</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -939,9 +949,9 @@ const NewArrivals = ({data}) => {
                           <span>$17.85</span>
                           <span className="old-price">$19.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -951,7 +961,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
@@ -978,11 +988,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Pet Foods</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -996,9 +1008,9 @@ const NewArrivals = ({data}) => {
                           <span>$23.85</span>
                           <span className="old-price">$25.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1008,7 +1020,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="" />
@@ -1032,11 +1044,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -1050,9 +1064,9 @@ const NewArrivals = ({data}) => {
                           <span>$54.85</span>
                           <span className="old-price">$55.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1062,7 +1076,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="" />
@@ -1090,7 +1104,7 @@ const NewArrivals = ({data}) => {
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -1104,9 +1118,9 @@ const NewArrivals = ({data}) => {
                           <span>$32.85</span>
                           <span className="old-price">$33.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1116,7 +1130,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-2-1.jpg" alt="" />
@@ -1143,12 +1157,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -1162,9 +1177,9 @@ const NewArrivals = ({data}) => {
                           <span>$35.85</span>
                           <span className="old-price">$37.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1174,7 +1189,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
@@ -1201,12 +1216,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Coffes</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -1220,9 +1236,9 @@ const NewArrivals = ({data}) => {
                           <span>$23.85</span>
                           <span className="old-price">$25.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1232,7 +1248,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="" />
@@ -1256,12 +1272,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Cream</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '50%' }}></div>
+                          <div className="product-rating" style={{ width: "50%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (2.0)</span>
                       </div>
@@ -1275,9 +1292,9 @@ const NewArrivals = ({data}) => {
                           <span>$22.85</span>
                           <span className="old-price">$24.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1291,7 +1308,7 @@ const NewArrivals = ({data}) => {
               <div className="row product-grid-4">
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="" />
@@ -1318,12 +1335,11 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-<div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -1337,9 +1353,9 @@ const NewArrivals = ({data}) => {
                           <span>$28.85</span>
                           <span className="old-price">$32.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1349,7 +1365,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
@@ -1376,12 +1392,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '80%' }}></div>
+                          <div className="product-rating" style={{ width: "80%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (3.5)</span>
                       </div>
@@ -1395,9 +1412,9 @@ const NewArrivals = ({data}) => {
                           <span>$52.85</span>
                           <span className="old-price">$55.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1407,7 +1424,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
@@ -1434,12 +1451,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-                                             <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '85%' }}></div>
+                          <div className="product-rating" style={{ width: "85%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -1453,9 +1471,9 @@ const NewArrivals = ({data}) => {
                           <span>$48.85</span>
                           <span className="old-price">$52.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1465,7 +1483,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
@@ -1489,12 +1507,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Vegetables</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -1508,9 +1527,9 @@ const NewArrivals = ({data}) => {
                           <span>$17.85</span>
                           <span className="old-price">$19.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1520,7 +1539,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="" />
@@ -1547,11 +1566,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Pet Foods</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -1565,9 +1586,9 @@ const NewArrivals = ({data}) => {
                           <span>$23.85</span>
                           <span className="old-price">$25.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1577,7 +1598,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="" />
@@ -1601,11 +1622,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -1619,9 +1642,9 @@ const NewArrivals = ({data}) => {
                           <span>$54.85</span>
                           <span className="old-price">$55.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1631,7 +1654,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-2-1.jpg" alt="" />
@@ -1659,7 +1682,7 @@ const NewArrivals = ({data}) => {
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -1673,9 +1696,9 @@ const NewArrivals = ({data}) => {
                           <span>$32.85</span>
                           <span className="old-price">$33.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1685,7 +1708,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="" />
@@ -1712,12 +1735,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -1731,9 +1755,9 @@ const NewArrivals = ({data}) => {
                           <span>$35.85</span>
                           <span className="old-price">$37.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1743,7 +1767,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-11-1.jpg" alt="" />
@@ -1770,12 +1794,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Coffes</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -1789,9 +1814,9 @@ const NewArrivals = ({data}) => {
                           <span>$23.85</span>
                           <span className="old-price">$25.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1801,7 +1826,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-12-1.jpg" alt="" />
@@ -1825,12 +1850,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Cream</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '50%' }}></div>
+                          <div className="product-rating" style={{ width: "50%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (2.0)</span>
                       </div>
@@ -1844,9 +1870,9 @@ const NewArrivals = ({data}) => {
                           <span>$22.85</span>
                           <span className="old-price">$24.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1860,7 +1886,7 @@ const NewArrivals = ({data}) => {
               <div className="row product-grid-4">
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-12-1.jpg" alt="" />
@@ -1887,12 +1913,11 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-<div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -1906,9 +1931,9 @@ const NewArrivals = ({data}) => {
                           <span>$28.85</span>
                           <span className="old-price">$32.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1918,7 +1943,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-13-1.jpg" alt="" />
@@ -1945,12 +1970,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '80%' }}></div>
+                          <div className="product-rating" style={{ width: "80%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (3.5)</span>
                       </div>
@@ -1964,9 +1990,9 @@ const NewArrivals = ({data}) => {
                           <span>$52.85</span>
                           <span className="old-price">$55.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -1976,7 +2002,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-14-1.jpg" alt="" />
@@ -2003,12 +2029,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-                                             <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '85%' }}></div>
+                          <div className="product-rating" style={{ width: "85%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2022,9 +2049,9 @@ const NewArrivals = ({data}) => {
                           <span>$48.85</span>
                           <span className="old-price">$52.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2034,7 +2061,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-15-1.jpg" alt="" />
@@ -2058,12 +2085,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Vegetables</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2077,9 +2105,9 @@ const NewArrivals = ({data}) => {
                           <span>$17.85</span>
                           <span className="old-price">$19.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2089,7 +2117,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-16-1.jpg" alt="" />
@@ -2116,11 +2144,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Pet Foods</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2134,9 +2164,9 @@ const NewArrivals = ({data}) => {
                           <span>$23.85</span>
                           <span className="old-price">$25.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2146,7 +2176,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
@@ -2170,11 +2200,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2188,9 +2220,9 @@ const NewArrivals = ({data}) => {
                           <span>$54.85</span>
                           <span className="old-price">$55.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2200,7 +2232,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
@@ -2228,7 +2260,7 @@ const NewArrivals = ({data}) => {
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2242,9 +2274,9 @@ const NewArrivals = ({data}) => {
                           <span>$32.85</span>
                           <span className="old-price">$33.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2254,7 +2286,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
@@ -2281,12 +2313,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2300,9 +2333,9 @@ const NewArrivals = ({data}) => {
                           <span>$35.85</span>
                           <span className="old-price">$37.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2312,7 +2345,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
@@ -2339,12 +2372,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Coffes</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2358,9 +2392,9 @@ const NewArrivals = ({data}) => {
                           <span>$23.85</span>
                           <span className="old-price">$25.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2370,7 +2404,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
@@ -2394,12 +2428,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Cream</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '50%' }}></div>
+                          <div className="product-rating" style={{ width: "50%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (2.0)</span>
                       </div>
@@ -2413,9 +2448,9 @@ const NewArrivals = ({data}) => {
                           <span>$22.85</span>
                           <span className="old-price">$24.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2429,7 +2464,7 @@ const NewArrivals = ({data}) => {
               <div className="row product-grid-4">
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="" />
@@ -2456,12 +2491,11 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-<div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2475,9 +2509,9 @@ const NewArrivals = ({data}) => {
                           <span>$28.85</span>
                           <span className="old-price">$32.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2487,7 +2521,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="" />
@@ -2514,12 +2548,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '80%' }}></div>
+                          <div className="product-rating" style={{ width: "80%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (3.5)</span>
                       </div>
@@ -2533,9 +2568,9 @@ const NewArrivals = ({data}) => {
                           <span>$52.85</span>
                           <span className="old-price">$55.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2545,7 +2580,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
@@ -2572,12 +2607,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-                                             <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '85%' }}></div>
+                          <div className="product-rating" style={{ width: "85%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2591,9 +2627,9 @@ const NewArrivals = ({data}) => {
                           <span>$48.85</span>
                           <span className="old-price">$52.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2603,7 +2639,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
@@ -2627,12 +2663,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Vegetables</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2646,9 +2683,9 @@ const NewArrivals = ({data}) => {
                           <span>$17.85</span>
                           <span className="old-price">$19.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2658,7 +2695,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
@@ -2685,11 +2722,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Pet Foods</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2703,9 +2742,9 @@ const NewArrivals = ({data}) => {
                           <span>$23.85</span>
                           <span className="old-price">$25.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2715,7 +2754,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="" />
@@ -2739,11 +2778,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2757,9 +2798,9 @@ const NewArrivals = ({data}) => {
                           <span>$54.85</span>
                           <span className="old-price">$55.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2769,7 +2810,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
@@ -2797,7 +2838,7 @@ const NewArrivals = ({data}) => {
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2811,9 +2852,9 @@ const NewArrivals = ({data}) => {
                           <span>$32.85</span>
                           <span className="old-price">$33.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2823,7 +2864,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
@@ -2850,12 +2891,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2869,9 +2911,9 @@ const NewArrivals = ({data}) => {
                           <span>$35.85</span>
                           <span className="old-price">$37.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2881,7 +2923,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
@@ -2908,12 +2950,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Coffes</a>
                       </div>
                       <h2>
-                      <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -2927,9 +2970,9 @@ const NewArrivals = ({data}) => {
                           <span>$23.85</span>
                           <span className="old-price">$25.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2939,7 +2982,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
@@ -2963,12 +3006,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Cream</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '50%' }}></div>
+                          <div className="product-rating" style={{ width: "50%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (2.0)</span>
                       </div>
@@ -2982,9 +3026,9 @@ const NewArrivals = ({data}) => {
                           <span>$22.85</span>
                           <span className="old-price">$24.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -2998,7 +3042,7 @@ const NewArrivals = ({data}) => {
               <div className="row product-grid-4">
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
@@ -3025,12 +3069,11 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-<div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -3044,9 +3087,9 @@ const NewArrivals = ({data}) => {
                           <span>$28.85</span>
                           <span className="old-price">$32.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -3056,7 +3099,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="" />
@@ -3083,12 +3126,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '80%' }}></div>
+                          <div className="product-rating" style={{ width: "80%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (3.5)</span>
                       </div>
@@ -3102,9 +3146,9 @@ const NewArrivals = ({data}) => {
                           <span>$52.85</span>
                           <span className="old-price">$55.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -3114,7 +3158,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
@@ -3141,12 +3185,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-                                             <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '85%' }}></div>
+                          <div className="product-rating" style={{ width: "85%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -3160,9 +3205,9 @@ const NewArrivals = ({data}) => {
                           <span>$48.85</span>
                           <span className="old-price">$52.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -3172,7 +3217,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
@@ -3196,12 +3241,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Vegetables</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -3215,9 +3261,9 @@ const NewArrivals = ({data}) => {
                           <span>$17.85</span>
                           <span className="old-price">$19.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -3227,7 +3273,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap mb-30">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
@@ -3254,11 +3300,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Pet Foods</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -3272,9 +3320,9 @@ const NewArrivals = ({data}) => {
                           <span>$23.85</span>
                           <span className="old-price">$25.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -3284,7 +3332,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-16-1.jpg" alt="" />
@@ -3308,11 +3356,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Hodo Foods</a>
                       </div>
                       <h2>
-                        <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -3326,9 +3376,9 @@ const NewArrivals = ({data}) => {
                           <span>$54.85</span>
                           <span className="old-price">$55.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -3338,7 +3388,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
@@ -3366,7 +3416,7 @@ const NewArrivals = ({data}) => {
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -3380,9 +3430,9 @@ const NewArrivals = ({data}) => {
                           <span>$32.85</span>
                           <span className="old-price">$33.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -3392,7 +3442,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
@@ -3419,12 +3469,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Snack</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -3438,9 +3489,9 @@ const NewArrivals = ({data}) => {
                           <span>$35.85</span>
                           <span className="old-price">$37.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -3450,7 +3501,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
@@ -3477,12 +3528,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Coffes</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '90%' }}></div>
+                          <div className="product-rating" style={{ width: "90%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (4.0)</span>
                       </div>
@@ -3496,9 +3548,9 @@ const NewArrivals = ({data}) => {
                           <span>$23.85</span>
                           <span className="old-price">$25.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -3508,7 +3560,7 @@ const NewArrivals = ({data}) => {
 
                 <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
                   <div className="product-cart-wrap">
-                    <div className="product-img-action-wrap" >
+                    <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
                         <a href="#">
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
@@ -3532,12 +3584,13 @@ const NewArrivals = ({data}) => {
                         <a href="#">Cream</a>
                       </div>
                       <h2>
-                                                <div onClick={()=>onClickProductHandler(item.id)} style={{cursor:"pointer"}}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
-
+                        <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
+                          Seeds of Change Organic Quinoa, Brown, & Red Rice
+                        </div>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
-                          <div className="product-rating" style={{ width: '50%' }}></div>
+                          <div className="product-rating" style={{ width: "50%" }}></div>
                         </div>
                         <span className="font-small ml-5 text-muted"> (2.0)</span>
                       </div>
@@ -3551,9 +3604,9 @@ const NewArrivals = ({data}) => {
                           <span>$22.85</span>
                           <span className="old-price">$24.8</span>
                         </div>
-                        <div className="add-cart" >
+                        <div className="add-cart">
                           <a className="add">
-                            <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                            <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                           </a>
                         </div>
                       </div>
@@ -3566,7 +3619,7 @@ const NewArrivals = ({data}) => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default NewArrivals
+export default NewArrivals;

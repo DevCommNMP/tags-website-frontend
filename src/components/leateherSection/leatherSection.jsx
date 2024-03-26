@@ -1,5 +1,43 @@
 import { Link, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 800,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  margin: 50,
+  pauseOnHover: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
+
 const dummydata = [
   {
     id: 1,
@@ -38,14 +76,15 @@ const LeatherSection = ({ data }) => {
       <section className="product-tabs section-padding position-relative">
         <div className="container">
           <div className="section-title style-2">
-            <Link to="premium-leather" style={{ cursor: "pointer" }}>
-              <h3>Premium Leather</h3>
+            <Link to="/premium-leather" style={{ cursor: "pointer" }}>
+              <h3 style={{ textTransform: "uppercase" }}>Premium Leather</h3>
             </Link>
           </div>
 
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
+                <Slider {...settings}>
                 {/* {data.filter(item => item.category && item.category.name === "premium Leather").map((item) => ( */}
                 {data.map((item) => (
                   <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
@@ -109,6 +148,7 @@ const LeatherSection = ({ data }) => {
                     </div>
                   </div>
                 ))}
+                </Slider>
               </div>
             </div>
           </div>

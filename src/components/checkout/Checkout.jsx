@@ -3,7 +3,6 @@ import paymentVisa from "../../assets/imgs/theme/icons/payment-visa.svg";
 import paymentMaster from "../../assets/imgs/theme/icons/payment-master.svg";
 import paymentZapper from "../../assets/imgs/theme/icons/payment-zapper.svg";
 
-import React from "react";
 import { Link } from "react-router-dom";
 const dummyData = [
   {
