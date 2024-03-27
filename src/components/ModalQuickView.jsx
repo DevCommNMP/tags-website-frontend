@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
+import SingleProductImages from "./SingleProductImages";
 
 function ModalQuickView() {
   const [show, setShow] = useState(false);
@@ -23,6 +24,7 @@ function ModalQuickView() {
                   <span className="zoom-icon">
                     <i className="fi-rs-search"></i>
                   </span>
+                  {/* <SingleProductImages /> */}
                   <div className="product-image-slider">
                     <figure className="border-radius-10">
                       <img src="assets/imgs/shop/product-16-2.jpg" alt="product image" />
