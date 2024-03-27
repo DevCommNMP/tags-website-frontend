@@ -3,7 +3,7 @@ import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
 import { Slide, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addToCartHandler } from "../redux/actions/cart/cartActions";
 
@@ -25,28 +25,26 @@ const settings = {
         slidesToShow: 3,
         slidesToScroll: 3,
         infinite: true,
-        dots: true
-      }
+        dots: true,
+      },
     },
     {
       breakpoint: 600,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
-        initialSlide: 2
-      }
+        initialSlide: 2,
+      },
     },
     {
       breakpoint: 480,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
-
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
-
 
 const dummydata = [
   {
@@ -95,18 +93,18 @@ const ProductTabSection = ({ data }) => {
 
   // const hotProducts = data.filter(item => item.tag.includes('hot'));
   const productHandler = (event) => {};
-useEffect(() => {
-
-}, [toast])
+  useEffect(() => {}, [toast]);
 
   return (
     <>
-   <ToastContainer />
+      <ToastContainer />
       <section className="product-tabs section-padding position-relative">
         <div className="container">
           <div className="section-title style-2">
             <a style={{ cursor: "pointer" }}>
-              <h3 style={{textTransform:'uppercase', marginTop:'30px'}} onClick={productHandler}>Popular Products</h3>
+              <h3 style={{ textTransform: "uppercase", marginTop: "30px" }} onClick={productHandler}>
+                Popular Products
+              </h3>
             </a>
           </div>
 
@@ -114,66 +112,66 @@ useEffect(() => {
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
                 <Slider {...settings}>
-                {data.map((item) => (
-                  <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                    <div className="product-cart-wrap mb-30">
-                      <div className="product-img-action-wrap">
-                        <div className="product-img product-img-zoom">
-                          <a href="#">
-                            <img className="default-img" src={item.productImage} alt="" />
-                            <img className="hover-img" src="" alt="" />
-                          </a>
-                        </div>
-                        <div className="product-action-1">
-                          <a aria-label="Add To Wishlist" className="action-btn" href="#">
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a aria-label="Compare" className="action-btn" href="#">
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
-                          <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                            <i className="fi-rs-eye"></i>
-                          </a>
-                        </div>
-                        <div className="product-badges product-badges-position product-badges-mrg">
-                          <span className="hot" style={{ backgroundColor: "red" }}>
-                            {item.tag}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="product-content-wrap">
-                        <div className="product-category">{/* <a href="#">Snack</a> */}</div>
-                        <h2>
-                          <div onClick={() => onClickProductHandler(item._id)} style={{ cursor: "pointer" }}>
-                            {item.title}
-                          </div>
-                        </h2>
-                        <div className="product-rate-cover">
-                          <div className="product-rate d-inline-block">
-                            <div className="product-rating" style={{ width: "90%" }}></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted"> (4.0)</span>
-                        </div>
-                        <div>
-                          <span className="font-small text-muted">
-                            By <a href="vendor-details-1.html">Tags</a>
-                          </span>
-                        </div>
-                        <div className="product-card-bottom">
-                          <div className="product-price">
-                            <span> &#8377; {item.SellingPrice || 3399}</span>
-                            <span className="old-price">5000</span>
-                          </div>
-                          <div className="add-cart" onClick={() => cartHandler(item)}>
-                            <a className="add">
-                              <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
+                  {data.map((item) => (
+                    <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                      <div className="product-cart-wrap mb-30">
+                        <div className="product-img-action-wrap">
+                          <div className="product-img product-img-zoom">
+                            <a href="#">
+                              <img className="default-img" src={item.productImage} alt="" />
+                              <img className="hover-img" src="" alt="" />
                             </a>
+                          </div>
+                          <div className="product-action-1">
+                            <a aria-label="Add To Wishlist" className="action-btn" href="#">
+                              <i className="fi-rs-heart"></i>
+                            </a>
+                            <a aria-label="Compare" className="action-btn" href="#">
+                              <i className="fi-rs-shuffle"></i>
+                            </a>
+                            <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
+                              <i className="fi-rs-eye"></i>
+                            </a>
+                          </div>
+                          <div className="product-badges product-badges-position product-badges-mrg">
+                            <span className="hot" style={{ backgroundColor: "red" }}>
+                              {item.tag}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="product-content-wrap">
+                          <div className="product-category">{/* <a href="#">Snack</a> */}</div>
+                          <h2>
+                            <div onClick={() => onClickProductHandler(item._id)} style={{ cursor: "pointer" }}>
+                              {item.title}
+                            </div>
+                          </h2>
+                          <div className="product-rate-cover">
+                            <div className="product-rate d-inline-block">
+                              <div className="product-rating" style={{ width: "90%" }}></div>
+                            </div>
+                            <span className="font-small ml-5 text-muted"> (4.0)</span>
+                          </div>
+                          <div>
+                            <span className="font-small text-muted">
+                              By <a href="vendor-details-1.html">Tags</a>
+                            </span>
+                          </div>
+                          <div className="product-card-bottom">
+                            <div className="product-price">
+                              <span> &#8377; {item.SellingPrice || 3399}</span>
+                              <span className="old-price">5000</span>
+                            </div>
+                            <div className="add-cart" onClick={() => cartHandler(item)}>
+                              <a className="add">
+                                <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
                 </Slider>
               </div>
             </div>
