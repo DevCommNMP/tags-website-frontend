@@ -4,8 +4,11 @@ import paymentMaster from "../../assets/imgs/theme/icons/payment-master.svg";
 import paymentZapper from "../../assets/imgs/theme/icons/payment-zapper.svg";
 import { Slide, toast, ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
+// import env from "react-dotenv";
 import { useState ,useEffect} from "react";
 import { Button } from "react-bootstrap";
+import { useCallback } from "react";
+import useRazorpay from "react-razorpay";
 const dummyData = [
   {
     id: 1,
@@ -36,12 +39,13 @@ const checkoutHandler=()=>{
           });
        }
 }
+// console.log(process.env.REACT_APP_RAZORPAY_API_KEY)
 const calculateTotalPrice = (cart) => {
     // Initialize total price
     let totalPrice = 0;
 
     // Iterate over each item in the cart
-    cart.forEach(item => {
+    cartdata.forEach(item => {
         // Multiply the price of the item by its quantity and add it to the total price
         totalPrice += item.price * item.quantity;
     });
@@ -60,6 +64,53 @@ e.preventDefault()
           setCartdata(cart);
         }
       }, []);
+
+      const [Razorpay] = useRazorpay();
+
+      const handlePayment = async (params) => {
+        // const order = await createOrder(params); //  Create order on your backend
+      
+        const options = {
+          key:`rzp_test_rQ8h1gyxiMhZ7A`, // Enter the Key ID generated from the Dashboard
+          amount: `2764`, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+          currency: "INR",
+          name: "Tags Footwear",
+          description: "Test Transaction",
+          image: "https://drive.google.com/file/d/1LSbvJ5NetEo-0b86Eo3Q8LeFIRHOAsSY/view?usp=sharing",
+          order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of createOrder().
+          handler: function (response) {
+            alert(response.razorpay_payment_id);
+            alert(response.razorpay_order_id);
+            alert(response.razorpay_signature);
+          },
+          prefill: {
+            name: "Piyush Garg",
+            email: "youremail@example.com",
+            contact: "9999999999",
+          },
+          notes: {
+            address: "Razorpay Corporate Office",
+          },
+          theme: {
+            color: "#3399cc",
+          },
+        };
+      
+        const rzp1 = new Razorpay(options);
+      
+        rzp1.on("payment.failed", function (response) {
+          alert(response.error.code);
+          alert(response.error.description);
+          alert(response.error.source);
+          alert(response.error.step);
+          alert(response.error.reason);
+          alert(response.error.metadata.order_id);
+          alert(response.error.metadata.payment_id);
+        });
+      
+        rzp1.open();
+      };
+
   return (
     <>
     <ToastContainer/>
@@ -369,7 +420,7 @@ e.preventDefault()
                   <img className="mr-15" src={paymentVisa} alt="" />
                   <img src={paymentZapper} alt="" />
                 </div>
-                <button type="Submit"  className="btn btn-fill-out btn-block mt-30">
+                <button  className="btn btn-fill-out btn-block mt-30" onClick={handlePayment}>
                   Place an Order<i className="fi-rs-sign-out ml-15"></i>
                 </button>
               </div>
