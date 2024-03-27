@@ -313,12 +313,10 @@ const ProductsGridPage = ({ data }) => {
               </div>
             </div>
           </div>
+        </main>
+        <Footer />
       </div>
     </div>
-        </main >
-  <Footer />
-      </div >
-    </div >
   );
 };
 
