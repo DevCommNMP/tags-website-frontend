@@ -3,6 +3,7 @@ import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { Link, useNavigate } from "react-router-dom";
 import { Slide, toast, ToastContainer } from "react-toastify";
+import { Button } from "react-bootstrap";
 const Cart = () => {
     const [cartdata, setCartdata] = useState([]);
 const navigate = useNavigate();
@@ -37,7 +38,11 @@ navigate(`/products/${id}`)
   }
 };
 
+const checkoutHandler=()=>{
+    navigate('/checkout')
+}
   useEffect(() => {
+    
     const cart = JSON.parse(localStorage.getItem("cartItems"));
     console.log(cart)
     if (cart) {
@@ -132,6 +137,9 @@ navigate(`/products/${id}`)
                 ))}
                    
                   </tbody>
+
+                  <Button style={{textAlign:"center",marginTop:"50px"}} onClick={checkoutHandler}>Proceed to checkout</Button>
+
                 </table>
               </div>
             </div>

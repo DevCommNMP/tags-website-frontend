@@ -7,6 +7,7 @@ import SingleProductImages from "../components/SingleProductImages";
 import { fetchParticularProduct } from "../redux/actions/product/productActions";
 import { useParams } from "react-router";
 import { useEffect } from "react";
+import { addToCartHandler } from "../redux/actions/cart/cartActions";
 
 const Product = () => {
 const dispatch=useDispatch();
@@ -20,6 +21,10 @@ useEffect(() => {
   // console.log(res)
 }, [dispatch])
 
+const cartHandler=()=>{
+const res=dispatch(addToCartHandler(particularproduct));
+console.log("hello")
+}
   return (
     <>
       <Header />
@@ -117,9 +122,9 @@ useEffect(() => {
                           <button
                             type="submit"
                             className="button button-add-to-cart"
-
+onClick={()=>cartHandler(particularproduct)}
                      >
-                            <i className="fi-rs-shopping-cart"></i>Checkout
+                            <i className="fi-rs-shopping-cart"></i>Add to cart
                           </button>
                           <a
                             aria-label="Add To Wishlist"

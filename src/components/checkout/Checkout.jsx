@@ -2,8 +2,10 @@ import paymentPaypal from "../../assets/imgs/theme/icons/payment-paypal.svg";
 import paymentVisa from "../../assets/imgs/theme/icons/payment-visa.svg";
 import paymentMaster from "../../assets/imgs/theme/icons/payment-master.svg";
 import paymentZapper from "../../assets/imgs/theme/icons/payment-zapper.svg";
-
+import { Slide, toast, ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
+import { useState ,useEffect} from "react";
+import { Button } from "react-bootstrap";
 const dummyData = [
   {
     id: 1,
@@ -25,8 +27,42 @@ const dummyData = [
   },
 ];
 const Checkout = () => {
+    const [cartdata, setCartdata] = useState([]);
+    const user=JSON.parse(localStorage.getItem('userData'))
+const checkoutHandler=()=>{
+    if(!user){
+        toast.error("you need to login first", {
+            position: "top-right",
+          });
+       }
+}
+const calculateTotalPrice = (cart) => {
+    // Initialize total price
+    let totalPrice = 0;
+
+    // Iterate over each item in the cart
+    cart.forEach(item => {
+        // Multiply the price of the item by its quantity and add it to the total price
+        totalPrice += item.price * item.quantity;
+    });
+
+    // Return the total price
+    return totalPrice;
+};
+const formSubmitHandler=async(e)=>{
+e.preventDefault()
+}
+    useEffect(() => {
+       
+        const cart = JSON.parse(localStorage.getItem("cartItems"));
+        console.log(cart)
+        if (cart) {
+          setCartdata(cart);
+        }
+      }, []);
   return (
     <>
+    <ToastContainer/>
       <main className="main">
         <div className="page-header breadcrumb-wrap">
           <div className="container">
@@ -45,7 +81,7 @@ const Checkout = () => {
               <h1 className="heading-2 mb-10">Checkout</h1>
               <div className="d-flex justify-content-between">
                 <h6 className="text-body">
-                  There are <span className="text-brand">3</span> products in your cart
+                  There are <span className="text-brand">{cartdata.length ||0}</span> products in your cart
                 </h6>
               </div>
             </div>
@@ -54,7 +90,7 @@ const Checkout = () => {
             <div className="col-lg-7">
               <div className="row mb-50">
                 <div className="col-lg-6 mb-sm-15 mb-lg-0 mb-md-3">
-                  <div className="toggle_info">
+                 {!user &&  <div className="toggle_info">
                     <span>
                       <i className="fi-rs-user mr-10"></i>
                       <span className="text-muted font-lg">Already have an account?</span>{" "}
@@ -62,7 +98,7 @@ const Checkout = () => {
                         <Link to="/login">Click here to login</Link>
                       </a>
                     </span>
-                  </div>
+                  </div>}
                   <div className="panel-collapse collapse login_form" id="loginform">
                     <div className="panel-body">
                       <p className="mb-30 font-sm">
@@ -97,7 +133,7 @@ const Checkout = () => {
                   </div>
                 </div>
                 <div className="col-lg-6">
-                  <form method="post" className="apply-coupon">
+                  <form  className="apply-coupon" onClick={formSubmitHandler}>
                     <input type="text" placeholder="Enter Coupon Code..." />
                     <button className="btn  btn-md" name="login">
                       Apply Coupon
@@ -107,7 +143,7 @@ const Checkout = () => {
               </div>
               <div className="row">
                 <h4 className="mb-30">Billing Details</h4>
-                <form method="post">
+                <form method="post" onSubmit={formSubmitHandler}>
                   <div className="row">
                     <div className="form-group col-lg-6">
                       <input type="text" required="" name="fname" placeholder="First name *" />
@@ -127,14 +163,10 @@ const Checkout = () => {
                   <div className="row shipping_calculator">
                     <div className="form-group col-lg-6">
                       <div className="custom_select">
-                        <select className="form-control select-active">
+                        <select className="form-control select-active" required>
                           <option value="">Select an option...</option>
-                          <option value="IN">India</option>
-                          <option value="ID">Indonesia</option>
-                          <option value="IR">Iran</option>
-                          <option value="YE">Yemen</option>
-                          <option value="ZM">Zambia</option>
-                          <option value="ZW">Zimbabwe</option>
+                          <option value="IND" selected>India</option>
+                         
                         </select>
                       </div>
                     </div>
@@ -152,7 +184,7 @@ const Checkout = () => {
                   </div>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                      <input required="" type="text" name="cname" placeholder="Company Name" />
+                      <input required type="text" name="cname" placeholder="Company Name"   />
                     </div>
                     <div className="form-group col-lg-6">
                       <input required="" type="text" name="email" placeholder="Email address *" />
@@ -161,23 +193,7 @@ const Checkout = () => {
                   <div className="form-group mb-30">
                     <textarea rows="5" placeholder="Additional information"></textarea>
                   </div>
-                  <div className="form-group">
-                    <div className="checkbox">
-                      <div className="custome-checkbox">
-                        <input className="form-check-input" type="checkbox" name="checkbox" id="createaccount" />
-                        <label
-                          className="form-check-label label_info"
-                          data-bs-toggle="collapse"
-                          href="#collapsePassword"
-                          data-target="#collapsePassword"
-                          aria-controls="collapsePassword"
-                          htmlFor="createaccount"
-                        >
-                          <span>Create an account?</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
+             
                   <div id="collapsePassword" className="form-group create-account collapse in">
                     <div className="row">
                       <div className="col-lg-6">
@@ -188,19 +204,7 @@ const Checkout = () => {
                   <div className="ship_detail">
                     <div className="form-group">
                       <div className="chek-form">
-                        <div className="custome-checkbox">
-                          <input className="form-check-input" type="checkbox" name="checkbox" id="differentaddress" />
-                          <label
-                            className="form-check-label label_info"
-                            data-bs-toggle="collapse"
-                            data-target="#collapseAddress"
-                            href="#collapseAddress"
-                            aria-controls="collapseAddress"
-                            htmlFor="differentaddress"
-                          >
-                            <span>Ship to a different address?</span>
-                          </label>
-                        </div>
+                     
                       </div>
                     </div>
                     <div id="collapseAddress" className="different_address collapse in">
@@ -220,17 +224,15 @@ const Checkout = () => {
                           <div className="custom_select w-100">
                             <select className="form-control select-active">
                               <option value="">Select an option...</option>
-                              <option value="AX">Aland Islands</option>
-                              <option value="YE">Yemen</option>
-                              <option value="ZM">Zambia</option>
-                              <option value="ZW">Zimbabwe</option>
+                              <option value="Ind" selected>India</option>
+                              
                             </select>
                           </div>
                         </div>
                       </div>
                       <div className="row">
                         <div className="form-group col-lg-6">
-                          <input type="text" name="billing_address" required="" placeholder="Address *" />
+                          <input type="text" name="billing_address" required  placeholder="Address *" />
                         </div>
                         <div className="form-group col-lg-6">
                           <input type="text" name="billing_address2" required="" placeholder="Address line2" />
@@ -265,16 +267,16 @@ const Checkout = () => {
                   <div className="table-responsive order_table checkout">
                     <table className="table no-border">
                       <tbody>
-                        {dummyData.map((item, index) => (
+                        {cartdata.map((item, index) => (
                           <tr key={index}>
                             <td className="image product-thumbnail">
-                              <img src={item.image} alt="#" />
+                              <img src={item.productImage} alt="#" />
                             </td>
                             <td>
                               <h6 className="w-160 mb-5">
-                                <a className="text-heading" href="#">
-                                  {item.name}
-                                </a>
+                                <Link className="text-heading" to={`/products/${item.productId}`}>
+                                  {item.title}
+                                </Link>
                               </h6>
                               <div className="product-rate-cover">
                                 <div className="product-rate d-inline-block">
@@ -292,6 +294,10 @@ const Checkout = () => {
                           </tr>
                         ))}
                       </tbody>
+                   <div style={{display:"flex",flexDirection:"row",justifyContent:"space-around" }}>
+                   <h3>Total </h3>
+                    <h3> &#x20B9;{calculateTotalPrice(cartdata)}</h3>
+                   </div>
                     </table>
                   </div>
                 </div>
@@ -302,11 +308,11 @@ const Checkout = () => {
                   <div className="custome-radio">
                     <input
                       className="form-check-input"
-                      required=""
+                     required
                       type="radio"
                       name="payment_option"
                       id="exampleRadios3"
-                      defaultChecked=""
+                      defaultChecked={true}
                     />
                     <label
                       className="form-check-label"
@@ -363,9 +369,9 @@ const Checkout = () => {
                   <img className="mr-15" src={paymentVisa} alt="" />
                   <img src={paymentZapper} alt="" />
                 </div>
-                <a href="#" className="btn btn-fill-out btn-block mt-30">
+                <button type="Submit"  className="btn btn-fill-out btn-block mt-30">
                   Place an Order<i className="fi-rs-sign-out ml-15"></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>
