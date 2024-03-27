@@ -12,8 +12,6 @@ import { fetchAllProductsAction } from "../redux/actions/product/productActions.
 import { useSelector } from "react-redux";
 import DealsOfTheDay from "../components/DealsOfTheDay.jsx";
 import NewProducts from "../components/NewProducts.jsx";
-import ModalQuickView from "../components/ModalQuickView.jsx";
-
 const ProductsGridPage = ({ data }) => {
   const { title } = useParams();
   const storeData = useSelector((store) => store.products);
@@ -48,10 +46,40 @@ const ProductsGridPage = ({ data }) => {
     setSliderValues(newValue);
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div>
       <div>
-        <ModalQuickView />
+        <button onClick={openModal}>Open Modal</button>
+        {isOpen && (
+                <div className="modal fade custom-modal" id="quickViewModal" tabIndex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <button type="button" className="btn-close" onClick={closeModal} aria-label="Close"></button>
+                            <div className="modal-body">
+                                <div className="row">
+                                    <div className="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
+                                        {/* Gallery */}
+                                    </div>
+                                    <div className="col-md-6 col-sm-12 col-xs-12">
+                                        {/* Product details */}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
         <div
           className="modal fade custom-modal"
           id="quickViewModal"
@@ -130,7 +158,12 @@ const ProductsGridPage = ({ data }) => {
                               <a aria-label="Add To Wishlist" className="action-btn">
                                 <i className="fi-rs-heart"></i>
                               </a>
-                              <ModalQuickView />
+                              <a aria-label="Compare" className="action-btn">
+                                <i className="fi-rs-shuffle"></i>
+                              </a>
+                              <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
+                                <i className="fi-rs-eye"></i>
+                              </a>
                             </div>
                             <div className="product-badges product-badges-position product-badges-mrg">
                               <span className={product.tag}>{product.tag}</span>
