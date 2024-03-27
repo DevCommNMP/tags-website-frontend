@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-key */
 import category_bg from "../assets/imgs/banner/category_bg.png";
+import starRating from  "../assets/imgs/theme/rating-stars.png";
 import { useState, useEffect } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
@@ -126,12 +127,12 @@ const ProductsGridPage = ({ data }) => {
                               <a aria-label="Add To Wishlist" className="action-btn">
                                 <i className="fi-rs-heart"></i>
                               </a>
-                              <a aria-label="Compare" className="action-btn">
+                              {/* <a aria-label="Compare" className="action-btn">
                                 <i className="fi-rs-shuffle"></i>
                               </a>
                               <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
                                 <i className="fi-rs-eye"></i>
-                              </a>
+                              </a> */}
                             </div>
                             <div className="product-badges product-badges-position product-badges-mrg">
                               <span className={product.tag}>{product.tag}</span>
@@ -143,8 +144,8 @@ const ProductsGridPage = ({ data }) => {
                               <Link to="/products/dummy">{product.title}</Link>
                             </h2>
                             <div className="product-rate-cover">
-                              <div className="product-rate d-inline-block">
-                                <div className="product-rating" style={{ width: "90%" }}></div>
+                              <div className="product-rate d-inline-block" style={{backgroundImage: `url(${starRating})`}}>
+                              <div className="product-rating" style={{ width: `${20 * product.rating}%`, backgroundImage: `url(${starRating})` }}></div>
                               </div>
                               <span className="font-small ml-5 text-muted"> ({product.rating})</span>
                             </div>
@@ -153,8 +154,8 @@ const ProductsGridPage = ({ data }) => {
                             </div>
                             <div className="product-card-bottom">
                               <div className="product-price">
-                                <span>&#8377;{product.price}</span>
-                                <span className="old-price">&#8377;{product.oldPrice}</span>
+                                <span>&#8377;{product.SellingPrice}</span>
+                                <span className="old-price">&#8377;{product.SellingPrice}</span>
                               </div>
                               <div className="add-cart">
                                 <a className="add">
