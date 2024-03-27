@@ -1,19 +1,19 @@
-import { useState,useEffect } from 'react';
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
+/* eslint-disable react/jsx-key */
+import { useState, useEffect } from "react";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
 import Header from "../components/Header/Header";
-import { Link, useParams } from 'react-router-dom';
-import Footer from '../components/Footer/Footer';
+import { Link, useParams } from "react-router-dom";
+import Footer from "../components/Footer/Footer";
 import { useDispatch } from "react-redux";
 import { fetchAllProductsAction } from "../redux/actions/product/productActions.js";
 import { useSelector } from "react-redux";
 const ProductsGridPage = ({ data }) => {
-  
-  
-  const { title } = useParams()
+  const { title } = useParams();
   const storeData = useSelector((store) => store.products);
-  const { products, productsLoading, appErr, serverErr } = storeData; 
-  console.log(products, productsLoading, appErr, serverErr)
+  const { products, productsLoading, appErr, serverErr } = storeData;
+  // console.log(products, productsLoading, appErr, serverErr)
+  console.log(products);
   const [sliderValues, setSliderValues] = useState([0, 100]);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -87,7 +87,7 @@ const ProductsGridPage = ({ data }) => {
                 <div className="shop-product-fillter">
                   <div className="totall-product">
                     <p>
-                      We found <strong className="text-brand">{data.length}</strong> items for you!
+                      We found <strong className="text-brand">{products.length}</strong> items for you!
                     </p>
                   </div>
                   <div className="sort-by-product-area">
@@ -166,19 +166,14 @@ const ProductsGridPage = ({ data }) => {
                   </div>
                 </div>
                 <div className="row product-grid">
-                  {data.map((product) => {
+                  {products.map((product) => {
                     return (
                       <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                         <div className="product-cart-wrap mb-30">
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
                               <a href="shop-product-right.html">
-                                <img className="default-img" src={product.image} alt="" />
-                                {/* <img
-                              className="hover-img"
-                              src="assets/imgs/shop/product-1-2.jpg"
-                              alt=""
-                            /> */}
+                                <img className="default-img" src={product.productImage} alt="" />
                               </a>
                             </div>
                             <div className="product-action-1">
@@ -199,13 +194,13 @@ const ProductsGridPage = ({ data }) => {
                           <div className="product-content-wrap">
                             <div className="product-category">{/* <a href="shop-grid-right.html">Snack</a> */}</div>
                             <h2>
-                              <a href="shop-product-right.html">{product.name}</a>
+                              <a href="shop-product-right.html">{product.title}</a>
                             </h2>
                             <div className="product-rate-cover">
                               <div className="product-rate d-inline-block">
                                 <div className="product-rating" style={{ width: "90%" }}></div>
                               </div>
-                              <span className="font-small ml-5 text-muted"> (4.0)</span>
+                              <span className="font-small ml-5 text-muted"> ({product.rating})</span>
                             </div>
                             <div>
                               <span className="font-small text-muted">{/* By <a href="vendor-details-1.html">NestFood</a> */}</span>
