@@ -4,9 +4,9 @@
     padding: 2px;
 }
 
-.row.product-grid-4 .slick-slide {
-    /* margin: 0 5px; */
-}
+/* .row.product-grid-4 .slick-slide {
+    margin: 0 5px;
+} */
 .loaderContainer {
     display: flex ;
     align-items : center !important;

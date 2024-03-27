@@ -48,7 +48,6 @@ const ProductsGridPage = ({ data }) => {
     setSliderValues(newValue);
   };
 
-
   return (
     <div>
       <div>
@@ -59,19 +58,16 @@ const ProductsGridPage = ({ data }) => {
           tabIndex="-1"
           aria-labelledby="quickViewModalLabel"
           aria-hidden="true"
-        >
-        </div>
+        ></div>
         <header className="header-area header-style-1 header-height-2">
           <div className="mobile-promotion">
             <span>
-              Grand opening, <strong>up to 15%</strong> off all items. Only{" "}
-              <strong>3 days</strong> left
+              Grand opening, <strong>up to 15%</strong> off all items. Only <strong>3 days</strong> left
             </span>
           </div>
           <Header />
           <div className="header-bottom header-bottom-bg-color sticky-bar">
-            <div className="container">
-            </div>
+            <div className="container"></div>
           </div>
         </header>
         <main className="main">
@@ -171,235 +167,151 @@ const ProductsGridPage = ({ data }) => {
                           </div>
                         </div>
                       </div>
-                    </div>
-              </div>
-              )
-  })}
-            </div>
-            <div className="pagination-area mt-20 mb-20">
-              <nav aria-label="Page navigation example">
-                <ul className="pagination justify-content-start">
-                  <li className="page-item">
-                    <a className="page-link">
-                      <i className="fi-rs-arrow-small-left"></i>
-                    </a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link">1</a>
-                  </li>
-                  <li className="page-item active">
-                    <a className="page-link">2</a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link">3</a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link dot">...</a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link">6</a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link">
-                      <i className="fi-rs-arrow-small-right"></i>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <DealsOfTheDay />
-            {/* deals of the day to be pasted/imported here */}
-          </div>
-          <div className="col-lg-1-5 primary-sidebar sticky-sidebar">
-            <div className="sidebar-widget widget-category-2 mb-30">
-              <h5 className="section-title style-1 mb-30">Category</h5>
-              <ul>
-                <Link to="/categories/casual Shoes">
-                  <li>
-                    <a>
-                      {" "}
-                      <img
-                        src="assets/imgs/theme/icons/category-1.svg"
-                        alt=""
-                      />
-                      Casual Shoes
-                    </a>
-                    {/* <span className="count">30</span> */}
-                  </li>
-                </Link>
-                <Link to="/categories/Ethnic Shoes">
-                  <li>
-                    <a>
-                      {" "}
-                      <img
-                        src="assets/imgs/theme/icons/category-1.svg"
-                        alt=""
-                      />
-                      Ethnic Shoes
-                    </a>
-                    {/* <span className="count">30</span> */}
-                  </li>
-                </Link>
-                <Link to="/categories/Formal Shoes">
-                  <li>
-                    <a>
-                      {" "}
-                      <img
-                        src="assets/imgs/theme/icons/category-1.svg"
-                        alt=""
-                      />
-                      Formal Shoes
-                    </a>
-                    {/* <span className="count">30</span> */}
-                  </li>
-                </Link>
-                <Link to="/categories/Party Shoes">
-                  <li>
-                    <a>
-                      {" "}
-                      <img
-                        src="assets/imgs/theme/icons/category-1.svg"
-                        alt=""
-                      />
-                      Party Shoes
-                    </a>
-                    {/* <span className="count">30</span> */}
-                  </li>
-                </Link>
-                <Link to="/categories/Sports Shoes">
-                  <li>
-                    <a>
-                      {" "}
-                      <img
-                        src="assets/imgs/theme/icons/category-1.svg"
-                        alt=""
-                      />
-                      Sports Shoes
-                    </a>
-                    {/* <span className="count">30</span> */}
-                  </li>
-                </Link>
-              </ul>
-            </div>
-            <div className="sidebar-widget price_range range mb-30">
-              <h5 className="section-title style-1 mb-30">Fill by price</h5>
-              <div className="price-filter">
-                <div className="price-filter-inner">
-                  <Slider
-                    min={0}
-                    max={100}
-                    value={sliderValues}
-                    onChange={handleSliderChange}
-                    onClick={handleSliderClick}
-                    range
-                  />
-                  <div className="d-flex justify-content-between">
-                    <div className="caption">
-                      From: <strong className="text-brand">{sliderValues[0]}</strong>
-                    </div>
-                    <div className="caption">
-                      To: <strong className="text-brand">{sliderValues[1]}</strong>
-                    </div>
-                  </div>
+                    );
+                  })}
                 </div>
-              </div>
-              <div className="list-group">
-                <div className="list-group-item mb-10 mt-10">
-                  <label className="fw-900">Color</label>
-                  <div className="custome-checkbox">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      name="checkbox"
-                      id="exampleCheckbox1"
-                      value=""
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="exampleCheckbox1"
-                    >
-                      <span>Red (56)</span>
-                    </label>
-                    <br />
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      name="checkbox"
-                      id="exampleCheckbox2"
-                      value=""
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="exampleCheckbox2"
-                    >
-                      <span>Green (78)</span>
-                    </label>
-                    <br />
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      name="checkbox"
-                      id="exampleCheckbox3"
-                      value=""
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="exampleCheckbox3"
-                    >
-                      <span>Blue (54)</span>
-                    </label>
-                  </div>
-                  <label className="fw-900 mt-15">Item Condition</label>
-                  <div className="custome-checkbox">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      name="checkbox"
-                      id="exampleCheckbox11"
-                      value=""
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="exampleCheckbox11"
-                    >
-                      <span>New (1506)</span>
-                    </label>
-                    <br />
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      name="checkbox"
-                      id="exampleCheckbox21"
-                      value=""
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="exampleCheckbox21"
-                    >
-                      <span>Refurbished (27)</span>
-                    </label>
-                    <br />
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      name="checkbox"
-                      id="exampleCheckbox31"
-                      value=""
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="exampleCheckbox31"
-                    >
-                      <span>Used (45)</span>
-                    </label>
-                  </div>
+                <div className="pagination-area mt-20 mb-20">
+                  <nav aria-label="Page navigation example">
+                    <ul className="pagination justify-content-start">
+                      <li className="page-item">
+                        <a className="page-link">
+                          <i className="fi-rs-arrow-small-left"></i>
+                        </a>
+                      </li>
+                      <li className="page-item">
+                        <a className="page-link">1</a>
+                      </li>
+                      <li className="page-item active">
+                        <a className="page-link">2</a>
+                      </li>
+                      <li className="page-item">
+                        <a className="page-link">3</a>
+                      </li>
+                      <li className="page-item">
+                        <a className="page-link dot">...</a>
+                      </li>
+                      <li className="page-item">
+                        <a className="page-link">6</a>
+                      </li>
+                      <li className="page-item">
+                        <a className="page-link">
+                          <i className="fi-rs-arrow-small-right"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
+                <DealsOfTheDay />
+                {/* deals of the day to be pasted/imported here */}
               </div>
-              <a className="btn btn-sm btn-default">
-                <i className="fi-rs-filter mr-5"></i> Fillter
-              </a>
+              <div className="col-lg-1-5 primary-sidebar sticky-sidebar">
+                <div className="sidebar-widget widget-category-2 mb-30">
+                  <h5 className="section-title style-1 mb-30">Category</h5>
+                  <ul>
+                    <Link to="/categories/casual Shoes">
+                      <li>
+                        <a>
+                          {" "}
+                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
+                          Casual Shoes
+                        </a>
+                        {/* <span className="count">30</span> */}
+                      </li>
+                    </Link>
+                    <Link to="/categories/Ethnic Shoes">
+                      <li>
+                        <a>
+                          {" "}
+                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
+                          Ethnic Shoes
+                        </a>
+                        {/* <span className="count">30</span> */}
+                      </li>
+                    </Link>
+                    <Link to="/categories/Formal Shoes">
+                      <li>
+                        <a>
+                          {" "}
+                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
+                          Formal Shoes
+                        </a>
+                        {/* <span className="count">30</span> */}
+                      </li>
+                    </Link>
+                    <Link to="/categories/Party Shoes">
+                      <li>
+                        <a>
+                          {" "}
+                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
+                          Party Shoes
+                        </a>
+                        {/* <span className="count">30</span> */}
+                      </li>
+                    </Link>
+                    <Link to="/categories/Sports Shoes">
+                      <li>
+                        <a>
+                          {" "}
+                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
+                          Sports Shoes
+                        </a>
+                        {/* <span className="count">30</span> */}
+                      </li>
+                    </Link>
+                  </ul>
+                </div>
+                <div className="sidebar-widget price_range range mb-30">
+                  <h5 className="section-title style-1 mb-30">Fill by price</h5>
+                  <div className="price-filter">
+                    <div className="price-filter-inner">
+                      <Slider min={0} max={100} value={sliderValues} onChange={handleSliderChange} onClick={handleSliderClick} range />
+                    </div>
+                  </div>
+                  <div className="list-group">
+                    <div className="list-group-item mb-10 mt-10">
+                      <label className="fw-900">Color</label>
+                      <div className="custome-checkbox">
+                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="" />
+                        <label className="form-check-label" htmlFor="exampleCheckbox1">
+                          <span>Red (56)</span>
+                        </label>
+                        <br />
+                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox2" value="" />
+                        <label className="form-check-label" htmlFor="exampleCheckbox2">
+                          <span>Green (78)</span>
+                        </label>
+                        <br />
+                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox3" value="" />
+                        <label className="form-check-label" htmlFor="exampleCheckbox3">
+                          <span>Blue (54)</span>
+                        </label>
+                      </div>
+                      <label className="fw-900 mt-15">Item Condition</label>
+                      <div className="custome-checkbox">
+                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox11" value="" />
+                        <label className="form-check-label" htmlFor="exampleCheckbox11">
+                          <span>New (1506)</span>
+                        </label>
+                        <br />
+                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox21" value="" />
+                        <label className="form-check-label" htmlFor="exampleCheckbox21">
+                          <span>Refurbished (27)</span>
+                        </label>
+                        <br />
+                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox31" value="" />
+                        <label className="form-check-label" htmlFor="exampleCheckbox31">
+                          <span>Used (45)</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <a className="btn btn-sm btn-default">
+                    <i className="fi-rs-filter mr-5"></i> Fillter
+                  </a>
+                </div>
+                <NewProducts />
+              </div>
             </div>
-            <NewProducts />
           </div>
       </div>
     </div>
