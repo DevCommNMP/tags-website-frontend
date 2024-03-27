@@ -6,11 +6,13 @@ import Banner from "../components/OfferBanner/Banner";
 import ProductTabSection from "./ProductTabSection";
 import LeatherSection from "../components/leateherSection/leatherSection.jsx";
 import NewArrival from "../components/newArrival/NewArrival.jsx";
+import NewsLetter from "../components/NewsLetter.jsx";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchAllProductsAction } from "../redux/actions/product/productActions.js";
 import { useSelector } from "react-redux";
-const Homepage = ({ data }) => {
+import LoaderImg from "../components/LoaderImg.jsx";
+const Homepage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     const res = dispatch(fetchAllProductsAction());
@@ -24,9 +26,8 @@ const Homepage = ({ data }) => {
   return (
     <>
       <Header />
-
       {productsLoading ? (
-        <h1 style={{textAlign:"center"}}>Loading.....</h1>
+        <LoaderImg />
       ) : (
         <div>
           <Hero />
@@ -40,6 +41,7 @@ const Homepage = ({ data }) => {
           <NewArrival data={products} />
         </div>
       )}
+      <NewsLetter />
       <Footer />
     </>
   );

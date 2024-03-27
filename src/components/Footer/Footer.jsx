@@ -10,13 +10,13 @@ import iconTwitterWhite from "../../assets/imgs/theme/icons/icon-twitter-white.s
 import iconInstagramWhite from "../../assets/imgs/theme/icons/icon-instagram-white.svg";
 import iconPinterestWhite from "../../assets/imgs/theme/icons/icon-pinterest-white.svg";
 import iconYoutubeWhite from "../../assets/imgs/theme/icons/icon-youtube-white.svg";
-import NewsLetter from "../NewsLetter";
+// import NewsLetter from "../NewsLetter";
 
 const Footer = () => {
   return (
     <>
       <footer className="main">
-        <NewsLetter />
+        {/* <NewsLetter /> */}
         <section className="section-padding footer-mid">
           <div className="container pt-15 pb-20">
             <div className="row">

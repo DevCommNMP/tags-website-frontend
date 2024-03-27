@@ -1,19 +1,25 @@
-import { useState,useEffect } from 'react';
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
+/* eslint-disable react/jsx-key */
+import category_bg from "../assets/imgs/banner/category_bg.png";
+import starRating from "../assets/imgs/theme/rating-stars.png";
+import { useState, useEffect } from "react";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
 import Header from "../components/Header/Header";
-import { Link, useParams } from 'react-router-dom';
-import Footer from '../components/Footer/Footer';
+import { Link, useParams } from "react-router-dom";
+import Footer from "../components/Footer/Footer";
 import { useDispatch } from "react-redux";
 import { fetchAllProductsAction } from "../redux/actions/product/productActions.js";
 import { useSelector } from "react-redux";
+import DealsOfTheDay from "../components/DealsOfTheDay.jsx";
+import NewProducts from "../components/NewProducts.jsx";
+import ModalQuickView from "../components/ModalQuickView.jsx";
+
 const ProductsGridPage = ({ data }) => {
-  
-  
-  const { title } = useParams()
+  const { title } = useParams();
   const storeData = useSelector((store) => store.products);
-  const { products, productsLoading, appErr, serverErr } = storeData; 
-  console.log(products, productsLoading, appErr, serverErr)
+  const { products, productsLoading, appErr, serverErr } = storeData;
+  // console.log(products, productsLoading, appErr, serverErr)
+  console.log(products);
   const [sliderValues, setSliderValues] = useState([0, 100]);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -46,6 +52,7 @@ const ProductsGridPage = ({ data }) => {
   return (
     <div>
       <div>
+        <ModalQuickView />
         <div
           className="modal fade custom-modal"
           id="quickViewModal"
@@ -70,14 +77,14 @@ const ProductsGridPage = ({ data }) => {
         <main className="main">
           <div className="page-header mt-30 mb-50">
             <div className="container">
-              <div className="archive-header">
+              <div className="archive-header category_bg" style={{ backgroundImage: `url(${category_bg})` }}>
                 <div className="row align-items-center">
                   <div className="col-xl-3">
                     <h1 className="mb-15">{title}</h1>
                     <div className="breadcrumb">
-                      <a href="index.html" rel="nofollow">
+                      <Link to="/" rel="nofollow">
                         <i className="fi-rs-home mr-5"></i>Home
-                      </a>
+                      </Link>
                       <span></span> Shop <span></span> {title}
                     </div>
                   </div>
@@ -91,8 +98,12 @@ const ProductsGridPage = ({ data }) => {
                 <div className="shop-product-fillter">
                   <div className="totall-product">
                     <p>
+<<<<<<< HEAD
                       We found <strong className="text-brand">{data.length}</strong> items
                       for you!
+=======
+                      We found <strong className="text-brand">{products.length}</strong> items for you!
+>>>>>>> f984e4b965bad22bfe946faf817abbb4cbaae07a
                     </p>
                   </div>
                   <div className="sort-by-product-area">
@@ -110,67 +121,11 @@ const ProductsGridPage = ({ data }) => {
                           </span>
                         </div>
                       </div>
-                      <div className="sort-by-dropdown">
-                        <ul>
-                          <li>
-                            <a className="active" href="#">
-                              50
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">100</a>
-                          </li>
-                          <li>
-                            <a href="#">150</a>
-                          </li>
-                          <li>
-                            <a href="#">200</a>
-                          </li>
-                          <li>
-                            <a href="#">All</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="sort-by-cover">
-                      <div className="sort-by-product-wrap">
-                        <div className="sort-by">
-                          <span>
-                            <i className="fi-rs-apps-sort"></i>Sort by:
-                          </span>
-                        </div>
-                        <div className="sort-by-dropdown-wrap">
-                          <span>
-                            {" "}
-                            Featured <i className="fi-rs-angle-small-down"></i>
-                          </span>
-                        </div>
-                      </div>
-                      <div className="sort-by-dropdown">
-                        <ul>
-                          <li>
-                            <a className="active" href="#">
-                              Featured
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">Price: Low to High</a>
-                          </li>
-                          <li>
-                            <a href="#">Price: High to Low</a>
-                          </li>
-                          <li>
-                            <a href="#">Release Date</a>
-                          </li>
-                          <li>
-                            <a href="#">Avg. Rating</a>
-                          </li>
-                        </ul>
-                      </div>
                     </div>
                   </div>
                 </div>
                 <div className="row product-grid">
+<<<<<<< HEAD
                 {data.map(product=>{
   return(
     <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
@@ -254,6 +209,56 @@ const ProductsGridPage = ({ data }) => {
                             <a className="add" href="shop-cart.html">
                               <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                             </a>
+=======
+                  {products.map((product) => {
+                    return (
+                      <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                        <div className="product-cart-wrap mb-30">
+                          <div className="product-img-action-wrap">
+                            <div className="product-img product-img-zoom">
+                              <Link to="/products/dummy">
+                                <img className="default-img" src={product.productImage} alt="" />
+                              </Link>
+                            </div>
+                            <div className="product-action-1">
+                              <a aria-label="Add To Wishlist" className="action-btn">
+                                <i className="fi-rs-heart"></i>
+                              </a>
+                              <ModalQuickView />
+                            </div>
+                            <div className="product-badges product-badges-position product-badges-mrg">
+                              <span className={product.tag}>{product.tag}</span>
+                            </div>
+                          </div>
+                          <div className="product-content-wrap">
+                            <div className="product-category">{/* <a>Snack</a> */}</div>
+                            <h2>
+                              <Link to="/products/dummy">{product.title}</Link>
+                            </h2>
+                            <div className="product-rate-cover">
+                              <div className="product-rate d-inline-block" style={{ backgroundImage: `url(${starRating})` }}>
+                                <div
+                                  className="product-rating"
+                                  style={{ width: `${20 * product.rating}%`, backgroundImage: `url(${starRating})` }}
+                                ></div>
+                              </div>
+                              <span className="font-small ml-5 text-muted"> ({product.rating})</span>
+                            </div>
+                            <div>
+                              <span className="font-small text-muted">{/* By <a>NestFood</a> */}</span>
+                            </div>
+                            <div className="product-card-bottom">
+                              <div className="product-price">
+                                <span>&#8377;{product.SellingPrice}</span>
+                                <span className="old-price">&#8377;{product.SellingPrice}</span>
+                              </div>
+                              <div className="add-cart">
+                                <a className="add">
+                                  <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
+                                </a>
+                              </div>
+                            </div>
+>>>>>>> f984e4b965bad22bfe946faf817abbb4cbaae07a
                           </div>
                         </div>
                       </div>
@@ -266,43 +271,34 @@ const ProductsGridPage = ({ data }) => {
                   <nav aria-label="Page navigation example">
                     <ul className="pagination justify-content-start">
                       <li className="page-item">
-                        <a className="page-link" href="#">
+                        <a className="page-link">
                           <i className="fi-rs-arrow-small-left"></i>
                         </a>
                       </li>
                       <li className="page-item">
-                        <a className="page-link" href="#">
-                          1
-                        </a>
+                        <a className="page-link">1</a>
                       </li>
                       <li className="page-item active">
-                        <a className="page-link" href="#">
-                          2
-                        </a>
+                        <a className="page-link">2</a>
                       </li>
                       <li className="page-item">
-                        <a className="page-link" href="#">
-                          3
-                        </a>
+                        <a className="page-link">3</a>
                       </li>
                       <li className="page-item">
-                        <a className="page-link dot" href="#">
-                          ...
-                        </a>
+                        <a className="page-link dot">...</a>
                       </li>
                       <li className="page-item">
-                        <a className="page-link" href="#">
-                          6
-                        </a>
+                        <a className="page-link">6</a>
                       </li>
                       <li className="page-item">
-                        <a className="page-link" href="#">
+                        <a className="page-link">
                           <i className="fi-rs-arrow-small-right"></i>
                         </a>
                       </li>
                     </ul>
                   </nav>
                 </div>
+<<<<<<< HEAD
                 <section className="section-padding pb-5">
                   <div className="section-title">
                     <h3 className="">Deals Of The Day</h3>
@@ -547,6 +543,10 @@ const ProductsGridPage = ({ data }) => {
                     </div>
                   </div>
                 </section>
+=======
+                <DealsOfTheDay />
+                {/* deals of the day to be pasted/imported here */}
+>>>>>>> f984e4b965bad22bfe946faf817abbb4cbaae07a
               </div>
               <div className="col-lg-1-5 primary-sidebar sticky-sidebar">
                 <div className="sidebar-widget widget-category-2 mb-30">
@@ -554,7 +554,7 @@ const ProductsGridPage = ({ data }) => {
                   <ul>
                     <Link to="/categories/casual Shoes">
                       <li>
-                        <a href="shop-grid-right.html">
+                        <a>
                           {" "}
                           <img
                             src="assets/imgs/theme/icons/category-1.svg"
@@ -567,7 +567,7 @@ const ProductsGridPage = ({ data }) => {
                     </Link>
                     <Link to="/categories/Ethnic Shoes">
                       <li>
-                        <a href="shop-grid-right.html">
+                        <a>
                           {" "}
                           <img
                             src="assets/imgs/theme/icons/category-1.svg"
@@ -580,7 +580,7 @@ const ProductsGridPage = ({ data }) => {
                     </Link>
                     <Link to="/categories/Formal Shoes">
                       <li>
-                        <a href="shop-grid-right.html">
+                        <a>
                           {" "}
                           <img
                             src="assets/imgs/theme/icons/category-1.svg"
@@ -593,7 +593,7 @@ const ProductsGridPage = ({ data }) => {
                     </Link>
                     <Link to="/categories/Party Shoes">
                       <li>
-                        <a href="shop-grid-right.html">
+                        <a>
                           {" "}
                           <img
                             src="assets/imgs/theme/icons/category-1.svg"
@@ -606,7 +606,7 @@ const ProductsGridPage = ({ data }) => {
                     </Link>
                     <Link to="/categories/Sports Shoes">
                       <li>
-                        <a href="shop-grid-right.html">
+                        <a>
                           {" "}
                           <img
                             src="assets/imgs/theme/icons/category-1.svg"
@@ -641,28 +641,6 @@ const ProductsGridPage = ({ data }) => {
                       </div>
                     </div>
                   </div>
-
-                  {/* <div className="price-filter">
-                    <div className="price-filter-inner">
-                      <div id="slider-range" className="mb-20"></div>
-                      <div className="d-flex justify-content-between">
-                        <div className="caption">
-                          From:{" "}
-                          <strong
-                            id="slider-range-value1"
-                            className="text-brand"
-                          ></strong>
-                        </div>
-                        <div className="caption">
-                          To:{" "}
-                          <strong
-                            id="slider-range-value2"
-                            className="text-brand"
-                          ></strong>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
                   <div className="list-group">
                     <div className="list-group-item mb-10 mt-10">
                       <label className="fw-900">Color</label>
@@ -755,6 +733,7 @@ const ProductsGridPage = ({ data }) => {
                       </div>
                     </div>
                   </div>
+<<<<<<< HEAD
                   <a
                     className="btn btn-sm btn-default"
                     href="shop-grid-right.html"
@@ -828,6 +807,13 @@ const ProductsGridPage = ({ data }) => {
                     </h4>
                   </div>
                 </div>
+=======
+                  <a className="btn btn-sm btn-default">
+                    <i className="fi-rs-filter mr-5"></i> Fillter
+                  </a>
+                </div>
+                <NewProducts />
+>>>>>>> f984e4b965bad22bfe946faf817abbb4cbaae07a
               </div>
             </div>
           </div>

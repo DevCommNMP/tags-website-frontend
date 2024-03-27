@@ -24,6 +24,7 @@ import Wishlist from "./pages/Wishlist.jsx";
 import AllCategoriesPage from "./pages/AllCategoriesPage.jsx";
 import Cart from "./pages/cart.jsx";
 // import SpinnerLoader from "./components/SpinnerLoader.jsx";
+import LoaderImg from './components/LoaderImg.jsx'
 
 const dummydata = [
   {
@@ -153,7 +154,6 @@ function App() {
 
   return (
     <>
-      {/* <SpinnerLoader /> */}
       <Provider store={Store}>
         <BrowserRouter>
           <Routes>
