@@ -1,12 +1,12 @@
-import loaderImg from '../assets/imgs/loader/loader.gif'
+import loaderImg from "../assets/imgs/loader/loader.gif";
 const LoaderImg = () => {
   return (
     <>
-    <div className="loaderContainer" style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
-        <img src={loaderImg} className="img-fluid" alt="loader" />
-    </div>
+      <div className="loaderContainer">
+        <img src={loaderImg} className="img-fluid" alt="loading" style={{maxWidth:'100px'}} />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default LoaderImg
+export default LoaderImg;

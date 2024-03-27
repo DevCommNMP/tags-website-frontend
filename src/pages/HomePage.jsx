@@ -28,7 +28,7 @@ const Homepage = () => {
       <Header />
       {productsLoading ? (
         <LoaderImg />
-      ) : (
+      ) : (        
         <div>
           <Hero />
           <div className="container">
