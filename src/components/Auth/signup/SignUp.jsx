@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
 
-import logoFacebook from "../../../assets/imgs/theme/icons/logo-facebook.svg";
 import logoGoogle from "../../../assets/imgs/theme/icons/logo-google.svg";
-import logoApple from "../../../assets/imgs/theme/icons/logo-apple.svg";
 import SignUpImg from "../../../assets/imgs/page/signup.jpg";
 
 import { Link, useNavigate } from "react-router-dom";

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import LoginImage from "../../../assets/imgs/page/login-1.png";
-import Header from "../../Header/Header";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Header from "../../../components/Header";
 
 import { useDispatch, useSelector } from "react-redux";
 import { loginUserAction } from "../../../redux/actions/auth/authActions";
