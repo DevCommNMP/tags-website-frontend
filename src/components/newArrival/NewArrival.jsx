@@ -92,7 +92,7 @@ const NewArrival = ({ data }) => {
                       <div className="product-cart-wrap mb-30">
                         <div className="product-img-action-wrap">
                           <div className="product-img product-img-zoom">
-                            <a href="shop-product-right.html">
+                            <a >
                               <img className="default-img" src={item.productImage} alt="" />
                               <img className="hover-img" src="" alt="" />
                             </a>

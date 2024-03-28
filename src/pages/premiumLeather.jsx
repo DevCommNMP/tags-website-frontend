@@ -128,16 +128,16 @@ const PremiumLeather = ({ data }) => {
                       <div className="product-cart-wrap mb-30">
                         <div className="product-img-action-wrap">
                           <div className="product-img product-img-zoom">
-                            <a href="#">
+                            <a >
                               <img className="default-img" src={item.image} alt="" />
                               <img className="hover-img" src="" alt="" />
                             </a>
                           </div>
                           <div className="product-action-1">
-                            <a aria-label="Add To Wishlist" className="action-btn" href="#">
+                            <a aria-label="Add To Wishlist" className="action-btn" >
                               <i className="fi-rs-heart"></i>
                             </a>
-                            <a aria-label="Compare" className="action-btn" href="#">
+                            <a aria-label="Compare" className="action-btn" >
                               <i className="fi-rs-shuffle"></i>
                             </a>
                             <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -150,7 +150,7 @@ const PremiumLeather = ({ data }) => {
                         </div>
                         <div className="product-content-wrap">
                           <div className="product-category">
-                            <a href="#">Snack</a>
+                            <a >Snack</a>
                           </div>
                           <h2>
                             <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>

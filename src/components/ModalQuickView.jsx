@@ -24,7 +24,7 @@ function ModalQuickView() {
                   <span className="zoom-icon">
                     <i className="fi-rs-search"></i>
                   </span>
-                  {/* <SingleProductImages /> */}
+                  <SingleProductImages />
                   <div className="product-image-slider">
                     <figure className="border-radius-10">
                       <img src="assets/imgs/shop/product-16-2.jpg" alt="product image" />
@@ -77,7 +77,7 @@ function ModalQuickView() {
                 <div className="detail-info pr-30 pl-30">
                   <span className="stock-status out-stock"> Sale Off </span>
                   <h3 className="title-detail">
-                    <a className="text-heading" href="shop-product-right.html">
+                    <a className="text-heading" >
                       Seeds of Change Organic Quinoa, Brown
                     </a>
                   </h3>
@@ -100,11 +100,11 @@ function ModalQuickView() {
                   </div>
                   <div className="detail-extralink mb-30">
                     <div className="detail-qty border radius">
-                      <a href="#" className="qty-down">
+                      <a  className="qty-down">
                         <i className="fi-rs-angle-small-down"></i>
                       </a>
                       <span className="qty-val">1</span>
-                      <a href="#" className="qty-up">
+                      <a  className="qty-up">
                         <i className="fi-rs-angle-small-up"></i>
                       </a>
                     </div>

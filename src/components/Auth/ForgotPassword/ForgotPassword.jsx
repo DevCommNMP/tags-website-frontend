@@ -54,7 +54,7 @@ const ResetPassword = () => {
                             </label>
                           </div>
                         </div>
-                        <a className="text-muted" href="#">
+                        <a className="text-muted" >
                           Learn more
                         </a>
                       </div>

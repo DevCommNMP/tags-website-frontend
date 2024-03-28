@@ -55,7 +55,7 @@ const Wishlist = () => {
                       </td>
                       <td className="product-des product-name">
                         <h6>
-                          <a className="product-name mb-10" href="shop-product-right.html">
+                          <a className="product-name mb-10" >
                             Field Roast Chao Cheese Creamy Original
                           </a>
                         </h6>
@@ -76,7 +76,7 @@ const Wishlist = () => {
                         <button className="btn btn-sm">Add to cart</button>
                       </td>
                       <td className="action text-center" data-title="Remove">
-                        <a href="#" className="text-body">
+                        <a  className="text-body">
                           <i className="fi-rs-trash"></i>
                         </a>
                       </td>
@@ -91,7 +91,7 @@ const Wishlist = () => {
                       </td>
                       <td className="product-des product-name">
                         <h6>
-                          <a className="product-name mb-10" href="shop-product-right.html">
+                          <a className="product-name mb-10" >
                             Blue Diamond Almonds Lightly Salted
                           </a>
                         </h6>
@@ -112,7 +112,7 @@ const Wishlist = () => {
                         <button className="btn btn-sm">Add to cart</button>
                       </td>
                       <td className="action text-center" data-title="Remove">
-                        <a href="#" className="text-body">
+                        <a  className="text-body">
                           <i className="fi-rs-trash"></i>
                         </a>
                       </td>
@@ -127,7 +127,7 @@ const Wishlist = () => {
                       </td>
                       <td className="product-des product-name">
                         <h6>
-                          <a className="product-name mb-10" href="shop-product-right.html">
+                          <a className="product-name mb-10" >
                             Fresh Organic Mustard Leaves Bell Pepper
                           </a>
                         </h6>
@@ -148,7 +148,7 @@ const Wishlist = () => {
                         <button className="btn btn-sm">Add to cart</button>
                       </td>
                       <td className="action text-center" data-title="Remove">
-                        <a href="#" className="text-body">
+                        <a  className="text-body">
                           <i className="fi-rs-trash"></i>
                         </a>
                       </td>
@@ -163,7 +163,7 @@ const Wishlist = () => {
                       </td>
                       <td className="product-des product-name">
                         <h6>
-                          <a className="product-name mb-10" href="shop-product-right.html">
+                          <a className="product-name mb-10" >
                             Angie’s Boomchickapop Sweet & Salty{" "}
                           </a>
                         </h6>
@@ -184,7 +184,7 @@ const Wishlist = () => {
                         <button className="btn btn-sm btn-secondary">Contact Us</button>
                       </td>
                       <td className="action text-center" data-title="Remove">
-                        <a href="#" className="text-body">
+                        <a  className="text-body">
                           <i className="fi-rs-trash"></i>
                         </a>
                       </td>
@@ -199,7 +199,7 @@ const Wishlist = () => {
                       </td>
                       <td className="product-des product-name">
                         <h6>
-                          <a className="product-name mb-10" href="shop-product-right.html">
+                          <a className="product-name mb-10" >
                             Foster Farms Takeout Crispy Classic
                           </a>
                         </h6>
@@ -220,7 +220,7 @@ const Wishlist = () => {
                         <button className="btn btn-sm">Add to cart</button>
                       </td>
                       <td className="action text-center" data-title="Remove">
-                        <a href="#" className="text-body">
+                        <a  className="text-body">
                           <i className="fi-rs-trash"></i>
                         </a>
                       </td>

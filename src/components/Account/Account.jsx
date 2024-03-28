@@ -199,7 +199,7 @@ const Account = () => {
                                 Marie, MI 49783
                               </address>
                               <p>New York</p>
-                              <a href="#" className="btn-small">
+                              <a  className="btn-small">
                                 Edit
                               </a>
                             </div>
@@ -219,7 +219,7 @@ const Account = () => {
                                 Phone: 1.941.227.4444
                               </address>
                               <p>Sarasota</p>
-                              <a href="#" className="btn-small">
+                              <a  className="btn-small">
                                 Edit
                               </a>
                             </div>

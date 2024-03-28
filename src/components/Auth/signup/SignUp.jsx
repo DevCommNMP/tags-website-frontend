@@ -144,15 +144,15 @@ const SignUp = () => {
                                 </div>
                                 <div className="col-lg-6 pr-30 d-none d-lg-block">
                                     <div className="card-login mt-115">
-                                        <a href="#" className="social-login facebook-login">
+                                        <a  className="social-login facebook-login">
                                             <img src={logoFacebook} alt="" />
                                             <span>Continue with Facebook</span>
                                         </a>
-                                        <a href="#" className="social-login google-login">
+                                        <a  className="social-login google-login">
                                             <img src={logoGoogle} alt="" />
                                             <span>Continue with Google</span>
                                         </a>
-                                        <a href="#" className="social-login apple-login">
+                                        <a  className="social-login apple-login">
                                             <img src={logoApple} alt="" />
                                             <span>Continue with Apple</span>
                                         </a>

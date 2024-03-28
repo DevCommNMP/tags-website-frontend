@@ -103,7 +103,7 @@ const[cart,setcart]=useState(JSON.parse(localStorage.getItem('cartItems')))
                             </h4>
                           </div>
                           <div className="shopping-cart-delete">
-                            <a href="#">
+                            <a >
                               <i className="fi-rs-cross-small"></i>
                             </a>
                           </div>
@@ -123,7 +123,7 @@ const[cart,setcart]=useState(JSON.parse(localStorage.getItem('cartItems')))
                             </h4>
                           </div>
                           <div className="shopping-cart-delete">
-                            <a href="#">
+                            <a >
                               <i className="fi-rs-cross-small"></i>
                             </a>
                           </div>

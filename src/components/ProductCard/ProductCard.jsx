@@ -4,7 +4,7 @@ const ProductCard = () => {
       <div className="product-cart-wrap mb-30">
         <div className="product-img-action-wrap">
           <div className="product-img product-img-zoom">
-            <a href="shop-product-right.html">
+            <a >
               <img className="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="" />
               <img className="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="" />
             </a>
@@ -29,7 +29,7 @@ const ProductCard = () => {
             <a href="shop-grid-right.html">Snack</a>
           </div>
           <h2>
-            <a href="shop-product-right.html">Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+            <a >Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
           </h2>
           <div className="product-rate-cover">
             <div className="product-rate d-inline-block">

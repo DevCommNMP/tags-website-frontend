@@ -36,9 +36,9 @@ const Homepage = () => {
               <Banner />
             </div>
           </div>
-          <ProductTabSection data={products} />
-          <LeatherSection data={products} />
           <NewArrival data={products} />
+          <LeatherSection data={products} />
+          <ProductTabSection data={products} />
         </div>
       )}
       <NewsLetter />

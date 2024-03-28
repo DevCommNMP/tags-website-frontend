@@ -113,7 +113,7 @@ else{
                               </label>
                             </div>
                           </div>
-                          <a className="text-muted" href="#">
+                          <a className="text-muted" >
                             Forgot password?
                           </a>
                         </div>
