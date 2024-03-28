@@ -34,10 +34,9 @@ const SingleProductImages = ({ product }) => {
 
   return (
     <div className="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
-      <div className="detail-gallery">
+      <div className="detail-gallery" style={{}}>
         <div className="product-image-slider">
           <Slider ref={sliderRef} {...settings}>
-            {/* Render main product image */}
             {productImagesArr.map((image, index) => (
               <div key={index}>
                 <img src={image} alt={`product image ${index}`} />
@@ -47,7 +46,6 @@ const SingleProductImages = ({ product }) => {
         </div>
         <div className="slider-nav-thumbnails">
           <Slider {...settingsThumb}>
-            {/* Render product sub-images */}
             {productSubImagesArr.map((image, index) => (
               <div
                 key={index}
