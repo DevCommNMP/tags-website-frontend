@@ -54,25 +54,25 @@ const Footer = () => {
                 <h4 className="widget-title">Company</h4>
                 <ul className="footer-list mb-sm-5 mb-md-0">
                   <li>
-                    <a >About Us</a>
+                    <a>About Us</a>
                   </li>
                   <li>
-                    <a >Delivery Information</a>
+                    <a>Delivery Information</a>
                   </li>
                   <li>
-                    <a >Privacy Policy</a>
+                    <a>Privacy Policy</a>
                   </li>
                   <li>
-                    <a >Terms &amp; Conditions</a>
+                    <a>Terms &amp; Conditions</a>
                   </li>
                   <li>
-                    <a >Contact Us</a>
+                    <a>Contact Us</a>
                   </li>
                   <li>
-                    <a >Support Center</a>
+                    <a>Support Center</a>
                   </li>
                   <li>
-                    <a >Careers</a>
+                    <a>Careers</a>
                   </li>
                 </ul>
               </div>
@@ -80,25 +80,25 @@ const Footer = () => {
                 <h4 className="widget-title">Popular</h4>
                 <ul className="footer-list mb-sm-5 mb-md-0">
                   <li>
-                    <a >Flavoured </a>
+                    <a>Flavoured </a>
                   </li>
                   <li>
-                    <a >Butter and Margarine</a>
+                    <a>Butter and Margarine</a>
                   </li>
                   <li>
-                    <a >Eggs Substitutes</a>
+                    <a>Eggs Substitutes</a>
                   </li>
                   <li>
-                    <a >Marmalades</a>
+                    <a>Marmalades</a>
                   </li>
                   <li>
-                    <a >Sour Cream and Dips</a>
+                    <a>Sour Cream and Dips</a>
                   </li>
                   <li>
-                    <a >Tea & Kombucha</a>
+                    <a>Tea & Kombucha</a>
                   </li>
                   <li>
-                    <a >Cheese</a>
+                    <a>Cheese</a>
                   </li>
                 </ul>
               </div>
@@ -106,25 +106,25 @@ const Footer = () => {
                 <h4 className="widget-title">Shop by Category</h4>
                 <ul className="footer-list mb-sm-5 mb-md-0">
                   <li>
-                    <a >Become a Vendor</a>
+                    <a>Become a Vendor</a>
                   </li>
                   <li>
-                    <a >Affiliate Program</a>
+                    <a>Affiliate Program</a>
                   </li>
                   <li>
-                    <a >Farm Business</a>
+                    <a>Farm Business</a>
                   </li>
                   <li>
-                    <a >Farm Careers</a>
+                    <a>Farm Careers</a>
                   </li>
                   <li>
-                    <a >Our Suppliers</a>
+                    <a>Our Suppliers</a>
                   </li>
                   <li>
-                    <a >Accessibility</a>
+                    <a>Accessibility</a>
                   </li>
                   <li>
-                    <a >Promotions</a>
+                    <a>Promotions</a>
                   </li>
                 </ul>
               </div>
@@ -133,25 +133,25 @@ const Footer = () => {
                 <h4 className="widget-title">Account</h4>
                 <ul className="footer-list mb-sm-5 mb-md-0">
                   <li>
-                    <a >Sign In</a>
+                    <a>Sign In</a>
                   </li>
                   <li>
-                    <a >View Cart</a>
+                    <a>View Cart</a>
                   </li>
                   <li>
-                    <a >My Wishlist</a>
+                    <a>My Wishlist</a>
                   </li>
                   <li>
-                    <a >Track My Order</a>
+                    <a>Track My Order</a>
                   </li>
                   <li>
-                    <a >Help Ticket</a>
+                    <a>Help Ticket</a>
                   </li>
                   <li>
-                    <a >Shipping Details</a>
+                    <a>Shipping Details</a>
                   </li>
                   <li>
-                    <a >Compare products</a>
+                    <a>Compare products</a>
                   </li>
                 </ul>
               </div>
@@ -187,19 +187,19 @@ const Footer = () => {
             <div className="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
               <div className="mobile-social-icon">
                 <h6>Follow Us</h6>
-                <a >
+                <a>
                   <img src={iconFacebookWhite} alt="" />
                 </a>
-                <a >
+                <a>
                   <img src={iconTwitterWhite} alt="" />
                 </a>
-                <a >
+                <a>
                   <img src={iconInstagramWhite} alt="" />
                 </a>
-                <a >
+                <a>
                   <img src={iconPinterestWhite} alt="" />
                 </a>
-                <a >
+                <a>
                   <img src={iconYoutubeWhite} alt="" />
                 </a>
               </div>

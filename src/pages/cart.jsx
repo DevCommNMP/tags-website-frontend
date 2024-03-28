@@ -5,46 +5,44 @@ import { Link, useNavigate } from "react-router-dom";
 import { Slide, toast, ToastContainer } from "react-toastify";
 import { Button } from "react-bootstrap";
 const Cart = () => {
-    const [cartdata, setCartdata] = useState([]);
-const navigate = useNavigate();
-    const cartProductHandler=(id)=>{
-navigate(`/products/${id}`)
+  const [cartdata, setCartdata] = useState([]);
+  const navigate = useNavigate();
+  const cartProductHandler = (id) => {
+    navigate(`/products/${id}`);
+  };
+
+  const cartItemRemoveHandler = async (productId) => {
+    // Step 1: Retrieve the cart from localStorage
+    let cart = JSON.parse(localStorage.getItem("cartItems"));
+
+    // Check if cart exists in localStorage
+    if (cart) {
+      // Step 2: Modify the cart by removing the desired item (assuming productId is the unique identifier)
+      const itemIdToRemove = productId;
+      cart = cart.filter((item) => item.productId !== itemIdToRemove);
+
+      // Step 3: Update the cart in localStorage with the modified version
+      localStorage.setItem("cartItems", JSON.stringify(cart));
+      setCartdata(cart); // Optionally update state if needed
+
+      // Optionally, log the updated cart to the console
+
+      toast.success("Product rmoved from cart successfully !", {
+        position: "top-right",
+      });
+    } else {
+      toast.error("Something went wrong try again !", {
+        position: "top-right",
+      });
     }
+  };
 
- const cartItemRemoveHandler = async (productId) => {
-  // Step 1: Retrieve the cart from localStorage
-  let cart = JSON.parse(localStorage.getItem("cartItems"));
-
-  // Check if cart exists in localStorage
-  if (cart) {
-    // Step 2: Modify the cart by removing the desired item (assuming productId is the unique identifier)
-    const itemIdToRemove = productId;
-    cart = cart.filter(item => item.productId !== itemIdToRemove);
-
-    // Step 3: Update the cart in localStorage with the modified version
-    localStorage.setItem("cartItems", JSON.stringify(cart));
-    setCartdata(cart); // Optionally update state if needed
-
-    // Optionally, log the updated cart to the console
-  
-    toast.success("Product rmoved from cart successfully !", {
-        position: "top-right",
-      });
-  } else {
-    toast.error("Something went wrong try again !", {
-        position: "top-right",
-      });
-   
-  }
-};
-
-const checkoutHandler=()=>{
-    navigate('/checkout')
-}
+  const checkoutHandler = () => {
+    navigate("/checkout");
+  };
   useEffect(() => {
-    
     const cart = JSON.parse(localStorage.getItem("cartItems"));
-    console.log(cart)
+    console.log(cart);
     if (cart) {
       setCartdata(cart);
     }
@@ -53,7 +51,7 @@ const checkoutHandler=()=>{
   return (
     <>
       <Header />
-     <ToastContainer/>
+      <ToastContainer />
       <main className="main">
         <div className="page-header breadcrumb-wrap">
           <div className="container">
@@ -61,7 +59,7 @@ const checkoutHandler=()=>{
               <a href="index.html" rel="nofollow">
                 <i className="fi-rs-home mr-5"></i>Home
               </a>
-              <span></span> cart <span></span> 
+              <span></span> cart <span></span>
             </div>
           </div>
         </div>
@@ -69,7 +67,7 @@ const checkoutHandler=()=>{
           <div className="row">
             <div className="col-xl-10 col-lg-12 m-auto">
               <div className="mb-50">
-                <h1 className="heading-2 mb-10">Your  Cart</h1>
+                <h1 className="heading-2 mb-10">Your Cart</h1>
                 <h6 className="text-body">
                   There are <span className="text-brand">{cartdata.length}</span> products in this list
                 </h6>
@@ -94,8 +92,8 @@ const checkoutHandler=()=>{
                     </tr>
                   </thead>
                   <tbody>
-                {cartdata.map((item,index)=>(
-                        <tr className="pt-30" key={index}>
+                    {cartdata.map((item, index) => (
+                      <tr className="pt-30" key={index}>
                         <td className="custome-checkbox pl-30">
                           <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="" />
                           <label className="form-check-label" htmlFor="exampleCheckbox1"></label>
@@ -104,42 +102,39 @@ const checkoutHandler=()=>{
                           <img src={item.productImage} alt="#" />
                         </td>
                         <td className="product-des product-name">
-                          <h6 onClick={()=>cartProductHandler(item.productId)}>
-                            <a className="product-name mb-10">
-                             {item.title}
-                            </a>
+                          <h6 onClick={() => cartProductHandler(item.productId)}>
+                            <a className="product-name mb-10">{item.title}</a>
                           </h6>
                           <div className="product-rate-cover">
                             <div className="product-rate d-inline-block">
-                              <div className="product-rating" style={{width:'90%'}}></div>
+                              <div className="product-rating" style={{ width: "90%" }}></div>
                             </div>
                             <span className="font-small ml-5 text-muted">Rating (4.0)</span>
                           </div>
                         </td>
                         <td className="price" data-title="Price">
-                        <h3 className="text-brand">{item.price}</h3>
-
+                          <h3 className="text-brand">{item.price}</h3>
                         </td>
                         {/* <td className="text-center detail-info" data-title="Stock">
                           <span className="stock-status in-stock mb-0"> In Stock </span>
                         </td> */}
                         <td className="text-right" data-title="Cart">
-                     
-                          <button className="btn btn-sm" onClick={()=>cartProductHandler(item.productId)}>View Product</button>
-                       
+                          <button className="btn btn-sm" onClick={() => cartProductHandler(item.productId)}>
+                            View Product
+                          </button>
                         </td>
-                        <td className="action text-center" data-title="Remove" onClick={()=>cartItemRemoveHandler(item.productId)}>
+                        <td className="action text-center" data-title="Remove" onClick={() => cartItemRemoveHandler(item.productId)}>
                           <a className="text-body">
                             <i className="fi-rs-trash"></i>
                           </a>
                         </td>
                       </tr>
-                ))}
-                   
+                    ))}
                   </tbody>
 
-                  <Button style={{textAlign:"center",marginTop:"50px"}} onClick={checkoutHandler}>Proceed to checkout</Button>
-
+                  <Button style={{ textAlign: "center", marginTop: "50px" }} onClick={checkoutHandler}>
+                    Proceed to checkout
+                  </Button>
                 </table>
               </div>
             </div>

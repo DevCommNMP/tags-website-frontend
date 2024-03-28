@@ -61,24 +61,26 @@ const ProductsGridPage = ({ data }) => {
       <div>
         <button onClick={openModal}>Open Modal</button>
         {isOpen && (
-                <div className="modal fade custom-modal" id="quickViewModal" tabIndex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            <button type="button" className="btn-close" onClick={closeModal} aria-label="Close"></button>
-                            <div className="modal-body">
-                                <div className="row">
-                                    <div className="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
-                                        {/* Gallery */}
-                                    </div>
-                                    <div className="col-md-6 col-sm-12 col-xs-12">
-                                        {/* Product details */}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          <div
+            className="modal fade custom-modal"
+            id="quickViewModal"
+            tabIndex="-1"
+            aria-labelledby="quickViewModalLabel"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <button type="button" className="btn-close" onClick={closeModal} aria-label="Close"></button>
+                <div className="modal-body">
+                  <div className="row">
+                    <div className="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">{/* Gallery */}</div>
+                    <div className="col-md-6 col-sm-12 col-xs-12">{/* Product details */}</div>
+                  </div>
                 </div>
-            )}
+              </div>
+            </div>
+          </div>
+        )}
 
         <div
           className="modal fade custom-modal"

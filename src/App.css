@@ -13,3 +13,11 @@
     justify-content : center !important;
     height : 80vh;
 }
+.bg-leather {
+    background-color: #ffeae0 !important;
+}
+
+.bg-leather h3 {
+
+    color:   #924b29 !important;
+}

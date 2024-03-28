@@ -1,5 +1,5 @@
-import Footer from '../../Footer/Footer'
-import Header from '../../Header/Header'
+import Footer from "../../Footer/Footer";
+import Header from "../../Header/Header";
 
 const ResetPassword = () => {
   return (
@@ -54,9 +54,7 @@ const ResetPassword = () => {
                             </label>
                           </div>
                         </div>
-                        <a className="text-muted" >
-                          Learn more
-                        </a>
+                        <a className="text-muted">Learn more</a>
                       </div>
                       <div className="form-group">
                         <button type="submit" className="btn btn-heading btn-block hover-up" name="login">
@@ -73,7 +71,7 @@ const ResetPassword = () => {
       </div>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default ResetPassword
+export default ResetPassword;

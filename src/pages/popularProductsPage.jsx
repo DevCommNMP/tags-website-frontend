@@ -56,16 +56,16 @@ const PopularProducts = () => {
                     <div className="product-cart-wrap mb-30">
                       <div className="product-img-action-wrap">
                         <div className="product-img product-img-zoom">
-                          <a >
+                          <a>
                             <img className="default-img" src={item.image} alt="" />
                             <img className="hover-img" src="" alt="" />
                           </a>
                         </div>
                         <div className="product-action-1">
-                          <a aria-label="Add To Wishlist" className="action-btn" >
+                          <a aria-label="Add To Wishlist" className="action-btn">
                             <i className="fi-rs-heart"></i>
                           </a>
-                          <a aria-label="Compare" className="action-btn" >
+                          <a aria-label="Compare" className="action-btn">
                             <i className="fi-rs-shuffle"></i>
                           </a>
                           <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -80,7 +80,7 @@ const PopularProducts = () => {
                       </div>
                       <div className="product-content-wrap">
                         <div className="product-category">
-                          <a >Snack</a>
+                          <a>Snack</a>
                         </div>
                         <h2>
                           <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -122,16 +122,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -144,7 +144,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
@@ -179,16 +179,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-12-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-12-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -201,7 +201,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Hodo Foods</a>
+                        <a>Hodo Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -238,16 +238,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-13-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-13-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -260,7 +260,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -297,16 +297,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-14-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-14-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -316,7 +316,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Vegetables</a>
+                        <a>Vegetables</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -353,16 +353,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-15-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-15-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -375,7 +375,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Pet Foods</a>
+                        <a>Pet Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -412,16 +412,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-16-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-16-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -431,7 +431,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Hodo Foods</a>
+                        <a>Hodo Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -468,16 +468,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -487,10 +487,10 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Meats</a>
+                        <a>Meats</a>
                       </div>
                       <h2>
-                        <a >Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
+                        <a>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -522,16 +522,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -544,7 +544,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -581,16 +581,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -603,7 +603,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Coffes</a>
+                        <a>Coffes</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -640,16 +640,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -659,7 +659,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Cream</a>
+                        <a>Cream</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -700,16 +700,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -722,7 +722,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
@@ -757,16 +757,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -779,7 +779,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Hodo Foods</a>
+                        <a>Hodo Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -816,16 +816,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -838,7 +838,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -875,16 +875,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-6-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -894,7 +894,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Vegetables</a>
+                        <a>Vegetables</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -931,16 +931,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-5-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -953,7 +953,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Pet Foods</a>
+                        <a>Pet Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -990,16 +990,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1009,7 +1009,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Hodo Foods</a>
+                        <a>Hodo Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -1046,16 +1046,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-3-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1065,10 +1065,10 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Meats</a>
+                        <a>Meats</a>
                       </div>
                       <h2>
-                        <a >Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
+                        <a>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1100,16 +1100,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-2-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-2-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1122,7 +1122,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -1159,16 +1159,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1181,7 +1181,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Coffes</a>
+                        <a>Coffes</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -1218,16 +1218,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1237,7 +1237,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Cream</a>
+                        <a>Cream</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -1278,16 +1278,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-6-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1300,7 +1300,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
@@ -1335,16 +1335,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1357,7 +1357,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Hodo Foods</a>
+                        <a>Hodo Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -1394,16 +1394,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1416,7 +1416,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -1453,16 +1453,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1472,7 +1472,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Vegetables</a>
+                        <a>Vegetables</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -1509,16 +1509,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1531,7 +1531,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Pet Foods</a>
+                        <a>Pet Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -1568,16 +1568,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-3-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1587,7 +1587,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Hodo Foods</a>
+                        <a>Hodo Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -1624,16 +1624,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-2-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-2-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1643,10 +1643,10 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Meats</a>
+                        <a>Meats</a>
                       </div>
                       <h2>
-                        <a >Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
+                        <a>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -1678,16 +1678,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1700,7 +1700,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -1737,16 +1737,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-11-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-11-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1759,7 +1759,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Coffes</a>
+                        <a>Coffes</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -1796,16 +1796,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-12-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-12-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1815,7 +1815,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Cream</a>
+                        <a>Cream</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -1856,16 +1856,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-12-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-12-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1878,7 +1878,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
@@ -1913,16 +1913,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-13-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-13-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1935,7 +1935,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Hodo Foods</a>
+                        <a>Hodo Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -1972,16 +1972,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-14-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-14-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1994,7 +1994,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2031,16 +2031,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-15-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-15-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2050,7 +2050,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Vegetables</a>
+                        <a>Vegetables</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2087,16 +2087,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-16-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-16-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2109,7 +2109,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Pet Foods</a>
+                        <a>Pet Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2146,16 +2146,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-5-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2165,7 +2165,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Hodo Foods</a>
+                        <a>Hodo Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2202,16 +2202,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2221,10 +2221,10 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Meats</a>
+                        <a>Meats</a>
                       </div>
                       <h2>
-                        <a >Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
+                        <a>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2256,16 +2256,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2278,7 +2278,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2315,16 +2315,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2337,7 +2337,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Coffes</a>
+                        <a>Coffes</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2374,16 +2374,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2393,7 +2393,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Cream</a>
+                        <a>Cream</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2434,16 +2434,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2456,7 +2456,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
@@ -2491,16 +2491,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-6-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2513,7 +2513,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Hodo Foods</a>
+                        <a>Hodo Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2550,16 +2550,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2572,7 +2572,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2609,16 +2609,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2628,7 +2628,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Vegetables</a>
+                        <a>Vegetables</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2665,16 +2665,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-5-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2687,7 +2687,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Pet Foods</a>
+                        <a>Pet Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2724,16 +2724,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-6-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-6-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2743,7 +2743,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Hodo Foods</a>
+                        <a>Hodo Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2780,16 +2780,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2799,10 +2799,10 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Meats</a>
+                        <a>Meats</a>
                       </div>
                       <h2>
-                        <a >Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
+                        <a>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -2834,16 +2834,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2856,7 +2856,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2893,16 +2893,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2915,7 +2915,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Coffes</a>
+                        <a>Coffes</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -2952,16 +2952,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -2971,7 +2971,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Cream</a>
+                        <a>Cream</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -3012,16 +3012,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-5-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3034,7 +3034,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)}>Seeds of Change Organic Quinoa, Brown, & Red Rice</div>
@@ -3069,16 +3069,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-3-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3091,7 +3091,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Hodo Foods</a>
+                        <a>Hodo Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -3128,16 +3128,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3150,7 +3150,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -3187,16 +3187,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3206,7 +3206,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Vegetables</a>
+                        <a>Vegetables</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -3243,16 +3243,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap mb-30">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3265,7 +3265,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Pet Foods</a>
+                        <a>Pet Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -3302,16 +3302,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-16-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-16-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3321,7 +3321,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Hodo Foods</a>
+                        <a>Hodo Foods</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -3358,16 +3358,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3377,10 +3377,10 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Meats</a>
+                        <a>Meats</a>
                       </div>
                       <h2>
-                        <a >Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
+                        <a>Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a>
                       </h2>
                       <div className="product-rate-cover">
                         <div className="product-rate d-inline-block">
@@ -3412,16 +3412,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3434,7 +3434,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Snack</a>
+                        <a>Snack</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -3471,16 +3471,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3493,7 +3493,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Coffes</a>
+                        <a>Coffes</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
@@ -3530,16 +3530,16 @@ const PopularProducts = () => {
                   <div className="product-cart-wrap">
                     <div className="product-img-action-wrap">
                       <div className="product-img product-img-zoom">
-                        <a >
+                        <a>
                           <img className="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
                           <img className="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
                         </a>
                       </div>
                       <div className="product-action-1">
-                        <a aria-label="Add To Wishlist" className="action-btn" >
+                        <a aria-label="Add To Wishlist" className="action-btn">
                           <i className="fi-rs-heart"></i>
                         </a>
-                        <a aria-label="Compare" className="action-btn" >
+                        <a aria-label="Compare" className="action-btn">
                           <i className="fi-rs-shuffle"></i>
                         </a>
                         <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -3549,7 +3549,7 @@ const PopularProducts = () => {
                     </div>
                     <div className="product-content-wrap">
                       <div className="product-category">
-                        <a >Cream</a>
+                        <a>Cream</a>
                       </div>
                       <h2>
                         <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>

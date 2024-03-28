@@ -153,7 +153,7 @@ function App() {
 
   return (
     <>
-      <Provider store={Store}>     
+      <Provider store={Store}>
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Homepage data={dummydata} />} />

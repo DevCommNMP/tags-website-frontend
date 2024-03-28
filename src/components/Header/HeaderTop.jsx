@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 const HeaderTop = () => {
   return (
     <>
@@ -38,9 +38,7 @@ const HeaderTop = () => {
                     Need help? Call Us: <strong className="text-brand"> + 1800 900</strong>
                   </li>
                   <li>
-                    <a className="language-dropdown-active">
-                      INR
-                    </a>
+                    <a className="language-dropdown-active">INR</a>
                   </li>
                 </ul>
               </div>
@@ -49,7 +47,7 @@ const HeaderTop = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default HeaderTop
+export default HeaderTop;

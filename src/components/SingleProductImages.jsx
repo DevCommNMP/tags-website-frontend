@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import Slider from 'react-slick';
+import React, { useState, useRef } from "react";
+import Slider from "react-slick";
 
 const SingleProductImages = ({ product }) => {
   const { productImage, productSubImages } = product;
@@ -21,7 +21,7 @@ const SingleProductImages = ({ product }) => {
     infinite: true,
     speed: 800,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
   };
 
   const settingsThumb = {
@@ -29,7 +29,7 @@ const SingleProductImages = ({ product }) => {
     infinite: true,
     speed: 800,
     slidesToShow: 5,
-    slidesToScroll: 1
+    slidesToScroll: 1,
   };
 
   return (
@@ -49,7 +49,7 @@ const SingleProductImages = ({ product }) => {
             {productSubImagesArr.map((image, index) => (
               <div
                 key={index}
-                className={`thumbnail ${index === currentImageIndex ? 'active' : ''}`}
+                className={`thumbnail ${index === currentImageIndex ? "active" : ""}`}
                 onClick={() => handleThumbnailClick(index)}
               >
                 <img src={image} alt={`thumbnail ${index}`} />

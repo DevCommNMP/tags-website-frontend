@@ -7,11 +7,11 @@ const HeroSideBanner = () => {
         <div className="banner-text mt-50">
           <h2 className="mb-50">
             Delivered <br />
-            to 
+            to
             <span className="text-brand">
-               your 
+              your
               <br />
-               home
+              home
             </span>
           </h2>
           <a className="btn btn-xs" href="/all-categories">

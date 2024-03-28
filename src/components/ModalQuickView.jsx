@@ -77,9 +77,7 @@ function ModalQuickView() {
                 <div className="detail-info pr-30 pl-30">
                   <span className="stock-status out-stock"> Sale Off </span>
                   <h3 className="title-detail">
-                    <a className="text-heading" >
-                      Seeds of Change Organic Quinoa, Brown
-                    </a>
+                    <a className="text-heading">Seeds of Change Organic Quinoa, Brown</a>
                   </h3>
                   <div className="product-detail-rating">
                     <div className="product-rate-cover text-end">
@@ -100,11 +98,11 @@ function ModalQuickView() {
                   </div>
                   <div className="detail-extralink mb-30">
                     <div className="detail-qty border radius">
-                      <a  className="qty-down">
+                      <a className="qty-down">
                         <i className="fi-rs-angle-small-down"></i>
                       </a>
                       <span className="qty-val">1</span>
-                      <a  className="qty-up">
+                      <a className="qty-up">
                         <i className="fi-rs-angle-small-up"></i>
                       </a>
                     </div>

@@ -4,7 +4,7 @@ const ProductCard = () => {
       <div className="product-cart-wrap mb-30">
         <div className="product-img-action-wrap">
           <div className="product-img product-img-zoom">
-            <a >
+            <a>
               <img className="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="" />
               <img className="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="" />
             </a>
@@ -29,11 +29,11 @@ const ProductCard = () => {
             <a href="shop-grid-right.html">Snack</a>
           </div>
           <h2>
-            <a >Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
+            <a>Seeds of Change Organic Quinoa, Brown, & Red Rice</a>
           </h2>
           <div className="product-rate-cover">
             <div className="product-rate d-inline-block">
-              <div className="product-rating custom" ></div>
+              <div className="product-rating custom"></div>
             </div>
             <span className="font-small ml-5 text-muted"> (4.0)</span>
           </div>
@@ -49,14 +49,14 @@ const ProductCard = () => {
             </div>
             <div className="add-cart">
               <a className="add" href="shop-cart.html">
-                <i className="fi-rs-shopping-cart mr-5"></i>Add{' '}
+                <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
               </a>
             </div>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;

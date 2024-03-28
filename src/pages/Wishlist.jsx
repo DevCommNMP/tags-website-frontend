@@ -55,13 +55,11 @@ const Wishlist = () => {
                       </td>
                       <td className="product-des product-name">
                         <h6>
-                          <a className="product-name mb-10" >
-                            Field Roast Chao Cheese Creamy Original
-                          </a>
+                          <a className="product-name mb-10">Field Roast Chao Cheese Creamy Original</a>
                         </h6>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
-                            <div className="product-rating" style={{width:'90%'}}></div>
+                            <div className="product-rating" style={{ width: "90%" }}></div>
                           </div>
                           <span className="font-small ml-5 text-muted"> (4.0)</span>
                         </div>
@@ -76,7 +74,7 @@ const Wishlist = () => {
                         <button className="btn btn-sm">Add to cart</button>
                       </td>
                       <td className="action text-center" data-title="Remove">
-                        <a  className="text-body">
+                        <a className="text-body">
                           <i className="fi-rs-trash"></i>
                         </a>
                       </td>
@@ -91,13 +89,11 @@ const Wishlist = () => {
                       </td>
                       <td className="product-des product-name">
                         <h6>
-                          <a className="product-name mb-10" >
-                            Blue Diamond Almonds Lightly Salted
-                          </a>
+                          <a className="product-name mb-10">Blue Diamond Almonds Lightly Salted</a>
                         </h6>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
-                            <div className="product-rating" style={{width:'90%'}}></div>
+                            <div className="product-rating" style={{ width: "90%" }}></div>
                           </div>
                           <span className="font-small ml-5 text-muted"> (4.0)</span>
                         </div>
@@ -112,7 +108,7 @@ const Wishlist = () => {
                         <button className="btn btn-sm">Add to cart</button>
                       </td>
                       <td className="action text-center" data-title="Remove">
-                        <a  className="text-body">
+                        <a className="text-body">
                           <i className="fi-rs-trash"></i>
                         </a>
                       </td>
@@ -127,13 +123,11 @@ const Wishlist = () => {
                       </td>
                       <td className="product-des product-name">
                         <h6>
-                          <a className="product-name mb-10" >
-                            Fresh Organic Mustard Leaves Bell Pepper
-                          </a>
+                          <a className="product-name mb-10">Fresh Organic Mustard Leaves Bell Pepper</a>
                         </h6>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
-                            <div className="product-rating" style={{width:'90%'}}></div>
+                            <div className="product-rating" style={{ width: "90%" }}></div>
                           </div>
                           <span className="font-small ml-5 text-muted"> (4.0)</span>
                         </div>
@@ -148,7 +142,7 @@ const Wishlist = () => {
                         <button className="btn btn-sm">Add to cart</button>
                       </td>
                       <td className="action text-center" data-title="Remove">
-                        <a  className="text-body">
+                        <a className="text-body">
                           <i className="fi-rs-trash"></i>
                         </a>
                       </td>
@@ -163,13 +157,11 @@ const Wishlist = () => {
                       </td>
                       <td className="product-des product-name">
                         <h6>
-                          <a className="product-name mb-10" >
-                            Angie’s Boomchickapop Sweet & Salty{" "}
-                          </a>
+                          <a className="product-name mb-10">Angie’s Boomchickapop Sweet & Salty </a>
                         </h6>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
-                            <div className="product-rating" style={{width:'90%'}}></div>
+                            <div className="product-rating" style={{ width: "90%" }}></div>
                           </div>
                           <span className="font-small ml-5 text-muted"> (4.0)</span>
                         </div>
@@ -184,7 +176,7 @@ const Wishlist = () => {
                         <button className="btn btn-sm btn-secondary">Contact Us</button>
                       </td>
                       <td className="action text-center" data-title="Remove">
-                        <a  className="text-body">
+                        <a className="text-body">
                           <i className="fi-rs-trash"></i>
                         </a>
                       </td>
@@ -199,13 +191,11 @@ const Wishlist = () => {
                       </td>
                       <td className="product-des product-name">
                         <h6>
-                          <a className="product-name mb-10" >
-                            Foster Farms Takeout Crispy Classic
-                          </a>
+                          <a className="product-name mb-10">Foster Farms Takeout Crispy Classic</a>
                         </h6>
                         <div className="product-rate-cover">
                           <div className="product-rate d-inline-block">
-                            <div className="product-rating" style={{width:'90%'}}></div>
+                            <div className="product-rating" style={{ width: "90%" }}></div>
                           </div>
                           <span className="font-small ml-5 text-muted"> (4.0)</span>
                         </div>
@@ -220,7 +210,7 @@ const Wishlist = () => {
                         <button className="btn btn-sm">Add to cart</button>
                       </td>
                       <td className="action text-center" data-title="Remove">
-                        <a  className="text-body">
+                        <a className="text-body">
                           <i className="fi-rs-trash"></i>
                         </a>
                       </td>

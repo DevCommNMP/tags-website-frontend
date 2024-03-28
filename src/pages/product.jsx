@@ -151,7 +151,7 @@ const Product = () => {
                     <div className="tab-content shop_info_tab entry-main-content">
                       <div className="tab-pane fade show active" id="Description">
                         <div className="">
-                        <h4 className="mt-30">Product Description</h4>
+                          <h4 className="mt-30">Product Description</h4>
                           <hr className="wp-block-separator is-style-wide" />
                           <ul className="product-more-infor mt-30">
                             <li>

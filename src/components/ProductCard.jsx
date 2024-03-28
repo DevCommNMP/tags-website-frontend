@@ -1,10 +1,8 @@
-
 // THIS COMPONENT IS NOT IN USE FOR NOW, HAVIING SOME ISSUES WITH PRODUCT DATA
 
 import { Link } from "react-router-dom";
 import ModalQuickView from "./ModalQuickView";
 import starRating from "../assets/imgs/theme/rating-stars.png";
-
 
 const ProductCard = (product) => {
   return (

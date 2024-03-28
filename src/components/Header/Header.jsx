@@ -30,8 +30,6 @@ const Header = () => {
     } else {
       document.body.classList.remove("sidebar-visible");
     }
-
-    
   }, [isSidebarVisible]);
 
   return (

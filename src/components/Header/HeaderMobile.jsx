@@ -37,24 +37,24 @@ const HeaderMobile = () => {
                   <a href="shop-compare.html">Shop - Compare</a>
                 </li>
                 <li className="menu-item-has-children">
-                  <a >Shop Invoice</a>
+                  <a>Shop Invoice</a>
                 </li>
               </ul>
             </li>
             <li className="menu-item-has-children">
-              <a >Vendors</a>
+              <a>Vendors</a>
             </li>
             <li className="menu-item-has-children">
-              <a >Mega menu</a>
+              <a>Mega menu</a>
             </li>
             <li className="menu-item-has-children">
               <a href="blog-category-fullwidth.html">Blog</a>
             </li>
             <li className="menu-item-has-children">
-              <a >Pages</a>
+              <a>Pages</a>
             </li>
             <li className="menu-item-has-children">
-              <a >Language</a>
+              <a>Language</a>
             </li>
           </ul>
         </nav>
@@ -71,26 +71,26 @@ const HeaderMobile = () => {
           </a>
         </div>
         <div className="single-mobile-header-info">
-          <a >
+          <a>
             <i className="fi-rs-headphones"></i>(+01) - 2345 - 6789{" "}
           </a>
         </div>
       </div>
       <div className="mobile-social-icon mb-50">
         <h6 className="mb-15">Follow Us</h6>
-        <a >
+        <a>
           <img src="assets/imgs/theme/icons/icon-facebook-white.svg" alt="" />
         </a>
-        <a >
+        <a>
           <img src="assets/imgs/theme/icons/icon-twitter-white.svg" alt="" />
         </a>
-        <a >
+        <a>
           <img src="assets/imgs/theme/icons/icon-instagram-white.svg" alt="" />
         </a>
-        <a >
+        <a>
           <img src="assets/imgs/theme/icons/icon-pinterest-white.svg" alt="" />
         </a>
-        <a >
+        <a>
           <img src="assets/imgs/theme/icons/icon-youtube-white.svg" alt="" />
         </a>
       </div>
