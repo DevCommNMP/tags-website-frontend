@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Header from "../../../components/Header";
+import Header from "../../../components/Header/Header";
 
 import { useDispatch, useSelector } from "react-redux";
 import { loginUserAction } from "../../../redux/actions/auth/authActions";
 import LoginImg from "../../../assets/imgs/page/login.jpg";
+import logoGoogle from "../../../assets/imgs/theme/icons/logo-google.svg";
+import Footer from "../../Footer/Footer";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -123,10 +125,36 @@ const Login = () => {
                           </div>
                           <a className="text-muted">Forgot password?</a>
                         </div>
-                        <div className="form-group">
-                          <button type="submit" className="btn btn-heading btn-block hover-up" name="login">
-                            {loading ? "Loading" : "Log in"}
+                        <div className="form-group mb-30">
+                          <button
+                            type="submit"
+                            style={{
+                              width: "100%",
+                              borderRadius: "100px",
+                              border: "1px solid transparent",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                            className="mb-4 btn btn-fill-out btn-block hover-up font-weight-bold"
+                            name="login"
+                          >
+                            Login
                           </button>
+                          <a
+                            className="btn btn-light social-login google-login bg-light text-dark"
+                            style={{
+                              width: "100%",
+                              borderRadius: "100px",
+                              border: "1px solid #333",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <img src={logoGoogle} alt="" />
+                            <span>&nbsp;&nbsp;Continue with Google</span>
+                          </a>
                         </div>
                       </form>
                     </div>
@@ -137,6 +165,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

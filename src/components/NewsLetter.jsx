@@ -6,7 +6,7 @@ const NewsLetter = () => {
       <section className="newsletter mb-15">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12">
+            <div className="col-lg-12 border-1px ">
               <div className="position-relative newsletter-inner">
                 <div className="newsletter-content">
                   <h2 className="mb-20">
@@ -17,7 +17,7 @@ const NewsLetter = () => {
                     Start Your Daily Shopping with <span className="text-brand">Tags Footwear</span>
                   </p>
                   <form className="form-subcriber d-flex">
-                    <input type="email" placeholder="Your emaill address" />
+                    <input className="border-1px" type="email" placeholder="Your emaill address" />
                     <button className="btn" type="submit">
                       Subscribe
                     </button>

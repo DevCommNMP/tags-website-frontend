@@ -8107,7 +8107,7 @@ footer .hotline img {
 }
 .newsletter .newsletter-inner .newsletter-content form button {
   border: 0;
-  border-radius: 50px;
+  border-radius: 0px 50px 50px 0px;
   font-weight: 700;
 }
 

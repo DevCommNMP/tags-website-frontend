@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import Slider from "react-slick";
 
 import Modal from "react-bootstrap/Modal";
+// import SingleProductImages from "./SingleProductImages";
 
 import product161 from "../assets/imgs/shop/product-16-1.jpg";
 import product162 from "../assets/imgs/shop/product-16-2.jpg";
@@ -13,68 +14,80 @@ import product166 from "../assets/imgs/shop/product-16-6.jpg";
 import product167 from "../assets/imgs/shop/product-16-7.jpg";
 
 function ModalQuickView(props) {
-  // const productImages = [product161, product162, product163, product164, product165, product166, product167];
+  const productImages = [product161, product162, product163, product164, product165, product166, product167];
 
-  // const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  // const sliderRef = useRef();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const sliderRef = useRef();
 
 
   const product = props.product;
 
 
-  // const handleThumbnailClick = (index) => {
-  //   setCurrentImageIndex(index);
-  //   sliderRef.current.slickGoTo(index);
-  // };
+  const handleThumbnailClick = (index) => {
+    setCurrentImageIndex(index);
+    sliderRef.current.slickGoTo(index);
+  };
 
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 800,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  // };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
-  // const settingsThumb = {
-  //   dots: false,
-  //   infinite: true,
-  //   speed: 800,
-  //   slidesToShow: 5,
-  //   slidesToScroll: 1,
-  // };
+  const settingsThumb = {
+    dots: false,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+  };
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-console.log("Hello from modal")
-console.log(product.this)
+
   return (
     <>
       <a aria-label="Quick view" onClick={handleShow} className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
         <i className="fi-rs-eye"></i>
       </a>
+      {/* {console.log(props.product)} */}
+
 
       <Modal show={show} onHide={handleClose}>
+        {/* <img src={props.productSubImages} alt="" /> */}
+        {/* {props.productImage.map((image, index) => (
+          <img key={index} src={image} alt={`product image ${index}`} />
+        ))} */}
+        <img src={props.productImage} alt="" />
         <div className="modal-content">
           <button className="btn-close" onClick={handleClose}></button>
           <div className="modal-body">
             <div className="row">
               <div className="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
                 <div className="detail-gallery">
+                  <span className="zoom-icon">
+                    <i className="fi-rs-search"></i>
+                  </span>
+
                   <div className="product-image-slider"></div>
                   <div className="slider-nav-thumbnails"></div>
+                  {/* <SingleProductImages /> */}
                   <div className="product-image-slider">
-                    {/* <Slider ref={sliderRef} {...settings}>
+                    {/* <img src={props.productImage} alt="mpi" /> */}
+                    <Slider ref={sliderRef} {...settings}>
                       {productImages.map((image, index) => (
                         <div key={index}>
                           <img src={image} alt={`product image ${index}`} />
                         </div>
                       ))}
-                    </Slider> */}
+                    </Slider>
                   </div>
                   <div className="slider-nav-thumbnails">
-                    {/* <Slider {...settingsThumb}>
+                    <Slider {...settingsThumb}>
                       {productImages.map((image, index) => (
                         <div
                           key={index}
@@ -84,7 +97,7 @@ console.log(product.this)
                           <img src={image} alt={`thumbnail ${index}`} />
                         </div>
                       ))}
-                    </Slider> */}
+                    </Slider>
                   </div>
                 </div>
               </div>

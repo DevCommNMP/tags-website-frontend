@@ -51,7 +51,6 @@ const ProductsGridPage = ({ data }) => {
   return (
     <div>
       <div>
-        <ModalQuickView />
         <div
           className="modal fade custom-modal"
           id="quickViewModal"
@@ -130,7 +129,7 @@ const ProductsGridPage = ({ data }) => {
                               <a aria-label="Add To Wishlist" className="action-btn">
                                 <i className="fi-rs-heart"></i>
                               </a>
-                              <ModalQuickView />
+                              {/* <ModalQuickVaiew product={product} /> */}
                             </div>
                             <div className="product-badges product-badges-position product-badges-mrg">
                               <span className={product.tag}>{product.tag}</span>

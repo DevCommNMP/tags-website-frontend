@@ -18,7 +18,7 @@ const Product = () => {
 
   useEffect(() => {
     const res = dispatch(fetchParticularProduct(id));
-    // console.log(res)
+    // console.log(res)xz
   }, [dispatch]);
 
   const cartHandler = () => {
