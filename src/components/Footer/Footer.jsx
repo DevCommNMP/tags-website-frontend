@@ -158,29 +158,21 @@ const Footer = () => {
             </div>
           </div>
         </section>
-        <div className="container pb-30">
+        <section className="text-white bg-brand pt-3 pt-10">
+
+        <div className="container">
           <div className="row align-items-center">
-            <div className="col-12 mb-30">
-              <div className="footer-bottom"></div>
-            </div>
             <div className="col-xl-4 col-lg-6 col-md-6">
-              <p className="font-sm mb-0">
-                &copy; 2024, <strong className="text-brand">Tags Footwear</strong> - React Ecommerce
-                <br />
-                All rights reserved
+              <p className="font-sm mb-0 text-white">
+                &copy; 2024, <strong className="text-light">Tags Footwear</strong> - React Ecommerce
+                | All rights reserved
               </p>
             </div>
             <div className="col-xl-4 col-lg-6 text-center d-none d-xl-block">
               <div className="hotline d-lg-inline-flex mr-30">
                 <img src={phoneCall} alt="hotline" />
-                <p>
-                  1900 - 6666<span>Working 8:00 - 22:00</span>
-                </p>
-              </div>
-              <div className="hotline d-lg-inline-flex">
-                <img src={phoneCall} alt="hotline" />
-                <p>
-                  1900 - 8888<span>7 Days Support Center</span>
+                <p className="text-white">
+                  1900 - 6666<span className="text-white">Working 8:00 - 22:00</span>
                 </p>
               </div>
             </div>
@@ -203,10 +195,10 @@ const Footer = () => {
                   <img src={iconYoutubeWhite} alt="" />
                 </a>
               </div>
-              <p className="font-sm">Up to 15% discount on your first subscribe</p>
             </div>
           </div>
         </div>
+        </section>
       </footer>
     </>
   );

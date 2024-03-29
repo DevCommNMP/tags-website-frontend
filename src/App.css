@@ -38,5 +38,13 @@
 
 .border-1px {
     border: 1px solid #d02327 !important;
+    border-radius: 20px;
+}
+news-p {
     padding-bottom: 50px !important;
+    /* border-radius:; */
+}
+
+news-p newsletter-inner {
+    margin: 40px;
 }

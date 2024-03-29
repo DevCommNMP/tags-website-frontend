@@ -5,7 +5,6 @@ const VerifyEmail = () => {
   return (
     <>
       <Header />
-
       <div className="main pages">
         <div className="page-header breadcrumb-wrap">
           <div className="container">
@@ -27,7 +26,8 @@ const VerifyEmail = () => {
                       <h2 className="mb-15 mt-15 text-center">Email Verification</h2>
                       <img className="border-radius-15" src={verifyEmailImg} alt="" />
                       <p className="mb-30">
-                      An email has been sent to your email address. Please check your inbox and follow the instructions to verify your email.
+                        An email has been sent to your email address. Please check your inbox and follow the instructions to verify your
+                        email.
                       </p>
                     </div>
                   </div>

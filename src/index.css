@@ -982,16 +982,16 @@ button[type='submit'] {
   color: #ffffff;
   border: none;
   background-color: #d02327;
-  border: 1px solid #29a56c;
+  border: 1px solid #368494;
   border-radius: 10px;
 }
 button.submit:hover,
 button[type='submit']:hover {
-  background-color: #29a56c !important;
+  background-color: #368494 !important;
 }
 
 .btn-brand:hover {
-  background-color: #29a56c !important;
+  background-color: #368494 !important;
 }
 
 .btn-login {
@@ -4310,7 +4310,7 @@ table .product-thumbnail img {
   color: #d02327;
 }
 .detail-qty > a:hover {
-  color: #29a56c;
+  color: #368494;
 }
 .detail-qty > a.qty-up {
   top: 0;
@@ -5396,7 +5396,7 @@ h6.post-title {
   background: #d02327;
 }
 .invoice-content .btn-download:after {
-  background: #29a56c;
+  background: #368494;
 }
 .invoice-content .btn-print {
   background: #253d4e;
@@ -7115,7 +7115,7 @@ h6.post-title {
   margin-bottom: 5px;
 }
 .header-style-1 .main-categori-wrap > a:hover {
-  background-color: #29a56c;
+  background-color: #368494;
 }
 .header-style-1 .main-menu.main-menu-light-white > nav > ul > li > a {
   color: #494949;
@@ -8063,10 +8063,12 @@ footer .hotline {
   min-width: 200px;
 }
 footer .hotline img {
-  min-width: 10px;
-  margin-right: 12px;
+  min-width: 20px !important;
   max-width: 30px;
-  opacity: 0.5;
+  /* min-width: 10px; */
+  margin-right: 12px;
+  /* max-width: 30px; */
+  opacity: 1.0;
 }
 
 .newsletter {
