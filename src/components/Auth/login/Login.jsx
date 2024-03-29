@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import {  useDispatch,useSelector } from 'react-redux';
 import { loginUserAction } from '../../../redux/actions/auth/authActions';
+import { Slide, toast, ToastContainer } from "react-toastify";
 
 
 const Login = () => {
@@ -13,11 +14,15 @@ const Login = () => {
   const dispatch = useDispatch();
   // State variables for form data and errors
   const storeData = useSelector((store) => store.auth);
-  const { user,loading,appErr,serverErr } = storeData;
-
+  const {registered, user,loading,appErr,serverErr } = storeData;
   
   useEffect(() => {
-    
+    if(registered){
+      toast.success("User registered successfull login now", {
+        position: "top-right",
+      });
+    }
+
   }, [appErr,serverErr])
   
   // State variables for form data and errors
@@ -46,9 +51,10 @@ const Login = () => {
     console.log(validationResult);
     if (Object.keys(validationResult).length === 0) {
 const res=await dispatch(loginUserAction(formData))
+
 if(!res.error){
     // console.log(res.error.message)
-    navigate("/")
+    navigate("/profile")
 }
 else{
     console.log(res.error.message);
@@ -74,6 +80,7 @@ else{
 
   return (
     <>
+    <ToastContainer/>
       <Header />
       <div className="page-content pt-150 pb-150">
         <div className="container">

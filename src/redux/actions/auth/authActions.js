@@ -65,6 +65,31 @@ export const loginUserAction = createAsyncThunk(
   }
 );
 
+export const verifyEmail = createAsyncThunk(
+  "user/verifyemail",
+
+  async (user, { rejectWithValue }) => {
+
+    // if()
+    try { 
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      const res = await axios.post(`${baseUrl}/api/verify-account`, user, config);
+      return res.data;
+    } catch (error) {
+      
+      if (!error?.response) {
+        throw error;
+      }
+      return rejectWithValue(error?.response?.data);
+    }
+  }
+);
+
 // Logout action
 export const logoutAction = createAsyncThunk(
   '/logout',

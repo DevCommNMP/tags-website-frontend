@@ -17,7 +17,7 @@ const SignUp = () => {
     // State variables for form data and errors
     const storeData = useSelector((store) => store.auth);
     const { registered,loading,appErr,serverErr } = storeData;
-
+console.log(registered)
     useEffect(() => {
       
     }, [appErr,serverErr])

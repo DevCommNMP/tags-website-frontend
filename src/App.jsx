@@ -167,7 +167,7 @@ function App() {
             <Route exact path="/signup" element={<SignUp />} />
             <Route exact path="/reset_password" element={<ResetPassword />} />
             <Route exact path="/forgot_password" element={<ForgotPassword />} />
-            <Route exact path="/account" element={<UserAccountPage />} />
+            <Route exact path="/profile" element={<UserAccountPage />} />
             <Route exact path="/cart" element={<Cart />} />
             <Route exact path="/productImages" element={<SingleProductImages />} />
             <Route exact path="/checkout" element={<CheckoutPage />} />

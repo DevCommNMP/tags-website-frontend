@@ -23,16 +23,18 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     // register
     builder.addCase(registerUserAction.pending, (state, action) => {
+      state.registered =false;
       state.loading = true;
       state.appErr = null;
       state.serverErr = null;
     });
     builder.addCase(registerUserAction.fulfilled, (state, action) => {
       state.loading = false;
-      state.registered = action?.payload;
+      state.registered = true;
     });
     builder.addCase(registerUserAction.rejected, (state, action) => {
       state.loading = false;
+      state.registered =false;
       state.appErr = action?.payload?.message || 'An error occurred';
       state.serverErr = action?.payload?.message || 'Network error';
     });
