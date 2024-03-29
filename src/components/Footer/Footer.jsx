@@ -178,7 +178,7 @@ const Footer = () => {
             </div>
             <div className="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
               <div className="mobile-social-icon">
-                <h6>Follow Us</h6>
+                <h6 className="text-white">Follow Us</h6>
                 <a>
                   <img src={iconFacebookWhite} alt="" />
                 </a>

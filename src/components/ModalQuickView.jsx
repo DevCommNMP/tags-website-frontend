@@ -4,23 +4,15 @@ import Slider from "react-slick";
 
 import Modal from "react-bootstrap/Modal";
 
-import product161 from "../assets/imgs/shop/product-16-1.jpg";
-import product162 from "../assets/imgs/shop/product-16-2.jpg";
-import product163 from "../assets/imgs/shop/product-16-3.jpg";
-import product164 from "../assets/imgs/shop/product-16-4.jpg";
-import product165 from "../assets/imgs/shop/product-16-5.jpg";
-import product166 from "../assets/imgs/shop/product-16-6.jpg";
-import product167 from "../assets/imgs/shop/product-16-7.jpg";
-
 function ModalQuickView (props) {
-  const productImages = [product161, product162, product163, product164, product165, product166, product167];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const sliderRef = useRef();
-
-
+  
   const product = props.product;
 
+  console.log("test");
+  console.log(product);
 
   const handleThumbnailClick = (index) => {
     setCurrentImageIndex(index);
@@ -47,8 +39,7 @@ function ModalQuickView (props) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-console.log("Hello from modal")
-console.log(product.this)
+
   return (
     <>
       <a aria-label="Quick view" onClick={handleShow} className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -66,7 +57,7 @@ console.log(product.this)
                   <div className="slider-nav-thumbnails"></div>
                   <div className="product-image-slider">
                     <Slider ref={sliderRef} {...settings}>
-                      {productImages.map((image, index) => (
+                      {product.productSubImages.map((image, index) => (
                         <div key={index}>
                           <img src={image} alt={`product image ${index}`} />
                         </div>
@@ -75,7 +66,7 @@ console.log(product.this)
                   </div>
                   <div className="slider-nav-thumbnails">
                     <Slider {...settingsThumb}>
-                      {productImages.map((image, index) => (
+                      {product.productSubImages.map((image, index) => (
                         <div
                           key={index}
                           className={`thumbnail ${index === currentImageIndex ? "active" : ""}`}

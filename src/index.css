@@ -6374,7 +6374,7 @@ h6.post-title {
 }
 .search-style-2 form input {
   width: 100%;
-  max-width: 683px;
+  /* max-width: 683px; */
   font-size: 14px;
   background-image: url(../imgs/theme/icons/search.png);
   background-repeat: no-repeat;
@@ -6391,9 +6391,9 @@ h6.post-title {
   opacity: 1;
 }
 .search-style-2 form input:focus {
-  border-color: #414648;
-  border-width: 1px 1px 1px 1px;
-  border-style: solid;
+  /* border-color: #414648; */
+  /* border-width: 1px 1px 1px 1px; */
+  border-style: none;
 }
 .search-style-2 form button {
   position: absolute;

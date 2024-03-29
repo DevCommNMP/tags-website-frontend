@@ -5,7 +5,7 @@ import account from "../../assets/imgs/theme/icons/icon-user.svg";
 import cartImg from "../../assets/imgs/theme/icons/icon-cart.svg";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Search from "../Search";
+import Search2 from "../Search2";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -66,7 +66,7 @@ const HeaderMiddle = () => {
               </Link>
             </div>
             <div className="header-right">
-              <Search />
+              <Search2 />
               <div className="header-action-right">
                 <div className="header-action-2">
                   <div className="header-action-icon-2">
