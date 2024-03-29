@@ -14,18 +14,18 @@ const HeaderMiddle = () => {
   const dispatch = useDispatch();
   const [user, setUser] = useState("");
   const [token, setToken] = useState("");
-const[cart,setcart]=useState(JSON.parse(localStorage.getItem('cartItems')))
+  const [cart, setcart] = useState(JSON.parse(localStorage.getItem("cartItems")));
 
   useEffect(() => {
     const localData = localStorage.getItem("userData");
     // const cart=JSON.parse(localStorage.getItem("cartItems"))
-  
+
     if (localData) {
       const parsedData = JSON.parse(localData);
       setToken(parsedData.token);
       setUser(parsedData);
     }
-   
+
     const removeLocalData = setTimeout(() => {
       if (token) {
         console.log("removing localData");
@@ -35,7 +35,7 @@ const[cart,setcart]=useState(JSON.parse(localStorage.getItem('cartItems')))
     }, 3600000);
 
     return () => clearTimeout(removeLocalData);
-  }, [token,cart]); // Run once on component mount to fetch token from local storage
+  }, [token, cart]); // Run once on component mount to fetch token from local storage
 
   // useEffect(() => {
   //   const removeLocalData = setTimeout(() => {
@@ -79,7 +79,7 @@ const[cart,setcart]=useState(JSON.parse(localStorage.getItem('cartItems')))
                     </Link>
                   </div>
                   <div className="header-action-icon-2">
-                    <a className="mini-cart-icon" >
+                    <a className="mini-cart-icon">
                       <img alt="Nest" src={cartImg} />
                       <span className="pro-count blue">3</span>
                     </a>
@@ -103,7 +103,7 @@ const[cart,setcart]=useState(JSON.parse(localStorage.getItem('cartItems')))
                             </h4>
                           </div>
                           <div className="shopping-cart-delete">
-                            <a href="#">
+                            <a >
                               <i className="fi-rs-cross-small"></i>
                             </a>
                           </div>
@@ -123,7 +123,7 @@ const[cart,setcart]=useState(JSON.parse(localStorage.getItem('cartItems')))
                             </h4>
                           </div>
                           <div className="shopping-cart-delete">
-                            <a href="#">
+                            <a >
                               <i className="fi-rs-cross-small"></i>
                             </a>
                           </div>

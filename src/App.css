@@ -13,3 +13,30 @@
     justify-content : center !important;
     height : 80vh;
 }
+.bg-leather {
+    background-color: #ffeae0 !important;
+}
+
+.bg-leather h3 {
+    color:   #924b29 !important;
+}
+
+.bg-red {
+    background-color: #d02327 !important;   
+}
+
+.text-white-all {
+    color: white !important;    
+}
+
+.text-white-all a {
+    color: white !important;    
+}
+.text-white-all a {
+    color: white !important;    
+}
+
+.border-1px {
+    border: 1px solid #d02327 !important;
+    padding-bottom: 50px !important;
+}

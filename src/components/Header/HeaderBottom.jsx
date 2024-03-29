@@ -37,9 +37,7 @@ const HeaderBottom = () => {
                       </a>
                       <ul className="mega-menu">
                         <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <a className="menu-title">
-                            Occasion
-                          </a>
+                          <a className="menu-title">Occasion</a>
                           <ul>
                             <li>
                               <a>Casual Shoes</a>
@@ -60,9 +58,7 @@ const HeaderBottom = () => {
                           </ul>
                         </li>
                         <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <a className="menu-title">
-                            Shoe Type
-                          </a>
+                          <a className="menu-title">Shoe Type</a>
                           <ul>
                             <li>
                               <a>Ballerinas Walking Shoes</a>
@@ -109,9 +105,7 @@ const HeaderBottom = () => {
                           </ul>
                         </li>
                         <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <a className="menu-title">
-                            Colors
-                          </a>
+                          <a className="menu-title">Colors</a>
                           <ul>
                             <li>
                               <a>Black</a>
@@ -134,9 +128,7 @@ const HeaderBottom = () => {
                           </ul>
                         </li>
                         <li className="sub-mega-menu sub-mega-menu-width-22">
-                          <a className="menu-title">
-                            Brands
-                          </a>
+                          <a className="menu-title">Brands</a>
                           <ul>
                             <li>
                               <a>Fila</a>
@@ -191,73 +183,48 @@ const HeaderBottom = () => {
                           <a>Ballerinas Walking Shoes</a>
                         </li>
                         <li>
-                          <Link to="/categories/Boots">
-                            Boots
-                          </Link>
+                          <Link to="/categories/Boots">Boots</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Comfort">
-                            Comfort
-                          </Link>
+                          <Link to="/categories/Comfort">Comfort</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Flip Flop">
-                            Flip Flops
-                          </Link>
+                          <Link to="/categories/Flip Flop">Flip Flops</Link>
                         </li>
                         <li>
-                          <Link to="/categories/kolhapuries">
-                            Kolhapuris
-                          </Link>
+                          <Link to="/categories/kolhapuries">Kolhapuris</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Mojaris">
-                            Mojaris
-                          </Link>
+                          <Link to="/categories/Mojaris">Mojaris</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Mules">
-                            Mules
-                          </Link>
+                          <Link to="/categories/Mules">Mules</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Pumps">
-                            Pumps
-                          </Link>
+                          <Link to="/categories/Pumps">Pumps</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Sandles">
-                            Sandals
-                          </Link>
+                          <Link to="/categories/Sandles">Sandals</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Slides">
-                            Slides
-                          </Link>
+                          <Link to="/categories/Slides">Slides</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Slippers">
-                            Slippers
-                          </Link>
+                          <Link to="/categories/Slippers">Slippers</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Slip Ons">
-                            Slip Ons
-                          </Link>
+                          <Link to="/categories/Slip Ons">Slip Ons</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Sneakers">
-                            Sneakers
-                          </Link>
+                          <Link to="/categories/Sneakers">Sneakers</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Walking Shoes">
-                            Walking Shoes
-                          </Link>
-                        </li>x
+                          <Link to="/categories/Walking Shoes">Walking Shoes</Link>
+                        </li>
+                        x
                       </ul>
                     </li>
-                    
+
                     <li>
                       <Link to="/categories/Premium Leather">About</Link>
                     </li>

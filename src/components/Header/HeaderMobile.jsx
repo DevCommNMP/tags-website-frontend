@@ -37,24 +37,24 @@ const HeaderMobile = () => {
                   <a href="shop-compare.html">Shop - Compare</a>
                 </li>
                 <li className="menu-item-has-children">
-                  <a href="#">Shop Invoice</a>
+                  <a>Shop Invoice</a>
                 </li>
               </ul>
             </li>
             <li className="menu-item-has-children">
-              <a href="#">Vendors</a>
+              <a>Vendors</a>
             </li>
             <li className="menu-item-has-children">
-              <a href="#">Mega menu</a>
+              <a>Mega menu</a>
             </li>
             <li className="menu-item-has-children">
               <a href="blog-category-fullwidth.html">Blog</a>
             </li>
             <li className="menu-item-has-children">
-              <a href="#">Pages</a>
+              <a>Pages</a>
             </li>
             <li className="menu-item-has-children">
-              <a href="#">Language</a>
+              <a>Language</a>
             </li>
           </ul>
         </nav>
@@ -71,26 +71,26 @@ const HeaderMobile = () => {
           </a>
         </div>
         <div className="single-mobile-header-info">
-          <a href="#">
+          <a>
             <i className="fi-rs-headphones"></i>(+01) - 2345 - 6789{" "}
           </a>
         </div>
       </div>
       <div className="mobile-social-icon mb-50">
         <h6 className="mb-15">Follow Us</h6>
-        <a href="#">
+        <a>
           <img src="assets/imgs/theme/icons/icon-facebook-white.svg" alt="" />
         </a>
-        <a href="#">
+        <a>
           <img src="assets/imgs/theme/icons/icon-twitter-white.svg" alt="" />
         </a>
-        <a href="#">
+        <a>
           <img src="assets/imgs/theme/icons/icon-instagram-white.svg" alt="" />
         </a>
-        <a href="#">
+        <a>
           <img src="assets/imgs/theme/icons/icon-pinterest-white.svg" alt="" />
         </a>
-        <a href="#">
+        <a>
           <img src="assets/imgs/theme/icons/icon-youtube-white.svg" alt="" />
         </a>
       </div>

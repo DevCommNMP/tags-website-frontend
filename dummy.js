@@ -4,7 +4,7 @@
     <div className="product-cart-wrap mb-30">
                       <div className="product-img-action-wrap">
                         <div className="product-img product-img-zoom">
-                          <a href="shop-product-right.html">
+                          <a >
                             <img
                               className="default-img"
                               src="assets/imgs/shop/product-1-1.jpg"
@@ -50,7 +50,7 @@
                           <a href="shop-grid-right.html">Snack</a>
                         </div>
                         <h2>
-                          <a href="shop-product-right.html">
+                          <a >
                             Seeds of Change Organic Quinoe
                           </a>
                         </h2>

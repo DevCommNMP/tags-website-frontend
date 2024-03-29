@@ -86,8 +86,8 @@ const Account = () => {
                             </div>
                             <div className="col-md-8">
                               <p className="lead">
-                                From your account dashboard, you can easily check & view your recent orders, manage your{" "}
-                                shipping and billing addresses, and edit your password and account details.
+                                From your account dashboard, you can easily check & view your recent orders, manage your shipping and
+                                billing addresses, and edit your password and account details.
                               </p>
                             </div>
                           </div>
@@ -159,8 +159,8 @@ const Account = () => {
                         </div>
                         <div className="card-body contact-from-area">
                           <p>
-                            To track your order please enter your OrderID in the box below and press &quot;Track&quot; button. This was given to you
-                            on your receipt and in the confirmation email you should have received.
+                            To track your order please enter your OrderID in the box below and press &quot;Track&quot; button. This was
+                            given to you on your receipt and in the confirmation email you should have received.
                           </p>
                           <div className="row">
                             <div className="col-lg-8">
@@ -199,9 +199,7 @@ const Account = () => {
                                 Marie, MI 49783
                               </address>
                               <p>New York</p>
-                              <a href="#" className="btn-small">
-                                Edit
-                              </a>
+                              <a className="btn-small">Edit</a>
                             </div>
                           </div>
                         </div>
@@ -219,9 +217,7 @@ const Account = () => {
                                 Phone: 1.941.227.4444
                               </address>
                               <p>Sarasota</p>
-                              <a href="#" className="btn-small">
-                                Edit
-                              </a>
+                              <a className="btn-small">Edit</a>
                             </div>
                           </div>
                         </div>

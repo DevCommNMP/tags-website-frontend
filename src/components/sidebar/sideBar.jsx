@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 const SideBar = () => {
   return (
-    <Fragment>      
+    <Fragment>
       <div className="navbar-vertical navbar">
         <div data-simplebar="init" style={{ maxHeight: "100vh" }}>
           <div className="simplebar-wrapper" style={{ margin: "0px" }}>
@@ -21,16 +21,10 @@ const SideBar = () => {
                   <div className="simplebar-content" style={{ padding: "0px" }}>
                     <div className="nav-scroller">
                       <a className="navbar-brand" href="/">
-                        <img
-                          src="/images/brand/logo/logo.svg"
-                          alt=""
-                          className=""
-                        />
+                        <img src="/images/brand/logo/logo.svg" alt="" className="" />
                       </a>
                     </div>
-                    <ul className="navbar-nav flex-column accordion">
-                      {/* Your list items */}
-                    </ul>
+                    <ul className="navbar-nav flex-column accordion">{/* Your list items */}</ul>
                   </div>
                 </div>
               </div>
