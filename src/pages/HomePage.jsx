@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchAllProductsAction } from "../redux/actions/product/productActions.js";
 import { useSelector } from "react-redux";
+
 import LoaderImg from "../components/LoaderImg.jsx";
 const Homepage = () => {
   const dispatch = useDispatch();

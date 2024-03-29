@@ -7,15 +7,21 @@ import { loginUserAction } from "../../../redux/actions/auth/authActions";
 import LoginImg from "../../../assets/imgs/page/login.jpg";
 import logoGoogle from "../../../assets/imgs/theme/icons/logo-google.svg";
 import Footer from "../../Footer/Footer";
-
+import { ToastContainer, toast } from 'react-toastify';
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   // State variables for form data and errors
   const storeData = useSelector((store) => store.auth);
-  const { user, loading, appErr, serverErr } = storeData;
+  const { user,registered,loading, appErr, serverErr } = storeData;
 
-  useEffect(() => {}, [appErr, serverErr]);
+ useEffect(() => {
+  if(registered){
+    toast("You are registered Successfully")
+  }
+  
+ }, [appErr,serverErr])
+ 
 
   // State variables for form data and errors
   const [formData, setFormData] = useState({
@@ -45,7 +51,7 @@ const Login = () => {
       const res = await dispatch(loginUserAction(formData));
       if (!res.error) {
         // console.log(res.error.message)
-        navigate("/");
+        navigate("/profile");
       } else {
         console.log(res.error.message);
       }
@@ -139,8 +145,8 @@ const Login = () => {
                             }}
                             className="mb-4 btn btn-fill-out btn-block hover-up font-weight-bold"
                             name="login"
-                          >
-                            Login
+                          >{loading ? "Loading" : "Login"}
+                           
                           </button>
                           <a
                             className="btn btn-light social-login google-login bg-light text-dark"

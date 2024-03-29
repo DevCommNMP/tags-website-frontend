@@ -170,7 +170,8 @@ function App() {
             <Route exact path="/all-categories" element={<AllCategoriesPage />} />
             <Route exact path="/wishlist" element={<Wishlist />} />
             <Route exact path="/invoice" element={<Invoice />} />
-            <Route exact path="/verify-email" element={<VerifyEmail />} />
+            <Route exact path="/verify-account" element={<VerifyEmail />} />
+            <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
 
             {/* TEST ROUTES
               following routes can safely be removed */}

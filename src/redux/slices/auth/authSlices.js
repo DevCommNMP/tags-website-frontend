@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loginUserAction, logoutAction, registerUserAction } from "../../actions/auth/authActions";
+import { loginUserAction,verifyEmail, logoutAction, registerUserAction } from "../../actions/auth/authActions";
 
 
 
 const initialState={
   user: "",
   registered: "",
+  emailVerified:false,
   loading: false,
   appErr: null,
   serverErr: null,
@@ -56,6 +57,26 @@ const authSlice = createSlice({
       state.appErr = action?.payload?.message;
       state.serverErr = action?.error?.message;
       state.loading = false;
+    });
+
+    //verify-email
+    builder.addCase(verifyEmail.pending, (state, action) => {
+      state.registered =false;
+      state.emailVerified = false;
+      state.loading = true;
+      state.appErr = null;
+      state.serverErr = null;
+    });
+    builder.addCase(verifyEmail.fulfilled, (state, action) => {
+      state.loading = false;
+      state.emailVerified = true;
+    });
+    builder.addCase(verifyEmail.rejected, (state, action) => {
+      state.loading = false;
+      state.registered =false;
+      state.emailVerified = false;
+      state.appErr = action?.payload?.message || 'An error occurred';
+      state.serverErr = action?.payload?.message || 'Network error';
     });
 
     // logoutAction

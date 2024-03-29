@@ -64,28 +64,31 @@ export const loginUserAction = createAsyncThunk(
     }
   }
 );
-
 export const verifyEmail = createAsyncThunk(
   "user/verifyemail",
+  async (token, { rejectWithValue }) => {
+    console.log(token); // Log the token for debugging purposes
 
-  async (user, { rejectWithValue }) => {
-
-    // if()
-    try { 
+    try {
       const config = {
         headers: {
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       };
 
-      const res = await axios.post(`${baseUrl}/api/verify-account`, user, config);
+      // Since you're sending a POST request, you should include some data in the request body.
+      // I'll assume an empty object '{}' for now. You can adjust this according to your API requirements.
+      const res = await axios.post(`${baseUrl}/api/verify-account`, {}, config);
       return res.data;
     } catch (error) {
-      
-      if (!error?.response) {
+      // If there's no response, rethrow the error
+      if (!error.response) {
         throw error;
       }
-      return rejectWithValue(error?.response?.data);
+
+      // If there's a response, reject with the response data
+      return rejectWithValue(error.response.data);
     }
   }
 );
@@ -96,7 +99,7 @@ export const logoutAction = createAsyncThunk(
   async (payload, { rejectWithValue }) => {
     try {
       // Additional logic or API calls can be added here if needed
-      localStorage.removeItem("userData");
+      await localStorage.removeItem("userData");
     } catch (error) {
       console.error(error);
       if (!error?.response) {

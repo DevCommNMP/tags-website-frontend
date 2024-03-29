@@ -50,7 +50,7 @@ const SignUp = () => {
       const res = await dispatch(registerUserAction(formData));
       if (!res.error) {
         // console.log(res.error.message)
-        navigate("/login");
+        navigate("/verify-account");
       } else {
         console.log(res.error.message);
       }
@@ -162,8 +162,9 @@ const SignUp = () => {
                             }}
                             className="mb-4 btn btn-fill-out btn-block hover-up font-weight-bold"
                             name="login"
-                          >
-                            Submit & Register
+                          >{loading ? "Loading" : "Submit & Register"}
+
+                           
                           </button>
                           <a
                             className="btn btn-light social-login google-login bg-light text-dark"

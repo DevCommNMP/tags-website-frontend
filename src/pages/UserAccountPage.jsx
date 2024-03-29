@@ -9,9 +9,7 @@ const UserAccountPage = () => {
   const { user,loading,appErr,serverErr } = storeData;
  useEffect(() => {
   if(user){
-    toast.success(" Login successfully! ", {
-      position: "top-right",
-    });
+    toast("Login successfully!");
   }
  }, [user])
  

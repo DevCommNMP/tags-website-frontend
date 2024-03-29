@@ -1,9 +1,53 @@
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import verifyEmailImg from "../../assets/imgs/page/email-green.avif";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { verifyEmail } from "../../redux/actions/auth/authActions";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate, useParams } from "react-router-dom";
+import { Button } from "react-bootstrap";
 const VerifyEmail = () => {
+  const { token } = useParams(); // Retrieve token from URL parameters
+  const storeData = useSelector((store) => store.auth);
+  const { emailVerified, loading, appErr, serverErr } = storeData;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [activeLoginBtn,setactiveLoginBtn]=useState(false)
+  useEffect(() => {
+    if (token) {
+      const verifyUser = async () => {
+        try {
+         const res= await dispatch(verifyEmail(token)); // Dispatch verifyEmail action with token as a parameter
+         if(res.error){
+          toast.error(res.error.message);
+       
+         }
+         else{
+          toast.success("Account verified Successfully");
+         
+         }
+         if(emailVerified){
+          setactiveLoginBtn(true)
+        }
+     
+        } catch (error) {
+          toast.error(appErr || serverErr || error.message);
+        }
+      };
+      verifyUser();
+
+
+    }
+  }, [token]);
+  const buttonHAndler=()=>{
+    navigate("/login")
+  }
+
   return (
     <>
+      <ToastContainer />
       <Header />
 
       <div className="main pages">
@@ -27,8 +71,9 @@ const VerifyEmail = () => {
                       <h2 className="mb-15 mt-15 text-center">Email Verification</h2>
                       <img className="border-radius-15" src={verifyEmailImg} alt="" />
                       <p className="mb-30">
-                      An email has been sent to your email address. Please check your inbox and follow the instructions to verify your email.
+                        An email has been sent to your email address. Please check your inbox and follow the instructions to verify your email.
                       </p>
+                      {activeLoginBtn ? <Button    onClick={buttonHAndler} >Login Now</Button>:" "}
                     </div>
                   </div>
                 </div>

@@ -70,7 +70,8 @@ const Checkout = () => {
     // const order = await createOrder(params); //  Create order on your backend
 
     const options = {
-      key: `rzp_test_rQ8h1gyxiMhZ7A`, // Enter the Key ID generated from the Dashboard
+      key: `rzp_test_L8FMN6HnO5Ewr8`,
+      secret:`dOBd5O2UnENMPCZQu2J7GIah`, // Enter the Key ID generated from the Dashboard
       amount: `2764`, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency: "INR",
       name: "Tags Footwear",
