@@ -5,9 +5,9 @@ const NewsLetter = () => {
     <>
       <section className="newsletter mb-15">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-12 border-1px ">
-              <div className="position-relative newsletter-inner">
+          <div className="row p-5 mb-5">
+            <div className="col-lg-12 border-1px news-p">
+              <div className="position-relative newsletter-inner mb-25">
                 <div className="newsletter-content">
                   <h2 className="mb-20">
                     Stay home & get your daily <br />

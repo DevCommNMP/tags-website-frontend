@@ -15,6 +15,10 @@ const VerifyEmail = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [activeLoginBtn,setactiveLoginBtn]=useState(false)
+
+  if(emailVerified){
+    setactiveLoginBtn(true)
+  }
   useEffect(() => {
     if (token) {
       const verifyUser = async () => {
@@ -28,9 +32,7 @@ const VerifyEmail = () => {
           toast.success("Account verified Successfully");
          
          }
-         if(emailVerified){
-          setactiveLoginBtn(true)
-        }
+       
      
         } catch (error) {
           toast.error(appErr || serverErr || error.message);
@@ -49,7 +51,6 @@ const VerifyEmail = () => {
     <>
       <ToastContainer />
       <Header />
-
       <div className="main pages">
         <div className="page-header breadcrumb-wrap">
           <div className="container">

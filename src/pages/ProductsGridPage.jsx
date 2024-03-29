@@ -14,6 +14,7 @@ import DealsOfTheDay from "../components/DealsOfTheDay.jsx";
 import NewProducts from "../components/NewProducts.jsx";
 import ModalQuickView from "../components/ModalQuickView.jsx";
 
+
 const ProductsGridPage = ({ data }) => {
   const { title } = useParams();
   const storeData = useSelector((store) => store.products);
@@ -129,7 +130,7 @@ const ProductsGridPage = ({ data }) => {
                               <a aria-label="Add To Wishlist" className="action-btn">
                                 <i className="fi-rs-heart"></i>
                               </a>
-                              {/* <ModalQuickVaiew product={product} /> */}
+                              <ModalQuickView product={product} />
                             </div>
                             <div className="product-badges product-badges-position product-badges-mrg">
                               <span className={product.tag}>{product.tag}</span>

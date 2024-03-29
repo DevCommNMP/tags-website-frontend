@@ -12,36 +12,36 @@ import product165 from "../assets/imgs/shop/product-16-5.jpg";
 import product166 from "../assets/imgs/shop/product-16-6.jpg";
 import product167 from "../assets/imgs/shop/product-16-7.jpg";
 
-function ModalQuickView(props) {
-  // const productImages = [product161, product162, product163, product164, product165, product166, product167];
+function ModalQuickView (props) {
+  const productImages = [product161, product162, product163, product164, product165, product166, product167];
 
-  // const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  // const sliderRef = useRef();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const sliderRef = useRef();
 
 
   const product = props.product;
 
 
-  // const handleThumbnailClick = (index) => {
-  //   setCurrentImageIndex(index);
-  //   sliderRef.current.slickGoTo(index);
-  // };
+  const handleThumbnailClick = (index) => {
+    setCurrentImageIndex(index);
+    sliderRef.current.slickGoTo(index);
+  };
 
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 800,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  // };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
-  // const settingsThumb = {
-  //   dots: false,
-  //   infinite: true,
-  //   speed: 800,
-  //   slidesToShow: 5,
-  //   slidesToScroll: 1,
-  // };
+  const settingsThumb = {
+    dots: false,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+  };
 
   const [show, setShow] = useState(false);
 
@@ -65,16 +65,16 @@ console.log(product.this)
                   <div className="product-image-slider"></div>
                   <div className="slider-nav-thumbnails"></div>
                   <div className="product-image-slider">
-                    {/* <Slider ref={sliderRef} {...settings}>
+                    <Slider ref={sliderRef} {...settings}>
                       {productImages.map((image, index) => (
                         <div key={index}>
                           <img src={image} alt={`product image ${index}`} />
                         </div>
                       ))}
-                    </Slider> */}
+                    </Slider>
                   </div>
                   <div className="slider-nav-thumbnails">
-                    {/* <Slider {...settingsThumb}>
+                    <Slider {...settingsThumb}>
                       {productImages.map((image, index) => (
                         <div
                           key={index}
@@ -84,7 +84,7 @@ console.log(product.this)
                           <img src={image} alt={`thumbnail ${index}`} />
                         </div>
                       ))}
-                    </Slider> */}
+                    </Slider>
                   </div>
                 </div>
               </div>
