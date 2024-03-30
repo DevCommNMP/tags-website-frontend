@@ -120,7 +120,7 @@ const ProductsGridPage = ({ data }) => {
                 </div>
                 <div className="row product-grid">
                   {currentProducts.map((product, index) => (
-                    <div className="col-lg-1-5 col-md-4 col-12 col-sm-6" key={index}>
+                    <div className="col-lg-1-4 col-md-3 col-12 col-sm-6" key={index}>
                       <div className="product-cart-wrap mb-30">
                         <div className="product-img-action-wrap">
                           <div className="product-img product-img-zoom">
@@ -139,11 +139,11 @@ const ProductsGridPage = ({ data }) => {
                           </div>
                         </div>
                         <div className="product-content-wrap">
-                          <h2>
+                          <h2 className="text-center mt-3 mb-2">
                             {" "}
                             <Link to="/products/dummy">{product.title}</Link>{" "}
                           </h2>
-                          <div className="product-rate-cover">
+                          <div className="product-rate-cover flex-align-justify-center"><span>Customer Rating :  </span>
                             <div className="product-rate d-inline-block" style={{ backgroundImage: `url(${starRating})` }}>
                               <div
                                 className="product-rating"
@@ -152,8 +152,10 @@ const ProductsGridPage = ({ data }) => {
                             </div>
                             <span className="font-small ml-5 text-muted"> ({product.rating})</span>
                           </div>
-                          <div>
-                            <span className="font-small text-muted">{/* By <a>NestFood</a> */}</span>
+                          <div className="product-rate-cover flex-align-justify-center"><span>Available Colors :</span>
+                            {product.colorsAvailable.map((color, index) => (
+                              <span key={index} className={`product-color-box product${color}`}></span>
+                            ))}
                           </div>
                           <div className="product-card-bottom">
                             <div className="product-price">

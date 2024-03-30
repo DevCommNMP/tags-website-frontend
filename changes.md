@@ -38,7 +38,7 @@
 - [x] Remove DEal of the da \y 
 - [x] add ALL CATEGORIES page
 - [x] Subscribe , add background . make it look good 
-- [ ] Add video  from yurutbe 
+- [x] Add video  from yurutbe 
 - [ ] Catrgory +> Photo , Main title , by Brand , 1 line about category 
 # Sinlge Product Page 
 - [ ] 1. caraousel , amke it square -- keep it in background 
