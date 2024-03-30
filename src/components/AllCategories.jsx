@@ -7,7 +7,7 @@ const AllCategories = ({ categories }) => {
         <div className="row mb-50"></div>
         <div className="row vendor-grid">
           {categories.map((item, index) => (
-            <div className="col-lg-6 col-md-6 col-12 col-sm-6" key={index}>
+            <div className="col-lg-3 col-md-3 col-12 col-sm-3" key={index}>
               <div className="vendor-wrap style-2 mb-40">
                 <div className="product-badges product-badges-position product-badges-mrg">{/* <span className="hot">Mall</span> */}</div>
                 <div className="vendor-img-action-wrap">
@@ -27,7 +27,7 @@ const AllCategories = ({ categories }) => {
                 <div className="vendor-content-wrap">
                   <div className="mb-30">
                     <div className="product-category">
-                      <span className="text-muted">Since 2012</span>
+                      <span className="text-muted">by Tags Footwear</span>
                     </div>
                     <h4 className="mb-5">
                       <Link to={`/categories/${item.subcategoriesName}`}>{item.subcategoriesName}</Link>

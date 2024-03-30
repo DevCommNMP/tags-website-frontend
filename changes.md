@@ -20,7 +20,7 @@
 - [x] **3 banners | chnage photo and content** 
 - [x] Popular Products // Change heading style 
 - [x] Product sections : add carousel 
-- [ ] Premium Leather -> side - banner, 10 photos, accroding to screen size.. 
+- [x] Premium Leather -> side - banner, 10 photos, accroding to screen size.. 
 - [ ] in footer keep her own product instead of from google 
 - [x] remove 5 dibbe hain unko htata Hai 
 - [x] Footer logo 
@@ -43,7 +43,7 @@
 - [ ] // pagination . make it working 
 - [ ] Remove DEal of the da \y 
 - [ ] add ALL CATEGORIES page
-- [ ] Subscribe , add background . make it look good 
+- [x] Subscribe , add background . make it look good 
 - [ ] Add video  from yurutbe 
 - [ ] Catrgory +> Photo , Main title , by Brand , 1 line about category 
 - [ ] Sinlge Product Page 

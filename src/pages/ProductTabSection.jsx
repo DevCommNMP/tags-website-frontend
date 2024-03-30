@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addToCartHandler } from "../redux/actions/cart/cartActions";
 
-import Slider from "react-slick";
+// import Slider from "react-slick";
 const settings = {
   dots: true,
   infinite: true,
@@ -111,7 +111,7 @@ const ProductTabSection = ({ data }) => {
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
-                <Slider {...settings}>
+                {/* <Slider {...settings}> */}
                   {data.map((item) => (
                     <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                       <div className="product-cart-wrap mb-30">
@@ -172,7 +172,7 @@ const ProductTabSection = ({ data }) => {
                       </div>
                     </div>
                   ))}
-                </Slider>
+                {/* </Slider> */}
               </div>
             </div>
           </div>

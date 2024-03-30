@@ -74,7 +74,7 @@ const NewArrival = ({ data }) => {
 
   return (
     <>
-      <section className="product-tabs section-padding position-relative">
+      <section className="product-tabs section-padding position-relative pb-50">
         <div className="container">
           <div className="section-title style-2">
             <Link to="new-arrivals" style={{ cursor: "pointer" }}>
