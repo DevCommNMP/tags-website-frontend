@@ -32,11 +32,11 @@
 # All Products Page
 - [x]  category banner | add banner 
 - [ ]   remove sort by featureew | 
-- [ ] make drop down working \\ 25 x 50 x 75 100
-- [ ]  get stars  
+- [x] make drop down working \\ 25 x 50 x 75 100
+- [x]  get stars  
 - [x] // pagination . make it working 
-- [ ] Remove DEal of the da \y 
-- [ ] add ALL CATEGORIES page
+- [x] Remove DEal of the da \y 
+- [x] add ALL CATEGORIES page
 - [x] Subscribe , add background . make it look good 
 - [ ] Add video  from yurutbe 
 - [ ] Catrgory +> Photo , Main title , by Brand , 1 line about category 

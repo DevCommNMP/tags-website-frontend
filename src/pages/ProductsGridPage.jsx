@@ -139,9 +139,9 @@ const ProductsGridPage = ({ data }) => {
                           </div>
                         </div>
                         <div className="product-content-wrap">
-                          <div className="product-category">{/* <a>Snack</a> */}</div>
                           <h2>
-                            <Link to="/products/dummy">{product.title}</Link>
+                            {" "}
+                            <Link to="/products/dummy">{product.title}</Link>{" "}
                           </h2>
                           <div className="product-rate-cover">
                             <div className="product-rate d-inline-block" style={{ backgroundImage: `url(${starRating})` }}>
