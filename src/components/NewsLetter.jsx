@@ -23,7 +23,7 @@ const NewsLetter = () => {
                     </button>
                   </form>
                 </div>
-                <img src={banner9} alt="newsletter" />
+                <img style={{maxHeight:'100%'}} src={banner9} alt="newsletter" />
               </div>
             </div>
           </div>

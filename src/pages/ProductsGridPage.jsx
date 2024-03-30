@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 import { fetchAllProductsAction } from "../redux/actions/product/productActions.js";
 import { useSelector } from "react-redux";
 import ModalQuickView from "../components/ModalQuickView.jsx";
-import { Pagination } from "react-bootstrap";
+import { Pagination, DropdownButton, Dropdown } from "react-bootstrap";
 
 const ProductsGridPage = ({ data }) => {
   const { title } = useParams();
@@ -19,8 +19,7 @@ const ProductsGridPage = ({ data }) => {
   const { products, productsLoading, appErr, serverErr } = storeData;
   console.log(products);
   const [sliderValues, setSliderValues] = useState([0, 100]);
-  const [currentPage, setCurrentPage] = useState(1); // State to manage current page
-  const [productsPerPage] = useState(20); // Number of products to display per page
+  const [productsPerPage, setProductsPerPage] = useState(5);
 
   const dispatch = useDispatch();
 
@@ -29,13 +28,23 @@ const ProductsGridPage = ({ data }) => {
     console.log(res);
   }, [dispatch]);
 
-  // Get current products
+  const [currentPage, setCurrentPage] = useState(1); // State to manage current page
+
+  // Function to handle page change
+  const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
+
+  // Function to handle dropdown selection
+  const handlePerPageChange = (value) => {
+    setProductsPerPage(value);
+    setCurrentPage(1); // Reset current page to 1 when changing products per page
+  };
+
+  // Calculate index of first and last product for pagination
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
-  // Change page
-  const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
+  // Slice products based on pagination
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
   // Function to handle slider change
   const handleSliderChange = (values) => {
@@ -98,6 +107,15 @@ const ProductsGridPage = ({ data }) => {
                     <p>
                       We found <strong className="text-brand">{products.length}</strong> items for you!
                     </p>
+                  </div>
+                  <div className="products-per-page-dropdown">
+                    <DropdownButton id="products-per-page-dropdown bg-light" title={`Products Per Page: ${productsPerPage}`}>
+                      <Dropdown.Item onClick={() => handlePerPageChange(5)}>5</Dropdown.Item>
+                      <Dropdown.Item onClick={() => handlePerPageChange(10)}>10</Dropdown.Item>
+                      <Dropdown.Item onClick={() => handlePerPageChange(25)}>25</Dropdown.Item>
+                      <Dropdown.Item onClick={() => handlePerPageChange(50)}>50</Dropdown.Item>
+                      <Dropdown.Item onClick={() => handlePerPageChange(100)}>100</Dropdown.Item>
+                    </DropdownButton>
                   </div>
                 </div>
                 <div className="row product-grid">

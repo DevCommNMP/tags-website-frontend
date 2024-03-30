@@ -1,10 +1,3 @@
-# MOBILE VIEW 
-- [ ] SEARCH , NAV  
-- [ ] 
-
-#  NEW CHANGES 
-- [ ] only active links / nav links should be highlighted  
-
 # Frontend Website 
 ## Header 
 - [x] logo change 
@@ -21,7 +14,7 @@
 - [x] Popular Products // Change heading style 
 - [x] Product sections : add carousel 
 - [x] Premium Leather -> side - banner, 10 photos, accroding to screen size.. 
-- [ ] in footer keep her own product instead of from google 
+- [x] in footer keep her own product instead of from google 
 - [x] remove 5 dibbe hain unko htata Hai 
 - [x] Footer logo 
 - [x] Remove [Intall from playstore] 
@@ -35,10 +28,11 @@
 |Contact Us|||Delivery Information|
 
 ### footer .bottm 
-- [ ]  phone  number // 7 days instead of 24x7  in all places 
+- [x]  phone  number // 7 days instead of 24x7  in all places 
 # All Products Page
 - [x]  category banner | add banner 
-- [ ]  // keep show | remove sort by featureew | make drop down working \\ 25 x 50 x 75 100
+- [ ]   remove sort by featureew | 
+- [ ] make drop down working \\ 25 x 50 x 75 100
 - [ ]  get stars  
 - [x] // pagination . make it working 
 - [ ] Remove DEal of the da \y 
