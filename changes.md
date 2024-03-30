@@ -27,11 +27,11 @@
 |Privacy Policy|||Login|
 |Contact Us|||Delivery Information|
 
-### footer .bottm 
+### footer .bottom 
 - [x]  phone  number // 7 days instead of 24x7  in all places 
 # All Products Page
 - [x]  category banner | add banner 
-- [ ]   remove sort by featureew | 
+- [x]   remove sort by featureew | 
 - [x] make drop down working \\ 25 x 50 x 75 100
 - [x]  get stars  
 - [x] // pagination . make it working 
@@ -40,7 +40,7 @@
 - [x] Subscribe , add background . make it look good 
 - [ ] Add video  from yurutbe 
 - [ ] Catrgory +> Photo , Main title , by Brand , 1 line about category 
-- [ ] Sinlge Product Page 
+# Sinlge Product Page 
 - [ ] 1. caraousel , amke it square -- keep it in background 
 - [ ] related products => list categories 
 

@@ -14,6 +14,7 @@ import { fetchAllProductsAction } from "../redux/actions/product/productActions.
 import { useSelector } from "react-redux";
 
 import LoaderImg from "../components/LoaderImg.jsx";
+import YoutubeVideo from "../components/YoutubeVideo.jsx";
 const Homepage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -43,6 +44,7 @@ const Homepage = () => {
           <ProductTabSection data={products} />
         </div>
       )}
+      <YoutubeVideo />
       <NewsLetter />
       <SEOContent />
       <Footer />
