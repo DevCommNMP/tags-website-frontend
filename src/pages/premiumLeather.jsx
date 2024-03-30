@@ -124,7 +124,7 @@ const PremiumLeather = ({ data }) => {
               <div className="row product-grid-4">
                 <Slider {...settings}>
                   {products.map((item) => (
-                    <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                    <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 px-1">
                       <div className="product-cart-wrap mb-30">
                         <div className="product-img-action-wrap">
                           <div className="product-img product-img-zoom">

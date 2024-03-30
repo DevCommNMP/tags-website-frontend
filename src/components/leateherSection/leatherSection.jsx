@@ -87,7 +87,7 @@ const LeatherSection = ({ data }) => {
                 <Slider {...settings}>
                   {/* {data.filter(item => item.category && item.category.name === "premium Leather").map((item) => ( */}
                   {data.map((item) => (
-                    <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                    <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 px-1">
                       <div className="product-cart-wrap mb-30">
                         <div className="product-img-action-wrap">
                           <div className="product-img product-img-zoom">

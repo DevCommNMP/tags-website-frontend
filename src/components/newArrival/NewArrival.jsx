@@ -5,12 +5,14 @@ const settings = {
   dots: true,
   infinite: true,
   speed: 800,
-  slidesToShow: 5,
+  slidesToShow: 4,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 2000,
   margin: 50,
   pauseOnHover: true,
+  // centerMode: true,
+  // centerPadding: '50px',
   responsive: [
     {
       breakpoint: 1024,
@@ -92,7 +94,7 @@ const NewArrival = ({ data }) => {
                   <Slider {...settings}>
                     {/* {data.filter(item => item.category && item.category.name === "premium Leather").map((item) => ( */}
                     {data.map((item) => (
-                      <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                      <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 px-1">
                         <div className="product-cart-wrap mb-30">
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
@@ -126,7 +128,7 @@ const NewArrival = ({ data }) => {
                               <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
                                 Seeds of Change Organic Quinoa, Brown, & Red Rice
                               </div>
-                              ``{" "}
+                              {" "}
                             </h2>
                             <div className="product-rate-cover">
                               <div className="product-rate d-inline-block">

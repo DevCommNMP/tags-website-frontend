@@ -16,6 +16,7 @@ const Footer = () => {
   return (
     <>
       <footer className="main">
+        <hr className="text-brand"/>
         {/* <NewsLetter /> */}
         <section className="section-padding footer-mid">
           <div className="container pt-15 pb-20">
@@ -172,7 +173,7 @@ const Footer = () => {
               <div className="hotline d-lg-inline-flex mr-30">
                 <img src={phoneCall} alt="hotline" />
                 <p className="text-white">
-                  1900 - 6666<span className="text-white">Working 8:00 - 22:00</span>
+                +91 98444 88700<span className="text-white">Working 8:00 - 22:00</span>
                 </p>
               </div>
             </div>

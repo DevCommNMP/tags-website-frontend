@@ -15,7 +15,7 @@
 
 ### Browser all categoeis 
 - [x] remove women , add colors just before About , 
-- [ ] phone number change 
+- [x] phone number change 
 - [x] Slider - make width fluid 
 - [x] **3 banners | chnage photo and content** 
 - [x] Popular Products // Change heading style 
@@ -37,10 +37,10 @@
 ### footer .bottm 
 - [ ]  phone  number // 7 days instead of 24x7  in all places 
 # All Products Page
-- [ ]  category banner | add banner 
+- [x]  category banner | add banner 
 - [ ]  // keep show | remove sort by featureew | make drop down working \\ 25 x 50 x 75 100
 - [ ]  get stars  
-- [ ] // pagination . make it working 
+- [x] // pagination . make it working 
 - [ ] Remove DEal of the da \y 
 - [ ] add ALL CATEGORIES page
 - [x] Subscribe , add background . make it look good 
