@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addToCartHandler } from "../redux/actions/cart/cartActions";
 
-// import Slider from "react-slick";
 const settings = {
   dots: true,
   infinite: true,
@@ -74,6 +73,8 @@ const dummydata = [
   },
 ];
 const ProductTabSection = ({ data }) => {
+  const limitedData = data.slice(0, 10); // Only take the first 10 items from the data array
+
   const [successToast, setSuccessToast] = useState("");
   const [errorToast, setErrorToast] = useState("");
   const dispatch = useDispatch();
@@ -81,8 +82,8 @@ const ProductTabSection = ({ data }) => {
   const onClickProductHandler = (productid) => {
     navigate(`/products/${productid}`);
   };
+
   const cartHandler = async (item) => {
-    // console.log(item)
     const res = await dispatch(addToCartHandler(item));
     console.log(res);
     setSuccessToast(true);
@@ -90,7 +91,6 @@ const ProductTabSection = ({ data }) => {
       position: "top-right",
     });
   };
-
   // const hotProducts = data.filter(item => item.tag.includes('hot'));
   const productHandler = (event) => {};
   useEffect(() => {}, [toast]);
@@ -111,9 +111,8 @@ const ProductTabSection = ({ data }) => {
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
-                {/* <Slider {...settings}> */}
-                  {data.map((item) => (
-                    <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+              {limitedData.map((item) => (
+                  <div key={item.id} className="col-lg-1-5 col-md-4 col-12 col-sm-6">
                       <div className="product-cart-wrap mb-30">
                         <div className="product-img-action-wrap">
                           <div className="product-img product-img-zoom">
@@ -172,7 +171,6 @@ const ProductTabSection = ({ data }) => {
                       </div>
                     </div>
                   ))}
-                {/* </Slider> */}
               </div>
             </div>
           </div>
