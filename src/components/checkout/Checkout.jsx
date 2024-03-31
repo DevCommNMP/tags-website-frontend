@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { useCallback } from "react";
 import useRazorpay from "react-razorpay";
+import { useDispatch } from "react-redux";
 const dummyData = [
   {
     id: 1,
@@ -32,6 +33,8 @@ const dummyData = [
 const Checkout = () => {
   const [cartdata, setCartdata] = useState([]);
   const user = JSON.parse(localStorage.getItem("userData"));
+
+  const dispatch=useDispatch();
   const checkoutHandler = () => {
     if (!user) {
       toast.error("you need to login first", {
@@ -67,48 +70,58 @@ const Checkout = () => {
   const [Razorpay] = useRazorpay();
 
   const handlePayment = async (params) => {
-    // const order = await createOrder(params); //  Create order on your backend
 
-    const options = {
-      key: `rzp_test_L8FMN6HnO5Ewr8`,
-      secret:`dOBd5O2UnENMPCZQu2J7GIah`, // Enter the Key ID generated from the Dashboard
+    const options={
       amount: `2764`, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency: "INR",
-      name: "Tags Footwear",
-      description: "Test Transaction",
-      image: "https://drive.google.com/file/d/1LSbvJ5NetEo-0b86Eo3Q8LeFIRHOAsSY/view?usp=sharing",
-      order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of createOrder().
-      handler: function (response) {
-        alert(response.razorpay_payment_id);
-        alert(response.razorpay_order_id);
-        alert(response.razorpay_signature);
-      },
-      prefill: {
-        name: "Piyush Garg",
-        email: "youremail@example.com",
-        contact: "9999999999",
-      },
-      notes: {
-        address: "Razorpay Corporate Office",
-      },
-      theme: {
-        color: "#3399cc",
-      },
-    };
+      name: "Piyush Garg",
+          email: "youremail@example.com",
+          contact: "9999999999",
+    }
+    dispatch(checkoutHandler())
+    // const order = await createOrder(params); //  Create order on your backend
 
-    const rzp1 = new Razorpay(options);
+    // const options = {
+    //   key: `rzp_test_L8FMN6HnO5Ewr8`,
+    //   secret:`dOBd5O2UnENMPCZQu2J7GIah`, // Enter the Key ID generated from the Dashboard
+    //   amount: `2764`, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    //   currency: "INR",
+    //   name: "Tags Footwear",
+    //   description: "Test Transaction",
+    //   image: "https://drive.google.com/file/d/1LSbvJ5NetEo-0b86Eo3Q8LeFIRHOAsSY/view?usp=sharing",
+    //   order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of createOrder().
+    //   handler: function (response) {
+    //     alert(response.razorpay_payment_id);
+    //     alert(response.razorpay_order_id);
+    //     alert(response.razorpay_signature);
+    //   },
+    //   prefill: {
+    //     name: "Piyush Garg",
+    //     email: "youremail@example.com",
+    //     contact: "9999999999",
+    //   },
+    //   notes: {
+    //     address: "Razorpay Corporate Office",
+    //   },
+    //   theme: {
+    //     color: "#3399cc",
+    //   },
+    // };
 
-    rzp1.on("payment.failed", function (response) {
-      alert(response.error.code);
-      alert(response.error.description);
-      alert(response.error.source);
-      alert(response.error.step);
-      alert(response.error.reason);
-      alert(response.error.metadata.order_id);
-      alert(response.error.metadata.payment_id);
-    });
+    // const rzp1 = new Razorpay(options);
 
-    rzp1.open();
+    // rzp1.on("payment.failed", function (response) {
+    //   alert(response.error.code);
+    //   alert(response.error.description);
+    //   alert(response.error.source);
+    //   alert(response.error.step);
+    //   alert(response.error.reason);
+    //   alert(response.error.metadata.order_id);
+    //   alert(response.error.metadata.payment_id);
+    // });
+// 
+    // rzp1.open();
+  
   };
 
   return (

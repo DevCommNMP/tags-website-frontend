@@ -8,44 +8,38 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
+
 const VerifyEmail = () => {
   const { token } = useParams(); // Retrieve token from URL parameters
   const storeData = useSelector((store) => store.auth);
   const { emailVerified, loading, appErr, serverErr } = storeData;
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [activeLoginBtn,setactiveLoginBtn]=useState(false)
+  // State for login button activation
 
-  if(emailVerified){
-    setactiveLoginBtn(true)
-  }
   useEffect(() => {
     if (token) {
       const verifyUser = async () => {
         try {
-         const res= await dispatch(verifyEmail(token)); // Dispatch verifyEmail action with token as a parameter
-         if(res.error){
-          toast.error(res.error.message);
-       
-         }
-         else{
-          toast.success("Account verified Successfully");
-         
-         }
-       
-     
+          const res = await dispatch(verifyEmail(token)); // Dispatch verifyEmail action with token as a parameter
+          if (res.error) {
+            toast.error(res.error.message);
+          } else {
+            toast.success("Account verified Successfully");
+          }
         } catch (error) {
           toast.error(appErr || serverErr || error.message);
         }
       };
       verifyUser();
-
-
     }
-  }, [token]);
-  const buttonHAndler=()=>{
-    navigate("/login")
-  }
+
+   
+  }, []); // Add dependencies to useEffect
+
+  const buttonHandler = () => {
+    navigate("/login");
+  };
 
   return (
     <>
@@ -74,7 +68,7 @@ const VerifyEmail = () => {
                       <p className="mb-30">
                         An email has been sent to your email address. Please check your inbox and follow the instructions to verify your email.
                       </p>
-                      {activeLoginBtn ? <Button    onClick={buttonHAndler} >Login Now</Button>:" "}
+                      {emailVerified && <Button onClick={buttonHandler}>Login Now</Button>}
                     </div>
                   </div>
                 </div>

@@ -19,7 +19,7 @@ const Homepage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     const res = dispatch(fetchAllProductsAction());
-    console.log(res);
+    // console.log(res);
   }, [dispatch]);
 
   const storeData = useSelector((store) => store.products);

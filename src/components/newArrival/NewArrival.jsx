@@ -73,9 +73,10 @@ const settings = {
 //   },
 // ];
 const NewArrival = ({ data }) => {
+  // console.log(data)
   const navigate = useNavigate();
   const onClickProductHandler = (productid) => {
-    console.log()
+    console.log(productid)
     navigate(`/products/${productid}`);
   };
 
@@ -99,11 +100,12 @@ const NewArrival = ({ data }) => {
                   <Slider {...settings}>
                     {/* {data.filter(item => item.category && item.category.name === "premium Leather").map((item) => ( */}
                     {data.map((product, index) => (
+                     
                     <div className="col-lg-1-4 col-md-3 col-12 col-sm-6 px-1" key={index}>
                       <div className="product-cart-wrap mb-30">
                         <div className="product-img-action-wrap">
                           <div className="product-img product-img-zoom">
-                            <Link to={`/products/${product.id}`}>
+                            <Link to={`/products/${product._id}`}>
                               <img className="default-img" src={product.productImage} alt="" />
                             </Link>
                           </div>
@@ -120,7 +122,7 @@ const NewArrival = ({ data }) => {
                         <div className="product-content-wrap">
                           <h2 className="text-center mt-3 mb-2">
                             {" "}
-                            <Link to="/products/:id">{product.title}</Link>{" "}
+                            <Link to={`/products/${product._id}`}>{product.title}</Link>{" "}
                           </h2>
                           <div className="product-rate-cover flex-align-justify-center"><span>Customer Rating :  </span>
                             <div className="product-rate d-inline-block" style={{ backgroundImage: `url(${starRating})` }}>
