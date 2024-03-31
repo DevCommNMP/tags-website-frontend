@@ -118,7 +118,7 @@ const ProductTabSection = ({ data }) => {
                       <div className="product-cart-wrap mb-30">
                         <div className="product-img-action-wrap">
                           <div className="product-img product-img-zoom">
-                            <Link to="/products/dummy">
+                            <Link to="/products/:id">
                               <img className="default-img" src={product.productImage} alt="" />
                             </Link>
                           </div>
@@ -135,7 +135,7 @@ const ProductTabSection = ({ data }) => {
                         <div className="product-content-wrap">
                           <h2 className="text-center mt-3 mb-2">
                             {" "}
-                            <Link to="/products/dummy">{product.title}</Link>{" "}
+                            <Link to="/products/:id">{product.title}</Link>{" "}
                           </h2>
                           <div className="product-rate-cover flex-align-justify-center"><span>Customer Rating :  </span>
                             <div className="product-rate d-inline-block" style={{ backgroundImage: `url(${starRating})` }}>

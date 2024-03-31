@@ -152,7 +152,7 @@ const ProductsGridPage = ({ data }) => {
                         <div className="product-cart-wrap mb-30">
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
-                              <Link to="/products/dummy">
+                              <Link to="/products/:id">
                                 <img className="default-img" src={product.productImage} alt="" />
                               </Link>
                             </div>
@@ -174,7 +174,7 @@ const ProductsGridPage = ({ data }) => {
                           <div className="product-content-wrap">
                             <div className="product-category">{/* <a>Snack</a> */}</div>
                             <h2>
-                              <Link to="/products/dummy">{product.title}</Link>
+                              <Link to="/products/:id">{product.title}</Link>
                             </h2>
                             <div className="product-rate-cover">
                               <div className="product-rate d-inline-block" style={{ backgroundImage: `url(${starRating})` }}>
