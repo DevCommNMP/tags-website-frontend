@@ -21,142 +21,17 @@ import Wishlist from "./pages/Wishlist.jsx";
 import AllCategoriesPage from "./pages/AllCategoriesPage.jsx";
 import Cart from "./pages/cart.jsx";
 
-const dummydata = [
-  {
-    id: 1,
-    name: "Item 1",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img1.jpg",
-    tag: "hot",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 2,
-    name: "Item 2",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img3.jpg",
-    tag: "hot",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img3.jpg",
-    tag: "hot",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 4,
-    name: "Item 4",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img4.jpg",
-    tag: "hot",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 5,
-    name: "Item 5",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Black/img5.jpg",
-    tag: "hot",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 6,
-    name: "Item 6",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img1.jpg",
-    tag: "trending",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 7,
-    name: "Item 7",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img5.jpg",
-    tag: "trending",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 8,
-    name: "Item 8",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img3.jpg",
-    tag: "trending",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 9,
-    name: "Item 9",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img4.jpg",
-    tag: "trending",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 10,
-    name: "Item 10",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img5.jpg",
-    tag: "trending",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 11,
-    name: "Item 11",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img1.jpg",
-    tag: "new",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 12,
-    name: "Item 12",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img2.jpg",
-    tag: "new",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 13,
-    name: "Item 13",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img3.jpg",
-    tag: "new",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 14,
-    name: "Item1 14",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img4.jpg",
-    tag: "new",
-    oldPrice: 1200,
-    price: 1000,
-  },
-  {
-    id: 15,
-    name: "Item 15",
-    image: "/src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img5.jpg",
-    tag: "new",
-    oldPrice: 1200,
-    price: 1000,
-  },
-];
-
 function App() {
-  // singhaditya2763@gmail.com
-
   return (
     <>
       <Provider store={Store}>
         <BrowserRouter>
           <Routes>
-            <Route exact path="/" element={<Homepage data={dummydata} />} />
+            <Route exact path="/" element={<Homepage />} />
             <Route exact path="/products/:id" element={<Product />} />
-            <Route exact path="/popular-products" element={<PopularProducts data={dummydata} />} />
-            <Route exact path="/premium-leather" element={<PremiumLeather data={dummydata} />} />
-            <Route exact path="/new-arrivals" element={<NewArrivals data={dummydata} />} />
+            <Route exact path="/popular-products" element={<PopularProducts />} />
+            <Route exact path="/premium-leather" element={<PremiumLeather />} />
+            <Route exact path="/new-arrivals" element={<NewArrivals />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/forgot-password" element={<ForgotPassword />} />
             <Route exact path="/signup" element={<SignUp />} />
@@ -166,15 +41,12 @@ function App() {
             <Route exact path="/cart" element={<Cart />} />
             <Route exact path="/productImages" element={<SingleProductImages />} />
             <Route exact path="/checkout" element={<CheckoutPage />} />
-            <Route exact path="/categories/:title" element={<ProductsGridPage data={dummydata} />} />
+            <Route exact path="/categories/:title" element={<ProductsGridPage />} />
             <Route exact path="/all-categories" element={<AllCategoriesPage />} />
             <Route exact path="/wishlist" element={<Wishlist />} />
             <Route exact path="/invoice" element={<Invoice />} />
             <Route exact path="/verify-account" element={<VerifyEmail />} />
             <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
-
-            {/* TEST ROUTES
-              following routes can safely be removed */}
           </Routes>
         </BrowserRouter>
       </Provider>

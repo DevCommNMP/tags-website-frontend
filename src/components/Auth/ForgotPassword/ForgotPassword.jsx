@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
 
@@ -10,8 +11,10 @@ const ResetPassword = () => {
         <div className="page-header breadcrumb-wrap">
           <div className="container">
             <div className="breadcrumb">
-              <a href="index.html" rel="nofollow">
+              <a rel="nofollow">
+                <Link to="/">
                 <i className="fi-rs-home mr-5"></i>Home
+                </Link>
               </a>
               <span></span> Pages <span></span> My Account
             </div>

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { verifyEmail } from "../../redux/actions/auth/authActions";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 const VerifyEmail = () => {
@@ -49,8 +49,10 @@ const VerifyEmail = () => {
         <div className="page-header breadcrumb-wrap">
           <div className="container">
             <div className="breadcrumb">
-              <a href="index.html" rel="nofollow">
+              <a rel="nofollow">
+                <Link to="/">
                 <i className="fi-rs-home mr-5"></i>Home
+                </Link>
               </a>
               <span></span> Pages <span></span> My Account
             </div>
