@@ -35,6 +35,7 @@ const Header = () => {
   return (
     <>
       <HeaderTop />
+    <div className="sticky-header">
       <HeaderMiddle />
       <div className={`mobile-header-active mobile-header-wrapper-style ${isSidebarVisible ? "sidebar-visible" : ""}`}>
         <div className="mobile-header-wrapper-inner">
@@ -81,11 +82,11 @@ const Header = () => {
                   <ul>
                     <li className="hot-deals">
                       <img src={iconHot} alt="hot deals" />
-                      <Link to="/categories/Deals">Deals</Link>
+                      <Link className="active" to="/categories/Deals">Deals</Link>
                     </li>
 
                     <li>
-                      <Link className="active" to="/categories/Occation">
+                      <Link to="/categories/Occation">
                         Occation <i className="fi-rs-angle-down"></i>
                       </Link>
                       <ul className="sub-menu">
@@ -192,7 +193,7 @@ const Header = () => {
             <div className="hotline d-none d-lg-flex">
               <img src={iconHeadphone} alt="hotline" />
               <p>
-                1900 - 888<span>7 Days Support Center</span>
+              +91 98444 88700<span>7 Days Support Center</span>
               </p>
             </div>
             <div onClick={openMenu} className="header-action-icon-2 d-block d-lg-none">
@@ -275,6 +276,7 @@ const Header = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

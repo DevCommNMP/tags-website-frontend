@@ -7,12 +7,14 @@ import ProductTabSection from "./ProductTabSection";
 import LeatherSection from "../components/leateherSection/leatherSection.jsx";
 import NewArrival from "../components/newArrival/NewArrival.jsx";
 import NewsLetter from "../components/NewsLetter.jsx";
+import SEOContent from "../components/SEOContent.jsx";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchAllProductsAction } from "../redux/actions/product/productActions.js";
 import { useSelector } from "react-redux";
 
 import LoaderImg from "../components/LoaderImg.jsx";
+import YoutubeVideo from "../components/YoutubeVideo.jsx";
 const Homepage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -42,7 +44,9 @@ const Homepage = () => {
           <ProductTabSection data={products} />
         </div>
       )}
+      <YoutubeVideo />
       <NewsLetter />
+      <SEOContent />
       <Footer />
     </>
   );

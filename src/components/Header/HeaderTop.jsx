@@ -35,7 +35,7 @@ const HeaderTop = () => {
               <div className="header-info header-info-right">
                 <ul>
                   <li>
-                    Need help? Call Us: <strong className="text-white"> + 1800 900</strong>
+                    Need help? Call Us: <strong className="text-white"> +91 98444 88700</strong>
                   </li>
                   <li>
                     <a className="language-dropdown-active">INR</a>

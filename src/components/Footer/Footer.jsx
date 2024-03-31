@@ -16,6 +16,7 @@ const Footer = () => {
   return (
     <>
       <footer className="main">
+        <hr className="text-brand"/>
         {/* <NewsLetter /> */}
         <section className="section-padding footer-mid">
           <div className="container pt-15 pb-20">
@@ -172,13 +173,13 @@ const Footer = () => {
               <div className="hotline d-lg-inline-flex mr-30">
                 <img src={phoneCall} alt="hotline" />
                 <p className="text-white">
-                  1900 - 6666<span className="text-white">Working 8:00 - 22:00</span>
+                +91 98444 88700<span className="text-white">Working 8:00 - 22:00</span>
                 </p>
               </div>
             </div>
             <div className="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
               <div className="mobile-social-icon">
-                <h6>Follow Us</h6>
+                <h6 className="text-white">Follow Us</h6>
                 <a>
                   <img src={iconFacebookWhite} alt="" />
                 </a>

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import SingleProductImages from "../components/SingleProductImages";
 import { fetchParticularProduct } from "../redux/actions/product/productActions";
 import { useParams } from "react-router";
-import { useEffect } from "react";
+import { useState,useEffect } from "react";
 import { addToCartHandler } from "../redux/actions/cart/cartActions";
 
 const Product = () => {
@@ -25,6 +25,21 @@ const Product = () => {
     const res = dispatch(addToCartHandler(particularproduct));
     console.log("hello");
   };
+
+    // State to store the quantity value
+    const [quantity, setQuantity] = useState(1);
+
+    // Function to handle quantity increase
+    const increaseQuantity = () => {
+      setQuantity(quantity + 1);
+    };
+  
+    // Function to handle quantity decrease
+    const decreaseQuantity = () => {
+      if (quantity > 1) {
+        setQuantity(quantity - 1);
+      }
+    };
   return (
     <>
       <Header />
@@ -85,23 +100,23 @@ const Product = () => {
                       </div>
                       <div className="attr-detail attr-size mb-30">
                         <strong className="mr-10">Colors</strong>
-                        <ul className="list-filter size-filter font-small">
+                        <ul className="list-filter color-filter flex-align-justify-center size-filter font-small">
                           {particularproduct &&
                             particularproduct.colorsAvailable &&
                             particularproduct.colorsAvailable.map((item, index) => (
                               <li key={index}>
-                                <a>{item}</a>
+                                <a className={`product-color-box product${item}`}></a>
                               </li>
                             ))}
                         </ul>
                       </div>
                       <div className="detail-extralink mb-50">
                         <div className="detail-qty border radius">
-                          <a className="qty-down">
+                          <a className="qty-down" onClick={decreaseQuantity}>
                             <i className="fi-rs-angle-small-down"></i>
                           </a>
-                          <input type="text" name="quantity" className="qty-val" defaultValue="1" min="1" />
-                          <a className="qty-up">
+                          <input type="text" name="quantity" className="qty-val" value={quantity} readOnly />
+                          <a className="qty-up" onClick={increaseQuantity}>
                             <i className="fi-rs-angle-small-up"></i>
                           </a>
                         </div>

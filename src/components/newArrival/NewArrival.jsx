@@ -1,16 +1,22 @@
+// import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import SideBanner from "../SideBanner";
+import ModalQuickView from "../ModalQuickView";
+import starRating from "../../assets/imgs/theme/rating-stars.png";
+
 const settings = {
   dots: true,
   infinite: true,
   speed: 800,
-  slidesToShow: 5,
+  slidesToShow: 4,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 2000,
   margin: 50,
   pauseOnHover: true,
+  // centerMode: true,
+  // centerPadding: '50px',
   responsive: [
     {
       breakpoint: 1024,
@@ -69,12 +75,13 @@ const settings = {
 const NewArrival = ({ data }) => {
   const navigate = useNavigate();
   const onClickProductHandler = (productid) => {
+    console.log()
     navigate(`/products/${productid}`);
   };
 
   return (
     <>
-      <section className="product-tabs section-padding position-relative">
+      <section className="product-tabs section-padding position-relative pb-50">
         <div className="container">
           <div className="section-title style-2">
             <Link to="new-arrivals" style={{ cursor: "pointer" }}>
@@ -91,69 +98,59 @@ const NewArrival = ({ data }) => {
                 <div className="col-lg-4-5 col-sm-12">
                   <Slider {...settings}>
                     {/* {data.filter(item => item.category && item.category.name === "premium Leather").map((item) => ( */}
-                    {data.map((item) => (
-                      <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div className="product-cart-wrap mb-30">
-                          <div className="product-img-action-wrap">
-                            <div className="product-img product-img-zoom">
-                              <a>
-                                <img className="default-img" src={item.productImage} alt="" />
-                                <img className="hover-img" src="" alt="" />
-                              </a>
-                            </div>
-                            <div className="product-action-1">
-                              <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
-                                <i className="fi-rs-heart"></i>
-                              </a>
-                              <a aria-label="Compare" className="action-btn" href="shop-compare.html">
-                                <i className="fi-rs-shuffle"></i>
-                              </a>
-                              <a aria-label="Quick view" className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                                <i className="fi-rs-eye"></i>
-                              </a>
-                            </div>
-                            <div className="product-badges product-badges-position product-badges-mrg">
-                              <span className="hot" style={{ backgroundColor: "green" }}>
-                                New
-                              </span>
-                            </div>
+                    {data.map((product, index) => (
+                    <div className="col-lg-1-4 col-md-3 col-12 col-sm-6 px-1" key={index}>
+                      <div className="product-cart-wrap mb-30">
+                        <div className="product-img-action-wrap">
+                          <div className="product-img product-img-zoom">
+                            <Link to={`/products/${product.id}`}>
+                              <img className="default-img" src={product.productImage} alt="" />
+                            </Link>
                           </div>
-                          <div className="product-content-wrap">
-                            <div className="product-category">
-                              <a href="shop-grid-right.html">{item.subcategoryType.subcategoryTypeName}</a>
+                          <div className="product-action-1">
+                            <a aria-label="Add To Wishlist" className="action-btn">
+                              <i className="fi-rs-heart"></i>
+                            </a>
+                            <ModalQuickView product={product} />
+                          </div>
+                          <div className="product-badges product-badges-position product-badges-mrg">
+                            <span className={product.tag}>{product.tag}</span>
+                          </div>
+                        </div>
+                        <div className="product-content-wrap">
+                          <h2 className="text-center mt-3 mb-2">
+                            {" "}
+                            <Link to="/products/:id">{product.title}</Link>{" "}
+                          </h2>
+                          <div className="product-rate-cover flex-align-justify-center"><span>Customer Rating :  </span>
+                            <div className="product-rate d-inline-block" style={{ backgroundImage: `url(${starRating})` }}>
+                              <div
+                                className="product-rating"
+                                style={{ width: `${20 * product.rating}%`, backgroundImage: `url(${starRating})` }}
+                              ></div>
                             </div>
-                            <h2>
-                              <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
-                                {item.title}
-                              </div>
-                              
-                            </h2>
-                            <div className="product-rate-cover">
-                              <div className="product-rate d-inline-block">
-                                <div className="product-rating" style={{ width: "90%" }}></div>
-                              </div>
-                              <span className="font-small ml-5 text-muted"> (4.0)</span>
+                            <span className="font-small ml-5 text-muted"> ({product.rating})</span>
+                          </div>
+                          <div className="product-rate-cover flex-align-justify-center"><span>Available Colors :</span>
+                            {product.colorsAvailable.map((color, index) => (
+                              <span key={index} className={`product-color-box product${color}`}></span>
+                            ))}
+                          </div>
+                          <div className="product-card-bottom">
+                            <div className="product-price">
+                              <span>&#8377;{product.SellingPrice}</span>
+                              <span className="old-price">&#8377;{product.SellingPrice}</span>
                             </div>
-                            <div>
-                              <span className="font-small text-muted">
-                                By <a href="vendor-details-1.html">Tags</a>
-                              </span>
-                            </div>
-                            <div className="product-card-bottom">
-                              <div className="product-price">
-                                <span>{item.SellingPrice}</span>
-                                <span className="old-price">{""}</span>
-                              </div>
-                              <div className="add-cart">
-                                <a className="add" href="shop-cart.html">
-                                  <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                                </a>
-                              </div>
+                            <div className="add-cart">
+                              <a className="add">
+                                <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
+                              </a>
                             </div>
                           </div>
                         </div>
                       </div>
-                    ))}
+                    </div>
+                  ))}
                   </Slider>
                 </div>
               </div>

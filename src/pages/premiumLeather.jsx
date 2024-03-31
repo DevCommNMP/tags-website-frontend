@@ -1,6 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header/Header";
-import Hero from "../components/Hero/Hero";
+// import Hero from "../components/Hero/Hero";
 
 import Slider from "react-slick";
 const settings = {
@@ -71,6 +72,7 @@ const dummydata = [
 const PremiumLeather = ({ data }) => {
   const navigate = useNavigate();
   const onClickProductHandler = (productid) => {
+    console.log(productid)
     navigate(`/products/${productid}`);
   };
   const cartHandler = async (id) => {
@@ -123,8 +125,8 @@ const PremiumLeather = ({ data }) => {
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
                 <Slider {...settings}>
-                  {products.map((item) => (
-                    <div className="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                  {products.map((item,index) => (
+                    <div className="col-lg-1-5 col-md-4 col-12 col-sm-6 px-1" key={index}>
                       <div className="product-cart-wrap mb-30">
                         <div className="product-img-action-wrap">
                           <div className="product-img product-img-zoom">

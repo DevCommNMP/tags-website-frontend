@@ -17,7 +17,7 @@ const SingleProductImages = ({ product }) => {
   };
 
   const settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 800,
     slidesToShow: 1,
@@ -30,21 +30,15 @@ const SingleProductImages = ({ product }) => {
     speed: 800,
     slidesToShow: 5,
     slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+
   };
 
   return (
     <div className="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
-      <div className="detail-gallery" style={{}}>
-        <div className="product-image-slider">
-          <Slider ref={sliderRef} {...settings}>
-            {productImagesArr.map((image, index) => (
-              <div key={index}>
-                <img src={image} alt={`product image ${index}`} />
-              </div>
-            ))}
-          </Slider>
-        </div>
-        <div className="slider-nav-thumbnails">
+      <div className="detail-gallery row" style={{}}>
+        <div className="slider-nav-thumbnails col-2">
           <Slider {...settingsThumb}>
             {productSubImagesArr.map((image, index) => (
               <div
@@ -57,6 +51,16 @@ const SingleProductImages = ({ product }) => {
             ))}
           </Slider>
         </div>
+        <div className="product-image-slider col-10">
+          <Slider ref={sliderRef} {...settings}>
+            {productImagesArr.map((image, index) => (
+              <div key={index}>
+                <img src={image} alt={`product image ${index}`} />
+              </div>
+            ))}
+          </Slider>
+        </div>
+
       </div>
     </div>
   );
