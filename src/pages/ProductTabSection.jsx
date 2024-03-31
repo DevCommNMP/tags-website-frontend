@@ -110,7 +110,7 @@ const ProductTabSection = ({ data }) => {
                         <div className="product-content-wrap">
                           <h2 className="text-center mt-3 mb-2">
                             {" "}
-                            <Link to="/products/:id">{product.title}</Link>{" "}
+                            <Link to={`/products/${product._id}`}>{product.title}</Link>{" "}
                           </h2>
                           <div className="product-rate-cover flex-align-justify-center"><span>Customer Rating :  </span>
                             <div className="product-rate d-inline-block" style={{ backgroundImage: `url(${starRating})` }}>

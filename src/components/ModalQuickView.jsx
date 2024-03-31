@@ -11,8 +11,8 @@ function ModalQuickView (props) {
   
   const product = props.product;
 
-  console.log("test");
-  console.log(product);
+  // console.log("test");
+  // console.log(product);
 
   const handleThumbnailClick = (index) => {
     setCurrentImageIndex(index);
