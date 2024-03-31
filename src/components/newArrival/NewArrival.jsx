@@ -1,4 +1,3 @@
-// import ModalQuickView from "../components/ModalQuickView";
 import starRating from "../../assets/imgs/theme/rating-stars.png";
 import { Link, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
@@ -61,7 +60,6 @@ const NewArrival = ({ data }) => {
   // };
   const navigate = useNavigate();
   const onClickProductHandler = (productid) => {
-    console.log(productid)
     navigate(`/products/${productid}`);
   };
 
@@ -98,7 +96,6 @@ const NewArrival = ({ data }) => {
                   <Slider {...settings}>
                     {/* {data.filter(item => item.category && item.category.name === "premium Leather").map((item) => ( */}
                     {data.map((product, index) => (
-                     
                      <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
                      <div className="product-cart-wrap mb-30">
                        <div className="product-img-action-wrap">
@@ -138,8 +135,8 @@ const NewArrival = ({ data }) => {
                          </div>
                          <div className="product-card-bottom">
                            <div className="product-price">
-                           <span> &#8377; {product.SellingPrice || 3399}</span>
-                             <span className="old-price">5000</span>
+                           <span> &#8377; {product.SellingPrice}</span>
+                           <span className="old-price">&#8377;{product.SellingPrice}</span>
                            </div>
                            <div className="add-cart" onClick={() => cartHandler(product)}>
                              <a className="add">
@@ -150,7 +147,6 @@ const NewArrival = ({ data }) => {
                        </div>
                      </div>
                    </div>
-
                   ))}
                   </Slider>
                 </div>

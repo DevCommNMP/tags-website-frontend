@@ -1,7 +1,13 @@
-import ModalQuickView from "../ModalQuickView";
 import starRating from "../../assets/imgs/theme/rating-stars.png";
 import { Link, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
+import { Slide, toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addToCartHandler } from "../../redux/actions/cart/cartActions";
+import ModalQuickView from "../ModalQuickView";
+
 const settings = {
   dots: true,
   infinite: true,
@@ -40,38 +46,31 @@ const settings = {
   ],
 };
 
-const dummydata = [
-  {
-    id: 1,
-    name: "Item 1",
-    image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img1.jpg",
-  },
-  {
-    id: 2,
-    name: "Item 2",
-    image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img7.jpg",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img3.jpg",
-  },
-  {
-    id: 4,
-    name: "Item 4",
-    image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img4.jpg",
-  },
-  {
-    id: 5,
-    name: "Item 5",
-    image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - Chique/img5.jpg",
-  },
-];
+
 const LeatherSection = ({ data }) => {
+
+  const [successToast, setSuccessToast] = useState("");
+  const [errorToast, setErrorToast] = useState("");
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
   const onClickProductHandler = (productid) => {
     navigate(`/products/${productid}`);
   };
+
+  const cartHandler = async (item) => {
+    const res = await dispatch(addToCartHandler(item));
+    console.log(res);
+    setSuccessToast(true);
+    toast.success("Product added to cart", {
+      position: "top-right",
+    });
+  };
+
+    // const hotProducts = data.filter(item => item.tag.includes('hot'));
+  const productHandler = (event) => {};
+  useEffect(() => {}, [toast]);
+
 
   return (
     <>
@@ -128,10 +127,10 @@ const LeatherSection = ({ data }) => {
                           </div>
                           <div className="product-card-bottom">
                             <div className="product-price">
-                              <span>&#8377;{product.SellingPrice}</span>
+                            <span> &#8377; {product.SellingPrice}</span>
                               <span className="old-price">&#8377;{product.SellingPrice}</span>
                             </div>
-                            <div className="add-cart">
+                            <div className="add-cart" onClick={() => cartHandler(product)}>
                               <a className="add">
                                 <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                               </a>
