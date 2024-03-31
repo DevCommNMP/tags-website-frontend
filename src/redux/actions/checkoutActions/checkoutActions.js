@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { baseUrl } from "../../../utils/baseUrl";
 
+
 export const CheckoutHandler = createAsyncThunk(
     "api/checkout",
     async (_, { rejectWithValue }) => {
@@ -11,7 +12,7 @@ export const CheckoutHandler = createAsyncThunk(
             "Content-Type": "application/json",
           },
         };
-        const res = await axios.post(`${baseUrl}/api/checkout`, config);
+        const res = await axios.post(`${baseUrl}/api/checkout`, null, config); // Pass null as the request body since no data is being sent
         console.log(res);
         return res.data;
       } catch (error) {
@@ -22,3 +23,4 @@ export const CheckoutHandler = createAsyncThunk(
       }
     }
   );
+  
