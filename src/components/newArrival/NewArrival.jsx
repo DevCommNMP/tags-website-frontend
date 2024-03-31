@@ -75,6 +75,7 @@ const dummydata = [
 const NewArrival = ({ data }) => {
   const navigate = useNavigate();
   const onClickProductHandler = (productid) => {
+    console.log()
     navigate(`/products/${productid}`);
   };
 
@@ -102,7 +103,7 @@ const NewArrival = ({ data }) => {
                       <div className="product-cart-wrap mb-30">
                         <div className="product-img-action-wrap">
                           <div className="product-img product-img-zoom">
-                            <Link to="/products/:id">
+                            <Link to={`/products/${product.id}`}>
                               <img className="default-img" src={product.productImage} alt="" />
                             </Link>
                           </div>

@@ -27,7 +27,7 @@ const ProductCard = (product) => {
         <div className="product-content-wrap">
           <div className="product-category">{/* <a>Snack</a> */}</div>
           <h2>
-            <Link to="/products/:id">{product.title}</Link>
+            <Link to={`/products/${product.id}`}>{product.title}</Link>
           </h2>
           <div className="product-rate-cover">
             <div className="product-rate d-inline-block" style={{ backgroundImage: `url(${starRating})` }}>

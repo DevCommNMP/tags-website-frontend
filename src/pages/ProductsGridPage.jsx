@@ -143,7 +143,8 @@ const ProductsGridPage = ({ data }) => {
                             {" "}
                             <Link to="/products/:id">{product.title}</Link>{" "}
                           </h2>
-                          <div className="product-rate-cover flex-align-justify-center"><span>Customer Rating :  </span>
+                          <div className="product-rate-cover flex-align-justify-center">
+                            <span>Customer Rating : </span>
                             <div className="product-rate d-inline-block" style={{ backgroundImage: `url(${starRating})` }}>
                               <div
                                 className="product-rating"
@@ -152,7 +153,8 @@ const ProductsGridPage = ({ data }) => {
                             </div>
                             <span className="font-small ml-5 text-muted"> ({product.rating})</span>
                           </div>
-                          <div className="product-rate-cover flex-align-justify-center"><span>Available Colors :</span>
+                          <div className="product-rate-cover flex-align-justify-center">
+                            <span>Available Colors :</span>
                             {product.colorsAvailable.map((color, index) => (
                               <span key={index} className={`product-color-box product${color}`}></span>
                             ))}
