@@ -70,7 +70,7 @@ const HeaderMiddle = () => {
               <div className="header-action-right">
                 <div className="header-action-2">
                   <div className="header-action-icon-2">
-                    <a href="shop-wishlist.html">
+                    <a>
                       <img className="svgInject" alt="Nest" src={wishList} />
                       <span className="pro-count blue">6</span>
                     </a>
@@ -147,7 +147,7 @@ const HeaderMiddle = () => {
                   {token ? (
                     <div className="header-action-icon-2">
                       <div className="header-action-icon-2">
-                        <div href="shop-wishlist.html" style={{ width: 30, height: 30, border: "1px solid red" }}>
+                        <div style={{ width: 30, height: 30, border: "1px solid red" }}>
                           <img className="svgInject" alt="Nest" src={user.profileImage} style={{ border: "50%" }} />
                         </div>
                         <a>
@@ -174,7 +174,7 @@ const HeaderMiddle = () => {
                             </a>
                           </li>
                           <li>
-                            <a href="shop-wishlist.html">
+                            <a>
                               <i className="fi fi-rs-heart mr-10"></i>My Wishlist
                             </a>
                           </li>

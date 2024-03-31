@@ -104,7 +104,7 @@ const NewArrival = ({ data }) => {
                               </a>
                             </div>
                             <div className="product-action-1">
-                              <a aria-label="Add To Wishlist" className="action-btn" href="shop-wishlist.html">
+                              <a aria-label="Add To Wishlist" className="action-btn">
                                 <i className="fi-rs-heart"></i>
                               </a>
                               <a aria-label="Compare" className="action-btn" href="shop-compare.html">

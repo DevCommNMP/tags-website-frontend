@@ -4296,6 +4296,13 @@ table .product-thumbnail img {
   border-color: #d02327;
 }
 
+.size-filter.list-filter.color-filter li a {
+  /* color: #7e7e7e; */
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+}
+
 .detail-qty {
   max-width: 80px;
   padding: 9px 20px;

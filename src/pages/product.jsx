@@ -85,12 +85,12 @@ const Product = () => {
                       </div>
                       <div className="attr-detail attr-size mb-30">
                         <strong className="mr-10">Colors</strong>
-                        <ul className="list-filter size-filter font-small">
+                        <ul className="list-filter color-filter flex-align-justify-center size-filter font-small">
                           {particularproduct &&
                             particularproduct.colorsAvailable &&
                             particularproduct.colorsAvailable.map((item, index) => (
                               <li key={index}>
-                                <a>{item}</a>
+                                <a className={`product-color-box product${item}`}></a>
                               </li>
                             ))}
                         </ul>
