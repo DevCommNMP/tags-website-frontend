@@ -39,33 +39,33 @@ const settings = {
   ],
 };
 
-const dummydata = [
-  {
-    id: 1,
-    name: "Item 1",
-    image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img1.jpg",
-  },
-  {
-    id: 2,
-    name: "Item 2",
-    image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img7.jpg",
-  },
-  {
-    id: 3,
-    name: "Item 3",
-    image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img3.jpg",
-  },
-  {
-    id: 4,
-    name: "Item 4",
-    image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img4.jpg",
-  },
-  {
-    id: 5,
-    name: "Item 5",
-    image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img5.jpg",
-  },
-];
+// const dummydata = [
+//   {
+//     id: 1,
+//     name: "Item 1",
+//     image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img1.jpg",
+//   },
+//   {
+//     id: 2,
+//     name: "Item 2",
+//     image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img7.jpg",
+//   },
+//   {
+//     id: 3,
+//     name: "Item 3",
+//     image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img3.jpg",
+//   },
+//   {
+//     id: 4,
+//     name: "Item 4",
+//     image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img4.jpg",
+//   },
+//   {
+//     id: 5,
+//     name: "Item 5",
+//     image: "src/assets/drive-download-20240310T091457Z-001/ST 353 - White/img5.jpg",
+//   },
+// ];
 const NewArrival = ({ data }) => {
   const navigate = useNavigate();
   const onClickProductHandler = (productid) => {
@@ -120,13 +120,13 @@ const NewArrival = ({ data }) => {
                           </div>
                           <div className="product-content-wrap">
                             <div className="product-category">
-                              <a href="shop-grid-right.html">Snack</a>
+                              <a href="shop-grid-right.html">{item.subcategoryType.subcategoryTypeName}</a>
                             </div>
                             <h2>
                               <div onClick={() => onClickProductHandler(item.id)} style={{ cursor: "pointer" }}>
-                                Seeds of Change Organic Quinoa, Brown, & Red Rice
+                                {item.title}
                               </div>
-                              ``{" "}
+                              
                             </h2>
                             <div className="product-rate-cover">
                               <div className="product-rate d-inline-block">
@@ -136,13 +136,13 @@ const NewArrival = ({ data }) => {
                             </div>
                             <div>
                               <span className="font-small text-muted">
-                                By <a href="vendor-details-1.html">NestFood</a>
+                                By <a href="vendor-details-1.html">Tags</a>
                               </span>
                             </div>
                             <div className="product-card-bottom">
                               <div className="product-price">
-                                <span>$28.85</span>
-                                <span className="old-price">$32.8</span>
+                                <span>{item.SellingPrice}</span>
+                                <span className="old-price">{""}</span>
                               </div>
                               <div className="add-cart">
                                 <a className="add" href="shop-cart.html">
