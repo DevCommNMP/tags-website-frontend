@@ -70,15 +70,6 @@ const HeaderMiddle = () => {
               <div className="header-action-right">
                 <div className="header-action-2">
                   <div className="header-action-icon-2">
-                    <a>
-                      <img className="svgInject" alt="Nest" src={wishList} />
-                      <span className="pro-count blue">6</span>
-                    </a>
-                    <Link to="/wishlist">
-                      <span className="lable">Wishlist</span>
-                    </Link>
-                  </div>
-                  <div className="header-action-icon-2">
                     <a className="mini-cart-icon">
                       <img alt="Nest" src={cartImg} />
                       <span className="pro-count blue">3</span>
