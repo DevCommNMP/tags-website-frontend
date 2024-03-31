@@ -35,6 +35,7 @@ const Header = () => {
   return (
     <>
       <HeaderTop />
+    <div className="sticky-header">
       <HeaderMiddle />
       <div className={`mobile-header-active mobile-header-wrapper-style ${isSidebarVisible ? "sidebar-visible" : ""}`}>
         <div className="mobile-header-wrapper-inner">
@@ -275,6 +276,7 @@ const Header = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

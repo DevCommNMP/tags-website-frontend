@@ -115,3 +115,9 @@ news-p newsletter-inner {
     background-color: #d02327;
     z-index: 9999999
 }
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff; /* Adjust this to your header's background color */
+    z-index: 1000; /* Adjust this value as needed */
+  }
