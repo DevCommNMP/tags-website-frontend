@@ -1,6 +1,6 @@
 import bannerImg1 from "../../assets/imgs/banner/banner-01.jpg";
-// import bannerImg2 from "../../assets/imgs/banner/banner-02.avif";
-// import bannerImg3 from "../../assets/imgs/banner/banner-03.jpg";
+import bannerImg2 from "../../assets/imgs/banner/banner-02.avif";
+import bannerImg3 from "../../assets/imgs/banner/banner-03.jpg";
 
 const Banner = () => {
   return (
