@@ -86,7 +86,6 @@ const Cart = () => {
                         Product
                       </th>
                       <th scope="col">Price</th>
-                      {/* <th scope="col">Stock Status</th> */}
                       <th scope="col">Action</th>
                       <th scope="col" className="end">
                         Remove
@@ -117,9 +116,6 @@ const Cart = () => {
                         <td className="price" data-title="Price">
                           <h3 className="text-brand">{item.price}</h3>
                         </td>
-                        {/* <td className="text-center detail-info" data-title="Stock">
-                          <span className="stock-status in-stock mb-0"> In Stock </span>
-                        </td> */}
                         <td className="text-right" data-title="Cart">
                           <button className="btn btn-sm" onClick={() => cartProductHandler(item.productId)}>
                             View Product

@@ -32,7 +32,7 @@ const YoutubeVideo = () => {
 
         <div className="text-center col-8">
           <iframe
-            style={{ borderRadius: "20px" }}
+            style={{ borderRadius: "20px", maxWidth: "100%"}}
             width="900"
             height="506"
             src="https://www.youtube.com/embed/Fw3bReDmHhw?si=i2CsCrcm7yMU8f-s"
@@ -41,7 +41,6 @@ const YoutubeVideo = () => {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
             type="text/html"
-            className="img-fluid"
           ></iframe>
         </div>
       </div>
