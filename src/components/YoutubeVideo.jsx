@@ -2,7 +2,7 @@ const YoutubeVideo = () => {
   return (
     <div className="container mt-30 mb-30">
       <div className="row">
-        <div className="col-4">
+        <div className="col-md-4 col-12">
           <h3 className="mb-5 mt-25">Welcome to TagsFootwear</h3>
           <p className="mb-5">
             At TagsFootwear, we believe that every step matters. Step into style, comfort, and confidence with our exquisite collection of
@@ -32,7 +32,7 @@ const YoutubeVideo = () => {
 
         <div className="text-center col-8">
           <iframe
-            style={{ borderRadius: "20px" }}
+            style={{ borderRadius: "20px", maxWidth: "100%"}}
             width="900"
             height="506"
             src="https://www.youtube.com/embed/Fw3bReDmHhw?si=i2CsCrcm7yMU8f-s"

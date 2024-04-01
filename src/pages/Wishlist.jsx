@@ -1,5 +1,6 @@
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import { Link } from "react-router-dom";
 
 const Wishlist = () => {
   return (
@@ -9,8 +10,10 @@ const Wishlist = () => {
         <div className="page-header breadcrumb-wrap">
           <div className="container">
             <div className="breadcrumb">
-              <a href="index.html" rel="nofollow">
-                <i className="fi-rs-home mr-5"></i>Home
+              <a>
+                <Link to="/">
+                  <i className="fi-rs-home mr-5"></i>Home
+                </Link>
               </a>
               <span></span> Shop <span></span> Fillter
             </div>

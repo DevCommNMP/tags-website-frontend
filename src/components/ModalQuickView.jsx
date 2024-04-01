@@ -4,15 +4,11 @@ import Slider from "react-slick";
 
 import Modal from "react-bootstrap/Modal";
 
-function ModalQuickView (props) {
-
+function ModalQuickView(props) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const sliderRef = useRef();
-  
-  const product = props.product;
 
-  // console.log("test");
-  // console.log(product);
+  const product = props.product;
 
   const handleThumbnailClick = (index) => {
     setCurrentImageIndex(index);
@@ -47,7 +43,6 @@ function ModalQuickView (props) {
       </a>
 
       <Modal show={show} onHide={handleClose}>
-        <div className="modal-content">
           <button className="btn-close" onClick={handleClose}></button>
           <div className="modal-body">
             <div className="row">
@@ -132,7 +127,6 @@ function ModalQuickView (props) {
               </div>
             </div>
           </div>
-        </div>
       </Modal>
     </>
   );
