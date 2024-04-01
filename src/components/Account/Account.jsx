@@ -1,14 +1,34 @@
 import { useState } from "react";
 import UserImg from "../../assets/imgs/theme/user-profile-img.jpg";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
+import {  useDispatch,useSelector } from 'react-redux';
+import { Slide, toast, ToastContainer } from "react-toastify";
+import { useEffect } from "react";
 const Account = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
+
+  const navigate = useNavigate();
+const dispatch=useDispatch();
+
+const storeData = useSelector((store) => store.auth);
+const { user,loading,appErr,serverErr } = storeData;
+useEffect(() => {
+if((user )){
+  toast("Login successfully!");
+}
+}, [])
+
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
   };
 
+  const logoutHandler=async()=>{
+    await localStorage.removeItem("userData")
+    navigate('/login')
+  }
+  console.log(user)
   return (
     <>
       <div className="page-content pt-150 pb-150">
@@ -64,10 +84,10 @@ const Account = () => {
                           Account details
                         </a>
                       </li>
-                      <li className="nav-item">
-                        <Link className="nav-link" to="/login">
+                      <li className="nav-item" onClick={logoutHandler}>
+                        <a className="nav-link">
                           Logout
-                        </Link>
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -77,7 +97,7 @@ const Account = () => {
                     <div className={`tab-pane fade ${activeTab === "dashboard" ? "show active" : ""}`} role="tabpanel">
                       <div className="card">
                         <div className="card-header text-white">
-                          <h3 className="mb-0">Welcome, Ileana D&apos;Cruz!</h3>
+                          <h3 className="mb-0">Welcome,{user. userName}</h3>
                         </div>
                         <div className="card-body">
                           <div className="row align-items-center">
