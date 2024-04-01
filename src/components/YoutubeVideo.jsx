@@ -2,7 +2,7 @@ const YoutubeVideo = () => {
   return (
     <div className="container mt-30 mb-30">
       <div className="row">
-        <div className="col-4">
+        <div className="col-md-4 col-12">
           <h3 className="mb-5 mt-25">Welcome to TagsFootwear</h3>
           <p className="mb-5">
             At TagsFootwear, we believe that every step matters. Step into style, comfort, and confidence with our exquisite collection of
@@ -41,6 +41,7 @@ const YoutubeVideo = () => {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
             type="text/html"
+            className="img-fluid"
           ></iframe>
         </div>
       </div>

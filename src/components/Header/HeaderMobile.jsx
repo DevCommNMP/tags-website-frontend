@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const HeaderMobile = () => {
   return (
     <div className="mobile-header-content-area">
@@ -13,7 +15,9 @@ const HeaderMobile = () => {
         <nav>
           <ul className="mobile-menu font-heading">
             <li>
-              <a href="index.html">Home</a>
+              <a>
+                <Link to="/">Home</Link>
+              </a>
             </li>
             <li className="menu-item-has-children">
               <a href="shop-grid-right.html">shop</a>

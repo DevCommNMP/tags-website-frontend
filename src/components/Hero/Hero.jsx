@@ -44,7 +44,6 @@ const Hero = () => {
                   </li>
                 </Slider>
               </div>
-              {/* <div className="slider-arrow hero-slider-1-arrow"></div> */}
             </div>
           </div>
           <div className="col-lg-4 d-none d-xl-block">

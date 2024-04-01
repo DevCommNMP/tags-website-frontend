@@ -54,7 +54,7 @@ const VerifyEmail = () => {
                 <i className="fi-rs-home mr-5"></i>Home
                 </Link>
               </a>
-              <span></span> Pages <span></span> My Account
+              <span></span> My Account
             </div>
           </div>
         </div>
