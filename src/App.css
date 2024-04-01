@@ -121,3 +121,8 @@ news-p newsletter-inner {
     background-color: #ffffff; /* Adjust this to your header's background color */
     z-index: 1000; /* Adjust this value as needed */
   }
+
+
+  .btn.disabled, .btn:disabled, fieldset:disabled .btn {
+    background-color: gray !important;
+  }

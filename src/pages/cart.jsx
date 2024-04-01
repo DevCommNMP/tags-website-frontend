@@ -41,7 +41,10 @@ const Cart = () => {
     if (cart) {
       setCartdata(cart);
     } else {
-      console.log("Cart is empty"); // Logging empty cart
+      toast.error("Cart is empty !", {
+        position: "top-right",
+      });
+
     }
   }, []);
 
@@ -66,12 +69,19 @@ const Cart = () => {
           <div className="row">
             <div className="col-xl-10 col-lg-12 m-auto">
               <div className="mb-50">
-                <h1 className="heading-2 mb-10">Your Cart</h1>
-                <h6 className="text-body">{cartdata.length > 0 && `There are ${cartdata.length} products in this list`}</h6>
+                <h1 className="heading-2 text-center mb-10">Your Cart</h1>
+                <h6 className="text-center text-body">{cartdata.length > 0 && `There are ${cartdata.length} products in this list`}</h6>
               </div>
-              {cartdata.length === 0 ? ( // Condition to check for empty cart
+              {cartdata.length === 0 ? (
                 <div>
-                  <p>Your cart is empty</p>
+                  <h6>
+                  Empty cart, full potential!  <br/>
+                  <Link to="/" >Explore 
+                    </Link>
+                    our stylish selection of footwear <br />
+                  and transform your shopping experience into <br />
+                   a fashion adventure. <br />
+                  </h6>
                 </div>
               ) : (
                 <div className="table-responsive shopping-summery">
@@ -128,9 +138,11 @@ const Cart = () => {
                   </table>
                 </div>
               )}
-              <Button style={{ textAlign: "center", marginTop: "50px" }} onClick={checkoutHandler} disabled={cartdata.length === 0}>
-                {cartdata.length === 0 ? "Add products in cart to checkout" : "Proceed to checkout"}
-              </Button>
+              <Link to="/all-categories">
+                <Button style={{ textAlign: "center", marginTop: "50px" }} onClick={checkoutHandler}>
+                  {cartdata.length === 0 ? "Browse All Categories" : "Proceed to checkout"}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
