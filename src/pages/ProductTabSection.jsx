@@ -89,6 +89,7 @@ const ProductTabSection = ({ data }) => {
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
               {limitedData.map((product, index) => (
+
                     <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
                       <div className="product-cart-wrap mb-30">
                         <div className="product-img-action-wrap">
@@ -140,6 +141,7 @@ const ProductTabSection = ({ data }) => {
                         </div>
                       </div>
                     </div>
+                    
                   ))}
               </div>
             </div>
