@@ -22,7 +22,7 @@ const Product = () => {
 
   const cartHandler = () => {
     const res = dispatch(addToCartHandler(particularproduct));
-    console.log("hello");
+    // console.log("hello");
   };
 
   // State to store the quantity value
