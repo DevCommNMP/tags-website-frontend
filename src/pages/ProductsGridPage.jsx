@@ -17,7 +17,7 @@ const ProductsGridPage = ({ data }) => {
   const { title } = useParams();
   const storeData = useSelector((store) => store.products);
   const { products, productsLoading, appErr, serverErr } = storeData;
-  console.log(products);
+  // console.log(products);
   const [sliderValues, setSliderValues] = useState([0, 100]);
   const [productsPerPage, setProductsPerPage] = useState(5);
 
@@ -25,7 +25,7 @@ const ProductsGridPage = ({ data }) => {
 
   useEffect(() => {
     const res = dispatch(fetchAllProductsAction());
-    console.log(res);
+    // console.log(res);
   }, [dispatch]);
 
   const [currentPage, setCurrentPage] = useState(1); // State to manage current page

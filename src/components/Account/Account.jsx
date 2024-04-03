@@ -28,7 +28,7 @@ if((user )){
     await localStorage.removeItem("userData")
     navigate('/login')
   }
-  console.log(user)
+  // console.log(user)
   return (
     <>
       <div className="page-content pt-150 pb-150">

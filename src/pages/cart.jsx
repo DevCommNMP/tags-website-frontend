@@ -138,11 +138,11 @@ const Cart = () => {
                   </table>
                 </div>
               )}
-              <Link to="/all-categories">
+              <Link  to={cartdata.length === 0 ? "/all-categories":"/checkout"}>
                 <Button style={{ textAlign: "center", marginTop: "50px" }} onClick={checkoutHandler}>
                   {cartdata.length === 0 ? "Browse All Categories" : "Proceed to checkout"}
                 </Button>
-              </Link>
+              </Link> 
             </div>
           </div>
         </div>

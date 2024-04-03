@@ -12,7 +12,9 @@ export const CheckoutHandler = createAsyncThunk(
             "Content-Type": "application/json",
           },
         };
-        const res = await axios.post(`${baseUrl}/api/checkout`, null, config); // Pass null as the request body since no data is being sent
+        const {data}= await axios.get(`${baseUrl}/api/getkeys`, config)
+        console.log(data)
+        const res = await axios.post(`${baseUrl}/api/checkout`, config); // Pass null as the request body since no data is being sent
         console.log(res);
         return res.data;
       } catch (error) {
