@@ -1,12 +1,10 @@
 import logo from "../../assets/imgs/theme/logo.png";
-// import compareIcon from "../../assets/imgs/theme/icons/icon-compare.svg";
 import wishList from "../../assets/imgs/theme/icons/icon-heart.svg";
 import account from "../../assets/imgs/theme/icons/icon-user.svg";
 import cartImg from "../../assets/imgs/theme/icons/icon-cart.svg";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Search2 from "../Search2";
-
 import { useDispatch, useSelector } from "react-redux";
 
 const HeaderMiddle = () => {
@@ -14,11 +12,11 @@ const HeaderMiddle = () => {
   const dispatch = useDispatch();
   const [user, setUser] = useState("");
   const [token, setToken] = useState("");
-  const [cart, setcart] = useState(JSON.parse(localStorage.getItem("cartItems")));
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const localData = localStorage.getItem("userData");
-    // const cart=JSON.parse(localStorage.getItem("cartItems"))
+    const cartData = JSON.parse(localStorage.getItem("cartItems"));
 
     if (localData) {
       const parsedData = JSON.parse(localData);
@@ -26,29 +24,14 @@ const HeaderMiddle = () => {
       setUser(parsedData);
     }
 
-    const removeLocalData = setTimeout(() => {
-      if (token) {
-        console.log("removing localData");
-        localStorage.removeItem("userData");
-        setToken("");
-      }
-    }, 3600000);
+    if (cartData) {
+      setCart(cartData);
+    }
+  }, []);
 
-    return () => clearTimeout(removeLocalData);
-  }, [token, cart]); // Run once on component mount to fetch token from local storage
+  useEffect(()=>{
 
-  // useEffect(() => {
-  //   const removeLocalData = setTimeout(() => {
-  //     if (token) {
-  //       console.log("removing localData");
-  //       localStorage.removeItem("userData");
-  //       setToken("");
-  //     }
-  //   }, 3600000);
-
-  //   return () => clearTimeout(removeLocalData);
-  // }, []);
-
+  },[cart])
   const signOutHandler = async () => {
     await localStorage.removeItem("userData");
     setToken("");
@@ -70,80 +53,23 @@ const HeaderMiddle = () => {
               <div className="header-action-right">
                 <div className="header-action-2">
                   <div className="header-action-icon-2">
-                    <a className="mini-cart-icon">
-                      <img alt="Nest" src={cartImg} />
-                      <span className="pro-count blue">3</span>
-                    </a>
+                    <Link to="/cart" className="mini-cart-icon">
+                      <img alt="Cart" src={cartImg} />
+                      <span className="pro-count blue">{cart.length || 0}</span>
+                    </Link>
                     <Link to="/cart">
                       <span className="lable">Cart</span>
                     </Link>
-                    {/* <div className="cart-dropdown-wrap cart-dropdown-hm2">
-                      <ul>
-                        <li>
-                          <div className="shopping-cart-img">
-                            <a>
-                              <img alt="Nest" src="assets/imgs/shop/thumbnail-3.jpg" />
-                            </a>
-                          </div>
-                          <div className="shopping-cart-title">
-                            <h4>
-                              <a>Daisy Casual Bag</a>
-                            </h4>
-                            <h4>
-                              <span>1 × </span>$800.00
-                            </h4>
-                          </div>
-                          <div className="shopping-cart-delete">
-                            <a >
-                              <i className="fi-rs-cross-small"></i>
-                            </a>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="shopping-cart-img">
-                            <a>
-                              <img alt="Nest" src="assets/imgs/shop/thumbnail-2.jpg" />
-                            </a>
-                          </div>
-                          <div className="shopping-cart-title">
-                            <h4>
-                              <a>Corduroy Shirts</a>
-                            </h4>
-                            <h4>
-                              <span>1 × </span>$3200.00
-                            </h4>
-                          </div>
-                          <div className="shopping-cart-delete">
-                            <a >
-                              <i className="fi-rs-cross-small"></i>
-                            </a>
-                          </div>
-                        </li>
-                      </ul>
-                      <div className="shopping-cart-footer">
-                        <div className="shopping-cart-total">
-                          <h4>
-                            Total <span>$4000.00</span>
-                          </h4>
-                        </div>
-                        <div className="shopping-cart-button">
-                          <Link to="/checkout" className="outline">
-                            View cart
-                          </Link>
-                          <Link to="/checkout">Checkout</Link>
-                        </div>
-                      </div>
-                    </div> */}
                   </div>
                   {token ? (
                     <div className="header-action-icon-2">
                       <div className="header-action-icon-2">
-                        <div style={{ width: 30, height: 30, border: "1px solid red" }}>
-                          <img className="svgInject" alt="Nest" src={user.profileImage} style={{ border: "50%" }} />
+                        <div style={{ width: 30, height: 30, border: "1px solid red", borderRadius: "50%" }}>
+                          <img className="svgInject" alt="Profile" src={user.profileImage || account} />
                         </div>
-                        <a>
+                        <Link>
                           <span className="lable ml-1">hello, {user.userName}</span>
-                        </a>
+                        </Link>
                       </div>
 
                       <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
@@ -187,7 +113,7 @@ const HeaderMiddle = () => {
                   ) : (
                     <div className="header-action-icon-2">
                       <Link to="/login">
-                        <img className="svgInject" alt="Nest" src={account} />
+                        <img className="svgInject" alt="Account" src={account} />
                       </Link>
                       <Link to="/login">
                         <span className="lable ml-0" onClick={() => navigate("/login")}>

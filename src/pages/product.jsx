@@ -5,9 +5,10 @@ import SingleProductImages from "../components/SingleProductImages";
 import { fetchParticularProduct } from "../redux/actions/product/productActions";
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
-import { addToCartHandler } from "../redux/actions/cart/cartActions";
+import { addToCart, addToCartHandler } from "../redux/actions/cart/cartActions";
 import { Link } from "react-router-dom";
-
+import { Slide, toast, ToastContainer } from "react-toastify";
+// import { addToCartHandler } from "../redux/actions/cart/cartActions";
 const Product = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -20,11 +21,14 @@ const Product = () => {
     // console.log(res)xz
   }, [dispatch]);
 
-  const cartHandler = () => {
-    const res = dispatch(addToCartHandler(particularproduct));
-    // console.log("hello");
+  const cartHandler = async (item) => {
+    const res = await addToCartHandler(addToCart(item));
+    console.log(res);
+    // setSuccessToast(true);
+    toast.success("Product added to cart", {
+      position: "top-right",
+    });
   };
-
   // State to store the quantity value
   const [quantity, setQuantity] = useState(1);
 
@@ -41,6 +45,7 @@ const Product = () => {
   };
   return (
     <>
+    <ToastContainer />
       <Header />
       <main className="main">
         <div className="page-header breadcrumb-wrap">
@@ -52,7 +57,7 @@ const Product = () => {
                 </Link>
               </a>
               <span></span>
-              <a href="shop-grid-right.html">Products</a>
+              <a href="">Products</a>
               <span></span> {particularproduct.title}
             </div>
           </div>

@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useState, useRef } from "react";
 import Slider from "react-slick";
-
+import { Slide, toast, ToastContainer } from "react-toastify";
+import { addToCartHandler } from "../redux/actions/cart/cartActions";
 import Modal from "react-bootstrap/Modal";
+import { addToCart } from "../redux/actions/cart/cartActions";
 
 function ModalQuickView(props) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -14,6 +16,15 @@ function ModalQuickView(props) {
     setCurrentImageIndex(index);
     sliderRef.current.slickGoTo(index);
   };
+
+ const  cartButtonHandler=async()=>{
+  const res = await dispatch(addToCartHandler(product));
+  console.log(res);
+  setSuccessToast(true);
+  toast.success("Product added to cart", {
+    position: "top-right",
+  });
+ }
 
   const settings = {
     dots: true,
@@ -35,7 +46,7 @@ function ModalQuickView(props) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+console.log(product)
   return (
     <>
       <a aria-label="Quick view" onClick={handleShow} className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -78,22 +89,22 @@ function ModalQuickView(props) {
                 <div className="detail-info pr-30 pl-30">
                   <span className="stock-status out-stock"> Sale Off </span>
                   <h3 className="title-detail">
-                    <a className="text-heading">Seeds of Change Organic Quinoa, Brown</a>
+                    <a className="text-heading">{product.title}</a>
                   </h3>
                   <div className="product-detail-rating">
                     <div className="product-rate-cover text-end">
                       <div className="product-rate d-inline-block">
                         <div className="product-rating" style={{ width: "90%" }}></div>
                       </div>
-                      <span className="font-small ml-5 text-muted"> (32 reviews)</span>
+                      <span className="font-small ml-5 text-muted">Rating {product.rating}</span>
                     </div>
                   </div>
                   <div className="clearfix product-price-cover">
                     <div className="product-price primary-color float-left">
-                      <span className="current-price text-brand">$38</span>
+                      <span className="current-price text-brand"> &#8377;{product.SellingPrice}</span>
                       <span>
                         <span className="save-price font-md color3 ml-15">26% Off</span>
-                        <span className="old-price font-md ml-15">$52</span>
+                        <span className="old-price font-md ml-15"></span>
                       </span>
                     </div>
                   </div>
@@ -108,7 +119,7 @@ function ModalQuickView(props) {
                       </a>
                     </div>
                     <div className="product-extra-link2">
-                      <button type="submit" className="button button-add-to-cart">
+                      <button type="submit" className="button button-add-to-cart" onClick={cartButtonHandler}>
                         <i className="fi-rs-shopping-cart"></i>Add to cart
                       </button>
                     </div>

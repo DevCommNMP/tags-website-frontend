@@ -3,7 +3,7 @@ import axios from "axios";
 import { baseUrl } from "../../../utils/baseUrl";
 
 // Function to add a product to the cart in local storage
-const addToCart = (product) => {
+export const addToCart = (product) => {
   // Get existing cart items from local storage or initialize an empty array
   let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
   
