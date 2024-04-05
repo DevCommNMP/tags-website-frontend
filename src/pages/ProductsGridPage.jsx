@@ -78,9 +78,7 @@ const ProductsGridPage = ({ data }) => {
           aria-labelledby="quickViewModalLabel"
           aria-hidden="true"
         ></div>
-        <header className="header-area header-style-1 header-height-2">
           <Header />
-        </header>
         <main className="main">
           <div className="page-header mt-30 mb-50">
             <div className="container">

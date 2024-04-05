@@ -8,44 +8,54 @@ import { useState, useEffect } from "react";
 import { addToCart, addToCartHandler } from "../redux/actions/cart/cartActions";
 import { Link } from "react-router-dom";
 import { Slide, toast, ToastContainer } from "react-toastify";
-// import { addToCartHandler } from "../redux/actions/cart/cartActions";
+import ProductInfo from "../components/ProductInfo";
+
 const Product = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const storeData = useSelector((store) => store.products);
   const { particularproduct, productsLoading, appErr, serverErr, products } = storeData;
-  // console.log(particularproduct,productsLoading,appErr,serverErr,)
 
   useEffect(() => {
-    const res = dispatch(fetchParticularProduct(id));
-    // console.log(res)xz
+    dispatch(fetchParticularProduct(id));
   }, [dispatch]);
 
-  const cartHandler = async (item) => {
-    const res = await addToCartHandler(addToCart(item));
-    console.log(res);
-    // setSuccessToast(true);
-    toast.success("Product added to cart", {
-      position: "top-right",
-    });
-  };
-  // State to store the quantity value
   const [quantity, setQuantity] = useState(1);
+  const [selectedColor, setSelectedColor] = useState(particularproduct.colorsAvailable ? particularproduct.colorsAvailable[0] : null);
+  const [selectedSize, setSelectedSize] = useState(particularproduct.sizesAvailable ? particularproduct.sizesAvailable[0] : null);
+    const [error, setError] = useState("");
 
-  // Function to handle quantity increase
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
   };
 
-  // Function to handle quantity decrease
   const decreaseQuantity = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
   };
+
+  const handleColorSelection = (color) => {
+    setSelectedColor(color);
+  };
+
+  const handleSizeSelection = (size) => {
+    setSelectedSize(size);
+  };
+
+  const handleBuyNow = () => {
+    if (!selectedColor || !selectedSize) {
+      setError("Please select color and size.");
+    } else {
+      console.log("Quantity:", quantity);
+      console.log("Selected Color:", selectedColor);
+      console.log("Selected Size:", selectedSize);
+    }
+  };
+
   return (
     <>
-    <ToastContainer />
+      <ToastContainer />
       <Header />
       <main className="main">
         <div className="page-header breadcrumb-wrap">
@@ -92,6 +102,7 @@ const Product = () => {
                       <div className="short-desc mb-30">
                         <p className="font-lg">{particularproduct.description}</p>
                       </div>
+
                       <div className="attr-detail attr-size mb-3">
                         <strong className="mr-10">Size</strong>
                         <ul className="list-filter size-filter font-small">
@@ -99,7 +110,9 @@ const Product = () => {
                             particularproduct.sizesAvailable &&
                             particularproduct.sizesAvailable.map((item, index) => (
                               <li key={index}>
-                                <a>{item.size}</a>
+                                <a onClick={() => handleSizeSelection(item.size)} className={selectedSize === item.size ? "selected" : ""}>
+                                  {item.size}
+                                </a>
                               </li>
                             ))}
                         </ul>
@@ -111,11 +124,15 @@ const Product = () => {
                             particularproduct.colorsAvailable &&
                             particularproduct.colorsAvailable.map((item, index) => (
                               <li key={index}>
-                                <a className={`product-color-box product${item}`}></a>
+                                <a
+                                  onClick={() => handleColorSelection(item)}
+                                  className={`product-color-box product${item} ${selectedColor === item ? "selected" : ""}`}
+                                ></a>
                               </li>
                             ))}
                         </ul>
                       </div>
+
                       <div className="detail-extralink mb-50">
                         <div className="detail-qty border radius">
                           <a className="qty-down" onClick={decreaseQuantity}>
@@ -126,17 +143,20 @@ const Product = () => {
                             <i className="fi-rs-angle-small-up"></i>
                           </a>
                         </div>
+                        <br />
                         <div className="product-extra-link2">
-                          <button type="submit" className="button button-add-to-cart" onClick={() => cartHandler(particularproduct)}>
+                          <button
+                            type="button"
+                            className="border bg-white  text-brand radius button button-add-to-cart"
+                            onClick={handleBuyNow}
+                          >
                             <i className="fi-rs-shopping-cart"></i>Add to cart
                           </button>
-                          <a aria-label="Add To Wishlist" className="action-btn hover-up" href="shop-wishlist.html">
-                            <i className="fi-rs-heart"></i>
-                          </a>
-                          <a aria-label="Compare" className="action-btn hover-up" href="shop-compare.html">
-                            <i className="fi-rs-shuffle"></i>
-                          </a>
+                          <button type="button" className="button button-primary button-add-to-cart ml-5" onClick={handleBuyNow}>
+                            <i className="fi-rs-shopping-cart"></i>Buy Now
+                          </button>
                         </div>
+                        {error && <p className="text-danger">{error}</p>}
                       </div>
                       <div className="font-xs">
                         <ul className="mr-50 float-start">
@@ -167,60 +187,7 @@ const Product = () => {
                     </div>
                   </div>
                 </div>
-                <div className="product-info">
-                  <div className="tab-style3">
-                    <div className="tab-content shop_info_tab entry-main-content">
-                      <div className="tab-pane fade show active" id="Description">
-                        <div className="">
-                          <h4 className="mt-30">Product Description</h4>
-                          <hr className="wp-block-separator is-style-wide" />
-                          <ul className="product-more-infor mt-30">
-                            <li>
-                              <span>Type Of Packing</span> Bottle
-                            </li>
-                            <li>
-                              <span>Color</span> Green, Pink, Powder Blue, Purple
-                            </li>
-                            <li>
-                              <span>Quantity Per Case</span> 100ml
-                            </li>
-                            <li>
-                              <span>Ethyl Alcohol</span> 70%
-                            </li>
-                            <li>
-                              <span>Piece In One</span> Carton
-                            </li>
-                          </ul>
-                          <hr className="wp-block-separator is-style-dots" />
-                          <p>
-                            Laconic overheard dear woodchuck wow this outrageously taut beaver hey hello far meadowlark imitatively
-                            egregiously hugged that yikes minimally unanimous pouted flirtatiously as beaver beheld above forward energetic
-                            across this jeepers beneficently cockily less a the raucously that magic upheld far so the this where crud then
-                            below after jeez enchanting drunkenly more much wow callously irrespective limpet.
-                          </p>
-                          <h4 className="mt-30">Packaging & Delivery</h4>
-                          <hr className="wp-block-separator is-style-wide" />
-                          <p>
-                            Less lion goodness that euphemistically robin expeditiously bluebird smugly scratched far while thus cackled
-                            sheepishly rigid after due one assenting regarding censorious while occasional or this more crane went more as
-                            this less much amid overhung anathematic because much held one exuberantly sheep goodness so where rat wry well
-                            concomitantly.
-                          </p>
-                          <p>
-                            Scallop or far crud plain remarkably far by thus far iguana lewd precociously and and less rattlesnake contrary
-                            caustic wow this near alas and next and pled the yikes articulate about as less cackled dalmatian in much less
-                            well jeering for the thanks blindly sentimental whimpered less across objectively fanciful grimaced wildly some
-                            wow and rose jeepers outgrew lugubrious luridly irrationally attractively dachshund.
-                          </p>
-                          <h4 className="mt-30">Warnings</h4>
-                          <ul className="product-more-infor mt-30">
-                            <li>Oil separation occurs naturally. May contain pieces of shell.</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <ProductInfo product={particularproduct} />
               </div>
             </div>
           </div>
