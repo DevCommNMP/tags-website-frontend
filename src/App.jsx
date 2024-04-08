@@ -20,7 +20,7 @@ import Invoice from "./components/Invoice.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
 import AllCategoriesPage from "./pages/AllCategoriesPage.jsx";
 import Cart from "./pages/cart.jsx";
-
+// import CheckoutTest from "./components/checkout/checkoutTest.jsx";
 function App() {
   return (
     <>

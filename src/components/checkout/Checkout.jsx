@@ -13,11 +13,28 @@ import { CheckoutHandler } from "../../redux/actions/checkoutActions/checkoutAct
 import axios from "axios";
 import { baseUrl } from "../../utils/baseUrl";
 
+
+
+function loadScript(src) {
+  return new Promise((resolve) => {
+    const script = document.createElement('script')
+    script.src = src
+    script.onload = () => {
+      resolve(true)
+    }
+    script.onerror = () => {
+      resolve(false)
+    }
+    document.body.appendChild(script)
+  })
+}
+
+
 const Checkout = () => {
   const [loading, setLoading] = useState(false);
   const [cartdata, setCartdata] = useState([]);
   const user = JSON.parse(localStorage.getItem("userData"));
-  const [Razorpay, isLoaded] = useRazorpay();
+  const [Razorpay] = useRazorpay();
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     fname: "",
@@ -32,6 +49,7 @@ const Checkout = () => {
     additionalInfo: "",
   });
 
+  console.log(cartdata)
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -39,6 +57,7 @@ const Checkout = () => {
       [name]: value,
     }));
   };
+
 
   const paymentHandler = async () => {
     if (!user) {
@@ -85,64 +104,58 @@ if (!isValid) {
     try {
       const { data } = await axios.get(`${baseUrl}/api/getkeys`);
       
-      const res = await axios.post(`${baseUrl}/api/checkout`, {
-        amount: totalPrice,
-        userEmail: user.email,
-        cartdata,
-        formData
-      });
+      // const res = await axios.post(`${baseUrl}/api/checkout`, {
+      //   amount: totalPrice*100,
+      //   userEmail: user.email,
+      //   cartdata,
+      //   formData
+      // });
+      async function displayRazorpay () {
 
-
-      console.log(res.data)
-
-     
-      const options = {
-        key: data.key, // Enter the Key ID generated from the Dashboard
-        amount: totalPrice*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-        currency: "INR",
-        name: "Acme Corp", //your business name
-        description: "Test Transaction",
-        image: "https://example.com/your_logo",
-        order_id: res.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        callback_url: "https://eneqd3r9zrjok.x.pipedream.net/",
-        prefill: { 
-          name: "Gaurav Kumar", //your customer's name
-          email: "gaurav.kumar@example.com",
-          contact: "9000090000" //Provide the customer's phone number for better conversion rates 
-        },
-        notes: {
-          address: "Razorpay Corporate Office"
-        },
-        theme: {
-          color: "#3399cc"
-        }
-        
+        const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+    
+          if (!res){
+            alert('Razropay failed to load!!')
+            return 
+          }
+          const { data } = await axios.get(`${baseUrl}/api/getkeys`);
+          const res1 = await axios.post(`${baseUrl}/api/checkout`, {
+            amount: totalPrice,
+            userEmail: user.email,
+            cartdata,
+            formData
+          });
+          // console.log(res1)
+    
+         
+    
+        const options = {
+          "key": data.key, // Enter the Key ID generated from the Dashboard
+          "amount": res1.data.order.amount*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+          "currency": "INR",
+          "name": "Acme Corp",
+          "description": "Test Transaction",
+          "image": "https://example.com/your_logo",
+          "order_id": res1.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+          "callback_url":"http://localhost:1769/verify",
+          "notes": {
+              "address": "Razorpay Corporate Office"
+          },
+          "theme": {
+              "color": "#3399cc"
+          }
       };
-      const rzp1 = new window.Razorpay(options);
-      rzp1.open();
-      
-      rzp1.on("payment.failed", function (response) {
-        alert(response.error.code);
-        alert(response.error.description);
-        alert(response.error.source);
-        alert(response.error.step);
-        alert(response.error.reason);
-        alert(response.error.metadata.order_id);
-        alert(response.error.metadata.payment_id);
-      });
-      rzp1.open();
+      const paymentObject = new window.Razorpay(options); 
+      paymentObject.open();
+      }
+      displayRazorpay();
+   
     } catch (error) {
       console.error("Payment Error: ", error);
       toast.error("Payment failed. Please try again later.");
     }
     setLoading(false);
   };
-
-
-
-
-
-
 
   let totalPrice = 0;
   cartdata.forEach((item) => {
@@ -153,27 +166,11 @@ if (!isValid) {
     e.preventDefault();
   };
 
-
-
-
-
-
-
   useEffect(() => {
-   
     const cart = JSON.parse(localStorage.getItem("cartItems"));
     if (cart) {
       setCartdata(cart);
     }
-
-    const script = document.createElement("script");
-    script.src = "https://checkout.razorpay.com/v1/checkout.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
   }, []);
 
 
@@ -491,7 +488,7 @@ if (!isValid) {
                   <img className="mr-15" src={paymentVisa} alt="" />
                   {/* <img src={paymentZapper} alt="" /> */}
                 </div>
-                <button className="btn btn-fill-out btn-block mt-30" id="rzp-button1" onClick={paymentHandler}>
+                <button className="btn btn-fill-out btn-block mt-30" onClick={paymentHandler}>
                  {loading ? "Loading":" Place an Order"}<i className="fi-rs-sign-out ml-15"></i>
                 </button>
               </div>
