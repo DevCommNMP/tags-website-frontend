@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import Slider from "react-slick";
 
+
 const SingleProductImages = ({ product }) => {
   const { productImage, productSubImages } = product;
 
@@ -32,7 +33,6 @@ const SingleProductImages = ({ product }) => {
     slidesToScroll: 1,
     vertical: true,
     verticalSwiping: true,
-
   };
 
   return (
@@ -60,7 +60,6 @@ const SingleProductImages = ({ product }) => {
             ))}
           </Slider>
         </div>
-
       </div>
     </div>
   );

@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 
 import LoaderImg from "../components/LoaderImg.jsx";
 import YoutubeVideo from "../components/YoutubeVideo.jsx";
+import OnlyProductCard from "./CardOnly/OnlyProductCard.jsx";
 const Homepage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -42,6 +43,7 @@ const Homepage = () => {
           <NewArrival data={products} />
           <LeatherSection data={products} />
           <ProductTabSection data={products} />
+          <OnlyProductCard data={products} />
         </div>
       )}
       <YoutubeVideo />

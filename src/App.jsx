@@ -20,7 +20,12 @@ import Invoice from "./components/Invoice.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
 import AllCategoriesPage from "./pages/AllCategoriesPage.jsx";
 import Cart from "./pages/cart.jsx";
-// import CheckoutTest from "./components/checkout/checkoutTest.jsx";
+// import CustomPaging from "./components/CustomPaging.jsx";
+// import DemoRenderEnlargedImage from "./components/ReactMagnify.jsx";
+import ReactSlickExample from "./components/ExternalEnlargedImage.jsx";
+import Test from "../Test.jsx";
+import CustomPaging from "./components/CustomPaging.jsx";
+
 function App() {
   return (
     <>
@@ -47,6 +52,9 @@ function App() {
             <Route exact path="/invoice" element={<Invoice />} />
             <Route exact path="/verify-account" element={<VerifyEmail />} />
             <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
+            <Route exact path="/test" element={<Test />} />
+            <Route exact path="/custom-paging" element={<CustomPaging />} />
+
           </Routes>
         </BrowserRouter>
       </Provider>

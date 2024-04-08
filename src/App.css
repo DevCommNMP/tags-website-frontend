@@ -126,3 +126,8 @@ news-p newsletter-inner {
   .btn.disabled, .btn:disabled, fieldset:disabled .btn {
     background-color: gray !important;
   }
+
+  .selected {
+    border: 2px solid #007bff; /* Example border color for selected elements */
+  }
+  

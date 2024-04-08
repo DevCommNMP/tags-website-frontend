@@ -1,13 +1,13 @@
 import starRating from "../../assets/imgs/theme/rating-stars.png";
 import { Link, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
-import SideBanner from "../SideBanner";
+import SideBanner from "../../components/SideBanner";
 import { Slide, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addToCartHandler } from "../../redux/actions/cart/cartActions";
-import ModalQuickView from "../ModalQuickView";
+import ModalQuickView from "../../components/ModalQuickView";
 
 const settings = {
   dots: true,
@@ -47,7 +47,7 @@ const settings = {
   ],
 };
 
-const NewArrival = ({ data }) => {
+const OnlyProductCard = ({ data }) => {
   const limitedData = data.slice(0, 10); // Only take the first 10 items from the data array
 
   const [successToast, setSuccessToast] = useState("");
@@ -162,4 +162,4 @@ const NewArrival = ({ data }) => {
   );
 };
 
-export default NewArrival;
+export default OnlyProductCard;
