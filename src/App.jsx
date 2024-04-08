@@ -23,7 +23,7 @@ import Cart from "./pages/cart.jsx";
 // import CustomPaging from "./components/CustomPaging.jsx";
 // import DemoRenderEnlargedImage from "./components/ReactMagnify.jsx";
 import ReactSlickExample from "./components/ExternalEnlargedImage.jsx";
-import Test from "../Test.jsx";
+import Test from "../Test.jsx";x
 import CustomPaging from "./components/CustomPaging.jsx";
 
 function App() {
