@@ -3,7 +3,7 @@ import { Component } from "react";
 // import Slider from 'react-slick';
 // import ReactImageMagnify from 'react-image-magnify';
 import Slider from "react-slick";
-import ReactImageMagnify from "react-image-magnify";
+// import ReactImageMagnify from "react-image-magnify";
 import watchImg687 from "../assets/wristwatch_687.jpg";
 import watchImg1200 from "../assets/wristwatch_1200.jpg";
 // import slick

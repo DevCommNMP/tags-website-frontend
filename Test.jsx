@@ -1,5 +1,5 @@
 // import React from 'react'
-import ReactImageMagnify from "react-image-magnify";
+// import ReactImageMagnify from "react-image-magnify";
 import watchImg300 from "./src/components/im.jpg";
 
 const Test = () => {
