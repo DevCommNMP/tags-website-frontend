@@ -148,7 +148,6 @@ const OnlyProductCard = ({ data }) => {
                             </div>
                           </div>
                         </div>
-                        
                       </div>
                     ))}
                   </Slider>
