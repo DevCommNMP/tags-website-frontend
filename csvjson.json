@@ -1,0 +1,3682 @@
+{
+  "Product Name": {
+    "__1": "SIZE",
+    "__2": "COLOUR",
+    "__3": "Brand",
+    "__4": "Category",
+    "__5": "Details",
+    "__6": "SELLING PRICE INCLUDING GST ( Y / N )",
+    "__7": "Discount",
+    "__8": "title"
+  },
+  "ST 312 - Gold": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Gold",
+    "__3": "TAGS",
+    "__4": "Partywear / Slides",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5  \nColour - Gold\nSole - Metro",
+    "__6": 3395,
+    "__7": "",
+    "__8": "women stylish fancy comfortable Golden block heels"
+  },
+  "ST 312 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 -1\n39 - 2\n40 - 2\n41 - 0",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "Partywear / Slides",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5  \nColour - Peach\nSole - Metro",
+    "__6": 3395,
+    "__7": "",
+    "__8": "women stylish fancy comfortable peach block heels"
+  },
+  "ST 350 - Pink": {
+    "__1": "36 - 1\n37 - 1\n38 - 0\n39 - 2\n40 - 1\n41 - 0",
+    "__2": "Pink",
+    "__3": "TAGS",
+    "__4": "",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Pink\nSole - Metro",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women Pink Strap Block heel"
+  },
+  "ST 350 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Black\nSole - Metro",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women Black Strap Block heel"
+  },
+  "ST 350 - White": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "White",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - White\nSole - Metro",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women White Strap Block heel"
+  },
+  "353 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -2  \nColour - Black\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women black ankle strap Block Heels (353)"
+  },
+  "353 - White": {
+    "__1": "36 - 0\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "White",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -2  \nColour - White\nSole - Merto",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women white ankle strap Block Heels (353)"
+  },
+  "353 - Chique": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "Chique",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -2  \nColour - Chique\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women Chique ankle strap Block Heels (353)"
+  },
+  "K-23-811 - N Blue": {
+    "__1": "36 - 0\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - N Blue\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Women Blue Round-Toe Ballerinas with Braided Hem"
+  },
+  "K-23-811 - Rust": {
+    "__1": "36 - 0\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Rust\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Women Rust Round-Toe Ballerinas with Braided Hem"
+  },
+  "K-23-811 - O Green": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "O Green",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - O Green\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Women Green Round-Toe Ballerinas with Braided Hem"
+  },
+  "K-23-290 - Brownx": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 0\n40 - 2\n41 - 1",
+    "__2": "Brownx",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Brownx\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Brown Double Shaded flat Sandals"
+  },
+  "K-23-290 - Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 1\n41 - 0",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Rust\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Rust Double Shaded flat Sandals"
+  },
+  "K-23-290 - Black": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 0\n40 - 2\n41 - 0",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Black\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Black Double Shaded flat Sandals"
+  },
+  "K-19-150 - Chico": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Chico",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Chico\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Women Chico Textured Leather Open Toe Flats With Backstrap"
+  },
+  "K-19-150 - Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 0\n40 - 1\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Rust\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Women Rust Textured Leather Open Toe Flats With Backstrap"
+  },
+  "K-19-150 - Brownz": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Brownz",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Brownz\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Women Brownz Textured Leather Open Toe Flats With Backstrap"
+  },
+  "K-23-587 - Brownx": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Brownx",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Brownx\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": "Women Brown Slip-on Ballerinas with Genuine Leather Upper"
+  },
+  "K-23-587 - Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Rust\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": "Women Rust Slip-on Ballerinas with Genuine Leather Upper"
+  },
+  "K-23-587 - Maroon": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Maroon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height -  NA\nColour - Maroon\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": "Women Maroon Slip-on Ballerinas with Genuine Leather Upper"
+  },
+  "K-23-802 - Brown": {
+    "__1": "36 - 0\n37 - 1\n38 - 1\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "Brown",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Brown \nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-802 - Green": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Green",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Green\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": "Women Green, Bellies Sandal"
+  },
+  "K-23-802 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Beige\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": "Women Beige , Brown Bellies Sandal"
+  },
+  "K-22-629 - Beige": {
+    "__1": "36 - 0\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Beige\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": "Women Beige Casual Ballerinas"
+  },
+  "K-22-629 - Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Rust\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": "Women Rust Casual Ballerinas"
+  },
+  "K-22-629 - Chico": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 0",
+    "__2": "Chico",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Chico\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": "Women Chico Casual Ballerinas"
+  },
+  "K-22-480 - Marron": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Brownx",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Block\nHeel Height - 3 \nColour - Brownx\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-480  - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 0",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Block\nHeel Height - 3 \nColour - Black\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-480 - Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Block\nHeel Height - 3 \nColour - Rust\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-857 - Orange": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Orange",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2 \nColour - Orange\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-857 -M. Green": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "M. Green",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2 \nColour - M. Green\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-857 - M.Yellow": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "M. Yellow",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2 \nColour - M. Yellow\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-535 - Rust": {
+    "__1": "36 - 0\n37 - 0\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Bolck\nHeel Height - 2.5 \nColour - Rust\nSole - TPR",
+    "__6": 3465,
+    "__7": "",
+    "__8": "Women Rust , Leather Block Heels Sandal"
+  },
+  "K-23-535 - Maroon": {
+    "__1": "36 - 1\n37 - 1\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Maroon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Block\nHeel Height - 2.5 \nColour - Maroon\nSole - TPR",
+    "__6": 3465,
+    "__7": "",
+    "__8": "Women Maroon , Leather Block Heels Sandal"
+  },
+  "K-23-535 - N Blue": {
+    "__1": "36 - 0\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Block\nHeel Height - 2.5 \nColour - N Blue\nSole - TPR",
+    "__6": 3465,
+    "__7": "",
+    "__8": "Women Blue , Leather Block Heels Sandal"
+  },
+  "K-18-263 - G M T": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 1\n40 - 0\n41 - 1",
+    "__2": "G M T",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - G M T\nSole - TPR",
+    "__6": 3015,
+    "__7": "",
+    "__8": "Toe-Ring Flip-Flops Leather flat slippers"
+  },
+  "K-18-263 -  White": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "White",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - White\nSole - TPR",
+    "__6": 3015,
+    "__7": "",
+    "__8": "Women White Toe-Ring Flip-Flops Leather flat slippers"
+  },
+  "K-18-263 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Beige\nSole - TPR",
+    "__6": 3015,
+    "__7": "",
+    "__8": "Women Beige Toe-Ring Flip-Flops Leather flat slippers"
+  },
+  "K-23-115 - White": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "White",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - White\nSole - TPR",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women White Round Toe Thong SlidesLeather Flat"
+  },
+  "K-23-115 - Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Rust\nSole - TPR",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women Rust Round Toe Thong SlidesLeather Flat"
+  },
+  "K-23-115  - N Bule": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - N Blue\nSole - TPR",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women Blue Round Toe Thong SlidesLeather Flat"
+  },
+  "K-19 -41 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2 \nColour - Black\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": ""
+  },
+  "K-19 -41 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2 \nColour - Beige\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": ""
+  },
+  "K-19 -41 - Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 1\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2 \nColour - Rust\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-705 - N.Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N.Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - N.Blue\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": "Women's Blue Low Top Flat Leather"
+  },
+  "K-23-705 - Chique": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 0\n40 - 2\n41 - 1",
+    "__2": "Chique",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Chique\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": "Women's chique  Low Top Flat Leather"
+  },
+  "K-23-705 - Brown": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Brown",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Brown\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": "Women's Brown Low Top Flat Leather"
+  },
+  "K-23-282 - Brownx": {
+    "__1": "36 - 0\n37 - 2\n38 - 2\n39 - 2\n40 - 3\n41 - 1",
+    "__2": "Brownx",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Block\nHeel Height - 1.5 \nColour - Brownx\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": "Women's Brown Strappy  Leather Wedge"
+  },
+  "K-23-282 - N Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "N Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Block\nHeel Height - 1.5 \nColour - N Blue\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": "Women's Blue Strappy  Leather Wedge"
+  },
+  "K-23-282 - Rust": {
+    "__1": "36 - 0\n37 - 2\n38 - 1\n39 - 2\n40 - 3\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Block\nHeel Height - 1.5 \nColour - Rust\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": "Women's Rust Strappy  Leather Wedge"
+  },
+  "K-23-799 - N Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "N Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 1.5 \nColour - N Blue\nSole - TPR",
+    "__6": 3575,
+    "__7": "",
+    "__8": "Women Blue Wedges Formal"
+  },
+  "K-23-799 - Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Rust\nSole - TPR",
+    "__6": 3575,
+    "__7": "",
+    "__8": "Women Rust Wedges Formal"
+  },
+  "K-23-799 -  O Green": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "O Green",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 1.5 \nColour - O Green\nSole - TPR",
+    "__6": 3575,
+    "__7": "",
+    "__8": "Women Green Wedges Formal"
+  },
+  "K-23-558 - N Blue": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 1.5 \nColour - N Blue\nSole - TPR",
+    "__6": 3515,
+    "__7": "",
+    "__8": "Women Blue Wedges Sandal"
+  },
+  "K-23-558 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Beige\nSole - TPR",
+    "__6": 3515,
+    "__7": "",
+    "__8": "Women Beige Wedges Sandal"
+  },
+  "K-23-558 - Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Rust\nSole - TPR",
+    "__6": 3515,
+    "__7": "",
+    "__8": "Women Rust Wedges Sandal"
+  },
+  "K-23-543 - Rust": {
+    "__1": "36 - 1\n37 - 1\n38 - 1\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Block\nHeel Height - 2 \nColour - Rust \nSole - TPR",
+    "__6": 3465,
+    "__7": "",
+    "__8": "Women Rust Bellies Sandal"
+  },
+  "K-23-543 - Chique": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Chique",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Block\nHeel Height - 2 \nColour - Chique\nSole - TPR",
+    "__6": 3465,
+    "__7": "",
+    "__8": "Women Chique Bellies Sandal"
+  },
+  "K-23-543 - Maroon": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Maroon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Block\nHeel Height - 2 \nColour - Maroon\nSole - TPR",
+    "__6": 3465,
+    "__7": "",
+    "__8": "Women Maroon Bellies Sandal"
+  },
+  "K-23-245 - Maroon": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "Maroon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Maroon\nSole - TPR",
+    "__6": 2875,
+    "__7": "",
+    "__8": "Women Maroon Patterned Leather Flats"
+  },
+  "K-23-245 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 1\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Beige\nSole - TPR",
+    "__6": 2875,
+    "__7": "",
+    "__8": "Women Beige Patterned Leather Flats"
+  },
+  "K-23-245 - Yellow": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Yellow",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA \nColour - Yellow\nSole - TPR",
+    "__6": 2875,
+    "__7": "",
+    "__8": "Women Yellow Patterned Leather Flats"
+  },
+  "K-23-832-N.Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N.Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type -Flat\nHeel Height -  NA\nColour - N.Blue\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-832-Browon": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Browon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height -  NA\nColour - Browon\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-832-Chikoo": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Chikoo",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height -  NA\nColour - Chikoo\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-18-173-Maroon": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Maroon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2\nColour - Maroon\nSole - TPR",
+    "__6": 3405,
+    "__7": "",
+    "__8": ""
+  },
+  "K-18-173-Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2\nColour - Black\nSole - TPR",
+    "__6": 3405,
+    "__7": "",
+    "__8": ""
+  },
+  "K-18-173-Begie": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Begie",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2\nColour - Begie\nSole - TPR",
+    "__6": 3405,
+    "__7": "",
+    "__8": ""
+  },
+  "K-21-495 - N.Blue / B/TT": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N.Blue / B/TT",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - N.Blue / B/TT\nSole - TPR",
+    "__6": 3045,
+    "__7": "",
+    "__8": ""
+  },
+  "K-21-495 - O Green /B.TT": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "O Green/ B. TT",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - O Green/ B. TT\nSole - TPR",
+    "__6": 3045,
+    "__7": "",
+    "__8": ""
+  },
+  "K-21-495 - NT/B.TT": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "NT/B.TT",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - NT/B.TT\nSole - TPR",
+    "__6": 3045,
+    "__7": "",
+    "__8": ""
+  },
+  "K-17-425 -Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Beige\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "K-17-425 -Maroon": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Maroon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Maroon\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "K-17-425 - Chique": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Chique",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Chique\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-627 - Maroon": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Maroon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Maroon\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-627 - Brownz": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Brownz",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Brownz\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-627 - Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Rust\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-308 - N.Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N.Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - N.Blue\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23 - 308 - Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Rust\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23 - 308 -Maroon": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Maroon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Maroon\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-85-Begie": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Begie",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Begie\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-85-N.Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N.Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - N.Blue\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-85-Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Rust\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-20-207-Begie": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Begie",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2\nColour - Begie\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": ""
+  },
+  "K-20-207-N.Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N.Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2\nColour - N.Blue\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": ""
+  },
+  "K-20-207-Maroon": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Maroon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2\nColour - Maroon\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-250 - T Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "T Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - T Blue\nSole - TPR",
+    "__6": 3095,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-250 -  Maroon": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Maroon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Maroon\nSole - TPR",
+    "__6": 3095,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-250 - Orange": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Orange",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Orange\nSole - TPR",
+    "__6": 3095,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-727 - M Yellow": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "M Yellow",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2\nColour - M Yellow\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-727 - L Gray": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "L Gray",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2\nColour - L Gray\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-727 - Chique": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Chique",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2\nColour - Chique\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-647-Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 1.5\nColour - Rust\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-647-Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 1.5\nColour - Black\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-647-Chikoo": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Chikoo",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height -  1.5\nColour - Chikoo\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-639-Maroon": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Maroon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Maroon\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-639-Begie": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Begie",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Begie\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-639-Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Rust\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-702-Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Rust",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Rust\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-702-Maroon": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Maroon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Maroon\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-702-Begie": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Begie",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Begie\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-12-307-Maroon": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Maroon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Maroon\nSole - TPR",
+    "__6": 3095,
+    "__7": "",
+    "__8": ""
+  },
+  "K-12-307-Begie": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Begie",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Begie\nSole - TPR",
+    "__6": 3095,
+    "__7": "",
+    "__8": ""
+  },
+  "K-12-307-O.Green": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "O.Green",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - O.Green\nSole - TPR",
+    "__6": 3095,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-689-Browon": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Browon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Browon\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-689-N.Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N.Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - N.Blue\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-689-Chikoo": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Chikoo",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Chikoo\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-695-N.Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N.Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat \nHeel Height - NA\nColour - N.Blue\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-695-Begie": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Begie",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Begie\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-695-Chikoo": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Chikoo",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Chikoo\nSole - TPR",
+    "__6": 3265,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-751-Rust": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Ruat",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Ruat\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-751-N.Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N,Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - N,Blue\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-751-Begie": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Begie",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Begie\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-217 - N.Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N.Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges \nHeel Height - 2\nColour - N.Blue\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-217 - Brownz": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Brownz",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2\nColour - Brownz\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": ""
+  },
+  "K-22-217 - Rust-B.TT": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Rust B.TT",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Wedges\nHeel Height - 2\nColour - Rust B.TT\nSole - TPR",
+    "__6": 3325,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-815-N.Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "N.Blue",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - N.Blue\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-815-Browon": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Browon",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Browon\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "K-23-815-Chikoo": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Chikoo",
+    "__3": "TAGS",
+    "__4": "TV",
+    "__5": "Upper Material - Leather \nHeel Type - Flat\nHeel Height - NA\nColour - Chikoo\nSole - TPR",
+    "__6": 3435,
+    "__7": "",
+    "__8": ""
+  },
+  "SW1 - Pista": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA  \nColour - Pista\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": "Women pista Embellished Flats"
+  },
+  "SW1 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - Beige\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": "Women beige Embellished Flats"
+  },
+  "SW1 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - Peach\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": "Women peach Embellished Flats"
+  },
+  "SW2-Gold": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA\nColour - Gold\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": ""
+  },
+  "SW2-Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA\nColour - Sultan\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": ""
+  },
+  "SW2-Silver": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA\nColour - Silver\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": ""
+  },
+  "SW3 - Blue": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 0\n40 - 2\n41 - 0",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Blue\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Blue Solid Wedge Sandals"
+  },
+  "SW3 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Beige\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "beige Solid Wedge Sandals"
+  },
+  "SW3 - Black": {
+    "__1": "36 - 0\n37 - 1\n38 - 1\n39 - 1\n40 - 1\n41 - 0",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Black\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "black Solid Wedge Sandals"
+  },
+  "SW4 - Brown": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Brown\nSole - TPR",
+    "__6": 3375,
+    "__7": "",
+    "__8": "Solid Plain brown Wedge"
+  },
+  "SW4 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 0",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Black\nSole - TPR",
+    "__6": 3375,
+    "__7": "",
+    "__8": "Solid Plain black Wedge"
+  },
+  "SW6 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Pointed\nHeel Height - 3  \nColour - Beige\nSole - TPR",
+    "__6": 2815,
+    "__7": "",
+    "__8": ""
+  },
+  "SW6-Green": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Green",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Pointed\nHeel Height - 3  \nColour - Green\nSole - TPR",
+    "__6": 2815,
+    "__7": "",
+    "__8": ""
+  },
+  "SW6- Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Pointed\nHeel Height - 3\nColour - Black\nSole - TPR",
+    "__6": 2815,
+    "__7": "",
+    "__8": ""
+  },
+  "SW6 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Pointed\nHeel Height - 3 \nColour - Peach\nSole - TPR",
+    "__6": 2815,
+    "__7": "",
+    "__8": ""
+  },
+  "SW7- Grey": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Grey",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA  \nColour - Grey\nSole - TPR",
+    "__6": 2815,
+    "__7": "",
+    "__8": ""
+  },
+  "SW7- Musturd": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Musturd",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height -  NA\nColour - Musturd\nSole - TPR",
+    "__6": 2815,
+    "__7": "",
+    "__8": ""
+  },
+  "SW7- Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Blue",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height -  NA\nColour - Blue\nSole - TPR",
+    "__6": 2815,
+    "__7": "",
+    "__8": ""
+  },
+  "SW8 - Beige": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - Beige\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": "Women Beige Haze Toe Ring Flat Sandal"
+  },
+  "SW8 - Pista": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA\nColour - Pista\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": "Women pista Haze Toe Ring Flat Sandal"
+  },
+  "SW8 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 0\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - Black\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": "Women black Haze Toe Ring Flat Sandal"
+  },
+  "SW9 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1 \nColour - Black\nSole - TPR",
+    "__6": 2115,
+    "__7": "",
+    "__8": "Vintage Black block heel Sandals"
+  },
+  "SW9 - Blue": {
+    "__1": "36 - 0\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1 \nColour - Blue\nSole - TPR",
+    "__6": 2115,
+    "__7": "",
+    "__8": "Vintage Blue block heel Sandals"
+  },
+  "SW9 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1 \nColour - Peach\nSole - TPR",
+    "__6": 2115,
+    "__7": "",
+    "__8": "Vintage peach block heel Sandals"
+  },
+  "SW10-Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5\nColour - Black\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": ""
+  },
+  "SW10-Pista": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5\nColour - Pista\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": ""
+  },
+  "SW10 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5\nColour - Beige\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": ""
+  },
+  "SW11 - Green": {
+    "__1": "36 - 1\n37 - 1\n38 - 1\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Green\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "womens green Beky Thong Wedge Sandal"
+  },
+  "SW11 - Peach": {
+    "__1": "36 - 1\n37 - 1\n38 - 1\n39 - 1\n40 - 2\n41 - 0",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Peach\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "womens peach Beky Thong Wedge Sandal"
+  },
+  "SW11 - Gray": {
+    "__1": "36 - 0\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Grey\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "womens gray Beky Thong Wedge Sandal"
+  },
+  "SW12 - M R H": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "M R H",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - M R H\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Embellished T-strap flat sandal"
+  },
+  "SW12 - Tan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - Tan\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Embellished tan colour T-strap flat sandal"
+  },
+  "SW12 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 0",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - Peach\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Embellished peach colour  T-strap flat sandal"
+  },
+  "SW12 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 1\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - Black\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Embellished black colour T-strap flat sandal"
+  },
+  "SW12 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - Beige\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "Embellished beige colour T-strap flat sandal"
+  },
+  "SW13 - Tan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 1\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5  \nColour - Tan\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": "Womens  Tan colour Embellished Slipon Wedge Heels"
+  },
+  "SW13 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5 \nColour - Peach\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": "Womens  peach colour Embellished Slipon Wedge Heels"
+  },
+  "SW13 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5  \nColour - Beige\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": "Womens  beige colour Embellished Slipon Wedge Heels"
+  },
+  "SW14 -  Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1 \nColour - Black\nSole - TPR",
+    "__6": 2565,
+    "__7": "",
+    "__8": "Women's Synthetic Embellished Designer block heel Sandals"
+  },
+  "SW14 - Tan": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 0",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1 \nColour - Tan\nSole - TPR",
+    "__6": 2565,
+    "__7": "",
+    "__8": "Women's Synthetic Embellished Designer block heel Sandals"
+  },
+  "SW14 - M R H": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "M R H",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1 \nColour - M R H\nSole - TPR",
+    "__6": 2565,
+    "__7": "",
+    "__8": "Women's Synthetic Embellished Designer block heel Sandals"
+  },
+  "SW15 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 0\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - Beige\nSole - TPR",
+    "__6": 2885,
+    "__7": "",
+    "__8": "Women beige Casual flat Sandal"
+  },
+  "SW15 - White": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - White\nSole - TPR",
+    "__6": 2885,
+    "__7": "",
+    "__8": "Women white Casual flat Sandal"
+  },
+  "SW15 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - Peach\nSole - TPR",
+    "__6": 2885,
+    "__7": "",
+    "__8": "Women peach Casual flat Sandal"
+  },
+  "SW15 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - Black\nSole - TPR",
+    "__6": 2885,
+    "__7": "",
+    "__8": "Women black Casual flat Sandal"
+  },
+  "SW15 - Green": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA  \nColour - Green\nSole - TPR",
+    "__6": 2885,
+    "__7": "",
+    "__8": "Women green Casual flat Sandal"
+  },
+  "SW16 - Black": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 1+42 - 2",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "black thong flat sandal"
+  },
+  "SW16 - Gun Metal": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 2+42 - 1",
+    "__2": "Gun Metal",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - Gun metal\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "gun metal thong flat sandal"
+  },
+  "SW16 - Sultan": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 1\n40 - 1\n41 - 2",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA \nColour - Sultan\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": "sultan thong flat sandal"
+  },
+  "SW17 - Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5\nColour - Blue\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "SW17 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5\nColour - Black\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "SW17 - Tan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5\nColour - Tan\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "SW18-Marron": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5\nColour - Marron\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": ""
+  },
+  "SW18-Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5\nColour - Sultan\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": ""
+  },
+  "SW18-Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1.5\nColour - Black\nSole - TPR",
+    "__6": 3345,
+    "__7": "",
+    "__8": ""
+  },
+  "SW19- Green": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Green",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA\nColour - Green\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "SW19 - Yellow": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Yellow",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA\nColour - Yellow\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "SW19- Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA\nColour - Peach\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "SW20- Green": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Green",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA\nColour - Green\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "SW20- Yellow": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Yellow",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA\nColour - Yellow\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "SW20- Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Flat\nHeel Height - NA\nColour - Peach\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "SW22 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1  \nColour - Black\nSole - TPR",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Womens Fancy 1 inch block heel"
+  },
+  "SW22 - Gray": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1 \nColour - Grey\nSole - TPR",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Womens Fancy 1 inch block heel"
+  },
+  "SW22 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1 \nColour - Peach\nSole - TPR",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Womens Fancy 1 inch block heel"
+  },
+  "SW21-Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height -  1\nColour - Peach\nSole - TPR",
+    "__6": 2505,
+    "__7": "",
+    "__8": ""
+  },
+  "SW21-Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1\nColour - Black\nSole - TPR",
+    "__6": 2505,
+    "__7": "",
+    "__8": ""
+  },
+  "SW21-Tan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1\nColour - Tan\nSole - TPR",
+    "__6": 2505,
+    "__7": "",
+    "__8": ""
+  },
+  "SW23 - Gray": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Pointed\nHeel Height - 2.5 \nColour - Grey\nSole - TPR",
+    "__6": 2535,
+    "__7": "",
+    "__8": "Reptilian grey Print Block Heeled Sandals"
+  },
+  "SW23 - L Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "L Blue",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Pointed\nHeel Height - 2.5 \nColour - L Blue\nSole - TPR",
+    "__6": 2535,
+    "__7": "",
+    "__8": "Reptilian blue Print Block Heeled Sandals"
+  },
+  "SW23 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Pointed\nHeel Height - 2.5 \nColour - Peach\nSole - TPR",
+    "__6": 2535,
+    "__7": "",
+    "__8": "Reptilian peach Print Block Heeled Sandals"
+  },
+  "SW24 - Gold": {
+    "__1": "36 - 0\n37 - 2\n38 - 2\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 2 \nColour - Gold\nSole - TPR",
+    "__6": 3295,
+    "__7": "",
+    "__8": "Tag footwear Women's Ecru Toe Ring Sandals"
+  },
+  "SW24 - Silver": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 2 \nColour - Silver\nSole - TPR",
+    "__6": 3295,
+    "__7": "",
+    "__8": "Tag footwear Women's Ecru Toe Ring Sandals"
+  },
+  "SW24 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 2 \nColour - Peach\nSole - TPR",
+    "__6": 3295,
+    "__7": "",
+    "__8": "Tag footwear Women's Ecru Toe Ring Sandals"
+  },
+  "SW25 - Lavendor": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 2.5 \nColour - Lavendor\nSole - TPR",
+    "__6": 3125,
+    "__7": "",
+    "__8": ""
+  },
+  "SW25 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 2.5 \nColour - Peach\nSole - TPR",
+    "__6": 3125,
+    "__7": "",
+    "__8": ""
+  },
+  "SW25 - Gray": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 2.5 \nColour - Grey\nSole - TPR",
+    "__6": 3125,
+    "__7": "",
+    "__8": ""
+  },
+  "SW26 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1\nColour - Peach\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "SW26 - Orange": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Orange",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1\nColour - Orange\nSole - TPR",
+    "__6": 3235,
+    "__7": "",
+    "__8": ""
+  },
+  "SW27 - D Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "D Blue",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 2.5  \nColour - D Blue\nSole - TPR",
+    "__6": 3125,
+    "__7": "",
+    "__8": ""
+  },
+  "SW27 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 2.5  \nColour - Black\nSole - TPR",
+    "__6": 3125,
+    "__7": "",
+    "__8": ""
+  },
+  "SW27 - M R H": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "M R H",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1.5 \nColour - M R H\nSole - TPR",
+    "__6": 3125,
+    "__7": "",
+    "__8": ""
+  },
+  "SW29-Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1\nColour - Black\nSole - TPR",
+    "__6": 3015,
+    "__7": "",
+    "__8": ""
+  },
+  "SW29-Yellow": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Yellow",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1\nColour - Yellow\nSole - TPR",
+    "__6": 3015,
+    "__7": "",
+    "__8": ""
+  },
+  "SW29-Antique": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Antique",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1\nColour - Antique\nSole - TPR",
+    "__6": 3015,
+    "__7": "",
+    "__8": ""
+  },
+  "SW29-Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Wedges\nHeel Height - 1\nColour - Peach\nSole - TPR",
+    "__6": 3015,
+    "__7": "",
+    "__8": ""
+  },
+  "SW28 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 2.5 \nColour - Black\nSole - TPR",
+    "__6": 3125,
+    "__7": "",
+    "__8": ""
+  },
+  "SW28 - Tan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 2.5 \nColour - Tan\nSole - TPR",
+    "__6": 3125,
+    "__7": "",
+    "__8": ""
+  },
+  "SW28 - M R H": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "M R H",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 2.5 \nColour - M R H\nSole - TPR",
+    "__6": 3125,
+    "__7": "",
+    "__8": ""
+  },
+  "SW30 - Peach": {
+    "__1": "36 - 0\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1.5 \nColour - Peach\nSole - TPR",
+    "__6": 3095,
+    "__7": "",
+    "__8": ""
+  },
+  "SW30 - Tan": {
+    "__1": "36 - 1\n37 - 0\n38 - 2\n39 - 1\n40 - 1\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1.5 \nColour - Tan\nSole - TPR",
+    "__6": 3095,
+    "__7": "",
+    "__8": ""
+  },
+  "SW30 - White": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "SW",
+    "__3": "TAGS",
+    "__4": "SW",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 1.5 \nColour - White\nSole - TPR",
+    "__6": 3095,
+    "__7": "",
+    "__8": ""
+  },
+  "354 - White": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "White",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5 \nColour - white\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": ""
+  },
+  "354 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5 \nColour - white\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": ""
+  },
+  "354 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5 \nColour - white\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": ""
+  },
+  "339-GM": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "GM",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -3  \nColour - GM\nSole - Metro",
+    "__6": 3395,
+    "__7": "",
+    "__8": ""
+  },
+  "339-Gold": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Gold",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -3  \nColour - GM\nSole - Metro",
+    "__6": 3395,
+    "__7": "",
+    "__8": ""
+  },
+  "339-Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Sultan",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -3  \nColour - GM\nSole - Metro",
+    "__6": 3395,
+    "__7": "",
+    "__8": ""
+  },
+  "335-Gold": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Gold",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -  2\nColour - Gold\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": ""
+  },
+  "335-Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -  2\nColour - Gold\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": ""
+  },
+  "335-Antique": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Antique",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -  2\nColour - Gold\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": ""
+  },
+  "347 - Antique": {
+    "__1": "36 - 1\n37 - 1\n38 - 1\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "Antique",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Pointed\nHeel Height -2.5  \nColour - Antique\nSole - Metro",
+    "__6": 2845,
+    "__7": "",
+    "__8": ""
+  },
+  "347 - Black": {
+    "__1": "36 - 1\n37 - 1\n38 - 1\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Pointed\nHeel Height -2.5  \nColour - Antique\nSole - Metro",
+    "__6": 2845,
+    "__7": "",
+    "__8": ""
+  },
+  "360 - Yellow": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Yellow",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -3  \nColour - Green\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women Yellow Strappy Open-Toe Block Heels (360)"
+  },
+  "360 - Green": {
+    "__1": "36 - 1\n37 - 0\n38 - 1\n39 - 2\n40 - 1\n41 - 0",
+    "__2": "Green",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -3  \nColour - Green\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women Green Strappy Open-Toe Block Heels (360)"
+  },
+  "360 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Black\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women Black Strappy Open-Toe Block Heels (360)"
+  },
+  "360 - White": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "White",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -  3  \nColour - White\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women white Strappy Open-Toe Block Heels (360)"
+  },
+  "360 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -  3  \nColour - White\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women Beige Strappy Open-Toe Block Heels (360)"
+  },
+  "340 - White": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "White",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -2  \nColour - White\nSole - Metro",
+    "__6": 2735,
+    "__7": "",
+    "__8": ""
+  },
+  "340 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -2  \nColour - White\nSole - Metro",
+    "__6": 2735,
+    "__7": "",
+    "__8": ""
+  },
+  "340 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -2  \nColour - White\nSole - Metro",
+    "__6": 2735,
+    "__7": "",
+    "__8": ""
+  },
+  "313 - Black": {
+    "__1": "36 - 1\n37 - 1\n38 - 3\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -2.5  \nColour - Black\nSole - Metro",
+    "__6": 2565,
+    "__7": "",
+    "__8": ""
+  },
+  "313 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 3\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -2.5  \nColour - Black\nSole - Metro",
+    "__6": 2565,
+    "__7": "",
+    "__8": ""
+  },
+  "313 - Tan": {
+    "__1": "36 - 1\n37 - 2\n38 - 3\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "Tan",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -2.5  \nColour - Black\nSole - Metro",
+    "__6": 2565,
+    "__7": "",
+    "__8": ""
+  },
+  "2560 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block \nHeel Height - 3  \nColour - Black\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Black Criss-Cross Strap Symthetic  Heeled Sandals"
+  },
+  "2560 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3 \nColour - Peach\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Peach Criss-Cross Strap Symthetic  Heeled Sandals"
+  },
+  "2560 - Cream": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Cream",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3 \nColour - Cream\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Cream Criss-Cross Strap Symthetic  Heeled Sandals"
+  },
+  "2369 - Cream": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 1\n41 - 0",
+    "__2": "Cream",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Pointed\nHeel Height - 3.5  \nColour - Cream\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Women Cream Heels Sandal"
+  },
+  "2369 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Pointed\nHeel Height - 3.5  \nColour - Peach\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Women Peach Heels Sandal"
+  },
+  "2369 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 0",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Pointed\nHeel Height - 3.5  \nColour - Black\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Women Black Heels Sandal"
+  },
+  "2041 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 3\n41 - 0",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 4  \nColour - Black\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Women Black Stylish Buckle Strap Block Heels Sandals"
+  },
+  "2041 - Cream": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Cream",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 4  \nColour - Cream\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Women cream Stylish Buckle Strap Block Heels Sandals"
+  },
+  "2041 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 4 \nColour - Peach\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Women Peach Stylish Buckle Strap Block Heels Sandals"
+  },
+  "S01 - Yellow": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Yellow",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Pointed\nHeel Height - 3  \nColour - Yellow\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "yellow 3 inch pointed Buckle Women's Heels"
+  },
+  "S01 - XX": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "XX",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Pointed\nHeel Height - 3  \nColour - XX\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "brown 3 inch pointed Buckle Women's Heels"
+  },
+  "S01 - G A R": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "G A R",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Pointed\nHeel Height - 3  \nColour - G A R\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "white 3 inch pointed Buckle Women's Heels"
+  },
+  "S02 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Pointed\nHeel Height - 3  \nColour - Black\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Black 3 inch pointed Buckle Women's Heels"
+  },
+  "S02 - Cream": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Cream",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Pointed\nHeel Height - 3  \nColour - Cream\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Cream 3 inch pointed Buckle Women's Heels"
+  },
+  "S02 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Pointed\nHeel Height - 3  \nColour - Peach\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Peach 3 inch pointed Buckle Women's Heels"
+  },
+  "2347 - AXX": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "AXX",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3.5 \nColour - AXX\nSole - Metro",
+    "__6": 6265,
+    "__7": "",
+    "__8": "Golden Embellished Ethnic Party Block Heels"
+  },
+  "2347 - XX": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "XX",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3.5 \nColour - XX\nSole - Metro",
+    "__6": 6265,
+    "__7": "",
+    "__8": "Gold Embellished Ethnic Party Block Heels for bride"
+  },
+  "2557 - Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "Sultan",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Sultan\nSole - Metro",
+    "__6": 5425,
+    "__7": "",
+    "__8": "Women Sultan Casual Sandes"
+  },
+  "2557 - Red": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Red",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3 \nColour - Red\nSole - Metro",
+    "__6": 5425,
+    "__7": "",
+    "__8": "Women Red Casual Sandes"
+  },
+  "2537 - Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Sultan",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3 \nColour - Sultan\nSole - Metro",
+    "__6": 5425,
+    "__7": "",
+    "__8": "Women Sultan Synthetic Block Heel Sandal"
+  },
+  "2537 - XX": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "XX",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - XX\nSole - Metro",
+    "__6": 5425,
+    "__7": "",
+    "__8": "Women xx Synthetic Block Heel Sandal"
+  },
+  "2248 - Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Sultan",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type -Wedges\nHeel Height - 3.5\nColour - Sultan\nSole - Metro",
+    "__6": 5985,
+    "__7": "",
+    "__8": "Bridal Rose gold wedding wedges, Mules"
+  },
+  "2248 - XX": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "XX",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Wedges\nHeel Height - 3.5  \nColour - XX\nSole - Metro",
+    "__6": 5985,
+    "__7": "",
+    "__8": "Bridal Embalished Fancy Block Heel Sandal for Women"
+  },
+  "2480 - AXX": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "AXX",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Wedges\nHeel Height - 3.5  \nColour - AXX\nSole - Metro",
+    "__6": 6265,
+    "__7": "",
+    "__8": "Women AXX Synthetic Wedges Heel Sandal"
+  },
+  "2480 - XX": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "XX",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Wedges\nHeel Height - 3.5  \nColour - XX\nSole - Metro",
+    "__6": 6265,
+    "__7": "",
+    "__8": "Women XX Synthetic Wedges Heel Sandal"
+  },
+  "2593 - Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Sultsn",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2\nColour - Sultan\nSole - Metro",
+    "__6": 6265,
+    "__7": "",
+    "__8": "Women Sultan Block Heels Synthetic Sandal"
+  },
+  "2593 - XX": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "XX",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2  \nColour - XX\nSole - Metro",
+    "__6": 6265,
+    "__7": "",
+    "__8": "Women XX Block Heels Synthetic Sandal"
+  },
+  "2584 - Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Sultan",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Wedges\nHeel Height - 4  \nColour - Sultan\nSole - Metro",
+    "__6": 5985,
+    "__7": "",
+    "__8": "Women Sultan  Party Sandals"
+  },
+  "2584 - S S": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "S S",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Wedges\nHeel Height - 4  \nColour - S S\nSole - Metro",
+    "__6": 5985,
+    "__7": "",
+    "__8": "Women SS Party Sandals"
+  },
+  "2643 - Red": {
+    "__1": "36 - 1\n37 - 1\n38 - 3\n39 - 3\n40 - 2\n41 - 1",
+    "__2": "Red",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3 \nColour - Red\nSole - Metro",
+    "__6": 4865,
+    "__7": "",
+    "__8": "Women Red Synthetic Block Heels Sandal"
+  },
+  "2643 - XX": {
+    "__1": "36 - 1\n37 - 2\n38 - 3\n39 - 3\n40 - 2\n41 - 1",
+    "__2": "XX",
+    "__3": "TAGS",
+    "__4": "SH",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - XX\nSole - Metro",
+    "__6": 4865,
+    "__7": "",
+    "__8": "Women xx Synthetic Block Heels Sandal"
+  },
+  "SB01- Green": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Green",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Green\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB01 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Peach\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB01 - Black": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB01 - Grey": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Grey",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Grey\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB02 - Grey": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Grey",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Grey\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB02 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB02 - Cream": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "Cream",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Cream\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB02 - Yellow": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Yellow",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Yellow\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB03 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB03 - Grey": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Grey",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Grey\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB03 - Silver": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Silver",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Silver\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB03 - Chikoo": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Chikoo",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Chikoo\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB04 - Grey": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Grey",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Grey\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB04 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB04 - Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Sultan",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Sultan\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB04 - Antique": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Antique",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Antique\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB05 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Peach\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB05 - Chikoo": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Chikoo",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Chikoo\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB05 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB05 - Green": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Green",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Green\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB06 - Black": {
+    "__1": "36 - 0\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB06 - Cream": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Cream",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Cream\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB06 - Purple": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Purple",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Purple\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB06 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Peach\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB07 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Peach\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB07 - Cream": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Cream",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Cream\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB07 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB07 - White": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "White",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - White\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB08 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB08 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Peach\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB08 - Purple": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Purple",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Purple\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB08 - Cream": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Cream",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Cream\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB09 - Cream": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Cream",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Cream\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB09 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Peach\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB09 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB09 - White": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "White",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - White\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB10 - Cream": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Cream",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Cream\nSole - TPR",
+    "__6": 1665,
+    "__7": "",
+    "__8": ""
+  },
+  "SB10 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1665,
+    "__7": "",
+    "__8": ""
+  },
+  "SB10 - Blue": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Blue",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Blue\nSole - TPR",
+    "__6": 1665,
+    "__7": "",
+    "__8": ""
+  },
+  "SB10 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Peach\nSole - TPR",
+    "__6": 1665,
+    "__7": "",
+    "__8": ""
+  },
+  "SB11 - Cream": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Cream",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Cream\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB11 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB11 - Green": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Green",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Green\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB11 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Peach\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB12 - White": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "White",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - White\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB12 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Peach\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB12 - Tan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Tan",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Tan\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB12 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1835,
+    "__7": "",
+    "__8": ""
+  },
+  "SB13 - Tan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Tan",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Tan\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB13 - Grey": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Grey",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Grey\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB13 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB13 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Peach\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB14 - Cream": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Cream",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Cream\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB14 - Tan": {
+    "__1": "36 - 1\n37 - 0\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Tan",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Tan\nSole - TPR",
+    "__6": 1785,
+    "__7": "",
+    "__8": ""
+  },
+  "SB14 - Green": {
+    "__1": "36 - 0\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Green",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Green\nSole - TPR",
+    "__6": 175,
+    "__7": "",
+    "__8": ""
+  },
+  "SB15 - Tan": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "Tan",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Tan\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB15 - Black": {
+    "__1": "36 - 0\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Black\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "SB15 - Peach": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "YF",
+    "__5": "Upper Material - synthetic \nHeel Type - Flat\nHeel Height - NA  \nColour - Peach\nSole - TPR",
+    "__6": 1725,
+    "__7": "",
+    "__8": ""
+  },
+  "359 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Black\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women Black Block heel sandle"
+  },
+  "359 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Beige\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women Beige heel sandle"
+  },
+  "344 - Gray": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "Gray",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5  \nColour - Gray\nSole - Metro",
+    "__6": 3125,
+    "__7": "",
+    "__8": "Ladies grey fancy block  heel chappal"
+  },
+  "344 - Peach": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5  \nColour - Peach\nSole - Metro",
+    "__6": 3125,
+    "__7": "",
+    "__8": "Ladies peach fancy block  heel chappal"
+  },
+  "344 - white": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 1\n41 - 1",
+    "__2": "white",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5  \nColour - White\nSole - Metro",
+    "__6": 3125,
+    "__7": "",
+    "__8": "Ladies white fancy block  heel chappal"
+  },
+  "310 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Black\nSole - Metro",
+    "__6": 2735,
+    "__7": "",
+    "__8": "Classic black vintage statement Block Heel Sandals ,"
+  },
+  "310 - Begie": {
+    "__1": "36 - 1\n37 - 0\n38 - 2\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Beige\nSole - Metro",
+    "__6": 2735,
+    "__7": "",
+    "__8": "Classic beige vintage statement Block Heel Sandals ,"
+  },
+  "310 - Yellow": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Yellow",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Yellow\nSole - Metro",
+    "__6": 2735,
+    "__7": "",
+    "__8": "Classic yellow vintage statement Block Heel Sandals ,"
+  },
+  "346 - ANT": {
+    "__1": "36 - 1\n37 - 2\n38 - 0\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "ANT",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - ANT\nSole - Metro",
+    "__6": 3125,
+    "__7": "",
+    "__8": "Women Synthetic 3 inch Block Heel Sandal"
+  },
+  "346 - Silver": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Silver",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Silver\nSole - Metro",
+    "__6": 3125,
+    "__7": "",
+    "__8": "Women silver Synthetic 3 inch Block Heel Sandal"
+  },
+  "346 - Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Sultan",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Sultan\nSole - Metro",
+    "__6": 3125,
+    "__7": "",
+    "__8": "Women brown Synthetic 3 inch Block Heel Sandal"
+  },
+  "309 - White": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 0",
+    "__2": "White",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2  \nColour - White\nSole - Metro",
+    "__6": 2115,
+    "__7": "",
+    "__8": "Women's White Western 2 Inch Block Heel Fashion Sandal"
+  },
+  "309 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2  \nColour - Black\nSole - Metro",
+    "__6": 2115,
+    "__7": "",
+    "__8": "Women's Black Western 2 Inch Block Heel Fashion Sandal"
+  },
+  "309 - Peach": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 0",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2  \nColour - Peach\nSole - Metro",
+    "__6": 2115,
+    "__7": "",
+    "__8": "Women's Peach Western 2 Inch Block Heel Fashion Sandal"
+  },
+  "358 - Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 0",
+    "__2": "Sultan",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2  \nColour - Sultan\nSole - Metro",
+    "__6": 2795,
+    "__7": "",
+    "__8": "Women Sultan Wedges Block heel sandle"
+  },
+  "358 - Gold": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Gold",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2  \nColour - Gold\nSole - Metro",
+    "__6": 2795,
+    "__7": "",
+    "__8": "Women Gold Wedges Block heel sandle"
+  },
+  "358 - Silver": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Silver",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2  \nColour - Silver\nSole - Metro",
+    "__6": 2795,
+    "__7": "",
+    "__8": "Women Silver Wedges Block heel sandle"
+  },
+  "326 - Peach": {
+    "__1": "36 - 1\n37 - 1\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Wedges\nHeel Height - 2.5  \nColour - Peach\nSole - Metro",
+    "__6": 3685,
+    "__7": "",
+    "__8": "peach stylish fancy comfortable heel wedges for girls women"
+  },
+  "326 - GM": {
+    "__1": "36 - 0\n37 - 1\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "GM",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5  \nColour - GM\nSole - Metro",
+    "__6": 3685,
+    "__7": "",
+    "__8": "grey stylish fancy comfortable heel wedges for girls women"
+  },
+  "326 - ANT": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "ANT",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5  \nColour - ANT\nSole - Metro",
+    "__6": 3685,
+    "__7": "",
+    "__8": "brown stylish fancy comfortable heel wedges for girls women"
+  },
+  "356 - Peach": {
+    "__1": "36 - 1\n37 - 1\n38 - 1\n39 - 2\n40 - 2\n41 - 0",
+    "__2": "Peach",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5  \nColour - Peach\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Peach Elegant Block Heel Sandals for Women    (356)"
+  },
+  "356 - Chique": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Chique",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -  2.5\nColour - Chique\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Chique Elegant Block Heel Sandals for Women  (356)"
+  },
+  "356 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height -  2.5\nColour - Beige\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Beige Elegant Block Heel Sandals for Women  (356)"
+  },
+  "356 - Yellow": {
+    "__1": "36 - 1\n37 - 0\n38 - 1\n39 - 2\n40 - 0\n41 - 1",
+    "__2": "Yellow",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5  \nColour - Yellow\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Yellow Elegant Block Heel Sandals for Women  (356)"
+  },
+  "356 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5  \nColour - Black\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Black Elegant Block Heel Sandals for Women  (356)"
+  },
+  "357 - Beige": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Beige",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Beige\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women Beige Block Heels Sandal"
+  },
+  "357 - Black": {
+    "__1": "36 - 1\n37 - 1\n38 - 1\n39 - 1\n40 - 2\n41 - 0",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Black\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women Black Block Heels Sandal"
+  },
+  "357 - White": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "White",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - White\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women White Block Heels Sandal"
+  },
+  "355 - Silver": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Silver",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 2.5  \nColour - Silver\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Women Silver strape block heel"
+  },
+  "305 - GM": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "GM",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - GM\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Women Silver Transparent Embellished Block Mules"
+  },
+  "305 - Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Sultan",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Sultan\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Women sultanTransparent Embellished Block Mules (305)"
+  },
+  "305 - Gold": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Gold",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Gold\nSole - Metro",
+    "__6": 2675,
+    "__7": "",
+    "__8": "Women golden Transparent Embellished Block Mules (305)"
+  },
+  "304 - Black": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Black\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women black Strappy Open-Toe Block Heels (304)"
+  },
+  "304 - Gold": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Gold",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Gold\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women gold Strappy Open-Toe Block Heels (304)"
+  },
+  "304 - White": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "White",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic\nHeel Type - Block\nHeel Height - 3  \nColour - White\nSole - Metro",
+    "__6": 2625,
+    "__7": "",
+    "__8": "Women White Strappy Open-Toe Block Heels (304)"
+  },
+  "311 - Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Sultan",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Sultan\nSole - Metro",
+    "__6": 3185,
+    "__7": "",
+    "__8": "Women Sultan Selfiee Block Heel Sandals"
+  },
+  "311 - Silver": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Silver",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Silver\nSole - Metro",
+    "__6": 3185,
+    "__7": "",
+    "__8": "Women Silver Selfiee Block Heel Sandals"
+  },
+  "311 - Gold": {
+    "__1": "36 - 1\n37 - 2\n38 - 2\n39 - 1\n40 - 2\n41 - 1",
+    "__2": "Gold",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Gold\nSole - Metro",
+    "__6": 3185,
+    "__7": "",
+    "__8": "Women Gold Selfiee Block Heel Sandals"
+  },
+  "348 - ANT": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "ANT",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3\nColour - ANT\nSole - Metro",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women Ant Criss Cross Strappy block  Heels"
+  },
+  "348 - Silver": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Silver",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Silver\nSole - Metro",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women Silver Criss Cross Strappy block  Heels"
+  },
+  "348 - GM": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "GM",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3\nColour - GM\nSole - Metro",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women GM Criss Cross Strappy block  Heels"
+  },
+  "348 - Sultan": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Sultan",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Sultan\nSole - Metro",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women Sultan Criss Cross Strappy block  Heels"
+  },
+  "348 - Gold": {
+    "__1": "36 - 1\n37 - 2\n38 - 1\n39 - 2\n40 - 2\n41 - 1",
+    "__2": "Gold",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Block\nHeel Height - 3  \nColour - Gold\nSole - Metro",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women Gold Criss Cross Strappy block  Heels"
+  },
+  "337-Blue": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 1\n42 - 1",
+    "__2": "Blue",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Wedges\nHeel Height - 1.5  \nColour - Blue\nSole - Metro",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women Blue Sparkling strip flate sandals"
+  },
+  "337-Black": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 1\n42 - 1",
+    "__2": "Black",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Wedges\nHeel Height - 1.5  \nColour - Black\nSole - Metro",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women Black Sparkling strip flate sandals"
+  },
+  "337-Marron": {
+    "__1": "36 - 1\n37 - 1\n38 - 2\n39 - 2\n40 - 2\n41 - 1\n42 - 1",
+    "__2": "Marron",
+    "__3": "TAGS",
+    "__4": "ST",
+    "__5": "Upper Material - Synthetic \nHeel Type - Wedges\nHeel Height - 1.5  \nColour - Marron\nSole - Metro",
+    "__6": 2785,
+    "__7": "",
+    "__8": "Women Marron Sparkling strip flate sandals"
+  }
+}
