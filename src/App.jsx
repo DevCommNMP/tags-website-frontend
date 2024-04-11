@@ -14,11 +14,9 @@ import SingleProductImages from "./components/SingleProductImages.jsx";
 import CheckoutPage from "./pages/CheckoutPage.jsx";
 import ProductsGridPage from "./pages/ProductsGridPage.jsx";
 import Invoice from "./components/Invoice.jsx";
-import Wishlist from "./pages/Wishlist.jsx";
 import AllCategoriesPage from "./pages/AllCategoriesPage.jsx";
 import Cart from "./pages/cart.jsx";
 import CustomPaging from "./components/CustomPaging.jsx";
-import ProductCard from "./components/ProductCard.jsx";
 
 function App() {
   return (
@@ -35,17 +33,13 @@ function App() {
             <Route exact path="/forgot_password" element={<ForgotPassword />} />
             <Route exact path="/profile" element={<UserAccountPage />} />
             <Route exact path="/cart" element={<Cart />} />
-            <Route exact path="/productImages" element={<SingleProductImages />} />
             <Route exact path="/checkout" element={<CheckoutPage />} />
             <Route exact path="/categories/:title" element={<ProductsGridPage />} />
             <Route exact path="/all-categories" element={<AllCategoriesPage />} />
-            <Route exact path="/wishlist" element={<Wishlist />} />
             <Route exact path="/invoice" element={<Invoice />} />
             <Route exact path="/verify-account" element={<VerifyEmail />} />
             <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
             <Route exact path="/custom-paging" element={<CustomPaging />} />
-            {/* temp */}
-            <Route exact path="/product-card" element={<ProductCard />} />
           </Routes>
         </BrowserRouter>
       </Provider>

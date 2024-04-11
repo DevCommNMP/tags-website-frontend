@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-key */
 import category_bg from "../assets/imgs/banner/category_bg.png";
-import starRating from "../assets/imgs/theme/rating-stars.png";
 import { useState, useEffect } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
@@ -10,8 +9,9 @@ import Footer from "../components/Footer/Footer";
 import { useDispatch } from "react-redux";
 import { fetchAllProductsAction } from "../redux/actions/product/productActions.js";
 import { useSelector } from "react-redux";
-import ModalQuickView from "../components/ModalQuickView.jsx";
 import { Pagination, DropdownButton, Dropdown } from "react-bootstrap";
+import ProductCard from "../components/ProductCard.jsx";
+import { ToastContainer } from "react-toastify";
 
 const ProductsGridPage = ({ data }) => {
   const { title } = useParams();
@@ -69,7 +69,8 @@ const ProductsGridPage = ({ data }) => {
   };
 
   return (
-    <div>
+    <>
+          <ToastContainer />
       <div>
         <div
           className="modal fade custom-modal"
@@ -78,7 +79,7 @@ const ProductsGridPage = ({ data }) => {
           aria-labelledby="quickViewModalLabel"
           aria-hidden="true"
         ></div>
-          <Header />
+        <Header />
         <main className="main">
           <div className="page-header mt-30 mb-50">
             <div className="container">
@@ -119,57 +120,7 @@ const ProductsGridPage = ({ data }) => {
                 <div className="row product-grid">
                   {currentProducts.map((product, index) => (
                     <div className="col-lg-1-4 col-md-3 col-12 col-sm-6" key={index}>
-                      <div className="product-cart-wrap mb-30">
-                        <div className="product-img-action-wrap">
-                          <div className="product-img product-img-zoom">
-                            <Link to="/products/:id">
-                              <img className="default-img" src={product.productImage} alt="" />
-                            </Link>
-                          </div>
-                          <div className="product-action-1">
-                            <a aria-label="Add To Wishlist" className="action-btn">
-                              <i className="fi-rs-heart"></i>
-                            </a>
-                            <ModalQuickView product={product} />
-                          </div>
-                          <div className="product-badges product-badges-position product-badges-mrg">
-                            <span className={product.tag}>{product.tag}</span>
-                          </div>
-                        </div>
-                        <div className="product-content-wrap">
-                          <h2 className="text-center mt-3 mb-2">
-                            {" "}
-                            <Link to={`/products/${product._id}`}>{product.title}</Link>{" "}
-                          </h2>
-                          <div className="product-rate-cover flex-align-justify-center">
-                            <span>Customer Rating : </span>
-                            <div className="product-rate d-inline-block" style={{ backgroundImage: `url(${starRating})` }}>
-                              <div
-                                className="product-rating"
-                                style={{ width: `${20 * product.rating}%`, backgroundImage: `url(${starRating})` }}
-                              ></div>
-                            </div>
-                            <span className="font-small ml-5 text-muted"> ({product.rating})</span>
-                          </div>
-                          <div className="product-rate-cover flex-align-justify-center">
-                            <span>Available Colors :</span>
-                            {product.colorsAvailable.map((color, index) => (
-                              <span key={index} className={`product-color-box product${color}`}></span>
-                            ))}
-                          </div>
-                          <div className="product-card-bottom">
-                            <div className="product-price">
-                              <span>&#8377;{product.SellingPrice}</span>
-                              <span className="old-price">&#8377;{product.SellingPrice}</span>
-                            </div>
-                            <div className="add-cart">
-                              <a className="add">
-                                <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <ProductCard product={product} />
                     </div>
                   ))}
                 </div>
@@ -297,7 +248,7 @@ const ProductsGridPage = ({ data }) => {
         </main>
         <Footer />
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,13 +1,6 @@
-// import starRating from "../../assets/imgs/theme/rating-stars.png";
 import { Link, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import SideBanner from "../SideBanner";
-// import { Slide, toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-// import { useState, useEffect } from "react";
-// import { useDispatch } from "react-redux";
-// import { addToCartHandler } from "../../redux/actions/cart/cartActions";
-// import ModalQuickView from "../ModalQuickView";
 import ProductCard from "../ProductCard";
 
 const settings = {
@@ -49,35 +42,8 @@ const settings = {
 };
 
 const NewArrival = ({ data }) => {
-  const limitedData = data.slice(0, 10); // Only take the first 10 items from the data array
-
-  // const [successToast, setSuccessToast] = useState("");
-  // const [errorToast, setErrorToast] = useState("");
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
-  // const onClickProductHandler = (productid) => {
-  //   navigate(`/products/${productid}`);
-  // };
-  // const navigate = useNavigate();
-  // const onClickProductHandler = (productid) => {
-  //   navigate(`/products/${productid}`);
-  // };
-
-  // const cartHandler = async (item) => {
-  //   const res = await dispatch(addToCartHandler(item));
-  //   console.log(res);
-  //   setSuccessToast(true);
-  //   toast.success("Product added to cart", {
-  //     position: "top-right",
-  //   });
-  // };
-
-  // const hotProducts = data.filter(item => item.tag.includes('hot'));
-  // const productHandler = (event) => {};
-  // useEffect(() => {}, [toast]);
-
-  // console.log(data);
-
+  const limitedData = data.slice(0, 10); 
+    
   return (
     <>
       <section className="product-tabs section-padding position-relative pb-50">

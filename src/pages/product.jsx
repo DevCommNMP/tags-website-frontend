@@ -1,5 +1,6 @@
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import starRating from "../assets/imgs/theme/rating-stars.png";
 import { useDispatch, useSelector } from "react-redux";
 import SingleProductImages from "../components/SingleProductImages";
 import { fetchParticularProduct } from "../redux/actions/product/productActions";
@@ -24,6 +25,18 @@ const Product = () => {
   const [selectedColor, setSelectedColor] = useState(particularproduct.colorsAvailable ? particularproduct.colorsAvailable[0] : null);
   const [selectedSize, setSelectedSize] = useState(particularproduct.sizesAvailable ? particularproduct.sizesAvailable[0] : null);
   const [error, setError] = useState("");
+
+  const [successToast, setSuccessToast] = useState("");
+  const [errorToast, setErrorToast] = useState("");
+
+  const cartHandler = async (item) => {
+    const res = await dispatch(addToCartHandler(item));
+    console.log(res);
+    setSuccessToast(true);
+    toast.success("Product added to cart", {
+      position: "top-right",
+    });
+  };
 
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
@@ -67,7 +80,7 @@ const Product = () => {
                 </Link>
               </a>
               <span></span>
-              <a href="">Products</a>
+              Products
               <span></span> {particularproduct.title}
             </div>
           </div>
@@ -85,7 +98,10 @@ const Product = () => {
                       <div className="product-detail-rating">
                         <div className="product-rate-cover text-end">
                           <div className="product-rate d-inline-block">
-                            <div className="product-rating" style={{ width: "90%" }}></div>
+                            <div
+                              className="product-rating"
+                              style={{ width: `${20 * particularproduct.rating}%`, backgroundImage: `url(${starRating})` }}
+                            ></div>
                           </div>
                           <span className="font-small ml-5 text-muted">(32 reviews)</span>
                         </div>
@@ -148,11 +164,16 @@ const Product = () => {
                           <button
                             type="button"
                             className="border bg-white  text-brand radius button button-add-to-cart"
-                            onClick={handleBuyNow}
+                            onClick={() => cartHandler(particularproduct)}
                           >
                             <i className="fi-rs-shopping-cart"></i>Add to cart
                           </button>
-                          <button type="button" className="button button-primary button-add-to-cart ml-5" onClick={handleBuyNow}>
+                          <button
+                            type="button"
+                            onClick={handleBuyNow}
+                            className="button button-primary button-add-to-cart ml-5"
+                            onClick={handleBuyNow}
+                          >
                             <i className="fi-rs-shopping-cart"></i>Buy Now
                           </button>
                         </div>
