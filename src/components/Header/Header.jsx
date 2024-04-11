@@ -41,7 +41,7 @@ const Header = () => {
         <div className="mobile-header-wrapper-inner">
           <div className="mobile-header-top">
             <div className="mobile-header-logo">
-              <Link to="index.html">
+              <Link to="/">
                 <img src="assets/imgs/theme/logo.png" alt="logo" />
               </Link>
             </div>
@@ -61,7 +61,7 @@ const Header = () => {
         <div className="container">
           <div className="header-wrap header-space-between position-relative">
             <div className="logo logo-width-1 d-block d-lg-none">
-              <Link to="index.html">
+              <Link to="/">
                 <img src={logo} alt="logo" />
               </Link>
             </div>

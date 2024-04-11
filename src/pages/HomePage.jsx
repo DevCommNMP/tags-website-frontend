@@ -15,7 +15,7 @@ import { useSelector } from "react-redux";
 
 import LoaderImg from "../components/LoaderImg.jsx";
 import YoutubeVideo from "../components/YoutubeVideo.jsx";
-import OnlyProductCard from "./CardOnly/OnlyProductCard.jsx";
+// import OnlyProductCard from "../components/ProductCard.jsx";
 const Homepage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -25,7 +25,7 @@ const Homepage = () => {
 
   const storeData = useSelector((store) => store.products);
   const { products, productsLoading, appErr, serverErr } = storeData;
-  // console.log(products,productsLoading,appErr,serverErr)
+  console.log(products,productsLoading,appErr,serverErr)
 
   return (
     <>
@@ -43,7 +43,6 @@ const Homepage = () => {
           <NewArrival data={products} />
           <LeatherSection data={products} />
           <ProductTabSection data={products} />
-          <OnlyProductCard data={products} />
         </div>
       )}
       <YoutubeVideo />

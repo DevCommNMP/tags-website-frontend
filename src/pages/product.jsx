@@ -23,7 +23,7 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState(particularproduct.colorsAvailable ? particularproduct.colorsAvailable[0] : null);
   const [selectedSize, setSelectedSize] = useState(particularproduct.sizesAvailable ? particularproduct.sizesAvailable[0] : null);
-    const [error, setError] = useState("");
+  const [error, setError] = useState("");
 
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
