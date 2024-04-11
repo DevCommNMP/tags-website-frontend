@@ -5,7 +5,7 @@ import Banner from "../components/OfferBanner/Banner";
 
 import ProductTabSection from "./ProductTabSection";
 import LeatherSection from "../components/leateherSection/leatherSection.jsx";
-// import NewArrival from "../components/newArrival/NewArrival.jsx";
+import NewArrival from "../components/newArrival/NewArrival.jsx";
 import NewsLetter from "../components/NewsLetter.jsx";
 import SEOContent from "../components/SEOContent.jsx";
 import { useEffect } from "react";
@@ -40,10 +40,9 @@ const Homepage = () => {
               <Banner />
             </div>
           </div>
-          {/* <NewArrival data={products} /> */}
+          <NewArrival data={products} />
           <LeatherSection data={products} />
           <ProductTabSection data={products} />
-          {/* <OnlyProductCard data={products} /> */}
         </div>
       )}
       <YoutubeVideo />
