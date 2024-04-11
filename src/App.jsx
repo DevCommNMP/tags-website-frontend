@@ -12,8 +12,6 @@ import UserAccountPage from "./pages/UserAccountPage.jsx";
 import Product from "./pages/product.jsx";
 import SingleProductImages from "./components/SingleProductImages.jsx";
 import CheckoutPage from "./pages/CheckoutPage.jsx";
-import PopularProducts from "./pages/popularProductsPage.jsx";
-import NewArrivals from "./pages/newArrivalPage.jsx";
 import ProductsGridPage from "./pages/ProductsGridPage.jsx";
 import Invoice from "./components/Invoice.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
@@ -29,8 +27,6 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Homepage />} />
             <Route exact path="/products/:id" element={<Product />} />
-            <Route exact path="/popular-products" element={<PopularProducts />} />
-            <Route exact path="/new-arrivals" element={<NewArrivals />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/forgot-password" element={<ForgotPassword />} />
             <Route exact path="/signup" element={<SignUp />} />

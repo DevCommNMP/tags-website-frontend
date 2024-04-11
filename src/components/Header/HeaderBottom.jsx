@@ -27,7 +27,9 @@ const HeaderBottom = () => {
                     <li className="hot-deals">
                       <img src={iconHot} alt="hot deals" />
                       <a>
-                        <Link  className="active" to="/categories/Deals">Deals</Link>
+                        <Link className="active" to="/categories/Deals">
+                          Deals
+                        </Link>
                       </a>
                     </li>
 
@@ -226,7 +228,7 @@ const HeaderBottom = () => {
                     </li>
 
                     <li>
-                      <Link to="/categories/Premium Leather">About</Link>
+                      <Link to="/about">About</Link>
                     </li>
                     <li>
                       <Link to="/categories/Premium Leather" style={{ color: "#d02327" }}>
@@ -240,7 +242,7 @@ const HeaderBottom = () => {
             <div className="hotline d-none d-lg-flex">
               <img src={iconHeadphone} alt="hotline" />
               <p>
-              +91 98444 88700<span>7 Days Support Center</span>
+                +91 98444 88700<span>7 Days Support Center</span>
               </p>
             </div>
             <div className="header-action-icon-2 d-block d-lg-none">

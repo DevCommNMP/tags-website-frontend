@@ -80,15 +80,15 @@ const HeaderMiddle = () => {
                             </Link>
                           </li>
                           <li>
-                            <a href="page-account.html">
+                            <Link to="/profile">
                               <i className="fi fi-rs-location-alt mr-10"></i>
                               Order Tracking
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a href="page-account.html">
+                            <Link to="/profile">
                               <i className="fi fi-rs-label mr-10"></i>My Voucher
-                            </a>
+                            </Link>
                           </li>
                           <li>
                             <a>
@@ -96,16 +96,16 @@ const HeaderMiddle = () => {
                             </a>
                           </li>
                           <li>
-                            <a href="page-account.html">
+                            <Link to="/profile">
                               <i className="fi fi-rs-settings-sliders mr-10"></i>
                               Setting
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a onClick={signOutHandler}>
+                            <Link onClick={signOutHandler}>
                               <i className="fi fi-rs-sign-out mr-10"></i>
                               Sign out
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </div>
