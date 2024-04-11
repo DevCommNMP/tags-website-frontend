@@ -18,6 +18,7 @@ import Wishlist from "./pages/Wishlist.jsx";
 import AllCategoriesPage from "./pages/AllCategoriesPage.jsx";
 import Cart from "./pages/cart.jsx";
 import CustomPaging from "./components/CustomPaging.jsx";
+import ProductCard from "./components/ProductCard.jsx";
 
 function App() {
   return (
@@ -43,6 +44,8 @@ function App() {
             <Route exact path="/verify-account" element={<VerifyEmail />} />
             <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
             <Route exact path="/custom-paging" element={<CustomPaging />} />
+            {/* temp */}
+            <Route exact path="/product-card" element={<ProductCard />} />
           </Routes>
         </BrowserRouter>
       </Provider>

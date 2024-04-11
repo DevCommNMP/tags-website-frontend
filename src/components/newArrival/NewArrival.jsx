@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addToCartHandler } from "../../redux/actions/cart/cartActions";
 import ModalQuickView from "../ModalQuickView";
+import ProductCard from "../ProductCard";
 
 const settings = {
   dots: true,
@@ -75,6 +76,8 @@ const NewArrival = ({ data }) => {
   const productHandler = (event) => {};
   useEffect(() => {}, [toast]);
 
+  console.log(data);
+
   return (
     <>
       <section className="product-tabs section-padding position-relative pb-50">
@@ -96,7 +99,8 @@ const NewArrival = ({ data }) => {
                     {/* {data.filter(item => item.category && item.category.name === "premium Leather").map((item) => ( */}
                     {data.map((product, index) => (
                       <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
-                        {/* <ProductCard /> */}
+                        {/* <ProductCard product={product} index={index} /> */}
+
                         <div className="product-cart-wrap mb-30">
                           <div className="product-img-action-wrap">
                             <div className="product-img product-img-zoom">
