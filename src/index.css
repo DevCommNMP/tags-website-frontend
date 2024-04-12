@@ -4152,14 +4152,14 @@ table .product-thumbnail img {
 .slider-nav-thumbnails .slick-list {
   margin: 0 -10px;
 }
-.slider-nav-thumbnails .slick-slide {
+/* .slider-nav-thumbnails .slick-slide {
   position: relative;
   border-radius: 15px;
   overflow: hidden;
-}
-.slider-nav-thumbnails .slick-slide img {
+} */
+/* .slider-nav-thumbnails .slick-slide img {
   border-radius: 17px;
-}
+} */
 .slider-nav-thumbnails .slick-slide.slick-current::before {
   border-bottom: 5px solid #333;
   border-left: 5px solid transparent;

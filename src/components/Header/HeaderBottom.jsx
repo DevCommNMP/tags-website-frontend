@@ -56,7 +56,6 @@ const HeaderBottom = () => {
                             <li>
                               <a>Sports Shoes</a>
                             </li>
-                            {/* <li><a href='#'>Packaged Produce</a></li> */}
                           </ul>
                         </li>
                         <li className="sub-mega-menu sub-mega-menu-width-22">
