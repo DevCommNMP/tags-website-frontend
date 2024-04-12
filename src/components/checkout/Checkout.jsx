@@ -36,6 +36,7 @@ const Checkout = () => {
   const user = JSON.parse(localStorage.getItem("userData"));
   const [Razorpay] = useRazorpay();
   const dispatch = useDispatch();
+ 
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -49,13 +50,38 @@ const Checkout = () => {
     additionalInfo: "",
   });
 
-  console.log(cartdata)
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+
+    if (name === "zipcode" && value.length === 6) {
+      setLoading(true)
+      axios.post(`http://localhost:5000/api/picodedata`, { pincode: value })
+        .then(response => {
+          console.log(response.data);
+          setFormData(prevState => ({
+            ...prevState,
+            state: response.data[0].state,
+            city: response.data[0].city
+          }));
+          setLoading(false)
+          // Handle the pincode data received from the server
+        })
+        .catch(error => {
+          setLoading(false)
+          setFormData(prevState => ({
+            ...prevState,
+            state: "",
+            city: ""
+          }));
+          toast.error("please enter valid pincode")
+          console.error("Error fetching pincode data:", error);
+          // Handle errors if any
+        });
+    }
   };
 
 
@@ -109,7 +135,8 @@ if (!isValid) {
       //   userEmail: user.email,
       //   cartdata,
       //   formData
-      // });
+      // });o
+
       async function displayRazorpay () {
 
         const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
@@ -295,7 +322,7 @@ if (!isValid) {
                   </div>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                    <input required="" type="text" name="state" placeholder="City / Town *"  value={formData.state} onChange={handleChange}/>
+                    <input required="" type="text" name="state" placeholder="State *"  value={formData.state} onChange={handleChange}/>
                     
                     </div>
                     <div className="form-group col-lg-6">
