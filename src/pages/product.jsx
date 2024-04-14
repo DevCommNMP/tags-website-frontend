@@ -172,7 +172,6 @@ const Product = () => {
                             type="button"
                             onClick={handleBuyNow}
                             className="button button-primary button-add-to-cart ml-5"
-                            onClick={handleBuyNow}
                           >
                             <i className="fi-rs-shopping-cart"></i>Buy Now
                           </button>
