@@ -7,8 +7,8 @@ import { addToCartHandler } from "../redux/actions/cart/cartActions";
 import { toast, ToastContainer } from "react-toastify";
 
 const ProductCard = ({ product }) => {
-  console.log("hello, products are here");
-  console.log(product);
+  // console.log("hello, products are here");
+  // console.log(product);
 
   const dispatch = useDispatch();
 
@@ -61,7 +61,7 @@ const ProductCard = ({ product }) => {
           </div>
           <div className="product-card-bottom">
             <div className="product-price">
-              <span> &#8377; {product.SellingPrice}</span>
+            <span>&#8377; {product.SellingPrice <= 1000 ? ((product.SellingPrice + (product.SellingPrice * 0.12)).toFixed(0)) : ((product.SellingPrice + (product.SellingPrice * 0.18)).toFixed(0))}</span>
               <span className="old-price">&#8377;{product.SellingPrice}</span>
             </div>
             <div className="add-cart" onClick={() => cartHandler(product)}>

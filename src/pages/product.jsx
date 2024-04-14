@@ -6,33 +6,25 @@ import SingleProductImages from "../components/SingleProductImages";
 import { fetchParticularProduct } from "../redux/actions/product/productActions";
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
-import { addToCart, addToCartHandler } from "../redux/actions/cart/cartActions";
+import { addToCartHandler } from "../redux/actions/cart/cartActions";
 import { Link } from "react-router-dom";
-import { Slide, toast, ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import ProductInfo from "../components/ProductInfo";
 
 const Product = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const storeData = useSelector((store) => store.products);
-  const { particularproduct, productsLoading, appErr, serverErr, products } = storeData;
-
-  useEffect(() => {
-    dispatch(fetchParticularProduct(id));
-  }, [dispatch]);
-
+  const { particularproduct } = storeData;
+  const [soldOut, setSoldOut] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [stock, setStock] = useState(1);
   const [selectedColor, setSelectedColor] = useState(particularproduct.colorsAvailable ? particularproduct.colorsAvailable[0] : null);
   const [selectedSize, setSelectedSize] = useState(particularproduct.sizesAvailable ? particularproduct.sizesAvailable[0] : null);
   const [error, setError] = useState("");
 
-  const [successToast, setSuccessToast] = useState("");
-  const [errorToast, setErrorToast] = useState("");
-
   const cartHandler = async (item) => {
-    const res = await dispatch(addToCartHandler(item));
-    console.log(res);
-    setSuccessToast(true);
+    await dispatch(addToCartHandler(item));
     toast.success("Product added to cart", {
       position: "top-right",
     });
@@ -52,7 +44,13 @@ const Product = () => {
     setSelectedColor(color);
   };
 
-  const handleSizeSelection = (size) => {
+  const handleSizeSelection = (size, quantity) => {
+    setStock(quantity);
+    if (quantity === 0) {
+      setSoldOut(true);
+    } else {
+      setSoldOut(false);
+    }
     setSelectedSize(size);
   };
 
@@ -65,6 +63,10 @@ const Product = () => {
       console.log("Selected Size:", selectedSize);
     }
   };
+
+  useEffect(() => {
+    dispatch(fetchParticularProduct(id));
+  }, [dispatch, id,soldOut]);
 
   return (
     <>
@@ -79,9 +81,7 @@ const Product = () => {
                   <i className="fi-rs-home mr-5"></i>Home
                 </Link>
               </a>
-              <span></span>
-              Products
-              <span></span> {particularproduct.title}
+              <span>Products</span> {particularproduct.title}
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ const Product = () => {
                   <SingleProductImages product={particularproduct} />
                   <div className="col-md-6 col-sm-12 col-xs-12">
                     <div className="detail-info pr-30 pl-30">
-                      <span className="stock-status out-stock"> Sale Off </span>
+                      <span className="stock-status out-stock">Sale Off</span>
                       <h2 className="title-detail">{particularproduct.title}</h2>
                       <div className="product-detail-rating">
                         <div className="product-rate-cover text-end">
@@ -107,10 +107,11 @@ const Product = () => {
                         </div>
                       </div>
                       <div className="clearfix product-price-cover">
-                        <div className="product-price primary-color float-left">
-                          <span className="current-price text-brand">&#8377; {particularproduct.SellingPrice}</span>
+                        <div className="product-price primary-color float-left" style={{ fontSize: "2rem", color: "red", fontWeight: 800 }}>
+                          <span>&#8377; {particularproduct.SellingPrice < 1000 ? ((particularproduct.SellingPrice + (particularproduct.SellingPrice * 0.12)).toFixed(0)) : ((particularproduct.SellingPrice + (particularproduct.SellingPrice * 0.18)).toFixed(0))}</span>
+                          <span className="save-price font-md color3 ml-15">Inc. all taxes</span>
                           <span>
-                            <span className="save-price font-md color3 ml-15">26% Off</span>
+                            <span className="save-price font-md color3 ml-15">26% Off </span>
                             <span className="old-price font-md ml-15">5000</span>
                           </span>
                         </div>
@@ -126,7 +127,7 @@ const Product = () => {
                             particularproduct.sizesAvailable &&
                             particularproduct.sizesAvailable.map((item, index) => (
                               <li key={index}>
-                                <a onClick={() => handleSizeSelection(item.size)} className={selectedSize === item.size ? "selected" : ""}>
+                                <a onClick={() => handleSizeSelection(item.size, item.quantity)} className={selectedSize === item.size ? "selected" : ""}>
                                   {item.size}
                                 </a>
                               </li>
@@ -160,18 +161,22 @@ const Product = () => {
                           </a>
                         </div>
                         <br />
+                        {soldOut ? <h2>Sold Out</h2> : ""}
+
                         <div className="product-extra-link2">
                           <button
                             type="button"
                             className="border bg-white  text-brand radius button button-add-to-cart"
                             onClick={() => cartHandler(particularproduct)}
+                            disabled={soldOut}
                           >
                             <i className="fi-rs-shopping-cart"></i>Add to cart
                           </button>
                           <button
                             type="button"
-                            onClick={handleBuyNow}
                             className="button button-primary button-add-to-cart ml-5"
+                            onClick={handleBuyNow}
+                            disabled={soldOut}
                           >
                             <i className="fi-rs-shopping-cart"></i>Buy Now
                           </button>
@@ -200,7 +205,7 @@ const Product = () => {
                           </li>
                           <li>
                             Stock:
-                            <span className="in-stock text-brand ml-5">8 Items In Stock</span>
+                            <span className="in-stock text-brand ml-5">{stock} Items In Stock</span>
                           </li>
                         </ul>
                       </div>
