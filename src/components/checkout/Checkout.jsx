@@ -50,41 +50,48 @@ const Checkout = () => {
     additionalInfo: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = async(e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-
+  
     if (name === "zipcode" && value.length === 6) {
-      setLoading(true)
-      axios.post(`http://localhost:5000/api/picodedata`, { pincode: value })
-        .then(response => {
-          console.log(response.data);
+      setLoading(true);
+      try {
+        const response = await axios.post(`${baseUrl}/api/picodedata`, { pincode: value });
+        console.log(response.data.success);
+        if (response.data.success) {
+          const { state, city } = response.data.data[0]; // Corrected 'response.data.datadata[0]' to 'response.data.data[0]'
           setFormData(prevState => ({
             ...prevState,
-            state: response.data[0].state,
-            city: response.data[0].city
+            state: state || "",
+            city: city || ""
           }));
-          setLoading(false)
-          // Handle the pincode data received from the server
-        })
-        .catch(error => {
-          setLoading(false)
+        } else {
           setFormData(prevState => ({
             ...prevState,
             state: "",
             city: ""
           }));
-          toast.error("please enter valid pincode")
-          console.error("Error fetching pincode data:", error);
-          // Handle errors if any
-        });
+          toast.error("Please enter a valid pincode");
+        }
+      } catch (error) {
+        setLoading(false);
+        setFormData(prevState => ({
+          ...prevState,
+          state: "",
+          city: ""
+        }));
+        toast.error("Please enter a valid pincode");
+        // console.error("Error fetching pincode data:", error);
+      } finally {
+        setLoading(false);
+      }
     }
-  };
-
-
+  }
+    
   const paymentHandler = async () => {
     if (!user) {
       toast.error("you need to login first", {
@@ -190,6 +197,11 @@ if (!isValid) {
     totalPrice += item.price * item.quantity;
   });
 
+  let totalTax = 0;
+  cartdata.forEach((item) => {
+    totalTax += item.price <= 1000 ? (item.price * 0.12 * item.quantity) : (item.price * 0.18 * item.quantity);
+  });
+  
   const formSubmitHandler = async (e) => {
     e.preventDefault();
   };
@@ -444,9 +456,26 @@ if (!isValid) {
                         ))}
                       </tbody>
                       <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
-                        <h3> Sub Total </h3>
-                        <h3> &#x20B9;{totalPrice}</h3>
+                        <h4> Sub Total = </h4>
+                        <h4> &#x20B9;{totalPrice}</h4>
+                       
+                        
+                       
                       </div>
+                      <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
+                      
+                        <h4> Total Tax = </h4>
+                        <h4> &#x20B9;{totalTax.toFixed(0)}</h4>
+                        
+                       
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
+                      
+                      <h4> Total Amount = </h4>
+                      <h4> &#x20B9;{(totalPrice+totalTax).toFixed(0)}</h4>
+                      
+                     
+                    </div>
                     </table>
                   </div>
                 </div>
