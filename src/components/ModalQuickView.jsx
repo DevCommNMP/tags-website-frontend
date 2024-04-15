@@ -101,7 +101,7 @@ console.log(product)
                   </div>
                   <div className="clearfix product-price-cover">
                     <div className="product-price primary-color float-left">
-                      <span className="current-price text-brand"> &#8377;{product.SellingPrice}</span>
+                      <span className="current-price text-brand"> &#8377;{product.SellingPrice <= 1000 ? ((product.SellingPrice + (product.SellingPrice * 0.12)).toFixed(0)) : ((product.SellingPrice + (product.SellingPrice * 0.18)).toFixed(0))}</span>
                       <span>
                         <span className="save-price font-md color3 ml-15">26% Off</span>
                         <span className="old-price font-md ml-15"></span>

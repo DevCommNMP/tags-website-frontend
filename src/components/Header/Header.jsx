@@ -87,23 +87,23 @@ const Header = () => {
 
                     <li>
                       <Link to="/categories/Occation">
-                        Occation <i className="fi-rs-angle-down"></i>
+                        Occational <i className="fi-rs-angle-down"></i>
                       </Link>
                       <ul className="sub-menu">
                         <li>
-                          <Link to="/categories/Casual Shoes">Casual Shoes</Link>
+                          <Link to="/categories/Casual Footwear">Casual Footwear</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Ethnic Shoes">Ethnic Shoes</Link>
+                          <Link to="/categories/Ethnic Footwear">Ethnic Footwear</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Formal Shoes">Formal Shoes</Link>
+                          <Link to="/categories/Formal Footwear">Formal Footwear</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Party Shoes">Party Shoes</Link>
+                          <Link to="/categories/Party Footwear">Party Footwear</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Sports Shoes">Sports Shoes</Link>
+                          <Link to="/categories/Sports Footwear">Sports Footwear</Link>
                         </li>
                       </ul>
                     </li>
@@ -113,7 +113,7 @@ const Header = () => {
                       </a>
                       <ul className="sub-menu">
                         <li>
-                          <Link to="/categories/Ballerinas Walking Shoes">Ballerinas Walking Shoes</Link>
+                          <Link to="/categories/Ballerinas Walking Footwear">Ballerinas Walking Footwear</Link>
                         </li>
                         <li>
                           <Link to="/categories/Boots">Boots</Link>
@@ -152,7 +152,7 @@ const Header = () => {
                           <Link to="/categories/Sneakers">Sneakers</Link>
                         </li>
                         <li>
-                          <Link to="/categories/Walking Shoes">Walking Shoes</Link>
+                          <Link to="/categories/Walking Footwear">Walking Footwear</Link> 
                         </li>
                       </ul>
                     </li>

@@ -123,7 +123,8 @@ const Cart = () => {
                             </div>
                           </td>
                           <td className="price" data-title="Price">
-                            <h3 className="text-brand">{item.price}</h3>
+                            <h3 className="text-brand">            <span>&#8377; {item.price <= 1000 ? ((item.price + (item.price * 0.12)).toFixed(0)) : ((item.price + (item.price * 0.18)).toFixed(0))}</span>
+</h3>
                           </td>
                           <td className="text-center detail-info" data-title="Stock">
                             <span className="stock-status in-stock mb-0">{item.quantity}</span>

@@ -184,6 +184,7 @@ if (!isValid) {
     setLoading(false);
   };
 
+
   let totalPrice = 0;
   cartdata.forEach((item) => {
     totalPrice += item.price * item.quantity;
@@ -435,13 +436,15 @@ if (!isValid) {
                               <h6 className="text-muted pl-20 pr-20">x 1</h6>
                             </td>
                             <td>
-                              <h4 className="text-brand">&#x20B9;{item.price}</h4>
-                            </td>
+                              
+                            <h4 className="text-brand">&#x20B9;{item.price} </h4>     <span style={{}}>
+    Tax &#x20B9;{item.price <= 1000 ? (((item.price * 0.12)).toFixed(0))*item.quantity : (((item.price * 0.18)).toFixed(0))}
+  </span></td>
                           </tr>
                         ))}
                       </tbody>
                       <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
-                        <h3>Total </h3>
+                        <h3> Sub Total </h3>
                         <h3> &#x20B9;{totalPrice}</h3>
                       </div>
                     </table>
