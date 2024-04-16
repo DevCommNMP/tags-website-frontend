@@ -10,7 +10,7 @@ import ResetPassword from "./components/Auth/ResetPassword/ResetPassword.jsx";
 import ForgotPassword from "./components/Auth/ForgotPassword/ForgotPassword.jsx";
 import UserAccountPage from "./pages/UserAccountPage.jsx";
 import Product from "./pages/product.jsx";
-import SingleProductImages from "./components/SingleProductImages.jsx";
+// import SingleProductImages from "./components/SingleProductImages.jsx";
 import CheckoutPage from "./pages/CheckoutPage.jsx";
 import ProductsGridPage from "./pages/ProductsGridPage.jsx";
 import Invoice from "./components/Invoice.jsx";
