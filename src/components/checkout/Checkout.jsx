@@ -13,19 +13,22 @@ import { CheckoutHandler } from "../../redux/actions/checkoutActions/checkoutAct
 import axios from "axios";
 import { baseUrl } from "../../utils/baseUrl";
 
+
+
 function loadScript(src) {
   return new Promise((resolve) => {
-    const script = document.createElement('script');
-    script.src = src;
+    const script = document.createElement('script')
+    script.src = src
     script.onload = () => {
-      resolve(true);
-    };
+      resolve(true)
+    }
     script.onerror = () => {
-      resolve(false);
-    };
-    document.body.appendChild(script);
-  });
+      resolve(false)
+    }
+    document.body.appendChild(script)
+  })
 }
+
 
 const Checkout = () => {
   const [loading, setLoading] = useState(false);
@@ -33,7 +36,7 @@ const Checkout = () => {
   const user = JSON.parse(localStorage.getItem("userData"));
   const [Razorpay] = useRazorpay();
   const dispatch = useDispatch();
-
+ 
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -56,7 +59,6 @@ const Checkout = () => {
   
     if (name === "zipcode" && value.length === 6) {
       setLoading(true);
-<<<<<<< Updated upstream
       try {
         const response = await axios.post(`${baseUrl}/api/picodedata`, { pincode: value });
         console.log(response.data.success);
@@ -69,28 +71,10 @@ const Checkout = () => {
           }));
         } else {
           setFormData(prevState => ({
-=======
-      axios
-        .post(`http://localhost:5000/api/picodedata`, { pincode: value })
-        .then((response) => {
-          console.log(response.data);
-          setFormData((prevState) => ({
-            ...prevState,
-            state: response.data[0].state,
-            city: response.data[0].city,
-          }));
-          setLoading(false);
-          // Handle the pincode data received from the server
-        })
-        .catch((error) => {
-          setLoading(false);
-          setFormData((prevState) => ({
->>>>>>> Stashed changes
             ...prevState,
             state: "",
-            city: "",
+            city: ""
           }));
-<<<<<<< Updated upstream
           toast.error("Please enter a valid pincode");
         }
       } catch (error) {
@@ -108,15 +92,6 @@ const Checkout = () => {
     }
   }
     
-=======
-          toast.error("please enter valid pincode");
-          console.error("Error fetching pincode data:", error);
-          // Handle errors if any
-        });
-    }
-  };
-
->>>>>>> Stashed changes
   const paymentHandler = async () => {
     if (!user) {
       toast.error("you need to login first", {
@@ -153,15 +128,15 @@ const Checkout = () => {
       return emailRegex.test(email);
     };
     const isValid = isEmailValid(formData.email);
-    if (!isValid) {
-      toast.error("Please enter a valid email address");
-      return;
-    }
-
+if (!isValid) {
+  toast.error("Please enter a valid email address");
+  return;
+}
+    
     setLoading(true);
     try {
       const { data } = await axios.get(`${baseUrl}/api/getkeys`);
-
+      
       // const res = await axios.post(`${baseUrl}/api/checkout`, {
       //   amount: totalPrice*100,
       //   userEmail: user.email,
@@ -169,42 +144,46 @@ const Checkout = () => {
       //   formData
       // });o
 
-      async function displayRazorpay() {
-        const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
+      async function displayRazorpay () {
 
-        if (!res) {
-          alert("Razropay failed to load!!");
-          return;
-        }
-        const { data } = await axios.get(`${baseUrl}/api/getkeys`);
-        const res1 = await axios.post(`${baseUrl}/api/checkout`, {
-          amount: totalPrice,
-          userEmail: user.email,
-          cartdata,
-          formData,
-        });
-        // console.log(res1)
-
+        const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+    
+          if (!res){
+            alert('Razropay failed to load!!')
+            return 
+          }
+          const { data } = await axios.get(`${baseUrl}/api/getkeys`);
+          const res1 = await axios.post(`${baseUrl}/api/checkout`, {
+            amount: totalPrice,
+            userEmail: user.email,
+            cartdata,
+            formData
+          });
+          // console.log(res1)
+    
+         
+    
         const options = {
-          key: data.key, // Enter the Key ID generated from the Dashboard
-          amount: res1.data.order.amount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-          currency: "INR",
-          name: "Acme Corp",
-          description: "Test Transaction",
-          image: "https://example.com/your_logo",
-          order_id: res1.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-          callback_url: "http://localhost:1769/verify",
-          notes: {
-            address: "Razorpay Corporate Office",
+          "key": data.key, // Enter the Key ID generated from the Dashboard
+          "amount": res1.data.order.amount*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+          "currency": "INR",
+          "name": "Acme Corp",
+          "description": "Test Transaction",
+          "image": "https://example.com/your_logo",
+          "order_id": res1.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+          "callback_url":"http://localhost:1769/verify",
+          "notes": {
+              "address": "Razorpay Corporate Office"
           },
-          theme: {
-            color: "#3399cc",
-          },
-        };
-        const paymentObject = new window.Razorpay(options);
-        paymentObject.open();
+          "theme": {
+              "color": "#3399cc"
+          }
+      };
+      const paymentObject = new window.Razorpay(options); 
+      paymentObject.open();
       }
       displayRazorpay();
+   
     } catch (error) {
       console.error("Payment Error: ", error);
       toast.error("Payment failed. Please try again later.");
@@ -233,6 +212,7 @@ const Checkout = () => {
       setCartdata(cart);
     }
   }, []);
+
 
   return (
     <>
@@ -322,52 +302,24 @@ const Checkout = () => {
                 <form method="post" onSubmit={formSubmitHandler}>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                      <input
-                        type="text"
-                        required="true"
-                        name="fname"
-                        placeholder="First name *"
-                        value={formData.fname}
-                        onChange={handleChange}
-                      />
+                      <input type="text" required="true" name="fname" placeholder="First name *"    value={formData.fname} onChange={handleChange}/>
                     </div>
                     <div className="form-group col-lg-6">
-                      <input
-                        type="text"
-                        required="true"
-                        name="lname"
-                        placeholder="Last name *"
-                        value={formData.lname}
-                        onChange={handleChange}
-                      />
+                      <input type="text" required="true" name="lname" placeholder="Last name *"  value={formData.lname} onChange={handleChange} />
                     </div>
                   </div>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                      <input
-                        type="text"
-                        name="billing_address"
-                        required="true"
-                        placeholder="Address *"
-                        value={formData.billing_address}
-                        onChange={handleChange}
-                      />
+                      <input type="text" name="billing_address" required="true" placeholder="Address *"  value={formData.billing_address} onChange={handleChange}/>
                     </div>
                     <div className="form-group col-lg-6">
-                      <input
-                        type="text"
-                        name="billing_address2"
-                        required=" true"
-                        placeholder="Address line2"
-                        value={formData.billing_address2}
-                        onChange={handleChange}
-                      />
+                      <input type="text" name="billing_address2" required=" true" placeholder="Address line2" value={formData.billing_address2} onChange={handleChange} />
                     </div>
                   </div>
                   <div className="row shipping_calculator">
                     <div className="form-group col-lg-6">
                       <div className="custom_select">
-                        <select className="form-control select-active" required value={formData.country} onChange={handleChange}>
+                        <select className="form-control select-active" required  value={formData.country} onChange={handleChange}>
                           <option value="">Select an option...</option>
                           <option value="IND" selected>
                             India
@@ -375,64 +327,31 @@ const Checkout = () => {
                         </select>
                       </div>
                     </div>
-
+                    
                     <div className="form-group col-lg-6">
-                      <input
-                        required=""
-                        type="text"
-                        name="city"
-                        placeholder="City / Town *"
-                        value={formData.city}
-                        onChange={handleChange}
-                      />
+                      
+                      <input required="" type="text" name="city" placeholder="City / Town *"  value={formData.city} onChange={handleChange}/>
                     </div>
                   </div>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                      <input required="" type="text" name="state" placeholder="State *" value={formData.state} onChange={handleChange} />
+                    <input required="" type="text" name="state" placeholder="State *"  value={formData.state} onChange={handleChange}/>
+                    
                     </div>
                     <div className="form-group col-lg-6">
-                      <input
-                        required
-                        type="number"
-                        name="zipcode"
-                        placeholder="Postcode / ZIP *"
-                        maxLength={6}
-                        value={formData.zipcode}
-                        onChange={handleChange}
-                      />
+                    <input required type="number" name="zipcode" placeholder="Postcode / ZIP *" maxLength={6} value={formData.zipcode} onChange={handleChange} />
                     </div>
                   </div>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                      <input
-                        required=""
-                        type="number"
-                        name="phone"
-                        placeholder="Phone *"
-                        max={10}
-                        value={formData.phone}
-                        onChange={handleChange}
-                      />
+                      <input required="" type="number" name="phone" placeholder="Phone *"  max={10} value={formData.phone} onChange={handleChange} />
                     </div>
                     <div className="form-group col-lg-6">
-                      <input
-                        required=""
-                        type="text"
-                        name="email"
-                        placeholder="Email address *"
-                        value={formData.email}
-                        onChange={handleChange}
-                      />
+                      <input required="" type="text" name="email" placeholder="Email address *"  value={formData.email} onChange={handleChange} />
                     </div>
                   </div>
                   <div className="form-group mb-30">
-                    <textarea
-                      rows="5"
-                      placeholder="Additional information"
-                      value={formData.additionalInfo}
-                      onChange={handleChange}
-                    ></textarea>
+                    <textarea rows="5" placeholder="Additional information" value={formData.additionalInfo} onChange={handleChange}></textarea>
                   </div>
 
                   <div id="collapsePassword" className="form-group create-account collapse in">
@@ -449,24 +368,10 @@ const Checkout = () => {
                     <div id="collapseAddress" className="different_address collapse in">
                       <div className="row">
                         <div className="form-group col-lg-6">
-                          <input
-                            type="text"
-                            required
-                            name="fname"
-                            placeholder="First name *"
-                            value={formData.fname}
-                            onChange={handleChange}
-                          />
+                          <input type="text" required name="fname" placeholder="First name *"  value={formData.fname} onChange={handleChange}  />
                         </div>
                         <div className="form-group col-lg-6">
-                          <input
-                            type="text"
-                            required
-                            name="lname"
-                            placeholder="Last name *"
-                            value={formData.lname}
-                            onChange={handleChange}
-                          />
+                          <input type="text" required name="lname" placeholder="Last name *"  value={formData.lname} onChange={handleChange}/>
                         </div>
                       </div>
                       <div className="row shipping_calculator">
@@ -476,10 +381,8 @@ const Checkout = () => {
                         <div className="form-group col-lg-6">
                           <div className="custom_select w-100">
                             <select className="form-control select-active">
-                              <option value={formData.country} onChange={handleChange} required>
-                                Select an option...
-                              </option>
-                              <option value="Ind" selected>
+                              <option value={formData.country} onChange={handleChange} required>Select an option...</option>
+                              <option value="Ind" selected >
                                 India
                               </option>
                             </select>
@@ -488,58 +391,23 @@ const Checkout = () => {
                       </div>
                       <div className="row">
                         <div className="form-group col-lg-6">
-                          <input
-                            type="text"
-                            name="billing_address"
-                            required
-                            placeholder="Address *"
-                            value={formData.billing_address}
-                            onChange={handleChange}
-                          />
+                          <input type="text" name="billing_address" required placeholder="Address *"   value={formData.billing_address} onChange={handleChange}/>
                         </div>
                         <div className="form-group col-lg-6">
-                          <input
-                            type="text"
-                            name="billing_address2"
-                            required=""
-                            placeholder="Address line2"
-                            value={formData.billing_address2}
-                            onChange={handleChange}
-                          />
+                          <input type="text" name="billing_address2" required="" placeholder="Address line2"  value={formData.billing_address2} onChange={handleChange} />
                         </div>
                       </div>
                       <div className="row">
                         <div className="form-group col-lg-6">
-                          <input
-                            required=""
-                            type="text"
-                            name="state"
-                            placeholder="State / County *"
-                            value={formData.state}
-                            onChange={handleChange}
-                          />
+                          <input required="" type="text" name="state" placeholder="State / County *"   value={formData.state} onChange={handleChange}/>
                         </div>
                         <div className="form-group col-lg-6">
-                          <input
-                            required=""
-                            type="text"
-                            name="city"
-                            placeholder="City / Town *"
-                            value={formData.town}
-                            onChange={handleChange}
-                          />
+                          <input required="" type="text" name="city" placeholder="City / Town *"  value={formData.town} onChange={handleChange}/>
                         </div>
                       </div>
                       <div className="row">
                         <div className="form-group col-lg-6">
-                          <input
-                            required=""
-                            type="text"
-                            name="zipcode"
-                            placeholder="Postcode / ZIP *"
-                            value={formData.zipcode}
-                            onChange={handleChange}
-                          />
+                          <input required="" type="text" name="zipcode" placeholder="Postcode / ZIP *"   value={formData.zipcode} onChange={handleChange}/>
                         </div>
                       </div>
                     </div>
@@ -680,8 +548,7 @@ const Checkout = () => {
                   {/* <img src={paymentZapper} alt="" /> */}
                 </div>
                 <button className="btn btn-fill-out btn-block mt-30" onClick={paymentHandler}>
-                  {loading ? "Loading" : " Place an Order"}
-                  <i className="fi-rs-sign-out ml-15"></i>
+                 {loading ? "Loading":" Place an Order"}<i className="fi-rs-sign-out ml-15"></i>
                 </button>
               </div>
             </div>
