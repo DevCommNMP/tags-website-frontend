@@ -58,7 +58,7 @@ const VerifyEmail = () => {
             </div>
           </div>
         </div>
-        <div className="page-content pt-100 pb-100">
+        <div className="page-content pt-50 pb-100">
           <div className="container">
             <div className="row">
               <div className="col-xl-4 col-lg-6 col-md-12 m-auto">

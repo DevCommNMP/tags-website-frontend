@@ -14,11 +14,14 @@ const dummyData = [
   { id: 10, name: "Kiwi" },
 ];
 
-const Search2 = () => {
+const Search2 = ( { allProducts } ) => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [showOverlay, setShowOverlay] = useState(false);
   const inputRef = useRef(null);
+
+  console.log(allProducts)
+  console.log("allProducts");
 
   useEffect(() => {
     const handleEscKeyPress = (event) => {
@@ -48,6 +51,17 @@ const Search2 = () => {
     }
   };
 
+/*
+  Close overlay when user clicks outside the overlay
+  1. When user clicks on the input field, the overlay is shown
+  2. When user clicks on the overlay, the overlay is closed
+  3. When user clicks on the input field again, the overlay is shown
+  4. When user clicks outside the overlay, the overlay is closed
+  5. Repeat steps 3 and 4
+  
+# todo 
+
+*/
   const handleCloseOverlay = () => {
     setShowOverlay(false);
     inputRef.current.blur(); // Remove focus from input field when overlay is closed

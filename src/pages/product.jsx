@@ -181,7 +181,7 @@ const Product = () => {
                         <br />
                         {soldOut ? <h2>Sold Out</h2> : ""}
 
-                        <div className="product-extra-link2">
+                        <div className="product-extra-link2">``
                           <button
                             type="button"
                             className="border bg-white  text-brand radius button button-add-to-cart"
