@@ -1,27 +1,12 @@
 import { useState, useEffect, useRef } from "react";
+import ProductCard from "./ProductCard";
 import "./search2.css";
 
-const dummyData = [
-  { id: 1, name: "Apple" },
-  { id: 2, name: "Banana" },
-  { id: 3, name: "Orange" },
-  { id: 4, name: "Grapes" },
-  { id: 5, name: "Strawberry" },
-  { id: 6, name: "Pineapple" },
-  { id: 7, name: "Watermelon" },
-  { id: 8, name: "Mango" },
-  { id: 9, name: "Peach" },
-  { id: 10, name: "Kiwi" },
-];
-
-const Search2 = ( { allProducts } ) => {
+const Search2 = ({ data }) => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [showOverlay, setShowOverlay] = useState(false);
   const inputRef = useRef(null);
-
-  console.log(allProducts)
-  console.log("allProducts");
 
   useEffect(() => {
     const handleEscKeyPress = (event) => {
@@ -43,7 +28,7 @@ const Search2 = ( { allProducts } ) => {
     if (inputValue.trim() === "") {
       setResults([]);
     } else {
-      const filteredResults = dummyData.filter((item) =>
+      const filteredResults = data.filter((item) =>
         item.name.toLowerCase().includes(inputValue.toLowerCase())
       );
       setResults(filteredResults);
@@ -51,29 +36,21 @@ const Search2 = ( { allProducts } ) => {
     }
   };
 
-/*
-  Close overlay when user clicks outside the overlay
-  1. When user clicks on the input field, the overlay is shown
-  2. When user clicks on the overlay, the overlay is closed
-  3. When user clicks on the input field again, the overlay is shown
-  4. When user clicks outside the overlay, the overlay is closed
-  5. Repeat steps 3 and 4
-  
-# todo 
-
-*/
   const handleCloseOverlay = () => {
     setShowOverlay(false);
-    inputRef.current.blur(); // Remove focus from input field when overlay is closed
+    inputRef.current.blur();
   };
 
   return (
     <>
       <div className="search-style-2">
-        <form className="search-form" onClick={() => {
+        <form
+          className="search-form"
+          onClick={() => {
             setShowOverlay(true);
-            inputRef.current.focus(); // Set focus on input field when clicked
-          }}>
+            inputRef.current.focus();
+          }}
+        >
           <i className="fi-rs-search" style={{ margin: "0px 10px", fontSize: "18px" }}></i>
           <input
             ref={inputRef}
@@ -86,22 +63,20 @@ const Search2 = ( { allProducts } ) => {
         </form>
 
         {showOverlay && (
-          <div className="search-overlay" onClick={() => {
-              setShowOverlay(false);
-              inputRef.current.blur(); // Remove focus from input field when overlay is clicked
-            }}>
+          <div className="search-overlay" onClick={handleCloseOverlay}>
             <div className="search-results" onClick={(e) => e.stopPropagation()}>
               <button onClick={handleCloseOverlay} style={{ float: "right" }}>
                 Close
               </button>
               <ul>
-                {results.map((item, index) => (
-                  <li key={index} style={{ fontWeight: "900" }}>
+                {results.map((item) => (
+                  <li key={item.id} style={{ fontWeight: "900" }}>
                     {item.name}
                   </li>
                 ))}
               </ul>
             </div>
+            <ProductCard />
           </div>
         )}
       </div>
