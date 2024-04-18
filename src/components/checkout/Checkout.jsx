@@ -34,6 +34,7 @@ const Checkout = () => {
   const [loading, setLoading] = useState(false);
   const [cartdata, setCartdata] = useState([]);
   const user = JSON.parse(localStorage.getItem("userData"));
+ 
   const [Razorpay] = useRazorpay();
   const dispatch = useDispatch();
  
@@ -58,47 +59,38 @@ const Checkout = () => {
     }));
   
     if (name === "zipcode" && value.length === 6) {
-      setLoading(true);
-      try {
-        const response = await axios.post(`${baseUrl}/api/picodedata`, { pincode: value });
-        console.log(response.data.success);
-        if (response.data.success) {
-          const { state, city } = response.data.data[0]; // Corrected 'response.data.datadata[0]' to 'response.data.data[0]'
-          setFormData(prevState => ({
-            ...prevState,
-            state: state || "",
-            city: city || ""
-          }));
-        } else {
-          setFormData(prevState => ({
-            ...prevState,
-            state: "",
-            city: ""
-          }));
-          toast.error("Please enter a valid pincode");
-        }
-      } catch (error) {
-        setLoading(false);
-        setFormData(prevState => ({
-          ...prevState,
-          state: "",
-          city: ""
-        }));
-        toast.error("Please enter a valid pincode");
-        // console.error("Error fetching pincode data:", error);
-      } finally {
-        setLoading(false);
+      
+      const response = await axios.post(`${baseUrl}/api/picodedata`, { pincode: value });
+      console.log(response.data);
+      if(response.data.success){
+        const { state, city } = response.data.data[0];
+            setFormData(prevState => ({
+              ...prevState,
+              state: state || "",
+              city: city || ""
+            }));
       }
+      else{
+        setFormData(prevState => ({
+                ...prevState,
+                state: "",
+                city: ""
+              }));
+              toast.error("Please enter a valid pincode");
+      }
+        
+        
     }
-  }
-    
+  };
+
   const paymentHandler = async () => {
     if (!user) {
-      toast.error("you need to login first", {
+      toast.error("You need to log in first", {
         position: "top-right",
       });
       return;
     }
+  
     if (
       formData.fname.length < 3 ||
       formData.lname.length < 3 ||
@@ -110,88 +102,76 @@ const Checkout = () => {
       !formData.email
     ) {
       toast.error(
-        "Please fill the billing details correctly with valid first name, valid last name, valid billing address, valid city name, valid state name, valid zipcode, valid phone number, and valid email"
+        "Please fill in the billing details correctly with a valid first name, valid last name, valid billing address, valid city name, valid state name, valid zipcode, valid phone number, and valid email"
       );
       return;
     }
+  
     if (formData.zipcode.length !== 6 || isNaN(formData.zipcode)) {
       toast.error("Please enter a valid 6-digit zipcode");
       return;
     }
+  
     if (formData.phone.length !== 10 || isNaN(formData.phone)) {
       toast.error("Please enter a valid 10-digit phone number");
       return;
     }
+  
     const isEmailValid = (email) => {
       // Regular expression for email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);
     };
+  
     const isValid = isEmailValid(formData.email);
-if (!isValid) {
-  toast.error("Please enter a valid email address");
-  return;
-}
-    
-    setLoading(true);
-    try {
-      const { data } = await axios.get(`${baseUrl}/api/getkeys`);
-      
-      // const res = await axios.post(`${baseUrl}/api/checkout`, {
-      //   amount: totalPrice*100,
-      //   userEmail: user.email,
-      //   cartdata,
-      //   formData
-      // });o
-
-      async function displayRazorpay () {
-
-        const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
-    
-          if (!res){
-            alert('Razropay failed to load!!')
-            return 
-          }
-          const { data } = await axios.get(`${baseUrl}/api/getkeys`);
-          const res1 = await axios.post(`${baseUrl}/api/checkout`, {
-            amount: totalPrice,
-            userEmail: user.email,
-            cartdata,
-            formData
-          });
-          // console.log(res1)
-    
-         
-    
-        const options = {
-          "key": data.key, // Enter the Key ID generated from the Dashboard
-          "amount": res1.data.order.amount*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-          "currency": "INR",
-          "name": "Acme Corp",
-          "description": "Test Transaction",
-          "image": "https://example.com/your_logo",
-          "order_id": res1.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-          "callback_url":"http://localhost:1769/verify",
-          "notes": {
-              "address": "Razorpay Corporate Office"
-          },
-          "theme": {
-              "color": "#3399cc"
-          }
-      };
-      const paymentObject = new window.Razorpay(options); 
-      paymentObject.open();
-      }
-      displayRazorpay();
-   
-    } catch (error) {
-      console.error("Payment Error: ", error);
-      toast.error("Payment failed. Please try again later.");
+    if (!isValid) {
+      toast.error("Please enter a valid email address");
+      return;
     }
+  
+    let totalAmount = (totalPrice + totalTax).toFixed(0);
+    setLoading(true);
+  
+  
+      const { data } = await axios.get(`${baseUrl}/api/getkeys`);
+      const res1 = await axios.post(`${baseUrl}/api/checkout`, {
+        amount: totalAmount,
+        userEmail: user.email,
+        cartdata,
+        formData,
+      });
+    
+      console.log(res1)
+    var options = {
+           key: data.key,
+          amount:res1.data.order.amount,
+          currency: "INR",
+          name: "Tags Footwear",
+          description: "Test Transaction",
+          image: "https://res.cloudinary.com/dibaxrbac/image/upload/v1711623271/Footwear_Accessories_dwncjn.png",
+          order_id: res1.data.order.id,
+          //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      "callback_url": "http://localhost:5000/api/payment-verification",
+      "prefill": {
+          "name": "Gaurav Kumar",
+          "email": "gaurav.kumar@example.com",
+          "contact": "9000090000"
+      },
+      "notes": {
+          "address": "Razorpay Corporate Office"
+      },
+
+      "theme": {
+          "color": "#3399cc"
+      }
+  };
+  var rzp1 = new Razorpay(options);
+      rzp1.open();
+  
+  
     setLoading(false);
   };
-
-
+ 
   let totalPrice = 0;
   cartdata.forEach((item) => {
     totalPrice += item.price * item.quantity;
@@ -547,7 +527,7 @@ if (!isValid) {
                   <img className="mr-15" src={paymentVisa} alt="" />
                   {/* <img src={paymentZapper} alt="" /> */}
                 </div>
-                <button className="btn btn-fill-out btn-block mt-30" onClick={paymentHandler}>
+                <button className="btn btn-fill-out btn-block mt-30" id="rzp-button1" onClick={paymentHandler}>
                  {loading ? "Loading":" Place an Order"}<i className="fi-rs-sign-out ml-15"></i>
                 </button>
               </div>
