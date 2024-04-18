@@ -38,7 +38,7 @@ function App() {
             <Route exact path="/all-categories" element={<AllCategoriesPage />} />
             <Route exact path="/invoice" element={<Invoice />} />
             <Route exact path="/verify-account" element={<VerifyEmail />} />
-            <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
+            {/* <Route exact path="/payment-status" element={<PaymentStatus />} /> */}
             <Route exact path="/payment-status" element={<PaymentStatus/>} />
           </Routes>
         </BrowserRouter>

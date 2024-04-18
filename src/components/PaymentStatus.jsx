@@ -3,11 +3,13 @@ import FailedImg from "../assets/imgs/page/failed.png";
 import { Link } from "react-router-dom";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-
+import  {useSearchParams} from "react-router-dom"
 const paymentStatus = "success";
 // const paymentStatus = "failed";
 
 const PaymentStatus = () => {
+ const searchQuery=useSearchParams()[0]
+ console.log(searchQuery.get("reference"))
   return (
     <>
       <Header />
