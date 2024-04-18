@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
       <div className="product-cart-wrap mb-30">
         <div className="product-img-action-wrap">
           <div className="product-img product-img-zoom">
-            <Link to="/products/:id">
+            <Link to={`/products/${product._id}`}>
               <img className="default-img" src={product.productImage} alt="" />
             </Link>
           </div>

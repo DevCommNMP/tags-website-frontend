@@ -127,7 +127,7 @@ console.log(product)
                   <div className="font-xs">
                     <ul>
                       <li className="mb-5">
-                        Vendor: <span className="text-brand">Nest</span>
+                        Available Colours : {product.availableColors} <span className="text-brand">Nest</span>
                       </li>
                       <li className="mb-5">
                         MFG:<span className="text-brand"> Jun 4.2024</span>

@@ -10,13 +10,13 @@ import ResetPassword from "./components/Auth/ResetPassword/ResetPassword.jsx";
 import ForgotPassword from "./components/Auth/ForgotPassword/ForgotPassword.jsx";
 import UserAccountPage from "./pages/UserAccountPage.jsx";
 import Product from "./pages/product.jsx";
-import SingleProductImages from "./components/SingleProductImages.jsx";
+// import SingleProductImages from "./components/SingleProductImages.jsx";
 import CheckoutPage from "./pages/CheckoutPage.jsx";
 import ProductsGridPage from "./pages/ProductsGridPage.jsx";
 import Invoice from "./components/Invoice.jsx";
 import AllCategoriesPage from "./pages/AllCategoriesPage.jsx";
 import Cart from "./pages/cart.jsx";
-import CustomPaging from "./components/CustomPaging.jsx";
+import PaymentStatus from "./components/PaymentStatus.jsx";
 
 function App() {
   return (
@@ -39,7 +39,7 @@ function App() {
             <Route exact path="/invoice" element={<Invoice />} />
             <Route exact path="/verify-account" element={<VerifyEmail />} />
             <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
-            <Route exact path="/custom-paging" element={<CustomPaging />} />
+            <Route exact path="/payment-status" element={<PaymentStatus/>} />
           </Routes>
         </BrowserRouter>
       </Provider>

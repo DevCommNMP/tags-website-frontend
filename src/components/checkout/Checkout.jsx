@@ -13,22 +13,19 @@ import { CheckoutHandler } from "../../redux/actions/checkoutActions/checkoutAct
 import axios from "axios";
 import { baseUrl } from "../../utils/baseUrl";
 
-
-
 function loadScript(src) {
   return new Promise((resolve) => {
-    const script = document.createElement('script')
-    script.src = src
+    const script = document.createElement("script");
+    script.src = src;
     script.onload = () => {
-      resolve(true)
-    }
+      resolve(true);
+    };
     script.onerror = () => {
-      resolve(false)
-    }
-    document.body.appendChild(script)
-  })
+      resolve(false);
+    };
+    document.body.appendChild(script);
+  });
 }
-
 
 const Checkout = () => {
   const [loading, setLoading] = useState(false);
@@ -37,7 +34,7 @@ const Checkout = () => {
  
   const [Razorpay] = useRazorpay();
   const dispatch = useDispatch();
- 
+
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -51,13 +48,13 @@ const Checkout = () => {
     additionalInfo: "",
   });
 
-  const handleChange = async(e) => {
+  const handleChange = async (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-  
+
     if (name === "zipcode" && value.length === 6) {
       
       const response = await axios.post(`${baseUrl}/api/picodedata`, { pincode: value });
@@ -179,9 +176,9 @@ const Checkout = () => {
 
   let totalTax = 0;
   cartdata.forEach((item) => {
-    totalTax += item.price <= 1000 ? (item.price * 0.12 * item.quantity) : (item.price * 0.18 * item.quantity);
+    totalTax += item.price <= 1000 ? item.price * 0.12 * item.quantity : item.price * 0.18 * item.quantity;
   });
-  
+
   const formSubmitHandler = async (e) => {
     e.preventDefault();
   };
@@ -192,7 +189,6 @@ const Checkout = () => {
       setCartdata(cart);
     }
   }, []);
-
 
   return (
     <>
@@ -282,24 +278,52 @@ const Checkout = () => {
                 <form method="post" onSubmit={formSubmitHandler}>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                      <input type="text" required="true" name="fname" placeholder="First name *"    value={formData.fname} onChange={handleChange}/>
+                      <input
+                        type="text"
+                        required="true"
+                        name="fname"
+                        placeholder="First name *"
+                        value={formData.fname}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="form-group col-lg-6">
-                      <input type="text" required="true" name="lname" placeholder="Last name *"  value={formData.lname} onChange={handleChange} />
+                      <input
+                        type="text"
+                        required="true"
+                        name="lname"
+                        placeholder="Last name *"
+                        value={formData.lname}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                      <input type="text" name="billing_address" required="true" placeholder="Address *"  value={formData.billing_address} onChange={handleChange}/>
+                      <input
+                        type="text"
+                        name="billing_address"
+                        required="true"
+                        placeholder="Address *"
+                        value={formData.billing_address}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="form-group col-lg-6">
-                      <input type="text" name="billing_address2" required=" true" placeholder="Address line2" value={formData.billing_address2} onChange={handleChange} />
+                      <input
+                        type="text"
+                        name="billing_address2"
+                        required=" true"
+                        placeholder="Address line2"
+                        value={formData.billing_address2}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
                   <div className="row shipping_calculator">
                     <div className="form-group col-lg-6">
                       <div className="custom_select">
-                        <select className="form-control select-active" required  value={formData.country} onChange={handleChange}>
+                        <select className="form-control select-active" required value={formData.country} onChange={handleChange}>
                           <option value="">Select an option...</option>
                           <option value="IND" selected>
                             India
@@ -307,31 +331,64 @@ const Checkout = () => {
                         </select>
                       </div>
                     </div>
-                    
+
                     <div className="form-group col-lg-6">
-                      
-                      <input required="" type="text" name="city" placeholder="City / Town *"  value={formData.city} onChange={handleChange}/>
+                      <input
+                        required=""
+                        type="text"
+                        name="city"
+                        placeholder="City / Town *"
+                        value={formData.city}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                    <input required="" type="text" name="state" placeholder="State *"  value={formData.state} onChange={handleChange}/>
-                    
+                      <input required="" type="text" name="state" placeholder="State *" value={formData.state} onChange={handleChange} />
                     </div>
                     <div className="form-group col-lg-6">
-                    <input required type="number" name="zipcode" placeholder="Postcode / ZIP *" maxLength={6} value={formData.zipcode} onChange={handleChange} />
+                      <input
+                        required
+                        type="number"
+                        name="zipcode"
+                        placeholder="Postcode / ZIP *"
+                        maxLength={6}
+                        value={formData.zipcode}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                      <input required="" type="number" name="phone" placeholder="Phone *"  max={10} value={formData.phone} onChange={handleChange} />
+                      <input
+                        required=""
+                        type="number"
+                        name="phone"
+                        placeholder="Phone *"
+                        max={10}
+                        value={formData.phone}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="form-group col-lg-6">
-                      <input required="" type="text" name="email" placeholder="Email address *"  value={formData.email} onChange={handleChange} />
+                      <input
+                        required=""
+                        type="text"
+                        name="email"
+                        placeholder="Email address *"
+                        value={formData.email}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
                   <div className="form-group mb-30">
-                    <textarea rows="5" placeholder="Additional information" value={formData.additionalInfo} onChange={handleChange}></textarea>
+                    <textarea
+                      rows="5"
+                      placeholder="Additional information"
+                      value={formData.additionalInfo}
+                      onChange={handleChange}
+                    ></textarea>
                   </div>
 
                   <div id="collapsePassword" className="form-group create-account collapse in">
@@ -348,10 +405,24 @@ const Checkout = () => {
                     <div id="collapseAddress" className="different_address collapse in">
                       <div className="row">
                         <div className="form-group col-lg-6">
-                          <input type="text" required name="fname" placeholder="First name *"  value={formData.fname} onChange={handleChange}  />
+                          <input
+                            type="text"
+                            required
+                            name="fname"
+                            placeholder="First name *"
+                            value={formData.fname}
+                            onChange={handleChange}
+                          />
                         </div>
                         <div className="form-group col-lg-6">
-                          <input type="text" required name="lname" placeholder="Last name *"  value={formData.lname} onChange={handleChange}/>
+                          <input
+                            type="text"
+                            required
+                            name="lname"
+                            placeholder="Last name *"
+                            value={formData.lname}
+                            onChange={handleChange}
+                          />
                         </div>
                       </div>
                       <div className="row shipping_calculator">
@@ -361,8 +432,10 @@ const Checkout = () => {
                         <div className="form-group col-lg-6">
                           <div className="custom_select w-100">
                             <select className="form-control select-active">
-                              <option value={formData.country} onChange={handleChange} required>Select an option...</option>
-                              <option value="Ind" selected >
+                              <option value={formData.country} onChange={handleChange} required>
+                                Select an option...
+                              </option>
+                              <option value="Ind" selected>
                                 India
                               </option>
                             </select>
@@ -371,23 +444,58 @@ const Checkout = () => {
                       </div>
                       <div className="row">
                         <div className="form-group col-lg-6">
-                          <input type="text" name="billing_address" required placeholder="Address *"   value={formData.billing_address} onChange={handleChange}/>
+                          <input
+                            type="text"
+                            name="billing_address"
+                            required
+                            placeholder="Address *"
+                            value={formData.billing_address}
+                            onChange={handleChange}
+                          />
                         </div>
                         <div className="form-group col-lg-6">
-                          <input type="text" name="billing_address2" required="" placeholder="Address line2"  value={formData.billing_address2} onChange={handleChange} />
+                          <input
+                            type="text"
+                            name="billing_address2"
+                            required=""
+                            placeholder="Address line2"
+                            value={formData.billing_address2}
+                            onChange={handleChange}
+                          />
                         </div>
                       </div>
                       <div className="row">
                         <div className="form-group col-lg-6">
-                          <input required="" type="text" name="state" placeholder="State / County *"   value={formData.state} onChange={handleChange}/>
+                          <input
+                            required=""
+                            type="text"
+                            name="state"
+                            placeholder="State / County *"
+                            value={formData.state}
+                            onChange={handleChange}
+                          />
                         </div>
                         <div className="form-group col-lg-6">
-                          <input required="" type="text" name="city" placeholder="City / Town *"  value={formData.town} onChange={handleChange}/>
+                          <input
+                            required=""
+                            type="text"
+                            name="city"
+                            placeholder="City / Town *"
+                            value={formData.town}
+                            onChange={handleChange}
+                          />
                         </div>
                       </div>
                       <div className="row">
                         <div className="form-group col-lg-6">
-                          <input required="" type="text" name="zipcode" placeholder="Postcode / ZIP *"   value={formData.zipcode} onChange={handleChange}/>
+                          <input
+                            required=""
+                            type="text"
+                            name="zipcode"
+                            placeholder="Postcode / ZIP *"
+                            value={formData.zipcode}
+                            onChange={handleChange}
+                          />
                         </div>
                       </div>
                     </div>
@@ -428,34 +536,27 @@ const Checkout = () => {
                               <h6 className="text-muted pl-20 pr-20">x 1</h6>
                             </td>
                             <td>
-                              
-                            <h4 className="text-brand">&#x20B9;{item.price} </h4>     <span style={{}}>
-    Tax &#x20B9;{item.price <= 1000 ? (((item.price * 0.12)).toFixed(0))*item.quantity : (((item.price * 0.18)).toFixed(0))}
-  </span></td>
+                              <h4 className="text-brand">&#x20B9;{item.price} </h4>{" "}
+                              <span style={{}}>
+                                Tax &#x20B9;
+                                {item.price <= 1000 ? (item.price * 0.12).toFixed(0) * item.quantity : (item.price * 0.18).toFixed(0)}
+                              </span>
+                            </td>
                           </tr>
                         ))}
                       </tbody>
                       <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
                         <h4> Sub Total = </h4>
                         <h4> &#x20B9;{totalPrice}</h4>
-                       
-                        
-                       
                       </div>
                       <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
-                      
                         <h4> Total Tax = </h4>
                         <h4> &#x20B9;{totalTax.toFixed(0)}</h4>
-                        
-                       
                       </div>
                       <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
-                      
-                      <h4> Total Amount = </h4>
-                      <h4> &#x20B9;{(totalPrice+totalTax).toFixed(0)}</h4>
-                      
-                     
-                    </div>
+                        <h4> Total Amount = </h4>
+                        <h4> &#x20B9;{(totalPrice + totalTax).toFixed(0)}</h4>
+                      </div>
                     </table>
                   </div>
                 </div>

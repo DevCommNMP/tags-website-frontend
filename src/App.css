@@ -131,3 +131,8 @@ news-p newsletter-inner {
     border: 2px solid #007bff; /* Example border color for selected elements */
   }
   
+  .modal-dialog {
+    width: 1000px !important;
+    max-width: 100% !important;
+    margin: 1.75rem auto;
+  }

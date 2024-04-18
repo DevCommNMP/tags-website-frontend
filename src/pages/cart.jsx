@@ -7,6 +7,7 @@ import { toast, ToastContainer } from "react-toastify";
 
 const Cart = () => {
   const [cartData, setCartData] = useState([]);
+  const [aggregatedCartItems, setAggregatedCartItems] = useState([]);
   const navigate = useNavigate();
 
   const cartProductHandler = (id) => {
@@ -31,6 +32,35 @@ const Cart = () => {
     }
   };
 
+  const handleQuantityChange = (productId, action) => {
+    const updatedCart = cartData.map((item) => {
+      if (item.productId === productId) {
+        if (action === "increase") {
+          return { ...item, quantity: item.quantity + 1 };
+        } else if (action === "decrease" && item.quantity > 1) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+      }
+      return item;
+    });
+
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    setCartData(updatedCart);
+
+    // Recalculate aggregatedCartItems
+    const aggregatedCartItems = updatedCart.reduce((acc, curr) => {
+      const existingItem = acc.find((item) => item.productId === curr.productId);
+      if (existingItem) {
+        existingItem.quantity += curr.quantity; // Update the quantity based on the current item's quantity
+      } else {
+        acc.push(curr);
+      }
+      return acc;
+    }, []);
+
+    setAggregatedCartItems(aggregatedCartItems);
+  };
+
   const checkoutHandler = () => {
     navigate("/checkout");
   };
@@ -38,6 +68,18 @@ const Cart = () => {
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
     setCartData(cart);
+
+    const aggregatedCartItems = cart.reduce((acc, curr) => {
+      const existingItem = acc.find((item) => item.productId === curr.productId);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        acc.push({ ...curr, quantity: 1 });
+      }
+      return acc;
+    }, []);
+
+    setAggregatedCartItems(aggregatedCartItems);
   }, []);
 
   const handleProductClick = (productId) => {
@@ -46,16 +88,6 @@ const Cart = () => {
       navigate(`/products/${productId}`);
     }
   };
-
-  const aggregatedCartItems = cartData.reduce((acc, curr) => {
-    const existingItem = acc.find((item) => item.productId === curr.productId);
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      acc.push({ ...curr, quantity: 1 });
-    }
-    return acc;
-  }, []);
 
   return (
     <>
@@ -119,7 +151,7 @@ const Cart = () => {
                               <div className="product-rate d-inline-block">
                                 <div className="product-rating" style={{ width: "90%" }}></div>
                               </div>
-                              <span className="font-small ml-5 text-muted">Rating (4.0)</span>
+                              <span className="font-small ml-5 text-muted">{item.description}</span>
                             </div>
                           </td>
                           <td className="price" data-title="Price">
@@ -127,7 +159,15 @@ const Cart = () => {
 </h3>
                           </td>
                           <td className="text-center detail-info" data-title="Stock">
-                            <span className="stock-status in-stock mb-0">{item.quantity}</span>
+                            <div className="quantity">
+                              <button className="btn btn-sm" onClick={() => handleQuantityChange(item.productId, "decrease")}>
+                                -
+                              </button>
+                              <span className="stock-status in-stock mb-0">{item.quantity}</span>
+                              <button className="btn btn-sm" onClick={() => handleQuantityChange(item.productId, "increase")}>
+                                +
+                              </button>
+                            </div>
                           </td>
                           <td className="text-right" data-title="Cart">
                             <button className="btn btn-sm" onClick={() => cartProductHandler(item.productId)}>

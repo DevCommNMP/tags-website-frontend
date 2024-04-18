@@ -10,6 +10,10 @@ import { addToCartHandler } from "../redux/actions/cart/cartActions";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import ProductInfo from "../components/ProductInfo";
+// import ImageMagnify from "../components/ImageMagnify";
+import ReactImageMagnify from "react-image-magnify";
+const imagezoom = `https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg`
+
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -91,6 +95,20 @@ const Product = () => {
               <div className="product-detail accordion-detail">
                 <div className="row mb-50 mt-30">
                   <SingleProductImages product={particularproduct} />
+                  {/* <ReactImageMagnify
+                  {...{
+                    smallImage: {
+                      alt: "Wristwatch by Ted Baker London",
+                      isFluidWidth: true,
+                      src: imagezoom,
+                    },
+                    largeImage: {
+                      src: imagezoom,
+                      width: 1200,
+                      height: 1800,
+                    },
+                  }}
+                /> */}
                   <div className="col-md-6 col-sm-12 col-xs-12">
                     <div className="detail-info pr-30 pl-30">
                       <span className="stock-status out-stock">Sale Off</span>
@@ -163,7 +181,7 @@ const Product = () => {
                         <br />
                         {soldOut ? <h2>Sold Out</h2> : ""}
 
-                        <div className="product-extra-link2">
+                        <div className="product-extra-link2">``
                           <button
                             type="button"
                             className="border bg-white  text-brand radius button button-add-to-cart"
@@ -211,6 +229,7 @@ const Product = () => {
                       </div>
                     </div>
                   </div>
+                  {/* <ImageMagnify /> */}
                 </div>
                 <ProductInfo product={particularproduct} />
               </div>

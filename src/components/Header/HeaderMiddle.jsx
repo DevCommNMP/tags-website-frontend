@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Search2 from "../Search2";
 import { useDispatch, useSelector } from "react-redux";
 
-const HeaderMiddle = () => {
+const HeaderMiddle = ( {allProducts} ) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [user, setUser] = useState("");
@@ -49,7 +49,7 @@ const HeaderMiddle = () => {
               </Link>
             </div>
             <div className="header-right">
-              <Search2 />
+              <Search2 allProducts = {allProducts} />
               <div className="header-action-right">
                 <div className="header-action-2">
                   <div className="header-action-icon-2">
