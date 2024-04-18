@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchAllProductsAction,fetchParticularProduct } from "../../actions/product/productActions";
+import { fetchAllProductsAction, fetchParticularProduct } from "../../actions/product/productActions";
 
 const initialState = {
-  user:[],
-  orders:[],
- loading: false,
+  user: [],
+  orders: [],
+  loading: false,
   appErr: null,
   serverErr: null,
 };
@@ -34,9 +34,6 @@ const productSlice = createSlice({
       state.appErr = action.payload?.message || "An error occurred";
       state.serverErr = action.payload?.message || "Network error";
     });
-
-
-
   },
 });
 

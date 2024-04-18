@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { CheckoutHandler } from "../../actions/checkoutActions/checkoutActions";
 
 const initialState = {
-  checkoutdata:[],
-  loading:false,
-  appErr:"",
-  serverErr:"",
+  checkoutdata: [],
+  loading: false,
+  appErr: "",
+  serverErr: "",
 };
 
 const checkoutSlice = createSlice({
