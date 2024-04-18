@@ -31,7 +31,7 @@ const Checkout = () => {
   const [loading, setLoading] = useState(false);
   const [cartdata, setCartdata] = useState([]);
   const user = JSON.parse(localStorage.getItem("userData"));
- 
+
   const [Razorpay] = useRazorpay();
   const dispatch = useDispatch();
 
@@ -56,27 +56,23 @@ const Checkout = () => {
     }));
 
     if (name === "zipcode" && value.length === 6) {
-      
       const response = await axios.post(`${baseUrl}/api/picodedata`, { pincode: value });
       console.log(response.data);
-      if(response.data.success){
+      if (response.data.success) {
         const { state, city } = response.data.data[0];
-            setFormData(prevState => ({
-              ...prevState,
-              state: state || "",
-              city: city || ""
-            }));
+        setFormData((prevState) => ({
+          ...prevState,
+          state: state || "",
+          city: city || "",
+        }));
+      } else {
+        setFormData((prevState) => ({
+          ...prevState,
+          state: "",
+          city: "",
+        }));
+        toast.error("Please enter a valid pincode");
       }
-      else{
-        setFormData(prevState => ({
-                ...prevState,
-                state: "",
-                city: ""
-              }));
-              toast.error("Please enter a valid pincode");
-      }
-        
-        
     }
   };
 
@@ -87,7 +83,7 @@ const Checkout = () => {
       });
       return;
     }
-  
+
     if (
       formData.fname.length < 3 ||
       formData.lname.length < 3 ||
@@ -103,72 +99,70 @@ const Checkout = () => {
       );
       return;
     }
-  
+
     if (formData.zipcode.length !== 6 || isNaN(formData.zipcode)) {
       toast.error("Please enter a valid 6-digit zipcode");
       return;
     }
-  
+
     if (formData.phone.length !== 10 || isNaN(formData.phone)) {
       toast.error("Please enter a valid 10-digit phone number");
       return;
     }
-  
+
     const isEmailValid = (email) => {
       // Regular expression for email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);
     };
-  
+
     const isValid = isEmailValid(formData.email);
     if (!isValid) {
       toast.error("Please enter a valid email address");
       return;
     }
-  
+
     let totalAmount = (totalPrice + totalTax).toFixed(0);
     setLoading(true);
-  
-  
-      const { data } = await axios.get(`${baseUrl}/api/getkeys`);
-      const res1 = await axios.post(`${baseUrl}/api/checkout`, {
-        amount: totalAmount,
-        userEmail: user.email,
-        cartdata,
-        formData,
-      });
-    
-      console.log(res1)
+
+    const { data } = await axios.get(`${baseUrl}/api/getkeys`);
+    const res1 = await axios.post(`${baseUrl}/api/checkout`, {
+      amount: totalAmount,
+      userEmail: user.email,
+      cartdata,
+      formData,
+    });
+
+    console.log(res1);
     var options = {
-           key: data.key,
-          amount:res1.data.order.amount,
-          currency: "INR",
-          name: "Tags Footwear",
-          description: "Test Transaction",
-          image: "https://res.cloudinary.com/dibaxrbac/image/upload/v1711623271/Footwear_Accessories_dwncjn.png",
-          order_id: res1.data.order.id,
-          //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      "callback_url": "http://localhost:5000/api/payment-verification",
-      "prefill": {
-          "name": "Gaurav Kumar",
-          "email": "gaurav.kumar@example.com",
-          "contact": "9000090000"
+      key: data.key,
+      amount: res1.data.order.amount,
+      currency: "INR",
+      name: "Tags Footwear",
+      description: "Test Transaction",
+      image: "https://res.cloudinary.com/dibaxrbac/image/upload/v1711623271/Footwear_Accessories_dwncjn.png",
+      order_id: res1.data.order.id,
+      //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      callback_url: "http://localhost:5000/api/payment-verification",
+      prefill: {
+        name: "Gaurav Kumar",
+        email: "gaurav.kumar@example.com",
+        contact: "9000090000",
       },
-      "notes": {
-          "address": "Razorpay Corporate Office"
+      notes: {
+        address: "Razorpay Corporate Office",
       },
 
-      "theme": {
-          "color": "#3399cc"
-      }
-  };
-  var rzp1 = new Razorpay(options);
-      rzp1.open();
-  
-  
+      theme: {
+        color: "#3399cc",
+      },
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+
     setLoading(false);
   };
- 
+
   let totalPrice = 0;
   cartdata.forEach((item) => {
     totalPrice += item.price * item.quantity;
@@ -629,7 +623,8 @@ const Checkout = () => {
                   {/* <img src={paymentZapper} alt="" /> */}
                 </div>
                 <button className="btn btn-fill-out btn-block mt-30" id="rzp-button1" onClick={paymentHandler}>
-                 {loading ? "Loading":" Place an Order"}<i className="fi-rs-sign-out ml-15"></i>
+                  {loading ? "Loading" : " Place an Order"}
+                  <i className="fi-rs-sign-out ml-15"></i>
                 </button>
               </div>
             </div>
