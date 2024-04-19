@@ -23,7 +23,25 @@ export const veriffetchUserdetails = createAsyncThunk("/user", async (token, { r
       throw error;
     }
 
-    // If there's a response, reject with the response data
+    // If there's auserAcc response, reject with the response data
+    return rejectWithValue(error.response.data);
+  }
+});
+
+export const fetchUserDetails = createAsyncThunk("user/fetchUserDetails", async (userEmail, { rejectWithValue }) => {
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const res = await axios.get(`${baseUrl}/api/user?userEmail=${userEmail}`, config);
+    return res.data;
+  } catch (error) {
+    if (!error.response) {
+      throw error;
+    }
     return rejectWithValue(error.response.data);
   }
 });

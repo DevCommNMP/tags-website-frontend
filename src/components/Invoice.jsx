@@ -1,6 +1,23 @@
+import { useEffect } from "react";
 import logo from "../assets/imgs/theme/logo.png";
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
+import {  useDispatch,useSelector } from 'react-redux';
+import {useNavigate } from "react-router-dom";
+import { fetchOrderDetails } from "../redux/actions/order/orderActions";
 const Invoice = () => {
+const{id}=useParams()
+console.log(id)
+  const navigate = useNavigate();
+  const dispatch=useDispatch();
+
+  const data = useSelector((store) => store.order);
+  const { orderdata,loading,appErr,serverErr } = data;
+  console.log(data)
+  useEffect(() => {
+    
+    dispatch(fetchOrderDetails(id))
+  }, [id])
+  
   return (
     <div>
       <div className="invoice invoice-content invoice-5">
@@ -22,8 +39,8 @@ const Invoice = () => {
                             <img src={logo} alt="logo" width={"250px"} />
                           </Link>
                           <div className="text">
-                            <strong className="text-brand">NestMart Inc</strong> <br />
-                            205 North, Suite 810, Chicago, USA
+                            <strong className="text-brand">Tags Footwear</strong> <br />
+                            1368, D-5, Narayana Shasthri Road, Devaraj Mohalla, Mysore - 570001
                           </div>
                         </div>
                       </div>

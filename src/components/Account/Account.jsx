@@ -1,10 +1,11 @@
 import { useState } from "react";
 import UserImg from "../../assets/imgs/theme/user-profile-img.jpg";
-import { Link,useNavigate } from "react-router-dom";
+import {useNavigate,Link } from "react-router-dom";
 
 import {  useDispatch,useSelector } from 'react-redux';
 import { Slide, toast, ToastContainer } from "react-toastify";
 import { useEffect } from "react";
+import { fetchUserDetails } from "../../redux/actions/user/userActions";
 const Account = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
 
@@ -12,11 +13,18 @@ const Account = () => {
 const dispatch=useDispatch();
 
 const storeData = useSelector((store) => store.auth);
-const { user,loading,appErr,serverErr } = storeData;
+const orderData = useSelector((store) => store.order);
+const { user} = storeData;
+const { userdata,loading,appErr,serverErr } = orderData;
+
+console.log(userdata)
+const UserData=JSON.parse(localStorage.getItem("userData"));
+// console.log(UserData.email)
 useEffect(() => {
+  dispatch(fetchUserDetails(UserData.email))
 if((user )){
   toast("Login successfully!");
-}
+}``
 }, [])
 
 
@@ -97,7 +105,7 @@ if((user )){
                     <div className={`tab-pane fade ${activeTab === "dashboard" ? "show active" : ""}`} role="tabpanel">
                       <div className="card">
                         <div className="card-header text-white">
-                          <h3 className="mb-0">Welcome,{user. userName}</h3>
+                          <h3 className="mb-0">Welcome,{user. userName ||UserData.userName}</h3>
                         </div>
                         <div className="card-body">
                           <div className="row align-items-center">
@@ -122,52 +130,42 @@ if((user )){
                         </div>
                         <div className="card-body">
                           <div className="table-responsive">
-                            <table className="table">
-                              <thead>
-                                <tr>
-                                  <th>Order</th>
-                                  <th>Date</th>
-                                  <th>Status</th>
-                                  <th>Total</th>
-                                  <th>Actions</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>#1357</td>
-                                  <td>March 45, 2020</td>
-                                  <td>Processing</td>
-                                  <td>$125.00 for 2 item</td>
-                                  <td>
-                                    <Link to="/invoice" className="btn-small d-block">
-                                      View
-                                    </Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>#2468</td>
-                                  <td>June 29, 2020</td>
-                                  <td>Completed</td>
-                                  <td>$364.00 for 5 item</td>
-                                  <td>
-                                    <Link to="/invoice" className="btn-small d-block">
-                                      View
-                                    </Link>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>#2366</td>
-                                  <td>August 02, 2020</td>
-                                  <td>Completed</td>
-                                  <td>$280.00 for 3 item</td>
-                                  <td>
-                                    <Link to="/invoice" className="btn-small d-block">
-                                      View
-                                    </Link>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
+
+                         {userdata.order ? <table className="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Order</th>
+      <th>Date</th>
+      <th>Order Status</th>
+      <th>Payment Status</th>
+     
+      <th>Actions</th>
+    </tr>
+  </thead>
+ <tbody>
+    {userdata.order.map((orderItem, index) => (
+      <tr key={orderItem._id}>
+        <td>{index + 1}</td>
+        <td>{orderItem.orderId}</td>
+        <td>{new Date(orderItem.orderDate).toLocaleDateString('en-US')}</td>
+        <td>{orderItem.orderStatus}</td>
+        <td style={{ color: orderItem.PaymentStatus === "Paid" ? "green" : "red" }}>
+  {orderItem.PaymentStatus}
+</td>
+        {/* Assuming you have a field named "total" in your orderItem */}
+        
+        <td>
+          <Link to={`/invoice/${orderItem._id}`} className="btn-small d-block">
+            View
+          </Link>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>:<h1>Orders Not Found</h1>} 
+ 
+
                           </div>
                         </div>
                       </div>

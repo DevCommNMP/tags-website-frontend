@@ -36,10 +36,10 @@ function App() {
             <Route exact path="/checkout" element={<CheckoutPage />} />
             <Route exact path="/categories/:title" element={<ProductsGridPage />} />
             <Route exact path="/all-categories" element={<AllCategoriesPage />} />
-            <Route exact path="/invoice" element={<Invoice />} />
+            <Route exact path="/invoice/:id" element={<Invoice />} />
             <Route exact path="/verify-account" element={<VerifyEmail />} />
             {/* <Route exact path="/payment-status" element={<PaymentStatus />} /> */}
-            <Route exact path="/payment-status" element={<PaymentStatus/>} />
+            <Route exact path="/paymentsuccess" element={<PaymentStatus/>} />
           </Routes>
         </BrowserRouter>
       </Provider>

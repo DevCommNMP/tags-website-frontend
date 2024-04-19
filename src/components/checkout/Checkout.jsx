@@ -145,7 +145,7 @@ const Checkout = () => {
           image: "https://res.cloudinary.com/dibaxrbac/image/upload/v1711623271/Footwear_Accessories_dwncjn.png",
           order_id: res1.data.order.id,
           //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      "callback_url": "http://localhost:5000/api/payment-status",
+      "callback_url": "http://localhost:5000/api/payment-verification",
       "prefill": {
           "name": "Gaurav Kumar",
           "email": "gaurav.kumar@example.com",
