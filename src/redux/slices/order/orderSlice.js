@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchUserDetails } from "../../actions/user/userActions";
-import { fetchOrderDetails } from "../../actions/order/orderActions";
+import { fetchOrder ,fetchOrderDetails} from "../../actions/order/orderActions";
 
 const initialState = {
   userdata: [],
   orderdata:[],
+  orderDetails:[],
   loading: false,
   appErr: null,
   serverErr: null,
@@ -36,20 +37,36 @@ const orderSlice = createSlice({
       state.serverErr = action.payload?.message || "Network error";
     });
 
-    builder.addCase(fetchOrderDetails.pending, (state) => {
+    builder.addCase(fetchOrder.pending, (state) => {
+        state.loading = true;
+        state.appErr = null;
+        state.serverErr = null;
+      });
+      builder.addCase(fetchOrder.fulfilled, (state, action) => {
+        state.loading = false;
+        state.orderdata = action.payload;
+      });
+      builder.addCase(fetchOrder.rejected, (state, action) => {
+        state.loading = false;
+        state.appErr = action.payload?.message || "An error occurred";
+        state.serverErr = action.payload?.message || "Network error";
+      });
+
+      builder.addCase(fetchOrderDetails.pending, (state) => {
         state.loading = true;
         state.appErr = null;
         state.serverErr = null;
       });
       builder.addCase(fetchOrderDetails.fulfilled, (state, action) => {
         state.loading = false;
-        state.orderdata = action.payload;
+        state.orderDetails = action.payload;
       });
       builder.addCase(fetchOrderDetails.rejected, (state, action) => {
         state.loading = false;
         state.appErr = action.payload?.message || "An error occurred";
         state.serverErr = action.payload?.message || "Network error";
       });
+
   },
 });
 

@@ -79,11 +79,12 @@ const LeatherSection = ({ data }) => {
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
                 <Slider {...settings}>
-                  {data.map((product, index) => (
-                    <div className="col-lg-1-4 col-md-3 col-12 col-sm-6 px-1" key={index}>
-                      <ProductCard product={product} />
-                    </div>
-                  ))}
+                {data.filter(product => product.isPremiumLeather === true).map((product, index) => (
+  <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
+    <ProductCard product={product} />
+  </div>
+))}
+
                 </Slider>
               </div>
             </div>

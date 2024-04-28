@@ -35,9 +35,12 @@ function App() {
             <Route exact path="/cart" element={<Cart />} />
             <Route exact path="/checkout" element={<CheckoutPage />} />
             <Route exact path="/categories/:title" element={<ProductsGridPage />} />
+            <Route exact path="/allproducts/:color" element={<ProductsGridPage />} />
+            <Route exact path="/products/subtypes/:subtypes" element={<ProductsGridPage />} />
+            <Route exact path="/search/:searchitem" element={<ProductsGridPage />} />
             <Route exact path="/all-categories" element={<AllCategoriesPage />} />
             <Route exact path="/invoice/:id" element={<Invoice />} />
-            <Route exact path="/verify-account" element={<VerifyEmail />} />
+            <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
             {/* <Route exact path="/payment-status" element={<PaymentStatus />} /> */}
             <Route exact path="/paymentsuccess" element={<PaymentStatus/>} />
           </Routes>

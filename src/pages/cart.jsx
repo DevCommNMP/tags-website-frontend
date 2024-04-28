@@ -10,6 +10,17 @@ const Cart = () => {
   const [aggregatedCartItems, setAggregatedCartItems] = useState([]);
   const navigate = useNavigate();
 
+  const fetchCartData = () => {
+    const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setCartData(cart);
+    const aggregatedItems = aggregateCartItems(cart);
+    setAggregatedCartItems(aggregatedItems);
+  };
+
+  useEffect(() => {
+    fetchCartData();
+  }, []);
+
   const cartProductHandler = (id) => {
     navigate(`/products/${id}`);
   };
@@ -21,6 +32,8 @@ const Cart = () => {
       const updatedCart = cart.filter((item) => item.productId !== productId);
       localStorage.setItem("cartItems", JSON.stringify(updatedCart));
       setCartData(updatedCart);
+      const aggregatedItems = aggregateCartItems(updatedCart);
+      setAggregatedCartItems(aggregatedItems);
 
       toast.success("Product removed from cart successfully !", {
         position: "top-right",
@@ -46,41 +59,25 @@ const Cart = () => {
 
     localStorage.setItem("cartItems", JSON.stringify(updatedCart));
     setCartData(updatedCart);
-
-    // Recalculate aggregatedCartItems
-    const aggregatedCartItems = updatedCart.reduce((acc, curr) => {
-      const existingItem = acc.find((item) => item.productId === curr.productId);
-      if (existingItem) {
-        existingItem.quantity += curr.quantity; // Update the quantity based on the current item's quantity
-      } else {
-        acc.push(curr);
-      }
-      return acc;
-    }, []);
-
-    setAggregatedCartItems(aggregatedCartItems);
+    const aggregatedItems = aggregateCartItems(updatedCart);
+    setAggregatedCartItems(aggregatedItems);
   };
 
   const checkoutHandler = () => {
     navigate("/checkout");
   };
 
-  useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-    setCartData(cart);
-
-    const aggregatedCartItems = cart.reduce((acc, curr) => {
-      const existingItem = acc.find((item) => item.productId === curr.productId);
-      if (existingItem) {
-        existingItem.quantity += 1;
+  const aggregateCartItems = (cart) => {
+    return cart.reduce((acc, curr) => {
+      const existingItemIndex = acc.findIndex((item) => item.productId === curr.productId);
+      if (existingItemIndex !== -1) {
+        acc[existingItemIndex].quantity += curr.quantity;
       } else {
-        acc.push({ ...curr, quantity: 1 });
+        acc.push({ ...curr });
       }
       return acc;
     }, []);
-
-    setAggregatedCartItems(aggregatedCartItems);
-  }, []);
+  };
 
   const handleProductClick = (productId) => {
     const clickedItem = cartData.find((item) => item.productId === productId);

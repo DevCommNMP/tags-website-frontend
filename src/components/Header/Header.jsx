@@ -115,46 +115,46 @@ const Header = ({ allProducts }) => {
                         </a>
                         <ul className="sub-menu">
                           <li>
-                            <Link to="/categories/Ballerinas Walking Footwear">Ballerinas Walking Footwear</Link>
+                            <Link to="/products/subtypes/Ballerinas Walking Footwear">Ballerinas Walking Footwear</Link>
                           </li>
                           <li>
-                            <Link to="/categories/Boots">Boots</Link>
+                            <Link to="/products/subtypes/Boots">Boots</Link>
                           </li>
                           <li>
-                            <Link to="/categories/Comfort">Comfort</Link>
+                            <Link to="/products/subtypes/Comfort">Comfort</Link>
                           </li>
                           <li>
-                            <Link to="/categories/Flip Flop">Flip Flops</Link>
+                            <Link to="/products/subtypes/Flip Flop">Flip Flops</Link>
                           </li>
                           <li>
-                            <Link to="/categories/kolhapuries">Kolhapuris</Link>
+                            <Link to="/products/subtypes/kolhapuries">Kolhapuris</Link>
                           </li>
                           <li>
-                            <Link to="/categories/Mojaris">Mojaris</Link>
+                            <Link to="/products/subtypes/Mojaris">Mojaris</Link>
                           </li>
                           <li>
-                            <Link to="/categories/Mules">Mules</Link>
+                            <Link to="/products/subtypes/Mules">Mules</Link>
                           </li>
                           <li>
-                            <Link to="/categories/Pumps">Pumps</Link>
+                            <Link to="/products/subtypes/Pumps">Pumps</Link>
                           </li>
                           <li>
-                            <Link to="/categories/Sandles">Sandals</Link>
+                            <Link to="/products/subtypes/Sandles">Sandals</Link>
                           </li>
                           <li>
-                            <Link to="/categories/Slides">Slides</Link>
+                            <Link to="/products/subtypes/Slides">Slides</Link>
                           </li>
                           <li>
-                            <Link to="/categories/Slippers">Slippers</Link>
+                            <Link to="/products/subtypes/Slippers">Slippers</Link>
                           </li>
                           <li>
-                            <Link to="/categories/Slip Ons">Slip Ons</Link>
+                            <Link to="/products/subtypes/Slip Ons">Slip Ons</Link>
                           </li>
                           <li>
-                            <Link to="/categories/Sneakers">Sneakers</Link>
+                            <Link to="/products/subtypes/Sneakers">Sneakers</Link>
                           </li>
                           <li>
-                            <Link to="/categories/Walking Footwear">Walking Footwear</Link>
+                            <Link to="/products/subtypes/Walking Footwear">Walking Footwear</Link>
                           </li>
                         </ul>
                       </li>
@@ -163,20 +163,46 @@ const Header = ({ allProducts }) => {
                           Colours <i className="fi-rs-angle-down"></i>
                         </a>
                         <ul className="sub-menu">
-                          <li style={{ display: "flex" }}>
-                            <span style={{ backgroundColor: "red", width: "15px", height: "15px" }}></span>
-                            <Link to="/products/:red">Red</Link>
-                          </li>
-                          <li style={{ display: "flex" }}>
-                            <span style={{ backgroundColor: "Green", width: "15px", height: "15px" }}></span>
-
-                            <Link to="/products/:color">Green</Link>
-                          </li>
-                          <li style={{ display: "flex" }}>
-                            <span style={{ backgroundColor: "BLUE", width: "15px", height: "15px" }}></span>
-
-                            <Link to="/products/:color">Blue</Link>
-                          </li>
+                        <li style={{ display: "flex" }}>
+        <span style={{ backgroundColor: "gold", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
+        <Link to="/allproducts/Gold">Gold</Link>
+      </li>
+      <li style={{ display: "flex" }}>
+        <span style={{ backgroundColor: "peach", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
+        <Link to="/allproducts/Peach">Peach</Link>
+      </li>
+      <li style={{ display: "flex" }}>
+        <span style={{ backgroundColor: "pink", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
+        <Link to="/allproducts/Pink">Pink</Link>
+      </li>
+      <li style={{ display: "flex" }}>
+        <span style={{ backgroundColor: "black", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
+        <Link to="/allproducts/Black">Black</Link>
+      </li>
+      <li style={{ display: "flex" }}>
+        <span style={{ backgroundColor: "white", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
+        <Link to="/allproducts/White">White</Link>
+      </li>
+      <li style={{ display: "flex" }}>
+        <span style={{ backgroundColor: "chic", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
+        <Link to="/allproducts/Chic">Chic</Link>
+      </li>
+      <li style={{ display: "flex" }}>
+        <span style={{ backgroundColor: "blue", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
+        <Link to="/allproducts/Blue"> Blue</Link>
+      </li>
+      <li style={{ display: "flex" }}>
+        <span style={{ backgroundColor: "rust", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
+        <Link to="/allproducts/Rust">Rust</Link>
+      </li>
+      <li style={{ display: "flex" }}>
+        <span style={{ backgroundColor: "olivegreen", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
+        <Link to="/allproducts/Olivegreen">Olive Green</Link>
+      </li>
+      <li style={{ display: "flex" }}>
+        <span style={{ backgroundColor: "brown", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
+        <Link to="/allproducts/Brown">Brown</Link>
+      </li>
                         </ul>
                       </li>
 

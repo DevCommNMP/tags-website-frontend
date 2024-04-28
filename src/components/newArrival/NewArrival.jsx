@@ -42,6 +42,7 @@ const settings = {
 };
 
 const NewArrival = ({ data }) => {
+  console.log(data)
   const limitedData = data.slice(0, 10); 
     
   return (
@@ -62,11 +63,12 @@ const NewArrival = ({ data }) => {
                 </div>
                 <div className="col-lg-4-5 col-sm-12">
                   <Slider {...settings}>
-                    {data.map((product, index) => (
-                      <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
-                        <ProductCard product={product} />
-                      </div>
-                    ))}
+                  {data.filter(product => product.tag === 'new').map((product, index) => (
+  <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
+    <ProductCard product={product} />
+  </div>
+))}
+
                   </Slider>
                 </div>
               </div>

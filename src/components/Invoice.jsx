@@ -1,23 +1,38 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import logo from "../assets/imgs/theme/logo.png";
-import { Link,useParams } from "react-router-dom";
-import {  useDispatch,useSelector } from 'react-redux';
-import {useNavigate } from "react-router-dom";
-import { fetchOrderDetails } from "../redux/actions/order/orderActions";
+import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
+import { fetchOrder, fetchOrderDetails } from "../redux/actions/order/orderActions";
+import LoaderImg from "./LoaderImg";
+import axios from "axios";
+import { baseUrl } from "../utils/baseUrl";
 const Invoice = () => {
-const{id}=useParams()
-console.log(id)
+  const { id } = useParams();
   const navigate = useNavigate();
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
+  const [responseData, setresponseData] = useState([])
 
-  const data = useSelector((store) => store.order);
-  const { orderdata,loading,appErr,serverErr } = data;
-  console.log(data)
   useEffect(() => {
-    
-    dispatch(fetchOrderDetails(id))
-  }, [id])
+    const res = dispatch(fetchOrder(id));
+
+    // setresponseData(res.payload)
+  }, [id]);
+
+  console.log(responseData)
+  const orderData = useSelector(state => state.order);
+  console.log(orderData)
+  const { orderdata, loading, appErr, serverErr } = orderData;
+// console.log(orderdata)
+  // console.log(orderData.orderdata.subtotal);
+  const currentDate = new Date(orderData.orderdata.Date);
+
+  // Format the date in the US standard (MM/DD/YYYY)
+  const formattedDate = currentDate.toLocaleDateString('en-US');
+  // console.log(orderDetails)
+
   
+
   return (
     <div>
       <div className="invoice invoice-content invoice-5">
@@ -26,7 +41,7 @@ console.log(id)
             <i className="fi-rs-home mr-5"></i> Homepage
           </Link>
         </div>
-        <div className="container">
+        {loading ? <LoaderImg /> : <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="invoice-inner">
@@ -47,7 +62,7 @@ console.log(id)
                       <div className="col-md-6 text-end">
                         <h2>INVOICE</h2>
                         <h6>
-                          ID Number: <span className="text-brand">98657</span>
+                          ID Number: <span className="text-brand">{orderData.orderdata.orderName}</span>
                         </h6>
                       </div>
                     </div>
@@ -62,81 +77,116 @@ console.log(id)
                           <tr>
                             <th>Item Item</th>
                             <th className="text-center">Unit Price</th>
+                            <th className="text-right">Tax(per quantity)</th>
                             <th className="text-center">Quantity</th>
                             <th className="text-right">Amount</th>
+                          
                           </tr>
                         </thead>
                         <tbody>
+
+                          {orderdata && orderdata.productDetails && orderdata.productDetails.map((item, index) => {
+                            return (
+                              <tr key={index}>
+                                <td>
+                                  <div className="item-desc-1">
+                                    <span>{item.product.title}</span>
+                                    <small>SKUID: {item.product.productName}</small>
+                                  </div>
+                                </td>
+                                <td className="text-center"><span style={{ fontSize: 15 }}>&#8377;</span>{item.product.SellingPrice}</td>
+                                <td className="text-center">&#8377; {item.price <= 1000 ? (((item.price * 0.12)).toFixed(0)) : (( (item.price * 0.18)).toFixed(0))}</td>
+                                <td className="text-center">{item.quantity}</td>
+                                <td className="text-right">&#8377;{item.product.SellingPrice * item.quantity}</td>
+                              </tr>
+                            );
+                          })}
+                           {orderData.orderdata.CGST ? (
+                            <tr>
+                              <td colSpan="4" className="text-end f-w-600">
+                                CGST
+                              </td>
+                              <td className="text-right">&#8377;{orderData.orderdata.CGST}</td>
+                            </tr>
+                          ) : null}
+                            {orderData.orderdata.SGST ? (
+                            <tr>
+                              <td colSpan="4" className="text-end f-w-600">
+                                SGST
+                              </td>
+                              <td className="text-right">&#8377;{orderData.orderdata.SGST}</td>
+                            </tr>
+                          ) : null}
                           <tr>
-                            <td>
-                              <div className="item-desc-1">
-                                <span>Field Roast Chao Cheese Creamy Original</span>
-                                <small>SKU: FWM15VKT</small>
-                              </div>
-                            </td>
-                            <td className="text-center">$10.99</td>
-                            <td className="text-center">1</td>
-                            <td className="text-right">$10.99</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="item-desc-1">
-                                <span>Blue Diamond Almonds Lightly Salted</span>
-                                <small>SKU: FWM15VKT</small>
-                              </div>
-                            </td>
-                            <td className="text-center">$20.00</td>
-                            <td className="text-center">3</td>
-                            <td className="text-right">$60.00</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="item-desc-1">
-                                <span>All Natural Italian-Style Chicken Meatballs</span>
-                                <small>SKU: 98HFG</small>
-                              </div>
-                            </td>
-                            <td className="text-center">$240.00</td>
-                            <td className="text-center">1</td>
-                            <td className="text-right">$240.00</td>
-                          </tr>
-                          <tr>
-                            <td colSpan="3" className="text-end f-w-600">
+                            <td colSpan="4" className="text-end f-w-600">
                               SubTotal
                             </td>
-                            <td className="text-right">$1710.99</td>
+                            <td className="text-right">&#8377;{orderData.orderdata.subtotal}</td>
                           </tr>
-                          <tr>
-                            <td colSpan="3" className="text-end f-w-600">
-                              Tax
-                            </td>
-                            <td className="text-right">$85.99</td>
-                          </tr>
-                          <tr>
-                            <td colSpan="3" className="text-end f-w-600">
+                         
+                            {/* <tr>
+                            <td colSpan="4" className="text-end f-w-600">
                               Grand Total
                             </td>
-                            <td className="text-right f-w-600">$1795.99</td>
-                          </tr>
+                            <td className="text-right f-w-600">&#8377; { orderData.orderdata.subtotal}</td>
+                          </tr> */}
                         </tbody>
                       </table>
                     </div>
                   </div>
                   <div className="invoice-bottom pb-80">
                     <div className="row">
-                      <div className="col-md-6">
-                        <h6 className="mb-15">Invoice Infor</h6>
-                        <p className="font-sm">
-                          <strong>Issue date:</strong> 20 march, 2024
-                          <br />
-                          <strong>Invoice To:</strong> NestMart Inc
-                          <br />
-                          <strong>Swift Code:</strong> BFTV VNVXS
-                        </p>
-                      </div>
+                    <div className="col-md-6">
+  <h6 className="mb-15">Invoice Info</h6>
+  <p className="font-sm">
+    {formattedDate ? <><strong>Issue date:</strong> {formattedDate}</> : null}
+    <br />
+    {orderdata && orderdata.billingDetails ? (
+      <>
+        <strong>Invoice To:</strong> {orderdata.billingDetails.fname} {orderdata.billingDetails.lname}
+        <br />
+        <strong>Shipping Address:</strong> {orderdata.billingDetails.billing_address}
+        <br />
+        {orderdata.billingDetails.billing_address2 && (
+          <>
+            {orderdata.billingDetails.billing_address2}
+            <br />
+          </>
+        )}
+        {orderdata.billingDetails.city && (
+          <>
+            {orderdata.billingDetails.city}
+            <br />
+          </>
+        )}
+        {orderdata.billingDetails.phone && (
+          <>
+            {orderdata.billingDetails.phone}
+            <br />
+          </>
+        )}
+        {orderdata.billingDetails.state && (
+          <>
+            {orderdata.billingDetails.state}
+            <br />
+          </>
+        )}
+        {orderdata.billingDetails.zipcode && (
+          <>
+            {orderdata.billingDetails.zipcode}
+            <br />
+          </>
+        )}
+      </>
+    ) : null}
+    <br />
+    {/* <strong>Swift Code:</strong> BFTV VNVXS */}
+  </p>
+</div>
+
                       <div className="col-md-6 text-end">
                         <h6 className="mb-15">Total Amount</h6>
-                        <h3 className="mt-0 mb-0 text-brand">$1795.99</h3>
+                        <h3 className="mt-0 mb-0 text-brand">&#8377; { orderData.orderdata.subtotal}</h3>
                         <p className="mb-0 text-muted">Taxes Included</p>
                       </div>
                     </div>
@@ -157,7 +207,7 @@ console.log(id)
               </div>
             </div>
           </div>
-        </div>
+        </div>}
       </div>
     </div>
   );

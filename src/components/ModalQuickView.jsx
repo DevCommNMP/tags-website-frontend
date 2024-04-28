@@ -46,7 +46,7 @@ function ModalQuickView(props) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-console.log(product)
+// console.log(product)
   return (
     <>
       <a aria-label="Quick view" onClick={handleShow} className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">

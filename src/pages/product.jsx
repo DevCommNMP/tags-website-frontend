@@ -6,8 +6,8 @@ import SingleProductImages from "../components/SingleProductImages";
 import { fetchParticularProduct } from "../redux/actions/product/productActions";
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
-import { addToCartHandler } from "../redux/actions/cart/cartActions";
-import { Link } from "react-router-dom";
+import { addToCart, addToCartHandler } from "../redux/actions/cart/cartActions";
+import { Link,useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import ProductInfo from "../components/ProductInfo";
 // import ImageMagnify from "../components/ImageMagnify";
@@ -26,12 +26,15 @@ const Product = () => {
   const [selectedColor, setSelectedColor] = useState(particularproduct.colorsAvailable ? particularproduct.colorsAvailable[0] : null);
   const [selectedSize, setSelectedSize] = useState(particularproduct.sizesAvailable ? particularproduct.sizesAvailable[0] : null);
   const [error, setError] = useState("");
-
-  const cartHandler = async (item) => {
-    await dispatch(addToCartHandler(item));
-    toast.success("Product added to cart", {
-      position: "top-right",
-    });
+  const navigate = useNavigate();
+  const cartHandler = async (item,selectedColor,selectedSize,quantity) => {
+   await handleBuyNow(selectedColor,selectedSize);
+    await dispatch(addToCart(item,selectedColor,selectedSize,quantity));
+ if(selectedColor && selectedSize){
+  toast.success("Product added to cart", {
+    position: "top-right",
+  });
+ }
   };
 
   const increaseQuantity = () => {
@@ -58,13 +61,13 @@ const Product = () => {
     setSelectedSize(size);
   };
 
-  const handleBuyNow = () => {
+  const handleBuyNow = async(item,selectedColor,selectedSize,quantity) => {
     if (!selectedColor || !selectedSize) {
       setError("Please select color and size.");
+      return;
     } else {
-      console.log("Quantity:", quantity);
-      console.log("Selected Color:", selectedColor);
-      console.log("Selected Size:", selectedSize);
+      await dispatch(addToCart(item,selectedColor,selectedSize,quantity));
+      navigate("/checkout")
     }
   };
 
@@ -185,7 +188,7 @@ const Product = () => {
                           <button
                             type="button"
                             className="border bg-white  text-brand radius button button-add-to-cart"
-                            onClick={() => cartHandler(particularproduct)}
+                            onClick={() => cartHandler(particularproduct,selectedColor,selectedSize,quantity)}
                             disabled={soldOut}
                           >
                             <i className="fi-rs-shopping-cart"></i>Add to cart
@@ -193,7 +196,7 @@ const Product = () => {
                           <button
                             type="button"
                             className="button button-primary button-add-to-cart ml-5"
-                            onClick={handleBuyNow}
+                            onClick={()=>handleBuyNow(particularproduct,selectedColor,selectedSize,quantity)}
                             disabled={soldOut}
                           >
                             <i className="fi-rs-shopping-cart"></i>Buy Now

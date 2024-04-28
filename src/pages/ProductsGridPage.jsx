@@ -1,5 +1,9 @@
 /* eslint-disable react/jsx-key */
-import category_bg from "../assets/imgs/banner/category_bg.png";
+import premiumLeather from "../assets/imgs/banner/PremiumleatherBanner.jpg";
+import casualImg from "../assets/imgs/banner/casual.png";
+import formalImg from "../assets/imgs/banner/Formal-footwear.jpg";
+import partyImg from "../assets/imgs/banner/Party-Footwear.jpg";
+// import ethinicImg from "../assets/imgs/banner/Ethinic"
 import { useState, useEffect } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
@@ -12,22 +16,91 @@ import { useSelector } from "react-redux";
 import { Pagination, DropdownButton, Dropdown } from "react-bootstrap";
 import ProductCard from "../components/ProductCard.jsx";
 import { ToastContainer } from "react-toastify";
+import LoaderImg from "../components/LoaderImg.jsx";
 
-const ProductsGridPage = ({ data }) => {
+const ProductsGridPage = () => {
+  // console.log(data)
   const { title } = useParams();
+  const{color}=useParams();
+  // const{subtypes}=useParams();
+  const [Loading,setloading]=useState(false);
+  const [updatedData,setupdatedData]=useState([]);
+  const [data,setData]=useState([]);
+  const [selectedColors, setSelectedColors] = useState([]);
+  const [minPrice,setminPrice]=useState(1000);
+  const [maxPrice,setmaxPrice]=useState(10000)
+  const{subtypes}=useParams();
+// console.log(subtypes)
   const storeData = useSelector((store) => store.products);
   const { products, productsLoading, appErr, serverErr } = storeData;
-  // console.log(products);
   const [sliderValues, setSliderValues] = useState([0, 100]);
   const [productsPerPage, setProductsPerPage] = useState(5);
 
+  const filteredDataByCategories = async (title) => {
+    setloading(true);
+    const filtereddata = products.filter((product) => product.subcategory.subcategoriesName === title);
+    setupdatedData(filtereddata);
+    setloading(false);
+  };
+  const filteredDataBySubtype = async (subtypes) => {
+    setloading(true);
+    const filtereddata = products.filter((product) => product.subcategoryType.subcategoryTypeName === subtypes);
+    setupdatedData(filtereddata);
+    setloading(false);
+console.log()
+
+  };const filteredDataByColor = async (color) => {
+    try {
+      setloading(true);
+      const filteredData = products.filter((product) => product.colorsAvailable.includes(color));
+      // console.log(products.filter((product) => product.colorsAvailable.includes('color'))) // Logging filtered data for debugging
+      await setupdatedData(filteredData); // Assuming setupdatedData is an async function
+    } catch (error) {
+      // Handle any errors here
+      console.error("Error filtering data:", error);
+    } finally {
+      setloading(false);
+      console.log(color);
+    }
+  };
+  
+  
+
+  const filteredDataByFilters = async (color, minPrice, maxPrice) => {
+    setloading(true);
+    const filteredData = products.filter((product) => {
+      // Check if the product matches the specified color
+      const colorMatch = !color || product.colorsAvailable.includes(color);
+      
+      // Check if the product's price falls within the specified range
+      const priceMatch = (!minPrice || product.SellingPrice >= minPrice) && (!maxPrice || product.SellingPrice <= maxPrice);
+      
+      return colorMatch && priceMatch;
+    });
+  
+    setupdatedData(filteredData);
+    setloading(false);
+  };
+  
+  // console.log(products)
+  console.log(updatedData)
+  // console.log(products.filter((product) => product.subcategory.subcategoriesName === 'Ethinic Footwear'))
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
-    const res = dispatch(fetchAllProductsAction());
-    // console.log(res);
-  }, [dispatch]);
-
+    dispatch(fetchAllProductsAction()).then(() => {
+      if (title) {
+        filteredDataByCategories(title);
+      }
+if(subtypes){
+  filteredDataBySubtype(subtypes)
+}
+      if(color ){
+        filteredDataByColor(color)
+      }
+    });
+  }, [dispatch, title,color,subtypes]);
+  
   const [currentPage, setCurrentPage] = useState(1); // State to manage current page
 
   // Function to handle page change
@@ -49,6 +122,9 @@ const ProductsGridPage = ({ data }) => {
   // Function to handle slider change
   const handleSliderChange = (values) => {
     setSliderValues(values);
+    setminPrice(sliderValues[0])
+    setmaxPrice(sliderValues[1])
+    // console.log(sliderValues)
   };
 
   const handleSliderClick = (e) => {
@@ -66,8 +142,36 @@ const ProductsGridPage = ({ data }) => {
     // Update the slider values
     const newValue = [Math.round(valueClicked), sliderValues[1]];
     setSliderValues(newValue);
+
+
+
   };
 
+  const handleCheckboxChange = (event) => {
+    const { value, checked } = event.target;
+    // If checked, add the color to selectedColors array
+    // If unchecked, remove the color from selectedColors array
+    if (checked) {
+      setSelectedColors((prevSelectedColors) => [...prevSelectedColors, value]);
+    } else {
+      setSelectedColors((prevSelectedColors) => prevSelectedColors.filter((color) => color !== value));
+    }
+
+    console.log(selectedColors)
+  };
+  const colors = [
+    "Gold",
+    "Peach",
+    "Pink",
+    "Black",
+    "White",
+    "Chic",
+    "Navy Blue",
+    "Rust",
+    "Olive Green",
+    "Brown",
+    // Add more colors as needed
+  ];
   return (
     <>
           <ToastContainer />
@@ -80,24 +184,127 @@ const ProductsGridPage = ({ data }) => {
           aria-hidden="true"
         ></div>
         <Header />
-        <main className="main">
-          <div className="page-header mt-30 mb-50">
-            <div className="container">
-              <div className="archive-header category_bg" style={{ backgroundImage: `url(${category_bg})` }}>
-                <div className="row align-items-center">
-                  <div className="col-xl-3">
-                    <h1 className="mb-15">{title}</h1>
-                    <div className="breadcrumb">
-                      <Link to="/" rel="nofollow">
-                        <i className="fi-rs-home mr-5"></i>Home
-                      </Link>
-                      <span></span> Shop <span></span> {title}
-                    </div>
-                  </div>
-                </div>
-              </div>
+       {(Loading || productsLoading)?<LoaderImg />: <main className="main">
+        <div className="page-header mt-30 mb-50">
+  <div className="container">
+    {title === "Premium Leather" && (
+      <div className="archive-header category_bg" style={{ backgroundImage: `url(${premiumLeather})`, height: 300 }}>
+        <div className="row align-items-center">
+          <div className="col-xl-3">
+            {title ? <h1 className="mb-15">{title}</h1> : ""}
+            {color ? <h1 className="mb-15">{color}</h1> : ""}
+            <div className="breadcrumb">
+              <Link to="/" rel="nofollow">
+                <i className="fi-rs-home mr-5"></i>Home
+              </Link>
+              <span></span> Shop <span></span> {title || color ||subtypes}
             </div>
           </div>
+        </div>
+      </div>
+    )}
+    {title === "Ethinic Footwear" && (
+      <div className="archive-header category_bg" style={{ backgroundImage: `url(${casualImg})`, height: 300 }}>
+        <div className="row align-items-center">
+          <div className="col-xl-3">
+            {title ? <h1 className="mb-15">{title}</h1> : ""}
+            {color ? <h1 className="mb-15">{color}</h1> : ""}
+            <div className="breadcrumb">
+              <Link to="/" rel="nofollow">
+                <i className="fi-rs-home mr-5"></i>Home
+              </Link>
+              <span></span> Shop <span></span> {title || color ||subtypes}
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+    {title === "Formal Footwear" && (
+      <div className="archive-header category_bg" style={{ backgroundImage: `url(${formalImg})`, height: 300 }}>
+        <div className="row align-items-center">
+          <div className="col-xl-3">
+            {title ? <h1 className="mb-15">{title}</h1> : ""}
+            {color ? <h1 className="mb-15">{color}</h1> : ""}
+            <div className="breadcrumb">
+              <Link to="/" rel="nofollow">
+                <i className="fi-rs-home mr-5"></i>Home
+              </Link>
+              <span></span> Shop <span></span> {title || color ||subtypes}
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+    {title === "Party Footwear" && (
+      <div className="archive-header category_bg" style={{ backgroundImage: `url(${partyImg})`, height: 300 }}>
+        <div className="row align-items-center">
+          <div className="col-xl-3">
+            {title ? <h1 className="mb-15">{title}</h1> : ""}
+            {color ? <h1 className="mb-15">{color}</h1> : ""}
+            <div className="breadcrumb">
+              <Link to="/" rel="nofollow">
+                <i className="fi-rs-home mr-5"></i>Home
+              </Link>
+              <span></span> Shop <span></span> {title || color ||subtypes}
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+     {title === "Casual Footwear" && (
+      <div className="archive-header category_bg" style={{ backgroundImage: `url(${casualImg})`, height: 300 }}>
+        <div className="row align-items-center">
+          <div className="col-xl-3">
+            {title ? <h1 className="mb-15">{title}</h1> : ""}
+            {color ? <h1 className="mb-15">{color}</h1> : ""}
+            <div className="breadcrumb">
+              <Link to="/" rel="nofollow">
+                <i className="fi-rs-home mr-5"></i>Home
+              </Link>
+              <span></span> Shop <span></span> {title || color ||subtypes}
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+    {title === "Sports Footwear" && (
+      <div className="archive-header category_bg" style={{ backgroundImage: `url(${premiumLeather})`, height: 300 }}>
+        <div className="row align-items-center">
+          <div className="col-xl-3">
+            {title ? <h1 className="mb-15">{title}</h1> : ""}
+            {color ? <h1 className="mb-15">{color}</h1> : ""}
+            <div className="breadcrumb">
+              <Link to="/" rel="nofollow">
+                <i className="fi-rs-home mr-5"></i>Home
+              </Link>
+              <span></span> Shop <span></span> {title || color ||subtypes}
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+     {subtypes  && (
+      <div className="archive-header category_bg" style={{ backgroundImage: `url(${casualImg})`, height: 300 }}>
+        <div className="row align-items-center">
+          <div className="col-xl-3">
+            {title ? <h1 className="mb-15">{title}</h1> : ""}
+            {color ? <h1 className="mb-15">{color}</h1> : ""}
+            {subtypes ? <h1 className="mb-15">{subtypes}</h1> : ""}
+
+            
+            <div className="breadcrumb">
+              <Link to="/" rel="nofollow">
+                <i className="fi-rs-home mr-5"></i>Home
+              </Link>
+              <span></span> Shop <span></span> {title || color ||subtypes}
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+</div>
+
           <div className="container mb-30">
             <div className="row flex-row-reverse">
               <div className="col-lg-4-5">
@@ -118,12 +325,17 @@ const ProductsGridPage = ({ data }) => {
                   </div>
                 </div>
                 <div className="row product-grid">
-                  {currentProducts.map((product, index) => (
-                    <div className="col-lg-1-4 col-md-3 col-12 col-sm-6" key={index}>
-                      <ProductCard product={product} />
-                    </div>
-                  ))}
-                </div>
+  {updatedData.length === 0 ? (
+    <h1>No Product Found!</h1>
+  ) : (
+    updatedData.map((item, index) => (
+      <div className="col-lg-1-4 col-md-3 col-12 col-sm-6" key={index}>
+        <ProductCard product={item} />
+      </div>
+    ))
+  )}
+</div>
+
                 {/* Pagination */}
                 <div className="text-center">
                   <Pagination>
@@ -146,48 +358,58 @@ const ProductsGridPage = ({ data }) => {
                 <div className="sidebar-widget widget-category-2 mb-30">
                   <h5 className="section-title style-1 mb-30">Category</h5>
                   <ul>
-                    <Link to="/categories/casual Shoes">
+                    <Link to="/categories/Casual Footwear">
                       <li>
                         <a>
                           {" "}
                           <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
-                          Casual Shoes
+                          Casual Footwear
                         </a>
                       </li>
                     </Link>
-                    <Link to="/categories/Ethnic Shoes">
+                    <Link to="/categories/Ethinic Footwear">
                       <li>
                         <a>
                           {" "}
                           <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
-                          Ethnic Shoes
+                          Ethinic Footwear
+                        </a>
+                      </li>
+
+                    </Link>
+                    <Link to="/categories/Formal Footwear">
+                      <li>
+                        <a>
+                          {" "}
+                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
+                          Formal Footwear
                         </a>
                       </li>
                     </Link>
-                    <Link to="/categories/Formal Shoes">
+                    <Link to="/categories/Party Footwear">
                       <li>
                         <a>
                           {" "}
                           <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
-                          Formal Shoes
+                          Party Footwear
                         </a>
                       </li>
                     </Link>
-                    <Link to="/categories/Party Shoes">
+                    <Link to="/categories/Sports Footwear">
                       <li>
                         <a>
                           {" "}
                           <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
-                          Party Shoes
+                          Sports Footwear
                         </a>
                       </li>
                     </Link>
-                    <Link to="/categories/Sports Shoes">
+                    <Link to="/categories/Premium Leather">
                       <li>
                         <a>
                           {" "}
                           <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
-                          Sports Shoes
+                          Premium Leather
                         </a>
                       </li>
                     </Link>
@@ -197,55 +419,38 @@ const ProductsGridPage = ({ data }) => {
                   <h5 className="section-title style-1 mb-30">Fill by price</h5>
                   <div className="price-filter">
                     <div className="price-filter-inner">
-                      <Slider min={0} max={100} value={sliderValues} onChange={handleSliderChange} onClick={handleSliderClick} range />
+                      <Slider min={1000} max={10000} value={sliderValues} onChange={handleSliderChange} onClick={handleSliderClick} range />
+                      
                     </div>
                   </div>
                   <div className="list-group">
                     <div className="list-group-item mb-10 mt-10">
                       <label className="fw-900">Color</label>
                       <div className="custome-checkbox">
-                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="" />
-                        <label className="form-check-label" htmlFor="exampleCheckbox1">
-                          <span>Red (56)</span>
-                        </label>
-                        <br />
-                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox2" value="" />
-                        <label className="form-check-label" htmlFor="exampleCheckbox2">
-                          <span>Green (78)</span>
-                        </label>
-                        <br />
-                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox3" value="" />
-                        <label className="form-check-label" htmlFor="exampleCheckbox3">
-                          <span>Blue (54)</span>
-                        </label>
-                      </div>
-                      <label className="fw-900 mt-15">Item Condition</label>
-                      <div className="custome-checkbox">
-                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox11" value="" />
-                        <label className="form-check-label" htmlFor="exampleCheckbox11">
-                          <span>New (1506)</span>
-                        </label>
-                        <br />
-                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox21" value="" />
-                        <label className="form-check-label" htmlFor="exampleCheckbox21">
-                          <span>Refurbished (27)</span>
-                        </label>
-                        <br />
-                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox31" value="" />
-                        <label className="form-check-label" htmlFor="exampleCheckbox31">
-                          <span>Used (45)</span>
-                        </label>
+                      {colors.map((color, index) => (
+      <div  key={index}>
+        <input className="form-check-input" type="checkbox" name={`checkbox${index}`} id={`exampleCheckbox${index + 1}`} value={color}  checked={selectedColors.includes(color)}
+            // Call handleCheckboxChange function when checkbox is changed
+            onChange={handleCheckboxChange}/>
+        <label className="form-check-label" htmlFor={`exampleCheckbox${index + 1}`}>
+          <span>{color}</span>
+        </label>
+        <br />
+      </div>
+    ))}
+                      
+                       
                       </div>
                     </div>
                   </div>
-                  <a className="btn btn-sm btn-default">
-                    <i className="fi-rs-filter mr-5"></i> Fillter
+                  <a className="btn btn-sm btn-default" onClick={()=>filteredDataByFilters()}>
+                    <i className="fi-rs-filter mr-5"></i> Filter
                   </a>
                 </div>
               </div>
             </div>
           </div>
-        </main>
+        </main>}
         <Footer />
       </div>
     </>

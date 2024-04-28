@@ -13,8 +13,6 @@ import { CheckoutHandler } from "../../redux/actions/checkoutActions/checkoutAct
 import axios from "axios";
 import { baseUrl } from "../../utils/baseUrl";
 
-
-
 function loadScript(src) {
   return new Promise((resolve) => {
     const script = document.createElement('script')
@@ -29,14 +27,17 @@ function loadScript(src) {
   })
 }
 
-
 const Checkout = () => {
+  const [region, setRegion] = useState("");
+  const [CGST, setCGST] = useState(0);
+  const [SGST, setSGST] = useState(0);
+  const [Tax, setTax] = useState(0);
   const [loading, setLoading] = useState(false);
   const [cartdata, setCartdata] = useState([]);
   const user = JSON.parse(localStorage.getItem("userData"));
   const [Razorpay] = useRazorpay();
   const dispatch = useDispatch();
- 
+
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -50,23 +51,46 @@ const Checkout = () => {
     additionalInfo: "",
   });
 
-  const handleChange = async(e) => {
+  const handleChange = async (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-  
+
     if (name === "zipcode" && value.length === 6) {
       const response = await axios.post(`${baseUrl}/api/picodedata`, { pincode: value });
-      console.log(response.data);
+
       if (response.data.success) {
         const { state, city } = response.data.data[0];
+
         setFormData((prevState) => ({
           ...prevState,
           state: state || "",
           city: city || "",
         }));
+
+        if (state === 'KARNATAKA') {
+          let stateTax = 0;
+          let centerTax = 0;
+          cartdata.forEach((data) => {
+            centerTax += (data.tax * data.quantity) / 2;
+           stateTax += (data.tax * data.quantity) / 2;
+          });
+          setCGST(centerTax);
+          setSGST(stateTax);
+          setTax(centerTax + stateTax);
+        } else {
+          let stateTax = 0;
+          let centerTax = 0;
+          cartdata.forEach((data) => {
+            centerTax += (data.tax * data.quantity) /1;
+            console.log(centerTax)
+          });
+          setCGST(centerTax);
+          setSGST(stateTax);
+          setTax(centerTax + stateTax);
+        }
       } else {
         setFormData((prevState) => ({
           ...prevState,
@@ -78,6 +102,7 @@ const Checkout = () => {
     }
   };
 
+ 
   const paymentHandler = async () => {
     if (!user) {
       toast.error("You need to log in first", {
@@ -134,7 +159,9 @@ const Checkout = () => {
         userEmail: user.email,
         cartdata,
         formData,
-      });
+        CGST,
+        SGST,
+       Tax     });
     
     var options = {
            key: data.key,
@@ -145,7 +172,7 @@ const Checkout = () => {
           image: "https://res.cloudinary.com/dibaxrbac/image/upload/v1711623271/Footwear_Accessories_dwncjn.png",
           order_id: res1.data.order.id,
           //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      "callback_url": "http://localhost:5000/api/payment-verification",
+      "callback_url": `${baseUrl}/api/payment-verification`,
       "prefill": {
           "name": "Gaurav Kumar",
           "email": "gaurav.kumar@example.com",
@@ -165,6 +192,7 @@ const Checkout = () => {
     setLoading(false);
   };
 
+
   let totalPrice = 0;
   cartdata.forEach((item) => {
     totalPrice += item.price * item.quantity;
@@ -174,7 +202,7 @@ const Checkout = () => {
   cartdata.forEach((item) => {
     totalTax += item.price <= 1000 ? (item.price * 0.12 * item.quantity) : (item.price * 0.18 * item.quantity);
   });
-  
+
   const formSubmitHandler = async (e) => {
     e.preventDefault();
   };
@@ -184,9 +212,14 @@ const Checkout = () => {
     if (cart) {
       setCartdata(cart);
     }
-  }, []);
+  }, []);  
 
+  useEffect(() => {
+    console.log("Cart Data:", cartdata);
+    console.log("Tax:", Tax, "CGST:", CGST, "SGST:", SGST);
+  }, [cartdata, Tax, CGST, SGST]);
 
+console.log(Tax,"center",CGST ,"state",SGST)
   return (
     <>
       <ToastContainer />
@@ -418,7 +451,7 @@ const Checkout = () => {
                               </div>
                             </td>
                             <td>
-                              <h6 className="text-muted pl-20 pr-20">x 1</h6>
+                              <h6 className="text-muted pl-20 pr-20">x{item.quantity} </h6>
                             </td>
                             <td>
                               

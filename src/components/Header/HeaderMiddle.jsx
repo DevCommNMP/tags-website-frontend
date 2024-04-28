@@ -1,13 +1,15 @@
 import logo from "../../assets/imgs/theme/logo.png";
+import cartImg from "../../assets/imgs/theme/icons/icon-cart.svg";
 import wishList from "../../assets/imgs/theme/icons/icon-heart.svg";
 import account from "../../assets/imgs/theme/icons/icon-user.svg";
-import cartImg from "../../assets/imgs/theme/icons/icon-cart.svg";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Search2 from "../Search2";
 import { useDispatch, useSelector } from "react-redux";
+// import wishList from "../../assets/imgs/theme/icons/icon-heart.svg";
+// import account from "../../assets/imgs/theme/icons/icon-user.svg";
 
-const HeaderMiddle = ( {allProducts} ) => {
+const HeaderMiddle = ({ allProducts }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [user, setUser] = useState("");
@@ -27,16 +29,32 @@ const HeaderMiddle = ( {allProducts} ) => {
     if (cartData) {
       setCart(cartData);
     }
-  }, []);
+  }, [localStorage]);
 
-  useEffect(()=>{
+  useEffect(() => {
+    // Define function to handle cart change
+    const handleCartChange = () => {
+      const cartData = JSON.parse(localStorage.getItem("cartItems"));
+      if (cartData) {
+        setCart(cartData); // Update cart state based on localStorage data
+      }
+    };
 
-  },[cart])
+    // Add event listener to listen for changes in localStorage
+    window.addEventListener("storage", handleCartChange);
+
+    // Clean up by removing event listener
+    return () => {
+      window.removeEventListener("storage", handleCartChange);
+    };
+  }, []); // No dependencies, so it only runs once on component mount
+
   const signOutHandler = async () => {
     await localStorage.removeItem("userData");
     setToken("");
     navigate("/login");
   };
+
 
   return (
     <div>
@@ -49,7 +67,7 @@ const HeaderMiddle = ( {allProducts} ) => {
               </Link>
             </div>
             <div className="header-right">
-              <Search2 allProducts = {allProducts} />
+              <Search2 allProducts={allProducts} />
               <div className="header-action-right">
                 <div className="header-action-2">
                   <div className="header-action-icon-2">

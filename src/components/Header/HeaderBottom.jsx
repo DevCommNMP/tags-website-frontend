@@ -121,7 +121,7 @@ const HeaderBottom = () => {
                               <a>Blue</a>
                             </li>
                             <li>
-                              <a>maroon</a>
+                              <a>Maroon</a>
                             </li>
                             <li>
                               <a>Purple</a>

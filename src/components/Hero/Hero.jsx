@@ -4,7 +4,7 @@ import Slider from "react-slick";
 
 // import SlickSlider from '../SlickSlider/SlickSlider'
 import HeroSideBanner from "../../components/Hero/HeroSideBanner";
-
+import Banner1 from "../../assets/imgs/homepageBanner/banner2.jpeg"
 var settings = {
   dots: true,
   infinite: true,
