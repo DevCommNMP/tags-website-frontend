@@ -1,0 +1,19 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/np1gv5e4fvfz/public_html/
+    - /bin/cp -R images $DEPLOYPATH
+    - export: /home/np1gv5e4fvfz/public_html/    # Destination directory where your React project will be deployed
+      branch: main    # Branch to deploy (change this to your main branch name)
+      script: npm install && npm run build    # Commands to install dependencies and build the project
+
+
+
+---
+deployment:
+  tasks:
+    - export: /home/np1gv5e4fvfz/public_html/    # Destination directory where your React project will be deployed
+      branch: main    # Branch to deploy (change this to your main branch name)
+      script: |
+        export DEPLOYPATH=/home/np1gv5e4fvfz/public_html/
+        /bin/cp -R dist $DEPLOYPATH
