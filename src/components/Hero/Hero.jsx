@@ -4,7 +4,8 @@ import Slider from "react-slick";
 
 // import SlickSlider from '../SlickSlider/SlickSlider'
 import HeroSideBanner from "../../components/Hero/HeroSideBanner";
-import Banner1 from "../../assets/imgs/homepageBanner/banner2.jpeg"
+// import Banner1  from "../../assets/imgs/banner/homepageBanner/Banner2.jpeg"
+import Banner1 from "../../assets/imgs/banner/homepageBanner/banner2.jpeg"
 var settings = {
   dots: true,
   infinite: true,
@@ -27,21 +28,18 @@ const Hero = () => {
             <div className="home-slide-cover">
               <div className="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
                 <Slider {...settings}>
-                  <li className="single-hero-slider single-animation-wrap sliderImg1">
-                    <h1> </h1>
+                  <li className="single-hero-slider single-animation-wrap Banner1">
+                    <img src={Banner1}  alt="" />
                   </li>
 
-                  <li className="single-hero-slider single-animation-wrap sliderImg2">
-                    <h1> </h1>
+                  <li className="single-hero-slider single-animation-wrap Banner1">
+                    <img src={Banner1}  alt="" />
                   </li>
 
-                  <li className="single-hero-slider single-animation-wrap sliderImg1">
-                    <h1> </h1>
+                  <li className="single-hero-slider single-animation-wrap Banner1">
+                    <img src={Banner1}  alt="" />
                   </li>
 
-                  <li className="single-hero-slider single-animation-wrap sliderImg2">
-                    <h1> </h1>
-                  </li>
                 </Slider>
               </div>
             </div>

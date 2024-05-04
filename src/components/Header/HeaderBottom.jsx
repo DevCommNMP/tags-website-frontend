@@ -50,12 +50,13 @@ const HeaderBottom = () => {
                             <li>
                               <a>Formal Shoes</a>
                             </li>
+                            {/* this is a comment */}
                             <li>
                               <a>Party Shoes</a>
                             </li>
-                            <li>
+                            {/* <li>
                               <a>Sports Shoes</a>
-                            </li>
+                            </li> */}
                           </ul>
                         </li>
                         <li className="sub-mega-menu sub-mega-menu-width-22">

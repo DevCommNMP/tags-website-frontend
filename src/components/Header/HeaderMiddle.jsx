@@ -97,28 +97,24 @@ const HeaderMiddle = ({ allProducts }) => {
                               <i className="fi fi-rs-user mr-10"></i>My Account
                             </Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link to="/profile">
                               <i className="fi fi-rs-location-alt mr-10"></i>
                               Order Tracking
                             </Link>
-                          </li>
-                          <li>
-                            <Link to="/profile">
-                              <i className="fi fi-rs-label mr-10"></i>My Voucher
-                            </Link>
-                          </li>
+                          </li> */}
+                       
                           <li>
                             <a>
                               <i className="fi fi-rs-heart mr-10"></i>My Wishlist
                             </a>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link to="/profile">
                               <i className="fi fi-rs-settings-sliders mr-10"></i>
                               Setting
                             </Link>
-                          </li>
+                          </li> */}
                           <li>
                             <Link onClick={signOutHandler}>
                               <i className="fi fi-rs-sign-out mr-10"></i>

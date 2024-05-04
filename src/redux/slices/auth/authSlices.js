@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loginUserAction, verifyEmail, logoutAction, registerUserAction } from "../../actions/auth/authActions";
+import { loginUserAction, verifyEmail,verifyResetPasswordToken, logoutAction, registerUserAction } from "../../actions/auth/authActions";
 
 const initialState = {
   user: "",
@@ -7,6 +7,7 @@ const initialState = {
   emailVerified: false,
   loading: false,
   appErr: null,
+  ValidPasswordResetToken:false,
   serverErr: null,
 };
 const authSlice = createSlice({
@@ -70,6 +71,26 @@ const authSlice = createSlice({
       state.emailVerified = true;
     });
     builder.addCase(verifyEmail.rejected, (state, action) => {
+      state.loading = false;
+      state.registered = false;
+      state.emailVerified = false;
+      state.appErr = action?.payload?.message || "An error occurred";
+      state.serverErr = action?.payload?.message || "Network error";
+    });
+
+    //reset-password-token
+    builder.addCase(verifyResetPasswordToken.pending, (state, action) => {
+      state.registered = false;
+      state.emailVerified = false;
+      state.loading = true;
+      state.appErr = null;
+      state.serverErr = null;
+    });
+    builder.addCase(verifyResetPasswordToken.fulfilled, (state, action) => {
+      state.loading = false;
+      state.ValidPasswordResetToken = true;
+    });
+    builder.addCase(verifyResetPasswordToken.rejected, (state, action) => {
       state.loading = false;
       state.registered = false;
       state.emailVerified = false;

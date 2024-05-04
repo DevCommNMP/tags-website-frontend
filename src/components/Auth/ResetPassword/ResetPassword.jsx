@@ -1,10 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useParams ,useNavigate } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
+import { useDispatch, useSelector } from "react-redux";
 
+import { useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 const ResetPassword = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  // State variables for form data and errors
+  const storeData = useSelector((store) => store.auth);
+  const {ValidPasswordResetToken, loading, appErr, serverErr } = storeData;
+  const{token}=useParams();
+  useEffect(() => {
+    if(token){
+      toast.success("Mail sent successfully")
+      console.log(token)
+    }
+   
+  }, [token])
+
   return (
     <>
+    <ToastContainer/>
       <Header />
       <div className="main pages">
         <div className="page-header breadcrumb-wrap">
@@ -15,7 +33,7 @@ const ResetPassword = () => {
                   <i className="fi-rs-home mr-5"></i>Home
                 </Link>
               </a>
-              <span></span> My Account
+              <span></span>My Account
             </div>
           </div>
         </div>

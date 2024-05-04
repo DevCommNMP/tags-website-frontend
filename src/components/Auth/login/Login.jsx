@@ -130,7 +130,7 @@ const Login = () => {
                               </label>
                             </div>
                           </div>
-                          <a className="text-muted">Forgot password?</a>
+                          <Link to="/forgot-password"><a className="text-muted">Forgot password?</a></Link>
                         </div>
                         <div className="form-group mb-30">
                           <button
@@ -148,7 +148,7 @@ const Login = () => {
                           >{loading ? "Loading" : "Login"}
                            
                           </button>
-                          <a
+                          {/* <a
                             className="btn btn-light social-login google-login bg-light text-dark"
                             style={{
                               width: "100%",
@@ -161,7 +161,7 @@ const Login = () => {
                           >
                             <img src={logoGoogle} alt="" />
                             <span>&nbsp;&nbsp;Continue with Google</span>
-                          </a>
+                          </a> */}
                         </div>
                       </form>
                     </div>

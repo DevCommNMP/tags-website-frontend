@@ -36,7 +36,8 @@ const Search2 = ({ data }) => {
     }
   };
 
-  const handleCloseOverlay = () => {
+  const handleCloseOverlay = (event) => {
+    event.stopPropagation(); // Stop propagation here
     setShowOverlay(false);
     inputRef.current.blur();
   };
@@ -77,7 +78,7 @@ const Search2 = ({ data }) => {
               </ul>
             </div>
             <ProductCard />
-          </div>
+          </div>  
         )}
       </div>
     </>

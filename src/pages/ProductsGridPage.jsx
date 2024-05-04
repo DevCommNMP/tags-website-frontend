@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-key */
 import premiumLeather from "../assets/imgs/banner/PremiumleatherBanner.jpg";
-import casualImg from "../assets/imgs/banner/casual.png";
+import casualImg from "../assets/imgs/banner/casual.jpeg";
 import formalImg from "../assets/imgs/banner/Formal-footwear.jpg";
 import partyImg from "../assets/imgs/banner/Party-Footwear.jpg";
-// import ethinicImg from "../assets/imgs/banner/Ethinic"
+import ethinicImg from  "../assets/imgs/banner/ethnic.jpeg"
 import { useState, useEffect } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
@@ -204,7 +204,7 @@ if(subtypes){
       </div>
     )}
     {title === "Ethinic Footwear" && (
-      <div className="archive-header category_bg" style={{ backgroundImage: `url(${casualImg})`, height: 300 }}>
+      <div className="archive-header category_bg" style={{ backgroundImage: `url(${ethinicImg})`, height: 300 }}>
         <div className="row align-items-center">
           <div className="col-xl-3">
             {title ? <h1 className="mb-15">{title}</h1> : ""}

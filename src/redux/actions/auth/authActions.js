@@ -83,6 +83,34 @@ export const verifyEmail = createAsyncThunk("user/verifyemail", async (token, { 
   }
 });
 
+
+
+export const verifyResetPasswordToken = createAsyncThunk("user/verify-reset-token", async (token, { rejectWithValue }) => {
+  console.log(token); // Log the token for debugging purposes
+
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    };
+
+    // Since you're sending a POST request, you should include some data in the request body.
+    // I'll assume an empty object '{}' for now. You can adjust this according to your API requirements.
+    const res = await axios.post(`${baseUrl}/api/verify-reset-Password-Token`, {}, config);
+    return res.data;
+  } catch (error) {
+    // If there's no response, rethrow the error
+    if (!error.response) {
+      throw error;
+    }
+
+    // If there's a response, reject with the response data
+    return rejectWithValue(error.response.data);
+  }
+});
+
 // Logout action
 export const logoutAction = createAsyncThunk("/logout", async (payload, { rejectWithValue }) => {
   try {

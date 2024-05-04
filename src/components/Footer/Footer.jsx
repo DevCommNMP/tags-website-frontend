@@ -6,7 +6,7 @@ import phoneCall from "../../assets/imgs/theme/icons/phone-call.svg";
 import iconFacebookWhite from "../../assets/imgs/theme/icons/icon-facebook-white.svg";
 import iconTwitterWhite from "../../assets/imgs/theme/icons/icon-twitter-white.svg";
 import iconInstagramWhite from "../../assets/imgs/theme/icons/icon-instagram-white.svg";
-import iconPinterestWhite from "../../assets/imgs/theme/icons/icon-pinterest-white.svg";
+import iconWhatsappWhite from "../../assets/imgs/theme/icons/icons-whatsapp.svg";
 import iconYoutubeWhite from "../../assets/imgs/theme/icons/icon-youtube-white.svg";
 import { Link } from "react-router-dom";
 
@@ -49,39 +49,52 @@ const Footer = () => {
                 <h4 className="widget-title">Company</h4>
                 <ul className="footer-list mb-sm-5 mb-md-0">
                   <li>
-                    <a>About Us</a>
+                  <Link to="/aboutus"><a style={{color:"grey"}}>About Us</a></Link>
+
                   </li>
                   <li>
-                    <a>Privacy Policy</a>
+                  <Link to="/privacy-policy"><a style={{color:"grey"}}>Privacy Policy</a></Link>
                   </li>
                   <li>
-                    <a>Terms &amp; Conditions</a>
+                  <Link to="/terms-conditions"><a style={{color:"grey"}}>Terms &amp; Conditions</a></Link>
+
+                  
                   </li>
                   <li>
-                    <a>Contact Us</a>
+                  <Link to="/shipping-policy"><a style={{color:"grey"}}>Shipping Policy</a></Link>
+
+                    
                   </li>
                   <li>
-                    <a>Support Center</a>
+                  <Link to="/refund-policy"><a style={{color:"grey"}}>Refund & Cancellation Policy</a></Link>
+
                   </li>
                 </ul>
               </div>
               <div className="footer-link-widget col">
                 <h4 className="widget-title">Shop by Types</h4>
-                <ul className="footer-list mb-sm-5 mb-md-0">
+                <ul className="footer-list mb-sm-5 mb-md-0 "  >
                   <li>
-                    <a>Boots</a>
+                  <Link to="/products/subtypes/Boots"><a style={{color:"grey"}}>Boots</a></Link>
                   </li>
                   <li>
-                    <a>Comfort</a>
+                  <Link to="/products/subtypes/Comfort"><a style={{color:"grey"}}>Comfort</a></Link>
+
+                    <a></a>
                   </li>
                   <li>
-                    <a>Slip Ons</a>
+                  <Link to="/products/subtypes/Slipons"><a style={{color:"grey"}}>Slipons</a></Link>
+
                   </li>
                   <li>
-                    <a>Sneakers</a>
+                  <Link to="/products/subtypes/Sneakers"><a style={{color:"grey"}}>Sneakers</a></Link>
+
+                  
                   </li>
                   <li>
-                    <a>Walking Shoes</a>
+                  <Link to="/products/subtypes/Walking Shoes"><a style={{color:"grey"}}>Walking Shoes</a></Link>
+
+                  
                   </li>
                 </ul>
               </div>
@@ -89,19 +102,25 @@ const Footer = () => {
                 <h4 className="widget-title">Shop by Categories</h4>
                 <ul className="footer-list mb-sm-5 mb-md-0">
                   <li>
-                    <a>Casual Shoes</a>
+                  <Link to="/categories/Casual Footwear"><a style={{color:"grey"}}>Casual Shoes</a></Link>
                   </li>
                   <li>
-                    <a>Ethnic Shoes</a>
+                  <Link to="/categories/Ethnic Shoes"><a style={{color:"grey"}}>Ethnic Shoes</a></Link>
+
+                    
                   </li>
                   <li>
-                    <a>Formal Shoes</a>
+                  <Link to="/categories/Formal Shoes"><a style={{color:"grey"}}>Formal Shoes</a></Link>
+ 
                   </li>
                   <li>
-                    <a>Party Shoes</a>
+                  <Link to="/categories/Party Shoes"><a style={{color:"grey"}}>Party Shoes</a></Link>
+
                   </li>
                   <li>
-                    <a>Sports Shoes</a>
+                  <Link to="/categories/Sports Shoes"><a style={{color:"grey"}}>Sports Shoes</a></Link>
+
+                   
                   </li>
                 </ul>
               </div>
@@ -110,20 +129,15 @@ const Footer = () => {
                 <h4 className="widget-title">Account</h4>
                 <ul className="footer-list mb-sm-5 mb-md-0">
                   <li>
-                    <a>Sign In</a>
+                  <Link to="/login"><a style={{color:"grey"}}>Sign In</a></Link>
+
                   </li>
                   <li>
-                    <a>View Cart</a>
+                  <Link to="/cart"><a style={{color:"grey"}}>View Cart</a></Link>
+                  
                   </li>
-                  <li>
-                    <a>My Wishlist</a>
-                  </li>
-                  <li>
-                    <a>Help Ticket</a>
-                  </li>
-                  <li>
-                    <a>Shipping Details</a>
-                  </li>
+                 
+               
                 </ul>
               </div>
             </div>
@@ -148,19 +162,19 @@ const Footer = () => {
               <div className="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
                 <div className="mobile-social-icon">
                   <h6 className="text-white">Follow Us</h6>
-                  <a>
+                  <a href="https://www.facebook.com" target="_blank">
                     <img src={iconFacebookWhite} alt="" />
                   </a>
-                  <a>
+                  <a href="https://www.twitter.com" target="_blank">
                     <img src={iconTwitterWhite} alt="" />
                   </a>
-                  <a>
+                  <a href="https://www.instagram.com" target="_blank">
                     <img src={iconInstagramWhite} alt="" />
                   </a>
-                  <a>
-                    <img src={iconPinterestWhite} alt="" />
+                  <a href="https://www.whatsapp.com" target="_blank">
+                    <img src={iconWhatsappWhite} alt="" />
                   </a>
-                  <a>
+                  <a href="https://www.youtube.com" target="_blank">
                     <img src={iconYoutubeWhite} alt="" />
                   </a>
                 </div>

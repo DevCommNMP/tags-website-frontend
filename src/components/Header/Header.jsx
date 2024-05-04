@@ -91,6 +91,7 @@ const Header = ({ allProducts }) => {
                         <Link to="/categories/Occation">
                           Occasional <i className="fi-rs-angle-down"></i>
                         </Link>
+                        {/* this is a comment */}
                         <ul className="sub-menu">
                           <li>
                             <Link to="/categories/Casual Footwear">Casual Footwear</Link>
@@ -101,12 +102,12 @@ const Header = ({ allProducts }) => {
                           <li>
                             <Link to="/categories/Formal Footwear">Formal Footwear</Link>
                           </li>
-                          <li>
+                          <li>  
                             <Link to="/categories/Party Footwear">Party Footwear</Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link to="/categories/Sports Footwear">Sports Footwear</Link>
-                          </li>
+                          </li> */}
                         </ul>
                       </li>
                       <li>
@@ -139,7 +140,7 @@ const Header = ({ allProducts }) => {
                             <Link to="/products/subtypes/Pumps">Pumps</Link>
                           </li>
                           <li>
-                            <Link to="/products/subtypes/Sandles">Sandals</Link>
+                            <Link to="/products/subtypes/Sandles">Sandles</Link>
                           </li>
                           <li>
                             <Link to="/products/subtypes/Slides">Slides</Link>
@@ -150,9 +151,9 @@ const Header = ({ allProducts }) => {
                           <li>
                             <Link to="/products/subtypes/Slip Ons">Slip Ons</Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link to="/products/subtypes/Sneakers">Sneakers</Link>
-                          </li>
+                          </li> */}
                           <li>
                             <Link to="/products/subtypes/Walking Footwear">Walking Footwear</Link>
                           </li>

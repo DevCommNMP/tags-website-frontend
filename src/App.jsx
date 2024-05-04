@@ -17,6 +17,7 @@ import Invoice from "./components/Invoice.jsx";
 import AllCategoriesPage from "./pages/AllCategoriesPage.jsx";
 import Cart from "./pages/cart.jsx";
 import PaymentStatus from "./components/PaymentStatus.jsx";
+import ChangePasswordMsg from "./components/Auth/ResetPassword/changePasswordInfo.jsx";
 
 function App() {
   return (
@@ -24,13 +25,15 @@ function App() {
       <Provider store={Store}>
         <BrowserRouter>
           <Routes>
+            
             <Route exact path="/" element={<Homepage />} />
             <Route exact path="/products/:id" element={<Product />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/forgot-password" element={<ForgotPassword />} />
             <Route exact path="/signup" element={<SignUp />} />
-            <Route exact path="/reset_password" element={<ResetPassword />} />
-            <Route exact path="/forgot_password" element={<ForgotPassword />} />
+            <Route exact path="/reset-password/:token" element={<ResetPassword />} />
+            {/* <Route exact path="/forgot_password" element={<ForgotPassword />} /> */}
+            <Route exact path="/forgot-password-message" element={<ChangePasswordMsg/>} />
             <Route exact path="/profile" element={<UserAccountPage />} />
             <Route exact path="/cart" element={<Cart />} />
             <Route exact path="/checkout" element={<CheckoutPage />} />
@@ -40,8 +43,18 @@ function App() {
             <Route exact path="/search/:searchitem" element={<ProductsGridPage />} />
             <Route exact path="/all-categories" element={<AllCategoriesPage />} />
             <Route exact path="/invoice/:id" element={<Invoice />} />
+            <Route exact path="/verify-account" element={<VerifyEmail />} />
+
             <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
-            {/* <Route exact path="/payment-status" element={<PaymentStatus />} /> */}
+            <Route exact path="/aboutus" element={<PaymentStatus />} />
+            <Route exact path="/privacy-policy" element={<PaymentStatus />} />
+            <Route exact path="/terms-conDitions" element={<PaymentStatus />} />
+            <Route exact path="/shipping-policy" element={<PaymentStatus />} />
+            <Route exact path="/refund-policy" element={<PaymentStatus />} />
+
+
+
+
             <Route exact path="/paymentsuccess" element={<PaymentStatus/>} />
           </Routes>
         </BrowserRouter>
