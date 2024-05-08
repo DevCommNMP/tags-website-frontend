@@ -1,39 +1,86 @@
-import { Link, useParams ,useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
 import { useDispatch, useSelector } from "react-redux";
-
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { verifyResetPasswordToken,updatePassword } from "../../../redux/actions/auth/authActions";
+
 const ResetPassword = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { token } = useParams();
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
   // State variables for form data and errors
   const storeData = useSelector((store) => store.auth);
-  const {ValidPasswordResetToken, loading, appErr, serverErr } = storeData;
-  const{token}=useParams();
+  const { ValidPasswordResetToken, loading, appErr, serverErr } = storeData;
+
   useEffect(() => {
-    if(token){
-      toast.success("Mail sent successfully")
-      console.log(token)
+    if (!token) {
+      navigate('/login');
+      return;
     }
-   
-  }, [token])
+
+    dispatch(verifyResetPasswordToken({token}))
+      .then((action) => {
+        if (!action.payload.success) {
+          toast.error(action.payload.message);
+          // navigate('/login');
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        toast.error("Something went wrong. Please try again.");
+        // navigate('/login');
+      });
+  }, [dispatch]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    // Check if passwords match
+    if (password !== confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
+  
+    try {
+      const data = { password, token };
+      const action = await dispatch(updatePassword(data));
+  
+      // Check if the action contains an error
+      if (action.error) {
+        toast.error("Failed to update password. Please try again.");
+      } else if (action.payload.success) {
+        toast.success(action.payload.message);
+        setTimeout(() => {
+          navigate('/login');
+        }, 3000);
+      } else {
+        toast.error(action.payload.message);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("Something went wrong. Please try again.");
+    }
+  };
+  
 
   return (
     <>
-    <ToastContainer/>
+      <ToastContainer />
       <Header />
       <div className="main pages">
         <div className="page-header breadcrumb-wrap">
           <div className="container">
             <div className="breadcrumb">
-              <a rel="nofollow">
-                <Link to="/">
-                  <i className="fi-rs-home mr-5"></i>Home
-                </Link>
-              </a>
-              <span></span>My Account
+              <Link to="/">
+                <i className="fi-rs-home mr-5"></i>Home
+              </Link>
+              <span>My Account</span>
             </div>
           </div>
         </div>
@@ -50,17 +97,37 @@ const ResetPassword = () => {
                   <div className="col-lg-6 col-md-8">
                     <div className="login_wrap widget-taber-content background-white">
                       <div className="padding_eight_all bg-white">
-                        <form method="post">
+                        <form onSubmit={handleSubmit}>
                           <div className="form-group">
-                            <input type="text" required="" name="email" placeholder="Password *" />
+                            <input
+                              type="password"
+                              required
+                              value={password}
+                              onChange={(e) => setPassword(e.target.value)}
+                              placeholder="Password *"
+                            />
                           </div>
                           <div className="form-group">
-                            <input type="text" required="" name="email" placeholder="Confirm you password *" />
+                            <input
+                              type="password"
+                              required
+                              value={confirmPassword}
+                              onChange={(e) => setConfirmPassword(e.target.value)}
+                              placeholder="Confirm your password *"
+                            />
                           </div>
                           <div className="form-group">
-                            <button type="submit" className="btn btn-heading btn-block hover-up" name="login">
-                              Reset password
-                            </button>
+                          {ValidPasswordResetToken ? (
+  <button
+    type="submit"
+    className="btn btn-heading btn-block hover-up"
+    name="login"
+    disabled={loading}
+  >
+    Reset password
+  </button>
+) : null}
+
                           </div>
                         </form>
                       </div>
@@ -69,7 +136,7 @@ const ResetPassword = () => {
                   <div className="col-lg-6 pl-50">
                     <h6 className="mb-15">Password must:</h6>
                     <p>Be between 9 and 64 characters</p>
-                    <p>Include at least tow of the following:</p>
+                    <p>Include at least two of the following:</p>
                     <ol className="list-insider">
                       <li>An uppercase character</li>
                       <li>A lowercase character</li>

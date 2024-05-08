@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loginUserAction, verifyEmail,verifyResetPasswordToken, logoutAction, registerUserAction } from "../../actions/auth/authActions";
+import { loginUserAction, verifyEmail,verifyResetPasswordToken,updatePassword, logoutAction, registerUserAction } from "../../actions/auth/authActions";
 
 const initialState = {
   user: "",
@@ -80,7 +80,7 @@ const authSlice = createSlice({
 
     //reset-password-token
     builder.addCase(verifyResetPasswordToken.pending, (state, action) => {
-      state.registered = false;
+     
       state.emailVerified = false;
       state.loading = true;
       state.appErr = null;
@@ -92,8 +92,26 @@ const authSlice = createSlice({
     });
     builder.addCase(verifyResetPasswordToken.rejected, (state, action) => {
       state.loading = false;
-      state.registered = false;
+      
       state.emailVerified = false;
+      state.appErr = action?.payload?.message || "An error occurred";
+      state.serverErr = action?.payload?.message || "Network error";
+    });
+
+    //update-password
+     //reset-password-token
+     builder.addCase(updatePassword.pending, (state, action) => {
+    
+      state.loading = true;
+      state.appErr = null;
+      state.serverErr = null;
+    });
+    builder.addCase(updatePassword.fulfilled, (state, action) => {
+      state.loading = false;
+      
+    });
+    builder.addCase(updatePassword.rejected, (state, action) => {
+      state.loading = false;
       state.appErr = action?.payload?.message || "An error occurred";
       state.serverErr = action?.payload?.message || "Network error";
     });

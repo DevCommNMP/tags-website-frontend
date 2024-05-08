@@ -18,24 +18,12 @@ const ChangePasswordMsg = () => {
   // State for login button activation
 
   useEffect(() => {
-    // if (token) {
-    //   const verifyUser = async () => {
-    //     try {
-    //       const res = await dispatch(verifyEmail(token)); // Dispatch verifyEmail action with token as a parameter
-    //       if (res.error) {
-    //         toast.error(res.error.message);
-    //       } else {
-    //         toast.success("Account verified Successfully");
-    //       }
-    //     } catch (error) {
-    //       toast.error(appErr || serverErr || error.message);
-    //     }
-    //   };
-    //   verifyUser();
-    // }
-
    
-  }, []); // Add dependencies to useEffect
+      toast.success("Mail sent successfully")
+   
+   
+  }, [])
+
 
   const buttonHandler = () => {
     navigate("/login");

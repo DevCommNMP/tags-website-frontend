@@ -1,7 +1,9 @@
 import logo from "../../assets/imgs/theme/logo.png";
 import iconHot from "../../assets/imgs/theme/icons/icon-hot.svg";
 import iconHeadphone from "../../assets/imgs/theme/icons/icon-headphone.svg";
-
+import cartImg from "../../assets/imgs/theme/icons/icon-cart.svg";
+import wishList from "../../assets/imgs/theme/icons/icon-heart.svg";
+import account from "../../assets/imgs/theme/icons/icon-user.svg";
 import { useState, useEffect } from "react";
 // import HeaderBottom from "./HeaderBottom";
 import HeaderMiddle from "./HeaderMiddle";
@@ -15,6 +17,10 @@ import HeaderMobile from "./HeaderMobile";
 
 const Header = ({ allProducts }) => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const [cart, setCart] = useState([]);
+  const [user, setUser] = useState("");
+  const [token, setToken] = useState("");
+  
 
   const openMenu = () => {
     setIsSidebarVisible(true);
@@ -23,6 +29,45 @@ const Header = ({ allProducts }) => {
   const closeMenu = () => {
     setIsSidebarVisible(false);
   };
+  useEffect(() => {
+    const localData = localStorage.getItem("userData");
+    const cartData = JSON.parse(localStorage.getItem("cartItems"));
+
+    if (localData) {
+      const parsedData = JSON.parse(localData);
+      setToken(parsedData.token);
+      setUser(parsedData);
+    }
+
+    if (cartData) {
+      setCart(cartData);
+    }
+  }, [localStorage]);
+
+  useEffect(() => {
+    // Define function to handle cart change
+    const handleCartChange = () => {
+      const cartData = JSON.parse(localStorage.getItem("cartItems"));
+      if (cartData) { 
+        setCart(cartData); // Update cart state based on localStorage data
+      }
+    };
+
+    // Add event listener to listen for changes in localStorage
+    window.addEventListener("storage", handleCartChange);
+
+    // Clean up by removing event listener
+    return () => {
+      window.removeEventListener("storage", handleCartChange);
+    };
+  }, []); // No dependencies, so it only runs once on component mount
+
+  const signOutHandler = async () => {
+    await localStorage.removeItem("userData");
+    setToken("");
+    navigate("/login");
+  };
+
 
   useEffect(() => {
     if (isSidebarVisible) {
@@ -42,7 +87,7 @@ const Header = ({ allProducts }) => {
             <div className="mobile-header-top">
               <div className="mobile-header-logo">
                 <Link to="/">
-                  <img src="assets/imgs/theme/logo.png" alt="logo" />
+                  <img src={logo} alt="logo" />
                 </Link>
               </div>
               <div onClick={closeMenu} className="mobile-menu-close close-style-wrap close-style-position-inherit">
@@ -84,6 +129,12 @@ const Header = ({ allProducts }) => {
                         <img src={iconHot} alt="hot deals" />
                         <Link className="active" to="/categories/Deals">
                           Deals
+                        </Link>
+                      </li>
+                      <li className="hot-deals" style={{color:"red"}}>
+                        {/* <img src={iconHot} alt="hot deals" /> */}
+                        <Link  to="/">
+                         Home
                         </Link>
                       </li>
 
@@ -235,71 +286,140 @@ const Header = ({ allProducts }) => {
               <div className="header-action-right d-block d-lg-none">
                 <div className="header-action-2">
                   <div className="header-action-icon-2">
-                    <Link to="/wishlist">
-                      <img alt="Nest" src="assets/imgs/theme/icons/icon-heart.svg" />
-                      <span className="pro-count white">4</span>
+                  <Link className="mini-cart-icon" to="/cart">
+                      <img alt="Nest" src={cartImg} />
+                      <span className="pro-count blue">{cart.length || 0}</span>
                     </Link>
+                   
                   </div>
                   <div className="header-action-icon-2">
-                    <Link className="mini-cart-icon" to="/cart">
-                      <img alt="Nest" src="assets/imgs/theme/icons/icon-cart.svg" />
-                      <span className="pro-count white">2</span>
-                    </Link>
-                    <div className="cart-dropdown-wrap cart-dropdown-hm2">
-                      <ul>
-                        <li>
-                          <div className="shopping-cart-img">
-                            <a>
-                              <img alt="Nest" src="assets/imgs/shop/thumbnail-3.jpg" />
-                            </a>
-                          </div>
-                          <div className="shopping-cart-title">
-                            <h4>
-                              <a>Plain Striola Shirts</a>
-                            </h4>
-                            <h3>
-                              <span>1 × </span>$800.00
-                            </h3>
-                          </div>
-                          <div className="shopping-cart-delete">
-                            <a>
-                              <i className="fi-rs-cross-small"></i>
-                            </a>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="shopping-cart-img">
-                            <a>
-                              <img alt="Nest" src="assets/imgs/shop/thumbnail-4.jpg" />
-                            </a>
-                          </div>
-                          <div className="shopping-cart-title">
-                            <h4>
-                              <a>Macbook Pro 2024</a>
-                            </h4>
-                            <h3>
-                              <span>1 × </span>$3500.00
-                            </h3>
-                          </div>
-                          <div className="shopping-cart-delete">
-                            <a>
-                              <i className="fi-rs-cross-small"></i>
-                            </a>
-                          </div>
-                        </li>
-                      </ul>
-                      <div className="shopping-cart-footer">
-                        <div className="shopping-cart-total">
-                          <h4>
-                            Total <span>$383.00</span>
-                          </h4>
+                  {token ? (
+                    <div className="header-action-icon-2">
+                      <div className="header-action-icon-2">
+                        <div style={{ width: 30, height: 30, border: "1px solid red", borderRadius: "50%" }}>
+                          <img className="svgInject" alt="Profile" src={user.profileImage || account} />
                         </div>
-                        <div className="shopping-cart-button">
-                          <Link to="/checkouts">View cart</Link>
-                          <Link to="/checkouts">Checkout</Link>
-                        </div>
+                        <Link>
+                          <span className="lable ml-1">hello, {user.userName}</span>
+                        </Link>
+                      </div>
+
+                      <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
+                        <ul>
+                          <li>
+                            <Link to="/profile">
+                              <i className="fi fi-rs-user mr-10"></i>My Account
+                            </Link>
+                          </li>
+                          {/* <li>
+                            <Link to="/profile">
+                              <i className="fi fi-rs-location-alt mr-10"></i>
+                              Order Tracking
+                            </Link>
+                          </li> */}
+                       
+                          <li>
+                            <a>
+                              <i className="fi fi-rs-heart mr-10"></i>My Wishlist
+                            </a>
+                          </li>
+                          {/* <li>
+                            <Link to="/profile">
+                              <i className="fi fi-rs-settings-sliders mr-10"></i>
+                              Setting
+                            </Link>
+                          </li> */}
+                          <li>
+                            <Link onClick={signOutHandler}>
+                              <i className="fi fi-rs-sign-out mr-10"></i>
+                              Sign out
+                            </Link>
+                          </li>
+                        </ul>
                       </div>
                     </div>
+                  ) : (
+                    <div className="header-action-icon-2">
+                      <Link to="/login">
+                        <img className="svgInject" alt="Account" src={account} />
+                      </Link>
+                      <Link to="/login">
+                        <span className="lable ml-0" onClick={() => navigate("/login")}>
+                          Login
+                        </span>
+                      </Link>
+                    </div>
+                  )}
+                    <div className="header-action-right">
+                <div className="header-action-2">
+                  <div className="header-action-icon-2">
+                    <Link to="/cart" className="mini-cart-icon">
+                      <img alt="Cart" src={cartImg} />
+                      <span className="pro-count blue">{cart.length || 0}</span>
+                    </Link>
+                    <Link to="/cart">
+                      <span className="lable">Cart</span>
+                    </Link>
+                  </div>
+                  {token ? (
+                    <div className="header-action-icon-2">
+                      <div className="header-action-icon-2">
+                        <div style={{ width: 30, height: 30, border: "1px solid red", borderRadius: "50%" }}>
+                          <img className="svgInject" alt="Profile" src={user.profileImage || account} />
+                        </div>
+                        <Link>
+                          <span className="lable ml-1">hello, {user.userName}</span>
+                        </Link>
+                      </div>
+
+                      <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
+                        <ul>
+                          <li>
+                            <Link to="/profile">
+                              <i className="fi fi-rs-user mr-10"></i>My Account
+                            </Link>
+                          </li>
+                          {/* <li>
+                            <Link to="/profile">
+                              <i className="fi fi-rs-location-alt mr-10"></i>
+                              Order Tracking
+                            </Link>
+                          </li> */}
+                       
+                          <li>
+                            <a>
+                              <i className="fi fi-rs-heart mr-10"></i>My Wishlist
+                            </a>
+                          </li>
+                          {/* <li>
+                            <Link to="/profile">
+                              <i className="fi fi-rs-settings-sliders mr-10"></i>
+                              Setting
+                            </Link>
+                          </li> */}
+                          <li>
+                            <Link onClick={signOutHandler}>
+                              <i className="fi fi-rs-sign-out mr-10"></i>
+                              Sign out
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="header-action-icon-2">
+                      <Link to="/login">
+                        <img className="svgInject" alt="Account" src={account} />
+                      </Link>
+                      <Link to="/login">
+                        <span className="lable ml-0" onClick={() => navigate("/login")}>
+                          Login
+                        </span>
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              </div>
                   </div>
                 </div>
               </div>

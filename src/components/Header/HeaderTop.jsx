@@ -8,9 +8,7 @@ const HeaderTop = () => {
             <div className="col-xl-3 col-lg-4">
               <div className="header-info">
                 <ul>
-                  <li>
-                    <Link to="/account">My Account</Link>
-                  </li>
+               
                   <li>
                     <Link to="/blog">Blog</Link>
                   </li>

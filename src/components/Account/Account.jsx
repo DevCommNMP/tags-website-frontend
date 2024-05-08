@@ -24,8 +24,8 @@ useEffect(() => {
   dispatch(fetchUserDetails(UserData.email))
 if((user )){
   toast("Login successfully!");
-}``
-}, [])
+}
+}, [user])
 
 
   const handleTabClick = (tabId) => {

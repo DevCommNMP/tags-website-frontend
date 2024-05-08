@@ -15,12 +15,14 @@ const HeaderBottom = () => {
               </Link>
             </div>
             <div className="header-nav d-none d-lg-flex">
+            <Link className="categories-button-active" to="/all-categories">
               <div className="main-categori-wrap d-none d-lg-block">
-                <Link className="categories-button-active" to="/all-categories">
-                  <span className="fi-rs-apps"></span> <span className="et">Browse</span> All Categories
+              
+                  <span className="fi-rs-apps" srt  ></span> <span className="et" >Browse</span> All Categories
                   {/* <i className="fi-rs-angle-down"></i> */}
-                </Link>
+            
               </div>
+              </Link>
               <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                 <nav>
                   <ul>
