@@ -51,7 +51,7 @@ function App() {
             <Route exact path="/terms-conDitions" element={<PaymentStatus />} />
             <Route exact path="/shipping-policy" element={<PaymentStatus />} />
             <Route exact path="/refund-policy" element={<PaymentStatus />} />
-
+            <Route exact path="/bestfits/:amount" element={<ProductsGridPage />} />
 
 
 
