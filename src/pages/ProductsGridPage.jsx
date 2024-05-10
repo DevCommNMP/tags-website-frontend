@@ -26,11 +26,12 @@ const ProductsGridPage = () => {
   const [Loading,setloading]=useState(false);
   const [updatedData,setupdatedData]=useState([]);
   const [data,setData]=useState([]);
+  const [productCount,setProductCount]=useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
   const [minPrice,setminPrice]=useState(1000);
   const [maxPrice,setmaxPrice]=useState(10000)
   const{subtypes}=useParams();
-// console.log(subtypes)
+console.log(title)
   const storeData = useSelector((store) => store.products);
   const { products, productsLoading, appErr, serverErr } = storeData;
   const [sliderValues, setSliderValues] = useState([0, 100]);
@@ -38,23 +39,37 @@ const ProductsGridPage = () => {
 
   const filteredDataByCategories = async (title) => {
     setloading(true);
-    const filtereddata = products.filter((product) => product.subcategory.subcategoriesName === title);
-    setupdatedData(filtereddata);
-    setloading(false);
+    if(title==="Premium Leather" ){
+      const filtereddata = products.filter((product) => product.isPremiumLeather === true);
+      setupdatedData(filtereddata);
+      setProductCount(filtereddata.length)
+      setloading(false);
+    }
+    else{
+      const filtereddata = products.filter((product) => product.subcategory.subcategoriesName === title);
+      console.log(filtereddata)
+      setupdatedData(filtereddata);
+      setProductCount(filtereddata.length)
+      setloading(false);
+    }
+  
   };
   const filteredDataBySubtype = async (subtypes) => {
     setloading(true);
     const filtereddata = products.filter((product) => product.subcategoryType.subcategoryTypeName === subtypes);
+    setProductCount(filtereddata.length)
     setupdatedData(filtereddata);
     setloading(false);
-console.log()
+    // console.log(products)
 
   };const filteredDataByColor = async (color) => {
     try {
       setloading(true);
       const filteredData = products.filter((product) => product.colorsAvailable.includes(color));
       // console.log(products.filter((product) => product.colorsAvailable.includes('color'))) // Logging filtered data for debugging
-      await setupdatedData(filteredData); // Assuming setupdatedData is an async function
+     setupdatedData(filteredData); 
+      setProductCount(filteredData.length)// Assuming setupdatedData is an async function
+      setloading(false);
     } catch (error) {
       // Handle any errors here
       console.error("Error filtering data:", error);
@@ -77,8 +92,8 @@ console.log()
       
       return colorMatch && priceMatch;
     });
-  
     setupdatedData(filteredData);
+    setProductCount(filteredData.length)
     setloading(false);
   };
   
@@ -197,7 +212,7 @@ if(subtypes){
               <Link to="/" rel="nofollow">
                 <i className="fi-rs-home mr-5"></i>Home
               </Link>
-              <span></span> Shop <span></span> {title || color ||subtypes}
+              <span></span>   {title || color ||subtypes}
             </div>
           </div>
         </div>
@@ -213,7 +228,7 @@ if(subtypes){
               <Link to="/" rel="nofollow">
                 <i className="fi-rs-home mr-5"></i>Home
               </Link>
-              <span></span> Shop <span></span> {title || color ||subtypes}
+              <span></span> {title || color ||subtypes}
             </div>
           </div>
         </div>
@@ -229,7 +244,7 @@ if(subtypes){
               <Link to="/" rel="nofollow">
                 <i className="fi-rs-home mr-5"></i>Home
               </Link>
-              <span></span> Shop <span></span> {title || color ||subtypes}
+              <span></span>   {title || color ||subtypes}
             </div>
           </div>
         </div>
@@ -245,7 +260,7 @@ if(subtypes){
               <Link to="/" rel="nofollow">
                 <i className="fi-rs-home mr-5"></i>Home
               </Link>
-              <span></span> Shop <span></span> {title || color ||subtypes}
+              <span></span>  {title || color ||subtypes}
             </div>
           </div>
         </div>
@@ -261,7 +276,7 @@ if(subtypes){
               <Link to="/" rel="nofollow">
                 <i className="fi-rs-home mr-5"></i>Home
               </Link>
-              <span></span> Shop <span></span> {title || color ||subtypes}
+              <span></span>  {title || color ||subtypes}
             </div>
           </div>
         </div>
@@ -277,7 +292,7 @@ if(subtypes){
               <Link to="/" rel="nofollow">
                 <i className="fi-rs-home mr-5"></i>Home
               </Link>
-              <span></span> Shop <span></span> {title || color ||subtypes}
+              <span></span> {title || color ||subtypes}
             </div>
           </div>
         </div>
@@ -296,7 +311,7 @@ if(subtypes){
               <Link to="/" rel="nofollow">
                 <i className="fi-rs-home mr-5"></i>Home
               </Link>
-              <span></span> Shop <span></span> {title || color ||subtypes}
+              <span></span>  {title || color ||subtypes}
             </div>
           </div>
         </div>
@@ -311,7 +326,7 @@ if(subtypes){
                 <div className="shop-product-fillter">
                   <div className="totall-product">
                     <p>
-                      We found <strong className="text-brand">{products.length}</strong> items for you!
+                      We found <strong className="text-brand">{productCount}</strong> items for you!
                     </p>
                   </div>
                   <div className="products-per-page-dropdown">
@@ -337,7 +352,7 @@ if(subtypes){
 </div>
 
                 {/* Pagination */}
-                <div className="text-center">
+                {productCount===0? "": <div className="text-center">
                   <Pagination>
                     <Pagination.Prev onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1} />
                     {Array.from({ length: Math.ceil(products.length / productsPerPage) }, (_, i) => (
@@ -350,7 +365,21 @@ if(subtypes){
                       disabled={currentPage === Math.ceil(products.length / productsPerPage)}
                     />
                   </Pagination>
-                </div>
+                </div>}
+                {/* <div className="text-center">
+                  <Pagination>
+                    <Pagination.Prev onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1} />
+                    {Array.from({ length: Math.ceil(products.length / productsPerPage) }, (_, i) => (
+                      <Pagination.Item key={i + 1} onClick={() => setCurrentPage(i + 1)} active={i + 1 === currentPage}>
+                        {i + 1}
+                      </Pagination.Item>
+                    ))}
+                    <Pagination.Next
+                      onClick={() => setCurrentPage(currentPage + 1)}
+                      disabled={currentPage === Math.ceil(products.length / productsPerPage)}
+                    />
+                  </Pagination>
+                </div> */}
               </div>
               <div className="col-lg-1-5 primary-sidebar sticky-sidebar">
                 {/* Sidebar Content */}
@@ -367,12 +396,12 @@ if(subtypes){
                         </a>
                       </li>
                     </Link>
-                    <Link to="/categories/Ethinic Footwear">
+                    <Link to="/categories/Ethnic Footwear">
                       <li>
                         <a>
                           {" "}
                           <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
-                          Ethinic Footwear
+                          Ethnic Footwear
                         </a>
                       </li>
 
@@ -395,7 +424,7 @@ if(subtypes){
                         </a>
                       </li>
                     </Link>
-                    <Link to="/categories/Sports Footwear">
+                    {/* <Link to="/categories/Sports Footwear">
                       <li>
                         <a>
                           {" "}
@@ -403,7 +432,7 @@ if(subtypes){
                           Sports Footwear
                         </a>
                       </li>
-                    </Link>
+                    </Link> */}
                     <Link to="/categories/Premium Leather">
                       <li>
                         <a>
