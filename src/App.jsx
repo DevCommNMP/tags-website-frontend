@@ -18,6 +18,8 @@ import AllCategoriesPage from "./pages/AllCategoriesPage.jsx";
 import Cart from "./pages/cart.jsx";
 import PaymentStatus from "./components/PaymentStatus.jsx";
 import ChangePasswordMsg from "./components/Auth/ResetPassword/changePasswordInfo.jsx";
+import AboutUs from "./pages/AboutUs.jsx";
+import TermsPage from "./pages/TermsPage.jsx";
 
 function App() {
   return (
@@ -46,11 +48,11 @@ function App() {
             <Route exact path="/verify-account" element={<VerifyEmail />} />
 
             <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
-            <Route exact path="/aboutus" element={<PaymentStatus />} />
-            <Route exact path="/privacy-policy" element={<PaymentStatus />} />
-            <Route exact path="/terms-conDitions" element={<PaymentStatus />} />
-            <Route exact path="/shipping-policy" element={<PaymentStatus />} />
-            <Route exact path="/refund-policy" element={<PaymentStatus />} />
+            <Route exact path="/about-us" element={<AboutUs />} />
+            {/* <Route exact path="/privacy-policy" element={<PaymentStatus />} /> */}
+            <Route exact path="/terms-and-conditions" element={<TermsPage />} />
+            {/* <Route exact path="/shipping-policy" element={<PaymentStatus />} /> */}
+            {/* <Route exact path="/refund-policy" element={<PaymentStatus />} /> */}
             <Route exact path="/bestfits/:amount" element={<ProductsGridPage />} />
 
 
