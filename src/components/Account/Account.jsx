@@ -131,7 +131,7 @@ if((user )){
                         <div className="card-body">
                           <div className="table-responsive">
 
-                         {userdata.order ? <table className="table">
+                         { userdata.order  ? <table className="table">
   <thead>
     <tr>
       <th>#</th>
@@ -248,7 +248,7 @@ if((user )){
                         </div>
                         <div className="card-body">
                           <p>
-                            Already have an account? <Link to="/login">Log in instead!</Link>
+                            {/* Already have an account? <Link to="/login">Log in instead!</Link> */}
                           </p>
                           <form method="post" name="enq">
                             <div className="row">

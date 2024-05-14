@@ -1,6 +1,19 @@
-import banner9 from "../assets/imgs/banner/banner-9.jpg";
+import axios from "axios";
+import banner9 from "../assets/imgs/banner/banner-9.png";
+import { useState } from 'react';
 
 const NewsLetter = () => {
+  const [email, setEmail] = useState('');
+
+  const subscribedUserHandler = async (event) => {
+    event.preventDefault(); // Prevents default form submission behavior
+    console.log(email);
+  }
+
+  const handleEmailChange = (event) => {
+   const subscribe=axios.post(`${baseUrl}/api/subscribe`);
+  }
+
   return (
     <>
       <section className="newsletter mb-15">
@@ -17,13 +30,19 @@ const NewsLetter = () => {
                     Start Your Daily Shopping with <span className="text-brand">Tags Footwear</span>
                   </p>
                   <form className="form-subcriber d-flex">
-                    <input className="border-1px" type="email" placeholder="Your emaill address" />
-                    <button className="btn" type="submit">
+                    <input 
+                      className="border-1px" 
+                      type="email" 
+                      placeholder="Your email address"
+                      value={email}
+                      onChange={handleEmailChange}
+                    />
+                    <button className="btn" onClick={subscribedUserHandler}>
                       Subscribe
                     </button>
                   </form>
                 </div>
-                <img style={{maxHeight:'100%'}} src={banner9} alt="newsletter" />
+                <img style={{maxHeight:'100%'}} src={banner9} alt="newsletter"  />
               </div>
             </div>
           </div>

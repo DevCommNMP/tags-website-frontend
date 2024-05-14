@@ -1,38 +1,30 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../../components/Header/Header";
-
 import { useDispatch, useSelector } from "react-redux";
 import { loginUserAction } from "../../../redux/actions/auth/authActions";
 import LoginImg from "../../../assets/imgs/page/login.jpg";
-import logoGoogle from "../../../assets/imgs/theme/icons/logo-google.svg";
 import Footer from "../../Footer/Footer";
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // State variables for form data and errors
   const storeData = useSelector((store) => store.auth);
-  const { user,registered,loading, appErr, serverErr } = storeData;
+  const { loading, appErr, serverErr } = storeData;
 
- useEffect(() => {
-  if(registered){
-    toast("You are registered Successfully")
-  }
-  
- }, [appErr,serverErr])
- 
-
-  // State variables for form data and errors
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    userName: "",
   });
-
   const [errors, setErrors] = useState({});
 
-  // Function to handle form input change
+  useEffect(() => {
+    if (appErr || serverErr) {
+      toast.error(appErr || serverErr);
+    }
+  }, [appErr, serverErr]);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -41,26 +33,17 @@ const Login = () => {
     });
   };
 
-  // Function to handle form submission
   const loginHandler = async (e) => {
     e.preventDefault();
-
     const validationResult = validateForm(formData);
-    console.log(validationResult);
     if (Object.keys(validationResult).length === 0) {
       const res = await dispatch(loginUserAction(formData));
       if (!res.error) {
-        // console.log(res.error.message)
         navigate("/profile");
-      } else {
-        console.log(res.error.message);
       }
-    } else {
-      console.log("Error in form validation");
     }
   };
 
-  // Function to validate form fields
   const validateForm = (data) => {
     const newErrors = {};
     if (!data.email.trim()) {
@@ -68,13 +51,12 @@ const Login = () => {
     } else if (!/^\S+@\S+\.\S+$/.test(data.email)) {
       newErrors.email = "Invalid email address";
     }
-
     return newErrors;
   };
 
   return (
     <>
-    <ToastContainer/>
+      <ToastContainer />
       <Header />
       <div className="page-content pt-150 pb-150">
         <div className="container">
@@ -98,7 +80,6 @@ const Login = () => {
                       </div>
                       <form onSubmit={loginHandler}>
                         {(appErr || serverErr) && <p style={{ color: "red", fontWeight: 900 }}>{appErr || serverErr}</p>}
-
                         <div className="form-group">
                           <input
                             type="email"
@@ -121,47 +102,14 @@ const Login = () => {
                           />
                           {errors.password && <div className="text-danger">{errors.password}</div>}
                         </div>
-                        <div className="login_footer form-group mb-50">
-                          <div className="chek-form">
-                            <div className="custome-checkbox">
-                              <input className="form-check-input" type="checkbox" name="remember" id="exampleCheckbox1" value="" />
-                              <label className="form-check-label" htmlFor="exampleCheckbox1">
-                                <span>Remember me</span>
-                              </label>
-                            </div>
-                          </div>
-                          <Link to="/forgot-password"><a className="text-muted">Forgot password?</a></Link>
-                        </div>
-                        <div className="form-group mb-30">
+                        <div className="form-group mb-50">
                           <button
                             type="submit"
-                            style={{
-                              width: "100%",
-                              borderRadius: "100px",
-                              border: "1px solid transparent",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                            }}
                             className="mb-4 btn btn-fill-out btn-block hover-up font-weight-bold"
-                            name="login"
-                          >{loading ? "Loading" : "Login"}
-                           
-                          </button>
-                          {/* <a
-                            className="btn btn-light social-login google-login bg-light text-dark"
-                            style={{
-                              width: "100%",
-                              borderRadius: "100px",
-                              border: "1px solid #333",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                            }}
+                            disabled={loading}
                           >
-                            <img src={logoGoogle} alt="" />
-                            <span>&nbsp;&nbsp;Continue with Google</span>
-                          </a> */}
+                            {loading ? "Loading..." : "Login"}
+                          </button>
                         </div>
                       </form>
                     </div>

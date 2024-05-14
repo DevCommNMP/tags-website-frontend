@@ -169,7 +169,7 @@ const HeaderMobile = () => {
         </div>
         <div className="single-mobile-header-info">
           <a>
-            <i className="fi-rs-headphones"></i>(+01) - 2345 - 6789{" "}
+            <i className="fi-rs-headphones"></i>(+91) 9611459290
           </a>
         </div>
       </div>

@@ -16,14 +16,13 @@ const Invoice = () => {
   useEffect(() => {
     const res = dispatch(fetchOrder(id));
 
-    // setresponseData(res.payload)
   }, [id]);
 
   console.log(responseData)
   const orderData = useSelector(state => state.order);
-  console.log(orderData)
+  // console.log(orderData)
   const { orderdata, loading, appErr, serverErr } = orderData;
-// console.log(orderdata)
+console.log(orderdata)
   // console.log(orderData.orderdata.subtotal);
   const currentDate = new Date(orderData.orderdata.Date);
 

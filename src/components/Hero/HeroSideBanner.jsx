@@ -1,4 +1,4 @@
-import sideBannerImg from "../../assets/imgs/banner/banner-11.webp";
+import sideBannerImg from "../../assets/imgs/banner/banner-11.jpg";
 // import Banner1 from "../../assets/imgs/homepageBanner/banner2.jpeg"
 // C:\Users\Aaditya Singh\Desktop\tags-website-frontend\src\assets\imgs\homepageBanner\banner2.jpeg
 const   HeroSideBanner = () => {

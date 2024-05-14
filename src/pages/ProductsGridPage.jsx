@@ -21,6 +21,7 @@ import LoaderImg from "../components/LoaderImg.jsx";
 const ProductsGridPage = () => {
   // console.log(data)
   const { title } = useParams();
+  const{amount}=useParams();
   const{color}=useParams();
   // const{subtypes}=useParams();
   const [Loading,setloading]=useState(false);

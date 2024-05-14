@@ -20,6 +20,7 @@ import PaymentStatus from "./components/PaymentStatus.jsx";
 import ChangePasswordMsg from "./components/Auth/ResetPassword/changePasswordInfo.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import TermsPage from "./pages/TermsPage.jsx";
+import { useEffect } from "react";
 
 function App() {
   return (

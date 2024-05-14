@@ -1,4 +1,4 @@
-import videoSrc from "../assets/videos/homepage-video.webm";
+import videoSrc from "../assets/videos/video.mp4";
 
 const YoutubeVideo = () => {
   return (

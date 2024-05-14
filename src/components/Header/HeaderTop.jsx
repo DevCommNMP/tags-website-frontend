@@ -13,7 +13,7 @@ const HeaderTop = () => {
                     <Link to="/blog">Blog</Link>
                   </li>
                   <li>
-                    <Link to="/about">About Us</Link>
+                    <Link to="/aboutus">About Us</Link>
                   </li>
                 </ul>
               </div>
@@ -33,7 +33,7 @@ const HeaderTop = () => {
               <div className="header-info header-info-right">
                 <ul>
                   <li>
-                    Need help? Call Us: <strong className="text-white"> +91 98444 88700</strong>
+                    Need help? Call Us: <strong className="text-white"> +91 9611459290</strong>
                   </li>
                   <li>
                     <a className="language-dropdown-active">INR</a>

@@ -11,6 +11,10 @@ import iconYoutubeWhite from "../../assets/imgs/theme/icons/icon-youtube-white.s
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+
+  const localData = localStorage.getItem("userData");
+  
+
   return (
     <>
       <footer className="main">
@@ -35,7 +39,8 @@ const Footer = () => {
                     <li>
                       <img src={iconContact} alt="" />
                       <strong>Call Us:</strong>
-                      <span>(+91) 98444 88700</span>
+                      <span>(+91) 9611459290
+</span>
                     </li>
                     <li>
                       <img src={iconEmail2} alt="" />
@@ -128,10 +133,11 @@ const Footer = () => {
               <div className="footer-link-widget col">
                 <h4 className="widget-title">Account</h4>
                 <ul className="footer-list mb-sm-5 mb-md-0">
-                  <li>
+                  {!localData &&  <li>
                   <Link to="/login"><a style={{color:"grey"}}>Sign In</a></Link>
 
-                  </li>
+                  </li>}
+                 
                   <li>
                   <Link to="/cart"><a style={{color:"grey"}}>View Cart</a></Link>
                   
@@ -155,7 +161,7 @@ const Footer = () => {
                 <div className="hotline d-lg-inline-flex mr-30">
                   <img src={phoneCall} alt="hotline" />
                   <p className="text-white">
-                    +91 98444 88700
+                    +91 9611459290
                   </p>
                 </div>
               </div>

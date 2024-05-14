@@ -273,7 +273,8 @@ const Header = ({ allProducts }) => {
               <div className="hotline d-none d-lg-flex">
                 <img src={iconHeadphone} alt="hotline" />
                 <p>
-                  +91 98444 88700<span>7 Days Support Center</span>
+                  +91 9611459290
+<span>7 Days Support Center</span>
                 </p>
               </div>
               <div onClick={openMenu} className="header-action-icon-2 d-block d-lg-none">
