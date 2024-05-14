@@ -14,14 +14,7 @@ const TermsPage = () => {
                   <div className="single-page pr-30 mb-lg-0 mb-sm-5">
                     <div className="single-header style-2">
                       <h2>Terms of Service</h2>
-                      <div className="entry-meta meta-1 meta-3 font-xs mt-15 mb-15">
-                        <span className="post-by">
-                          By <a href="#">Jonh</a>
-                        </span>
-                        <span className="post-on has-dot">9 April 2020</span>
-                        <span className="time-reading has-dot">8 mins read</span>
-                        <span className="hit-count has-dot">29k Views</span>
-                      </div>
+                  
                     </div>
                     <div className="single-content mb-50">
                       <p>
@@ -97,7 +90,7 @@ const TermsPage = () => {
                       </p>
                       <h4>Contact Us</h4>
                       <p>
-                        If you have any questions about these Terms, please <a href="page-contact.html">contact us</a>.
+                        If you have any questions about these Terms, please <a href="">contact us</a>.
                       </p>
                     </div>
                   </div>

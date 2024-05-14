@@ -259,7 +259,7 @@ const Header = ({ allProducts }) => {
                       </li>
 
                       <li>
-                        <Link to="/categories/Premium Leather">About</Link>
+                        <Link to="/aboutus">About</Link>
                       </li>
                       <li>
                         <Link to="/categories/Premium Leather" style={{ color: "#d02327" }}>

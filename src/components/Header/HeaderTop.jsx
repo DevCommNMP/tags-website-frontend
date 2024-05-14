@@ -9,9 +9,9 @@ const HeaderTop = () => {
               <div className="header-info">
                 <ul>
                
-                  <li>
+                  {/* <li>
                     <Link to="/blog">Blog</Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/aboutus">About Us</Link>
                   </li>

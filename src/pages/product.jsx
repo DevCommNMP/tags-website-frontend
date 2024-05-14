@@ -77,7 +77,21 @@ const Product = () => {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer 
+      
+  position="top-center"
+  autoClose={5000}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  // transition={{ bounce: true }}
+  theme="light"
+  style={{width:"100%"}}
+      />
       <Header />
       <main className="main">
         <div className="page-header breadcrumb-wrap">
@@ -98,20 +112,7 @@ const Product = () => {
               <div className="product-detail accordion-detail">
                 <div className="row mb-50 mt-30">
                   <SingleProductImages product={particularproduct} />
-                  {/* <ReactImageMagnify
-                  {...{
-                    smallImage: {
-                      alt: "Wristwatch by Ted Baker London",
-                      isFluidWidth: true,
-                      src: imagezoom,
-                    },
-                    largeImage: {
-                      src: imagezoom,
-                      width: 1200,
-                      height: 1800,
-                    },
-                  }}
-                /> */}
+                  
                   <div className="col-md-6 col-sm-12 col-xs-12">
                     <div className="detail-info pr-30 pl-30">
                       <span className="stock-status out-stock">Sale Off</span>

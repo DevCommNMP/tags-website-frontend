@@ -1,6 +1,9 @@
 import axios from "axios";
 import banner9 from "../assets/imgs/banner/banner-9.png";
 import { useState } from 'react';
+import { baseUrl } from "../utils/baseUrl";
+import { toast } from "react-toastify";
+import { ToastContainer } from 'react-toastify';
 
 const NewsLetter = () => {
   const [email, setEmail] = useState('');
@@ -8,14 +11,43 @@ const NewsLetter = () => {
   const subscribedUserHandler = async (event) => {
     event.preventDefault(); // Prevents default form submission behavior
     console.log(email);
+    try {
+      const response = await axios.post(`${baseUrl}/api/subscribe`, { email });
+     if(response.data.success){
+      toast.success(response.data.message)
+     }
+     else{
+      toast.error(response.data.message)
+     }
+
+    } catch (error) {
+toast.error(error.message)
+      // console.error('Error subscribing:', error);
+    }
   }
 
   const handleEmailChange = (event) => {
-   const subscribe=axios.post(`${baseUrl}/api/subscribe`);
+    setEmail(event.target.value);
   }
 
   return (
     <>
+<ToastContainer
+
+  position="top-center"
+  autoClose={5000}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  // rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  // transition={{ bounce: true }}
+  theme="light"
+  style={{width:"100%"}}
+/>
+
       <section className="newsletter mb-15">
         <div className="container">
           <div className="row p-5 mb-5">

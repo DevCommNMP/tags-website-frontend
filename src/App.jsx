@@ -49,9 +49,9 @@ function App() {
             <Route exact path="/verify-account" element={<VerifyEmail />} />
 
             <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
-            <Route exact path="/about-us" element={<AboutUs />} />
+            <Route exact path="/aboutus" element={<AboutUs />} />
             {/* <Route exact path="/privacy-policy" element={<PaymentStatus />} /> */}
-            <Route exact path="/terms-and-conditions" element={<TermsPage />} />
+            <Route exact path="/terms-conditions" element={<TermsPage />} />
             {/* <Route exact path="/shipping-policy" element={<PaymentStatus />} /> */}
             {/* <Route exact path="/refund-policy" element={<PaymentStatus />} /> */}
             <Route exact path="/bestfits/:amount" element={<ProductsGridPage />} />
