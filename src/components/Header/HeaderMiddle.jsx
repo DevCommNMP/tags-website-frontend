@@ -32,43 +32,14 @@ const HeaderMiddle = () => {
             <div className="header-right">
               <div className="search-style-2">
                 <form action="#">
-                  <select className="select-active">
-                    <option>All Categories</option>
-                    <option>Milks and Dairies</option>
-                    <option>Wines & Alcohol</option>
-                    <option>Clothing & Beauty</option>
-                    <option>Pet Foods & Toy</option>
-                    <option>Fast food</option>
-                    <option>Baking material</option>
-                    <option>Vegetables</option>
-                    <option>Fresh Seafood</option>
-                    <option>Noodles & Rice</option>
-                    <option>Ice cream</option>
-                  </select>
+      
                   <input type="text" placeholder="Search for items..." />
                 </form>
               </div>
               <div className="header-action-right">
                 <div className="header-action-2">
                   <div className="search-location">
-                    {/* <form action="#">
-                      <select className="select-active">
-                        <option>Your Location</option>
-                        <option>Alabama</option>
-                        <option>Alaska</option>
-                        <option>Arizona</option>
-                        <option>Delaware</option>
-                        <option>Florida</option>
-                        <option>Georgia</option>
-                        <option>Hawaii</option>
-                        <option>Indiana</option>
-                        <option>Maryland</option>
-                        <option>Nevada</option>
-                        <option>New Jersey</option>
-                        <option>New Mexico</option>
-                        <option>New York</option>
-                      </select>
-                    </form> */}
+          
                   </div>
                   <div className="header-action-icon-2">
                     <a href="shop-compare.html">
