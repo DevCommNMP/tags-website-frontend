@@ -10,7 +10,6 @@ import ResetPassword from "./components/Auth/ResetPassword/ResetPassword.jsx";
 import ForgotPassword from "./components/Auth/ForgotPassword/ForgotPassword.jsx";
 import UserAccountPage from "./pages/UserAccountPage.jsx";
 import Product from "./pages/product.jsx";
-// import SingleProductImages from "./components/SingleProductImages.jsx";
 import CheckoutPage from "./pages/CheckoutPage.jsx";
 import ProductsGridPage from "./pages/ProductsGridPage.jsx";
 import Invoice from "./components/Invoice.jsx";
@@ -21,6 +20,9 @@ import ChangePasswordMsg from "./components/Auth/ResetPassword/changePasswordInf
 import AboutUs from "./pages/AboutUs.jsx";
 import TermsPage from "./pages/TermsPage.jsx";
 import { useEffect } from "react";
+import ShippingPolicy from "./pages/ShippingPolicy.jsx";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.jsx";
+import RefundPolicy from "./pages/RefundPolicy.jsx";
 
 function App() {
   return (
@@ -28,15 +30,13 @@ function App() {
       <Provider store={Store}>
         <BrowserRouter>
           <Routes>
-            
             <Route exact path="/" element={<Homepage />} />
             <Route exact path="/products/:id" element={<Product />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/forgot-password" element={<ForgotPassword />} />
             <Route exact path="/signup" element={<SignUp />} />
             <Route exact path="/reset-password/:token" element={<ResetPassword />} />
-            {/* <Route exact path="/forgot_password" element={<ForgotPassword />} /> */}
-            <Route exact path="/forgot-password-message" element={<ChangePasswordMsg/>} />
+            <Route exact path="/forgot-password-message" element={<ChangePasswordMsg />} />
             <Route exact path="/profile" element={<UserAccountPage />} />
             <Route exact path="/cart" element={<Cart />} />
             <Route exact path="/checkout" element={<CheckoutPage />} />
@@ -47,18 +47,14 @@ function App() {
             <Route exact path="/all-categories" element={<AllCategoriesPage />} />
             <Route exact path="/invoice/:id" element={<Invoice />} />
             <Route exact path="/verify-account" element={<VerifyEmail />} />
-
             <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
-            <Route exact path="/aboutus" element={<AboutUs />} />
-            {/* <Route exact path="/privacy-policy" element={<PaymentStatus />} /> */}
+            <Route exact path="/about-us" element={<AboutUs />} />
+            <Route exact path="/shipping-policy" element={<ShippingPolicy />} />
             <Route exact path="/terms-conditions" element={<TermsPage />} />
-            {/* <Route exact path="/shipping-policy" element={<PaymentStatus />} /> */}
-            {/* <Route exact path="/refund-policy" element={<PaymentStatus />} /> */}
+            <Route exact path="/refund-policy" element={<RefundPolicy />} />
+            <Route exact path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route exact path="/bestfits/:amount" element={<ProductsGridPage />} />
-
-
-
-            <Route exact path="/paymentsuccess" element={<PaymentStatus/>} />
+            <Route exact path="/paymentsuccess" element={<PaymentStatus />} />
           </Routes>
         </BrowserRouter>
       </Provider>

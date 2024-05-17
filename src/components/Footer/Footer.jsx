@@ -11,9 +11,7 @@ import iconYoutubeWhite from "../../assets/imgs/theme/icons/icon-youtube-white.s
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-
   const localData = localStorage.getItem("userData");
-  
 
   return (
     <>
@@ -39,8 +37,7 @@ const Footer = () => {
                     <li>
                       <img src={iconContact} alt="" />
                       <strong>Call Us:</strong>
-                      <span>(+91) 9611459290
-</span>
+                      <span>(+91) 9611459290</span>
                     </li>
                     <li>
                       <img src={iconEmail2} alt="" />
@@ -54,52 +51,61 @@ const Footer = () => {
                 <h4 className="widget-title">Company</h4>
                 <ul className="footer-list mb-sm-5 mb-md-0">
                   <li>
-                  <Link to="/aboutus"><a style={{color:"grey"}}>About Us</a></Link>
-
+                    <Link to="/about-us">
+                      <a style={{ color: "grey" }}>About Us</a>
+                    </Link>
                   </li>
                   <li>
-                  <Link to="/privacy-policy"><a style={{color:"grey"}}>Privacy Policy</a></Link>
+                    <Link to="/privacy-policy">
+                      <a style={{ color: "grey" }}>Privacy Policy</a>
+                    </Link>
                   </li>
                   <li>
-                  <Link to="/terms-conditions"><a style={{color:"grey"}}>Terms &amp; Conditions</a></Link>
-
-                  
+                    <Link to="/terms-conditions">
+                      <a style={{ color: "grey" }}>Terms &amp; Conditions</a>
+                    </Link>
                   </li>
                   <li>
-                  <Link to="/shipping-policy"><a style={{color:"grey"}}>Shipping Policy</a></Link>
-
-                    
+                    <Link to="/shipping-policy">
+                      <a style={{ color: "grey" }}>Shipping Policy</a>
+                    </Link>
                   </li>
                   <li>
-                  <Link to="/refund-policy"><a style={{color:"grey"}}>Refund & Cancellation Policy</a></Link>
-
+                    <Link to="/refund-policy">
+                      <a style={{ color: "grey" }}>Refund & Cancellation Policy</a>
+                    </Link>
                   </li>
                 </ul>
               </div>
               <div className="footer-link-widget col">
                 <h4 className="widget-title">Shop by Types</h4>
-                <ul className="footer-list mb-sm-5 mb-md-0 "  >
+                <ul className="footer-list mb-sm-5 mb-md-0 ">
                   <li>
-                  <Link to="/products/subtypes/Boots"><a style={{color:"grey"}}>Boots</a></Link>
+                    <Link to="/products/subtypes/Boots">
+                      <a style={{ color: "grey" }}>Boots</a>
+                    </Link>
                   </li>
                   <li>
-                  <Link to="/products/subtypes/Comfort"><a style={{color:"grey"}}>Comfort</a></Link>
+                    <Link to="/products/subtypes/Comfort">
+                      <a style={{ color: "grey" }}>Comfort</a>
+                    </Link>
 
                     <a></a>
                   </li>
                   <li>
-                  <Link to="/products/subtypes/Slipons"><a style={{color:"grey"}}>Slipons</a></Link>
-
+                    <Link to="/products/subtypes/Slipons">
+                      <a style={{ color: "grey" }}>Slipons</a>
+                    </Link>
                   </li>
                   <li>
-                  <Link to="/products/subtypes/Sneakers"><a style={{color:"grey"}}>Sneakers</a></Link>
-
-                  
+                    <Link to="/products/subtypes/Sneakers">
+                      <a style={{ color: "grey" }}>Sneakers</a>
+                    </Link>
                   </li>
                   <li>
-                  <Link to="/products/subtypes/Walking Shoes"><a style={{color:"grey"}}>Walking Shoes</a></Link>
-
-                  
+                    <Link to="/products/subtypes/Walking Shoes">
+                      <a style={{ color: "grey" }}>Walking Shoes</a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -107,25 +113,29 @@ const Footer = () => {
                 <h4 className="widget-title">Shop by Categories</h4>
                 <ul className="footer-list mb-sm-5 mb-md-0">
                   <li>
-                  <Link to="/categories/Casual Footwear"><a style={{color:"grey"}}>Casual Shoes</a></Link>
+                    <Link to="/categories/Casual Footwear">
+                      <a style={{ color: "grey" }}>Casual Shoes</a>
+                    </Link>
                   </li>
                   <li>
-                  <Link to="/categories/Ethnic Shoes"><a style={{color:"grey"}}>Ethnic Shoes</a></Link>
-
-                    
+                    <Link to="/categories/Ethnic Shoes">
+                      <a style={{ color: "grey" }}>Ethnic Shoes</a>
+                    </Link>
                   </li>
                   <li>
-                  <Link to="/categories/Formal Shoes"><a style={{color:"grey"}}>Formal Shoes</a></Link>
- 
+                    <Link to="/categories/Formal Shoes">
+                      <a style={{ color: "grey" }}>Formal Shoes</a>
+                    </Link>
                   </li>
                   <li>
-                  <Link to="/categories/Party Shoes"><a style={{color:"grey"}}>Party Shoes</a></Link>
-
+                    <Link to="/categories/Party Shoes">
+                      <a style={{ color: "grey" }}>Party Shoes</a>
+                    </Link>
                   </li>
                   <li>
-                  <Link to="/categories/Sports Shoes"><a style={{color:"grey"}}>Sports Shoes</a></Link>
-
-                   
+                    <Link to="/categories/Sports Shoes">
+                      <a style={{ color: "grey" }}>Sports Shoes</a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -133,17 +143,19 @@ const Footer = () => {
               <div className="footer-link-widget col">
                 <h4 className="widget-title">Account</h4>
                 <ul className="footer-list mb-sm-5 mb-md-0">
-                  {!localData &&  <li>
-                  <Link to="/login"><a style={{color:"grey"}}>Sign In</a></Link>
+                  {!localData && (
+                    <li>
+                      <Link to="/login">
+                        <a style={{ color: "grey" }}>Sign In</a>
+                      </Link>
+                    </li>
+                  )}
 
-                  </li>}
-                 
                   <li>
-                  <Link to="/cart"><a style={{color:"grey"}}>View Cart</a></Link>
-                  
+                    <Link to="/cart">
+                      <a style={{ color: "grey" }}>View Cart</a>
+                    </Link>
                   </li>
-                 
-               
                 </ul>
               </div>
             </div>
@@ -160,9 +172,7 @@ const Footer = () => {
               <div className="col-xl-4 col-lg-6 text-center d-none d-xl-block">
                 <div className="hotline d-lg-inline-flex mr-30">
                   <img src={phoneCall} alt="hotline" />
-                  <p className="text-white">
-                    +91 9611459290
-                  </p>
+                  <p className="text-white">+91 9611459290</p>
                 </div>
               </div>
               <div className="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">

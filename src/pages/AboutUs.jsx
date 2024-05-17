@@ -47,9 +47,6 @@ const AboutUs = () => {
                   Whether you&apso;re heading to work, hitting the gym, or stepping out for a night on the town, TagsFootwear has the
                   perfect pair for every occasion. Our diverse range ensures you look and feel your best.
                 </p>
-                <div className="text-center mt-5 mb-4">
-                  <img src="https://via.placeholder.com/400" className="img-fluid" alt="About Us" />
-                </div>
                 <h5 className="mt-5 mb-4">Join the TagsFootwear Family</h5>
                 <p>
                   We invite you to join the TagsFootwear family and experience the ultimate blend of style, comfort, and quality. Step into

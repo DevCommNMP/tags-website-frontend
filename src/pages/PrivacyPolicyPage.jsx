@@ -12,88 +12,115 @@ const PrivacyPolicyPage = () => {
               <div className="row">
                 <div className="col-12">
                   <div className="single-page pr-30 mb-lg-0 mb-sm-5">
-                    <div className="single-header style-2">
-                      <h2>Terms of Service</h2>
-                    </div>
                     <div className="single-content mb-50">
-                      <p>
-                        Please read these Terms of Service (“Terms”, “Terms of Service”) carefully before using the https://Evara.com
-                        website (the “Service”) operated by Evara (“us”, “we”, or “our”).
+                      <h1 className="text-center mb-4">Privacy Policy</h1>
+                      <p className="lead text-center">
+                        At TagsFootwear, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and
+                        safeguard your information when you visit our website and purchase our products.
                       </p>
-                      <p>
-                        Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These
-                        Terms apply to all visitors, users and others who access or use the Service.
-                      </p>
-                      <p>
-                        By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms
-                        then you may not access the Service.
-                      </p>
-                      <h4>Rights & restrictions</h4>
-                      <ol>
-                        <li>Members must be at least 18 years of age.</li>
+
+                      <h4 className="mt-5 mb-4">1. Information We Collect</h4>
+                      <p>We collect various types of information in connection with the services we provide, including:</p>
+                      <ul>
                         <li>
-                          Members are granted a time-limited, non-exclusive, revocable, nontransferable, and non-sublicensable right to
-                          access that portion of the online course corresponding to the purchase.
+                          <strong>Personal Information:</strong> This includes your name, email address, phone number, shipping address, and
+                          payment details. We collect this information when you place an order or create an account on our website.
                         </li>
                         <li>
-                          The portion of the online course corresponding to the purchase will be available to the Member as long as the
-                          course is maintained by the Company, which will be a minimum of one year after Member’s purchase.
+                          <strong>Non-Personal Information:</strong> This includes data that cannot be used to identify you personally, such
+                          as browser type, operating system, and the pages you visit on our website.
                         </li>
-                        <li>The videos in the course are provided as a video stream and are not downloadable.</li>
                         <li>
-                          By agreeing to grant such access, the Company does not obligate itself to maintain the course, or to maintain it
-                          in its present form.
+                          <strong>Cookies and Tracking Technologies:</strong> We use cookies and similar technologies to track your activity
+                          on our website and store certain information. You can instruct your browser to refuse all cookies or to indicate
+                          when a cookie is being sent.
                         </li>
-                      </ol>
-                      <h4>Links To Other Web Sites</h4>
-                      <p>Our Service may contain links to third-party web sites or services that are not owned or controlled by Evara.</p>
+                      </ul>
+
+                      <h4 className="mt-5 mb-4">2. How We Use Your Information</h4>
+                      <p>We use the information we collect for various purposes, including:</p>
+                      <ul>
+                        <li>To process and fulfill your orders</li>
+                        <li>To improve our website and services</li>
+                        <li>To communicate with you, including sending order confirmations, updates, and promotional materials</li>
+                        <li>To monitor and analyze usage and trends to enhance your experience on our website</li>
+                        <li>To comply with legal obligations and protect our rights</li>
+                      </ul>
+
+                      <h4 className="mt-5 mb-4">3. Sharing Your Information</h4>
                       <p>
-                        Evara has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any
-                        third party web sites or services. You further acknowledge and agree that Evara shall not be responsible or liable,
-                        directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or
-                        reliance on any such content, goods or services available on or through any such web sites or services.
+                        We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information, except in
+                        the following circumstances:
+                      </p>
+                      <ul>
+                        <li>
+                          With third-party service providers who assist us in operating our website, conducting our business, or servicing
+                          you, so long as those parties agree to keep this information confidential
+                        </li>
+                        <li>
+                          When we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or
+                          others' rights, property, or safety
+                        </li>
+                        <li>In connection with a merger, acquisition, or sale of all or a portion of our assets</li>
+                      </ul>
+
+                      <h4 className="mt-5 mb-4">4. Security of Your Information</h4>
+                      <p>
+                        We implement a variety of security measures to maintain the safety of your personal information when you place an
+                        order or enter, submit, or access your personal information. These measures include using secure servers and
+                        encrypting sensitive information.
                       </p>
                       <p>
-                        We strongly advise you to read the terms and conditions and privacy policies of any third-party web sites or
-                        services that you visit.
+                        However, please note that no method of transmission over the Internet, or method of electronic storage, is 100%
+                        secure. While we strive to use commercially acceptable means to protect your personal information, we cannot
+                        guarantee its absolute security.
                       </p>
-                      <h4>Termination</h4>
+
+                      <h4 className="mt-5 mb-4">5. Your Rights</h4>
                       <p>
-                        We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason
-                        whatsoever, including without limitation if you breach the Terms.
-                      </p>
-                      <p>
-                        All provisions of the Terms which by their nature should survive termination shall survive termination, including,
-                        without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
-                      </p>
-                      <h4>Governing Law</h4>
-                      <p>
-                        These Terms shall be governed and construed in accordance with the laws of Viet Nam, without regard to its conflict
-                        of law provisions.
+                        You have the right to access, update, or delete your personal information at any time. To do so, please contact us
+                        at <a href="mailto:info@tagsfootwear.com">info@tagsfootwear.com</a>. We will respond to your request within a
+                        reasonable timeframe.
                       </p>
                       <p>
-                        Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any
-                        provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms
-                        will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede
-                        and replace any prior agreements we might have between us regarding the Service.
+                        You also have the right to opt-out of receiving promotional communications from us by following the unsubscribe
+                        instructions provided in those communications.
                       </p>
-                      <h4>Changes</h4>
+
+                      <h4 className="mt-5 mb-4">6. Third-Party Links</h4>
                       <p>
-                        We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is
-                        material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a
-                        material change will be determined at our sole discretion.
+                        Our website may contain links to third-party websites. These third-party sites have separate and independent privacy
+                        policies. We therefore have no responsibility or liability for the content and activities of these linked sites.
+                        Nonetheless, we seek to protect the integrity of our site and welcome any feedback about these sites.
                       </p>
+
+                      <h4 className="mt-5 mb-4">7. Changes to Our Privacy Policy</h4>
                       <p>
-                        By continuing to access or use our Service after those revisions become effective, you agree to be bound by the
-                        revised terms. If you do not agree to the new terms, please stop using the Service.
+                        We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy
+                        Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this
+                        Privacy Policy are effective when they are posted on this page.
                       </p>
-                      <h4>Contact Us</h4>
-                      <p>
-                        If you have any questions about these Terms, please <a href="page-contact.html">contact us</a>.
-                      </p>
+
+                      <h4 className="mt-5 mb-4">8. Contact Us</h4>
+                      <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                      <div className="row">
+                        <div className="col-md-6">
+                          <h6> Address:</h6>
+                          <p>
+                            1368, D-5, Narayana Shasthri Road, <br />
+                            Devaraj Mohalla, Mysore - 570001
+                            <br />
+                          </p>
+                        </div>
+                        <div className="col-md-6">
+                          <h6>Phone: </h6>
+                          <a href="tel:+919611459290">+91 96114 59290</a>
+                          <h6>Email: </h6>
+                          <a href="mailto:info@tagsfootwear.com">info@tagsfootwear.com</a>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  u
                 </div>
               </div>
             </div>
