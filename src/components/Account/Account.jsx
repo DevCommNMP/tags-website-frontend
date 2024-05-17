@@ -52,11 +52,6 @@ if((user )){
                           className={`nav-link ${activeTab === "dashboard" ? "active" : ""}`}
                           onClick={() => handleTabClick("dashboard")}
                           role="tab"
-<<<<<<< HEAD
-                          aria-controls="dashboard"
-                          aria-selected="true"
-=======
->>>>>>> main
                         >
                           Dashboard
                         </a>
@@ -84,11 +79,6 @@ if((user )){
                           className={`nav-link ${activeTab === "address" ? "active" : ""}`}
                           onClick={() => handleTabClick("address")}
                           role="tab"
-<<<<<<< HEAD
-                          aria-controls="address"
-                          aria-selected="false"
-=======
->>>>>>> main
                         >
                           My Address
                         </a>
@@ -98,11 +88,6 @@ if((user )){
                           className={`nav-link ${activeTab === "account-detail" ? "active" : ""}`}
                           onClick={() => handleTabClick("account-detail")}
                           role="tab"
-<<<<<<< HEAD
-                          aria-controls="account-detail"
-                          aria-selected="false"
-=======
->>>>>>> main
                         >
                           Account details
                         </a>
@@ -123,13 +108,6 @@ if((user )){
                           <h3 className="mb-0">Welcome,{user. userName ||UserData.userName}</h3>
                         </div>
                         <div className="card-body">
-<<<<<<< HEAD
-                          <p>
-                            From your account dashboard. you can easily check &amp; view your <a href="#orders">recent orders</a>,<br />
-                            manage your <a href="#address">shipping and billing addresses</a> and{' '}
-                            <a href="#account-detail">edit your password and account details.</a>
-                          </p>
-=======
                           <div className="row align-items-center">
                             <div className="col-md-4">
                               <img src={UserImg} className="img-fluid rounded-circle" alt="Profile" />
@@ -141,7 +119,6 @@ if((user )){
                               </p>
                             </div>
                           </div>
->>>>>>> main
                         </div>
                       </div>
                     </div>
@@ -200,13 +177,8 @@ if((user )){
                         </div>
                         <div className="card-body contact-from-area">
                           <p>
-<<<<<<< HEAD
-                            To track your order please enter your OrderID in the box below and press &#34;Track&#34; button. This was given to you
-                            on your receipt and in the confirmation email you should have received.
-=======
                             To track your order please enter your OrderID in the box below and press &quot;Track&quot; button. This was
                             given to you on your receipt and in the confirmation email you should have received.
->>>>>>> main
                           </p>
                           <div className="row">
                             <div className="col-lg-8">

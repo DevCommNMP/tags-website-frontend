@@ -27,19 +27,6 @@ function App() {
     <>
       <Provider store={Store}>
         <BrowserRouter>
-<<<<<<< HEAD
-            <Routes>
-              <Route exact path="/" element={<Homepage />} />
-              <Route exact path="/product" element={<Product />} />
-              <Route exact path="/account" element={<AccountPage />} />       
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/verify-email" element={<VerifyMail/>} />
-          <Route exact path="/forgot-password" element={<ForgotPassword/>} />
-              <Route exact path="/signup" element={<SignUp />} />
-              <Route exact path="/reset_password" element={<ResetPassword/>} />
-              <Route exact path="/forgot_password" element={<ForgotPassword/>} />
-            </Routes>
-=======
           <Routes>
             
             <Route exact path="/" element={<Homepage />} />
@@ -73,7 +60,6 @@ function App() {
 
             <Route exact path="/paymentsuccess" element={<PaymentStatus/>} />
           </Routes>
->>>>>>> main
         </BrowserRouter>
       </Provider>
     </>
