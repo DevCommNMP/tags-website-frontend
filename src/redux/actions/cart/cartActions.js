@@ -42,7 +42,11 @@ import { ColorRing } from "react-loader-spinner";
 
 export const addToCart = (product, color, size, quantity) => {
   const taxprice = (product.SellingPrice <= 1000 ? ((product.SellingPrice * 0.12)).toFixed(0) : ((product.SellingPrice * 0.18)).toFixed(0));
+<<<<<<< HEAD
   // console.log(taxprice);
+=======
+  console.log(taxprice);
+>>>>>>> main
   
   return async (dispatch) => {
     try {

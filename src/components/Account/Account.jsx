@@ -1,4 +1,42 @@
+import { useState } from "react";
+import UserImg from "../../assets/imgs/theme/user-profile-img.jpg";
+import {useNavigate,Link } from "react-router-dom";
+
+import {  useDispatch,useSelector } from 'react-redux';
+import { Slide, toast, ToastContainer } from "react-toastify";
+import { useEffect } from "react";
+import { fetchUserDetails } from "../../redux/actions/user/userActions";
 const Account = () => {
+  const [activeTab, setActiveTab] = useState("dashboard");
+
+  const navigate = useNavigate();
+const dispatch=useDispatch();
+
+const storeData = useSelector((store) => store.auth);
+const orderData = useSelector((store) => store.order);
+const { user} = storeData;
+const { userdata,loading,appErr,serverErr } = orderData;
+
+console.log(userdata)
+const UserData=JSON.parse(localStorage.getItem("userData"));
+// console.log(UserData.email)
+useEffect(() => {
+  dispatch(fetchUserDetails(UserData.email))
+if((user )){
+  toast("Login successfully!");
+}
+}, [user])
+
+
+  const handleTabClick = (tabId) => {
+    setActiveTab(tabId);
+  };
+
+  const logoutHandler=async()=>{
+    await localStorage.removeItem("userData")
+    navigate('/login')
+  }
+  // console.log(user)
   return (
     <>
       <div className="page-content pt-150 pb-150">
@@ -11,72 +49,67 @@ const Account = () => {
                     <ul className="nav flex-column" role="tablist">
                       <li className="nav-item">
                         <a
-                          className="nav-link active"
-                          id="dashboard-tab"
-                          data-bs-toggle="tab"
-                          href="#dashboard"
+                          className={`nav-link ${activeTab === "dashboard" ? "active" : ""}`}
+                          onClick={() => handleTabClick("dashboard")}
                           role="tab"
+<<<<<<< HEAD
                           aria-controls="dashboard"
                           aria-selected="true"
+=======
+>>>>>>> main
                         >
-                          <i className="fi-rs-settings-sliders mr-10"></i>Dashboard
+                          Dashboard
                         </a>
                       </li>
                       <li className="nav-item">
                         <a
-                          className="nav-link"
-                          id="orders-tab"
-                          data-bs-toggle="tab"
-                          href="#orders"
+                          className={`nav-link ${activeTab === "orders" ? "active" : ""}`}
+                          onClick={() => handleTabClick("orders")}
                           role="tab"
-                          aria-controls="orders"
-                          aria-selected="false"
                         >
-                          <i className="fi-rs-shopping-bag mr-10"></i>Orders
+                          Orders
                         </a>
                       </li>
                       <li className="nav-item">
                         <a
-                          className="nav-link"
-                          id="track-orders-tab"
-                          data-bs-toggle="tab"
-                          href="#track-orders"
+                          className={`nav-link ${activeTab === "track-orders" ? "active" : ""}`}
+                          onClick={() => handleTabClick("track-orders")}
                           role="tab"
-                          aria-controls="track-orders"
-                          aria-selected="false"
                         >
-                          <i className="fi-rs-shopping-cart-check mr-10"></i>Track Your Order
+                          Track Your Order
                         </a>
                       </li>
                       <li className="nav-item">
                         <a
-                          className="nav-link"
-                          id="address-tab"
-                          data-bs-toggle="tab"
-                          href="#address"
+                          className={`nav-link ${activeTab === "address" ? "active" : ""}`}
+                          onClick={() => handleTabClick("address")}
                           role="tab"
+<<<<<<< HEAD
                           aria-controls="address"
                           aria-selected="false"
+=======
+>>>>>>> main
                         >
-                          <i className="fi-rs-marker mr-10"></i>My Address
+                          My Address
                         </a>
                       </li>
                       <li className="nav-item">
                         <a
-                          className="nav-link"
-                          id="account-detail-tab"
-                          data-bs-toggle="tab"
-                          href="#account-detail"
+                          className={`nav-link ${activeTab === "account-detail" ? "active" : ""}`}
+                          onClick={() => handleTabClick("account-detail")}
                           role="tab"
+<<<<<<< HEAD
                           aria-controls="account-detail"
                           aria-selected="false"
+=======
+>>>>>>> main
                         >
-                          <i className="fi-rs-user mr-10"></i>Account details
+                          Account details
                         </a>
                       </li>
-                      <li className="nav-item">
-                        <a className="nav-link" href="page-login.html">
-                          <i className="fi-rs-sign-out mr-10"></i>Logout
+                      <li className="nav-item" onClick={logoutHandler}>
+                        <a className="nav-link">
+                          Logout
                         </a>
                       </li>
                     </ul>
@@ -84,86 +117,96 @@ const Account = () => {
                 </div>
                 <div className="col-md-9">
                   <div className="tab-content account dashboard-content pl-50">
-                    <div className="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                    <div className={`tab-pane fade ${activeTab === "dashboard" ? "show active" : ""}`} role="tabpanel">
                       <div className="card">
-                        <div className="card-header">
-                          <h3 className="mb-0">Hello Rosie!</h3>
+                        <div className="card-header text-white">
+                          <h3 className="mb-0">Welcome,{user. userName ||UserData.userName}</h3>
                         </div>
                         <div className="card-body">
+<<<<<<< HEAD
                           <p>
                             From your account dashboard. you can easily check &amp; view your <a href="#orders">recent orders</a>,<br />
                             manage your <a href="#address">shipping and billing addresses</a> and{' '}
                             <a href="#account-detail">edit your password and account details.</a>
                           </p>
+=======
+                          <div className="row align-items-center">
+                            <div className="col-md-4">
+                              <img src={UserImg} className="img-fluid rounded-circle" alt="Profile" />
+                            </div>
+                            <div className="col-md-8">
+                              <p className="lead">
+                                From your account dashboard, you can easily check & view your recent orders, manage your shipping and
+                                billing addresses, and edit your password and account details.
+                              </p>
+                            </div>
+                          </div>
+>>>>>>> main
                         </div>
                       </div>
                     </div>
-                    <div className="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+
+                    <div className={`tab-pane fade ${activeTab === "orders" ? "show active" : ""}`} role="tabpanel">
                       <div className="card">
                         <div className="card-header">
                           <h3 className="mb-0">Your Orders</h3>
                         </div>
                         <div className="card-body"> 
                           <div className="table-responsive">
-                            <table className="table">
-                              <thead>
-                                <tr>
-                                  <th>Order</th>
-                                  <th>Date</th>
-                                  <th>Status</th>
-                                  <th>Total</th>
-                                  <th>Actions</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>#1357</td>
-                                  <td>March 45, 2020</td>
-                                  <td>Processing</td>
-                                  <td>$125.00 for 2 item</td>
-                                  <td>
-                                    <a href="#" className="btn-small d-block">
-                                      View
-                                    </a>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>#2468</td>
-                                  <td>June 29, 2020</td>
-                                  <td>Completed</td>
-                                  <td>$364.00 for 5 item</td>
-                                  <td>
-                                    <a href="#" className="btn-small d-block">
-                                      View
-                                    </a>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>#2366</td>
-                                  <td>August 02, 2020</td>
-                                  <td>Completed</td>
-                                  <td>$280.00 for 3 item</td>
-                                  <td>
-                                    <a href="#" className="btn-small d-block">
-                                      View
-                                    </a>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
+
+                         { userdata.order  ? <table className="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Order</th>
+      <th>Date</th>
+      <th>Order Status</th>
+      <th>Payment Status</th>
+     
+      <th>Actions</th>
+    </tr>
+  </thead>
+ <tbody>
+    {userdata.order.map((orderItem, index) => (
+      <tr key={orderItem._id}>
+        <td>{index + 1}</td>
+        <td>{orderItem.orderId}</td>
+        <td>{new Date(orderItem.orderDate).toLocaleDateString('en-US')}</td>
+        <td>{orderItem.orderStatus}</td>
+        <td style={{ color: orderItem.PaymentStatus === "Paid" ? "green" : "red" }}>
+  {orderItem.PaymentStatus}
+</td>
+        {/* Assuming you have a field named "total" in your orderItem */}
+        
+        <td>
+          <Link to={`/invoice/${orderItem._id}`} className="btn-small d-block">
+            View
+          </Link>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>:<h1>Orders Not Found</h1>} 
+ 
+
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div className="tab-pane fade" id="track-orders" role="tabpanel" aria-labelledby="track-orders-tab">
+                    <div className={`tab-pane fade ${activeTab === "track-orders" ? "show active" : ""}`} role="tabpanel">
                       <div className="card">
                         <div className="card-header">
                           <h3 className="mb-0">Orders tracking</h3>
                         </div>
                         <div className="card-body contact-from-area">
                           <p>
+<<<<<<< HEAD
                             To track your order please enter your OrderID in the box below and press &#34;Track&#34; button. This was given to you
                             on your receipt and in the confirmation email you should have received.
+=======
+                            To track your order please enter your OrderID in the box below and press &quot;Track&quot; button. This was
+                            given to you on your receipt and in the confirmation email you should have received.
+>>>>>>> main
                           </p>
                           <div className="row">
                             <div className="col-lg-8">
@@ -185,7 +228,7 @@ const Account = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
+                    <div className={`tab-pane fade ${activeTab === "address" ? "show active" : ""}`} role="tabpanel">
                       <div className="row">
                         <div className="col-lg-6">
                           <div className="card mb-3 mb-lg-0">
@@ -202,9 +245,7 @@ const Account = () => {
                                 Marie, MI 49783
                               </address>
                               <p>New York</p>
-                              <a href="#" className="btn-small">
-                                Edit
-                              </a>
+                              <a className="btn-small">Edit</a>
                             </div>
                           </div>
                         </div>
@@ -222,29 +263,27 @@ const Account = () => {
                                 Phone: 1.941.227.4444
                               </address>
                               <p>Sarasota</p>
-                              <a href="#" className="btn-small">
-                                Edit
-                              </a>
+                              <a className="btn-small">Edit</a>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div className="tab-pane fade" id="account-detail" role="tabpanel" aria-labelledby="account-detail-tab">
+                    <div className={`tab-pane fade ${activeTab === "account-detail" ? "show active" : ""}`} role="tabpanel">
                       <div className="card">
                         <div className="card-header">
                           <h5>Account Details</h5>
                         </div>
                         <div className="card-body">
                           <p>
-                            Already have an account? <a href="page-login.html">Log in instead!</a>
+                            {/* Already have an account? <Link to="/login">Log in instead!</Link> */}
                           </p>
                           <form method="post" name="enq">
                             <div className="row">
                               <div className="form-group col-md-6">
                                 <label>
                                   First Name <span className="required">*</span>
-                                </label>
+                                </label>{" "}
                                 <input required="" className="form-control" name="name" type="text" />
                               </div>
                               <div className="form-group col-md-6">
@@ -301,7 +340,7 @@ const Account = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Account;

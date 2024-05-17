@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loginUserAction, logoutAction, registerUserAction } from "../../actions/auth/authActions";
+import { loginUserAction, verifyEmail,verifyResetPasswordToken,updatePassword, logoutAction, registerUserAction } from "../../actions/auth/authActions";
 
-
-
-const initialState={
+const initialState = {
   user: "",
   registered: "",
+  emailVerified: false,
   loading: false,
   appErr: null,
+  ValidPasswordResetToken:false,
   serverErr: null,
 };
 const authSlice = createSlice({
   name: "auth",
   initialState,
- 
+
   reducers: {
     clearErrors: (state) => {
       state.appErr = null;
@@ -23,18 +23,20 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     // register
     builder.addCase(registerUserAction.pending, (state, action) => {
+      state.registered = false;
       state.loading = true;
       state.appErr = null;
       state.serverErr = null;
     });
     builder.addCase(registerUserAction.fulfilled, (state, action) => {
       state.loading = false;
-      state.registered = action?.payload;
+      state.registered = true;
     });
     builder.addCase(registerUserAction.rejected, (state, action) => {
       state.loading = false;
-      state.appErr = action?.payload?.message || 'An error occurred';
-      state.serverErr = action?.payload?.message || 'Network error';
+      state.registered = false;
+      state.appErr = action?.payload?.message || "An error occurred";
+      state.serverErr = action?.payload?.message || "Network error";
     });
 
     // login
@@ -54,6 +56,64 @@ const authSlice = createSlice({
       state.appErr = action?.payload?.message;
       state.serverErr = action?.error?.message;
       state.loading = false;
+    });
+
+    //verify-email
+    builder.addCase(verifyEmail.pending, (state, action) => {
+      state.registered = false;
+      state.emailVerified = false;
+      state.loading = true;
+      state.appErr = null;
+      state.serverErr = null;
+    });
+    builder.addCase(verifyEmail.fulfilled, (state, action) => {
+      state.loading = false;
+      state.emailVerified = true;
+    });
+    builder.addCase(verifyEmail.rejected, (state, action) => {
+      state.loading = false;
+      state.registered = false;
+      state.emailVerified = false;
+      state.appErr = action?.payload?.message || "An error occurred";
+      state.serverErr = action?.payload?.message || "Network error";
+    });
+
+    //reset-password-token
+    builder.addCase(verifyResetPasswordToken.pending, (state, action) => {
+     
+      state.emailVerified = false;
+      state.loading = true;
+      state.appErr = null;
+      state.serverErr = null;
+    });
+    builder.addCase(verifyResetPasswordToken.fulfilled, (state, action) => {
+      state.loading = false;
+      state.ValidPasswordResetToken = true;
+    });
+    builder.addCase(verifyResetPasswordToken.rejected, (state, action) => {
+      state.loading = false;
+      
+      state.emailVerified = false;
+      state.appErr = action?.payload?.message || "An error occurred";
+      state.serverErr = action?.payload?.message || "Network error";
+    });
+
+    //update-password
+     //reset-password-token
+     builder.addCase(updatePassword.pending, (state, action) => {
+    
+      state.loading = true;
+      state.appErr = null;
+      state.serverErr = null;
+    });
+    builder.addCase(updatePassword.fulfilled, (state, action) => {
+      state.loading = false;
+      
+    });
+    builder.addCase(updatePassword.rejected, (state, action) => {
+      state.loading = false;
+      state.appErr = action?.payload?.message || "An error occurred";
+      state.serverErr = action?.payload?.message || "Network error";
     });
 
     // logoutAction

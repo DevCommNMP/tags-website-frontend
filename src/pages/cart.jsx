@@ -1,0 +1,199 @@
+import { useEffect, useState } from "react";
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
+import { Link, useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import { toast, ToastContainer } from "react-toastify";
+
+const Cart = () => {
+  const [cartData, setCartData] = useState([]);
+  const [aggregatedCartItems, setAggregatedCartItems] = useState([]);
+  const navigate = useNavigate();
+
+  const fetchCartData = () => {
+    const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setCartData(cart);
+    const aggregatedItems = aggregateCartItems(cart);
+    setAggregatedCartItems(aggregatedItems);
+  };
+
+  useEffect(() => {
+    fetchCartData();
+  }, []);
+
+  const cartProductHandler = (id) => {
+    navigate(`/products/${id}`);
+  };
+
+  const cartItemRemoveHandler = (productId) => {
+    let cart = JSON.parse(localStorage.getItem("cartItems"));
+
+    if (cart) {
+      const updatedCart = cart.filter((item) => item.productId !== productId);
+      localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+      setCartData(updatedCart);
+      const aggregatedItems = aggregateCartItems(updatedCart);
+      setAggregatedCartItems(aggregatedItems);
+
+      toast.success("Product removed from cart successfully !", {
+        position: "top-right",
+      });
+    } else {
+      toast.error("Something went wrong, try again !", {
+        position: "top-right",
+      });
+    }
+  };
+
+  const handleQuantityChange = (productId, action) => {
+    const updatedCart = cartData.map((item) => {
+      if (item.productId === productId) {
+        if (action === "increase") {
+          return { ...item, quantity: item.quantity + 1 };
+        } else if (action === "decrease" && item.quantity > 1) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+      }
+      return item;
+    });
+
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    setCartData(updatedCart);
+    const aggregatedItems = aggregateCartItems(updatedCart);
+    setAggregatedCartItems(aggregatedItems);
+  };
+
+  const checkoutHandler = () => {
+    navigate("/checkout");
+  };
+
+  const aggregateCartItems = (cart) => {
+    return cart.reduce((acc, curr) => {
+      const existingItemIndex = acc.findIndex((item) => item.productId === curr.productId);
+      if (existingItemIndex !== -1) {
+        acc[existingItemIndex].quantity += curr.quantity;
+      } else {
+        acc.push({ ...curr });
+      }
+      return acc;
+    }, []);
+  };
+
+  const handleProductClick = (productId) => {
+    const clickedItem = cartData.find((item) => item.productId === productId);
+    if (clickedItem) {
+      navigate(`/products/${productId}`);
+    }
+  };
+
+  return (
+    <>
+      <Header />
+      <ToastContainer />
+      <main className="main">
+        <div className="page-header breadcrumb-wrap">
+          <div className="container">
+            <div className="breadcrumb">
+              <Link to="/">
+                <i className="fi-rs-home mr-5"></i>Home
+              </Link>
+              <span></span> cart <span></span>
+            </div>
+          </div>
+        </div>
+        <div className="container mb-30 mt-50">
+          <div className="row">
+            <div className="col-xl-10 col-lg-12 m-auto">
+              <div className="mb-50">
+                <h1 className="heading-2 text-center mb-10">Your Cart</h1>
+                <h6 className="text-center text-body">
+                  {aggregatedCartItems.length > 0 && `There are ${aggregatedCartItems.length} products in this list`}
+                </h6>
+              </div>
+              {aggregatedCartItems.length === 0 ? (
+                <div>
+                  <h6>
+                    Empty cart, full potential! <br />
+                    <Link to="/">Explore our stylish selection of footwear</Link> and transform your shopping experience into a fashion
+                    adventure. <br />
+                  </h6>
+                </div>
+              ) : (
+                <div className="table-responsive shopping-summery">
+                  <table className="table table-wishlist">
+                    <thead>
+                      <tr className="main-heading">
+                        <th scope="col" colSpan="2" className="pl-30">
+                          Product
+                        </th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Action</th>
+                        <th scope="col" className="end">
+                          Remove
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {aggregatedCartItems.map((item, index) => (
+                        <tr className="pt-30" key={index}>
+                          <td className="pl-30 image product-thumbnail pt-40">
+                            <img src={item.productImage} alt="#" />
+                          </td>
+                          <td className="product-des product-name">
+                            <h6 onClick={() => handleProductClick(item.productId)}>
+                              <a className="product-name mb-10">{item.title}</a>
+                            </h6>
+                            <div className="product-rate-cover">
+                              <div className="product-rate d-inline-block">
+                                <div className="product-rating" style={{ width: "90%" }}></div>
+                              </div>
+                              <span className="font-small ml-5 text-muted">{item.description}</span>
+                            </div>
+                          </td>
+                          <td className="price" data-title="Price">
+                            <h3 className="text-brand">            <span>&#8377; {item.price <= 1000 ? ((item.price + (item.price * 0.12)).toFixed(0)) : ((item.price + (item.price * 0.18)).toFixed(0))}</span>
+</h3>
+                          </td>
+                          <td className="text-center detail-info" data-title="Stock">
+                            <div className="quantity">
+                              <button className="btn btn-sm" onClick={() => handleQuantityChange(item.productId, "decrease")}>
+                                -
+                              </button>
+                              <span className="stock-status in-stock mb-0">{item.quantity}</span>
+                              <button className="btn btn-sm" onClick={() => handleQuantityChange(item.productId, "increase")}>
+                                +
+                              </button>
+                            </div>
+                          </td>
+                          <td className="text-right" data-title="Cart">
+                            <button className="btn btn-sm" onClick={() => cartProductHandler(item.productId)}>
+                              View Product
+                            </button>
+                          </td>
+                          <td className="action text-center" data-title="Remove" onClick={() => cartItemRemoveHandler(item.productId)}>
+                            <a className="text-body">
+                              <i className="fi-rs-trash"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+              <Link to={aggregatedCartItems.length === 0 ? "/all-categories" : "/checkout"}>
+                <Button style={{ textAlign: "center", marginTop: "50px" }} onClick={checkoutHandler}>
+                  {aggregatedCartItems.length === 0 ? "Browse All Categories" : "Proceed to checkout"}
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+};
+
+export default Cart;

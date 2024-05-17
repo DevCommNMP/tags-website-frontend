@@ -1,23 +1,19 @@
+import { Link } from "react-router-dom";
 const HeaderTop = () => {
   return (
     <>
-      <div className="header-top header-top-ptb-1 d-none d-lg-block">
+      <div className="bg-red text-white-all header-top header-top-ptb-1 d-none d-lg-block">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xl-3 col-lg-4">
               <div className="header-info">
                 <ul>
+               
+                  {/* <li>
+                    <Link to="/blog">Blog</Link>
+                  </li> */}
                   <li>
-                    <a href="page-about.html">About Us</a>
-                  </li>
-                  <li>
-                    <a href="page-account.html">My Account</a>
-                  </li>
-                  <li>
-                    <a href="shop-wishlist.html">Wishlist</a>
-                  </li>
-                  <li>
-                    <a href="shop-order.html">Order Tracking</a>
+                    <Link to="/aboutus">About Us</Link>
                   </li>
                 </ul>
               </div>
@@ -37,57 +33,10 @@ const HeaderTop = () => {
               <div className="header-info header-info-right">
                 <ul>
                   <li>
-                    Need help? Call Us: <strong className="text-brand"> + 1800 900</strong>
+                    Need help? Call Us: <strong className="text-white"> +91 9611459290</strong>
                   </li>
                   <li>
-                    <a className="language-dropdown-active" href="#">
-                      English <i className="fi-rs-angle-small-down"></i>
-                    </a>
-                    <ul className="language-dropdown">
-                      <li>
-                        <a href="#">
-                          <img src="assets/imgs/theme/flag-fr.png" alt="" />
-                          Français
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/imgs/theme/flag-dt.png" alt="" />
-                          Deutsch
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/imgs/theme/flag-ru.png" alt="" />
-                          Pусский
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a className="language-dropdown-active" href="#">
-                      INR <i className="fi-rs-angle-small-down"></i>
-                    </a>
-                    <ul className="language-dropdown">
-                      <li>
-                        <a href="#">
-                          <img src="assets/imgs/theme/flag-fr.png" alt="" />
-                          USD
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/imgs/theme/flag-dt.png" alt="" />
-                          MBP
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/imgs/theme/flag-ru.png" alt="" />
-                          EU
-                        </a>
-                      </li>
-                    </ul>
+                    <a className="language-dropdown-active">INR</a>
                   </li>
                 </ul>
               </div>
@@ -96,7 +45,7 @@ const HeaderTop = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default HeaderTop
+export default HeaderTop;

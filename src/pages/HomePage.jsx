@@ -1,38 +1,56 @@
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
-import Hero from '../components/Hero/Hero'
-import Banner1 from '../components/OfferBanner/Banner1'
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import Hero from "../components/Hero/Hero";
+import Banner from "../components/OfferBanner/Banner";
 
-import ProductTabSection from './ProductTabSection'
-import LeatherSection from '../components/leateherSection/leatherSection.jsx'
-import NewArrival from '../components/newArrival/NewArrival.jsx'
+import ProductTabSection from "./ProductTabSection";
+import LeatherSection from "../components/leateherSection/leatherSection.jsx";
+import NewArrival from "../components/newArrival/NewArrival.jsx";
+import NewsLetter from "../components/NewsLetter.jsx";
+import SEOContent from "../components/SEOContent.jsx";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchAllProductsAction } from "../redux/actions/product/productActions.js";
+import { useSelector } from "react-redux";
 
+import LoaderImg from "../components/LoaderImg.jsx";
+import YoutubeVideo from "../components/YoutubeVideo.jsx";
+// import OnlyProductCard from "../components/ProductCard.jsx";
 const Homepage = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const res = dispatch(fetchAllProductsAction());
+    console.log(res);
+  }, [dispatch]);
+
+  const storeData = useSelector((store) => store.products);
+  const { products, productsLoading, appErr, serverErr } = storeData;
+  console.log(products,productsLoading,appErr,serverErr)
+
   return (
     <>
-      <Header />
-      <Hero />
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-4 col-md-6">
-            <Banner1 />
+      <Header allProducts = {products}/>
+      {productsLoading ? (
+        <LoaderImg />
+      ) : (
+        <div>
+          <Hero />
+          <div className="container">
+            <div className="row">
+              <Banner />
+            </div>
           </div>
-          <div className="col-lg-4 col-md-6">
-            <Banner1 />
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <Banner1 />
-          </div>
+          <NewArrival data={products} />
+          <LeatherSection data={products} />
+          <ProductTabSection data={products} />
         </div>
-      </div>
-      <ProductTabSection />
-      <LeatherSection/>
-      <NewArrival/>
-
-
+      )}
+      <YoutubeVideo />
+      <NewsLetter />
+      <SEOContent />
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;

@@ -982,16 +982,16 @@ button[type='submit'] {
   color: #ffffff;
   border: none;
   background-color: #d02327;
-  border: 1px solid #29a56c;
+  border: 1px solid #368494;
   border-radius: 10px;
 }
 button.submit:hover,
 button[type='submit']:hover {
-  background-color: #29a56c !important;
+  background-color: #368494 !important;
 }
 
 .btn-brand:hover {
-  background-color: #29a56c !important;
+  background-color: #368494 !important;
 }
 
 .btn-login {
@@ -3030,7 +3030,7 @@ table .product-thumbnail img {
   border-radius: 15px;
   overflow: hidden;
   height: 520px;
-  background: url(../imgs/banner/banner-4.png) no-repeat center bottom;
+  background: url(./assets/imgs/banner/sidebanner.webp) no-repeat center bottom;
   background-size: cover;
   width: 100%;
 }
@@ -3659,7 +3659,7 @@ table .product-thumbnail img {
   display: inline-block;
   padding: 6px 20px 6px 20px;
   border-radius: 4px;
-  background-color: #def9ec;
+  background-color: #f9dede;
   font-size: 14px;
   font-weight: 700;
 }
@@ -4152,14 +4152,14 @@ table .product-thumbnail img {
 .slider-nav-thumbnails .slick-list {
   margin: 0 -10px;
 }
-.slider-nav-thumbnails .slick-slide {
+/* .slider-nav-thumbnails .slick-slide {
   position: relative;
   border-radius: 15px;
   overflow: hidden;
-}
-.slider-nav-thumbnails .slick-slide img {
+} */
+/* .slider-nav-thumbnails .slick-slide img {
   border-radius: 17px;
-}
+} */
 .slider-nav-thumbnails .slick-slide.slick-current::before {
   border-bottom: 5px solid #333;
   border-left: 5px solid transparent;
@@ -4172,9 +4172,9 @@ table .product-thumbnail img {
   top: -6px;
   width: 0;
 }
-.slider-nav-thumbnails .slick-slide.slick-current img {
+/* .slider-nav-thumbnails .slick-slide.slick-current img {
   border: 2px solid #a2d2c9;
-}
+} */
 .slider-nav-thumbnails div.slick-slide {
   margin: 0 10px;
 }
@@ -4296,6 +4296,13 @@ table .product-thumbnail img {
   border-color: #d02327;
 }
 
+.size-filter.list-filter.color-filter li a {
+  /* color: #7e7e7e; */
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+}
+
 .detail-qty {
   max-width: 80px;
   padding: 9px 20px;
@@ -4310,7 +4317,7 @@ table .product-thumbnail img {
   color: #d02327;
 }
 .detail-qty > a:hover {
-  color: #29a56c;
+  color: #368494;
 }
 .detail-qty > a.qty-up {
   top: 0;
@@ -4365,7 +4372,7 @@ table .product-thumbnail img {
   color: #d02327;
 }
 .stock-status.out-stock {
-  color: #f74b81;
+  color: #d02327;
   background: #fde0e9;
 }
 
@@ -5396,7 +5403,7 @@ h6.post-title {
   background: #d02327;
 }
 .invoice-content .btn-download:after {
-  background: #29a56c;
+  background: #368494;
 }
 .invoice-content .btn-print {
   background: #253d4e;
@@ -5963,7 +5970,7 @@ h6.post-title {
   display: block;
 }
 .logo.logo-width-1 {
-  margin-right: 70px;
+  margin-right: 10px;
 }
 .logo.logo-width-1 a img {
   width: 180px;
@@ -6374,7 +6381,7 @@ h6.post-title {
 }
 .search-style-2 form input {
   width: 100%;
-  max-width: 683px;
+  /* max-width: 683px; */
   font-size: 14px;
   background-image: url(../imgs/theme/icons/search.png);
   background-repeat: no-repeat;
@@ -6391,9 +6398,9 @@ h6.post-title {
   opacity: 1;
 }
 .search-style-2 form input:focus {
-  border-color: #414648;
-  border-width: 0 0 3px 0;
-  border-style: solid;
+  /* border-color: #414648; */
+  /* border-width: 1px 1px 1px 1px; */
+  border-style: none;
 }
 .search-style-2 form button {
   position: absolute;
@@ -7115,7 +7122,7 @@ h6.post-title {
   margin-bottom: 5px;
 }
 .header-style-1 .main-categori-wrap > a:hover {
-  background-color: #29a56c;
+  background-color: #368494;
 }
 .header-style-1 .main-menu.main-menu-light-white > nav > ul > li > a {
   color: #494949;
@@ -8060,13 +8067,15 @@ footer .mobile-social-icon h6 {
   margin-right: 15px;
 }
 footer .hotline {
-  min-width: 200px;
+  min-width: 250px;
 }
 footer .hotline img {
-  min-width: 10px;
-  margin-right: 12px;
+  min-width: 20px !important;
   max-width: 30px;
-  opacity: 0.5;
+  /* min-width: 10px; */
+  margin-right: 12px;
+  /* max-width: 30px; */
+  opacity: 1.0;
 }
 
 .newsletter {
@@ -8107,7 +8116,7 @@ footer .hotline img {
 }
 .newsletter .newsletter-inner .newsletter-content form button {
   border: 0;
-  border-radius: 50px;
+  border-radius: 0px 50px 50px 0px;
   font-weight: 700;
 }
 

@@ -1,0 +1,390 @@
+.thumbnail.active {
+    border: 2px solid red;
+    border-radius: 20px;
+    padding: 2px;
+}
+
+/* .row.product-grid-4 .slick-slide {
+    margin: 0 5px;
+} */
+.loaderContainer {
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 80vh;
+}
+
+.bg-leather {
+    background-color: #ffeae0 !important;
+}
+
+.bg-leather h3 {
+    color: #924b29 !important;
+}
+
+.bg-red {
+    background-color: #d02327 !important;
+}
+
+.text-white-all {
+    color: white !important;
+}
+
+.text-white-all a {
+    color: white !important;
+}
+
+.text-white-all a {
+    color: white !important;
+}
+
+.border-1px {
+    border: 1px solid #d02327 !important;
+    border-radius: 20px;
+}
+
+news-p {
+    padding-bottom: 50px !important;
+    /* border-radius:; */
+}
+
+news-p newsletter-inner {
+    margin: 40px;
+}
+
+.slick-dots li button:before {
+    font-size: 0px !important;
+}
+
+.dot-style-1 ul li button {
+    width: 10px !important;
+    height: 10px !important;
+    border: 1px solid gray !important;
+
+}
+
+/* 
+.slick-dots li button:before {
+    font-size:0px;
+} */
+
+
+/* PRODUCT COLORS //  */
+/* WRITE product and then color name from database, define color for that below */
+.productpeach {
+    background-color: #FFDAB9 !important;
+}
+
+.productgold {
+    background-color: gold !important;
+}
+
+.productBrownx {
+    background-color: brown !important;
+}
+
+.productchiko {
+    background-color: #D2B48C !important;
+}
+
+.productblack {
+    background-color: black !important;
+}
+
+.productmaroon {
+    background-color: maroon !important;
+}
+
+
+
+
+
+.flex-align-justify-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.product-color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 5px;
+    display: inline-block;
+}
+
+/*  */
+
+.product-image-slider button {
+    background-color: #d02327;
+    z-index: 9999999
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    /* Adjust this to your header's background color */
+    z-index: 1000;
+    /* Adjust this value as needed */
+}
+
+
+.btn.disabled,
+.btn:disabled,
+fieldset:disabled .btn {
+    background-color: gray !important;
+}
+
+.selected {
+    border: 2px solid #007bff;
+    /* Example border color for selected elements */
+}
+
+.modal-dialog {
+    width: 1000px !important;
+    max-width: 100% !important;
+    margin: 1.75rem auto;
+}
+
+
+
+.productpeach {
+    background-color: #FFDAB9 !important;
+}
+
+
+
+/*  colors2 */
+
+.productGold {
+    background-color: gold !important;
+}
+
+.productPeach {
+    background-color: peachpuff !important;
+}
+
+.productPink {
+    background-color: pink !important;
+}
+
+.productBlack {
+    background-color: black !important;
+}
+
+.productWhite {
+    background-color: white !important;
+}
+
+.productChique {
+    background-color: #FF69B4 !important;
+    /* Hot pink */
+}
+
+.productN Blue {
+    background-color: navy !important;
+}
+
+.productRust {
+    background-color: #B7410E !important;
+    /* Rust */
+}
+
+.productO Green {
+    background-color: olive !important;
+}
+
+.productBrownx {
+    background-color: #8B4513 !important;
+    /* Saddle brown */
+}
+
+.productChico {
+    background-color: #D2B48C !important;
+    /* Tan */
+}
+
+.productBrownz {
+    background-color: #8B4513 !important;
+    /* Saddle brown */
+}
+
+.productMaroon {
+    background-color: maroon !important;
+}
+
+.productBrown {
+    background-color: brown !important;
+}
+
+.productGreen {
+    background-color: green !important;
+}
+
+.productBeige {
+    background-color: beige !important;
+}
+
+.productOrange {
+    background-color: orange !important;
+}
+
+.productM. Green {
+    background-color: mediumseagreen !important;
+}
+
+.productM. Yellow {
+    background-color: #FFD700 !important;
+    /* Gold */
+}
+
+.productG M T {
+    background-color: #808080 !important;
+    /* Gray */
+}
+
+.productN.Blue {
+    background-color: navy !important;
+}
+
+.productBrowon {
+    background-color: brown !important;
+}
+
+.productChikoo {
+    background-color: #D2B48C !important;
+    /* Tan */
+}
+
+.productBegie {
+    background-color: beige !important;
+}
+
+.productN.Blue / B/TT {
+    background-color: navy !important;
+}
+
+.productO Green/ B. TT {
+    background-color: olive !important;
+}
+
+.productNT/B.TT {
+    background-color: #808080 !important;
+    /* Gray */
+}
+
+.productT Blue {
+    background-color: steelblue !important;
+}
+
+.productL Gray {
+    background-color: lightgray !important;
+}
+
+.productRuat {
+    background-color: #B7410E !important;
+    /* Rust */
+}
+
+.productBrownz {
+    background-color: #8B4513 !important;
+    /* Saddle brown */
+}
+
+.productRust B.TT {
+    background-color: #B7410E !important;
+    /* Rust */
+}
+
+.productSW {
+    background-color: #2E8B57 !important;
+    /* Sea green */
+}
+
+.productM R H {
+    background-color: #006400 !important;
+    /* Dark green */
+}
+
+.productGun Metal {
+    background-color: #545454 !important;
+    /* Dim gray */
+}
+
+.productYellow {
+    background-color: yellow !important;
+}
+
+.productGrey {
+    background-color: gray !important;
+}
+
+.productMusturd {
+    background-color: #FFDB58 !important;
+    /* Mustard */
+}
+
+.productBlue {
+    background-color: blue !important;
+}
+
+.productL Blue {
+    background-color: lightblue !important;
+}
+
+.productD Blue {
+    background-color: darkblue !important;
+}
+
+.productSultan {
+    background-color: #8B4513 !important;
+    /* Saddle brown */
+}
+
+.productAntique {
+    background-color: #FAEBD7 !important;
+    /* Antique white */
+}
+
+.productTan {
+    background-color: tan !important;
+}
+
+.productCream {
+    background-color: cream !important;
+}
+
+.productXX {
+    background-color: #000000 !important;
+    /* Black */
+}
+
+.productG A R {
+    background-color: #808080 !important;
+    /* Gray */
+}
+
+.productAXX {
+    background-color: #000000 !important;
+    /* Black */
+}
+
+.productS S {
+    background-color: #000000 !important;
+    /* Black */
+}
+
+.productPurple {
+    background-color: purple !important;
+}
+
+.productGray {
+    background-color: gray !important;
+}
+
+.productAN {
+    background-color: #000000 !important;
+    /* Black */
+}
