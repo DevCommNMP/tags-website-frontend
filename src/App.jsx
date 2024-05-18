@@ -23,6 +23,7 @@ import { useEffect } from "react";
 import ShippingPolicy from "./pages/ShippingPolicy.jsx";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.jsx";
 import RefundPolicy from "./pages/RefundPolicy.jsx";
+import OrderStatus from "./components/OrderStatus.jsx";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
             <Route exact path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route exact path="/bestfits/:amount" element={<ProductsGridPage />} />
             <Route exact path="/paymentsuccess" element={<PaymentStatus />} />
+            <Route exact path="/orderstatus" element={<OrderStatus />} />
           </Routes>
         </BrowserRouter>
       </Provider>
