@@ -13,7 +13,7 @@ const HeaderTop = () => {
                     <Link to="/blog">Blog</Link>
                   </li> */}
                   <li>
-                    <Link to="/aboutus">About Us</Link>
+                    <Link to="/about-us">About Us</Link>
                   </li>
                 </ul>
               </div>

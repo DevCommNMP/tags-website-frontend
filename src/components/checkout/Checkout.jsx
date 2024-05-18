@@ -5,14 +5,17 @@ import paymentZapper from "../../assets/imgs/theme/icons/payment-zapper.svg";
 import { Slide, toast, ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 import { useCallback } from "react";
 import useRazorpay from "react-razorpay";
 import { useDispatch } from "react-redux";
 import { CheckoutHandler } from "../../redux/actions/checkoutActions/checkoutActions";
 import axios from "axios";
 import { baseUrl } from "../../utils/baseUrl";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 function loadScript(src) {
   return new Promise((resolve) => {
     const script = document.createElement('script')
@@ -28,6 +31,7 @@ function loadScript(src) {
 }
 
 const Checkout = () => {
+  const [show, setShow] = useState(false);
   const [region, setRegion] = useState("");
   const [CGST, setCGST] = useState(0);
   const [SGST, setSGST] = useState(0);
@@ -50,7 +54,12 @@ const Checkout = () => {
     email: "",
     additionalInfo: "",
   });
+  const [selectedOption, setSelectedOption] = useState('direct_bank_transfer');
 
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+  const handleClose = () => setShow(false);
   const handleChange = async (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -101,8 +110,77 @@ const Checkout = () => {
       }
     }
   };
+const CODHandler=async()=>{
+  if (!user) {
+    toast.error("You need to log in first", {
+      position: "top-right",
+    });
+    return;
+  }
 
+  if (
+    formData.fname.length < 3 ||
+    formData.lname.length < 3 ||
+    !formData.billing_address ||
+    formData.city.length < 3 ||
+    !formData.state ||
+    !formData.zipcode ||
+    !formData.phone ||
+    !formData.email
+  ) {
+    toast.error(
+      "Please fill in the billing details correctly with a valid first name, valid last name, valid billing address, valid city name, valid state name, valid zipcode, valid phone number, and valid email"
+    );
+    return;
+  }
+
+  if (formData.zipcode.length !== 6 || isNaN(formData.zipcode)) {
+    toast.error("Please enter a valid 6-digit zipcode");
+    return;
+  }
+
+  if (formData.phone.length !== 10 || isNaN(formData.phone)) {
+    toast.error("Please enter a valid 10-digit phone number");
+    return;
+  }
+
+  const isEmailValid = (email) => {
+    // Regular expression for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const isValid = isEmailValid(formData.email);
+  if (!isValid) {
+    toast.error("Please enter a valid email address");
+    return;
+  }
+  let totalAmount = (totalPrice + totalTax).toFixed(0);
+setShow(true);
+
+setLoading(true)
+
+const res1 = await axios.post(`${baseUrl}/api/COD-chekout`, {
+  amount: totalAmount,
+  userEmail: user.email,
+  cartdata,
+  formData,
+  CGST,
+  SGST,
+ Tax     });
+
+}
  
+
+
+
+
+
+
+
+
+
+
   const paymentHandler = async () => {
     if (!user) {
       toast.error("You need to log in first", {
@@ -222,6 +300,22 @@ const Checkout = () => {
 console.log(Tax,"center",CGST ,"state",SGST)
   return (
     <>
+        {show && (
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Alert !</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Please check the details before payment. You will not be able to change the details after payment.</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" >
+              {loading ? "Loading" : "Confirm"}
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      ) }
       <ToastContainer />
       <main className="main">
         <div className="page-header breadcrumb-wrap">
@@ -489,71 +583,57 @@ console.log(Tax,"center",CGST ,"state",SGST)
               <div className="payment ml-30">
                 <h4 className="mb-30">Payment</h4>
                 <div className="payment_option">
-                  <div className="custome-radio">
-                    <input
-                      className="form-check-input"
-                      required
-                      type="radio"
-                      name="payment_option"
-                      id="exampleRadios3"
-                      defaultChecked={true}
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="exampleRadios3"
-                      data-bs-toggle="collapse"
-                      data-target="#bankTranfer"
-                      aria-controls="bankTranfer"
-                    >
-                      Direct Bank Transfer
-                    </label>
-                  </div>
-                  <div className="custome-radio">
-                    <input
-                      className="form-check-input"
-                      required=""
-                      type="radio"
-                      name="payment_option"
-                      id="exampleRadios4"
-                      defaultChecked=""
-                    />
-                    {/* <label
-                      className="form-check-label"
-                      htmlFor="exampleRadios4"
-                      data-bs-toggle="collapse"
-                      data-target="#checkPayment"
-                      aria-controls="checkPayment"
-                    >
-                      Cash on delivery
-                    </label> */}
-                  </div>
-                  <div className="custome-radio">
-                    <input
-                      className="form-check-input"
-                      required=""
-                      type="radio"
-                      name="payment_option"
-                      id="exampleRadios5"
-                      defaultChecked=""
-                    />
-                    {/* <label
-                      className="form-check-label"
-                      htmlFor="exampleRadios5"
-                      data-bs-toggle="collapse"
-                      data-target="#paypal"
-                      aria-controls="paypal"
-                    >
-                      Online Getway
-                    </label> */}
-                  </div>
-                </div>
+      <div className="custome-radio">
+        <input
+          className="form-check-input"
+          required
+          type="radio"
+          name="payment_option"
+          id="directBankTransfer"
+          value="direct_bank_transfer"
+          checked={selectedOption === 'direct_bank_transfer'}
+          onChange={handleOptionChange}
+        />
+        <label
+          className="form-check-label"
+          htmlFor="directBankTransfer"
+          data-bs-toggle="collapse"
+          data-target="#bankTranfer"
+          aria-controls="bankTranfer"
+        >
+          Direct Bank Transfer
+        </label>
+      </div>
+      <div className="custome-radio">
+        <input
+          className="form-check-input"
+          required
+          type="radio"
+          name="payment_option"
+          id="cashOnDelivery"
+          value="cash_on_delivery"
+          checked={selectedOption === 'cash_on_delivery'}
+          onChange={handleOptionChange}
+        />
+        <label
+          className="form-check-label"
+          htmlFor="cashOnDelivery"
+          data-bs-toggle="collapse"
+          data-target="#checkPayment"
+          aria-controls="checkPayment"
+        >
+          Cash on Delivery
+        </label>
+      </div>
+     
+    </div>
                 <div className="payment-logo d-flex">
                   <img className="mr-15" src={paymentMaster} alt="" />
                   {/* <img className="mr-15" src={paymentPaypal} alt="" /> */}
                   <img className="mr-15" src={paymentVisa} alt="" />
                   {/* <img src={paymentZapper} alt="" /> */}
                 </div>
-                <button className="btn btn-fill-out btn-block mt-30" id="rzp-button1" onClick={paymentHandler}>
+                <button className="btn btn-fill-out btn-block mt-30" id="rzp-button1" onClick={selectedOption==='direct_bank_transfer'?paymentHandler:CODHandler}>
                   {loading ? "Loading" : " Place an Order"}
                   <i className="fi-rs-sign-out ml-15"></i>
                 </button>
