@@ -1,4 +1,4 @@
-import SuccessImg from "../assets/imgs/page/success.png";
+import SuccessImg from "../assets/imgs/page/success1.png";
 import FailedImg from "../assets/imgs/page/failed.png";
 import { Link } from "react-router-dom";
 import Header from "./Header/Header";
@@ -52,7 +52,7 @@ const OrderStatus = () => {
                       <p className="mb-30">
                         {paymentSuccess ? (
                           <span>
-                            Your payment was successful. <br /> Thank you for shopping with us.
+                            Your order is placed. <br /> Thank you for shopping with us.
                           </span>
                         ) : (
                           <span>
