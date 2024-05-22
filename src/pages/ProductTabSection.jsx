@@ -19,7 +19,7 @@ const ProductTabSection = ({ data }) => {
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
-              {limitedData.filter(product => product.tag === 'popular').map((product, index) => (
+              {data.filter(product => product.tag ==='popular').map((product, index) => (
   <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
     <ProductCard product={product} />
   </div>

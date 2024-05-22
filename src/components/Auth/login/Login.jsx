@@ -102,7 +102,13 @@ const Login = () => {
                           />
                           {errors.password && <div className="text-danger">{errors.password}</div>}
                         </div>
-                        <div className="form-group mb-50">
+                        <p className="mb-30" style={{float:"right",marginBottom:"20"}}>
+                          Forgot Password?{" "}
+                          <Link to="/forgot-password" >
+                            Create here
+                          </Link>
+                        </p>
+                        <div className="form-group mb-50 mt-50">
                           <button
                             type="submit"
                             className="mb-4 btn btn-fill-out btn-block hover-up font-weight-bold"

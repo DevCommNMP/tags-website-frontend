@@ -17,11 +17,13 @@ import { Pagination, DropdownButton, Dropdown } from "react-bootstrap";
 import ProductCard from "../components/ProductCard.jsx";
 import { ToastContainer } from "react-toastify";
 import LoaderImg from "../components/LoaderImg.jsx";
-
 const ProductsGridPage = () => {
   // console.log(data)
   const { title } = useParams();
   const{amount}=useParams();
+  // console.log(amount);
+ 
+
   const{color}=useParams();
   // const{subtypes}=useParams();
   const [Loading,setloading]=useState(false);
@@ -29,14 +31,46 @@ const ProductsGridPage = () => {
   const [data,setData]=useState([]);
   const [productCount,setProductCount]=useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
+ 
   const [minPrice,setminPrice]=useState(1000);
   const [maxPrice,setmaxPrice]=useState(10000)
   const{subtypes}=useParams();
-console.log(title)
+// console.log(title)
   const storeData = useSelector((store) => store.products);
   const { products, productsLoading, appErr, serverErr } = storeData;
   const [sliderValues, setSliderValues] = useState([0, 100]);
   const [productsPerPage, setProductsPerPage] = useState(5);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setloading(true);
+      await dispatch(fetchAllProductsAction());
+      setloading(false);
+    };
+
+    fetchData();
+  }, [dispatch]);
+  const filteredPrice = async (amount) => {
+    setloading(true);
+ 
+    const parts = amount.split('-');
+    // Extract the last part of the split array (which should be the price without the "under-" prefix)
+    const price = parts[parts.length - 1];
+    const numericPrice = parseInt(price);
+     // Filter products based on the selling price
+    const filteredData = products.filter((product) => {
+       
+        if(product.SellingPrice <= 1000){
+          return product.SellingPrice + (0.12 * product.SellingPrice) <= numericPrice;
+        }
+        return product.SellingPrice + (0.18 * product.SellingPrice) <= numericPrice;
+    });
+  
+    setupdatedData(filteredData);
+    setProductCount(filteredData.length);
+    setloading(false);
+};
 
   const filteredDataByCategories = async (title) => {
     setloading(true);
@@ -82,40 +116,40 @@ console.log(title)
   
   
 
-  const filteredDataByFilters = async (color, minPrice, maxPrice) => {
+  const filteredDataByFilters = async () => {
+    console.log(selectedColors, minPrice, maxPrice);
     setloading(true);
+
     const filteredData = products.filter((product) => {
-      // Check if the product matches the specified color
-      const colorMatch = !color || product.colorsAvailable.includes(color);
-      
-      // Check if the product's price falls within the specified range
-      const priceMatch = (!minPrice || product.SellingPrice >= minPrice) && (!maxPrice || product.SellingPrice <= maxPrice);
-      
-      return colorMatch && priceMatch;
+        // Check if the product matches any of the selected colors
+        const colorMatch = selectedColors.some((color) => product.colorsAvailable.includes(color));
+        const priceMatch = (!minPrice || product.SellingPrice >= minPrice) && (!maxPrice || product.SellingPrice <= maxPrice);
+        return colorMatch && priceMatch;
     });
+
     setupdatedData(filteredData);
-    setProductCount(filteredData.length)
+    setProductCount(filteredData.length);
     setloading(false);
-  };
-  
-  // console.log(products)
-  console.log(updatedData)
-  // console.log(products.filter((product) => product.subcategory.subcategoriesName === 'Ethinic Footwear'))
-  const dispatch = useDispatch();
+}
+
+
   
   useEffect(() => {
-    dispatch(fetchAllProductsAction()).then(() => {
-      if (title) {
-        filteredDataByCategories(title);
-      }
-if(subtypes){
-  filteredDataBySubtype(subtypes)
-}
-      if(color ){
-        filteredDataByColor(color)
-      }
-    });
-  }, [dispatch, title,color,subtypes]);
+    if (Loading) return; // Skip filtering if data is still loading
+
+    if (title) {
+      filteredDataByCategories(title);
+    }
+    if (amount) {
+      filteredPrice(amount);
+    }
+    if (subtypes) {
+      filteredDataBySubtype(subtypes);
+    }
+    if (color) {
+      filteredDataByColor(color);
+    }
+  }, [title, color, subtypes, amount, Loading, products]);
   
   const [currentPage, setCurrentPage] = useState(1); // State to manage current page
 
@@ -137,9 +171,24 @@ if(subtypes){
 
   // Function to handle slider change
   const handleSliderChange = (values) => {
+    setloading(true);
     setSliderValues(values);
     setminPrice(sliderValues[0])
     setmaxPrice(sliderValues[1])
+ 
+    console.log(minPrice,maxPrice)
+    const filteredData = products.filter((product) => {
+       
+        if(product.SellingPrice <= 1000){
+          return product.SellingPrice + (0.12 * product.SellingPrice)>=minPrice && product.SellingPrice + (0.12 * product.SellingPrice)<=maxPrice;
+        }
+        return product.SellingPrice + (0.12 * product.SellingPrice)>=minPrice && product.SellingPrice + (0.18 * product.SellingPrice)<=maxPrice;
+
+    });
+  
+    setupdatedData(filteredData);
+    setProductCount(filteredData.length);
+    setloading(false);
     // console.log(sliderValues)
   };
 
@@ -468,7 +517,7 @@ if(subtypes){
         <br />
       </div>
     ))}
-                      
+                       
                        
                       </div>
                     </div>

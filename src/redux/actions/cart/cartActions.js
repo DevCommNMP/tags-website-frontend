@@ -40,7 +40,7 @@ import { ColorRing } from "react-loader-spinner";
 
 // cartActions.js
 
-export const addToCart = (product, color, size, quantity) => {
+export const addToCart = (product, color, size, quantity,productCode) => {
   const taxprice = (product.SellingPrice <= 1000 ? ((product.SellingPrice * 0.12)).toFixed(0) : ((product.SellingPrice * 0.18)).toFixed(0));
   console.log(taxprice);
   
@@ -62,6 +62,7 @@ export const addToCart = (product, color, size, quantity) => {
           productImage: product.productImage,
           price: product.SellingPrice,
           tax:taxprice,
+          productCode:productCode,
           title: product.title,
         });
       }
@@ -106,6 +107,7 @@ export const addToCartHandler = createAsyncThunk("products/addtocart", async (da
       //   const res = await axios.post(`${baseUrl}/api/cart`, { productId }, config);
       //   return res.data;
       addToCart(data);
+     
       return JSON.parse(localStorage.getItem("cartItems"));
     } else {
       // User is not authenticated, add item to cart in local storage only

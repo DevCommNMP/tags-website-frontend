@@ -14,9 +14,9 @@ const Banner = () => {
               Best fit for Women's starting from <br />
               
               <br />
-             <strong style={{fontSize:40,color:"red"}}>₹ 999/-</strong>
+             <strong style={{fontSize:40,color:"red"}}>₹ 1999/-</strong>
             </h4>
-            <Link className="btn btn-xs" to="/bestfits/under-999">
+            <Link className="btn btn-xs" to="/bestfits/under-1999">
               Shop Now <i className="fi-rs-arrow-small-right"></i>
             </Link>
           </div>
@@ -29,9 +29,9 @@ const Banner = () => {
               Casual Footwear for Women's starting from <br />
               
               <br />
-             <strong style={{fontSize:40,color:"red"}}>₹ 1499/-</strong>
+             <strong style={{fontSize:40,color:"red"}}>₹ 2999/-</strong>
             </h4>
-            <Link className="btn btn-xs"  to="/bestfits/under-1499">
+            <Link className="btn btn-xs"  to="/bestfits/under-2999">
               Shop Now <i className="fi-rs-arrow-small-right"></i>
             </Link>
           </div>
@@ -44,9 +44,9 @@ const Banner = () => {
               Women's Footwear under <br />
               
               <br />
-             <strong style={{fontSize:40,color:"red"}}>₹1999/-</strong>
+             <strong style={{fontSize:40,color:"red"}}>₹3999/-</strong>
             </h4>
-            <Link className="btn btn-xs" to="/bestfits/under-999">
+            <Link className="btn btn-xs" to="/bestfits/under-3999">
               Shop Now <i className="fi-rs-arrow-small-right"></i>
             </Link>
           </div>
