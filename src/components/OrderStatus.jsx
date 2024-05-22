@@ -33,32 +33,23 @@ const OrderStatus = () => {
                       <img
                         className="border-radius-15"
                         width="150px"
-                        src={paymentSuccess ? SuccessImg : FailedImg}
+                        src={SuccessImg}
                         alt=" "
                         style={{ width: "150px", textAlign: "center" }}
                       />
 
-                      {paymentSuccess ? (
+                      
                         <h4 className="mb-25 mt-25 text-center">
-                          Payment Successful{" "}
+                          Order Placed  Successfully
                           <p className="mb-25 mt-25 text-center" style={{ fontWeight: "600" }}>
                             {" "}
-                            Order id :<span style={{ color: "green", fontWeight: "800" }}>{paymentId}</span>
+                            {/* Order id :<span style={{ color: "green", fontWeight: "800" }}>{paymentId}</span> */}
                           </p>
                         </h4>
-                      ) : (
-                        <h4 className="mb-25 mt-25 text-center">Failed</h4>
-                      )}
+                 
+                 
                       <p className="mb-30">
-                        {paymentSuccess ? (
-                          <span>
-                            Your payment was successful. <br /> Thank you for shopping with us.
-                          </span>
-                        ) : (
-                          <span>
-                            Your payment was not successful. <br /> Please try again.
-                          </span>
-                        )}
+                    
                       </p>
                     </div>
                   </div>

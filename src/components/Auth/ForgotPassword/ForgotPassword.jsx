@@ -6,7 +6,7 @@ import axios from "axios";
 import { baseUrl } from "../../../utils/baseUrl";
 import { ToastContainer, toast } from 'react-toastify';
 
-const ResetPassword = () => {
+const   ResetPassword = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();

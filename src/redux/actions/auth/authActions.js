@@ -84,7 +84,8 @@ export const verifyEmail = createAsyncThunk("user/verifyemail", async (token, { 
 
 export const verifyResetPasswordToken = createAsyncThunk(
   "user/verify-reset-token",
-  async (token, { rejectWithValue }) => {
+  async ({token}, { rejectWithValue }) => {
+    // console.log(token)
     try {
       const config = {
         headers: {

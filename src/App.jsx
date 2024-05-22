@@ -56,7 +56,7 @@ function App() {
             <Route exact path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route exact path="/bestfits/:amount" element={<ProductsGridPage />} />
             <Route exact path="/paymentsuccess" element={<PaymentStatus />} />
-            <Route exact path="/orderstatus" element={<OrderStatus />} />
+            <Route exact path="/order-status" element={<OrderStatus />} />
           </Routes>
         </BrowserRouter>
       </Provider>

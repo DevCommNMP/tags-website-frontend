@@ -3,7 +3,7 @@ import paymentVisa from "../../assets/imgs/theme/icons/payment-visa.svg";
 import paymentMaster from "../../assets/imgs/theme/icons/payment-master.svg";
 import paymentZapper from "../../assets/imgs/theme/icons/payment-zapper.svg";
 import { Slide, toast, ToastContainer } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import { Button } from "react-bootstrap";
 import { useCallback } from "react";
@@ -16,6 +16,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+
 function loadScript(src) {
   return new Promise((resolve) => {
     const script = document.createElement('script')
@@ -30,9 +31,11 @@ function loadScript(src) {
   })
 }
 
+
 const Checkout = () => {
   const [show, setShow] = useState(false);
   const [region, setRegion] = useState("");
+  const[orderplaced,setorderPlaced]=useState(false);
   const [CGST, setCGST] = useState(0);
   const [SGST, setSGST] = useState(0);
   const [Tax, setTax] = useState(0);
@@ -41,7 +44,7 @@ const Checkout = () => {
   const user = JSON.parse(localStorage.getItem("userData"));
   const [Razorpay] = useRazorpay();
   const dispatch = useDispatch();
-
+const navigate=useNavigate();
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -55,7 +58,7 @@ const Checkout = () => {
     additionalInfo: "",
   });
   const [selectedOption, setSelectedOption] = useState('direct_bank_transfer');
-
+console.log(cartdata)
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -110,7 +113,7 @@ const Checkout = () => {
       }
     }
   };
-const CODHandler=async()=>{
+const CODAlertHandler=async()=>{
   if (!user) {
     toast.error("You need to log in first", {
       position: "top-right",
@@ -128,12 +131,11 @@ const CODHandler=async()=>{
     !formData.phone ||
     !formData.email
   ) {
-    toast.error(
+    toast.error( 
       "Please fill in the billing details correctly with a valid first name, valid last name, valid billing address, valid city name, valid state name, valid zipcode, valid phone number, and valid email"
     );
     return;
   }
-
   if (formData.zipcode.length !== 6 || isNaN(formData.zipcode)) {
     toast.error("Please enter a valid 6-digit zipcode");
     return;
@@ -155,24 +157,46 @@ const CODHandler=async()=>{
     toast.error("Please enter a valid email address");
     return;
   }
-  let totalAmount = (totalPrice + totalTax).toFixed(0);
+
 setShow(true);
-
-setLoading(true)
-
-const res1 = await axios.post(`${baseUrl}/api/COD-chekout`, {
-  amount: totalAmount,
-  userEmail: user.email,
-  cartdata,
-  formData,
-  CGST,
-  SGST,
- Tax     });
-
 }
- 
+const CODHandler = async () => {
+  let totalAmount = (totalPrice + totalTax).toFixed(0);
+  setLoading(true);
+if(cartdata.length<=0){
+  toast.error("Your 🛒cart is empty!")
+  setLoading(false)
+  setShow(false)
+  return;
+}
+  try {
+    const res1 = await axios.post(`${baseUrl}/api/codCheckout`, {
+      amount: totalAmount,
+      userEmail: user.email,
+      cartdata,
+      formData,
+      CGST,
+      SGST,
+      Tax // Assuming Tax is properly defined elsewhere
+    });
 
-
+    console.log(res1)
+    if (res1.data.success) {
+      setLoading(false);
+      setShow(false);
+     await localStorage.removeItem("cartItems");
+     setorderPlaced(true);
+    navigate("/order-status")
+  
+    } else {
+      setLoading(false);
+      toast.error("Something went wrong. Please try again.");
+    }
+  } catch (error) {
+    setLoading(false);
+    console.error("Error:", error); // Handle error appropriately
+  }
+};
 
 
 
@@ -226,10 +250,16 @@ const res1 = await axios.post(`${baseUrl}/api/COD-chekout`, {
       toast.error("Please enter a valid email address");
       return;
     }
+    if(cartdata.length<=0){
+      toast.error("Your 🛒cart is empty!")
+      setLoading(false)
+      return;
+    }
 
     let totalAmount = (totalPrice + totalTax).toFixed(0);
     setLoading(true);
   
+
   
       const { data } = await axios.get(`${baseUrl}/api/getkeys`);
       const res1 = await axios.post(`${baseUrl}/api/checkout`, {
@@ -290,12 +320,11 @@ const res1 = await axios.post(`${baseUrl}/api/COD-chekout`, {
     if (cart) {
       setCartdata(cart);
     }
-  }, []);  
+  }, [orderplaced]);  
 
   useEffect(() => {
-    console.log("Cart Data:", cartdata);
-    console.log("Tax:", Tax, "CGST:", CGST, "SGST:", SGST);
-  }, [cartdata, Tax, CGST, SGST]);
+   
+  }, [cartdata, Tax, CGST, SGST,orderplaced]);
 
 console.log(Tax,"center",CGST ,"state",SGST)
   return (
@@ -303,20 +332,32 @@ console.log(Tax,"center",CGST ,"state",SGST)
         {show && (
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Alert !</Modal.Title>
+            <Modal.Title style={{color:"red"}}>Alert !</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Please check the details before payment. You will not be able to change the details after payment.</Modal.Body>
+          <Modal.Body style={{fontSize:20,color:"black"}}>Please check the details before payment. You will not be able to change the details after placing an order.</Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" >
+            <Button variant="primary" onClick={CODHandler} >
               {loading ? "Loading" : "Confirm"}
             </Button>
           </Modal.Footer>
         </Modal>
       ) }
-      <ToastContainer />
+      <ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+
+/>
       <main className="main">
         <div className="page-header breadcrumb-wrap">
           <div className="container">
@@ -451,9 +492,14 @@ console.log(Tax,"center",CGST ,"state",SGST)
                     </div>
                   </div>
                   <div className="form-group mb-30">
-                    <textarea rows="5" placeholder="Additional information" value={formData.additionalInfo} onChange={handleChange}></textarea>
-                  </div>
-
+      <textarea
+        rows="5"
+        placeholder="Additional information"
+        name="additionalInfo"
+        value={formData.additionalInfo}
+        onChange={handleChange}
+      />
+    </div>
                   <div id="collapsePassword" className="form-group create-account collapse in">
                     <div className="row">
                       <div className="col-lg-6">
@@ -633,7 +679,7 @@ console.log(Tax,"center",CGST ,"state",SGST)
                   <img className="mr-15" src={paymentVisa} alt="" />
                   {/* <img src={paymentZapper} alt="" /> */}
                 </div>
-                <button className="btn btn-fill-out btn-block mt-30" id="rzp-button1" onClick={selectedOption==='direct_bank_transfer'?paymentHandler:CODHandler}>
+                <button className="btn btn-fill-out btn-block mt-30" id="rzp-button1" onClick={selectedOption==='direct_bank_transfer'?paymentHandler:CODAlertHandler}>
                   {loading ? "Loading" : " Place an Order"}
                   <i className="fi-rs-sign-out ml-15"></i>
                 </button>

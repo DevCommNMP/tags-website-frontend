@@ -13,7 +13,7 @@ const ResetPassword = () => {
   const { token } = useParams();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
+const[validToken,setValidToken]=useState(false)
   // State variables for form data and errors
   const storeData = useSelector((store) => store.auth);
   const { ValidPasswordResetToken, loading, appErr, serverErr } = storeData;
@@ -28,7 +28,11 @@ const ResetPassword = () => {
       .then((action) => {
         if (!action.payload.success) {
           toast.error(action.payload.message);
-          // navigate('/login');
+        setValidToken(false)
+       
+        }
+        else{
+          setValidToken(true)
         }
       })
       .catch((error) => {
@@ -36,7 +40,7 @@ const ResetPassword = () => {
         toast.error("Something went wrong. Please try again.");
         // navigate('/login');
       });
-  }, [dispatch]);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -117,7 +121,7 @@ const ResetPassword = () => {
                             />
                           </div>
                           <div className="form-group">
-                          {ValidPasswordResetToken ? (
+                          {validToken ? (
   <button
     type="submit"
     className="btn btn-heading btn-block hover-up"
