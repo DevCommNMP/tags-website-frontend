@@ -20,7 +20,6 @@ const Header = ({ allProducts }) => {
   const [cart, setCart] = useState([]);
   const [user, setUser] = useState("");
   const [token, setToken] = useState("");
-  
 
   const openMenu = () => {
     setIsSidebarVisible(true);
@@ -48,7 +47,7 @@ const Header = ({ allProducts }) => {
     // Define function to handle cart change
     const handleCartChange = () => {
       const cartData = JSON.parse(localStorage.getItem("cartItems"));
-      if (cartData) { 
+      if (cartData) {
         setCart(cartData); // Update cart state based on localStorage data
       }
     };
@@ -67,7 +66,6 @@ const Header = ({ allProducts }) => {
     setToken("");
     navigate("/login");
   };
-
 
   useEffect(() => {
     if (isSidebarVisible) {
@@ -131,11 +129,9 @@ const Header = ({ allProducts }) => {
                           Deals
                         </Link>
                       </li>
-                      <li className="hot-deals" style={{color:"red"}}>
+                      <li className="hot-deals" style={{ color: "red" }}>
                         {/* <img src={iconHot} alt="hot deals" /> */}
-                        <Link  to="/">
-                         Home
-                        </Link>
+                        <Link to="/">Home</Link>
                       </li>
 
                       <li>
@@ -153,7 +149,7 @@ const Header = ({ allProducts }) => {
                           <li>
                             <Link to="/categories/Formal Footwear">Formal Footwear</Link>
                           </li>
-                          <li>  
+                          <li>
                             <Link to="/categories/Party Footwear">Party Footwear</Link>
                           </li>
                           {/* <li>
@@ -215,51 +211,135 @@ const Header = ({ allProducts }) => {
                           Colours <i className="fi-rs-angle-down"></i>
                         </a>
                         <ul className="sub-menu">
-                        <li style={{ display: "flex" }}>
-        <span style={{ backgroundColor: "gold", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
-        <Link to="/allproducts/Gold">Gold</Link>
-      </li>
-      <li style={{ display: "flex" }}>
-        <span style={{ backgroundColor: "peach", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
-        <Link to="/allproducts/Peach">Peach</Link>
-      </li>
-      <li style={{ display: "flex" }}>
-        <span style={{ backgroundColor: "pink", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
-        <Link to="/allproducts/Pink">Pink</Link>
-      </li>
-      <li style={{ display: "flex" }}>
-        <span style={{ backgroundColor: "black", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
-        <Link to="/allproducts/Black">Black</Link>
-      </li>
-      <li style={{ display: "flex" }}>
-        <span style={{ backgroundColor: "white", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
-        <Link to="/allproducts/White">White</Link>
-      </li>
-      <li style={{ display: "flex" }}>
-        <span style={{ backgroundColor: "chic", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
-        <Link to="/allproducts/Chic">Chic</Link>
-      </li>
-      <li style={{ display: "flex" }}>
-        <span style={{ backgroundColor: "blue", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
-        <Link to="/allproducts/Blue"> Blue</Link>
-      </li>
-      <li style={{ display: "flex" }}>
-        <span style={{ backgroundColor: "rust", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
-        <Link to="/allproducts/Rust">Rust</Link>
-      </li>
-      <li style={{ display: "flex" }}>
-        <span style={{ backgroundColor: "olivegreen", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
-        <Link to="/allproducts/Olivegreen">Olive Green</Link>
-      </li>
-      <li style={{ display: "flex" }}>
-        <span style={{ backgroundColor: "brown", width: "15px", height: "15px", marginRight: "5px", border: "1px solid black" }}></span>
-        <Link to="/allproducts/Brown">Brown</Link>
-      </li>
+                          <li style={{ display: "flex" }}>
+                            <span
+                              style={{
+                                backgroundColor: "gold",
+                                width: "15px",
+                                height: "15px",
+                                marginRight: "5px",
+                                border: "1px solid black",
+                              }}
+                            ></span>
+                            <Link to="/allproducts/Gold">Gold</Link>
+                          </li>
+                          <li style={{ display: "flex" }}>
+                            <span
+                              style={{
+                                backgroundColor: "peach",
+                                width: "15px",
+                                height: "15px",
+                                marginRight: "5px",
+                                border: "1px solid black",
+                              }}
+                            ></span>
+                            <Link to="/allproducts/Peach">Peach</Link>
+                          </li>
+                          <li style={{ display: "flex" }}>
+                            <span
+                              style={{
+                                backgroundColor: "pink",
+                                width: "15px",
+                                height: "15px",
+                                marginRight: "5px",
+                                border: "1px solid black",
+                              }}
+                            ></span>
+                            <Link to="/allproducts/Pink">Pink</Link>
+                          </li>
+                          <li style={{ display: "flex" }}>
+                            <span
+                              style={{
+                                backgroundColor: "black",
+                                width: "15px",
+                                height: "15px",
+                                marginRight: "5px",
+                                border: "1px solid black",
+                              }}
+                            ></span>
+                            <Link to="/allproducts/Black">Black</Link>
+                          </li>
+                          <li style={{ display: "flex" }}>
+                            <span
+                              style={{
+                                backgroundColor: "white",
+                                width: "15px",
+                                height: "15px",
+                                marginRight: "5px",
+                                border: "1px solid black",
+                              }}
+                            ></span>
+                            <Link to="/allproducts/White">White</Link>
+                          </li>
+                          <li style={{ display: "flex" }}>
+                            <span
+                              style={{
+                                backgroundColor: "chic",
+                                width: "15px",
+                                height: "15px",
+                                marginRight: "5px",
+                                border: "1px solid black",
+                              }}
+                            ></span>
+                            <Link to="/allproducts/Chic">Chic</Link>
+                          </li>
+                          <li style={{ display: "flex" }}>
+                            <span
+                              style={{
+                                backgroundColor: "blue",
+                                width: "15px",
+                                height: "15px",
+                                marginRight: "5px",
+                                border: "1px solid black",
+                              }}
+                            ></span>
+                            <Link to="/allproducts/Blue"> Blue</Link>
+                          </li>
+                          <li style={{ display: "flex" }}>
+                            <span
+                              style={{
+                                backgroundColor: "rust",
+                                width: "15px",
+                                height: "15px",
+                                marginRight: "5px",
+                                border: "1px solid black",
+                              }}
+                            ></span>
+                            <Link to="/allproducts/Rust">Rust</Link>
+                          </li>
+                          <li style={{ display: "flex" }}>
+                            <span
+                              style={{
+                                backgroundColor: "olivegreen",
+                                width: "15px",
+                                height: "15px",
+                                marginRight: "5px",
+                                border: "1px solid black",
+                              }}
+                            ></span>
+                            <Link to="/allproducts/Olivegreen">Olive Green</Link>
+                          </li>
+                          <li style={{ display: "flex" }}>
+                            <span
+                              style={{
+                                backgroundColor: "brown",
+                                width: "15px",
+                                height: "15px",
+                                marginRight: "5px",
+                                border: "1px solid black",
+                              }}
+                            ></span>
+                            <Link to="/allproducts/Brown">Brown</Link>
+                          </li>
                         </ul>
                       </li>
 
                       <li>
                         <Link to="/about-us">About</Link>
+                      </li>
+
+                      <li>
+                        <Link to="/contact-us">Contact Us</Link>
                       </li>
                       <li>
                         <Link to="/categories/Premium Leather" style={{ color: "#d02327" }}>
@@ -274,7 +354,7 @@ const Header = ({ allProducts }) => {
                 <img src={iconHeadphone} alt="hotline" />
                 <p>
                   +91 9611459290
-<span>7 Days Support Center</span>
+                  <span>7 Days Support Center</span>
                 </p>
               </div>
               <div onClick={openMenu} className="header-action-icon-2 d-block d-lg-none">
@@ -287,140 +367,139 @@ const Header = ({ allProducts }) => {
               <div className="header-action-right d-block d-lg-none">
                 <div className="header-action-2">
                   <div className="header-action-icon-2">
-                  <Link className="mini-cart-icon" to="/cart">
+                    <Link className="mini-cart-icon" to="/cart">
                       <img alt="Nest" src={cartImg} />
                       <span className="pro-count blue">{cart.length || 0}</span>
                     </Link>
-                   
                   </div>
                   <div className="header-action-icon-2">
-                  {token ? (
-                    <div className="header-action-icon-2">
+                    {token ? (
                       <div className="header-action-icon-2">
-                        <div style={{ width: 30, height: 30, border: "1px solid red", borderRadius: "50%" }}>
-                          <img className="svgInject" alt="Profile" src={user.profileImage || account} />
+                        <div className="header-action-icon-2">
+                          <div style={{ width: 30, height: 30, border: "1px solid red", borderRadius: "50%" }}>
+                            <img className="svgInject" alt="Profile" src={user.profileImage || account} />
+                          </div>
+                          <Link>
+                            <span className="lable ml-1">hello, {user.userName}</span>
+                          </Link>
                         </div>
-                        <Link>
-                          <span className="lable ml-1">hello, {user.userName}</span>
-                        </Link>
-                      </div>
 
-                      <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
-                        <ul>
-                          <li>
-                            <Link to="/profile">
-                              <i className="fi fi-rs-user mr-10"></i>My Account
-                            </Link>
-                          </li>
-                          {/* <li>
+                        <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
+                          <ul>
+                            <li>
+                              <Link to="/profile">
+                                <i className="fi fi-rs-user mr-10"></i>My Account
+                              </Link>
+                            </li>
+                            {/* <li>
                             <Link to="/profile">
                               <i className="fi fi-rs-location-alt mr-10"></i>
                               Order Tracking
                             </Link>
                           </li> */}
-                       
-                          <li>
-                            <a>
-                              <i className="fi fi-rs-heart mr-10"></i>My Wishlist
-                            </a>
-                          </li>
-                          {/* <li>
+
+                            <li>
+                              <a>
+                                <i className="fi fi-rs-heart mr-10"></i>My Wishlist
+                              </a>
+                            </li>
+                            {/* <li>
                             <Link to="/profile">
                               <i className="fi fi-rs-settings-sliders mr-10"></i>
                               Setting
                             </Link>
                           </li> */}
-                          <li>
-                            <Link onClick={signOutHandler}>
-                              <i className="fi fi-rs-sign-out mr-10"></i>
-                              Sign out
-                            </Link>
-                          </li>
-                        </ul>
+                            <li>
+                              <Link onClick={signOutHandler}>
+                                <i className="fi fi-rs-sign-out mr-10"></i>
+                                Sign out
+                              </Link>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
-                    </div>
-                  ) : (
-                    <div className="header-action-icon-2">
-                      <Link to="/login">
-                        <img className="svgInject" alt="Account" src={account} />
-                      </Link>
-                      <Link to="/login">
-                        <span className="lable ml-0" onClick={() => navigate("/login")}>
-                          Login
-                        </span>
-                      </Link>
-                    </div>
-                  )}
+                    ) : (
+                      <div className="header-action-icon-2">
+                        <Link to="/login">
+                          <img className="svgInject" alt="Account" src={account} />
+                        </Link>
+                        <Link to="/login">
+                          <span className="lable ml-0" onClick={() => navigate("/login")}>
+                            Login
+                          </span>
+                        </Link>
+                      </div>
+                    )}
                     <div className="header-action-right">
-                <div className="header-action-2">
-                  <div className="header-action-icon-2">
-                    <Link to="/cart" className="mini-cart-icon">
-                      <img alt="Cart" src={cartImg} />
-                      <span className="pro-count blue">{cart.length || 0}</span>
-                    </Link>
-                    <Link to="/cart">
-                      <span className="lable">Cart</span>
-                    </Link>
-                  </div>
-                  {token ? (
-                    <div className="header-action-icon-2">
-                      <div className="header-action-icon-2">
-                        <div style={{ width: 30, height: 30, border: "1px solid red", borderRadius: "50%" }}>
-                          <img className="svgInject" alt="Profile" src={user.profileImage || account} />
+                      <div className="header-action-2">
+                        <div className="header-action-icon-2">
+                          <Link to="/cart" className="mini-cart-icon">
+                            <img alt="Cart" src={cartImg} />
+                            <span className="pro-count blue">{cart.length || 0}</span>
+                          </Link>
+                          <Link to="/cart">
+                            <span className="lable">Cart</span>
+                          </Link>
                         </div>
-                        <Link>
-                          <span className="lable ml-1">hello, {user.userName}</span>
-                        </Link>
-                      </div>
+                        {token ? (
+                          <div className="header-action-icon-2">
+                            <div className="header-action-icon-2">
+                              <div style={{ width: 30, height: 30, border: "1px solid red", borderRadius: "50%" }}>
+                                <img className="svgInject" alt="Profile" src={user.profileImage || account} />
+                              </div>
+                              <Link>
+                                <span className="lable ml-1">hello, {user.userName}</span>
+                              </Link>
+                            </div>
 
-                      <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
-                        <ul>
-                          <li>
-                            <Link to="/profile">
-                              <i className="fi fi-rs-user mr-10"></i>My Account
-                            </Link>
-                          </li>
-                          {/* <li>
+                            <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
+                              <ul>
+                                <li>
+                                  <Link to="/profile">
+                                    <i className="fi fi-rs-user mr-10"></i>My Account
+                                  </Link>
+                                </li>
+                                {/* <li>
                             <Link to="/profile">
                               <i className="fi fi-rs-location-alt mr-10"></i>
                               Order Tracking
                             </Link>
                           </li> */}
-                       
-                          <li>
-                            <a>
-                              <i className="fi fi-rs-heart mr-10"></i>My Wishlist
-                            </a>
-                          </li>
-                          {/* <li>
+
+                                <li>
+                                  <a>
+                                    <i className="fi fi-rs-heart mr-10"></i>My Wishlist
+                                  </a>
+                                </li>
+                                {/* <li>
                             <Link to="/profile">
                               <i className="fi fi-rs-settings-sliders mr-10"></i>
                               Setting
                             </Link>
                           </li> */}
-                          <li>
-                            <Link onClick={signOutHandler}>
-                              <i className="fi fi-rs-sign-out mr-10"></i>
-                              Sign out
+                                <li>
+                                  <Link onClick={signOutHandler}>
+                                    <i className="fi fi-rs-sign-out mr-10"></i>
+                                    Sign out
+                                  </Link>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="header-action-icon-2">
+                            <Link to="/login">
+                              <img className="svgInject" alt="Account" src={account} />
                             </Link>
-                          </li>
-                        </ul>
+                            <Link to="/login">
+                              <span className="lable ml-0" onClick={() => navigate("/login")}>
+                                Login
+                              </span>
+                            </Link>
+                          </div>
+                        )}
                       </div>
                     </div>
-                  ) : (
-                    <div className="header-action-icon-2">
-                      <Link to="/login">
-                        <img className="svgInject" alt="Account" src={account} />
-                      </Link>
-                      <Link to="/login">
-                        <span className="lable ml-0" onClick={() => navigate("/login")}>
-                          Login
-                        </span>
-                      </Link>
-                    </div>
-                  )}
-                </div>
-              </div>
                   </div>
                 </div>
               </div>
