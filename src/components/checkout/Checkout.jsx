@@ -174,6 +174,7 @@ if(cartdata.length<=0){
       amount: totalAmount,
       userEmail: user.email,
       cartdata,
+      quantity:cartdata.length,
       formData,
       CGST,
       SGST,

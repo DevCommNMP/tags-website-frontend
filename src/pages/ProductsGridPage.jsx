@@ -72,23 +72,21 @@ const ProductsGridPage = () => {
     setloading(false);
 };
 
-  const filteredDataByCategories = async (title) => {
-    setloading(true);
-    if(title==="Premium Leather" ){
-      const filtereddata = products.filter((product) => product.isPremiumLeather === true);
-      setupdatedData(filtereddata);
-      setProductCount(filtereddata.length)
-      setloading(false);
-    }
-    else{
-      const filtereddata = products.filter((product) => product.subcategory.subcategoriesName === title);
-      console.log(filtereddata)
-      setupdatedData(filtereddata);
-      setProductCount(filtereddata.length)
-      setloading(false);
-    }
-  
-  };
+const filteredDataByCategories = async (title) => {
+  setloading(true);
+  if (title === "Premium Leather") {
+    const filtereddata = products.filter((product) => product.isPremiumLeather === true);
+    setupdatedData(filtereddata);
+    setProductCount(filtereddata.length);
+    setloading(false);
+  } else {
+    const filtereddata = products.filter((product) => product.subcategory && product.subcategory.subcategoriesName === title);
+    setupdatedData(filtereddata);
+    setProductCount(filtereddata.length);
+    setloading(false);
+  }
+};
+
   const filteredDataBySubtype = async (subtypes) => {
     setloading(true);
     const filtereddata = products.filter((product) => product.subcategoryType.subcategoryTypeName === subtypes);
