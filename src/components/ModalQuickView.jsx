@@ -1,29 +1,46 @@
 /* eslint-disable react/prop-types */
-import { useState, useRef } from "react";
+import { useState,useEffect, useRef } from "react";
 import Slider from "react-slick";
 import { Slide, toast, ToastContainer } from "react-toastify";
-import { addToCartHandler } from "../redux/actions/cart/cartActions";
+// import { addToCartHandler } from "../redux/actions/cart/cartActions";
 import Modal from "react-bootstrap/Modal";
 import { addToCart } from "../redux/actions/cart/cartActions";
-
+import { useDispatch } from "react-redux"; 
 function ModalQuickView(props) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const[itemQuantity,setItemQuantity]=useState(1);
+  const [message,setMessage]=useState("");
   const sliderRef = useRef();
-
+  // color, size, quantity,productCode
   const product = props.product;
+  const dispatch = useDispatch();
+const color=props.product.colorsAvailable[0];
+const size=props.product.sizesAvailable[0].size;
+const quantity=itemQuantity;
+const code=props.product.productName;
 
   const handleThumbnailClick = (index) => {
     setCurrentImageIndex(index);
     sliderRef.current.slickGoTo(index);
   };
-
+ 
  const  cartButtonHandler=async()=>{
-  const res = await dispatch(addToCartHandler(product));
-  console.log(res);
-  setSuccessToast(true);
-  toast.success("Product added to cart", {
-    position: "top-right",
-  });
+
+  const res = await dispatch(addToCart(product,color,size,quantity,code));
+setMessage("Product Added to cart successfully!")
+console.log(message)
+ }
+ const quantityIncHandler=()=>{
+  setItemQuantity(itemQuantity+1);
+ }
+
+ const quantityDecHandler=()=>{
+  if(itemQuantity<=1){
+    return;
+  }
+  else{
+    setItemQuantity(itemQuantity-1)
+  }
  }
 
   const settings = {
@@ -47,12 +64,18 @@ function ModalQuickView(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 // console.log(product)
+useEffect(() => {
+  setTimeout(() => {
+    setMessage("")
+  }, 5000);
+}, [message])
+
   return (
     <>
+    
       <a aria-label="Quick view" onClick={handleShow} className="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal">
         <i className="fi-rs-eye"></i>
       </a>
-
       <Modal show={show} onHide={handleClose}>
           <button className="btn-close" onClick={handleClose}></button>
           <div className="modal-body">
@@ -87,7 +110,7 @@ function ModalQuickView(props) {
               </div>
               <div className="col-md-6 col-sm-12 col-xs-12">
                 <div className="detail-info pr-30 pl-30">
-                  <span className="stock-status out-stock"> Sale Off </span>
+                  {/* <span className="stock-status out-stock"> Sale Off </span> */}
                   <h3 className="title-detail">
                     <a className="text-heading">{product.title}</a>
                   </h3>
@@ -109,29 +132,33 @@ function ModalQuickView(props) {
                     </div>
                   </div>
                   <div className="detail-extralink mb-30">
-                    <div className="detail-qty border radius">
-                      <a className="qty-down">
-                        <i className="fi-rs-angle-small-down"></i>
-                      </a>
-                      <span className="qty-val">1</span>
-                      <a className="qty-up">
-                        <i className="fi-rs-angle-small-up"></i>
-                      </a>
-                    </div>
-                    <div className="product-extra-link2">
-                      <button type="submit" className="button button-add-to-cart" onClick={cartButtonHandler}>
-                        <i className="fi-rs-shopping-cart"></i>Add to cart
-                      </button>
-                    </div>
+                  <div className="detail-qty border radius">
+    <a className="qty-down">
+    {itemQuantity>=1 ?<i className="fi-rs-angle-small-down" onClick={quantityDecHandler} ></i>:""}  
+    </a>
+    <span className="qty-val">{itemQuantity}</span>
+    <a className="qty-up">
+      <i className="fi-rs-angle-small-up" onClick={quantityIncHandler}></i> 
+    </a>
+  </div>
+  <div className="product-extra-link2">
+    <button type="submit" className="button button-add-to-cart" onClick={cartButtonHandler}>
+      <i className="fi-rs-shopping-cart"></i>Add to cart
+    </button>
+
+  </div>
+  <div style={{border:"1px solid green",borderRadius:5}}>
+    {message ?<h5 style={{color:"green",padding:10}}>{message}</h5>:""}
+  </div>
                   </div>
                   <div className="font-xs">
                     <ul>
-                      <li className="mb-5">
+                      {/* <li className="mb-5">
                         Available Colours : {product.availableColors} <span className="text-brand">Nest</span>
                       </li>
                       <li className="mb-5">
                         MFG:<span className="text-brand"> Jun 4.2024</span>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </div>

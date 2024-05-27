@@ -2,20 +2,27 @@ import { useEffect, useState } from "react";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
+
 import { toast, ToastContainer } from "react-toastify";
+
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 const Cart = () => {
   const [cartData, setCartData] = useState([]);
   const [aggregatedCartItems, setAggregatedCartItems] = useState([]);
   const navigate = useNavigate();
-
+  const [productIdToDelete, setProductIdToDelete] = useState(null);
+  const [show, setShow] = useState(false);
+const[loading,setloading]=useState(false)
   const fetchCartData = () => {
     const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
     setCartData(cart);
     const aggregatedItems = aggregateCartItems(cart);
     setAggregatedCartItems(aggregatedItems);
   };
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     fetchCartData();
@@ -44,7 +51,17 @@ const Cart = () => {
       });
     }
   };
-
+  const deleteHandler = (productId) => {
+    setShow(!show);
+    setProductIdToDelete(productId);
+  };
+  const deleteproductHandler = () => {
+    setloading(true)
+    console.log("product deleted successfully");
+    cartItemRemoveHandler(productIdToDelete)
+   setloading(false)
+    setShow(!show);
+  };
   const handleQuantityChange = (productId, action) => {
     const updatedCart = cartData.map((item) => {
       if (item.productId === productId) {
@@ -88,6 +105,24 @@ const Cart = () => {
 
   return (
     <>
+      {show ? (
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Warning !</Modal.Title>
+          </Modal.Header>
+          <Modal.Body> You will not be able to retrieve the product after deletion.</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={deleteproductHandler} disabled={loading}>
+              {loading ? "Loading" : "Delete"}
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      ) : (
+        ""
+      )}
       <Header />
       <ToastContainer />
       <main className="main">
@@ -171,7 +206,7 @@ const Cart = () => {
                               View Product
                             </button>
                           </td>
-                          <td className="action text-center" data-title="Remove" onClick={() => cartItemRemoveHandler(item.productId)}>
+                          <td className="action text-center" data-title="Remove" onClick={() => deleteHandler(item.productId)}>
                             <a className="text-body">
                               <i className="fi-rs-trash"></i>
                             </a>

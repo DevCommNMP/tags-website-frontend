@@ -20,12 +20,13 @@ const Homepage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     const res = dispatch(fetchAllProductsAction());
-    console.log(res);
+   
+    // console.log(res);
   }, [dispatch]);
 
   const storeData = useSelector((store) => store.products);
   const { products, productsLoading, appErr, serverErr } = storeData;
-  console.log(products,productsLoading,appErr,serverErr)
+  // console.log(products,productsLoading,appErr,serverErr)
 
   return (
     <>

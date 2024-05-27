@@ -1,6 +1,7 @@
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProductCard from "../components/ProductCard";
+import { Link } from "react-router-dom";
 
 const ProductTabSection = ({ data }) => {
   const limitedData = data.slice(0, 10); 
@@ -11,9 +12,9 @@ const ProductTabSection = ({ data }) => {
       <section className="product-tabs section-padding position-relative">
         <div className="container">
           <div className="section-title style-2">
-            <a style={{ cursor: "pointer" }}>
+            <Link  to="/popular" style={{ cursor: "pointer" }}>
               <h3 style={{ textTransform: "uppercase", marginTop: "30px" }}>Popular Products</h3>
-            </a>
+            </Link>
           </div>
 
           <div className="tab-content" id="myTabContent">

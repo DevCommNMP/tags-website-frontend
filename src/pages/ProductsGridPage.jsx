@@ -21,7 +21,8 @@ const ProductsGridPage = () => {
   // console.log(data)
   const { title } = useParams();
   const{amount}=useParams();
-  // console.log(amount);
+  const{tag}=useParams();
+  // console.log(tag);
  
 
   const{color}=useParams();
@@ -39,7 +40,7 @@ const ProductsGridPage = () => {
   const storeData = useSelector((store) => store.products);
   const { products, productsLoading, appErr, serverErr } = storeData;
   const [sliderValues, setSliderValues] = useState([0, 100]);
-  const [productsPerPage, setProductsPerPage] = useState(5);
+  const [productsPerPage, setProductsPerPage] = useState(25);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -87,15 +88,28 @@ const filteredDataByCategories = async (title) => {
   }
 };
 
-  const filteredDataBySubtype = async (subtypes) => {
+const filteredDataBySubtype = async (subtypes) => {
+  setloading(true);
+  const filtereddata = products.filter((product) => {
+    // Check if subcategoryType is not null before accessing subcategoryTypeName
+    return product.subcategoryType && product.subcategoryType.subcategoryTypeName === subtypes;
+  });
+
+  setProductCount(filtereddata.length);
+  setupdatedData(filtereddata);
+  setloading(false);
+};
+
+  const filteredByTag = async (tag) => {
     setloading(true);
-    const filtereddata = products.filter((product) => product.subcategoryType.subcategoryTypeName === subtypes);
+    const filtereddata = products.filter((product) => product.tag === tag);
     setProductCount(filtereddata.length)
     setupdatedData(filtereddata);
     setloading(false);
     // console.log(products)
 
-  };const filteredDataByColor = async (color) => {
+  };
+  const filteredDataByColor = async (color) => {
     try {
       setloading(true);
       const filteredData = products.filter((product) => product.colorsAvailable.includes(color));
@@ -147,7 +161,10 @@ const filteredDataByCategories = async (title) => {
     if (color) {
       filteredDataByColor(color);
     }
-  }, [title, color, subtypes, amount, Loading, products]);
+    if(tag){
+      filteredByTag(tag)
+    }
+  }, [title, color, subtypes, amount, Loading, products,tag]);
   
   const [currentPage, setCurrentPage] = useState(1); // State to manage current page
 
@@ -379,11 +396,11 @@ const filteredDataByCategories = async (title) => {
                   </div>
                   <div className="products-per-page-dropdown">
                     <DropdownButton id="products-per-page-dropdown bg-light" title={`Products Per Page: ${productsPerPage}`}>
-                      <Dropdown.Item onClick={() => handlePerPageChange(5)}>5</Dropdown.Item>
-                      <Dropdown.Item onClick={() => handlePerPageChange(10)}>10</Dropdown.Item>
                       <Dropdown.Item onClick={() => handlePerPageChange(25)}>25</Dropdown.Item>
                       <Dropdown.Item onClick={() => handlePerPageChange(50)}>50</Dropdown.Item>
                       <Dropdown.Item onClick={() => handlePerPageChange(100)}>100</Dropdown.Item>
+                      <Dropdown.Item onClick={() => handlePerPageChange(200)}>200</Dropdown.Item>
+                      {/* <Dropdown.Item onClick={() => handlePerPageChange(100)}></Dropdown.Item> */}
                     </DropdownButton>
                   </div>
                 </div>

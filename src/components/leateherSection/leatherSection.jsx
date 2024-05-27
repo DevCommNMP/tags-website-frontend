@@ -70,7 +70,7 @@ const LeatherSection = ({ data }) => {
       <section className="product-tabs section-padding position-relative bg-leather p-5">
         <div className="container">
           <div className="section-title style-2">
-            <Link to="/premium-leather" style={{ cursor: "pointer" }}>
+            <Link to="/categories/Premium Leather" style={{ cursor: "pointer" }}>
               <h3 style={{ textTransform: "uppercase" }}>Premium Leather</h3>
             </Link>
           </div>

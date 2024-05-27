@@ -1,49 +1,51 @@
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { fetchParticularProduct } from "../redux/actions/product/productActions";
+import { addToCart } from "../redux/actions/cart/cartActions";
+import { toast, ToastContainer } from "react-toastify";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import starRating from "../assets/imgs/theme/rating-stars.png";
-import { useDispatch, useSelector } from "react-redux";
 import SingleProductImages from "../components/SingleProductImages";
-import { fetchParticularProduct } from "../redux/actions/product/productActions";
-import { useParams } from "react-router";
-import { useState, useEffect } from "react";
-import { addToCart, addToCartHandler } from "../redux/actions/cart/cartActions";
-import { Link,useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import starRating from "../assets/imgs/theme/rating-stars.png";
 import ProductInfo from "../components/ProductInfo";
-// import ImageMagnify from "../components/ImageMagnify";
-import ReactImageMagnify from "react-image-magnify";
-const imagezoom = `https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg`
-
 
 const Product = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
+  const navigate = useNavigate();
   const storeData = useSelector((store) => store.products);
   const { particularproduct } = storeData;
+
   const [soldOut, setSoldOut] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [stock, setStock] = useState(1);
-  const [selectedColor, setSelectedColor] = useState(particularproduct.colorsAvailable ? particularproduct.colorsAvailable[0] : null);
-  const [selectedSize, setSelectedSize] = useState(particularproduct.sizesAvailable ? particularproduct.sizesAvailable[0] : null);
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
   const [error, setError] = useState("");
-  const navigate = useNavigate();
-  const cartHandler = async (item,selectedColor,selectedSize,quantity) => {
-   await handleBuyNow(selectedColor,selectedSize);
-    await dispatch(addToCart(item,selectedColor,selectedSize,quantity));
- if(selectedColor && selectedSize){
-  toast.success("Product added to cart", {
-    position: "top-right",
-  });
- }
+
+  const cartHandler = async (item, selectedColor, selectedSize, quantity) => {
+    if(selectedColor && selectedSize){
+      setError("");
+     
+    }
+    if (!selectedColor || !selectedSize) {
+      setError("Please select color and size.");
+      return;
+    }
+  
+    await dispatch(addToCart(item, selectedColor, selectedSize, quantity));
+   
+    toast.success("Product added to cart", { position: "top-center" });
   };
 
   const increaseQuantity = () => {
-    setQuantity(quantity + 1);
+    setQuantity((prevQuantity) => prevQuantity + 1);
   };
 
   const decreaseQuantity = () => {
     if (quantity > 1) {
-      setQuantity(quantity - 1);
+      setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
 
@@ -53,27 +55,18 @@ const Product = () => {
 
   const handleSizeSelection = (size, quantity) => {
     setStock(quantity);
+    setSelectedSize(size);
+    setError("");
     if (quantity === 0) {
       setSoldOut(true);
     } else {
       setSoldOut(false);
     }
-    setSelectedSize(size);
-  };
-
-  const handleBuyNow = async(item,selectedColor,selectedSize,quantity) => {
-    if (!selectedColor || !selectedSize) {
-      setError("Please select color and size.");
-      return;
-    } else {
-      await dispatch(addToCart(item,selectedColor,selectedSize,quantity));
-      navigate("/checkout")
-    }
   };
 
   useEffect(() => {
     dispatch(fetchParticularProduct(id));
-  }, [dispatch, id,soldOut]);
+  }, [dispatch, id]);
 
   return (
     <>
@@ -90,7 +83,7 @@ const Product = () => {
   pauseOnHover
   // transition={{ bounce: true }}
   theme="light"
-  style={{width:"100%"}}
+ 
       />
       <Header />
       <main className="main">
@@ -115,7 +108,7 @@ const Product = () => {
                   
                   <div className="col-md-6 col-sm-12 col-xs-12">
                     <div className="detail-info pr-30 pl-30">
-                      <span className="stock-status out-stock">Sale Off</span>
+                      {/* <span className="stock-status out-stock">Sale Off</span> */}
                       <h2 className="title-detail">{particularproduct.title}</h2>
                       <div className="product-detail-rating">
                         <div className="product-rate-cover text-end">

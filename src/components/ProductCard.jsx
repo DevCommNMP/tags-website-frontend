@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ModalQuickView from "../components/ModalQuickView";
 import starRating from "../assets/imgs/theme/rating-stars.png";
 import { useDispatch } from "react-redux";
-import { addToCart, addToCartHandler } from "../redux/actions/cart/cartActions";
+import { addToCart, } from "../redux/actions/cart/cartActions";
 import { toast, ToastContainer } from "react-toastify";
 import Product from "../pages/product";
 
@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
   const [errorToast, setErrorToast] = useState("");
 // console.log(product)
   const cartHandler = async (item) => {
-    console.log(item)
+    // console.log(item)
     const res = await dispatch(addToCart(item,product.colorsAvailable[0],product.sizesAvailable[0].size,1,item.productName));
     console.log(res);
     setSuccessToast(true);

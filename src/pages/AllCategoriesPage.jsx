@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAllCategories } from "../redux/actions/categories/allCategoriesActions";
 import { useEffect } from "react";
 import { Button } from "react-bootstrap";
+import LoaderImg from "../components/LoaderImg";
 
 const AllCategoriesPage = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const AllCategoriesPage = () => {
       <Header />
 
       {/* Render loading message if categories are loading, otherwise render AllCategories component */}
-      {loading && <h1 style={{ textAlign: "center" }}>Loading</h1>}
+      {loading && <LoaderImg/>}
       {!loading && !categories && (
         <div style={{ textAlign: "center", marginTop: 300, marginBottom: 300 }}>
           <h1>Something went wrong try again !</h1>

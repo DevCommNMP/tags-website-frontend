@@ -1,40 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addToCartHandler } from "../../actions/cart/cartActions";
 
 const initialState = {
-  cart: [],
-  cartLoading: false,
-  appErr: null,
-  serverErr: null,
+  cartLength:0,// Initial state should include cartItems array
 };
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
-
   reducers: {
-    clearErrors: (state) => {
-      state.appErr = null;
-      state.serverErr = null;
+    addToCart: (state, action) => {
+      // No need to return anything here, just modify the state
+      state.cartLength = action.payload; // Update cartItems with the new payload
     },
-  },
-  extraReducers: (builder) => {
-    // Add to cart
-    builder.addCase(addToCartHandler.pending, (state, action) => {
-      state.cartLoading = true;
-      (state.addedtocart = false), (state.appErr = null);
-      state.serverErr = null;
-    });
-    builder.addCase(addToCartHandler.fulfilled, (state, action) => {
-      state.cartLoading = false;
-      (state.addedtocart = false), (state.cart = action?.payload);
-    });
-    builder.addCase(addToCartHandler.rejected, (state, action) => {
-      state.cartLoading = false;
-      state.appErr = action?.payload?.message || "An error occurred";
-      state.serverErr = action?.payload?.message || "Network error";
-    });
+   
   },
 });
 
-export const { clearErrors } = cartSlice.actions;
+export const { addToCartSuccess, addToCartFailure } = cartSlice.actions;
+
 export default cartSlice.reducer;

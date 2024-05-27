@@ -42,7 +42,7 @@ const settings = {
 };
 
 const NewArrival = ({ data }) => {
-  console.log(data)
+  // console.log(data)
   const limitedData = data.slice(0, 10); 
     
   return (
@@ -50,7 +50,7 @@ const NewArrival = ({ data }) => {
       <section className="product-tabs section-padding position-relative pb-50">
         <div className="container">
           <div className="section-title style-2">
-            <Link to="new-arrivals" style={{ cursor: "pointer" }}>
+            <Link to="/new" style={{ cursor: "pointer" }}>
               <h3 style={{ textTransform: "uppercase" }}>New Arrivals</h3>
             </Link>
           </div>
