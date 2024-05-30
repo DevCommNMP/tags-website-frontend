@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { Link, useNavigate } from "react-router-dom";
+import { discount as globalDiscount } from "../utils/baseUrl";
 
 import { toast, ToastContainer } from "react-toastify";
 
@@ -14,7 +15,7 @@ const Cart = () => {
   const navigate = useNavigate();
   const [productIdToDelete, setProductIdToDelete] = useState(null);
   const [show, setShow] = useState(false);
-const[loading,setloading]=useState(false)
+  const [loading, setloading] = useState(false);
   const fetchCartData = () => {
     const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
     setCartData(cart);
@@ -56,10 +57,10 @@ const[loading,setloading]=useState(false)
     setProductIdToDelete(productId);
   };
   const deleteproductHandler = () => {
-    setloading(true)
+    setloading(true);
     console.log("product deleted successfully");
-    cartItemRemoveHandler(productIdToDelete)
-   setloading(false)
+    cartItemRemoveHandler(productIdToDelete);
+    setloading(false);
     setShow(!show);
   };
   const handleQuantityChange = (productId, action) => {
@@ -96,11 +97,24 @@ const[loading,setloading]=useState(false)
     }, []);
   };
 
+
   const handleProductClick = (productId) => {
     const clickedItem = cartData.find((item) => item.productId === productId);
     if (clickedItem) {
       navigate(`/products/${productId}`);
     }
+  };
+
+  const calculatePrice = (item) => {
+    const sellingPrice = item.discount
+      ? item.SellingPrice * (1 - item.discount / 100)
+      : item.SellingPrice * (1 - globalDiscount / 100);
+  
+    const taxRate = sellingPrice <= 1000 ? 0.12 : 0.18;
+  
+    const finalPrice = (sellingPrice + sellingPrice * taxRate).toFixed(0);
+  
+    return finalPrice;
   };
 
   return (
@@ -169,6 +183,7 @@ const[loading,setloading]=useState(false)
                         </th>
                       </tr>
                     </thead>
+
                     <tbody>
                       {aggregatedCartItems.map((item, index) => (
                         <tr className="pt-30" key={index}>
@@ -187,8 +202,14 @@ const[loading,setloading]=useState(false)
                             </div>
                           </td>
                           <td className="price" data-title="Price">
-                            <h3 className="text-brand">            <span>&#8377; {item.price <= 1000 ? ((item.price + (item.price * 0.12)).toFixed(0)) : ((item.price + (item.price * 0.18)).toFixed(0))}</span>
-</h3>
+                            <h3 className="text-brand">
+                              {" "}
+                              <span>
+                                &#8377;{" "}
+                                {item.price}
+                              </span>
+                            </h3>
+                            
                           </td>
                           <td className="text-center detail-info" data-title="Stock">
                             <div className="quantity">

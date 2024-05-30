@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const AllCategories = ({ categories }) => {
+  console.log(categories)
   return (
     <div>
       <div className="container">
@@ -20,7 +21,7 @@ const AllCategories = ({ categories }) => {
                       />
                     </div>
                     <div className="mt-10">
-                      <span className="font-small total-product">380 products</span>
+                      <span className="font-small total-product">{item.subcategoriesName}</span>
                     </div>
                   </div>
                   <div className="vendor-content-wrap">

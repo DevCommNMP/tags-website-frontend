@@ -9,6 +9,7 @@ import Footer from "../components/Footer/Footer";
 import SingleProductImages from "../components/SingleProductImages";
 import starRating from "../assets/imgs/theme/rating-stars.png";
 import ProductInfo from "../components/ProductInfo";
+import { discount as globalDiscount} from "../utils/baseUrl";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,10 @@ const Product = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [error, setError] = useState("");
 
+// console.log(particularproduct);
+    const productPrice = particularproduct.discount
+    ? particularproduct.SellingPrice * (1 - particularproduct.discount / 100)
+    : particularproduct.SellingPrice * (1 - globalDiscount / 100);
   const cartHandler = async (item, selectedColor, selectedSize, quantity) => {
     if(selectedColor && selectedSize){
       setError("");
@@ -121,14 +126,15 @@ const Product = () => {
                           <span className="font-small ml-5 text-muted">(32 reviews)</span>
                         </div>
                       </div>
-                      <div className="clearfix product-price-cover">
+                      <div className="clearfix product-price-cover" >
                         <div className="product-price primary-color float-left" style={{ fontSize: "2rem", color: "red", fontWeight: 800 }}>
-                          <span>&#8377; {particularproduct.SellingPrice < 1000 ? ((particularproduct.SellingPrice + (particularproduct.SellingPrice * 0.12)).toFixed(0)) : ((particularproduct.SellingPrice + (particularproduct.SellingPrice * 0.18)).toFixed(0))}</span>
-                          <span className="save-price font-md color ml-15" style={{color:"red",fontSize:"16px"}}>Inc. all taxes</span>
-                          <span>
-                            <span className="save-price font-md color3 ml-15">26% Off </span>
-                            <span className="old-price font-md ml-15">5000</span>
+                        <span>
+                            <span className="save-price font-md color ml-15" style={{color:"red",fontSize:"15px",marginRight:20}} >-{particularproduct.discount?particularproduct.discount:globalDiscount}% Off </span>
+                            <span className="old-price font-md ml-15" style={{fontSize:25}}>&#8377;{particularproduct.SellingPrice}</span>
                           </span>
+                          <span >&#8377; {productPrice < 1000 ? ((productPrice + (productPrice * 0.12)).toFixed(0)) : ((productPrice + (productPrice * 0.18)).toFixed(0))}</span>
+                          <span className="save-price font-md color ml-15" style={{color:"green",fontSize:"16px"}}>Inc. all taxes</span>
+                         
                         </div>
                       </div>
                       <div className="short-desc mb-30">
@@ -200,24 +206,20 @@ const Product = () => {
                       </div>
                       <div className="font-xs">
                         <ul className="mr-50 float-start">
-                          <li className="mb-5">
-                            Type: <span className="text-brand">{particularproduct.occasion}</span>
-                          </li>
-                          <li className="mb-5">
-                            MFG:<span className="text-brand"> Jun 4.2024</span>
-                          </li>
-                          <li>  
-                            LIFE: <span className="text-brand">2 year </span>
-                          </li>
+                          
                         </ul>
                         <ul className="float-start">
                           <li className="mb-5">
-                            Product-Id: <a>{particularproduct.productName}</a>
+                            Product-Id:<span className="in-stock text-brand ml-5">{particularproduct.productName}</span>
                           </li>
                           <li className="mb-5">
                             Tags:
-                            <a rel="tag">{particularproduct.tag}</a>
+                            <span className="in-stock text-brand ml-5">{particularproduct.tag}</span>
                           </li>
+                          <li className="mb-5">
+                            Brand: <span className="text-brand">{particularproduct.brand}</span>
+                          </li>
+                        
                           <li>
                             Stock:
                             <span className="in-stock text-brand ml-5">{stock} Items In Stock</span>

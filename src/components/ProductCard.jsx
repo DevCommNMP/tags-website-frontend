@@ -7,9 +7,12 @@ import { addToCart, } from "../redux/actions/cart/cartActions";
 import { toast, ToastContainer } from "react-toastify";
 import Product from "../pages/product";
 import dummyImg from "../assets/imgs/products/productdummyImg.jpg"
+import { discount as globalDiscount} from "../utils/baseUrl";
+
 const ProductCard = ({ product }) => {
   // console.log("hello, products are here");
-  // console.log(product);
+  console.log(product);
+  
 
   const dispatch = useDispatch();
   
@@ -26,6 +29,10 @@ const ProductCard = ({ product }) => {
     });
   };
 
+  const productPrice = product.discount
+    ? product.SellingPrice * (1 - product.discount / 100)
+    : product.SellingPrice * (1 - globalDiscount / 100);
+
   return (
     <>
       <ToastContainer />
@@ -35,7 +42,7 @@ const ProductCard = ({ product }) => {
             <Link to={`/products/${product._id}`}>
               {product.productImage ?<img className="default-img" src={product.productImage} alt="" />:<img className="default-img" src={dummyImg} alt="" />}
               
-              <img className="default-img" src={product.productImage||dummyImg} alt="" />
+              {/* <img className="default-img" src={product.productImage||dummyImg} alt="" /> */}
             </Link>
           </div>
           <div className="product-action-1">
@@ -65,7 +72,7 @@ const ProductCard = ({ product }) => {
           </div>
           <div className="product-card-bottom">
             <div className="product-price">
-            <span>&#8377; {product.SellingPrice <= 1000 ? ((product.SellingPrice + (product.SellingPrice * 0.12)).toFixed(0)) : ((product.SellingPrice + (product.SellingPrice * 0.18)).toFixed(0))}</span>
+            <span>&#8377; {productPrice <= 1000 ? ((productPrice + (productPrice * 0.12)).toFixed(0)) : ((productPrice + (productPrice * 0.18)).toFixed(0))}</span>
               <span className="old-price">&#8377;{product.SellingPrice}</span>
             </div>
             <div className="add-cart" onClick={() => cartHandler(product)}>

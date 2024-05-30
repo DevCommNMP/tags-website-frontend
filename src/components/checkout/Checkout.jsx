@@ -156,7 +156,6 @@ const Checkout = () => {
       toast.error("Please enter a valid email address");
       return;
     }
-
     setShow(true);
   };
   const CODHandler = async () => {

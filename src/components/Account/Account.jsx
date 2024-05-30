@@ -6,9 +6,15 @@ import {  useDispatch,useSelector } from 'react-redux';
 import { Slide, toast, ToastContainer } from "react-toastify";
 import { useEffect } from "react";
 import { fetchUserDetails } from "../../redux/actions/user/userActions";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import axios from "axios";
+import { baseUrl } from "../../utils/baseUrl";
 const Account = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
-
+  const [loadng,setloading]=useState();
+  const [productIdToDelete, setProductIdToDelete] = useState(null);
+  const [show, setShow] = useState(false);
   const navigate = useNavigate();
 const dispatch=useDispatch();
 
@@ -16,7 +22,7 @@ const storeData = useSelector((store) => store.auth);
 const orderData = useSelector((store) => store.order);
 const { user} = storeData;
 const { userdata,loading,appErr,serverErr } = orderData;
-console.log(userdata)
+// console.log(userdata.order)
 // console.log(userdata)
 const UserData=JSON.parse(localStorage.getItem("userData"));
 // console.log(UserData.email)
@@ -25,8 +31,12 @@ useEffect(() => {
 if((user )){
   toast("Login successfully!");
 }
-}, [user])
+}, [user,show])
 
+const getOrderIdHandler = (productId) => {
+  setShow(!show);
+  setProductIdToDelete(productId);
+};
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
@@ -38,11 +48,53 @@ if((user )){
   }
 
   const orderCancellationHandler=async()=>{
-    
+
+    // toast.success("order cancelled successfully");
+   console.log(productIdToDelete);
+   try {
+    setloading(true)
+    const res=await axios.post(`${baseUrl}/api/orderCancellation/${productIdToDelete}`)
+   if(res.data.success){
+    setloading(false)
+    setShow(!show);
+    toast.success(res.data.message)
+   }
+   } catch (error) {
+    toast.error(res.data.message)
+    setloading(false)
+    setShow(!show);
+   }
+   
   }
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const deleteHandler = (productId) => {
+    setShow(!show);
+    setProductIdToDelete(productId);
+  };
+  
   
   return (
     <>
+    {show ? (
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Warning !</Modal.Title>
+          </Modal.Header>
+          <Modal.Body> Are you sure you wnat to cancel the order ?</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={orderCancellationHandler} disabled={loading}>
+              {loading ? "Loading" : "Cancel"}
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      ) : (
+        ""
+      )}
       <div className="page-content pt-150 pb-150">
         <div className="container">
           <div className="row">
@@ -151,7 +203,7 @@ if((user )){
           <Link to={`/track-order/${orderItem.orderNumber}`} className="btn-small d-block" style={{backgroundColor:"red",padding:5, borderRadius:10,color:"white",}}>
             Track
           </Link>
-           <Link className="btn-small d-block" style={{backgroundColor:"red",padding:5, borderRadius:10,color:"white",marginLeft:10}}>
+           <Link className="btn-small d-block" style={{backgroundColor:"red",padding:5, borderRadius:10,color:"white",marginLeft:10}} onClick={()=>getOrderIdHandler(orderItem.orderNumber)}>
             cancel
           </Link>
         </td>
