@@ -49,15 +49,12 @@ const OrderStatus = () => {
                  
                  
                       <p className="mb-30">
-                        {paymentSuccess ? (
+                     
                           <span>
                             Your order is placed. <br /> Thank you for shopping with us.
                           </span>
-                        ) : (
-                          <span>
-                            Your payment was not successful. <br /> Please try again.
-                          </span>
-                        )}
+                      
+                         
                     
                       </p>
                     </div>

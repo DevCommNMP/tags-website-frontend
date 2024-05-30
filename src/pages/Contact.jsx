@@ -1,12 +1,87 @@
+import { useState } from 'react';
+import axios from 'axios';
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { Link } from "react-router-dom";
-
+import { baseUrl } from '../utils/baseUrl';
+import { ToastContainer, toast } from 'react-toastify';
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    // Clear errors when user starts typing again
+    setErrors({ ...errors, [e.target.name]: '' });
+  };
+
+  const validateForm = () => {
+    let formIsValid = true;
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+      formIsValid = false;
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+      formIsValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email is invalid';
+      formIsValid = false;
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+      formIsValid = false;
+    }
+
+    setErrors(newErrors);
+    return formIsValid;
+  };
+
+ // Client-side (handleSubmit function)
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (validateForm()) {
+    const { name, email, message } = formData;
+
+    try {
+      const data = {
+        name: name,
+        email: email,
+        message: message,
+      };
+      
+      console.log(data); // Verify data before sending
+      
+      const response = await axios.post(`${baseUrl}/api/queries`, data);
+      
+      if (response.data.success) {
+        toast.success("Your query has been successfully submitted.");
+        setFormData({ name: "", email: "", message: "" }); // Clear form fields
+      } else {
+        toast.error("There was an error submitting your query. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("There was an error submitting your query. Please try again later.");
+      console.error('Error:', error); // Log detailed error
+    }
+  }
+};
+
+  
+
   return (
     <>
       <Header />
-
+      <ToastContainer />
       <main className="main pages">
         <div className="page-header breadcrumb-wrap">
           <div className="container">
@@ -37,18 +112,20 @@ const Contact = () => {
                     ></iframe>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                       <div style={{ marginBottom: "10px" }}>
                         <label htmlFor="name" style={{ display: "block", marginBottom: "5px" }}>
                           Name:
                         </label>
-                        <input type="text" id="name" name="name" style={{ width: "100%", padding: "8px", boxSizing: "border-box" }} />
+                        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} style={{ width: "100%", padding: "8px", boxSizing: "border-box" }} />
+                        {errors.name && <div style={{ color: 'red' }}>{errors.name}</div>}
                       </div>
                       <div style={{ marginBottom: "10px" }}>
                         <label htmlFor="email" style={{ display: "block", marginBottom: "5px" }}>
                           Email:
                         </label>
-                        <input type="email" id="email" name="email" style={{ width: "100%", padding: "8px", boxSizing: "border-box" }} />
+                        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} style={{ width: "100%", padding: "8px", boxSizing: "border-box" }} />
+                        {errors.email && <div style={{ color: 'red' }}>{errors.email}</div>}
                       </div>
                       <div style={{ marginBottom: "10px" }}>
                         <label htmlFor="message" style={{ display: "block", marginBottom: "5px" }}>
@@ -58,8 +135,11 @@ const Contact = () => {
                           id="message"
                           name="message"
                           rows="4"
+                          value={formData.message}
+                          onChange={handleChange}
                           style={{ width: "100%", padding: "8px", boxSizing: "border-box" }}
                         ></textarea>
+                        {errors.message && <div style={{ color: 'red' }}>{errors.message}</div>}
                       </div>
                       <button
                         className="btn text-center"

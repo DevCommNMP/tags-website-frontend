@@ -15,6 +15,7 @@ const PaymentStatus = () => {
   const paymentId=searchQuery.get("reference")
  useEffect(() => {
    if(paymentId){
+     localStorage.removeItem('cartItems')
     setPaymentSuccess(true);
    }
  

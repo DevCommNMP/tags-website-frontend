@@ -16,8 +16,8 @@ const storeData = useSelector((store) => store.auth);
 const orderData = useSelector((store) => store.order);
 const { user} = storeData;
 const { userdata,loading,appErr,serverErr } = orderData;
-
 console.log(userdata)
+// console.log(userdata)
 const UserData=JSON.parse(localStorage.getItem("userData"));
 // console.log(UserData.email)
 useEffect(() => {
@@ -36,7 +36,11 @@ if((user )){
     await localStorage.removeItem("userData")
     navigate('/login')
   }
-  // console.log(user)
+
+  const orderCancellationHandler=async()=>{
+    
+  }
+  
   return (
     <>
       <div className="page-content pt-150 pb-150">
@@ -65,24 +69,8 @@ if((user )){
                           Orders
                         </a>
                       </li>
-                      <li className="nav-item">
-                        <a
-                          className={`nav-link ${activeTab === "track-orders" ? "active" : ""}`}
-                          onClick={() => handleTabClick("track-orders")}
-                          role="tab"
-                        >
-                          Track Your Order
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a
-                          className={`nav-link ${activeTab === "address" ? "active" : ""}`}
-                          onClick={() => handleTabClick("address")}
-                          role="tab"
-                        >
-                          My Address
-                        </a>
-                      </li>
+                      
+                      
                       <li className="nav-item">
                         <a
                           className={`nav-link ${activeTab === "account-detail" ? "active" : ""}`}
@@ -145,9 +133,10 @@ if((user )){
   </thead>
  <tbody>
     {userdata.order.map((orderItem, index) => (
-      <tr key={orderItem._id}>
+      
+      <tr key={index}>
         <td>{index + 1}</td>
-        <td>{orderItem.orderId}</td>
+        <td>{orderItem.orderNumber}</td>
         <td>{new Date(orderItem.orderDate).toLocaleDateString('en-US')}</td>
         <td>{orderItem.orderStatus}</td>
         <td style={{ color: orderItem.PaymentStatus === "Paid" ? "green" : "red" }}>
@@ -155,11 +144,18 @@ if((user )){
 </td>
         {/* Assuming you have a field named "total" in your orderItem */}
         
-        <td>
-          <Link to={`/invoice/${orderItem._id}`} className="btn-small d-block">
+        <td style={{display:"flex",}}>
+          <Link to={`/invoice/${orderItem._id}`} className="btn-small d-block" style={{backgroundColor:"green",padding:5, borderRadius:10,color:"white",marginRight:10}}>
             View
           </Link>
+          <Link to={`/track-order/${orderItem.orderNumber}`} className="btn-small d-block" style={{backgroundColor:"red",padding:5, borderRadius:10,color:"white",}}>
+            Track
+          </Link>
+           <Link className="btn-small d-block" style={{backgroundColor:"red",padding:5, borderRadius:10,color:"white",marginLeft:10}}>
+            cancel
+          </Link>
         </td>
+       
       </tr>
     ))}
   </tbody>

@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { addToCart, } from "../redux/actions/cart/cartActions";
 import { toast, ToastContainer } from "react-toastify";
 import Product from "../pages/product";
-
+import dummyImg from "../assets/imgs/products/productdummyImg.jpg"
 const ProductCard = ({ product }) => {
   // console.log("hello, products are here");
   // console.log(product);
@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
   const cartHandler = async (item) => {
     // console.log(item)
     const res = await dispatch(addToCart(item,product.colorsAvailable[0],product.sizesAvailable[0].size,1,item.productName));
-    console.log(res);
+    // console.log(res);
     setSuccessToast(true);
     toast.success("Product added to cart", {
       position: "top-right",
@@ -33,7 +33,9 @@ const ProductCard = ({ product }) => {
         <div className="product-img-action-wrap">
           <div className="product-img product-img-zoom">
             <Link to={`/products/${product._id}`}>
-              <img className="default-img" src={product.productImage} alt="" />
+              {product.productImage ?<img className="default-img" src={product.productImage} alt="" />:<img className="default-img" src={dummyImg} alt="" />}
+              
+              <img className="default-img" src={product.productImage||dummyImg} alt="" />
             </Link>
           </div>
           <div className="product-action-1">

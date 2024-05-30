@@ -19,23 +19,22 @@ import Modal from "react-bootstrap/Modal";
 
 function loadScript(src) {
   return new Promise((resolve) => {
-    const script = document.createElement('script')
-    script.src = src
+    const script = document.createElement("script");
+    script.src = src;
     script.onload = () => {
-      resolve(true)
-    }
+      resolve(true);
+    };
     script.onerror = () => {
-      resolve(false)
-    }
-    document.body.appendChild(script)
-  })
+      resolve(false);
+    };
+    document.body.appendChild(script);
+  });
 }
-
 
 const Checkout = () => {
   const [show, setShow] = useState(false);
   const [region, setRegion] = useState("");
-  const[orderplaced,setorderPlaced]=useState(false);
+  const [orderplaced, setorderPlaced] = useState(false);
   const [CGST, setCGST] = useState(0);
   const [SGST, setSGST] = useState(0);
   const [Tax, setTax] = useState(0);
@@ -44,7 +43,7 @@ const Checkout = () => {
   const user = JSON.parse(localStorage.getItem("userData"));
   const [Razorpay] = useRazorpay();
   const dispatch = useDispatch();
-const navigate=useNavigate();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -57,8 +56,8 @@ const navigate=useNavigate();
     email: "",
     additionalInfo: "",
   });
-  const [selectedOption, setSelectedOption] = useState('direct_bank_transfer');
-console.log(cartdata)
+  const [selectedOption, setSelectedOption] = useState("direct_bank_transfer");
+  console.log(cartdata);
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -82,12 +81,12 @@ console.log(cartdata)
           city: city || "",
         }));
 
-        if (state === 'KARNATAKA') {
+        if (state === "KARNATAKA") {
           let stateTax = 0;
           let centerTax = 0;
           cartdata.forEach((data) => {
             centerTax += (data.tax * data.quantity) / 2;
-           stateTax += (data.tax * data.quantity) / 2;
+            stateTax += (data.tax * data.quantity) / 2;
           });
           setCGST(centerTax);
           setSGST(stateTax);
@@ -96,8 +95,8 @@ console.log(cartdata)
           let stateTax = 0;
           let centerTax = 0;
           cartdata.forEach((data) => {
-            centerTax += (data.tax * data.quantity) /1;
-            console.log(centerTax)
+            centerTax += (data.tax * data.quantity) / 1;
+            console.log(centerTax);
           });
           setCGST(centerTax);
           setSGST(stateTax);
@@ -113,98 +112,90 @@ console.log(cartdata)
       }
     }
   };
-const CODAlertHandler=async()=>{
-  if (!user) {
-    toast.error("You need to log in first", {
-      position: "top-right",
-    });
-    return;
-  }
+  const CODAlertHandler = async () => {
+    if (!user) {
+      toast.error("You need to log in first", {
+        position: "top-right",
+      });
+      return;
+    }
 
-  if (
-    formData.fname.length < 3 ||
-    formData.lname.length < 3 ||
-    !formData.billing_address ||
-    formData.city.length < 3 ||
-    !formData.state ||
-    !formData.zipcode ||
-    !formData.phone ||
-    !formData.email
-  ) {
-    toast.error( 
-      "Please fill in the billing details correctly with a valid first name, valid last name, valid billing address, valid city name, valid state name, valid zipcode, valid phone number, and valid email"
-    );
-    return;
-  }
-  if (formData.zipcode.length !== 6 || isNaN(formData.zipcode)) {
-    toast.error("Please enter a valid 6-digit zipcode");
-    return;
-  }
+    if (
+      formData.fname.length < 3 ||
+      formData.lname.length < 3 ||
+      !formData.billing_address ||
+      formData.city.length < 3 ||
+      !formData.state ||
+      !formData.zipcode ||
+      !formData.phone ||
+      !formData.email
+    ) {
+      toast.error(
+        "Please fill in the billing details correctly with a valid first name, valid last name, valid billing address, valid city name, valid state name, valid zipcode, valid phone number, and valid email"
+      );
+      return;
+    }
+    if (formData.zipcode.length !== 6 || isNaN(formData.zipcode)) {
+      toast.error("Please enter a valid 6-digit zipcode");
+      return;
+    }
 
-  if (formData.phone.length !== 10 || isNaN(formData.phone)) {
-    toast.error("Please enter a valid 10-digit phone number");
-    return;
-  }
+    if (formData.phone.length !== 10 || isNaN(formData.phone)) {
+      toast.error("Please enter a valid 10-digit phone number");
+      return;
+    }
 
-  const isEmailValid = (email) => {
-    // Regular expression for email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    const isEmailValid = (email) => {
+      // Regular expression for email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    };
+
+    const isValid = isEmailValid(formData.email);
+    if (!isValid) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    setShow(true);
   };
-
-  const isValid = isEmailValid(formData.email);
-  if (!isValid) {
-    toast.error("Please enter a valid email address");
-    return;
-  }
-
-setShow(true);
-}
-const CODHandler = async () => {
-  let totalAmount = (totalPrice + totalTax).toFixed(0);
-  setLoading(true);
-if(cartdata.length<=0){
-  toast.error("Your 🛒cart is empty!")
-  setLoading(false)
-  setShow(false)
-  return;
-}
-  try {
-    const res1 = await axios.post(`${baseUrl}/api/codCheckout`, {
-      amount: totalAmount,
-      userEmail: user.email,
-      cartdata,
-      quantity:cartdata.length,
-      formData,
-      CGST,
-      SGST,
-      Tax // Assuming Tax is properly defined elsewhere
-    });
-
-    console.log(res1)
-    if (res1.data.success) {
+  const CODHandler = async () => {
+    let totalAmount = (totalPrice + totalTax).toFixed(0);
+    setLoading(true);
+    if (cartdata.length <= 0) {
+      toast.error("Your 🛒cart is empty!");
       setLoading(false);
       setShow(false);
-     await localStorage.removeItem("cartItems");
-     setorderPlaced(true);
-    navigate("/order-status")
-  
-    } else {
-      setLoading(false);
-      toast.error("Something went wrong. Please try again.");
+      return;
     }
-  } catch (error) {
-    setLoading(false);
-    console.error("Error:", error); // Handle error appropriately
-  }
-};
+    try {
+      const res1 = await axios.post(`${baseUrl}/api/codCheckout`, {
+        amount: totalAmount,
+        userEmail: user.email,
+        cartdata,
+        quantity: cartdata.length,
+        formData,
+        CGST,
+        SGST,
+        Tax, // Assuming Tax is properly defined elsewhere
+      });
 
-
-
-
-
-
-
+      console.log(res1);
+      if (res1.data.success) {
+        setLoading(false);
+        setShow(false);
+        await localStorage.removeItem("cartItems");
+        setorderPlaced(true);
+        navigate("/order-status");
+      } else {
+        setLoading(false);
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setLoading(false);
+      console.error("Error:", error); // Handle error appropriately
+    }
+  };
 
   const paymentHandler = async () => {
     if (!user) {
@@ -251,56 +242,53 @@ if(cartdata.length<=0){
       toast.error("Please enter a valid email address");
       return;
     }
-    if(cartdata.length<=0){
-      toast.error("Your 🛒cart is empty!")
-      setLoading(false)
+    if (cartdata.length <= 0) {
+      toast.error("Your 🛒cart is empty!");
+      setLoading(false);
       return;
     }
 
     let totalAmount = (totalPrice + totalTax).toFixed(0);
     setLoading(true);
-  
 
-  
-      const { data } = await axios.get(`${baseUrl}/api/getkeys`);
-      const res1 = await axios.post(`${baseUrl}/api/checkout`, {
-        amount: totalAmount,
-        userEmail: user.email,
-        cartdata,
-        formData,
-        CGST,
-        SGST,
-       Tax     });
-    
+    const { data } = await axios.get(`${baseUrl}/api/getkeys`);
+    const res1 = await axios.post(`${baseUrl}/api/checkout`, {
+      amount: totalAmount,
+      userEmail: user.email,
+      cartdata,
+      formData,
+      CGST,
+      SGST,
+      Tax,
+    });
+
     var options = {
-           key: data.key,
-          amount: res1.data.order.amount,
-          currency: "INR",
-          name: "Tags Footwear",
-          description: "Test Transaction",
-          image: "https://res.cloudinary.com/dibaxrbac/image/upload/v1711623271/Footwear_Accessories_dwncjn.png",
-          order_id: res1.data.order.id,
-          //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      "callback_url": `${baseUrl}/api/payment-verification`,
-      "prefill": {
-          "name": "Gaurav Kumar",
-          "email": "gaurav.kumar@example.com",
-          "contact": "9000090000"
+      key: data.key,
+      amount: res1.data.order.amount,
+      currency: "INR",
+      name: "Tags Footwear",
+      description: "Test Transaction",
+      image: "https://res.cloudinary.com/dibaxrbac/image/upload/v1711623271/Footwear_Accessories_dwncjn.png",
+      order_id: res1.data.order.id,
+      //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      callback_url: `${baseUrl}/api/payment-verification`,
+      prefill: {
+        name: "Gaurav Kumar",
+        email: "gaurav.kumar@example.com",
+        contact: "9000090000",
       },
       notes: {
         address: "Razorpay Corporate Office",
       },
-      "theme": {
-          "color": "#3399cc"
-      }
-  };
-  var rzp1 = new Razorpay(options);
-      rzp1.open();
-  
-  
+      theme: {
+        color: "#3399cc",
+      },
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+
     setLoading(false);
   };
-
 
   let totalPrice = 0;
   cartdata.forEach((item) => {
@@ -309,7 +297,7 @@ if(cartdata.length<=0){
 
   let totalTax = 0;
   cartdata.forEach((item) => {
-    totalTax += item.price <= 1000 ? (item.price * 0.12 * item.quantity) : (item.price * 0.18 * item.quantity);
+    totalTax += item.price <= 1000 ? item.price * 0.12 * item.quantity : item.price * 0.18 * item.quantity;
   });
 
   const formSubmitHandler = async (e) => {
@@ -321,44 +309,43 @@ if(cartdata.length<=0){
     if (cart) {
       setCartdata(cart);
     }
-  }, [orderplaced]);  
+  }, [orderplaced]);
 
-  useEffect(() => {
-   
-  }, [cartdata, Tax, CGST, SGST,orderplaced]);
+  useEffect(() => {}, [cartdata, Tax, CGST, SGST, orderplaced]);
 
-console.log(Tax,"center",CGST ,"state",SGST)
+  console.log(Tax, "center", CGST, "state", SGST);
   return (
     <>
-        {show && (
+      {show && (
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title style={{color:"red"}}>Alert !</Modal.Title>
+            <Modal.Title style={{ color: "red" }}>Alert !</Modal.Title>
           </Modal.Header>
-          <Modal.Body style={{fontSize:20,color:"black"}}>Please check the details before payment. You will not be able to change the details after placing an order.</Modal.Body>
+          <Modal.Body style={{ fontSize: 20, color: "black" }}>
+            Please check the details before payment. You will not be able to change the details after placing an order.
+          </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={CODHandler} >
+            <Button variant="primary" onClick={CODHandler}>
               {loading ? "Loading" : "Confirm"}
             </Button>
           </Modal.Footer>
         </Modal>
-      ) }
+      )}
       <ToastContainer
-position="top-center"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="light"
-
-/>
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <main className="main">
         <div className="page-header breadcrumb-wrap">
           <div className="container">
@@ -430,38 +417,64 @@ theme="light"
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-6">
+                {/* <div className="col-lg-6">
                   <form className="apply-coupon" onClick={formSubmitHandler}>
                     <input type="text" placeholder="Enter Coupon Code..." />
-                    <button className="btn  btn-md" name="login">
-                      Apply Coupon
-                    </button>
+                 
                   </form>
-                </div>
+                </div> */}
               </div>
               <div className="row">
                 <h4 className="mb-30">Billing Details</h4>
                 <form method="post" onSubmit={formSubmitHandler}>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                      <input type="text" required="true" name="fname" placeholder="First name *"    value={formData.fname} onChange={handleChange}/>
+                      <input
+                        type="text"
+                        required="true"
+                        name="fname"
+                        placeholder="First name *"
+                        value={formData.fname}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="form-group col-lg-6">
-                      <input type="text" required="true" name="lname" placeholder="Last name *"  value={formData.lname} onChange={handleChange} />
+                      <input
+                        type="text"
+                        required="true"
+                        name="lname"
+                        placeholder="Last name *"
+                        value={formData.lname}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                      <input type="text" name="billing_address" required="true" placeholder="Address *"  value={formData.billing_address} onChange={handleChange}/>
+                      <input
+                        type="text"
+                        name="billing_address"
+                        required="true"
+                        placeholder="Address *"
+                        value={formData.billing_address}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="form-group col-lg-6">
-                      <input type="text" name="billing_address2" required=" true" placeholder="Address line2" value={formData.billing_address2} onChange={handleChange} />
+                      <input
+                        type="text"
+                        name="billing_address2"
+                        required=" true"
+                        placeholder="Address line2"
+                        value={formData.billing_address2}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
                   <div className="row shipping_calculator">
                     <div className="form-group col-lg-6">
                       <div className="custom_select">
-                        <select className="form-control select-active" required  value={formData.country} onChange={handleChange}>
+                        <select className="form-control select-active" required value={formData.country} onChange={handleChange}>
                           <option value="">Select an option...</option>
                           <option value="IND" selected>
                             India
@@ -469,38 +482,66 @@ theme="light"
                         </select>
                       </div>
                     </div>
-                    
+
                     <div className="form-group col-lg-6">
-                      
-                      <input required="" type="text" name="city" placeholder="City / Town *"  value={formData.city} onChange={handleChange}/>
+                      <input
+                        required=""
+                        type="text"
+                        name="city"
+                        placeholder="City / Town *"
+                        value={formData.city}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                    <input required="" type="text" name="state" placeholder="State *"  value={formData.state} onChange={handleChange}/>
-                    
+                      <input required="" type="text" name="state" placeholder="State *" value={formData.state} onChange={handleChange} />
                     </div>
                     <div className="form-group col-lg-6">
-                    <input required type="number" name="zipcode" placeholder="Postcode / ZIP *" maxLength={6} value={formData.zipcode} onChange={handleChange} />
+                      <input
+                        required
+                        type="number"
+                        name="zipcode"
+                        placeholder="Postcode / ZIP *"
+                        maxLength={6}
+                        value={formData.zipcode}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
                   <div className="row">
                     <div className="form-group col-lg-6">
-                      <input required="" type="number" name="phone" placeholder="Phone *"  max={10} value={formData.phone} onChange={handleChange} />
+                      <input
+                        required=""
+                        type="number"
+                        name="phone"
+                        placeholder="Phone *"
+                        max={10}
+                        value={formData.phone}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="form-group col-lg-6">
-                      <input required="" type="text" name="email" placeholder="Email address *"  value={formData.email} onChange={handleChange} />
+                      <input
+                        required=""
+                        type="text"
+                        name="email"
+                        placeholder="Email address *"
+                        value={formData.email}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
                   <div className="form-group mb-30">
-      <textarea
-        rows="5"
-        placeholder="Additional information"
-        name="additionalInfo"
-        value={formData.additionalInfo}
-        onChange={handleChange}
-      />
-    </div>
+                    <textarea
+                      rows="5"
+                      placeholder="Additional information"
+                      name="additionalInfo"
+                      value={formData.additionalInfo}
+                      onChange={handleChange}
+                    />
+                  </div>
                   <div id="collapsePassword" className="form-group create-account collapse in">
                     <div className="row">
                       <div className="col-lg-6">
@@ -515,10 +556,24 @@ theme="light"
                     <div id="collapseAddress" className="different_address collapse in">
                       <div className="row">
                         <div className="form-group col-lg-6">
-                          <input type="text" required name="fname" placeholder="First name *"  value={formData.fname} onChange={handleChange}  />
+                          <input
+                            type="text"
+                            required
+                            name="fname"
+                            placeholder="First name *"
+                            value={formData.fname}
+                            onChange={handleChange}
+                          />
                         </div>
                         <div className="form-group col-lg-6">
-                          <input type="text" required name="lname" placeholder="Last name *"  value={formData.lname} onChange={handleChange}/>
+                          <input
+                            type="text"
+                            required
+                            name="lname"
+                            placeholder="Last name *"
+                            value={formData.lname}
+                            onChange={handleChange}
+                          />
                         </div>
                       </div>
                       <div className="row shipping_calculator">
@@ -528,8 +583,10 @@ theme="light"
                         <div className="form-group col-lg-6">
                           <div className="custom_select w-100">
                             <select className="form-control select-active">
-                              <option value={formData.country} onChange={handleChange} required>Select an option...</option>
-                              <option value="Ind" selected >
+                              <option value={formData.country} onChange={handleChange} required>
+                                Select an option...
+                              </option>
+                              <option value="Ind" selected>
                                 India
                               </option>
                             </select>
@@ -538,23 +595,58 @@ theme="light"
                       </div>
                       <div className="row">
                         <div className="form-group col-lg-6">
-                          <input type="text" name="billing_address" required placeholder="Address *"   value={formData.billing_address} onChange={handleChange}/>
+                          <input
+                            type="text"
+                            name="billing_address"
+                            required
+                            placeholder="Address *"
+                            value={formData.billing_address}
+                            onChange={handleChange}
+                          />
                         </div>
                         <div className="form-group col-lg-6">
-                          <input type="text" name="billing_address2" required="" placeholder="Address line2"  value={formData.billing_address2} onChange={handleChange} />
+                          <input
+                            type="text"
+                            name="billing_address2"
+                            required=""
+                            placeholder="Address line2"
+                            value={formData.billing_address2}
+                            onChange={handleChange}
+                          />
                         </div>
                       </div>
                       <div className="row">
                         <div className="form-group col-lg-6">
-                          <input required="" type="text" name="state" placeholder="State / County *"   value={formData.state} onChange={handleChange}/>
+                          <input
+                            required=""
+                            type="text"
+                            name="state"
+                            placeholder="State / County *"
+                            value={formData.state}
+                            onChange={handleChange}
+                          />
                         </div>
                         <div className="form-group col-lg-6">
-                          <input required="" type="text" name="city" placeholder="City / Town *"  value={formData.town} onChange={handleChange}/>
+                          <input
+                            required=""
+                            type="text"
+                            name="city"
+                            placeholder="City / Town *"
+                            value={formData.town}
+                            onChange={handleChange}
+                          />
                         </div>
                       </div>
                       <div className="row">
                         <div className="form-group col-lg-6">
-                          <input required="" type="text" name="zipcode" placeholder="Postcode / ZIP *"   value={formData.zipcode} onChange={handleChange}/>
+                          <input
+                            required=""
+                            type="text"
+                            name="zipcode"
+                            placeholder="Postcode / ZIP *"
+                            value={formData.zipcode}
+                            onChange={handleChange}
+                          />
                         </div>
                       </div>
                     </div>
@@ -595,92 +687,85 @@ theme="light"
                               <h6 className="text-muted pl-20 pr-20">x{item.quantity} </h6>
                             </td>
                             <td>
-                              
-                            <h4 className="text-brand">&#x20B9;{item.price} </h4>     <span style={{}}>
-    Tax &#x20B9;{item.price <= 1000 ? (((item.price * 0.12)).toFixed(0))*item.quantity : (((item.price * 0.18)).toFixed(0))}
-  </span></td>
+                              <h4 className="text-brand">&#x20B9;{item.price} </h4>{" "}
+                              <span style={{}}>
+                                Tax &#x20B9;
+                                {item.price <= 1000 ? (item.price * 0.12).toFixed(0) * item.quantity : (item.price * 0.18).toFixed(0)}
+                              </span>
+                            </td>
                           </tr>
                         ))}
                       </tbody>
-                      <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
-                        <h4> Sub Total = </h4>
-                        <h4> &#x20B9;{totalPrice}</h4>
-                       
-                        
-                       
-                      </div>
-                      <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
                       
-                        <h4> Total Tax = </h4>
-                        <h4> &#x20B9;{totalTax.toFixed(0)}</h4>
-                        
-                       
-                      </div>
-                      <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around" }}>
-                      
-                      <h4> Total Amount = </h4>
-                      <h4> &#x20B9;{(totalPrice+totalTax).toFixed(0)}</h4>
-                      
-                     
-                    </div>
                     </table>
+                    <div style={{ display: "flex",textAlign:"right" ,flexDirection:"column", justifyContent: "space-around", width:"100%",float:"right"}}>
+                        <h5> Sub Total = 
+                        <span> &#x20B9;{totalPrice}</span></h5>
+                        <h5> Total Tax = 
+                        <span> &#x20B9;{totalTax.toFixed(0)}</span></h5>
+                        <h5> Total Amount = 
+                        <span> &#x20B9;{(totalPrice + totalTax).toFixed(0)}</span></h5>
+                      </div>
                   </div>
                 </div>
               </div>
               <div className="payment ml-30">
                 <h4 className="mb-30">Payment</h4>
                 <div className="payment_option">
-      <div className="custome-radio">
-        <input
-          className="form-check-input"
-          required
-          type="radio"
-          name="payment_option"
-          id="directBankTransfer"
-          value="direct_bank_transfer"
-          checked={selectedOption === 'direct_bank_transfer'}
-          onChange={handleOptionChange}
-        />
-        <label
-          className="form-check-label"
-          htmlFor="directBankTransfer"
-          data-bs-toggle="collapse"
-          data-target="#bankTranfer"
-          aria-controls="bankTranfer"
-        >
-          Direct Bank Transfer
-        </label>
-      </div>
-      <div className="custome-radio">
-        <input
-          className="form-check-input"
-          required
-          type="radio"
-          name="payment_option"
-          id="cashOnDelivery"
-          value="cash_on_delivery"
-          checked={selectedOption === 'cash_on_delivery'}
-          onChange={handleOptionChange}
-        />
-        <label
-          className="form-check-label"
-          htmlFor="cashOnDelivery"
-          data-bs-toggle="collapse"
-          data-target="#checkPayment"
-          aria-controls="checkPayment"
-        >
-          Cash on Delivery
-        </label>
-      </div>
-     
-    </div>
+                  <div className="custome-radio">
+                    <input
+                      className="form-check-input"
+                      required
+                      type="radio"
+                      name="payment_option"
+                      id="directBankTransfer"
+                      value="direct_bank_transfer"
+                      checked={selectedOption === "direct_bank_transfer"}
+                      onChange={handleOptionChange}
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor="directBankTransfer"
+                      data-bs-toggle="collapse"
+                      data-target="#bankTranfer"
+                      aria-controls="bankTranfer"
+                    >
+                      Direct Bank Transfer
+                    </label>
+                  </div>
+                  <div className="custome-radio">
+                    <input
+                      className="form-check-input"
+                      required
+                      type="radio"
+                      name="payment_option"
+                      id="cashOnDelivery"
+                      value="cash_on_delivery"
+                      checked={selectedOption === "cash_on_delivery"}
+                      onChange={handleOptionChange}
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor="cashOnDelivery"
+                      data-bs-toggle="collapse"
+                      data-target="#checkPayment"
+                      aria-controls="checkPayment"
+                    >
+                      Cash on Delivery
+                    </label>
+                  </div>
+                </div>
                 <div className="payment-logo d-flex">
                   <img className="mr-15" src={paymentMaster} alt="" />
                   {/* <img className="mr-15" src={paymentPaypal} alt="" /> */}
                   <img className="mr-15" src={paymentVisa} alt="" />
                   {/* <img src={paymentZapper} alt="" /> */}
                 </div>
-                <button className="btn btn-fill-out btn-block mt-30" id="rzp-button1" onClick={selectedOption==='direct_bank_transfer'?paymentHandler:CODAlertHandler}>
+                <button
+                  className="btn btn-fill-out btn-block mt-30"
+                  id="rzp-button1"
+                  onClick={selectedOption === "direct_bank_transfer" ? paymentHandler : CODAlertHandler}
+                >
                   {loading ? "Loading" : " Place an Order"}
                   <i className="fi-rs-sign-out ml-15"></i>
                 </button>

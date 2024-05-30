@@ -12,6 +12,7 @@ export const fetchOrder = createAsyncThunk("order/fetchOrder", async (orderId, {
       };
   
       const res = await axios.get(`${baseUrl}/api/orders/${orderId}`, config);
+      console.log(res.data)
       return res.data;
     } catch (error) {
       if (!error.response) {
@@ -31,6 +32,7 @@ export const fetchOrder = createAsyncThunk("order/fetchOrder", async (orderId, {
       };
   
       const res = await axios.get(`${baseUrl}/api/orderDetails/${orderId}`, config);
+     
       return res.data;
     } catch (error) {
       if (!error.response) {

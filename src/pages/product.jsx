@@ -124,7 +124,7 @@ const Product = () => {
                       <div className="clearfix product-price-cover">
                         <div className="product-price primary-color float-left" style={{ fontSize: "2rem", color: "red", fontWeight: 800 }}>
                           <span>&#8377; {particularproduct.SellingPrice < 1000 ? ((particularproduct.SellingPrice + (particularproduct.SellingPrice * 0.12)).toFixed(0)) : ((particularproduct.SellingPrice + (particularproduct.SellingPrice * 0.18)).toFixed(0))}</span>
-                          <span className="save-price font-md color3 ml-15">Inc. all taxes</span>
+                          <span className="save-price font-md color ml-15" style={{color:"red",fontSize:"16px"}}>Inc. all taxes</span>
                           <span>
                             <span className="save-price font-md color3 ml-15">26% Off </span>
                             <span className="old-price font-md ml-15">5000</span>
@@ -132,7 +132,7 @@ const Product = () => {
                         </div>
                       </div>
                       <div className="short-desc mb-30">
-                        <p className="font-lg">{particularproduct.description}</p>
+                        <p className="font-lg" style={{color:"black",fontSize:"25px"}}>{particularproduct.description}</p>
                       </div>
 
                       <div className="attr-detail attr-size mb-3">
@@ -206,7 +206,7 @@ const Product = () => {
                           <li className="mb-5">
                             MFG:<span className="text-brand"> Jun 4.2024</span>
                           </li>
-                          <li>
+                          <li>  
                             LIFE: <span className="text-brand">2 year </span>
                           </li>
                         </ul>

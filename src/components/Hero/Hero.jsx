@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import HeroSideBanner from "../../components/Hero/HeroSideBanner";
 // import Banner1  from "../../assets/imgs/banner/homepageBanner/Banner2.jpeg"
 import Banner1 from "../../assets/imgs/banner/homepageBanner/banner2.jpeg"
+import Banner2 from "../../assets/imgs/banner/homepageBanner/banner-2.jpg"
 var settings = {
   dots: true,
   infinite: true,
@@ -33,12 +34,12 @@ const Hero = () => {
                   </li>
 
                   <li className="single-hero-slider single-animation-wrap Banner1">
-                    <img src={Banner1}  alt="" />
+                    <img src={Banner2}  alt="" />
                   </li>
 
-                  <li className="single-hero-slider single-animation-wrap Banner1">
+                  {/* <li className="single-hero-slider single-animation-wrap Banner1">
                     <img src={Banner1}  alt="" />
-                  </li>
+                  </li> */}
 
                 </Slider>
               </div>
