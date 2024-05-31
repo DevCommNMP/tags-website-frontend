@@ -1,8 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Slider from "react-slick";
-import ReactImageMagnify from "react-image-magnify";
-
-const imagezoom = `https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg`
+import ImageZoom from "./ImageZoom";
 
 const SingleProductImages = ({ product }) => {
   const [nav1, setNav1] = useState(null);
@@ -22,7 +20,7 @@ const SingleProductImages = ({ product }) => {
   const productSubImagesArr = Array.isArray(productSubImages) ? productSubImages : [];
 
   const settings = {
-    // dots: true,
+    dots: true,
     infinite: true,
     speed: 800,
     slidesToShow: 1,
@@ -57,22 +55,8 @@ const SingleProductImages = ({ product }) => {
         <div className="product-image-slider col-10">
           <Slider {...settings} asNavFor={nav2} ref={(slider) => (sliderRef1 = slider)}>
             {productImagesArr.map((image, index) => (
-              <div key={index}>
-                {/* <img src={image} alt={`product image ${index}`} /> */}
-                <ReactImageMagnify
-                  {...{
-                    smallImage: {
-                      alt: "Wristwatch by Ted Baker London",
-                      isFluidWidth: true,
-                      src: image,
-                    },
-                    largeImage: {
-                      src: imagezoom,
-                      width: 1200,
-                      height: 1800,
-                    },
-                  }}
-                />
+              <div key={index} className="image-container">
+                <ImageZoom imageUrl={image} />
               </div>
             ))}
           </Slider>
