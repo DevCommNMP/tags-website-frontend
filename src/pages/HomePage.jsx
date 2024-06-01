@@ -30,7 +30,7 @@ const Homepage = () => {
 
   return (
     <>
-      <Header allProducts = {products}/>
+      <Header />
       {productsLoading ? (
         <LoaderImg />
       ) : (

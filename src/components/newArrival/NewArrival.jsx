@@ -64,6 +64,7 @@ const NewArrival = ({ data }) => {
                 <div className="col-lg-4-5 col-sm-12">
                   <Slider {...settings}>
                   {data.filter(product => product.tag === 'new').map((product, index) => (
+              
   <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
     <ProductCard product={product} />
   </div>

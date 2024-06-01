@@ -6,6 +6,7 @@ import { Slide, toast, ToastContainer } from "react-toastify";
 import Modal from "react-bootstrap/Modal";
 import { addToCart } from "../redux/actions/cart/cartActions";
 import { useDispatch } from "react-redux"; 
+import { discount as globalDiscount} from "../utils/baseUrl";
 function ModalQuickView(props) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const[itemQuantity,setItemQuantity]=useState(1);
@@ -69,7 +70,12 @@ useEffect(() => {
     setMessage("")
   }, 5000);
 }, [message])
+// console.log(props)
+const productPrice = props.product.discount
+    ? props.product.SellingPrice * (1 - props.product.discount / 100)
+    : props.product.SellingPrice * (1 - globalDiscount / 100);
 
+    console.log(productPrice)
   return (
     <>
     
@@ -119,14 +125,22 @@ useEffect(() => {
                       <div className="product-rate d-inline-block">
                         <div className="product-rating" style={{ width: "90%" }}></div>
                       </div>
-                      <span className="font-small ml-5 text-muted">Rating {product.rating}</span>
+                      <span className="font-small ml-5 " style={{color:"black",fontSize:20,float:"left"}}>Rating {product.rating}</span>
                     </div>
                   </div>
                   <div className="clearfix product-price-cover">
                     <div className="product-price primary-color float-left">
-                      <span className="current-price text-brand"> &#8377;{product.SellingPrice <= 1000 ? ((product.SellingPrice + (product.SellingPrice * 0.12)).toFixed(0)) : ((product.SellingPrice + (product.SellingPrice * 0.18)).toFixed(0))}</span>
-                      <span>
-                        <span className="save-price font-md color3 ml-15">26% Off</span>
+                    <span className="current-price text-brand"> &#8377;{(props.product.discount
+    ? (props.product.SellingPrice * (1 - props.product.discount / 100))
+    : (props.product.SellingPrice * (1 - globalDiscount / 100))) <= 1000
+      ? ((props.product.discount
+          ? (props.product.SellingPrice * (1 - props.product.discount / 100))
+          : (props.product.SellingPrice * (1 - globalDiscount / 100))) * 1.12).toFixed(0)
+      : ((props.product.discount
+          ? (props.product.SellingPrice * (1 - props.product.discount / 100))
+          : (props.product.SellingPrice * (1 - globalDiscount / 100))) * 1.18).toFixed(0)}
+</span>                      <span>
+                        <span className="save-price font-md color3 ml-15" style={{fontSize:20}}>{props.product.discount||globalDiscount}%off</span>
                         <span className="old-price font-md ml-15"></span>
                       </span>
                     </div>

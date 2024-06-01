@@ -4,7 +4,7 @@ import Slider from "react-slick";
 
 // import SlickSlider from '../SlickSlider/SlickSlider'
 import HeroSideBanner from "../../components/Hero/HeroSideBanner";
-// import Banner1  from "../../assets/imgs/banner/homepageBanner/Banner2.jpeg"
+import Banner3  from "../../assets/imgs/banner/homepageBanner/banner-3.jpg"
 import Banner1 from "../../assets/imgs/banner/homepageBanner/banner2.jpeg"
 import Banner2 from "../../assets/imgs/banner/homepageBanner/banner-2.jpg"
 var settings = {
@@ -15,7 +15,7 @@ var settings = {
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 2500,
-  // cssEase: "linear",
+
   pauseOnHover: false,
   arrows: false,
 };
@@ -37,9 +37,9 @@ const Hero = () => {
                     <img src={Banner2}  alt="" />
                   </li>
 
-                  {/* <li className="single-hero-slider single-animation-wrap Banner1">
-                    <img src={Banner1}  alt="" />
-                  </li> */}
+                  <li className="single-hero-slider single-animation-wrap Banner1">
+                    <img src={Banner3}  alt="" />
+                  </li>
 
                 </Slider>
               </div>

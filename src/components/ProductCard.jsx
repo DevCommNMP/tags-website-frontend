@@ -5,15 +5,12 @@ import starRating from "../assets/imgs/theme/rating-stars.png";
 import { useDispatch } from "react-redux";
 import { addToCart, } from "../redux/actions/cart/cartActions";
 import { toast, ToastContainer } from "react-toastify";
-import Product from "../pages/product";
+// import Product from "../pages/product";
 import dummyImg from "../assets/imgs/products/productdummyImg.jpg"
 import { discount as globalDiscount} from "../utils/baseUrl";
 
 const ProductCard = ({ product }) => {
-  // console.log("hello, products are here");
-  console.log(product);
-  
-
+ 
   const dispatch = useDispatch();
   
   const [successToast, setSuccessToast] = useState("");
@@ -41,8 +38,6 @@ const ProductCard = ({ product }) => {
           <div className="product-img product-img-zoom">
             <Link to={`/products/${product._id}`}>
               {product.productImage ?<img className="default-img" src={product.productImage} alt="" />:<img className="default-img" src={dummyImg} alt="" />}
-              
-              {/* <img className="default-img" src={product.productImage||dummyImg} alt="" /> */}
             </Link>
           </div>
           <div className="product-action-1">
@@ -75,7 +70,7 @@ const ProductCard = ({ product }) => {
             <span>&#8377; {productPrice <= 1000 ? ((productPrice + (productPrice * 0.12)).toFixed(0)) : ((productPrice + (productPrice * 0.18)).toFixed(0))}</span>
               <span className="old-price">&#8377;{product.SellingPrice}</span>
             </div>
-            <div className="add-cart" onClick={() => cartHandler(product)}>
+            <div className="add-cart" onClick={() => cartHandler(props.product)}>
               <a className="add">
                 <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
               </a>

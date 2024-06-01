@@ -18,11 +18,11 @@ import ProductCard from "../components/ProductCard.jsx";
 import { ToastContainer } from "react-toastify";
 import LoaderImg from "../components/LoaderImg.jsx";
 const ProductsGridPage = () => {
-  // console.log(data)
+  
   const { title } = useParams();
   const{amount}=useParams();
   const{tag}=useParams();
-  // console.log(tag);
+
  
 
   const{color}=useParams();
@@ -71,22 +71,32 @@ const ProductsGridPage = () => {
     setupdatedData(filteredData);
     setProductCount(filteredData.length);
     setloading(false);
+    return;
 };
 
 const filteredDataByCategories = async (title) => {
   setloading(true);
   if (title === "Premium Leather") {
     const filtereddata = products.filter((product) => product.isPremiumLeather === true);
+    console.log(filtereddata)
     setupdatedData(filtereddata);
     setProductCount(filtereddata.length);
     setloading(false);
-  } else {
-    const filtereddata = products.filter((product) => product.subcategory && product.subcategory.subcategoriesName === title);
-    setupdatedData(filtereddata);
-    setProductCount(filtereddata.length);
-    setloading(false);
+    return;
   }
 };
+const filteredByCategories = async (title) => {
+  setloading(true);
+  console.log(title);
+
+  const filtereddata = products.filter((product) => product?.subcategory?.subcategoriesName ==title);
+  console.log(filtereddata);
+
+  setupdatedData(filtereddata);
+  setProductCount(filtereddata.length);
+  setloading(false);
+};
+
 
 const filteredDataBySubtype = async (subtypes) => {
   setloading(true);
@@ -106,6 +116,8 @@ const filteredDataBySubtype = async (subtypes) => {
     setProductCount(filtereddata.length)
     setupdatedData(filtereddata);
     setloading(false);
+    return;
+
     // console.log(products)
 
   };
@@ -117,6 +129,7 @@ const filteredDataBySubtype = async (subtypes) => {
      setupdatedData(filteredData); 
       setProductCount(filteredData.length)// Assuming setupdatedData is an async function
       setloading(false);
+      return;
     } catch (error) {
       // Handle any errors here
       console.error("Error filtering data:", error);
@@ -142,6 +155,7 @@ const filteredDataBySubtype = async (subtypes) => {
     setupdatedData(filteredData);
     setProductCount(filteredData.length);
     setloading(false);
+    return;
 }
 
 
@@ -151,6 +165,7 @@ const filteredDataBySubtype = async (subtypes) => {
 
     if (title) {
       filteredDataByCategories(title);
+      filteredByCategories(title);
     }
     if (amount) {
       filteredPrice(amount);
