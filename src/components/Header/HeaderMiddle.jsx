@@ -4,7 +4,7 @@ import wishList from "../../assets/imgs/theme/icons/icon-heart.svg";
 import account from "../../assets/imgs/theme/icons/icon-user.svg";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Search2 from "../Search2";
+import Search from "../Search";
 import { useDispatch, useSelector } from "react-redux";
 // import wishList from "../../assets/imgs/theme/icons/icon-heart.svg";
 // import account from "../../assets/imgs/theme/icons/icon-user.svg";
@@ -67,7 +67,7 @@ const HeaderMiddle = ({ allProducts }) => {
               </Link>
             </div>
             <div className="header-right">
-              <Search2 allProducts={allProducts} />
+              <Search allProducts={allProducts} />
               <div className="header-action-right">
                 <div className="header-action-2">
                   <div className="header-action-icon-2">

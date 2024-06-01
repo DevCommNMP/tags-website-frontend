@@ -1,16 +1,16 @@
 import { useState } from "react";
 
 const dummyData = [
-  { id: 1, name: "Apple" },
-  { id: 2, name: "Banana" },
-  { id: 3, name: "Orange" },
-  { id: 4, name: "Grapes" },
-  { id: 5, name: "Strawberry" },
-  { id: 6, name: "Pineapple" },
-  { id: 7, name: "Watermelon" },
-  { id: 8, name: "Mango" },
-  { id: 9, name: "Peach" },
-  { id: 10, name: "Kiwi" },
+  // { id: 1, name: "Apple" },
+  // { id: 2, name: "Banana" },
+  // { id: 3, name: "Orange" },
+  // { id: 4, name: "Grapes" },
+  // { id: 5, name: "Strawberry" },
+  // { id: 6, name: "Pineapple" },
+  // { id: 7, name: "Watermelon" },
+  // { id: 8, name: "Mango" },
+  // { id: 9, name: "Peach" },
+  // { id: 10, name: "Kiwi" },
 ];
 
 const Search = () => {
