@@ -49,9 +49,9 @@ const OrderTracking = () => {
       
       try {
         const response = await axios.get(`${baseUrl}/api/track-order/${id}`);
-
+// console.log(response.data.awb_no)
         setAwbno(response.data.awb_no);
-    
+    console.log(awbno)
         const tekipostResponse = await axios.post(
           "https://api.tekipost.com/connect/pull-tracking",
           {
@@ -66,7 +66,7 @@ const OrderTracking = () => {
 
         console.log(tekipostResponse.data.data);
         setOrderStatusDetails(tekipostResponse.data.data);
-        console.log(orderStatusDetails);
+        // console.log(orderStatusDetails);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -75,7 +75,7 @@ const OrderTracking = () => {
     };
 
     fetchOrderStatus();
-  }, [id]);
+  }, [awbno]);
 
   const trackingData = (time) => {
     const date = new Date(time);
@@ -99,49 +99,58 @@ const OrderTracking = () => {
   };
 
   return (
-    <>
-      <Header />
-      <h2 style={styles.header}>Track Order</h2>
-      <div style={styles.container}>
-        {loading ? (
-          <div style={styles.loading}>
-            <LoaderImg />
-          </div>
-        ) : (
-          <div style={styles.trackingContainer}>
-            {orderStatusDetails ? (orderStatusDetails.map((detail, index) => (
-              <div key={index} style={styles.trackingItem}>
-                <div style={styles.status}><span role="img" aria-label="truck">🚚</span>{statusLookup[detail.status_id]}</div>
-                <div style={styles.location}>
-                  <span role="img" aria-label="location" style={styles.icon}>
-                    📍
-                  </span>
-                  {detail.current_location}
-                </div>
-                <div style={{display:"flex",justifyContent:"space-between"}}>
-                  <div style={styles.date}>
-                    <span role="img" aria-label="calendar" style={styles.icon}>
-                      📅
-                    </span>
-                    {trackingData(detail.courier_event_date_time).date}{" "}
-                  </div>
-                  <div style={styles.date}>
-                    <span role="img" aria-label="time" style={styles.icon}>
-                      🕛
-                    </span>
-                    {trackingData(detail.courier_event_date_time).time}{" "}
-                  </div>
-                </div>
-              </div>
-            ))) : (
-              <div  style={styles.trackingItem}>
-                <div style={{textAlign:"center",fontSize:30}}><span role="img" aria-label="truck">🚚</span>{statusLookup[4]}</div>
-              </div>
-            )}
-          </div>
-        )}
+<>
+  <Header />
+  <h2 style={styles.header}>Track Order</h2>
+  <div style={styles.container}>
+    {loading ? (
+      <div style={styles.loading}>
+        <LoaderImg />
       </div>
-    </>
+    ) : orderStatusDetails && orderStatusDetails.length > 0 ? (
+      <div style={styles.trackingContainer}>
+        {orderStatusDetails.map((detail, index) => (
+          <div key={index} style={styles.trackingItem}>
+            <div style={styles.status}>
+              <span role="img" aria-label="truck">🚚</span>
+              {statusLookup[detail.status_id]}
+            </div>
+            <div style={styles.location}>
+              <span role="img" aria-label="location" style={styles.icon}>📍</span>
+              {detail.current_location}
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <div style={styles.date}>
+                <span role="img" aria-label="calendar" style={styles.icon}>📅</span>
+                {trackingData(detail.courier_event_date_time).date}{" "}
+              </div>
+              <div style={styles.date}>
+                <span role="img" aria-label="time" style={styles.icon}>🕛</span>
+                {trackingData(detail.courier_event_date_time).time}{" "}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div style={styles.trackingItem}>
+        <div style={{ textAlign: "center", fontSize: 30 }}>
+          <span role="img" aria-label="truck">🚚</span>
+          {statusLookup[4]}
+        </div>
+      </div>
+    )}
+    {/* Message when there are no order details */}
+    {!loading && !orderStatusDetails && (
+      <div style={styles.trackingItem}>
+        <div style={{ textAlign: "center", fontSize: 18 }}>
+          No order details available.
+        </div>
+      </div>
+    )}
+  </div>
+</>
+
   );
 
 

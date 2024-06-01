@@ -69,7 +69,9 @@ const Invoice = () => {
                               <th>Item</th>
                               <th className="text-center">Unit Price</th>
                               <th className="text-right">Tax (per quantity)</th>
+                              <th className="text-center">Color</th>
                               <th className="text-center">Quantity</th>
+                              <th className="text-center">Size</th>
                               <th className="text-right">Amount</th>
                             </tr>
                           </thead>
@@ -82,27 +84,29 @@ const Invoice = () => {
                                     <small>SKUID: {item.product.productName}</small>
                                   </div>
                                 </td>
-                                <td className="text-center"><span style={{ fontSize: 15 }}>&#8377;</span>{item.product.SellingPrice}</td>
+                                <td className="text-center"><span style={{ fontSize: 15 ,color:"black"}}>&#8377;</span>{item.product.SellingPrice}</td>
                                 <td className="text-center">&#8377; {item.product.SellingPrice <= 1000 ? ((item.product.SellingPrice * 0.12).toFixed(0)) : ((item.product.SellingPrice * 0.18).toFixed(0))}</td>
+                                <td className="text-center">{item.color}</td>
                                 <td className="text-center">{item.quantity}</td>
+                                <td className="text-center">{item.size}</td>
                                 <td className="text-right">&#8377;{item.product.SellingPrice * item.quantity}</td>
                               </tr>
                             ))}
                             {orderdata && orderdata.orderDetails && orderdata.orderDetails.CGST >0 && (
                               <tr>
-                                <td colSpan="4" className="text-end f-w-600">CGST</td>
+                                <td colSpan="6" className="text-end f-w-600">CGST</td>
                                 <td className="text-right">&#8377;{orderdata.orderDetails.CGST}</td>
                               </tr>
                             )}
                             {orderdata && orderdata.orderDetails && orderdata.orderDetails.SGST >0 && (
                               <tr>
-                                <td colSpan="4" className="text-end f-w-600">SGST</td>
+                                <td colSpan="6" className="text-end f-w-600">SGST</td>
                                 <td className="text-right">&#8377;{orderdata.orderDetails.SGST}</td>
                               </tr>
                             )}
                             {orderdata && orderdata.orderDetails && (
                               <tr>
-                                <td colSpan="4" className="text-end f-w-600">SubTotal</td>
+                                <td colSpan="6" className="text-end f-w-600">SubTotal</td>
                                 <td className="text-right">&#8377;{orderdata.orderDetails.subtotal}</td>
                               </tr>
                             )}

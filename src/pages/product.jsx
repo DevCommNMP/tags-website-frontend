@@ -69,6 +69,22 @@ const Product = () => {
     }
   };
 
+
+  const handleBuyNow=async(particularproduct,selectedColor, selectedSize, quantity)=>{
+    if(selectedColor && selectedSize){
+      setError("");
+     
+    }
+    if (!selectedColor || !selectedSize) {
+      setError("Please select color and size.");
+      return;
+    }
+  
+    await dispatch(addToCart(particularproduct, selectedColor, selectedSize, quantity));
+   navigate("/checkout")
+    // toast.success("Product added to cart", { position: "top-center" });
+  }
+
   useEffect(() => {
     dispatch(fetchParticularProduct(id));
   }, [dispatch, id]);
@@ -184,7 +200,7 @@ const Product = () => {
                         <br />
                         {soldOut ? <h2>Sold Out</h2> : ""}
 
-                        <div className="product-extra-link2">``
+                        <div className="product-extra-link2">
                           <button
                             type="button"
                             className="border bg-white  text-brand radius button button-add-to-cart"
