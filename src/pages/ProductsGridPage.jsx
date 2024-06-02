@@ -22,7 +22,7 @@ const ProductsGridPage = () => {
   const { title } = useParams();
   const{amount}=useParams();
   const{tag}=useParams();
-
+const{searchitem}=useParams()
  
 
   const{color}=useParams();
@@ -85,6 +85,25 @@ const filteredDataByCategories = async (title) => {
     return;
   }
 };
+
+const searchData = async (searchItem) => {
+  setloading(true);
+
+  const lowerSearchItem = searchItem.trim().toLowerCase(); // Convert searchItem to lowercase
+  const filteredData = products.filter((product) => {
+    const titleWords = product.title.toLowerCase().split(" "); // Convert title to lowercase and split into words
+    return titleWords.some(word => word.includes(lowerSearchItem));
+  });
+  console.log(filteredData);
+  setupdatedData(filteredData);
+  setProductCount(filteredData.length);
+  setloading(false);
+  return;
+}
+
+
+
+
 const filteredByCategories = async (title) => {
   setloading(true);
   console.log(title);
@@ -95,6 +114,7 @@ const filteredByCategories = async (title) => {
   setupdatedData(filtereddata);
   setProductCount(filtereddata.length);
   setloading(false);
+  return;
 };
 
 
@@ -108,6 +128,7 @@ const filteredDataBySubtype = async (subtypes) => {
   setProductCount(filtereddata.length);
   setupdatedData(filtereddata);
   setloading(false);
+  return;
 };
 
   const filteredByTag = async (tag) => {
@@ -166,20 +187,30 @@ const filteredDataBySubtype = async (subtypes) => {
     if (title) {
       filteredDataByCategories(title);
       filteredByCategories(title);
+      return;
     }
     if (amount) {
       filteredPrice(amount);
+      return;
     }
     if (subtypes) {
       filteredDataBySubtype(subtypes);
+      return;
     }
     if (color) {
       filteredDataByColor(color);
+      return;
     }
     if(tag){
       filteredByTag(tag)
+      return;
     }
-  }, [title, color, subtypes, amount, Loading, products,tag]);
+    if(searchitem){
+      searchData(searchitem);
+      return;
+    }
+    
+  }, [title, color, subtypes, amount, Loading, products,tag,searchitem]);
   
   const [currentPage, setCurrentPage] = useState(1); // State to manage current page
 
