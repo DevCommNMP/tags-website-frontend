@@ -542,8 +542,8 @@ const filteredDataBySubtype = async (subtypes) => {
                       
                     </div>
                     <div style={{display:"flex",justifyContent:"space-between"}}>
-                      <div style={{width:"auto",height:"auto",padding:"5px 2px",border:"1px solid red",borderRadius:"10px"}}>&#8377;{minPrice}</div>
-                      <div style={{width:"auto",height:"auto",padding:"5px 2px",border:"1px solid red",borderRadius:"10px"}}>&#8377;{maxPrice}</div>
+                      <div style={{width:"auto",height:"auto",padding:"5px 2px",border:"1px solid red",borderRadius:"10px",marginTop:5}}>&#8377;{minPrice}</div>
+                      <div style={{width:"auto",height:"auto",padding:"5px 2px",border:"1px solid red",borderRadius:"10px",marginTop:5}}>&#8377;{maxPrice}</div>
 
                     </div>
                   </div>
