@@ -446,20 +446,7 @@ const filteredDataBySubtype = async (subtypes) => {
                     />
                   </Pagination>
                 </div>}
-                {/* <div className="text-center">
-                  <Pagination>
-                    <Pagination.Prev onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1} />
-                    {Array.from({ length: Math.ceil(products.length / productsPerPage) }, (_, i) => (
-                      <Pagination.Item key={i + 1} onClick={() => setCurrentPage(i + 1)} active={i + 1 === currentPage}>
-                        {i + 1}
-                      </Pagination.Item>
-                    ))}
-                    <Pagination.Next
-                      onClick={() => setCurrentPage(currentPage + 1)}
-                      disabled={currentPage === Math.ceil(products.length / productsPerPage)}
-                    />
-                  </Pagination>
-                </div> */}
+               
               </div>
               <div className="col-lg-1-5 primary-sidebar sticky-sidebar">
                 {/* Sidebar Content */}
@@ -504,15 +491,7 @@ const filteredDataBySubtype = async (subtypes) => {
                         </a>
                       </li>
                     </Link>
-                    {/* <Link to="/categories/Sports Footwear">
-                      <li>
-                        <a>
-                          {" "}
-                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
-                          Sports Footwear
-                        </a>
-                      </li>
-                    </Link> */}
+                   
                     <Link to="/categories/Premium Leather">
                       <li>
                         <a>
@@ -530,6 +509,11 @@ const filteredDataBySubtype = async (subtypes) => {
                     <div className="price-filter-inner">
                       <Slider min={1000} max={10000} value={sliderValues} onChange={handleSliderChange} onClick={handleSliderClick} range />
                       
+                    </div>
+                    <div style={{display:"flex",justifyContent:"space-between"}}>
+                      <div style={{width:"auto",height:"auto",padding:"5px 2px",border:"1px solid red",borderRadius:"10px"}}>&#8377;{minPrice}</div>
+                      <div style={{width:"auto",height:"auto",padding:"5px 2px",border:"1px solid red",borderRadius:"10px"}}>&#8377;{maxPrice}</div>
+
                     </div>
                   </div>
                   <div className="list-group">

@@ -133,9 +133,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/categories/Sports Shoes">
-                      <a style={{ color: "grey" }}>Sports Shoes</a>
-                    </Link>
+                   
                   </li>
                 </ul>
               </div>

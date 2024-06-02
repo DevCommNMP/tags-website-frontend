@@ -1,4 +1,7 @@
-const ProductInfo = () => {
+import Product from "../pages/product";
+
+const ProductInfo = ({product}) => {
+  console.log(product)
   return (
     <>
       <div className="product-info">
@@ -6,49 +9,24 @@ const ProductInfo = () => {
           <div className="tab-content shop_info_tab entry-main-content">
             <div className="tab-pane fade show active" id="Description">
               <div className="">
-                <h4 className="mt-30">Product Description</h4>
-                <hr className="wp-block-separator is-style-wide" />
-                <ul className="product-more-infor mt-30">
-                  <li>
-                    <span>Type Of Packing</span> Bottle
-                  </li>
-                  <li>
-                    <span>Color</span> Green, Pink, Powder Blue, Purple
-                  </li>
-                  <li>
-                    <span>Quantity Per Case</span> 100ml
-                  </li>
-                  <li>
-                    <span>Ethyl Alcohol</span> 70%
-                  </li>
-                  <li>
-                    <span>Piece In One</span> Carton
-                  </li>
-                </ul>
+               
                 <hr className="wp-block-separator is-style-dots" />
                 <p>
-                  Laconic overheard dear woodchuck wow this outrageously taut beaver hey hello far meadowlark imitatively egregiously hugged
-                  that yikes minimally unanimous pouted flirtatiously as beaver beheld above forward energetic across this jeepers
-                  beneficently cockily less a the raucously that magic upheld far so the this where crud then below after jeez enchanting
-                  drunkenly more much wow callously irrespective limpet.
+                Discover the perfect blend of style, comfort, and versatility with our diverse range of women's footwear. From sophisticated heels to laid-back flats, sporty sneakers to elegant boots, and chic sandals to cozy slippers, our collection caters to every occasion and preference. Crafted with attention to detail and quality materials, each pair is designed to elevate your look and provide lasting comfort throughout your day. Whether you're stepping out for work, leisure, or a special event, our footwear ensures you stride with confidence and flair, no matter where life takes you.
                 </p>
                 <h4 className="mt-30">Packaging & Delivery</h4>
                 <hr className="wp-block-separator is-style-wide" />
                 <p>
-                  Less lion goodness that euphemistically robin expeditiously bluebird smugly scratched far while thus cackled sheepishly
-                  rigid after due one assenting regarding censorious while occasional or this more crane went more as this less much amid
-                  overhung anathematic because much held one exuberantly sheep goodness so where rat wry well concomitantly.
+                For International buyers, orders are shipped and delivered through registered international courier companies and/or International speed post only. For domestic buyers, orders are shipped through registered domestic courier companies and /or speed post only.
+
+Orders are typically dispatched within 0-7 days, or as per the delivery date agreed upon at the time of order confirmation. However, actual delivery times may vary depending on the Courier Company / post office norms..
                 </p>
                 <p>
-                  Scallop or far crud plain remarkably far by thus far iguana lewd precociously and and less rattlesnake contrary caustic
-                  wow this near alas and next and pled the yikes articulate about as less cackled dalmatian in much less well jeering for
-                  the thanks blindly sentimental whimpered less across objectively fanciful grimaced wildly some wow and rose jeepers
-                  outgrew lugubrious luridly irrationally attractively dachshund.
+                TAGS FOOTWEAR endeavors to hand over the consignment to the courier company or postal authorities promptly within the specified time frame. Please note that TAGS FOOTWEAR is not liable for any delay in delivery by the courier company / postal authorities.
+
+Delivery of all orders will be made to the address provided by the buyer. Additionally, confirmation of delivery will be sent to the buyer's specified email address upon registration.
                 </p>
-                <h4 className="mt-30">Warnings</h4>
-                <ul className="product-more-infor mt-30">
-                  <li>Oil separation occurs naturally. May contain pieces of shell.</li>
-                </ul>
+                
               </div>
             </div>
           </div>

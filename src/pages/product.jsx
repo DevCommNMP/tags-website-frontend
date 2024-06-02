@@ -87,7 +87,7 @@ const Product = () => {
 
   useEffect(() => {
     dispatch(fetchParticularProduct(id));
-  }, [dispatch, id]);
+  }, [dispatch]);
 
   return (
     <>

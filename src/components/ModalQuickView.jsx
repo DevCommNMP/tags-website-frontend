@@ -75,7 +75,7 @@ const productPrice = props.product.discount
     ? props.product.SellingPrice * (1 - props.product.discount / 100)
     : props.product.SellingPrice * (1 - globalDiscount / 100);
 
-    console.log(productPrice)
+    // console.log(productPrice)
   return (
     <>
     
