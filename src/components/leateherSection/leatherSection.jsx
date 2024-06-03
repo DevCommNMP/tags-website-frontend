@@ -46,7 +46,7 @@ const settings = {
   ],
 };
 
-const LeatherSection = ({ data }) => {
+const LeatherSection = ({ data ,toasterHandler}) => {
   // const [successToast, setSuccessToast] = useState("");
   // const [errorToast, setErrorToast] = useState("");
   // const dispatch = useDispatch();
@@ -81,7 +81,7 @@ const LeatherSection = ({ data }) => {
                 <Slider {...settings}>
                 {data.filter(product => product.isPremiumLeather === true).map((product, index) => (
   <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
-    <ProductCard product={product} />
+    <ProductCard product={product} toasterHandler={toasterHandler}/>
   </div>
 ))}
 

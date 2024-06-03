@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 
 import LoaderImg from "../components/LoaderImg.jsx";
 import YoutubeVideo from "../components/YoutubeVideo.jsx";
+import {toast, ToastContainer } from "react-toastify";
 // import OnlyProductCard from "../components/ProductCard.jsx";
 const Homepage = () => {
   const dispatch = useDispatch();
@@ -24,12 +25,18 @@ const Homepage = () => {
     // console.log(res);
   }, [dispatch]);
 
+  const toasterHandler=()=>{
+    toast.success("Product added to cart", {
+      position: "top-right",
+    });
+  }
   const storeData = useSelector((store) => store.products);
   const { products, productsLoading, appErr, serverErr } = storeData;
   // console.log(products,productsLoading,appErr,serverErr)
 
   return (
     <>
+    <ToastContainer/>
       <Header />
       {productsLoading ? (
         <LoaderImg />
@@ -41,9 +48,10 @@ const Homepage = () => {
               <Banner />
             </div>
           </div>
-          <NewArrival data={products} />
-          <LeatherSection data={products} />
-          <ProductTabSection data={products} />
+          <NewArrival data={products} toasterHandler={toasterHandler} />
+          <LeatherSection data={products} toasterHandler={toasterHandler} />
+          <ProductTabSection data={products} toasterHandler={toasterHandler} />
+
         </div>
       )}
       <YoutubeVideo />

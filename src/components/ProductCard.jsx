@@ -9,21 +9,19 @@ import { toast, ToastContainer } from "react-toastify";
 import dummyImg from "../assets/imgs/products/productdummyImg.jpg"
 import { discount as globalDiscount} from "../utils/baseUrl";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product ,toasterHandler}) => {
  
   const dispatch = useDispatch();
   
-  const [successToast, setSuccessToast] = useState("");
+ 
   const [errorToast, setErrorToast] = useState("");
 // console.log(product)
   const cartHandler = async (item) => {
     // console.log(item)
     const res = await dispatch(addToCart(item,product.colorsAvailable[0],product.sizesAvailable[0].size,1,item.productName));
     // console.log(res);
-    setSuccessToast(true);
-    toast.success("Product added to cart", {
-      position: "top-right",
-    });
+    // setSuccessToast(true);
+    toasterHandler();
   };
 
   const productPrice = product.discount
@@ -32,7 +30,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <>
-      <ToastContainer />
+   
       <div className="product-cart-wrap mb-30">
         <div className="product-img-action-wrap">
           <div className="product-img product-img-zoom">
@@ -70,7 +68,7 @@ const ProductCard = ({ product }) => {
             <span>&#8377; {productPrice <= 1000 ? ((productPrice + (productPrice * 0.12)).toFixed(0)) : ((productPrice + (productPrice * 0.18)).toFixed(0))}</span>
               <span className="old-price">&#8377;{product.SellingPrice}</span>
             </div>
-            <div className="add-cart" onClick={() => cartHandler(props.product)}>
+            <div className="add-cart" onClick={() => cartHandler(product)}>
               <a className="add">
                 <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
               </a>

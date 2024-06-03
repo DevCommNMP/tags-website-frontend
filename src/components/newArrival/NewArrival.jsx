@@ -41,7 +41,7 @@ const settings = {
   ],
 };
 
-const NewArrival = ({ data }) => {
+const NewArrival = ({ data,toasterHandler }) => {
   // console.log(data)
   const limitedData = data.slice(0, 10); 
     
@@ -50,7 +50,7 @@ const NewArrival = ({ data }) => {
       <section className="product-tabs section-padding position-relative pb-50">
         <div className="container">
           <div className="section-title style-2">
-            <Link to="/new" style={{ cursor: "pointer" }}>
+            <Link to="/all-categories" style={{ cursor: "pointer" }}>
               <h3 style={{ textTransform: "uppercase" }}>New Arrivals</h3>
             </Link>
           </div>
@@ -66,7 +66,7 @@ const NewArrival = ({ data }) => {
                   {data.filter(product => product.tag === 'new').map((product, index) => (
               
   <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
-    <ProductCard product={product} />
+    <ProductCard product={product} toasterHandler={toasterHandler} />
   </div>
 ))}
 
