@@ -45,7 +45,7 @@ toast.error(error.message)
   pauseOnHover
   // transition={{ bounce: true }}
   theme="light"
-  style={{width:"100%"}}
+  
 />
 
       <section className="newsletter mb-15">

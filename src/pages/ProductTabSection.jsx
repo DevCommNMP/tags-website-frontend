@@ -26,7 +26,7 @@ const ProductTabSection = ({ data ,toasterHandler}) => {
               <div className="row product-grid-4">
                 {data
                   .filter((product) => product.tag === "popular")
-                  .slice(0, 9)
+                  .slice(0, 10)
                   .map((product, index) => (
                     <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
                       <ProductCard product={product} toasterHandler={toasterHandler} />
