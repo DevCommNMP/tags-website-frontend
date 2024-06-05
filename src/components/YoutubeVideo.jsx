@@ -11,7 +11,7 @@ const YoutubeVideo = () => {
             footwear exclusively designed for you. Our mission is to redefine the way you experience footwear by offering unparalleled
             quality, comfort, and style in every pair.
           </p>
-          <h4 className="mb-5 mt-25">Why Choose Tags Footwear? Here&apso;s why:</h4>
+          <h4 className="mb-5 mt-25">Why Choose Tags Footwear? Here&apos;s why:</h4>
           <div className="row">
             <div className="col">
               <ul>
