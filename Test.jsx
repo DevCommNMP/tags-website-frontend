@@ -1,155 +1,268 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Header from '../components/Header/Header';
-import { useParams } from 'react-router-dom';
-import { baseUrl } from '../utils/baseUrl';
-import LoaderImg from '../components/LoaderImg';
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { fetchParticularProduct } from "../redux/actions/product/productActions";
+import { addToCart } from "../redux/actions/cart/cartActions";
+import { toast, ToastContainer } from "react-toastify";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import SingleProductImages from "../components/SingleProductImages";
+import starRating from "../assets/imgs/theme/rating-stars.png";
+import ProductInfo from "../components/ProductInfo";
+import { discount as globalDiscount} from "../utils/baseUrl";
 
-const OrderTracking = () => {
-  // Encoded credentials
-  const encodedCredentials = "YW1yZWVuLmludHJhQGdtYWlsLmNvbToxMjM0NTY=";
+const Product = () => {
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const storeData = useSelector((store) => store.products);
+  const { particularproduct } = storeData;
+console.log(particularproduct)
+  const [soldOut, setSoldOut] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+  const [stock, setStock] = useState(1);
+  const [selectedColor, setSelectedColor] = useState(particularproduct);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [error, setError] = useState("");
+const[selectedIndex,setSelectedIndex]=useState(0)
 
-  // Status lookup object
-  const statusLookup = {
-    1: "Order Uploaded",
-    2: "Order Assigned",
-    3: "Order Failed",
-    4: "Pickup Pending",
-    5: "Picked",
-    6: "Intransit",
-    7: "Out for Delivery",
-    8: "Order Cancelled",
-    9: "Shipment Cancelled",
-    10: "Delivered",
-    11: "Delivery Failed",
-    12: "RTO Pending",
-    13: "RTO Delivered",
-    14: "Heldup",
-    15: "Lost",
-    16: "Damaged",
-    17: "Contact Customer Care",
-    18: "Arrived at Destination",
-    19: "Cancellation Requested",
-    20: "RTO Undelivered",
-    21: "Pickup Cancelled by Merchant",
-    22: "Pickup Cancelled by Courier",
-    23: "Pickup Failed",
-    24: "Auto Cancelled",
-    25: "Order Processing"
+// console.log(particularproduct);
+const productPrice = particularproduct?.[selectedIndex]?.discount
+? particularproduct[selectedIndex].SellingPrice * (1 - particularproduct[selectedIndex].discount / 100)
+: particularproduct?.[selectedIndex]?.SellingPrice * (1 - globalDiscount / 100);
+
+  const cartHandler = async (item, selectedColor, selectedSize, quantity) => {
+    if(selectedColor && selectedSize){
+      setError("");
+     
+    }
+    if (!selectedColor || !selectedSize) {
+      setError("Please select color and size.");
+      return;
+    }
+  
+    await dispatch(addToCart(item, selectedColor, selectedSize, quantity));
+   
+    toast.success("Product added to cart", { position: "top-center" });
   };
 
-  const { id } = useParams();
-  const [orderStatusDetails, setOrderStatusDetails] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [awbno, setAwbno] = useState("");
+  const increaseQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const decreaseQuantity = () => {
+    if (quantity > 1) {
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    }
+  };
+
+  const handleColorSelection = (color) => {
+    handleproductImageChange()
+    setSelectedColor(color);
+    
+  };
+
+  const handleSizeSelection = (size, quantity) => {
+    setStock(quantity);
+    setSelectedSize(size);
+    setError("");
+    if (quantity === 0) {
+      setSoldOut(true);
+    } else {
+      setSoldOut(false);
+    }
+  };
+
+  const handleproductImageChange=async()=>{
+console.log(selectedColor)
+  }
+
+
+  const handleBuyNow=async(particularproduct,selectedColor, selectedSize, quantity)=>{
+    if(selectedColor && selectedSize){
+      setError("");
+     
+    }
+    if (!selectedColor || !selectedSize) {
+      setError("Please select color and size.");
+      return;
+    }
+  
+    await dispatch(addToCart(particularproduct, selectedColor, selectedSize, quantity));
+   navigate("/checkout")
+    // toast.success("Product added to cart", { position: "top-center" });
+  }
 
   useEffect(() => {
-    const fetchOrderStatus = async () => {
-      const awb_no = "22267810002542";
-      try {
-        const response = await axios.get(`${baseUrl}/api/track-order/${id}`, { awb_no: awb_no });
-
-setawbno(response.data.awb_no)
-        // const awb_no="22267810002542";
-        const tekipostResponse = await axios.post('https://api.tekipost.com/connect/pull-tracking', {
-            awb_no: awb_no
-          },
-          {
-            headers: {
-              'Authorization': `Bearer ${encodedCredentials}`,
-            },
-          });
-        //   console.log(tekipostResponse.data.data)
-          setorderStatusDetails(tekipostResponse.data.data)
-                  console.log(orderStatusDetails)
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchOrderStatus();
-  }, [id]);
+    dispatch(fetchParticularProduct(id));
+  }, [dispatch]);
 
   return (
     <>
+      <ToastContainer 
+      
+  position="top-center"
+  autoClose={5000}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  // transition={{ bounce: true }}
+  theme="light"
+ 
+      />
       <Header />
-      <h2 style={styles.header}>Track Order</h2>
-      <div style={styles.container}>
-        {loading ? (
-          <div style={styles.loading}><LoaderImg /></div>
-        ) : error ? (
-          <div style={styles.error}>Error: {error}</div>
-        ) : (
-          <div style={styles.trackingContainer}>
-            {orderStatusDetails.map((detail, index) => (
-              <div key={index} style={styles.trackingItem}>
-                <div style={styles.status}>{detail.status}</div>
-                <div style={styles.location}>
-                  <span role="img" aria-label="location" style={styles.icon}>📍</span>
-                  {detail.location}
-                </div>
-                <div style={styles.date}>
-                  <span role="img" aria-label="calendar" style={styles.icon}>📅</span>
-                  {detail.date}
-                </div>
-              </div>
-            ))}
+      <main className="main">
+        <div className="page-header breadcrumb-wrap">
+          <div className="container">
+            <div className="breadcrumb">
+              <a>
+                <Link to="/">
+                  <i className="fi-rs-home mr-5"></i>Home
+                </Link>
+              </a>
+              <span>Products</span> {particularproduct[selectedIndex]?.title}
+            </div>
           </div>
-        )}
-      </div>
+        </div>
+        <div className="container mb-30">
+          <div className="row">
+            <div className="col-xl-10 col-lg-12 m-auto">
+              <div className="product-detail accordion-detail">
+                <div className="row mb-50 mt-30">
+                  <SingleProductImages product={particularproduct[selectedIndex]} />
+                  
+                  <div className="col-md-6 col-sm-12 col-xs-12">
+                    <div className="detail-info pr-30 pl-30">
+                      {/* <span className="stock-status out-stock">Sale Off</span> */}
+                      <h2 className="title-detail">{particularproduct[selectedIndex].title}</h2>
+                      <div className="product-detail-rating">
+                        <div className="product-rate-cover text-end">
+                          <div className="product-rate d-inline-block">
+                            <div
+                              className="product-rating"
+                              style={{ width: `${20 * particularproduct[selectedIndex].rating}%`, backgroundImage: `url(${starRating})` }}
+                            ></div>
+                          </div>
+                          <span className="font-small ml-5 text-muted">(32 reviews)</span>
+                        </div>
+                      </div>
+                      <div className="clearfix product-price-cover" >
+                        <div className="product-price primary-color float-left" style={{ fontSize: "2rem", color: "red", fontWeight: 800 }}>
+                        <span>
+                            <span className="save-price font-md color ml-15" style={{color:"red",fontSize:"15px",marginRight:20}} >-{particularproduct[selectedIndex].discount?particularproduct[selectedIndex].discount:globalDiscount}% Off </span>
+                            <span className="old-price font-md ml-15" style={{fontSize:25}}>&#8377;{particularproduct[selectedIndex].SellingPrice}</span>
+                          </span>
+                          <span >&#8377; {productPrice < 1000 ? ((productPrice + (productPrice * 0.12)).toFixed(0)) : ((productPrice + (productPrice * 0.18)).toFixed(0))}</span>
+                          <span className="save-price font-md color ml-15" style={{color:"green",fontSize:"16px"}}>Inc. all taxes</span>
+                         
+                        </div>
+                      </div>
+                      <div className="short-desc mb-30">
+                        <p className="font-lg" style={{color:"black",fontSize:"25px"}}>{particularproduct[selectedIndex].description}</p>
+                      </div>
+
+                      <div className="attr-detail attr-size mb-3">
+                        <strong className="mr-10">Size</strong>
+                        <ul className="list-filter size-filter font-small">
+                          {particularproduct[selectedIndex] &&
+                            particularproduct[selectedIndex].sizesAvailable &&
+                            particularproduct[selectedIndex].sizesAvailable.map((item, index) => (
+                              <li key={index}>
+                                <a onClick={() => handleSizeSelection(item.size, item.quantity)} className={selectedSize === item.size ? "selected" : "notselected"}>
+                                  {item.size}
+                                </a>
+                              </li>
+                            ))}
+                        </ul>
+                      </div>
+                      <div className="attr-detail attr-size mb-30">
+                        <strong className="mr-10">Colors</strong>
+                        <ul className="list-filter color-filter flex-align-justify-center size-filter font-small">
+                          {particularproduct[selectedIndex] &&
+                            particularproduct[selectedIndex].colorsAvailable &&
+                            particularproduct[selectedIndex].colorsAvailable.map((item, index) => (
+                              <li key={index} >
+                                <a
+                                  onClick={() => handleColorSelection(item)} 
+                                  className={`product-color-box product${item} ${selectedColor === item ? "selected" : "notselected"}` }
+                                ></a>
+                              </li>
+                            ))}
+                        </ul>
+                      </div>
+
+                      <div className="detail-extralink mb-50">
+                        <div className="detail-qty border radius">
+                          <a className="qty-down" onClick={decreaseQuantity}>
+                            <i className="fi-rs-angle-small-down"></i>
+                          </a>
+                          <input type="text" name="quantity" className="qty-val" value={quantity} readOnly />
+                          <a className="qty-up" onClick={increaseQuantity}>
+                            <i className="fi-rs-angle-small-up"></i>
+                          </a>
+                        </div>
+                        <br />
+                        {soldOut ? <h2>Sold Out</h2> : ""}
+
+                        <div className="product-extra-link2">
+                          <button
+                            type="button"
+                            className="border bg-white  text-brand radius button button-add-to-cart"
+                            onClick={() => cartHandler(particularproduct[selectedIndex],selectedColor,selectedSize,quantity)}
+                            disabled={soldOut}
+                          >
+                            <i className="fi-rs-shopping-cart"></i>Add to cart
+                          </button>
+                          <button
+                            type="button"
+                            className="button button-primary button-add-to-cart ml-5"
+                            onClick={()=>handleBuyNow(particularproduct[selectedIndex],selectedColor,selectedSize,quantity)}
+                            disabled={soldOut}
+                          >
+                            <i className="fi-rs-shopping-cart"></i>Buy Now
+                          </button>
+                        </div>
+                        {error && <p className="text-danger">{error}</p>}
+                      </div>
+                      <div className="font-xs">
+                        <ul className="mr-50 float-start">
+                          
+                        </ul>
+                        <ul className="float-start">
+                          <li className="mb-5">
+                            Product-Id:<span className="in-stock text-brand ml-5">{particularproduct[selectedIndex].productName}</span>
+                          </li>
+                          <li className="mb-5">
+                            Tags:
+                            <span className="in-stock text-brand ml-5">{particularproduct[selectedIndex].tag}</span>
+                          </li>
+                          <li className="mb-5">
+                            Brand: <span className="text-brand">{particularproduct[selectedIndex].brand}</span>
+                          </li>
+                        
+                          <li>
+                            Stock:
+                            <span className="in-stock text-brand ml-5">{stock} Items In Stock</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  {/* <ImageMagnify /> */}
+                </div>
+                <ProductInfo product={particularproduct} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <Footer />
     </>
   );
 };
 
-const styles = {
-  container: {
-    padding: '20px',
-    maxWidth: '600px',
-    margin: '0 auto',
-    fontFamily: 'Arial, sans-serif',
-  },
-  header: {
-    textAlign: 'center',
-    marginBottom: '20px',
-  },
-  loading: {
-    textAlign: 'center',
-    fontSize: '18px',
-  },
-  error: {
-    textAlign: 'center',
-    fontSize: '18px',
-    color: 'red',
-  },
-  trackingContainer: {
-    border: '1px solid #e0e0e0',
-    borderRadius: '8px',
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-  },
-  trackingItem: {
-    padding: '15px',
-    borderBottom: '1px solid #e0e0e0',
-  },
-  status: {
-    fontSize: '18px',
-    fontWeight: 'bold',
-  },
-  location: {
-    marginTop: '10px',
-    display: 'flex',
-    alignItems: 'center',
-  },
-  date: {
-    marginTop: '5px',
-    display: 'flex',
-    alignItems: 'center',
-  },
-  icon: {
-    marginRight: '8px',
-  },
-};
-
-export default OrderTracking;
+export default Product;

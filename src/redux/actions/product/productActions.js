@@ -28,8 +28,8 @@ export const fetchParticularProduct = createAsyncThunk("api/products/id", async 
         "Content-Type": "application/json",
       },
     };
-    const res = await axios.get(`${baseUrl}/api/products/${id}`, config);
-    console.log(res)
+    const res = await axios.get(`${baseUrl}/api/allproductVarients/${id}`, config);
+    console.log(res.data)
     return res.data;
   } catch (error) {
     if (!error?.response) {

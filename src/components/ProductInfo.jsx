@@ -1,7 +1,7 @@
 import Product from "../pages/product";
 
 const ProductInfo = ({product}) => {
-  console.log(product)
+  // console.log(product)
   return (
     <>
       <div className="product-info">

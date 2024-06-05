@@ -138,9 +138,16 @@ fieldset:disabled .btn {
 }
 
 .selected {
-    border: 2px solid #007bff;
+    border: 2px solid red;
+    background-color: red;
     /* Example border color for selected elements */
 }
+.notselected {
+    border: 1px solid grey;
+    
+    /* Example border color for selected elements */
+}
+
 
 .modal-dialog {
     width: 1000px !important;

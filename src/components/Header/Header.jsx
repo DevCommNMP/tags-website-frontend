@@ -40,7 +40,7 @@ const Header = ({ allProducts }) => {
     
     const fetchCategoriesType=async()=>{
       setloading(true);
-     const categoriesTypeData= await axios.get(`${baseUrl}/api/subCategoriesType`);
+     const categoriesTypeData= await axios.get(`${baseUrl}/api/category/subCategoriesType`);
      setCategoriesType(categoriesTypeData.data);
      setloading(false)
     //  console.log(categoriesTypeData)

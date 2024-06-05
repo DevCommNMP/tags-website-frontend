@@ -4191,11 +4191,11 @@ table .product-thumbnail img {
   line-height: 44px;
   font-size: 24px;
   z-index: 9;
-  color: #7e7e7e;
+  display: none;
 }
 .slider-nav-thumbnails button.slick-arrow:hover {
   color: #fff;
-  background-color: #d02327;
+  /* background-color: #d02326; */
 }
 .slider-nav-thumbnails button.slick-arrow.slick-prev {
   left: -20px;

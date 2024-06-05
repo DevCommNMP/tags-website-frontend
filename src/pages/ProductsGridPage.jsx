@@ -52,6 +52,9 @@ const{searchitem}=useParams()
 
     fetchData();
   }, [dispatch]);
+
+  
+
   const filteredPrice = async (amount) => {
     setloading(true);
  
@@ -62,10 +65,14 @@ const{searchitem}=useParams()
      // Filter products based on the selling price
     const filteredData = products.filter((product) => {
        
-        if(product.SellingPrice <= 1000){
-          return product.SellingPrice + (0.12 * product.SellingPrice) <= numericPrice;
+      const productPrice = product.discount
+    ? product.SellingPrice * (1 - product.discount / 100)
+    : product.SellingPrice * (1 - globalDiscount / 100);
+
+        if(productPrice <= 1000){
+          return productPrice + (0.12 * productPrice) <= numericPrice;
         }
-        return product.SellingPrice + (0.18 * product.SellingPrice) <= numericPrice;
+        return productPrice + (0.18 * productPrice) <= numericPrice;
     });
   
     setupdatedData(filteredData);
@@ -78,7 +85,7 @@ const filteredDataByCategories = async (title) => {
   setloading(true);
   if (title === "Premium Leather") {
     const filtereddata = products.filter((product) => product.isPremiumLeather === true);
-    console.log(filtereddata)
+    console.log(filtereddata);
     setupdatedData(filtereddata);
     setProductCount(filtereddata.length);
     setloading(false);

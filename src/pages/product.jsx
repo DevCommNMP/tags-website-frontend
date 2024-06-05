@@ -9,7 +9,7 @@ import Footer from "../components/Footer/Footer";
 import SingleProductImages from "../components/SingleProductImages";
 import starRating from "../assets/imgs/theme/rating-stars.png";
 import ProductInfo from "../components/ProductInfo";
-import { discount as globalDiscount} from "../utils/baseUrl";
+import { discount as globalDiscount } from "../utils/baseUrl";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -17,6 +17,7 @@ const Product = () => {
   const navigate = useNavigate();
   const storeData = useSelector((store) => store.products);
   const { particularproduct } = storeData;
+  // console.log(particularproduct);
 
   const [soldOut, setSoldOut] = useState(false);
   const [quantity, setQuantity] = useState(1);
@@ -24,23 +25,61 @@ const Product = () => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   const [error, setError] = useState("");
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-// console.log(particularproduct);
-    const productPrice = particularproduct.discount
-    ? particularproduct.SellingPrice * (1 - particularproduct.discount / 100)
-    : particularproduct.SellingPrice * (1 - globalDiscount / 100);
-  const cartHandler = async (item, selectedColor, selectedSize, quantity) => {
-    if(selectedColor && selectedSize){
+
+
+  const handleproductImageChange = async (color) => {
+    // console.log(color)
+    const lowercaseColor = color.toLowerCase();
+    const productIndexWithSelectedColor = particularproduct.findIndex(product => 
+        product.colorsAvailable && product.colorsAvailable.length && 
+        product.colorsAvailable[0].toLowerCase().includes(lowercaseColor)
+    );
+    if (productIndexWithSelectedColor !== -1) {
+        // console.log(productIndexWithSelectedColor);
+        setSelectedIndex(productIndexWithSelectedColor);
+    }
+  // handleproductImageChange(color);
+  };
+
+  const handleBuyNow = async (particularproduct, selectedColor, selectedSize, quantity) => {
+    if (selectedColor && selectedSize) {
       setError("");
-     
     }
     if (!selectedColor || !selectedSize) {
       setError("Please select color and size.");
       return;
     }
-  
+    await dispatch(addToCart(particularproduct, selectedColor, selectedSize, quantity));
+    navigate("/checkout");
+  };
+
+  const product = particularproduct?.[selectedIndex];
+  const productTitle = product?.title;
+  const productName=product?.productName;
+  const productRating = product?.rating;
+  const productDescription = product?.description;
+  const productSellingPrice = product?.SellingPrice;
+  const productDiscount = product?.discount;
+  const productSizesAvailable = product?.sizesAvailable;
+  const productColorsAvailable = product?.colorsAvailable;
+
+  const productPrice = productDiscount
+    ? productSellingPrice * (1 - productDiscount / 100)
+    : productSellingPrice * (1 - globalDiscount / 100);
+
+
+    console.log(product)
+  const cartHandler = async (item, selectedColor, selectedSize, quantity) => {
+    if (selectedColor && selectedSize) {
+      setError("");
+    }
+    if (!selectedColor || !selectedSize) {
+      setError("Please select color and size.");
+      return;
+    }
     await dispatch(addToCart(item, selectedColor, selectedSize, quantity));
-   
     toast.success("Product added to cart", { position: "top-center" });
   };
 
@@ -54,8 +93,11 @@ const Product = () => {
     }
   };
 
-  const handleColorSelection = (color) => {
-    setSelectedColor(color);
+  const handleColorSelection =async (color) => {
+  
+   setSelectedColor(color)
+  
+    handleproductImageChange(color);
   };
 
   const handleSizeSelection = (size, quantity) => {
@@ -68,55 +110,34 @@ const Product = () => {
       setSoldOut(false);
     }
   };
-
-
-  const handleBuyNow=async(particularproduct,selectedColor, selectedSize, quantity)=>{
-    if(selectedColor && selectedSize){
-      setError("");
-     
-    }
-    if (!selectedColor || !selectedSize) {
-      setError("Please select color and size.");
-      return;
-    }
-  
-    await dispatch(addToCart(particularproduct, selectedColor, selectedSize, quantity));
-   navigate("/checkout")
-    // toast.success("Product added to cart", { position: "top-center" });
-  }
-
   useEffect(() => {
     dispatch(fetchParticularProduct(id));
-  }, [dispatch]);
+  }, [ dispatch]);
+  
 
-  return (
+  return particularproduct ? (
     <>
       <ToastContainer 
-      
-  position="top-center"
-  autoClose={5000}
-  hideProgressBar={false}
-  newestOnTop={false}
-  closeOnClick
-  rtl={false}
-  pauseOnFocusLoss
-  draggable
-  pauseOnHover
-  // transition={{ bounce: true }}
-  theme="light"
- 
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
       />
       <Header />
       <main className="main">
         <div className="page-header breadcrumb-wrap">
           <div className="container">
             <div className="breadcrumb">
-              <a>
-                <Link to="/">
-                  <i className="fi-rs-home mr-5"></i>Home
-                </Link>
-              </a>
-              <span>Products</span> {particularproduct.title}
+              <Link to="/">
+                <i className="fi-rs-home mr-5"></i>Home
+              </Link>
+              <span>Products</span> {productTitle}
             </div>
           </div>
         </div>
@@ -125,18 +146,17 @@ const Product = () => {
             <div className="col-xl-10 col-lg-12 m-auto">
               <div className="product-detail accordion-detail">
                 <div className="row mb-50 mt-30">
-                  <SingleProductImages product={particularproduct} />
+                  {product && <SingleProductImages product={product} />}
                   
                   <div className="col-md-6 col-sm-12 col-xs-12">
                     <div className="detail-info pr-30 pl-30">
-                      {/* <span className="stock-status out-stock">Sale Off</span> */}
-                      <h2 className="title-detail">{particularproduct.title}</h2>
+                      <h2 className="title-detail">{productTitle}</h2>
                       <div className="product-detail-rating">
                         <div className="product-rate-cover text-end">
                           <div className="product-rate d-inline-block">
                             <div
                               className="product-rating"
-                              style={{ width: `${20 * particularproduct.rating}%`, backgroundImage: `url(${starRating})` }}
+                              style={{ width: `${20 * productRating}%`, backgroundImage: `url(${starRating})` }}
                             ></div>
                           </div>
                           <span className="font-small ml-5 text-muted">(32 reviews)</span>
@@ -144,27 +164,27 @@ const Product = () => {
                       </div>
                       <div className="clearfix product-price-cover" >
                         <div className="product-price primary-color float-left" style={{ fontSize: "2rem", color: "red", fontWeight: 800 }}>
-                        <span>
-                            <span className="save-price font-md color ml-15" style={{color:"red",fontSize:"15px",marginRight:20}} >-{particularproduct.discount?particularproduct.discount:globalDiscount}% Off </span>
-                            <span className="old-price font-md ml-15" style={{fontSize:25}}>&#8377;{particularproduct.SellingPrice}</span>
+                          <span>
+                            <span className="save-price font-md color ml-15" style={{color:"red",fontSize:"25px",marginRight:20}} >-{productDiscount ? productDiscount : globalDiscount}% Off </span>
+                          <div style={{display:"flex",alignItems:"center"}}> <span style={{fontSize:5
+                            ,color:"grey",marginLeft:10,}}>M.R.P. :</span> <span className="old-price font-md ml-5" style={{fontSize:15, }}>&#8377;{productSellingPrice}</span></div>
+
                           </span>
                           <span >&#8377; {productPrice < 1000 ? ((productPrice + (productPrice * 0.12)).toFixed(0)) : ((productPrice + (productPrice * 0.18)).toFixed(0))}</span>
                           <span className="save-price font-md color ml-15" style={{color:"green",fontSize:"16px"}}>Inc. all taxes</span>
-                         
                         </div>
                       </div>
                       <div className="short-desc mb-30">
-                        <p className="font-lg" style={{color:"black",fontSize:"25px"}}>{particularproduct.description}</p>
+                        <p className="font-lg" style={{color:"black",fontSize:"25px"}}>{productDescription}</p>
                       </div>
-
                       <div className="attr-detail attr-size mb-3">
                         <strong className="mr-10">Size</strong>
                         <ul className="list-filter size-filter font-small">
-                          {particularproduct &&
-                            particularproduct.sizesAvailable &&
-                            particularproduct.sizesAvailable.map((item, index) => (
+                          {product &&
+                            product.sizesAvailable &&
+                            product.sizesAvailable.map((item, index) => (
                               <li key={index}>
-                                <a onClick={() => handleSizeSelection(item.size, item.quantity)} className={selectedSize === item.size ? "selected" : ""}>
+                                <a onClick={() => handleSizeSelection(item.size, item.quantity)} className={selectedSize === item.size ? "selected" : "notselected"}>
                                   {item.size}
                                 </a>
                               </li>
@@ -174,13 +194,13 @@ const Product = () => {
                       <div className="attr-detail attr-size mb-30">
                         <strong className="mr-10">Colors</strong>
                         <ul className="list-filter color-filter flex-align-justify-center size-filter font-small">
-                          {particularproduct &&
-                            particularproduct.colorsAvailable &&
-                            particularproduct.colorsAvailable.map((item, index) => (
-                              <li key={index}>
+                          {product &&
+                            product.colorsAvailable &&
+                            product.colorsAvailable.map((item, index) => (
+                              <li key={index} >
                                 <a
-                                  onClick={() => handleColorSelection(item)}
-                                  className={`product-color-box product${item} ${selectedColor === item ? "selected" : ""}`}
+                                  onClick={() => handleColorSelection(item)} 
+                                  className={`product-color-box product${item} ${selectedColor === item ? "selected" : "notselected"}` }
                                 ></a>
                               </li>
                             ))}
@@ -204,7 +224,7 @@ const Product = () => {
                           <button
                             type="button"
                             className="border bg-white  text-brand radius button button-add-to-cart"
-                            onClick={() => cartHandler(particularproduct,selectedColor,selectedSize,quantity)}
+                            onClick={() => cartHandler(product,selectedColor,selectedSize,quantity)}
                             disabled={soldOut}
                           >
                             <i className="fi-rs-shopping-cart"></i>Add to cart
@@ -212,7 +232,7 @@ const Product = () => {
                           <button
                             type="button"
                             className="button button-primary button-add-to-cart ml-5"
-                            onClick={()=>handleBuyNow(particularproduct,selectedColor,selectedSize,quantity)}
+                            onClick={()=>handleBuyNow(product,selectedColor,selectedSize,quantity)}
                             disabled={soldOut}
                           >
                             <i className="fi-rs-shopping-cart"></i>Buy Now
@@ -226,14 +246,14 @@ const Product = () => {
                         </ul>
                         <ul className="float-start">
                           <li className="mb-5">
-                            Product-Id:<span className="in-stock text-brand ml-5">{particularproduct.productName}</span>
+                            Product-Id:<span className="in-stock text-brand ml-5">{product?.productName}</span>
                           </li>
                           <li className="mb-5">
                             Tags:
-                            <span className="in-stock text-brand ml-5">{particularproduct.tag}</span>
+                            <span className="in-stock text-brand ml-5">{product?.tag}</span>
                           </li>
                           <li className="mb-5">
-                            Brand: <span className="text-brand">{particularproduct.brand}</span>
+                            Brand: <span className="text-brand">{product?.brand}</span>
                           </li>
                         
                           <li>
@@ -244,9 +264,8 @@ const Product = () => {
                       </div>
                     </div>
                   </div>
-                  {/* <ImageMagnify /> */}
                 </div>
-                <ProductInfo product={particularproduct} />
+                <ProductInfo product={product} />
               </div>
             </div>
           </div>
@@ -254,7 +273,7 @@ const Product = () => {
       </main>
       <Footer />
     </>
-  );
+  ) :<h1>Something went wrong try again</h1>;
 };
 
 export default Product;
