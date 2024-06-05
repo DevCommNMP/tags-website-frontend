@@ -31,7 +31,7 @@ export const fetchOrder = createAsyncThunk("order/fetchOrder", async (orderId, {
         },
       };
   
-      const res = await axios.get(`${baseUrl}/api/orderDetails/${orderId}`, config);
+      const res = await axios.get(`${baseUrl}/api/orders/orderDetails/${orderId}`, config);
      
       return res.data;
     } catch (error) {

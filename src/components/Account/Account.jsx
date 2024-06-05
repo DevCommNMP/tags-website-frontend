@@ -22,7 +22,7 @@ const storeData = useSelector((store) => store.auth);
 const orderData = useSelector((store) => store.order);
 const { user} = storeData;
 const { userdata,loading,appErr,serverErr } = orderData;
-// console.log(userdata.order)
+console.log(userdata.order)
 // console.log(userdata)
 const UserData=JSON.parse(localStorage.getItem("userData"));
 // console.log(UserData.email)
@@ -31,7 +31,7 @@ useEffect(() => {
 if((user )){
   toast("Login successfully!");
 }
-}, [user,show])
+}, [user])
 
 const getOrderIdHandler = (productId) => {
   setShow(!show);
