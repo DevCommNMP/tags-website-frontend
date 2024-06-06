@@ -17,7 +17,7 @@ const Product = () => {
   const navigate = useNavigate();
   const storeData = useSelector((store) => store.products);
   const { particularproduct } = storeData;
-  console.log(particularproduct);
+  // console.log(particularproduct);
 
   const [soldOut, setSoldOut] = useState(false);
   const [quantity, setQuantity] = useState(1);
@@ -34,7 +34,7 @@ const Product = () => {
     const lowercaseColor = color.toLowerCase();
     const productIndexWithSelectedColor = particularproduct.findIndex(product => 
         product.colorsAvailable && product.colorsAvailable.length && 
-        product.colorsAvailable[0].toLowerCase().includes(lowercaseColor)
+        product.productName.toLowerCase().includes(lowercaseColor)
     );
     if (productIndexWithSelectedColor !== -1) {
         // console.log(productIndexWithSelectedColor);
@@ -164,7 +164,7 @@ const Product = () => {
                       <div className="clearfix product-price-cover" >
                         <div className="product-price primary-color float-left" style={{ fontSize: "2rem", color: "red", fontWeight: 800 }}>
                           <span>
-                            <span className="save-price font-md color ml-15" style={{color:"red",fontSize:"25px",marginRight:20}} >-{productDiscount ? productDiscount : globalDiscount}% Off </span>
+                            <span className="save-price font-md color ml-15" style={{color:"red",fontSize:"25px",marginRight:20}} >-{productDiscount ? productDiscount : globalDiscount}% <span style={{color:"black"}}>Off </span></span>
                           <div style={{display:"flex",alignItems:"center"}}> <span style={{fontSize:5
                             ,color:"grey",marginLeft:10,}}>M.R.P. :</span> <span className="old-price font-md ml-5" style={{fontSize:15, }}>&#8377;{productSellingPrice}</span></div>
 
@@ -266,8 +266,8 @@ const Product = () => {
                 </div>
                 <table>
       <thead>
-      <tr style={{fontSize:"25px",marginTop:"50px"}}> Size Chart</tr>
-        <tr>
+      <tr style={{fontSize:"25px",marginTop:"50px",color:"black"}}> Size Chart</tr>
+        <tr style={{color:"black"}}>
           <th>UK</th>
           <th>36</th>
           <th>37</th>
@@ -279,7 +279,7 @@ const Product = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr style={{color:"black"}}>
           <td>IND</td>
           <td>05</td>
           <td>06</td>

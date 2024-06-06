@@ -15,8 +15,8 @@ const SingleProductImages = ({ product }) => {
   }, []);
 
   const { productImage, productSubImages } = product;
-console.log(productSubImages);
-console.log(productImage)
+// console.log(productSubImages);
+// console.log(productImage)
   // Ensure productImage and productSubImages are arrays
   const productImagesArr = Array.isArray(productSubImages) ? productSubImages : [];
   const productSubImagesArr = Array.isArray(productSubImages) ? productSubImages : [];
