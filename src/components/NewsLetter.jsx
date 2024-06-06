@@ -15,7 +15,9 @@ const NewsLetter = () => {
       const response = await axios.post(`${baseUrl}/api/subscribe`, { email });
      if(response.data.success){
       toast.success(response.data.message)
+      setEmail("");
      }
+     
      else{
       toast.error(response.data.message)
      }

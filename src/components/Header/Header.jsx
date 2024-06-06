@@ -23,6 +23,7 @@ const Header = ({ allProducts }) => {
   const [user, setUser] = useState("");
   const [token, setToken] = useState("");
   const[categorType,setCategoriesType]=useState([]);
+  const[category,setCategory]=useState([]);
   const[loading,setloading]=useState(false);
   const dispatch = useDispatch();
   const storeData = useSelector((store) => store.cart);
@@ -41,9 +42,12 @@ const Header = ({ allProducts }) => {
     const fetchCategoriesType=async()=>{
       setloading(true);
      const categoriesTypeData= await axios.get(`${baseUrl}/api/category/subCategoriesType`);
-     setCategoriesType(categoriesTypeData.data);
+ 
+     const categoriesData= await axios.get(`${baseUrl}/api/category/getsubCategories`);
+setCategory(categoriesData.data)
+setCategoriesType(categoriesTypeData.data);
      setloading(false)
-    //  console.log(categoriesTypeData)
+     console.log(category)
     }
 
    
@@ -144,22 +148,17 @@ const Header = ({ allProducts }) => {
                       
                         {/* this is a comment */}
                         <ul className="sub-menu">
-                          <li>
-                            <Link to="/categories/Casual Footwear">Casual Footwear</Link>
-                          </li>
-                          <li>
-                            <Link to="/categories/Ethnic Footwear">Ethnic Footwear</Link>
-                          </li>
-                          <li>
-                            <Link to="/categories/Formal Footwear">Formal Footwear</Link>
-                          </li>
-                          <li>
-                            <Link to="/categories/Party Footwear">Party Footwear</Link>
-                          </li>
-                          {/* <li>
-                            <Link to="/categories/Sports Footwear">Sports Footwear</Link>
-                          </li> */}
-                        </ul>
+  {loading ? <h5>Loading</h5> : 
+    <> 
+      {category.map((item, index) => (
+        <li key={index}>
+          <Link to={`/categories/${item.subcategoriesName}`}>{item.subcategoriesName}</Link>
+        </li>
+      ))}
+    </>
+  }
+</ul>
+
                       </li>
                       <li>
                         <a style={{ cursor: "pointer" }}>

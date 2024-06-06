@@ -7,7 +7,7 @@ const SideBanner = () => {
         <div className="banner-text">
           <h2 className="mb-100">Just Landed: Grab Offers Now!</h2>
           <a className="btn btn-xs">
-            <Link to="/shop" className="btn btn-xs">
+            <Link to="/all-categories" className="btn btn-xs">
               Grab Now <i className="fi-rs-arrow-small-right"></i>
             </Link>
           </a>

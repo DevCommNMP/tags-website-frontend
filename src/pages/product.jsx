@@ -10,14 +10,14 @@ import SingleProductImages from "../components/SingleProductImages";
 import starRating from "../assets/imgs/theme/rating-stars.png";
 import ProductInfo from "../components/ProductInfo";
 import { discount as globalDiscount } from "../utils/baseUrl";
-
+import shoeSizeChart from "../assets/imgs/Shoe-sizeimage/sizeChart.jpg"
 const Product = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const navigate = useNavigate();
   const storeData = useSelector((store) => store.products);
   const { particularproduct } = storeData;
-  // console.log(particularproduct);
+  console.log(particularproduct);
 
   const [soldOut, setSoldOut] = useState(false);
   const [quantity, setQuantity] = useState(1);
@@ -70,7 +70,6 @@ const Product = () => {
     : productSellingPrice * (1 - globalDiscount / 100);
 
 
-    console.log(product)
   const cartHandler = async (item, selectedColor, selectedSize, quantity) => {
     if (selectedColor && selectedSize) {
       setError("");
@@ -265,6 +264,33 @@ const Product = () => {
                     </div>
                   </div>
                 </div>
+                <table>
+      <thead>
+      <tr style={{fontSize:"25px",marginTop:"50px"}}> Size Chart</tr>
+        <tr>
+          <th>UK</th>
+          <th>36</th>
+          <th>37</th>
+          <th>38</th>
+          <th>39</th>
+          <th>40</th>
+          <th>41</th>
+          <th>42</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>IND</td>
+          <td>05</td>
+          <td>06</td>
+          <td>07</td>
+          <td>08</td>
+          <td>09</td>
+          <td>10</td>
+          <td>11</td>
+        </tr>
+      </tbody>
+    </table>
                 <ProductInfo product={product} />
               </div>
             </div>

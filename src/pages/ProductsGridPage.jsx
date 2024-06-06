@@ -15,7 +15,7 @@ import { fetchAllProductsAction } from "../redux/actions/product/productActions.
 import { useSelector } from "react-redux";
 import { Pagination, DropdownButton, Dropdown } from "react-bootstrap";
 import ProductCard from "../components/ProductCard.jsx";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer,toast } from "react-toastify";
 import LoaderImg from "../components/LoaderImg.jsx";
 const ProductsGridPage = () => {
   
@@ -53,7 +53,9 @@ const{searchitem}=useParams()
     fetchData();
   }, [dispatch]);
 
-  
+  const toasterHandler=async()=>{
+    toast.success("Product added to cart successfully")
+  }
 
   const filteredPrice = async (amount) => {
     setloading(true);
@@ -83,6 +85,7 @@ const{searchitem}=useParams()
 
 const filteredDataByCategories = async (title) => {
   setloading(true);
+  
   if (title === "Premium Leather") {
     const filtereddata = products.filter((product) => product.isPremiumLeather === true);
     console.log(filtereddata);
@@ -192,10 +195,16 @@ const filteredDataBySubtype = async (subtypes) => {
     if (Loading) return; // Skip filtering if data is still loading
 
     if (title) {
-      filteredDataByCategories(title);
-      filteredByCategories(title);
-      return;
+      if(title==="Premium Leather"|| title==="Leather  Leather"){
+        filteredDataByCategories(title);
+        return
+      }
+      else{
+        filteredByCategories(title);
+        return;
+      }
     }
+      
     if (amount) {
       filteredPrice(amount);
       return;
@@ -463,7 +472,7 @@ const filteredDataBySubtype = async (subtypes) => {
   ) : (
     updatedData.map((item, index) => (
       <div className="col-lg-1-4 col-md-3 col-12 col-sm-6" key={index}>
-        <ProductCard product={item} />
+        <ProductCard product={item} toasterHandler={toasterHandler}/>
       </div>
     ))
   )}

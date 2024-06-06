@@ -9,7 +9,7 @@ const ProductInfo = ({product}) => {
           <div className="tab-content shop_info_tab entry-main-content">
             <div className="tab-pane fade show active" id="Description">
               <div className="">
-               
+              <h4 className="mt-30">Step into Style: Elevate Your Look with Our Versatile Women's Footwear Collection</h4>
                 <hr className="wp-block-separator is-style-dots" />
                 <p>
                 Discover the perfect blend of style, comfort, and versatility with our diverse range of women's footwear. From sophisticated heels to laid-back flats, sporty sneakers to elegant boots, and chic sandals to cozy slippers, our collection caters to every occasion and preference. Crafted with attention to detail and quality materials, each pair is designed to elevate your look and provide lasting comfort throughout your day. Whether you're stepping out for work, leisure, or a special event, our footwear ensures you stride with confidence and flair, no matter where life takes you.

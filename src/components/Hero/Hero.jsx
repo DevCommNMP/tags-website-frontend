@@ -5,7 +5,7 @@ import Slider from "react-slick";
 // import SlickSlider from '../SlickSlider/SlickSlider'
 import HeroSideBanner from "../../components/Hero/HeroSideBanner";
 import Banner3  from "../../assets/imgs/banner/homepageBanner/banner-3.jpg"
-import Banner1 from "../../assets/imgs/banner/homepageBanner/banner2.jpeg"
+import Banner1 from "../../assets/imgs/banner/homepageBanner/banner-1.jpg"
 import Banner2 from "../../assets/imgs/banner/homepageBanner/banner-2.jpg"
 var settings = {
   dots: true,

@@ -39,7 +39,7 @@ const ProductCard = ({ product ,toasterHandler}) => {
             </Link>
           </div>
           <div className="product-action-1">
-            <ModalQuickView product={product} />
+            {/* <ModalQuickView product={product} /> */}
           </div>
           <div className="product-badges product-badges-position product-badges-mrg">
             <span className={product.tag}>{product.tag}</span>
@@ -60,7 +60,7 @@ const ProductCard = ({ product ,toasterHandler}) => {
           <div className="product-rate-cover flex-align-justify-center">
             <span>Available Colors :</span>
             {product.colorsAvailable.map((color, index) => (
-              <span key={index} className={`product-color-box product${color}`}></span>
+              <span key={index} className={`product-color-box product${color}`} style={{border:"1px solid red"}}></span>
             ))}
           </div>
           <div className="product-card-bottom">
