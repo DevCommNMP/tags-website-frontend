@@ -58,11 +58,18 @@ const ProductCard = ({ product ,toasterHandler}) => {
             <span className="font-small ml-5 text-muted"> ({product.rating})</span>
           </div>
           <div className="product-rate-cover flex-align-justify-center">
-            <span>Available Colors :</span>
-            {product.colorsAvailable.map((color, index) => (
-              <span key={index} className={`product-color-box product${color}`} style={{border:"1px solid red"}}></span>
-            ))}
-          </div>
+        <span>Available Colors :</span>
+        {product.colorsAvailable.map((color, index) => {
+          // Create a valid CSS class name by replacing spaces, dots, and slashes with hyphens and making the string lowercase
+          const colorClassName = color.replace(/[\s./]+/g, "-").toLowerCase();
+          return (
+            <span
+              key={index}
+              className={`product-color-box product-${colorClassName}`}
+            ></span>
+          );
+        })}
+      </div>
           <div className="product-card-bottom">
             <div className="product-price">
             <span>&#8377; {productPrice <= 1000 ? ((productPrice + (productPrice * 0.12)).toFixed(0)) : ((productPrice + (productPrice * 0.18)).toFixed(0))}</span>

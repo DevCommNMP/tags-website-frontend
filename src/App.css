@@ -238,21 +238,21 @@ fieldset:disabled .btn {
     background-color: orange !important;
 }
 
-.productM. Green {
+.productM-Green {
     background-color: mediumseagreen !important;
 }
 
-.productM. Yellow {
+.productM-Yellow {
     background-color: #FFD700 !important;
     /* Gold */
 }
 
-.productG M T {
+.product-GMT{
     background-color: #808080 !important;
     /* Gray */
 }
 
-.productN.Blue {
+.productNBlue {
     background-color: navy !important;
 }
 
@@ -269,11 +269,11 @@ fieldset:disabled .btn {
     background-color: beige !important;
 }
 
-.productN.Blue / B/TT {
+.productN.BlueBTT {
     background-color: navy !important;
 }
 
-.productO Green/ B. TT {
+.productOGreenBTT {
     background-color: olive !important;
 }
 
@@ -391,7 +391,259 @@ fieldset:disabled .btn {
     background-color: gray !important;
 }
 
-.productAN {
-    background-color: #000000 !important;
-    /* Black */
+
+
+/* new css */
+
+.product-color-box.product-blue{
+    background-color: blue;
+    border:1px solid black
+}
+.product-color-box.product-green{
+    background-color: green;
+    border:1px solid black
+}
+.product-color-box.product-rust{
+    background-color: #B7410E;
+    border:1px solid black
+}
+.product-color-box.product-brown{
+    background-color: brown;
+    border:1px solid black
+
+}
+.product-color-box.product-maroon{
+    background-color: maroon;
+    border:1px solid black
+}
+
+.product-color-box.product-beige{
+    background-color: beige;
+    border:1px solid black
+}
+
+.product-color-box.product-marron{
+    background-color: maroon;
+    border:1px solid black
+}
+
+.product-color-box.product-tan{
+    background-color: tan;
+    border:1px solid black
+}
+
+.product-color-box.product-peach{
+    background-color: peachpuff;
+    border:1px solid black
+}
+
+.product-color-box.product-gun-metal{
+    background-color: #545454;
+    border:1px solid black
+}
+
+.product-color-box.product-white{
+    background-color: white;
+    border:1px solid black
+}
+
+.product-color-box.product-pink{
+    background-color: pink;
+    border:1px solid black
+}
+
+.product-color-box.product-navy-blue{
+    background-color: navy;
+    border:1px solid black
+}
+.product-color-box.product-chique{
+    background-color: #FF69B4;
+    border:1px solid black
+}
+.product-color-box.product-yellow{
+    background-color: yellow;
+    border:1px solid black
+}
+.product-color-box.product-o-green{
+    background-color: olive;
+    border:1px solid black
+}
+.product-color-box.product-olive-green{
+    background-color: olive;
+    border:1px solid black
+}
+.product-color-box.product-gold{
+    background-color: gold;
+    border:1px solid black
+}
+.product-color-box.product-browon{
+    background-color: brown;
+    border:1px solid black
+}
+.product-color-box.product-chikoo{
+    background-color: #D2B48C;
+    border:1px solid black
+}
+.product-color-box.product-begie{
+    background-color: beige;
+    border:1px solid black
+}
+.product-color-box.product-pista{
+    background-color: #7FFF00;
+    border:1px solid black
+}
+.product-color-box.product-nt-btt{
+    background-color: #808080;
+    border:1px solid black
+}
+.product-color-box.product-t-blue{
+    background-color: steelblue;
+    border:1px solid black
+}
+.product-color-box.product-musturd{
+    background-color: #FFDB58;
+    border:1px solid black
+}
+.product-color-box.product-mango-yellow{
+    background-color: #FFD700;
+    border:1px solid black
+}
+.product-color-box.product-light-gray{
+    background-color: lightgray;
+    border:1px solid black
+}
+.product-color-box.product-sultan{
+    background-color: #8B4513;
+    border:1px solid black
+}
+.product-color-box.product-silver{
+    background-color: silver;
+    border:1px solid black
+}
+.product-color-box.product-gray{
+    background-color: gray;
+    border:1px solid black
+}
+.product-color-box.product-lightblue{
+    background-color: lightblue;
+    border:1px solid black
+}
+.product-color-box.product-grey{
+    background-color: gray;
+    border:1px solid black
+}
+.product-color-box.product-gold{
+    background-color: gold;
+    border:1px solid black
+}
+
+.product-color-box.product-lavendor{
+    background-color: lavender;
+    border:1px solid black
+}
+
+.product-color-box.product-orange{
+    background-color: orange;
+    border:1px solid black
+}
+
+.product-color-box.product-dark-blue{
+    background-color: darkblue;
+    border:1px solid black
+}
+
+
+.product-color-box.product-cream{
+    background-color: lightgoldenrodyellow;
+    border:1px solid black;
+}
+.product-color-box.product-antique{
+    background-color: #FAEBD7;
+    border:1px solid black
+    
+
+}
+.product-color-box.product-peach{
+    background-color: peachpuff;
+    border:1px solid black
+
+}
+.product-color-box.product-pista-green{
+    background-color: #7FFF00;
+    border:1px solid black
+
+}
+.product-color-box.product-red{
+    background-color: red;
+    border:1px solid black
+
+}
+.product-color-box.product-purple{
+    background-color: purple;
+    border:1px solid black
+}
+
+.product-color-box.product-brownz {
+    background-color: #8B4513;
+    border:1px solid black
+}
+
+.product-color-box.product-chico {
+    background-color: #D2B48C;
+    border:1px solid black
+}
+
+.product-color-box.product-black {
+    background-color: black;
+    border:1px solid black
+}
+
+.product-color-box.product-white {
+    background-color: white;
+    border:1px solid black;
+}
+
+.product-color-box.product-brownx {
+    background-color: brown;
+    border:1px solid black
+}
+
+.product-color-box.product--green {
+    background-color: green;
+    border:1px solid black
+}
+
+.product-color-box.product--peach {
+    background-color: peachpuff;
+    border:1px solid black
+}
+
+.product-color-box.product--black {
+    background-color: black;
+    border:1px solid black
+}
+
+.product-color-box.product--gun-metal {
+    background-color: #545454;
+    border:1px solid black
+}
+
+.product-color-box.product--sultan {
+    background-color: #8B4513;
+    border:1px solid black
+}
+
+.product-color-box.product--yellow {
+    background-color: yellow;
+    border:1px solid black
+}
+
+.product-color-box.product--white {
+    background-color: white;
+    border:1px solid black;
+}
+
+.product-color-box.product-gray {
+    background-color: gray;
+    border:1px solid black
 }
