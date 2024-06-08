@@ -200,7 +200,7 @@ const Product = () => {
                               <li key={index} >
                                 <a
                                   onClick={() => handleColorSelection(item)} 
-                                  className={`product-color-box product${item} ${selectedColor === item ? "selected" : "notselected"}` }
+                                  className={`product-color-box product-${item.replace(/[\s./]+/g, "-").toLowerCase()} ${selectedColor === item ? "selected" : "notselected"}` }
                                 ></a>
                               </li>
                             ))}
