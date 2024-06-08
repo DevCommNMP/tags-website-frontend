@@ -85,8 +85,9 @@ setCategoriesType(categoriesTypeData.data);
 
   return (
     <>
-      <HeaderTop />
+     
       <div className="sticky-header">
+      <HeaderTop />
         <HeaderMiddle allProducts={allProducts} />
         <div className={`mobile-header-active mobile-header-wrapper-style ${isSidebarVisible ? "sidebar-visible" : ""}`}>
           <div className="mobile-header-wrapper-inner">

@@ -24,14 +24,17 @@ const ProductTabSection = ({ data ,toasterHandler}) => {
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
-                {data
-                  .filter((product) => product.tag === "popular")
-                  .slice(0, 10)
-                  .map((product, index) => (
-                    <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
-                      <ProductCard product={product} toasterHandler={toasterHandler} />
-                    </div>
-                  ))}
+              {data
+  .filter(product => 
+    product.tag === "popular" && 
+    !product.isPremiumLeather
+  )
+  .slice(30, 40) // Skip the first 30 products and take the next 9
+  .map((product, index) => (
+    <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
+      <ProductCard product={product} toasterHandler={toasterHandler} />
+    </div>
+  ))}
               </div>
             </div>
           </div>

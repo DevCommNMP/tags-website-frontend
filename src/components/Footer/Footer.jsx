@@ -114,22 +114,22 @@ const Footer = () => {
                 <ul className="footer-list mb-sm-5 mb-md-0">
                   <li>
                     <Link to="/categories/Casual Footwear">
-                      <a style={{ color: "grey" }}>Casual Shoes</a>
+                      <a style={{ color: "grey" }}>Casual Footwear</a>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/categories/Ethnic Shoes">
-                      <a style={{ color: "grey" }}>Ethnic Shoes</a>
+                    <Link to="/categories/Ethnic Footwear">
+                      <a style={{ color: "grey" }}>Ethnic Footwear</a>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/categories/Formal Shoes">
-                      <a style={{ color: "grey" }}>Formal Shoes</a>
+                    <Link to="/categories/Formal Footwear">
+                      <a style={{ color: "grey" }}>Formal Footwear</a>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/categories/Party Shoes">
-                      <a style={{ color: "grey" }}>Party Shoes</a>
+                    <Link to="/categories/Party Footwear">
+                      <a style={{ color: "grey" }}>Party Footwear</a>
                     </Link>
                   </li>
                   <li>

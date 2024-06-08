@@ -479,7 +479,7 @@ const filteredDataBySubtype = async (subtypes) => {
 </div>
 
                 {/* Pagination */}
-                {productCount===0? "": <div className="text-center">
+                {/* {productCount===0? "": <div className="text-center">
                   <Pagination>
                     <Pagination.Prev onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1} />
                     {Array.from({ length: Math.ceil(products.length / productsPerPage) }, (_, i) => (
@@ -492,7 +492,7 @@ const filteredDataBySubtype = async (subtypes) => {
                       disabled={currentPage === Math.ceil(products.length / productsPerPage)}
                     />
                   </Pagination>
-                </div>}
+                </div>} */}
                
               </div>
               <div className="col-lg-1-5 primary-sidebar sticky-sidebar">

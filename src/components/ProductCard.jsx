@@ -65,7 +65,7 @@ const ProductCard = ({ product ,toasterHandler}) => {
           </div>
           <div className="product-card-bottom">
             <div className="product-price">
-            <span>&#8377; {productPrice <= 1000 ? ((productPrice + (productPrice * 0.12)).toFixed(0)) : ((productPrice + (productPrice * 0.18)).toFixed(0))}</span>
+            <span>&#8377; {productPrice }</span>
               <span className="old-price">&#8377;{product.SellingPrice}</span>
             </div>
             <div className="add-cart" onClick={() => cartHandler(product)}>

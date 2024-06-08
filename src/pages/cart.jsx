@@ -110,9 +110,9 @@ const Cart = () => {
       ? item.SellingPrice * (1 - item.discount / 100)
       : item.SellingPrice * (1 - globalDiscount / 100);
   
-    const taxRate = sellingPrice <= 1000 ? 0.12 : 0.18;
+
   
-    const finalPrice = (sellingPrice + sellingPrice * taxRate).toFixed(0);
+    const finalPrice = (sellingPrice).toFixed(0);
   
     return finalPrice;
   };

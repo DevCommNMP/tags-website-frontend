@@ -10,7 +10,7 @@ const calculatePrice = (product) => {
 
   const taxRate = sellingPrice <= 1000 ? 0.12 : 0.18;
 
-  const finalPrice = (sellingPrice + sellingPrice * taxRate).toFixed(0);
+  const finalPrice = (sellingPrice).toFixed(0);
 
   return finalPrice;
 };
@@ -19,9 +19,7 @@ export const addToCart = (product, color, size, quantity, productCode) => {
   return async (dispatch) => {
     try {
       let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-      const taxPrice = product.SellingPrice <= 1000
-        ? (product.SellingPrice * 0.12).toFixed(0)
-        : (product.SellingPrice * 0.18).toFixed(0);
+      const taxPrice = product.SellingPrice ;
 
       const existingProductIndex = cartItems.findIndex((item) => item.productId === product._id);
 

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 const HeaderTop = () => {
   return (
     <>
-      <div className="bg-red text-white-all header-top header-top-ptb-1 d-none d-lg-block">
+      <div className="bg-red text-white-all header-top header-top-ptb-1 d-none d-lg-block sticky-header">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xl-3 col-lg-4">
@@ -25,7 +25,7 @@ const HeaderTop = () => {
               <div className="text-center">
                 <div id="news-flash" className="d-inline-block">
                   <ul>
-                    <li>100% Secure delivery without contacting the courier</li>
+                    <li style={{fontSize:25,padding:10}}>40% discount on every type of footwear</li>
                     {/* <li>Supper Value Deals - Save more with coupons</li> */}
                     {/* <li>Trendy 25silver jewelry, save up 35% off today</li> */}
                   </ul>

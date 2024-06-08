@@ -30,17 +30,18 @@ const Product = () => {
 
 
   const handleproductImageChange = async (color) => {
-    // console.log(color)
+    console.log(color)
     const lowercaseColor = color.toLowerCase();
     const productIndexWithSelectedColor = particularproduct.findIndex(product => 
         product.colorsAvailable && product.colorsAvailable.length && 
         product.productName.toLowerCase().includes(lowercaseColor)
     );
+    console.log(productIndexWithSelectedColor)
     if (productIndexWithSelectedColor !== -1) {
         // console.log(productIndexWithSelectedColor);
         setSelectedIndex(productIndexWithSelectedColor);
     }
-  // handleproductImageChange(color);
+  
   };
 
   const handleBuyNow = async (particularproduct, selectedColor, selectedSize, quantity) => {
@@ -169,7 +170,7 @@ const Product = () => {
                             ,color:"grey",marginLeft:10,}}>M.R.P. :</span> <span className="old-price font-md ml-5" style={{fontSize:15, }}>&#8377;{productSellingPrice}</span></div>
 
                           </span>
-                          <span >&#8377; {productPrice < 1000 ? ((productPrice + (productPrice * 0.12)).toFixed(0)) : ((productPrice + (productPrice * 0.18)).toFixed(0))}</span>
+                          <span >&#8377; {productPrice}</span>
                           <span className="save-price font-md color ml-15" style={{color:"green",fontSize:"16px"}}>Inc. all taxes</span>
                         </div>
                       </div>
