@@ -151,11 +151,13 @@ setCategoriesType(categoriesTypeData.data);
                         <ul className="sub-menu">
   {loading ? <h5>Loading</h5> : 
     <> 
-      {category.map((item, index) => (
-        <li key={index}>
-          <Link to={`/categories/${item.subcategoriesName}`}>{item.subcategoriesName}</Link>
-        </li>
-      ))}
+   {category.map((item, index) => (
+ item.subcategoriesName !="Ethnic Footwear" && // Check if it's not the first item
+  <li key={index}>
+    <Link to={`/categories/${item.subcategoriesName}`}>{item.subcategoriesName}</Link>
+  </li>
+))}
+
     </>
   }
 </ul>

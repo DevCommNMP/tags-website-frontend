@@ -510,16 +510,7 @@ const filteredDataBySubtype = async (subtypes) => {
                         </a>
                       </li>
                     </Link>
-                    <Link to="/categories/Ethnic Footwear">
-                      <li>
-                        <a>
-                          {" "}
-                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
-                          Ethnic Footwear
-                        </a>
-                      </li>
-
-                    </Link>
+                
                     <Link to="/categories/Formal Footwear">
                       <li>
                         <a>

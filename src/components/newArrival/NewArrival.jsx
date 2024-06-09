@@ -65,15 +65,14 @@ const NewArrival = ({ data,toasterHandler }) => {
                   <Slider {...settings}>
                   {data
   .filter(product => 
-    product.tag === 'new' && 
-    !product.isPremiumLeather && 
-    product.productSubImages.length > 0 &&
-    !product.description.toLowerCase().includes('premium leather')
+    product.subcategory &&
+    product.subcategory.subcategoriesName === "Festive Footwear" && 
+    product.subcategory.subcategoriesName !=null &&// Ensure subcategory name matches
+    product.productSubImages.length > 0 // Exclude products with premium leather
   )
-  .slice(10) // Skip the first 10 products
   .map((product, index) => (
     <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
-     {product.productSubImages.length>0 && <ProductCard product={product} toasterHandler={toasterHandler} />} 
+      <ProductCard product={product} toasterHandler={toasterHandler} />
     </div>
 ))}
 
