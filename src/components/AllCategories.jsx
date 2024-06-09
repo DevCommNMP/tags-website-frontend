@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-import img from  "../../src/assets/imgs/category/casual.png"
+import img from  "../../src/assets/imgs/category/casual.png";
+import formal from "../../src/assets/imgs/category/formal.png"
+import ethnic from "../../src/assets/imgs/category/ethinic.png"
+import party from "../../src/assets/imgs/category/Party.png"
+import leather from "../../src/assets/imgs/category/leather.png"
+import festive from "../../src/assets/imgs/category/festive.png"
+
+
 const AllCategories = ({ categories }) => {
   console.log(categories)
   return (
@@ -20,23 +27,23 @@ const AllCategories = ({ categories }) => {
                       />}
                      {item.subcategoriesName=="Formal Footwear" &&  <img
                         className="default-img"
-                        src="../../src/assets/imgs/category/formal.png"
+                        src={formal}
                       />}
                          {item.subcategoriesName=="Ethnic Footwear" &&  <img
                         className="default-img"
-                        src="../../src/assets/imgs/category/ethinic.png"
+                        src={ethnic}
                       />}
                        {item.subcategoriesName=="Party Footwear" &&  <img
                         className="default-img"
-                        src="../../src/assets/imgs/category/party.png"
+                        src={party}
                       />}
                        {item.subcategoriesName=="Premium Leather" &&  <img
                         className="default-img"
-                        src="../../src/assets/imgs/category/leather.png"
+                        src={leather}
                       />}
                       {item.subcategoriesName=="Festive Footwear"&&"festive" &&  <img
                         className="default-img"
-                        src="../../src/assets/imgs/category/festive.png"
+                        src={festive}
                       />}
                     </div>
                     <div className="mt-10">
