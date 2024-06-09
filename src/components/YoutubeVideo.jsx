@@ -34,7 +34,7 @@ const YoutubeVideo = () => {
           <p>Experience the ultimate blend of style, comfort, and quality.</p>
         </div>
 
-        <div className="text-center col-8">
+        <div className="text-center col-12 col-md-8 youtube-wrapper">
           <video
             style={{ borderRadius: "20px", maxWidth: "100%" }}
             width="900"

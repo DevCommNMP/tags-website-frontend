@@ -664,6 +664,12 @@ fieldset:disabled .btn {
         margin-bottom: 0px !important;
     
       }
+
+      .youtube-wrapper video {
+        width: 100% !important;
+        height: 100% !important;
+        margin-top: 20px;
+      }
   }
   
 
