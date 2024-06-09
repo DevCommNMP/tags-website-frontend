@@ -15,7 +15,7 @@ const ProductCard = ({ product ,toasterHandler}) => {
   
  
   const [errorToast, setErrorToast] = useState("");
-// console.log(product)
+console.log(product)
   const cartHandler = async (item) => {
     // console.log(item)
     const res = await dispatch(addToCart(item,product.colorsAvailable[0],product.sizesAvailable[0].size,1,item.productName));
