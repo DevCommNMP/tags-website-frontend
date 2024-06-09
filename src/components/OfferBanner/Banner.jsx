@@ -8,7 +8,7 @@ const Banner = () => {
   return (
     <>
     <section>
-      <div className="row d-none d-xl-block">
+      <div className="row d-none d-xl-flex">
 
       <div className="col-lg-4 col-md-6 ">
         <div className="banner-img" style={{ backgroundImage: `url(${bannerImg1})`, height: "200px" }}>
