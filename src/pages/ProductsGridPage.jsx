@@ -470,7 +470,7 @@ const filteredDataBySubtype = async (subtypes) => {
   {updatedData.length === 0 ? (
     <h1>No Product Found!</h1>
   ) : (
-    updatedData.map((item, index) => (
+    updatedData.map((item, index) => item.productSubImages.length > 0 && (
       <div className="col-lg-1-4 col-md-3 col-12 col-sm-6" key={index}>
         <ProductCard product={item} toasterHandler={toasterHandler}/>
       </div>

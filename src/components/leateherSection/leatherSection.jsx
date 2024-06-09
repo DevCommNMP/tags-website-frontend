@@ -79,10 +79,10 @@ const LeatherSection = ({ data ,toasterHandler}) => {
             <div className="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
               <div className="row product-grid-4">
                 <Slider {...settings}>
-                {data.filter(product => product.isPremiumLeather === true).map((product, index) => (
+                {data.filter(product => product.isPremiumLeather === true && product.productSubImages.length > 0 ).map((product, index) => (
   <div className="col-lg-1-5 col-md-3 col-12 col-sm-6" key={index}>
-    <ProductCard product={product} toasterHandler={toasterHandler}/>
-  </div>
+ <ProductCard product={product} toasterHandler={toasterHandler} />
+     </div>
 ))}
 
                 </Slider>
