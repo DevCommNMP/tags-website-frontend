@@ -647,3 +647,29 @@ fieldset:disabled .btn {
     background-color: gray !important;
     border:1px solid black
 }
+
+@media only screen and (max-width: 576px) {
+    .home-slider .hero-slider-1,
+    .hero-slider-1 .single-hero-slider {
+        height: 185px !important;
+    }
+
+    .home-slider.style-2 {
+        padding: 10px !important;
+    }
+
+    
+    .news-letter .row.p-5.mb-5 {
+        padding: 10px !important;
+        margin-bottom: 0px !important;
+    
+      }
+
+      .youtube-wrapper video {
+        width: 100% !important;
+        height: 100% !important;
+        margin-top: 20px;
+      }
+  }
+  
+

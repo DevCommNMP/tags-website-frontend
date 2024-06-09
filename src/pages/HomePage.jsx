@@ -38,20 +38,15 @@ const Homepage = () => {
     <>
     <ToastContainer/>
       <Header />
+      <Hero />
+      <Banner />
       {productsLoading ? (
         <LoaderImg />
       ) : (
         <div>
-          <Hero />
-          <div className="container">
-            <div className="row">
-              <Banner />
-            </div>
-          </div>
           <NewArrival data={products} toasterHandler={toasterHandler} />
           <LeatherSection data={products} toasterHandler={toasterHandler} />
           <ProductTabSection data={products} toasterHandler={toasterHandler} />
-
         </div>
       )}
       <YoutubeVideo />

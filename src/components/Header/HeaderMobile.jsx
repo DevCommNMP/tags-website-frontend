@@ -142,9 +142,9 @@ const HeaderMobile = () => {
       </li>
                         </ul>
             </li>
-            <li className="menu-item-has-children">
+            {/* <li className="menu-item-has-children">
               <a href="blog-category-fullwidth.html">Blog</a>
-            </li>
+            </li> */}
             <li>
                         <Link to="/categories/Premium Leather">About</Link>
                       </li>

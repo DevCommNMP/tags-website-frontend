@@ -7,11 +7,14 @@ import bannerImg3 from "../../assets/imgs/banner/banner-03.jpg";
 const Banner = () => {
   return (
     <>
-      <div className="col-lg-4 col-md-6">
+    <section>
+      <div className="row d-none d-xl-flex">
+
+      <div className="col-lg-4 col-md-6 ">
         <div className="banner-img" style={{ backgroundImage: `url(${bannerImg1})`, height: "200px" }}>
           <div className="banner-text">
             <h4>
-              Best fit for Women's starting from <br />
+              Best fit for Women&apos;s starting from <br />
               
               <br />
              <strong style={{fontSize:40,color:"red"}}>₹ 1999/-</strong>
@@ -26,7 +29,7 @@ const Banner = () => {
         <div className="banner-img" style={{ backgroundImage: `url(${bannerImg2})`, height: "200px" }}>
           <div className="banner-text">
           <h4>
-              Casual Footwear for Women's starting from <br />
+              Casual Footwear for Women&apos;s starting from <br />
               
               <br />
              <strong style={{fontSize:40,color:"red"}}>₹ 2999/-</strong>
@@ -41,7 +44,7 @@ const Banner = () => {
         <div className="banner-img" style={{ backgroundImage: `url(${bannerImg3})`, height: "200px" }}>
           <div className="banner-text">
           <h4>
-              Women's Footwear under <br />
+              Women&apos;s Footwear under <br />
               
               <br />
              <strong style={{fontSize:40,color:"red"}}>₹3999/-</strong>
@@ -52,6 +55,10 @@ const Banner = () => {
           </div>
         </div>
       </div>
+      </div>
+
+      </section>
+
     </>
   );
 };

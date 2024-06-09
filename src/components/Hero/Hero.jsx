@@ -45,7 +45,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 d-none d-xl-block">
+          <div className="col-lg-4">
             <HeroSideBanner />
           </div>
         </div>
