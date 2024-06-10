@@ -166,7 +166,7 @@ const SignUp = () => {
 
                            
                           </button>
-                          <a
+                          {/* <a
                             className="btn btn-light social-login google-login bg-light text-dark"
                             style={{
                               width: "100%",
@@ -179,7 +179,7 @@ const SignUp = () => {
                           >
                             <img src={logoGoogle} alt="" />
                             <span>&nbsp;&nbsp;Continue with Google</span>
-                          </a>
+                          </a> */}
                         </div>
                         <p className="font-xs text-muted">
                           <strong>Note:</strong>Your personal data will be used to support your experience throughout this website, to

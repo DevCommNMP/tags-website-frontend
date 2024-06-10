@@ -34,6 +34,7 @@ const ProductCard = ({ product, toasterHandler }) => {
     ? product.SellingPrice * (1 - product.discount / 100)
     : product.SellingPrice * (1 - globalDiscount / 100);
 
+  
   return (
     <>
       {product.productSubImages && (

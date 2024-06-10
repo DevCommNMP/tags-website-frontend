@@ -13,7 +13,7 @@ const settings = {
   autoplaySpeed: 2000,
   margin: 50,
   pauseOnHover: true,
-  responsive: [
+  responsive:[
     {
       breakpoint: 1024,
       settings: {
