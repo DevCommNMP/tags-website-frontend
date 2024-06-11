@@ -88,7 +88,7 @@ const filteredDataByCategories = async (title) => {
   
   if (title === "Premium Leather") {
     const filtereddata = products.filter((product) => product.isPremiumLeather === true);
-    console.log(filtereddata);
+    // console.log(filtereddata);
     setupdatedData(filtereddata);
     setProductCount(filtereddata.length);
     setloading(false);
@@ -104,7 +104,7 @@ const searchData = async (searchItem) => {
     const titleWords = product.title.toLowerCase().split(" "); // Convert title to lowercase and split into words
     return titleWords.some(word => word.includes(lowerSearchItem));
   });
-  console.log(filteredData);
+  // console.log(filteredData);
   setupdatedData(filteredData);
   setProductCount(filteredData.length);
   setloading(false);
@@ -116,10 +116,10 @@ const searchData = async (searchItem) => {
 
 const filteredByCategories = async (title) => {
   setloading(true);
-  console.log(title);
+  // console.log(title);
 
   const filtereddata = products.filter((product) => product?.subcategory?.subcategoriesName ==title);
-  console.log(filtereddata);
+  // console.log(filtereddata);
 
   setupdatedData(filtereddata);
   setProductCount(filtereddata.length);
@@ -163,17 +163,17 @@ const filteredDataBySubtype = async (subtypes) => {
       return;
     } catch (error) {
       // Handle any errors here
-      console.error("Error filtering data:", error);
+      // console.error("Error filtering data:", error);
     } finally {
       setloading(false);
-      console.log(color);
+      // console.log(color);
     }
   };
   
   
 
   const filteredDataByFilters = async () => {
-    console.log(selectedColors, minPrice, maxPrice);
+    // console.log(selectedColors, minPrice, maxPrice);
     setloading(true);
 
     const filteredData = products.filter((product) => {
@@ -253,7 +253,7 @@ const filteredDataBySubtype = async (subtypes) => {
     setminPrice(sliderValues[0])
     setmaxPrice(sliderValues[1])
  
-    console.log(minPrice,maxPrice)
+    // console.log(minPrice,maxPrice)
     const filteredData = products.filter((product) => {
        
         if(product.SellingPrice <= 1000){

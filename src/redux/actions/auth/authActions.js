@@ -47,7 +47,7 @@ export const loginUserAction = createAsyncThunk("user/login", async (userData, {
     const authToken = Cookies.get("token");
     return res.data;
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     if (!error?.response) {
       throw error;
     }
@@ -55,7 +55,7 @@ export const loginUserAction = createAsyncThunk("user/login", async (userData, {
   }
 });
 export const verifyEmail = createAsyncThunk("user/verifyemail", async (token, { rejectWithValue }) => {
-  console.log(token); // Log the token for debugging purposes
+  // console.log(token); // Log the token for debugging purposes
 
   try {
     const config = {
@@ -96,7 +96,7 @@ export const verifyResetPasswordToken = createAsyncThunk(
 
       // Since you're sending a GET request, you don't need to include data in the request body
       const res = await axios.get(`${baseUrl}/api/verify-reset-Password-Token`, config);
-      console.log(res.data)
+      // console.log(res.data)
       return res.data;
     } catch (error) {
       // If there's no response, rethrow the error
@@ -125,7 +125,7 @@ export const updatePassword = createAsyncThunk(
 
       // Send a POST request to update the password
       const res = await axios.post(`${baseUrl}/api/reset-password`, { password }, config);
-      console.log(res)
+      // console.log(res)
       // Return the response data
       return res.data;
     } catch (error) {
@@ -146,7 +146,7 @@ export const logoutAction = createAsyncThunk("/logout", async (payload, { reject
     // Additional logic or API calls can be added here if needed
     await localStorage.removeItem("userData");
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     if (!error?.response) {
       throw error;
     }

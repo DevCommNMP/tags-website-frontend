@@ -34,10 +34,11 @@ export const fetchUserDetails = createAsyncThunk("user/fetchUserDetails", async 
       headers: {
         "Content-Type": "application/json",
       },
-    };console.log(userEmail)
+    };
+    // console.log(userEmail)
 
     const res = await axios.get(`${baseUrl}/api/data/user?userEmail=${userEmail}`, config);
-     console.log(res.data)
+    //  console.log(res.data)
     return res.data;
   } catch (error) {
     if (!error.response) {

@@ -57,7 +57,7 @@ const Checkout = () => {
     additionalInfo: "",
   });
   const [selectedOption, setSelectedOption] = useState("direct_bank_transfer");
-  console.log(cartdata);
+  // console.log(cartdata);
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -96,7 +96,7 @@ const Checkout = () => {
           let centerTax = 0;
           cartdata.forEach((data) => {
             centerTax += (data.tax * data.quantity) / 1;
-            console.log(centerTax);
+            // console.log(centerTax);
           });
           setCGST(centerTax);
           setSGST(stateTax);
@@ -179,7 +179,7 @@ const Checkout = () => {
         Tax, // Assuming Tax is properly defined elsewhere
       });
 
-      console.log(res1);
+      // console.log(res1);
       if (res1.data.success) {
         setLoading(false);
         setShow(false);
@@ -192,7 +192,7 @@ const Checkout = () => {
       }
     } catch (error) {
       setLoading(false);
-      console.error("Error:", error); // Handle error appropriately
+      // console.error("Error:", error); // Handle error appropriately
     }
   };
 
@@ -291,18 +291,27 @@ const Checkout = () => {
 
   let totalPrice = 0;
   cartdata.forEach((item) => {
-    totalPrice += item.price * item.quantity;
+    // console.log(item)
+      let itemCost = (item.price - item.tax) * item.quantity;
+      // console.log(itemCost)
+      // Ensure the item cost is not negative before adding it to totalPrice
+      if (itemCost > 0) {
+          totalPrice += itemCost
+      }
   });
+  
 
+  // console.log(totalPrice)
   let totalTax = 0;
   cartdata.forEach((item) => {
     totalTax += item.price <= 1000 ? item.price * 0.12 * item.quantity : item.price * 0.18 * item.quantity;
   });
 
+  
   const formSubmitHandler = async (e) => {
     e.preventDefault();
   };
-
+;
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cartItems"));
     if (cart) {
@@ -312,7 +321,7 @@ const Checkout = () => {
 
   useEffect(() => {}, [cartdata, Tax, CGST, SGST, orderplaced]);
 
-  console.log(Tax, "center", CGST, "state", SGST);
+  // console.log(Tax, "center", CGST, "state", SGST);
   return (
     <>
       {show && (
@@ -679,18 +688,18 @@ const Checkout = () => {
                                 <div className="product-rate d-inline-block">
                                   <div className="product-rating" style={{ width: "90%" }}></div>
                                 </div>
-                                <span className="font-small ml-5 text-muted"> (4.0)</span>
+                                {/* <span className="font-small ml-5 text-muted"> {item.rating}</span> */}
                               </div>
                             </td>
                             <td>
                               <h6 className="text-muted pl-20 pr-20">x{item.quantity} </h6>
                             </td>
                             <td>
-                              <h4 className="text-brand">&#x20B9;{item.price} </h4>{" "}
-                              <span style={{}}>
+                            <h4 className="text-brand">&#x20B9;{(item.price - (item.price <= 1000 ? (item.price * 0.12 * item.quantity) : (item.price * 0.18 * item.quantity))).toFixed(2)}</h4>{" "}
+                            <span style={{}}>
                                 Tax &#x20B9;
-                                {item.price <= 1000 ? (item.price * 0.12).toFixed(0) * item.quantity : (item.price * 0.18).toFixed(0)}
-                              </span>
+                                {item.price <= 1000 ? (item.price * 0.12 * item.quantity).toFixed(0) : (item.price * 0.18 * item.quantity).toFixed(2)}
+                                </span>
                             </td>
                           </tr>
                         ))}
@@ -699,11 +708,12 @@ const Checkout = () => {
                     </table>
                     <div style={{ display: "flex",textAlign:"right" ,flexDirection:"column", justifyContent: "space-around", width:"100%",float:"right"}}>
                         <h5> Sub Total = 
-                        <span> &#x20B9;{totalPrice}</span></h5>
+                        <span> &#x20B9;{totalPrice.toFixed(2)}</span></h5>
                         <h5> Total Tax = 
-                        <span> &#x20B9;{totalTax.toFixed(0)}</span></h5>
+                        <span> &#x20B9;{totalTax}</span></h5>
                         <h5> Total Amount = 
-                        <span> &#x20B9;{(totalPrice + totalTax).toFixed(0)}</span></h5>
+                        <span> &#x20B9;{(totalPrice + totalTax).toFixed(2)}</span>
+                        </h5>
                       </div>
                   </div>
                 </div>

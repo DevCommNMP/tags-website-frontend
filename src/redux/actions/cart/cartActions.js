@@ -10,9 +10,20 @@ const calculatePrice = (product) => {
 
   const taxRate = sellingPrice <= 1000 ? 0.12 : 0.18;
 
-  const finalPrice = (sellingPrice).toFixed(0);
-
+  const finalPrice = (sellingPrice).toFixed(2);
+console.log(finalPrice)
   return finalPrice;
+};
+const calculateTax = (product) => {
+  const sellingPrice = product.discount
+    ? product.SellingPrice * (1 - product.discount / 100)
+    : product.SellingPrice * (1 - globalDiscount / 100);
+
+  const taxRate = sellingPrice <= 1000 ? 0.12 : 0.18;
+
+  const tax = (sellingPrice*taxRate).toFixed(2);
+console.log(tax)
+  return tax;
 };
 
 export const addToCart = (product, color, size, quantity, productCode) => {
@@ -33,7 +44,7 @@ export const addToCart = (product, color, size, quantity, productCode) => {
           color: color || (product.colorsAvailable.length > 0 ? product.colorsAvailable[0] : null),
           productImage: product.productImage,
           price: calculatePrice(product),
-          tax: taxPrice,
+          tax: calculateTax(product),
           productCode: productCode,
           title: product.title,
         });
@@ -48,7 +59,7 @@ export const addToCart = (product, color, size, quantity, productCode) => {
       return cartItems.length; // Returning the cart items length inside try block
     } catch (error) {
       // Handle the error more explicitly, e.g., logging or dispatching an error action
-      console.error("Error adding to cart:", error);
+      // console.error("Error adding to cart:", error);
       
       return 0; // Returning 0 if an error occurs
     }

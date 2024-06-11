@@ -11,6 +11,7 @@ import starRating from "../assets/imgs/theme/rating-stars.png";
 import ProductInfo from "../components/ProductInfo";
 import { discount as globalDiscount } from "../utils/baseUrl";
 import shoeSizeChart from "../assets/imgs/Shoe-sizeimage/sizeChart.jpg"
+import LoaderImg from "../components/LoaderImg";
 const Product = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -18,7 +19,7 @@ const Product = () => {
   const storeData = useSelector((store) => store.products);
   const { particularproduct } = storeData;
   // console.log(particularproduct);
-
+const[loading,setloading]=useState(false);
   const [soldOut, setSoldOut] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [stock, setStock] = useState(1);
@@ -30,18 +31,19 @@ const Product = () => {
 
 
   const handleproductImageChange = async (color) => {
-    console.log(color)
+    setloading(true);
+    // console.log(color)
     const lowercaseColor = color.toLowerCase();
     const productIndexWithSelectedColor = particularproduct.findIndex(product => 
         product.colorsAvailable && product.colorsAvailable.length && 
         product.productName.toLowerCase().includes(lowercaseColor)
     );
-    console.log(productIndexWithSelectedColor)
+    // console.log(productIndexWithSelectedColor)
     if (productIndexWithSelectedColor !== -1) {
         // console.log(productIndexWithSelectedColor);
         setSelectedIndex(productIndexWithSelectedColor);
     }
-  
+  setloading(false)
   };
 
   const handleBuyNow = async (particularproduct, selectedColor, selectedSize, quantity) => {
@@ -111,7 +113,9 @@ const Product = () => {
     }
   };
   useEffect(() => {
+    setloading(true)
     dispatch(fetchParticularProduct(id));
+    setloading(false)
   }, [ dispatch]);
   
 
@@ -146,9 +150,10 @@ const Product = () => {
             <div className="col-xl-10 col-lg-12 m-auto">
               <div className="product-detail accordion-detail">
                 <div className="row mb-50 mt-30">
-                  {product && <SingleProductImages product={product} />}
+                  {loading?<LoaderImg/>:<>{product && <SingleProductImages product={product} />}</>}
                   
-                  <div className="col-md-6 col-sm-12 col-xs-12">
+                  
+                {loading ?<LoaderImg/>:  <div className="col-md-6 col-sm-12 col-xs-12">
                     <div className="detail-info pr-30 pl-30">
                       <h2 className="title-detail">{productTitle}</h2>
                       <div className="product-detail-rating">
@@ -263,7 +268,7 @@ const Product = () => {
                         </ul>
                       </div>
                     </div>
-                  </div>
+                  </div>}
                 </div>
                 <table>
       <thead>

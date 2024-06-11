@@ -36,7 +36,7 @@ const[validToken,setValidToken]=useState(false)
         }
       })
       .catch((error) => {
-        console.error("Error:", error);
+        // console.error("Error:", error);
         toast.error("Something went wrong. Please try again.");
         // navigate('/login');
       });
@@ -67,7 +67,7 @@ const[validToken,setValidToken]=useState(false)
         toast.error(action.payload.message);
       }
     } catch (error) {
-      console.error("Error:", error);
+      // console.error("Error:", error);
       toast.error("Something went wrong. Please try again.");
     }
   };

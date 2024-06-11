@@ -18,7 +18,7 @@ const OrderStatus = () => {
     }
   }, [paymentId]);
 
-  console.log(searchQuery.get("reference"));
+  // console.log(searchQuery.get("reference"));
   return (
     <>
       <Header />

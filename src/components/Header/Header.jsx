@@ -47,7 +47,7 @@ const Header = ({ allProducts }) => {
 setCategory(categoriesData.data)
 setCategoriesType(categoriesTypeData.data);
      setloading(false)
-     console.log(category)
+    //  console.log(category)
     }
 
    

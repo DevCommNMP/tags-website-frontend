@@ -10,7 +10,7 @@ const NewsLetter = () => {
 
   const subscribedUserHandler = async (event) => {
     event.preventDefault(); // Prevents default form submission behavior
-    console.log(email);
+    // console.log(email);
     try {
       const response = await axios.post(`${baseUrl}/api/subscribe`, { email });
      if(response.data.success){
@@ -61,7 +61,7 @@ toast.error(error.message)
                     needs from our shop
                   </h2>
                   <p className="mb-45">
-                    Start Your Daily Shopping with <span className="text-brand">Tags Footwear</span>
+                    Start Your Daily Shopping with <span className="text-brand">TAGS Footwear</span>
                   </p>
                   <form className="form-subcriber d-flex">
                     <input 

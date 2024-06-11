@@ -58,7 +58,7 @@ const Cart = () => {
   };
   const deleteproductHandler = () => {
     setloading(true);
-    console.log("product deleted successfully");
+    // console.log("product deleted successfully");
     cartItemRemoveHandler(productIdToDelete);
     setloading(false);
     setShow(!show);
