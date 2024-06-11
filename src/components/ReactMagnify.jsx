@@ -31,7 +31,7 @@ const RenderEnlargedImage = ({ isPortalEnabledForTouch = false, isTouchDetected 
             if (portalElem) {
                 setPortalElement(portalElem);
             } else {
-                console.error(`Portal container element with id "${portalId}" not found.`);
+                // console.error(`Portal container element with id "${portalId}" not found.`);
             }
         }
     }, [portalId]);
@@ -67,7 +67,7 @@ const RenderEnlargedImage = ({ isPortalEnabledForTouch = false, isTouchDetected 
                 portalElement
             );
         } else {
-            console.error(`Target container is not a DOM element.`);
+            // console.error(`Target container is not a DOM element.`);
             return null;
         }
     }

@@ -34,7 +34,7 @@ async function displayRazorpay () {
             // cartdata,
             // formData
           });
-      console.log(data)
+      // console.log(data)
 
     const options = {
       "key": data.key, // Enter the Key ID generated from the Dashboard

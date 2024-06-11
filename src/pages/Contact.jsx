@@ -59,7 +59,7 @@ const Contact = () => {
         message: message,
       };
       
-      console.log(data); // Verify data before sending
+      // console.log(data); // Verify data before sending
       
       const response = await axios.post(`${baseUrl}/api/queries`, data);
       
@@ -71,7 +71,7 @@ const Contact = () => {
       }
     } catch (error) {
       toast.error("There was an error submitting your query. Please try again later.");
-      console.error('Error:', error); // Log detailed error
+      // console.error('Error:', error); // Log detailed error
     }
   }
 };

@@ -282,15 +282,24 @@ fieldset:disabled .btn {
     /* Gray */
 }
 
-.productT Blue {
+.productTBlue {
     background-color: steelblue !important;
 }
 
-.productL Gray {
+.productLGrey {
     background-color: lightgray !important;
 }
+.productLGray {
+    background-color: lightgray !important;
+}
+.productLGray {
+    background-color: #E6E6FA !important;
+}
+.productLightBlue {
+    background-color: #7499d1 !important;
+}
 
-.productRuat {
+.productRust {
     background-color: #B7410E !important;
     /* Rust */
 }
@@ -300,7 +309,7 @@ fieldset:disabled .btn {
     /* Saddle brown */
 }
 
-.productRust B.TT {
+.productRustB.TT {
     background-color: #B7410E !important;
     /* Rust */
 }
@@ -310,12 +319,12 @@ fieldset:disabled .btn {
     /* Sea green */
 }
 
-.productM R H {
-    background-color: #006400 !important;
+.productMRH {
+    background-color: #641700 !important;
     /* Dark green */
 }
 
-.productGun Metal {
+.productGunMetal {
     background-color: #545454 !important;
     /* Dim gray */
 }
@@ -337,11 +346,11 @@ fieldset:disabled .btn {
     background-color: blue !important;
 }
 
-.productL Blue {
+.productLBlue {
     background-color: lightblue !important;
 }
 
-.productD Blue {
+.productDBlue {
     background-color: darkblue !important;
 }
 
@@ -368,7 +377,7 @@ fieldset:disabled .btn {
     /* Black */
 }
 
-.productG A R {
+.productGAR {
     background-color: #808080 !important;
     /* Gray */
 }
@@ -378,7 +387,7 @@ fieldset:disabled .btn {
     /* Black */
 }
 
-.productS S {
+.productSS {
     background-color: #000000 !important;
     /* Black */
 }

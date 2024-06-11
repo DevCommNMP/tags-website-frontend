@@ -8,7 +8,7 @@ import festive from "../../src/assets/imgs/category/festive.png"
 
 
 const AllCategories = ({ categories }) => {
-  console.log(categories)
+  // console.log(categories)
   return (
     <div>
       <div className="container">

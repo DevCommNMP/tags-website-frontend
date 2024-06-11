@@ -49,8 +49,10 @@ const Invoice = () => {
                             </Link>
                             <div className="text">
                               <strong className="text-brand">Tags Footwear</strong> <br />
-                              1368, D-5, Narayana Shasthri Road, Devaraj Mohalla, Mysore - 570001
+                              1368, D-5, Narayana Shasthri Road, Devaraj Mohalla, Mysore - 570001<br/>
+                              GSTN:  29AAUFT8008P1Z2
                             </div>
+                            
                           </div>
                         </div>
                         <div className="col-md-6 text-end">
@@ -112,6 +114,7 @@ const Invoice = () => {
                             )}
                           </tbody>
                         </table>
+
                       </div>
                     </div>
                     <div className="invoice-bottom pb-80">

@@ -25,7 +25,7 @@ const ProductCard = ({ product, toasterHandler }) => {
       );
       toasterHandler();
     } catch (error) {
-      console.error("Error while adding to cart:", error);
+      // console.error("Error while adding to cart:", error);
       // You can add error handling or display a toast message here
     }
   };
@@ -66,8 +66,8 @@ const ProductCard = ({ product, toasterHandler }) => {
               <div className="product-rate d-inline-block" style={{ backgroundImage: `url(${starRating})` }}>
                 <div className="product-rating" style={{ width: `${20 * product.rating}%`, backgroundImage: `url(${starRating})` }}></div>
               </div>
-              <span className="font-small ml-5 text-muted"> ({product.rating})</span>
-            </div>
+              <span className="font-small ml-5 text-muted"> ({(Math.random() * (4.8 - 3.5) + 3.5).toFixed(1)})</span>
+              </div>
             <div className="product-rate-cover flex-align-justify-center">
               <span>Available Colors :</span>
               {product.colorsAvailable.map((color, index) => {

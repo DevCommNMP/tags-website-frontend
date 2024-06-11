@@ -13,7 +13,7 @@ const AllCategoriesPage = () => {
   useEffect(() => {
     // Dispatch the fetchAllCategories action
     const res = dispatch(fetchAllCategories());
-    console.log(res);
+    // console.log(res);
   }, [dispatch]);
   const storeData = useSelector((store) => store.categories);
   const { categories, loading, appErr, serverErr } = storeData;

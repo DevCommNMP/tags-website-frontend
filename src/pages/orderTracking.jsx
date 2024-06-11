@@ -51,7 +51,7 @@ const OrderTracking = () => {
         const response = await axios.get(`${baseUrl}/api/track-order/${id}`);
 // console.log(response.data.awb_no)
         setAwbno(response.data.awb_no);
-    console.log(awbno)
+    // console.log(awbno)
         const tekipostResponse = await axios.post(
           "https://api.tekipost.com/connect/pull-tracking",
           {
@@ -64,7 +64,7 @@ const OrderTracking = () => {
           }
         );
 
-        console.log(tekipostResponse.data.data);
+        // console.log(tekipostResponse.data.data);
         setOrderStatusDetails(tekipostResponse.data.data);
         // console.log(orderStatusDetails);
       } catch (err) {

@@ -18,7 +18,7 @@ const Product = () => {
   const storeData = useSelector((store) => store.products);
   const { particularproduct } = storeData;
   // console.log(particularproduct);
-
+const[loading,setloading]=useState(false);
   const [soldOut, setSoldOut] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [stock, setStock] = useState(1);
@@ -105,6 +105,7 @@ const Product = () => {
     }
   };
   useEffect(() => {
+    setloading(true)
     dispatch(fetchParticularProduct(id));
   }, [dispatch]);
 
@@ -270,6 +271,7 @@ const Product = () => {
                       </div>
                     </div>
                   </div>
+                  
                 </div>
                 <table>
                   <thead>

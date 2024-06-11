@@ -81,8 +81,8 @@ const Footer = () => {
                 <h4 className="widget-title">Shop by Types</h4>
                 <ul className="footer-list mb-sm-5 mb-md-0 ">
                   <li>
-                    <Link to="/products/subtypes/Boots">
-                      <a style={{ color: "grey" }}>Boots</a>
+                    <Link to="/products/subtypes/Sandlas">
+                      <a style={{ color: "grey" }}>Sandals</a>
                     </Link>
                   </li>
                   <li>
@@ -93,18 +93,18 @@ const Footer = () => {
                     <a></a>
                   </li>
                   <li>
-                    <Link to="/products/subtypes/Slipons">
-                      <a style={{ color: "grey" }}>Slipons</a>
+                    <Link to="/products/subtypes/Kolhapuris">
+                      <a style={{ color: "grey" }}>Kolhapuris</a>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/products/subtypes/Sneakers">
-                      <a style={{ color: "grey" }}>Sneakers</a>
+                    <Link to="/products/subtypes/Heels">
+                      <a style={{ color: "grey" }}>Heels</a>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/products/subtypes/Walking Shoes">
-                      <a style={{ color: "grey" }}>Walking Shoes</a>
+                    <Link to="/products/subtypes/Leather">
+                      <a style={{ color: "grey" }}>Leather</a>
                     </Link>
                   </li>
                 </ul>
@@ -133,7 +133,9 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                   
+                  <Link to="/categories/Festive Footwear">
+                      <a style={{ color: "grey" }}>Festive Footwear</a>
+                    </Link>
                   </li>
                 </ul>
               </div>

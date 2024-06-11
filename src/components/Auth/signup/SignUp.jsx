@@ -52,10 +52,10 @@ const SignUp = () => {
         // console.log(res.error.message)
         navigate("/verify-account");
       } else {
-        console.log(res.error.message);
+        // console.log(res.error.message);
       }
     } else {
-      console.log("Error in form validation");
+      // console.log("Error in form validation");
     }
   };
 
