@@ -53,7 +53,7 @@ const Checkout = () => {
     zipcode: "",
     phone: "",
     state: "",
-    email: "",
+    email: user.email,
     additionalInfo: "",
   });
   const [selectedOption, setSelectedOption] = useState("direct_bank_transfer");
@@ -247,9 +247,10 @@ const Checkout = () => {
       return;
     }
 
-    let totalAmount = (totalPrice + totalTax).toFixed(0);
+    let totalAmount = (totalPrice + totalTax).toFixed(2);
     setLoading(true);
-
+  
+console.log(totalAmount,user.email,cartdata,formData,CGST,SGST,Tax);
     const { data } = await axios.get(`${baseUrl}/api/getkeys`);
     const res1 = await axios.post(`${baseUrl}/api/checkout`, {
       amount: totalAmount,
@@ -272,9 +273,9 @@ const Checkout = () => {
       //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
       callback_url: `${baseUrl}/api/payment-verification`,
       prefill: {
-        name: "Gaurav Kumar",
-        email: "gaurav.kumar@example.com",
-        contact: "9000090000",
+        name: formData.fname+formData.lname,
+        email: formData.email,
+        contact: formData.phone,
       },
       notes: {
         address: "Razorpay Corporate Office",

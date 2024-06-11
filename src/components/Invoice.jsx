@@ -21,7 +21,7 @@ const Invoice = () => {
 
   const orderData = useSelector(state => state.order);
   const { orderdata, loading, appErr, serverErr } = orderData;
-
+console.log(orderdata)
   // Ensure we have order data before accessing properties
   const currentDate = orderdata && orderdata.orderDetails ? new Date(orderdata.orderDetails.Date) : new Date();
   const formattedDate = currentDate.toLocaleDateString('en-US');
@@ -86,24 +86,24 @@ const Invoice = () => {
                                     <small>SKUID: {item.product.productName}</small>
                                   </div>
                                 </td>
-                                <td className="text-center"><span style={{ fontSize: 15 ,color:"black"}}>&#8377;</span>{item.product.SellingPrice}</td>
-                                <td className="text-center">&#8377; {item.product.SellingPrice <= 1000 ? ((item.product.SellingPrice * 0.12).toFixed(0)) : ((item.product.SellingPrice * 0.18).toFixed(0))}</td>
+                                <td className="text-center"><span style={{ fontSize: 15 ,color:"black"}}>&#8377;</span>{((item.price - (item.price <= 1000 ? (item.price * 0.12) : (item.price * 0.18))).toFixed(2))}</td>
+                                <td className="text-center">&#8377; {item.price <= 1000 ? ((item.price * 0.12).toFixed(2)) : ((item.price * 0.18).toFixed(2))}</td>
                                 <td className="text-center">{item.color}</td>
                                 <td className="text-center">{item.quantity}</td>
                                 <td className="text-center">{item.size}</td>
-                                <td className="text-right">&#8377;{item.product.SellingPrice * item.quantity}</td>
-                              </tr>
+                                <td className="text-right">&#8377;{(item.price - (item.price <= 1000 ? (item.price * 0.12) : (item.price * 0.18)) + (item.price <= 1000 ? (item.price * 0.12) : (item.price * 0.18))).toFixed(2) * item.quantity}</td>
+                                </tr>
                             ))}
                             {orderdata && orderdata.orderDetails && orderdata.orderDetails.CGST >0 && (
                               <tr>
                                 <td colSpan="6" className="text-end f-w-600">CGST</td>
-                                <td className="text-right">&#8377;{orderdata.orderDetails.CGST}</td>
+                                <td className="text-right">&#8377;{(orderdata.orderDetails.CGST.toFixed(0))}</td>
                               </tr>
                             )}
                             {orderdata && orderdata.orderDetails && orderdata.orderDetails.SGST >0 && (
                               <tr>
                                 <td colSpan="6" className="text-end f-w-600">SGST</td>
-                                <td className="text-right">&#8377;{orderdata.orderDetails.SGST}</td>
+                                <td className="text-right">&#8377;{(orderdata.orderDetails.SGST.toFixed(0))}</td>
                               </tr>
                             )}
                             {orderdata && orderdata.orderDetails && (
