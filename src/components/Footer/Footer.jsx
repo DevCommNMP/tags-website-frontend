@@ -118,8 +118,8 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/categories/Ethnic Footwear">
-                      <a style={{ color: "grey" }}>Ethnic Footwear</a>
+                    <Link to="/categories/Premium Leather">
+                      <a style={{ color: "grey" }}>Premium Leather</a>
                     </Link>
                   </li>
                   <li>
