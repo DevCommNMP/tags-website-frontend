@@ -53,7 +53,7 @@ const Checkout = () => {
     zipcode: "",
     phone: "",
     state: "",
-    email: user.email,
+    email: "",
     additionalInfo: "",
   });
   const [selectedOption, setSelectedOption] = useState("direct_bank_transfer");

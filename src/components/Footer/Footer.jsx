@@ -178,20 +178,20 @@ const Footer = () => {
               <div className="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
                 <div className="mobile-social-icon">
                   <h6 className="text-white">Follow Us</h6>
-                  <a href="https://www.facebook.com" target="_blank">
+                  <a href="https://www.facebook.com/tagsfootwear" target="_blank">
                     <img src={iconFacebookWhite} alt="" />
                   </a>
-                  <a href="https://www.twitter.com" target="_blank">
+                  {/* <a href="https://www.twitter.com" target="_blank">
                     <img src={iconTwitterWhite} alt="" />
-                  </a>
-                  <a href="https://www.instagram.com" target="_blank">
+                  </a> */}
+                  <a href="https://www.instagram.com/tags.footwear" target="_blank">
                     <img src={iconInstagramWhite} alt="" />
                   </a>
                   <a href="https://www.whatsapp.com" target="_blank">
                     <img src={iconWhatsappWhite} alt="" />
                   </a>
-                  <a href="https://www.youtube.com" target="_blank">
-                    <img src={iconYoutubeWhite} alt="" />
+                  <a href="https://www.youtube.com/@TagsFootwear" target="_blank">
+                    <img src={iconYoutubeWhite} alt=""  style={{width:30,height:30}}/>
                   </a>
                 </div>
               </div>

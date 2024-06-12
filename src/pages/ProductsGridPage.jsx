@@ -17,8 +17,9 @@ import { Pagination, DropdownButton, Dropdown } from "react-bootstrap";
 import ProductCard from "../components/ProductCard.jsx";
 import { ToastContainer,toast } from "react-toastify";
 import LoaderImg from "../components/LoaderImg.jsx";
+import { discount as globalDiscount } from "../utils/baseUrl.js";
 const ProductsGridPage = () => {
-  
+
   const { title } = useParams();
   const{amount}=useParams();
   const{tag}=useParams();
