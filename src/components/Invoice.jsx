@@ -86,18 +86,24 @@ console.log(orderdata)
                                     <small>SKUID: {item.product.productName}</small>
                                   </div>
                                 </td>
-                                <td className="text-center"><span style={{ fontSize: 15 ,color:"black"}}>&#8377;</span>{((item.price - (item.price <= 1000 ? (item.price * 0.12) : (item.price * 0.18))).toFixed(2))}</td>
+                                <td className="text-center">
+    <span style={{ fontSize: 15, color: "black" }}>&#8377;</span>
+    {((item.price - (item.price <= 1000 ? (item.price * 0.12) : (item.price * 0.18))).toFixed(2))}
+</td>
                                 <td className="text-center">&#8377; {item.price <= 1000 ? ((item.price * 0.12).toFixed(2)) : ((item.price * 0.18).toFixed(2))}</td>
                                 <td className="text-center">{item.color}</td>
                                 <td className="text-center">{item.quantity}</td>
                                 <td className="text-center">{item.size}</td>
-                                <td className="text-right">&#8377;{(item.price - (item.price <= 1000 ? (item.price * 0.12) : (item.price * 0.18)) + (item.price <= 1000 ? (item.price * 0.12) : (item.price * 0.18))).toFixed(2) * item.quantity}</td>
+                                <td className="text-center">
+    <span style={{ fontSize: 15, color: "black" }}>&#8377;</span>
+    {((item.price - (item.price <= 1000 ? (item.price * 0.12) : (item.price * 0.18))).toFixed(2))}
+</td>
                                 </tr>
                             ))}
                             {orderdata && orderdata.orderDetails && orderdata.orderDetails.CGST >0 && (
                               <tr>
-                                <td colSpan="6" className="text-end f-w-600">CGST</td>
-                                <td className="text-right">&#8377;{(orderdata.orderDetails.CGST.toFixed(0))}</td>
+                                <td colSpan="6" className="text-end f-w-600">IGST</td>
+                                <td className="text-right">&#8377;{(orderdata.orderDetails.CGST.toFixed(2))}</td>
                               </tr>
                             )}
                             {orderdata && orderdata.orderDetails && orderdata.orderDetails.SGST >0 && (
@@ -109,7 +115,7 @@ console.log(orderdata)
                             {orderdata && orderdata.orderDetails && (
                               <tr>
                                 <td colSpan="6" className="text-end f-w-600">SubTotal</td>
-                                <td className="text-right">&#8377;{orderdata.orderDetails.subtotal}</td>
+                                <td className="text-right">&#8377;{(orderdata.orderDetails.subtotal).toFixed(2)}</td>
                               </tr>
                             )}
                           </tbody>
@@ -141,7 +147,7 @@ console.log(orderdata)
                         </div>
                         <div className="col-md-6 text-end">
                           <h6 className="mb-15">Total Amount</h6>
-                          <h3 className="mt-0 mb-0 text-brand">&#8377; {orderdata && orderdata.orderDetails && orderdata.orderDetails.subtotal}</h3>
+                          <h3 className="mt-0 mb-0 text-brand">&#8377;{(orderdata && orderdata.orderDetails && orderdata.orderDetails.subtotal.toFixed(2))}</h3>
                           <p className="mb-0 text-muted">Taxes Included</p>
                         </div>
                       </div>
