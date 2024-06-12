@@ -696,7 +696,7 @@ console.log(totalAmount,user.email,cartdata,formData,CGST,SGST,Tax);
                               <h6 className="text-muted pl-20 pr-20">x{item.quantity} </h6>
                             </td>
                             <td>
-                            <h4 className="text-brand">&#x20B9;{(item.price - (item.price <= 1000 ? (item.price * 0.12 * item.quantity) : (item.price * 0.18 * item.quantity))).toFixed(2)}</h4>{" "}
+                            <h4 className="text-brand">&#x20B9;{((item.price - (item.price <= 1000 ? (item.price * 0.12 ) : (item.price * 0.18 )))*item.quantity).toFixed(2)}</h4>{" "}
                             <span style={{}}>
                                 Tax &#x20B9;
                                 {item.price <= 1000 ? (item.price * 0.12 * item.quantity).toFixed(0) : (item.price * 0.18 * item.quantity).toFixed(2)}
