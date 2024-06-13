@@ -26,7 +26,7 @@ const[loading,setloading]=useState(false);
   const [selectedSize, setSelectedSize] = useState(null);
   const [error, setError] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
-
+console.log(particularproduct)
   const handleproductImageChange = async (color) => {
     console.log(color);
     const lowercaseColor = color.toLowerCase();
@@ -46,6 +46,10 @@ const[loading,setloading]=useState(false);
     }
     if (!selectedColor || !selectedSize) {
       setError("Please select color and size.");
+      return;
+    }
+    if(quantity>stock){
+      setError(`Only ${stock} items available in stock`)
       return;
     }
     await dispatch(addToCart(particularproduct, selectedColor, selectedSize, quantity));
@@ -74,11 +78,19 @@ const[loading,setloading]=useState(false);
       setError("Please select color and size.");
       return;
     }
+    if(quantity>stock){
+      setError(`Only ${stock} items available in stock`);
+      return;
+    }
     await dispatch(addToCart(item, selectedColor, selectedSize, quantity));
     toast.success("Product added to cart", { position: "top-center" });
   };
 
   const increaseQuantity = () => {
+    if(quantity>=stock){
+      setError(`Only ${stock} items available in stock`)
+      return
+    }
     setQuantity((prevQuantity) => prevQuantity + 1);
   };
 

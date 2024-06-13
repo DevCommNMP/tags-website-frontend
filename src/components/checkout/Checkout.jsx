@@ -711,7 +711,7 @@ console.log(totalAmount,user.email,cartdata,formData,CGST,SGST,Tax);
                         <h5> Sub Total = 
                         <span> &#x20B9;{totalPrice.toFixed(2)}</span></h5>
                         <h5> Total Tax = 
-                        <span> &#x20B9;{totalTax}</span></h5>
+                        <span> &#x20B9;{totalTax.toFixed(2)}</span></h5>
                         <h5> Total Amount = 
                         <span> &#x20B9;{(totalPrice + totalTax).toFixed(2)}</span>
                         </h5>
