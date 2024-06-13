@@ -81,7 +81,7 @@ const Footer = () => {
                 <h4 className="widget-title">Shop by Types</h4>
                 <ul className="footer-list mb-sm-5 mb-md-0 ">
                   <li>
-                    <Link to="/products/subtypes/Sandlas">
+                    <Link to="/products/subtypes/Sandals">
                       <a style={{ color: "grey" }}>Sandals</a>
                     </Link>
                   </li>
