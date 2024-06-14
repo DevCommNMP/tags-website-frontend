@@ -285,10 +285,10 @@ console.log(particularproduct)
                   </div>
                   
                 </div>
-                <table>
+                <table style={{color: "black",display:"flex",overflow:"scroll" }}>
                   <thead>
-                    <tr style={{ fontSize: "25px", marginTop: "50px", color: "black" }}> Size Chart</tr>
-                    <tr style={{ color: "black" }}>
+                    <tr style={{ fontSize: "25px", marginTop: "10px", color: "black" ,}}> Size Chart</tr><br/>
+                    <tr style={{ color: "black",}}>
                       <th>UK</th>
                       <th>36</th>
                       <th>37</th>
@@ -298,9 +298,7 @@ console.log(particularproduct)
                       <th>41</th>
                       <th>42</th>
                     </tr>
-                  </thead>
-                  <tbody>
-                    <tr style={{ color: "black" }}>
+                    <tr style={{ color: "black"}}>
                       <td>IND</td>
                       <td>05</td>
                       <td>06</td>
@@ -310,6 +308,9 @@ console.log(particularproduct)
                       <td>10</td>
                       <td>11</td>
                     </tr>
+                  </thead>
+                  <tbody>
+                    
                   </tbody>
                 </table>
                 <ProductInfo product={product} />
