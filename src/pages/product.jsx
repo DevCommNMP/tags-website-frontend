@@ -26,14 +26,14 @@ const[loading,setloading]=useState(false);
   const [selectedSize, setSelectedSize] = useState(null);
   const [error, setError] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
-console.log(particularproduct)
+// console.log(particularproduct)
   const handleproductImageChange = async (color) => {
-    console.log(color);
+    // console.log(color);
     const lowercaseColor = color.toLowerCase();
     const productIndexWithSelectedColor = particularproduct.findIndex(
       (product) => product.colorsAvailable && product.colorsAvailable.length && product.productName.toLowerCase().includes(lowercaseColor)
     );
-    console.log(productIndexWithSelectedColor);
+    // console.log(productIndexWithSelectedColor);
     if (productIndexWithSelectedColor !== -1) {
       // console.log(productIndexWithSelectedColor);
       setSelectedIndex(productIndexWithSelectedColor);

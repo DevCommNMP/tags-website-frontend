@@ -12,7 +12,7 @@ import axios from "axios";
 import { baseUrl } from "../../utils/baseUrl";
 const Account = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
-  const [loadng,setloading]=useState();
+  const [Loading,setloading]=useState();
   const [productIdToDelete, setProductIdToDelete] = useState(null);
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
@@ -50,17 +50,20 @@ const getOrderIdHandler = (productId) => {
   const orderCancellationHandler=async()=>{
 
     // toast.success("order cancelled successfully");
-   console.log(productIdToDelete);
+  //  console.log(productIdToDelete);
    try {
     setloading(true)
+    // console.log(loading)
     const res=await axios.post(`${baseUrl}/api/orderCancellation/${productIdToDelete}`)
    if(res.data.success){
-    setloading(false)
+    
     setShow(!show);
+    // console.log(show)
+    setloading(false)
     toast.success(res.data.message)
    }
    } catch (error) {
-    toast.error(res.data.message)
+    toast.error(error.message)
     setloading(false)
     setShow(!show);
    }
@@ -87,8 +90,8 @@ const getOrderIdHandler = (productId) => {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={orderCancellationHandler} disabled={loading}>
-              {loading ? "Loading" : "Cancel"}
+            <Button variant="primary" onClick={orderCancellationHandler} disabled={Loading} >
+              {Loading ? "Loading" : "Cancel"}
             </Button>
           </Modal.Footer>
         </Modal>
@@ -298,7 +301,7 @@ const getOrderIdHandler = (productId) => {
                           <p>
                             {/* Already have an account? <Link to="/login">Log in instead!</Link> */}
                           </p>
-                          <form method="post" name="enq">
+                          <form  name="enq">
                             <div className="row">
                               <div className="form-group col-md-6">
                                 <label>
@@ -343,9 +346,9 @@ const getOrderIdHandler = (productId) => {
                                 <input required="" className="form-control" name="cpassword" type="password" />
                               </div>
                               <div className="col-md-12">
-                                <button type="submit" className="btn btn-fill-out submit font-weight-bold" name="submit" value="Submit">
+                                <Button type="submit" className="btn btn-fill-out submit font-weight-bold" >
                                   Save Change
-                                </button>
+                                </Button>
                               </div>
                             </div>
                           </form>

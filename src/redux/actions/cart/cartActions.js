@@ -11,7 +11,7 @@ const calculatePrice = (product) => {
   const taxRate = sellingPrice <= 1000 ? 0.12 : 0.18;
 
   const finalPrice = (sellingPrice).toFixed(2);
-console.log(finalPrice)
+// console.log(finalPrice)
   return finalPrice;
 };
 const calculateTax = (product) => {
@@ -22,7 +22,7 @@ const calculateTax = (product) => {
   const taxRate = sellingPrice <= 1000 ? 0.12 : 0.18;
 
   const tax = (sellingPrice*taxRate).toFixed(2);
-console.log(tax)
+// console.log(tax)
   return tax;
 };
 
@@ -39,9 +39,10 @@ export const addToCart = (product, color, size, quantity, productCode) => {
       } else {
         cartItems.push({
           productId: product._id,
+          product:product,
           quantity: quantity,
-          size: size || (product.sizesAvailable.length > 0 ? product.sizesAvailable[0].size : null),
-          color: color || (product.colorsAvailable.length > 0 ? product.colorsAvailable[0] : null),
+          size: size || 0,
+          color: color || "",
           productImage: product.productImage,
           price: calculatePrice(product),
           tax: calculateTax(product),

@@ -21,7 +21,7 @@ const Invoice = () => {
 
   const orderData = useSelector(state => state.order);
   const { orderdata, loading, appErr, serverErr } = orderData;
-console.log(orderdata)
+// console.log(orderdata)
   // Ensure we have order data before accessing properties
   const currentDate = orderdata && orderdata.orderDetails ? new Date(orderdata.orderDetails.Date) : new Date();
   const formattedDate = currentDate.toLocaleDateString('en-US');

@@ -16,6 +16,7 @@ const Cart = () => {
   const [productIdToDelete, setProductIdToDelete] = useState(null);
   const [show, setShow] = useState(false);
   const [loading, setloading] = useState(false);
+  const[soldOut,setSoldOut]=useState(false);
   const fetchCartData = () => {
     const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
     setCartData(cart);
@@ -66,14 +67,28 @@ const Cart = () => {
   const handleQuantityChange = (productId, action) => {
     const updatedCart = cartData.map((item) => {
       if (item.productId === productId) {
-        if (action === "increase") {
-          return { ...item, quantity: item.quantity + 1 };
-        } else if (action === "decrease" && item.quantity > 1) {
+    
+        // Check if the item has sizesAvailable and action is "increase"
+        if (action === "increase" && item.product.sizesAvailable) {
+          // console.log(item.product.sizesAvailable)
+          const availableSize = item.product.sizesAvailable.find(sizeItem => sizeItem.size === item.size);
+          // console.log(availableSize)
+          // Check if the selected size is in sizesAvailable and its quantity is less than item.quantity
+          if (availableSize && availableSize.quantity >= item.quantity) {
+
+            return { ...item, quantity: item.quantity + 1 };;// Do not increase quantity if conditions are met
+          }
+          else{
+toast.error(`Only ${item.quantity} quantity available in stock.`)
+          }
+        }
+        else if (action === "decrease" && item.quantity > 1) {
           return { ...item, quantity: item.quantity - 1 };
         }
       }
-      return item;
+      return item; // Return unchanged item if productId doesn't match or action is invalid
     });
+  
 
     localStorage.setItem("cartItems", JSON.stringify(updatedCart));
     setCartData(updatedCart);
@@ -116,7 +131,18 @@ const Cart = () => {
   
     return finalPrice;
   };
+  useEffect(() => {
+    
 
+  const hasSoldOutItem = cartData.some(item => item.size === 0);
+
+  setSoldOut(hasSoldOutItem);
+  // console.log(soldOut)
+
+  }, [aggregateCartItems])
+  
+
+  
   return (
     <>
       {show ? (
@@ -194,6 +220,8 @@ const Cart = () => {
                             <h6 onClick={() => handleProductClick(item.productId)}>
                               <a className="product-name mb-10">{item.title}</a>
                             </h6>
+                            
+                            {(item.size==0||item.color=="" )? <p style={{color:"red"}}>Soldout<span style={{color:"black"}}>(Please Select different color or size)</span></p>:<p style={{color:"green"}}>In Stock</p>}
                             <div className="product-rate-cover">
                               <div className="product-rate d-inline-block">
                                 <div className="product-rating" style={{ width: "90%" }}></div>
@@ -238,8 +266,9 @@ const Cart = () => {
                   </table>
                 </div>
               )}
+              <h5 style={{color:"red"}}>{soldOut? "Plese remove the item that is out of stock or select defferent color/size":""}</h5>
               <Link to={aggregatedCartItems.length === 0 ? "/all-categories" : "/checkout"}>
-                <Button style={{ textAlign: "center", marginTop: "50px" }} onClick={checkoutHandler}>
+                <Button style={{ textAlign: "center", marginTop: "50px" }} onClick={checkoutHandler} disabled={soldOut}>
                   {aggregatedCartItems.length === 0 ? "Browse All Categories" : "Proceed to checkout"}
                 </Button>
               </Link>

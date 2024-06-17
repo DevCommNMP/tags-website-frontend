@@ -18,7 +18,7 @@ const   ResetPassword = () => {
         try {
             // Make a POST request to the backend to check if the user exists
             const user = await axios.post(`${baseUrl}/api/getUser`, { email });
-            console.log(user);
+            // console.log(user);
             if (user.data.success === false) {
                 // If user does not exist, display an error message
                 toast.error("Invalid Email");

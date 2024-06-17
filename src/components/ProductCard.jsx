@@ -17,8 +17,8 @@ const ProductCard = ({ product, toasterHandler }) => {
       await dispatch(
         addToCart(
           item,
-          product.colorsAvailable[0],
-          product.sizesAvailable[0].size,
+          null,
+          0,
           1,
           item.productName
         )

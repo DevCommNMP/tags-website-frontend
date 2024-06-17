@@ -44,6 +44,7 @@ const Checkout = () => {
   const [Razorpay] = useRazorpay();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [soldOut,setSoldOut]=useState(false)
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -112,6 +113,7 @@ const Checkout = () => {
       }
     }
   };
+
   const CODAlertHandler = async () => {
     if (!user) {
       toast.error("You need to log in first", {
@@ -314,13 +316,26 @@ console.log(totalAmount,user.email,cartdata,formData,CGST,SGST,Tax);
   };
 ;
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem("cartItems"));
+const cart = JSON.parse(localStorage.getItem("cartItems"));
     if (cart) {
       setCartdata(cart);
     }
+
+    
+   
+  
   }, [orderplaced]);
 
-  useEffect(() => {}, [cartdata, Tax, CGST, SGST, orderplaced]);
+  useEffect(() => {
+    const hasSoldOutItem = cartdata.some(item => item.size === 0);
+
+    setSoldOut(hasSoldOutItem);
+  }, [cartdata, Tax, CGST, SGST, orderplaced]);
+// console.log(cartdata)
+  
+
+
+// console.log(soldOut)
 
   // console.log(Tax, "center", CGST, "state", SGST);
   return (
@@ -701,6 +716,9 @@ console.log(totalAmount,user.email,cartdata,formData,CGST,SGST,Tax);
                                 Tax &#x20B9;
                                 {item.price <= 1000 ? (item.price * 0.12 * item.quantity).toFixed(0) : (item.price * 0.18 * item.quantity).toFixed(2)}
                                 </span>
+                                <span style={{color:"red"}}>
+                                {(item.quantity==0 || item.color=="")? <h5 style={{color:"red"}}>Soldout</h5>:<p style={{color:"Green"}}>in Stock</p>}
+                                </span>
                             </td>
                           </tr>
                         ))}
@@ -771,10 +789,12 @@ console.log(totalAmount,user.email,cartdata,formData,CGST,SGST,Tax);
                   <img className="mr-15" src={paymentVisa} alt="" />
                   {/* <img src={paymentZapper} alt="" /> */}
                 </div>
+                {soldOut ? <h5 style={{color:"red",marginTop:10}}>Please remove any products that are out of stock from the cart.</h5>:""}
                 <button
                   className="btn btn-fill-out btn-block mt-30"
                   id="rzp-button1"
                   onClick={selectedOption === "direct_bank_transfer" ? paymentHandler : CODAlertHandler}
+                  disabled={soldOut}
                 >
                   {loading ? "Loading" : " Place an Order"}
                   <i className="fi-rs-sign-out ml-15"></i>
