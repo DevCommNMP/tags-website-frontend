@@ -17,8 +17,8 @@ const ProductCard = ({ product, toasterHandler }) => {
       await dispatch(
         addToCart(
           item,
-          null,
-          0,
+          item.colorsAvailable[0]|| null,
+          item.sizesAvailable[0].size||0,
           1,
           item.productName
         )
@@ -86,11 +86,14 @@ const ProductCard = ({ product, toasterHandler }) => {
                 <span>&#8377; {productPrice}</span>
                 <span className="old-price">&#8377;{product.SellingPrice}</span>
               </div>
-              <div className="add-cart" onClick={() => cartHandler(product)}>
+              <Link to={`/products/${product._id}`}>
+              <div className="add-cart" >
                 <a className="add">
                   <i className="fi-rs-shopping-cart mr-5"></i>Add{" "}
                 </a>
               </div>
+              </Link>
+             
             </div>
           </div>
         </div>

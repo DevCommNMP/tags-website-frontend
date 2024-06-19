@@ -30,16 +30,20 @@ export const addToCart = (product, color, size, quantity, productCode) => {
   return async (dispatch) => {
     try {
       let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-      const taxPrice = product.SellingPrice ;
-
-      const existingProductIndex = cartItems.findIndex((item) => item.productId === product._id);
+      
+      // Find index of existing product in cart
+      const existingProductIndex = cartItems.findIndex(item => 
+        item.productId === product._id && item.size === size && item.color === color
+      );
 
       if (existingProductIndex !== -1) {
-        cartItems[existingProductIndex].quantity += 1;
+        // If product already exists in cart, increment quantity
+        cartItems[existingProductIndex].quantity += quantity;
       } else {
+        // If product does not exist in cart, add it
         cartItems.push({
           productId: product._id,
-          product:product,
+          product: product,
           quantity: quantity,
           size: size || 0,
           color: color || "",
@@ -49,7 +53,6 @@ export const addToCart = (product, color, size, quantity, productCode) => {
           productCode: productCode,
           title: product.title,
         });
-        // console.log(calculatePrice(product),taxPrice)
       }
 
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -60,7 +63,7 @@ export const addToCart = (product, color, size, quantity, productCode) => {
       return cartItems.length; // Returning the cart items length inside try block
     } catch (error) {
       // Handle the error more explicitly, e.g., logging or dispatching an error action
-      // console.error("Error adding to cart:", error);
+      console.error("Error adding to cart:", error);
       
       return 0; // Returning 0 if an error occurs
     }

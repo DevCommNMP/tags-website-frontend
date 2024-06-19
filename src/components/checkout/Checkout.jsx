@@ -320,9 +320,13 @@ const cart = JSON.parse(localStorage.getItem("cartItems"));
     if (cart) {
       setCartdata(cart);
     }
-
     
-   
+    if (!user) {
+      toast.error("You need to log in first", {
+        position: "top-right",
+      });
+    }
+  
   
   }, [orderplaced]);
 
@@ -760,7 +764,7 @@ const cart = JSON.parse(localStorage.getItem("cartItems"));
                       data-target="#bankTranfer"
                       aria-controls="bankTranfer"
                     >
-                      Direct Bank Transfer
+                      Credit Card/Debit Card/UPI/Netbanking
                     </label>
                   </div>
                   <div className="custome-radio">

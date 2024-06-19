@@ -220,6 +220,9 @@ toast.error(`Only ${item.quantity} quantity available in stock.`)
                             <h6 onClick={() => handleProductClick(item.productId)}>
                               <a className="product-name mb-10">{item.title}</a>
                             </h6>
+                            <h6 >
+                              <a >Size:{item.size}</a>
+                            </h6>
                             
                             {(item.size==0||item.color=="" )? <p style={{color:"red"}}>Soldout<span style={{color:"black"}}>(Please Select different color or size)</span></p>:<p style={{color:"green"}}>In Stock</p>}
                             <div className="product-rate-cover">
