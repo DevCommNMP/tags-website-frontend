@@ -398,14 +398,16 @@ const cart = JSON.parse(localStorage.getItem("cartItems"));
               <div className="row mb-50">
                 <div className="col-lg-6 mb-sm-15 mb-lg-0 mb-md-3">
                   {!user && (
-                    <div className="toggle_info">
+                    <div className="toggle_info" onClick={()=>navigate("/login")} style={{cursor:"pointer"}} >
+                      
                       <span>
                         <i className="fi-rs-user mr-10"></i>
                         <span className="text-muted font-lg">Already have an account?</span>{" "}
                         <a data-bs-toggle="collapse" className="collapsed font-lg" aria-expanded="false">
-                          <Link to="/login">Click here to login</Link>
+                          Click here to login
                         </a>
                       </span>
+                    
                     </div>
                   )}
                   <div className="panel-collapse collapse login_form" id="loginform">
