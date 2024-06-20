@@ -160,6 +160,7 @@ const Checkout = () => {
     }
     setShow(true);
   };
+
   const CODHandler = async () => {
     let totalAmount = (totalPrice + totalTax).toFixed(0);
     setLoading(true);
@@ -269,7 +270,7 @@ console.log(totalAmount,user.email,cartdata,formData,CGST,SGST,Tax);
       amount: res1.data.order.amount,
       currency: "INR",
       name: "Tags Footwear",
-      description: "Test Transaction",
+      description: "Shopping Transaction",
       image: "https://res.cloudinary.com/dibaxrbac/image/upload/v1711623271/Footwear_Accessories_dwncjn.png",
       order_id: res1.data.order.id,
       //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
