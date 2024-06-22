@@ -540,6 +540,24 @@ const filteredDataBySubtype = async (subtypes) => {
                         </a>
                       </li>
                     </Link>
+                    <Link to="/categories/Festive Footwear">
+                      <li>
+                        <a>
+                          {" "}
+                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
+                          Festive Footwear
+                        </a>
+                      </li>
+                    </Link>
+                    <Link to="/categories/Wedding Footwear">
+                      <li>
+                        <a>
+                          {" "}
+                          <img src="assets/imgs/theme/icons/category-1.svg" alt="" />
+                          Wedding Footwear
+                        </a>
+                      </li>
+                    </Link>
                   </ul>
                 </div>
                 <div className="sidebar-widget price_range range mb-30">
