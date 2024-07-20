@@ -166,20 +166,7 @@ const SignUp = () => {
 
                            
                           </button>
-                          {/* <a
-                            className="btn btn-light social-login google-login bg-light text-dark"
-                            style={{
-                              width: "100%",
-                              borderRadius: "100px",
-                              border: "1px solid #333",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                            }}
-                          >
-                            <img src={logoGoogle} alt="" />
-                            <span>&nbsp;&nbsp;Continue with Google</span>
-                          </a> */}
+                    
                         </div>
                         <p className="font-xs text-muted">
                           <strong>Note:</strong>Your personal data will be used to support your experience throughout this website, to
