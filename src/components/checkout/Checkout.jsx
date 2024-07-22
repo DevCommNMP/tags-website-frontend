@@ -115,12 +115,7 @@ const Checkout = () => {
   };
 
   const CODAlertHandler = async () => {
-    if (!user) {
-      toast.error("You need to log in first", {
-        position: "top-right",
-      });
-      return;
-    }
+  
 
     if (
       formData.fname.length < 3 ||
@@ -173,7 +168,7 @@ const Checkout = () => {
     try {
       const res1 = await axios.post(`${baseUrl}/api/codCheckout`, {
         amount: totalAmount,
-        userEmail: user.email,
+        userEmail: formData.email,
         cartdata,
         quantity: cartdata.length,
         formData,
@@ -200,12 +195,7 @@ const Checkout = () => {
   };
 
   const paymentHandler = async () => {
-    if (!user) {
-      toast.error("You need to log in first", {
-        position: "top-right",
-      });
-      return;
-    }
+  
 
     if (
       formData.fname.length < 3 ||
@@ -253,11 +243,11 @@ const Checkout = () => {
     let totalAmount = (totalPrice + totalTax).toFixed(2);
     setLoading(true);
   
-console.log(totalAmount,user.email,cartdata,formData,CGST,SGST,Tax);
+console.log(totalAmount,formData.email,cartdata,formData,CGST,SGST,Tax);
     const { data } = await axios.get(`${baseUrl}/api/getkeys`);
     const res1 = await axios.post(`${baseUrl}/api/checkout`, {
       amount: totalAmount,
-      userEmail: user.email,
+      userEmail: formData.email,
       cartdata,
       formData,
       CGST,
@@ -322,11 +312,6 @@ const cart = JSON.parse(localStorage.getItem("cartItems"));
       setCartdata(cart);
     }
     
-    if (!user) {
-      toast.error("You need to log in first", {
-        position: "top-right",
-      });
-    }
   
   
   }, [orderplaced]);
@@ -803,7 +788,7 @@ const cart = JSON.parse(localStorage.getItem("cartItems"));
                   onClick={selectedOption === "direct_bank_transfer" ? paymentHandler : CODAlertHandler}
                   disabled={soldOut}
                 >
-                  {loading ? "Loading" : " Place an Order"}
+                  {loading ? "Loading" : user?"place an order":"place order as guest"}
                   <i className="fi-rs-sign-out ml-15"></i>
                 </button>
               </div>
