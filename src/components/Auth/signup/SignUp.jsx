@@ -1,19 +1,17 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
-
 import logoGoogle from "../../../assets/imgs/theme/icons/logo-google.svg";
 import SignUpImg from "../../../assets/imgs/page/signup.jpg";
-
 import { Link, useNavigate } from "react-router-dom";
-
 import { useDispatch, useSelector } from "react-redux";
 import { registerUserAction } from "../../../redux/actions/auth/authActions";
+import PhoneInput from "react-phone-input-2"; // Import the PhoneInput component
+import "react-phone-input-2/lib/style.css";  // Import the CSS for PhoneInput
 
 const SignUp = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // State variables for form data and errors
   const storeData = useSelector((store) => store.auth);
   const { registered, loading, appErr, serverErr } = storeData;
 
@@ -25,13 +23,11 @@ const SignUp = () => {
     password: "",
     confirmPassword: "",
     userType: "customer", // Default to 'customer'
-    agreeTerms: false,
+    phoneNumber: "",      // Phone number with country code
   });
 
   const [errors, setErrors] = useState({});
-  // Initialize user state as true
 
-  // Function to handle form input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -40,26 +36,30 @@ const SignUp = () => {
     });
   };
 
-  // Function to handle form submission
+  const handlePhoneChange = (value) => {
+    setFormData({
+      ...formData,
+      phoneNumber: value, // Set the phone number with country code
+    });
+  };
+
   const userRegisterHandler = async (e) => {
     e.preventDefault();
 
     const validationResult = validateForm(formData);
-    console.log(validationResult);
     if (Object.keys(validationResult).length === 0) {
+      console.log(formData)
       const res = await dispatch(registerUserAction(formData));
       if (!res.error) {
-        // console.log(res.error.message)
-        navigate("/verify-account");
+        navigate(`/verify-otp/${formData.phoneNumber}`);
       } else {
-        // console.log(res.error.message);
+        // Handle error
       }
     } else {
-      // console.log("Error in form validation");
+      // Handle validation error
     }
   };
 
-  // Function to validate form fields
   const validateForm = (formData) => {
     const newErrors = {};
     if (!formData.username.trim()) {
@@ -77,6 +77,9 @@ const SignUp = () => {
     }
     if (formData.password !== formData.confirmPassword) {
       newErrors.confirmPassword = "Passwords do not match";
+    }
+    if (!formData.phoneNumber.trim()) {
+      newErrors.phoneNumber = "Phone number is required";
     }
 
     setErrors(newErrors);
@@ -149,6 +152,16 @@ const SignUp = () => {
                           />
                           {errors.confirmPassword && <div className="text-danger">{errors.confirmPassword}</div>}
                         </div>
+                        <div className="form-group">
+                          <PhoneInput
+                            country={'us'}  // Set default country
+                            value={formData.phoneNumber}
+                            onChange={handlePhoneChange}
+                            inputStyle={{ width: '100%' }}
+                            required
+                          />
+                          {errors.phoneNumber && <div className="text-danger">{errors.phoneNumber}</div>}
+                        </div>
                         <div className="form-group mb-30">
                           <button
                             type="submit"
@@ -162,14 +175,12 @@ const SignUp = () => {
                             }}
                             className="mb-4 btn btn-fill-out btn-block hover-up font-weight-bold"
                             name="login"
-                          >{loading ? "Loading" : "Submit & Register"}
-
-                           
+                          >
+                            {loading ? "Loading" : "Submit & Register"}
                           </button>
-                    
                         </div>
                         <p className="font-xs text-muted">
-                          <strong>Note:</strong>Your personal data will be used to support your experience throughout this website, to
+                          <strong>Note:</strong> Your personal data will be used to support your experience throughout this website, to
                           manage access to your account, and for other purposes described in our privacy policy
                         </p>
                       </form>

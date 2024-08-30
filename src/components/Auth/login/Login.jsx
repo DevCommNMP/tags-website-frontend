@@ -105,7 +105,7 @@ const Login = () => {
                         <p className="mb-30" style={{float:"right",marginBottom:"20"}}>
                           Forgot Password?{" "}
                           <Link to="/forgot-password" >
-                            Create here
+                           Forgot Password
                           </Link>
                         </p>
                         <div className="form-group mb-50 mt-50">

@@ -54,7 +54,7 @@ function App() {
             <Route exact path="/invoice/:id" element={<Invoice />} />
             <Route exact path="/verify-account" element={<VerifyEmail />} />
             <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
-            <Route exact path="/verify-otp" element={<VerifyOtp />} />
+            <Route exact path="/verify-otp/:phoneNumber" element={<VerifyOtp />} />
             <Route exact path="/about-us" element={<AboutUs />} />
             <Route exact path="/shipping-policy" element={<ShippingPolicy />} />
             <Route exact path="/terms-conditions" element={<TermsPage />} />
