@@ -8,8 +8,7 @@ import { Button } from "react-bootstrap";
 import OtpInput from "react-otp-input";
 import "./verify-otp.css";
 import { baseUrl } from "../../utils/baseUrl";
-import otpIMg from "../../assets/imgs/svgs/verify-otp.svg"
-
+import otpImg from "../../assets/imgs/svgs/verify-otp.svg";
 import axios from "axios";
 
 const VerifyOtp = () => {
@@ -83,29 +82,26 @@ const VerifyOtp = () => {
     }
   };
 
-  const handleResendOtp = async() => {
+  const handleResendOtp = async () => {
     if (!phoneNumber) {
-      toast.error("Something went wrong try again");
+      toast.error("Something went wrong, try again");
       return;
     }
     try {
       setLoading(true);
       const res = await axios.post(`${baseUrl}/api/otp/resendotp`, {
         phoneNumber,
-        
       });
       setLoading(false);
       if (res.status === 200) {
-        toast.success("OTP Verified Successfully");
-  
+        toast.success("OTP Resent Successfully");
       } else {
-        toast.error("Invalid OTP");
+        toast.error("Failed to resend OTP");
       }
     } catch (error) {
       setLoading(false);
-      toast.error(error.response?.data?.message || "Verification failed");
+      toast.error(error.response?.data?.message || "Failed to resend OTP");
     }
-
     startResendTimer(); // Restart the timer when OTP is resent
   };
 
@@ -134,7 +130,7 @@ const VerifyOtp = () => {
                       <h2 className="mb-15 mt-15 text-center">OTP Verification</h2>
                       <img
                         className="border-radius-15"
-                        src={otpIMg}
+                        src={otpImg}
                         alt="Verification Illustration"
                       />
                       <div className="otp-input">
@@ -158,7 +154,7 @@ const VerifyOtp = () => {
                           variant="link"
                           className="mt-3"
                           disabled={resendDisabled} // Disable resend button for 1 minute
-                          style={{color:"black"}}
+                          style={{ color: "black" }}
                         >
                           {resendDisabled ? `Resend OTP in ${timeLeft}s` : "Resend OTP"}
                         </Button>
