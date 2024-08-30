@@ -6,6 +6,7 @@ import Homepage from "./pages/HomePage.jsx";
 import Login from "./components/Auth/login/Login.jsx";
 import SignUp from "./components/Auth/signup/SignUp.jsx";
 import VerifyEmail from "./components/Auth/VerifyEmail.jsx";
+import VerifyOtp from "./components/Auth/VerifyOtp.jsx";
 import ResetPassword from "./components/Auth/ResetPassword/ResetPassword.jsx";
 import ForgotPassword from "./components/Auth/ForgotPassword/ForgotPassword.jsx";
 import UserAccountPage from "./pages/UserAccountPage.jsx";
@@ -53,6 +54,7 @@ function App() {
             <Route exact path="/invoice/:id" element={<Invoice />} />
             <Route exact path="/verify-account" element={<VerifyEmail />} />
             <Route exact path="/verify-account/:token" element={<VerifyEmail />} />
+            <Route exact path="/verify-otp" element={<VerifyOtp />} />
             <Route exact path="/about-us" element={<AboutUs />} />
             <Route exact path="/shipping-policy" element={<ShippingPolicy />} />
             <Route exact path="/terms-conditions" element={<TermsPage />} />

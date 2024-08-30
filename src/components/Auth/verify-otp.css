@@ -1,0 +1,19 @@
+
+/* Element | http://localhost:5173/verify-otp */
+
+.otp-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* Element | http://localhost:5173/verify-otp */
+
+.otp-input input {
+  /* width: 1em; */
+  width: 100% !important;
+}
