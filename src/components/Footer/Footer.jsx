@@ -42,7 +42,7 @@ const Footer = () => {
                     <li>
                       <img src={iconEmail2} alt="" />
                       <strong>Email:</strong>
-                      <span>tagsfootwear.2023@gmail.com</span>
+                      <span>support@tagsfootwear.com</span>
                     </li>
                   </ul>
                 </div>
