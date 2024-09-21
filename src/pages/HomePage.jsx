@@ -33,7 +33,7 @@ const Homepage = () => {
   const storeData = useSelector((store) => store.products);
   const { products, productsLoading, appErr, serverErr } = storeData;
   // console.log(products,productsLoading,appErr,serverErr)
-//  console.log(products)
+ console.log(products)
   return (
     <>
     <ToastContainer/>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { fetchParticularProduct } from "../redux/actions/product/productActions";
@@ -11,52 +11,27 @@ import starRating from "../assets/imgs/theme/rating-stars.png";
 import ProductInfo from "../components/ProductInfo";
 import { discount as globalDiscount } from "../utils/baseUrl";
 import shoeSizeChart from "../assets/imgs/Shoe-sizeimage/sizeChart.jpg";
+import LoaderImg from "../components/LoaderImg";
 const Product = () => {
   const dispatch = useDispatch();
-  const { id } = useParams();
+  const { slugtitle } = useParams();
   const navigate = useNavigate();
   const storeData = useSelector((store) => store.products);
   const { particularproduct } = storeData;
   // console.log(particularproduct);
-const[loading,setloading]=useState(false);
+  const [loading, setloading] = useState(false);
   const [soldOut, setSoldOut] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [stock, setStock] = useState(1);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   const [error, setError] = useState("");
+  const [productSlugTitle, setProductSlugTitle] = useState(slugtitle);
   const [selectedIndex, setSelectedIndex] = useState(0);
-// console.log(particularproduct)
-  const handleproductImageChange = async (color) => {
-    // console.log(color);
-    const lowercaseColor = color.toLowerCase();
-    const productIndexWithSelectedColor = particularproduct.findIndex(
-      (product) => product.colorsAvailable && product.colorsAvailable.length && product.productName.toLowerCase().includes(lowercaseColor)
-    );
-    // console.log(productIndexWithSelectedColor);
-    if (productIndexWithSelectedColor !== -1) {
-      // console.log(productIndexWithSelectedColor);
-      setSelectedIndex(productIndexWithSelectedColor);
-    }
-  };
+  // console.log(particularproduct)
 
-  const handleBuyNow = async (particularproduct, selectedColor, selectedSize, quantity) => {
-    if (selectedColor && selectedSize) {
-      setError("");
-    }
-    if (!selectedColor || !selectedSize) {
-      setError("Please select color and size.");
-      return;
-    }
-    if(quantity>stock){
-      setError(`Only ${stock} items available in stock`)
-      return;
-    }
-    await dispatch(addToCart(particularproduct, selectedColor, selectedSize, quantity));
-    navigate("/checkout");
-  };
+  const product = Array.isArray(particularproduct) ? particularproduct.find((item) => item.slugTitle === slugtitle) : null;
 
-  const product = particularproduct?.[selectedIndex];
   const productTitle = product?.title;
   const productName = product?.productName;
   const productRating = product?.rating;
@@ -70,6 +45,34 @@ const[loading,setloading]=useState(false);
     ? productSellingPrice * (1 - productDiscount / 100)
     : productSellingPrice * (1 - globalDiscount / 100);
 
+  const handleproductImageChange = async (color, index) => {
+    // console.log(color);
+    const lowercaseColor = color.toLowerCase();
+    const productIndexWithSelectedColor = particularproduct.findIndex(
+      (product) => product.colorsAvailable && product.colorsAvailable.length && product.productName.toLowerCase().includes(lowercaseColor)
+    );
+    // console.log(productIndexWithSelectedColor);
+    if (productIndexWithSelectedColor !== -1) {
+      navigate(`/products/${particularproduct[productIndexWithSelectedColor].slugTitle}`);
+    }
+  };
+
+  const handleBuyNow = async (particularproduct, selectedColor, selectedSize, quantity) => {
+    if (selectedColor && selectedSize) {
+      setError("");
+    }
+    if (!selectedColor || !selectedSize) {
+      setError("Please select color and size.");
+      return;
+    }
+    if (quantity > stock) {
+      setError(`Only ${stock} items available in stock`);
+      return;
+    }
+    await dispatch(addToCart(particularproduct, selectedColor, selectedSize, quantity));
+    navigate("/checkout");
+  };
+
   const cartHandler = async (item, selectedColor, selectedSize, quantity) => {
     if (selectedColor && selectedSize) {
       setError("");
@@ -78,7 +81,7 @@ const[loading,setloading]=useState(false);
       setError("Please select color and size.");
       return;
     }
-    if(quantity>stock){
+    if (quantity > stock) {
       setError(`Only ${stock} items available in stock`);
       return;
     }
@@ -87,9 +90,9 @@ const[loading,setloading]=useState(false);
   };
 
   const increaseQuantity = () => {
-    if(quantity>=stock){
-      setError(`Only ${stock} items available in stock`)
-      return
+    if (quantity >= stock) {
+      setError(`Only ${stock} items available in stock`);
+      return;
     }
     setQuantity((prevQuantity) => prevQuantity + 1);
   };
@@ -100,11 +103,13 @@ const[loading,setloading]=useState(false);
     }
   };
 
-  const handleColorSelection = async (color) => {
-    setSelectedColor(color);
+  // const handleColorSelection = async (color,index) => {
 
-    handleproductImageChange(color);
-  };
+  //   setSelectedIndex(index);
+
+  //   // navigate(`/products/${particularproduct[index].slugTitle}`)
+
+  // };
 
   const handleSizeSelection = (size, quantity) => {
     setStock(quantity);
@@ -116,12 +121,15 @@ const[loading,setloading]=useState(false);
       setSoldOut(false);
     }
   };
-  useEffect(() => {
-    setloading(true)
-    dispatch(fetchParticularProduct(id));
-  }, [dispatch]);
 
-  return particularproduct ? (
+  useEffect(() => {
+    setloading(true);
+  dispatch(fetchParticularProduct(slugtitle));
+
+    setloading(false);
+  }, [dispatch, productSlugTitle]);
+
+  return (
     <>
       <ToastContainer
         position="top-right"
@@ -136,7 +144,12 @@ const[loading,setloading]=useState(false);
         theme="light"
       />
       <Header />
-      <main className="main">
+      
+      {loading ? (
+        <LoaderImg />
+      ) : !product ? (
+        <h1 style={{textAlign:"center",marginTop:"100px",marginBottom:"100px"}}>Product not found!</h1>
+      ) : (
         <div className="page-header breadcrumb-wrap">
           <div className="container">
             <div className="breadcrumb">
@@ -147,58 +160,59 @@ const[loading,setloading]=useState(false);
             </div>
           </div>
         </div>
-        <div className="container mb-30">
-          <div className="row">
-            <div className="col-xl-10 col-lg-12 m-auto">
-              <div className="product-detail accordion-detail">
-                <div className="row mb-50 mt-30">
-                  {product && <SingleProductImages product={product} />}
-
-                  <div className="col-md-6 col-sm-12 col-xs-12">
-                    <div className="detail-info pr-30 pl-30">
-                      <h2 className="title-detail">{productTitle}</h2>
-                      <div className="product-detail-rating">
-                        <div className="product-rate-cover text-end">
-                          <div className="product-rate d-inline-block">
-                            <div
-                              className="product-rating"
-                              style={{ width: `${20 * productRating}%`, backgroundImage: `url(${starRating})` }}
-                            ></div>
-                          </div>
-                          <span className="font-small ml-5 text-muted">(32 reviews)</span>
-                        </div>
-                      </div>
-                      <div className="clearfix product-price-cover">
-                        <div className="product-price primary-color float-left" style={{ fontSize: "2rem", color: "red", fontWeight: 800 }}>
-                          <span>
-                            <span className="save-price font-md color ml-15" style={{ color: "red", fontSize: "25px", marginRight: 20 }}>
-                              -{productDiscount ? productDiscount : globalDiscount}% <span style={{ color: "black" }}>Off </span>
-                            </span>
-                            <div style={{ display: "flex", alignItems: "center" }}>
-                              {" "}
-                              <span style={{ fontSize: 5, color: "grey", marginLeft: 10 }}>M.R.P. :</span>{" "}
-                              <span className="old-price font-md ml-5" style={{ fontSize: 15 }}>
-                                &#8377;{productSellingPrice}
-                              </span>
+      )}
+  
+      {!loading && product && (
+        <main className="main">
+          <div className="container mb-30">
+            <div className="row">
+              <div className="col-xl-10 col-lg-12 m-auto">
+                <div className="product-detail accordion-detail">
+                  <div className="row mb-50 mt-30">
+                    {product && <SingleProductImages product={product} />}
+  
+                    <div className="col-md-6 col-sm-12 col-xs-12">
+                      <div className="detail-info pr-30 pl-30">
+                        <h2 className="title-detail">{productTitle}</h2>
+                        <div className="product-detail-rating">
+                          <div className="product-rate-cover text-end">
+                            <div className="product-rate d-inline-block">
+                              <div
+                                className="product-rating"
+                                style={{ width: `${20 * productRating}%`, backgroundImage: `url(${starRating})` }}
+                              ></div>
                             </div>
-                          </span>
-                          <span>&#8377; {productPrice}</span>
-                          <span className="save-price font-md color ml-15" style={{ color: "green", fontSize: "16px" }}>
-                            Inc. all taxes
-                          </span>
+                            <span className="font-small ml-5 text-muted">(32 reviews)</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="short-desc mb-30">
-                        <p className="font-lg" style={{ color: "black", fontSize: "25px" }}>
-                          {productDescription}
-                        </p>
-                      </div>
-                      <div className="attr-detail attr-size mb-3">
-                        <strong className="mr-10">Size</strong>
-                        <ul className="list-filter size-filter font-small">
-                          {product &&
-                            product.sizesAvailable &&
-                            product.sizesAvailable.map((item, index) => (
+                        <div className="clearfix product-price-cover">
+                          <div className="product-price primary-color float-left" style={{ fontSize: "2rem", color: "red", fontWeight: 800 }}>
+                            <span>
+                              <span className="save-price font-md color ml-15" style={{ color: "red", fontSize: "25px", marginRight: 20 }}>
+                                -{productDiscount ? productDiscount : globalDiscount}% <span style={{ color: "black" }}>Off </span>
+                              </span>
+                              <div style={{ display: "flex", alignItems: "center" }}>
+                                <span style={{ fontSize: 5, color: "grey", marginLeft: 10 }}>M.R.P. :</span>
+                                <span className="old-price font-md ml-5" style={{ fontSize: 15 }}>
+                                  &#8377;{productSellingPrice}
+                                </span>
+                              </div>
+                            </span>
+                            <span>&#8377; {productPrice}</span>
+                            <span className="save-price font-md color ml-15" style={{ color: "green", fontSize: "16px" }}>
+                              Inc. all taxes
+                            </span>
+                          </div>
+                        </div>
+                        <div className="short-desc mb-30">
+                          <p className="font-lg" style={{ color: "black", fontSize: "25px" }}>
+                            {productDescription}
+                          </p>
+                        </div>
+                        <div className="attr-detail attr-size mb-3">
+                          <strong className="mr-10">Size</strong>
+                          <ul className="list-filter size-filter font-small">
+                            {product.sizesAvailable.map((item, index) => (
                               <li key={index}>
                                 <a
                                   onClick={() => handleSizeSelection(item.size, item.quantity)}
@@ -208,122 +222,121 @@ const[loading,setloading]=useState(false);
                                 </a>
                               </li>
                             ))}
-                        </ul>
-                      </div>
-                      <div className="attr-detail attr-size mb-30">
-                        <strong className="mr-10">Colors</strong>
-                        <ul className="list-filter color-filter flex-align-justify-center size-filter font-small">
-                          {product &&
-                            product.colorsAvailable &&
-                            product.colorsAvailable.map((item, index) => (
-                              <li key={index}>
-                                <a
-                                  onClick={() => handleColorSelection(item)}
-                                  className={`product-color-box product-${item.replace(/[\s./]+/g, "-").toLowerCase()} ${
-                                    selectedColor === item ? "selected" : "notselected"
-                                  }`}
-                                ></a>
-                              </li>
-                            ))}
-                        </ul>
-                      </div>
-
-                      <div className="detail-extralink mb-50">
-                        <div className="detail-qty border radius">
-                          <a className="qty-down" onClick={decreaseQuantity}>
-                            <i className="fi-rs-angle-small-down"></i>
-                          </a>
-                          <input type="text" name="quantity" className="qty-val" value={quantity} readOnly />
-                          <a className="qty-up" onClick={increaseQuantity}>
-                            <i className="fi-rs-angle-small-up"></i>
-                          </a>
+                          </ul>
                         </div>
-                        <br />
-                        {soldOut ? <h2>Sold Out</h2> : ""}
-
-                        <div className="product-extra-link2">
-                          <button
-                            type="button"
-                            className="border bg-white  text-brand radius button button-add-to-cart"
-                            onClick={() => cartHandler(product, selectedColor, selectedSize, quantity)}
-                            disabled={soldOut}
-                          >
-                            <i className="fi-rs-shopping-cart"></i>Add to cart
-                          </button>
-                          <button
-                            type="button"
-                            className="button button-primary button-add-to-cart ml-5"
-                            onClick={() => handleBuyNow(product, selectedColor, selectedSize, quantity)}
-                            disabled={soldOut}
-                          >
-                            <i className="fi-rs-shopping-cart"></i>Buy Now
-                          </button>
+                        <div className="attr-detail attr-size mb-30">
+                          <strong className="mr-10">Colors</strong>
+                          <ul className="list-filter color-filter flex-align-justify-center size-filter font-small">
+                            {[...product.colorsAvailable]
+                              .sort((a, b) => a.localeCompare(b))
+                              .map((item, index) => (
+                                <li key={index}>
+                                  <a
+                                    onClick={() => handleproductImageChange(item, index)}
+                                    className={`product-color-box product-${item.replace(/[\s./]+/g, "-").toLowerCase()} ${
+                                      selectedColor === item ? "selected" : "notselected"
+                                    }`}
+                                  ></a>
+                                </li>
+                              ))}
+                          </ul>
                         </div>
-                        {error && <p className="text-danger">{error}</p>}
-                      </div>
-                      <div className="font-xs">
-                        <ul className="mr-50 float-start"></ul>
-                        <ul className="float-start">
-                          <li className="mb-5">
-                            Product-Id:<span className="in-stock text-brand ml-5">{product?.productName}</span>
-                          </li>
-                          <li className="mb-5">
-                            Tags:
-                            <span className="in-stock text-brand ml-5">{product?.tag}</span>
-                          </li>
-                          <li className="mb-5">
-                            Brand: <span className="text-brand">{product?.brand}</span>
-                          </li>
-
-                          <li>
-                            Stock:
-                            <span className="in-stock text-brand ml-5">{stock} Items In Stock</span>
-                          </li>
-                        </ul>
+  
+                        <div className="detail-extralink mb-50">
+                          <div className="detail-qty border radius">
+                            <a className="qty-down" onClick={decreaseQuantity}>
+                              <i className="fi-rs-angle-small-down"></i>
+                            </a>
+                            <input type="text" name="quantity" className="qty-val" value={quantity} readOnly />
+                            <a className="qty-up" onClick={increaseQuantity}>
+                              <i className="fi-rs-angle-small-up"></i>
+                            </a>
+                          </div>
+                          <br />
+                          {soldOut && <h2>Sold Out</h2>}
+  
+                          <div className="product-extra-link2">
+                            <button
+                              type="button"
+                              className="border bg-white text-brand radius button button-add-to-cart"
+                              onClick={() => cartHandler(product, selectedColor, selectedSize, quantity)}
+                              disabled={soldOut}
+                            >
+                              <i className="fi-rs-shopping-cart"></i>Add to cart
+                            </button>
+                            <button
+                              type="button"
+                              className="button button-primary button-add-to-cart ml-5"
+                              onClick={() => handleBuyNow(product, selectedColor, selectedSize, quantity)}
+                              disabled={soldOut}
+                            >
+                              <i className="fi-rs-shopping-cart"></i>Buy Now
+                            </button>
+                          </div>
+                          {error && <p className="text-danger">{error}</p>}
+                        </div>
+                        <div className="font-xs">
+                          <ul className="mr-50 float-start"></ul>
+                          <ul className="float-start">
+                            <li className="mb-5">
+                              Product-Id:<span className="in-stock text-brand ml-5">{product?.productName}</span>
+                            </li>
+                            <li className="mb-5">
+                              Tags:
+                              <span className="in-stock text-brand ml-5">{product?.tag}</span>
+                            </li>
+                            <li className="mb-5">
+                              Brand: <span className="text-brand">{product?.brand}</span>
+                            </li>
+                            <li>
+                              Stock:
+                              <span className="in-stock text-brand ml-5">{stock} Items In Stock</span>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  
+                  <table style={{ color: "black", display: "flex", overflow: "scroll" }}>
+                    <thead>
+                      <tr style={{ fontSize: "25px", marginTop: "10px", color: "black" }}>
+                        <th colSpan="8">Size Chart</th>
+                      </tr>
+                      <tr style={{ color: "black" }}>
+                        <th>UK</th>
+                        <th>36</th>
+                        <th>37</th>
+                        <th>38</th>
+                        <th>39</th>
+                        <th>40</th>
+                        <th>41</th>
+                        <th>42</th>
+                      </tr>
+                      <tr style={{ color: "black" }}>
+                        <td>IND</td>
+                        <td>05</td>
+                        <td>06</td>
+                        <td>07</td>
+                        <td>08</td>
+                        <td>09</td>
+                        <td>10</td>
+                        <td>11</td>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                  <ProductInfo product={product} />
                 </div>
-                <table style={{color: "black",display:"flex",overflow:"scroll" }}>
-                  <thead>
-                    <tr style={{ fontSize: "25px", marginTop: "10px", color: "black" ,}}> Size Chart</tr><br/>
-                    <tr style={{ color: "black",}}>
-                      <th>UK</th>
-                      <th>36</th>
-                      <th>37</th>
-                      <th>38</th>
-                      <th>39</th>
-                      <th>40</th>
-                      <th>41</th>
-                      <th>42</th>
-                    </tr>
-                    <tr style={{ color: "black"}}>
-                      <td>IND</td>
-                      <td>05</td>
-                      <td>06</td>
-                      <td>07</td>
-                      <td>08</td>
-                      <td>09</td>
-                      <td>10</td>
-                      <td>11</td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    
-                  </tbody>
-                </table>
-                <ProductInfo product={product} />
               </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+      )}
+  
       <Footer />
     </>
-  ) : (
-    <h1>Something went wrong try again</h1>
   );
+  
 };
 
 export default Product;

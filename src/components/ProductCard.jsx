@@ -41,7 +41,7 @@ const ProductCard = ({ product, toasterHandler }) => {
         <div className="product-cart-wrap mb-30">
           <div className="product-img-action-wrap">
             <div className="product-img product-img-zoom">
-              <Link to={`/products/${product._id}`}>
+              <Link to={`/products/${product.slugTitle}`}>
                 {product.productImage ? (
                   <img className="default-img" src={product.productImage} alt="" />
                 ) : (
@@ -59,7 +59,7 @@ const ProductCard = ({ product, toasterHandler }) => {
           <div className="product-content-wrap">
             <h2 className="text-center mt-3 mb-2">
               {" "}
-              <Link to={`/products/${product._id}`}>{product.title}</Link>{" "}
+              <Link to={`/products/${product.slugTitle}`}>{product.title}</Link>{" "}
             </h2>
             <div className="product-rate-cover flex-align-justify-center">
               <span>Customer Rating : </span>

@@ -21,14 +21,14 @@ export const fetchAllProductsAction = createAsyncThunk("api/products", async (_,
 });
 //  fetch particular product
 // Fetch All products
-export const fetchParticularProduct = createAsyncThunk("api/products/id", async (id, { rejectWithValue }) => {
+export const fetchParticularProduct = createAsyncThunk("api/products/id", async (slugtitle, { rejectWithValue }) => {
   try {
     const config = {
       headers: {
         "Content-Type": "application/json",
       },
     };
-    const res = await axios.get(`${baseUrl}/api/allproductVarients/${id}`, config);
+    const res = await axios.get(`${baseUrl}/api/allproductVarients/${slugtitle}`, config);
     // console.log(res.data)
     return res.data;
   } catch (error) {
