@@ -47,6 +47,7 @@ const Product = () => {
 
   const handleproductImageChange = async (color, index) => {
     // console.log(color);
+    setSelectedColor(color)
     const lowercaseColor = color.toLowerCase();
     const productIndexWithSelectedColor = particularproduct.findIndex(
       (product) => product.colorsAvailable && product.colorsAvailable.length && product.productName.toLowerCase().includes(lowercaseColor)
@@ -61,8 +62,12 @@ const Product = () => {
     if (selectedColor && selectedSize) {
       setError("");
     }
-    if (!selectedColor || !selectedSize) {
-      setError("Please select color and size.");
+    if (!selectedColor) {
+      setError("Please select color ");
+      return;
+    }
+    if(!selectedSize){
+      setError("Please select  size.");
       return;
     }
     if (quantity > stock) {
@@ -77,8 +82,12 @@ const Product = () => {
     if (selectedColor && selectedSize) {
       setError("");
     }
-    if (!selectedColor || !selectedSize) {
-      setError("Please select color and size.");
+    if (!selectedSize) {
+      setError("Please select size.");
+      return;
+    }
+    if (!selectedColor) {
+      setError("Please select color.");
       return;
     }
     if (quantity > stock) {
@@ -212,16 +221,17 @@ const Product = () => {
                         <div className="attr-detail attr-size mb-3">
                           <strong className="mr-10">Size</strong>
                           <ul className="list-filter size-filter font-small">
-                            {product.sizesAvailable.map((item, index) => (
-                              <li key={index}>
-                                <a
-                                  onClick={() => handleSizeSelection(item.size, item.quantity)}
-                                  className={selectedSize === item.size ? "selected" : "notselected"}
-                                >
-                                  {item.size}
-                                </a>
-                              </li>
-                            ))}
+                          {[...new Set(product.sizesAvailable.map(item => item.size))].map((size, index) => (
+  <li key={index}>
+    <a
+      onClick={() => handleSizeSelection(size, product.sizesAvailable.find(item => item.size === size).quantity)}
+      className={selectedSize === size ? "selected" : "notselected"}
+    >
+      {size}
+    </a>
+  </li>
+))}
+
                           </ul>
                         </div>
                         <div className="attr-detail attr-size mb-30">
