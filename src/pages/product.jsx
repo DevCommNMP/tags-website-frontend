@@ -41,9 +41,10 @@ const Product = () => {
   const productSizesAvailable = product?.sizesAvailable;
   const productColorsAvailable = product?.colorsAvailable;
 
-  const productPrice = productDiscount
-    ? productSellingPrice * (1 - productDiscount / 100)
-    : productSellingPrice * (1 - globalDiscount / 100);
+  const productPrice = product?.discount
+  ? Math.round(product?.SellingPrice * (1 - product?.discount / 100))
+  : Math.round(product?.SellingPrice * (1 - globalDiscount / 100));
+
 
   const handleproductImageChange = async (color, index) => {
     // console.log(color);

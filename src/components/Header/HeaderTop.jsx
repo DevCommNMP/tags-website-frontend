@@ -25,7 +25,7 @@ const HeaderTop = () => {
               <div className="text-center">
                 <div id="news-flash" className="d-inline-block">
                   <ul>
-                    <li style={{fontSize:25,padding:10}}>40% discount on every type of footwear</li>
+                    <li style={{fontSize:20,padding:10}}><span style={{fontSize:25,padding:10}}>50%</span>discount on every type of footwear</li>
                     {/* <li>Supper Value Deals - Save more with coupons</li> */}
                     {/* <li>Trendy 25silver jewelry, save up 35% off today</li> */}
                   </ul>
