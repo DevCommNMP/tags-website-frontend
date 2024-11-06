@@ -120,7 +120,7 @@ const searchData = async (searchItem) => {
 
 const filteredByCategories = async (title) => {
   setloading(true);
-  console.log(title);
+  
   if(title==="Wedding Footwear"){
   
     const filtereddata = products.filter((product) => 
@@ -133,9 +133,8 @@ const filteredByCategories = async (title) => {
   return;
   
   }
-console.log(products)
+
   const filtereddata = products.filter((product) => product?.subcategory?.subcategoriesName ===title);
-  console.log(filtereddata);
 
   setupdatedData(filtereddata);
   setProductCount(filtereddata.length);
