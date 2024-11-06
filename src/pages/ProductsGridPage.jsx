@@ -101,9 +101,12 @@ const searchData = async (searchItem) => {
   setloading(true);
 
   const lowerSearchItem = searchItem.trim().toLowerCase(); // Convert searchItem to lowercase
+
   const filteredData = products.filter((product) => {
-    const titleWords = product.title.toLowerCase().split(" "); // Convert title to lowercase and split into words
-    return titleWords.some(word => word.includes(lowerSearchItem));
+    const titleLower = product.title.toLowerCase(); // Convert product title to lowercase
+  
+    // Check if title exactly matches or if any word in the title includes the search term
+    return titleLower === lowerSearchItem || titleLower.split(" ").some(word => word.includes(lowerSearchItem));
   });
   // console.log(filteredData);
   setupdatedData(filteredData);
@@ -117,10 +120,22 @@ const searchData = async (searchItem) => {
 
 const filteredByCategories = async (title) => {
   setloading(true);
-  // console.log(title);
-
-  const filtereddata = products.filter((product) => product?.subcategory?.subcategoriesName ==title);
-  // console.log(filtereddata);
+  console.log(title);
+  if(title==="Wedding Footwear"){
+  
+    const filtereddata = products.filter((product) => 
+      product?.title?.toLowerCase().includes("wedding")||product?.title?.toLowerCase().includes("Wedding")
+    )||products.filter((product) => product?.subcategory?.subcategoriesName ===title);
+    
+  setupdatedData(filtereddata);
+  setProductCount(filtereddata.length);
+  setloading(false);
+  return;
+  
+  }
+console.log(products)
+  const filtereddata = products.filter((product) => product?.subcategory?.subcategoriesName ===title);
+  console.log(filtereddata);
 
   setupdatedData(filtereddata);
   setProductCount(filtereddata.length);
