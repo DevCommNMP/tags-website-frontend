@@ -16,7 +16,9 @@ export const registerUserAction = createAsyncThunk(
         },
       };
 
+      console.log(user);
       const res = await axios.post(`${baseUrl}/api/auth/register`, user, config);
+      console.log(res.data);
       return res.data;
     } catch (error) {
       if (!error?.response) {

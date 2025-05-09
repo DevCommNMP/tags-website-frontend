@@ -51,7 +51,7 @@ const SignUp = () => {
       console.log(formData)
       const res = await dispatch(registerUserAction(formData));
       if (!res.error) {
-        navigate(`/verify-otp/${formData.phoneNumber}`);
+        navigate(`/login`);
       } else {
         // Handle error
       }
@@ -78,9 +78,9 @@ const SignUp = () => {
     if (formData.password !== formData.confirmPassword) {
       newErrors.confirmPassword = "Passwords do not match";
     }
-    if (!formData.phoneNumber.trim()) {
-      newErrors.phoneNumber = "Phone number is required";
-    }
+    // if (!formData.phoneNumber.trim()) {
+    //   newErrors.phoneNumber = "Phone number is required";
+    // }
 
     setErrors(newErrors);
     return newErrors;
@@ -152,7 +152,7 @@ const SignUp = () => {
                           />
                           {errors.confirmPassword && <div className="text-danger">{errors.confirmPassword}</div>}
                         </div>
-                        <div className="form-group">
+                        {/* <div className="form-group">
                           <PhoneInput
                             country={'us'}  // Set default country
                             value={formData.phoneNumber}
@@ -161,7 +161,7 @@ const SignUp = () => {
                             required
                           />
                           {errors.phoneNumber && <div className="text-danger">{errors.phoneNumber}</div>}
-                        </div>
+                        </div> */}
                         <div className="form-group mb-30">
                           <button
                             type="submit"
